@@ -32,16 +32,6 @@ namespace Server.Database
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.monsterInfoGridView = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.groupView = new System.Windows.Forms.GroupBox();
-            this.rbtnViewAll = new System.Windows.Forms.RadioButton();
-            this.rbtnViewBasic = new System.Windows.Forms.RadioButton();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.Modified = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.MonsterIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MonsterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +49,16 @@ namespace Server.Database
             this.MonsterAutoRev = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.MonsterUndead = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.MonsterCanTame = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.groupView = new System.Windows.Forms.GroupBox();
+            this.rbtnViewAll = new System.Windows.Forms.RadioButton();
+            this.rbtnViewBasic = new System.Windows.Forms.RadioButton();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.monsterInfoGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -101,116 +101,12 @@ namespace Server.Database
             this.monsterInfoGridView.Location = new System.Drawing.Point(0, 0);
             this.monsterInfoGridView.Name = "monsterInfoGridView";
             this.monsterInfoGridView.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.monsterInfoGridView.Size = new System.Drawing.Size(956, 433);
+            this.monsterInfoGridView.Size = new System.Drawing.Size(956, 400);
             this.monsterInfoGridView.TabIndex = 0;
             this.monsterInfoGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.monsterInfoGridView_CellValidating);
             this.monsterInfoGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.monsterInfoGridView_DataError);
             this.monsterInfoGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.monsterInfoGridView_DefaultValuesNeeded);
             this.monsterInfoGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.monsterInfoGridView_UserDeletingRow);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(956, 47);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnExport);
-            this.panel3.Controls.Add(this.btnImport);
-            this.panel3.Controls.Add(this.groupView);
-            this.panel3.Controls.Add(this.lblSearch);
-            this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(956, 47);
-            this.panel3.TabIndex = 5;
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(693, 22);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 23);
-            this.btnExport.TabIndex = 6;
-            this.btnExport.Text = "Export";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnImport
-            // 
-            this.btnImport.Location = new System.Drawing.Point(611, 22);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(75, 23);
-            this.btnImport.TabIndex = 5;
-            this.btnImport.Text = "Import";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
-            // groupView
-            // 
-            this.groupView.Controls.Add(this.rbtnViewAll);
-            this.groupView.Controls.Add(this.rbtnViewBasic);
-            this.groupView.Enabled = false;
-            this.groupView.Location = new System.Drawing.Point(3, 3);
-            this.groupView.Name = "groupView";
-            this.groupView.Size = new System.Drawing.Size(134, 42);
-            this.groupView.TabIndex = 4;
-            this.groupView.TabStop = false;
-            this.groupView.Text = "View Mode";
-            // 
-            // rbtnViewAll
-            // 
-            this.rbtnViewAll.AutoSize = true;
-            this.rbtnViewAll.Checked = true;
-            this.rbtnViewAll.Location = new System.Drawing.Point(27, 19);
-            this.rbtnViewAll.Name = "rbtnViewAll";
-            this.rbtnViewAll.Size = new System.Drawing.Size(36, 17);
-            this.rbtnViewAll.TabIndex = 0;
-            this.rbtnViewAll.TabStop = true;
-            this.rbtnViewAll.Text = "All";
-            this.rbtnViewAll.UseVisualStyleBackColor = true;
-            this.rbtnViewAll.CheckedChanged += new System.EventHandler(this.rbtnViewAll_CheckedChanged);
-            // 
-            // rbtnViewBasic
-            // 
-            this.rbtnViewBasic.AutoSize = true;
-            this.rbtnViewBasic.Location = new System.Drawing.Point(69, 19);
-            this.rbtnViewBasic.Name = "rbtnViewBasic";
-            this.rbtnViewBasic.Size = new System.Drawing.Size(51, 17);
-            this.rbtnViewBasic.TabIndex = 1;
-            this.rbtnViewBasic.Text = "Basic";
-            this.rbtnViewBasic.UseVisualStyleBackColor = true;
-            this.rbtnViewBasic.CheckedChanged += new System.EventHandler(this.rbtnViewBasic_CheckedChanged);
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(461, 9);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(44, 13);
-            this.lblSearch.TabIndex = 1;
-            this.lblSearch.Text = "Search:";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(464, 25);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(141, 20);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.monsterInfoGridView);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 47);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(956, 433);
-            this.panel2.TabIndex = 2;
             // 
             // Modified
             // 
@@ -219,8 +115,7 @@ namespace Server.Database
             this.Modified.Frozen = true;
             this.Modified.HeaderText = "Modified";
             this.Modified.Name = "Modified";
-            this.Modified.ReadOnly = true;
-            this.Modified.Width = 53;
+            this.Modified.Width = 59;
             // 
             // MonsterIndex
             // 
@@ -229,8 +124,7 @@ namespace Server.Database
             this.MonsterIndex.Frozen = true;
             this.MonsterIndex.HeaderText = "Index";
             this.MonsterIndex.Name = "MonsterIndex";
-            this.MonsterIndex.ReadOnly = true;
-            this.MonsterIndex.Width = 58;
+            this.MonsterIndex.Width = 60;
             // 
             // MonsterName
             // 
@@ -239,7 +133,7 @@ namespace Server.Database
             this.MonsterName.Frozen = true;
             this.MonsterName.HeaderText = "Name";
             this.MonsterName.Name = "MonsterName";
-            this.MonsterName.Width = 60;
+            this.MonsterName.Width = 54;
             // 
             // MonsterImage
             // 
@@ -334,11 +228,115 @@ namespace Server.Database
             this.MonsterCanTame.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MonsterCanTame.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(956, 43);
+            this.panel1.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnExport);
+            this.panel3.Controls.Add(this.btnImport);
+            this.panel3.Controls.Add(this.groupView);
+            this.panel3.Controls.Add(this.lblSearch);
+            this.panel3.Controls.Add(this.txtSearch);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(956, 43);
+            this.panel3.TabIndex = 5;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(693, 20);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 21);
+            this.btnExport.TabIndex = 6;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(611, 20);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(75, 21);
+            this.btnImport.TabIndex = 5;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // groupView
+            // 
+            this.groupView.Controls.Add(this.rbtnViewAll);
+            this.groupView.Controls.Add(this.rbtnViewBasic);
+            this.groupView.Enabled = false;
+            this.groupView.Location = new System.Drawing.Point(3, 3);
+            this.groupView.Name = "groupView";
+            this.groupView.Size = new System.Drawing.Size(134, 39);
+            this.groupView.TabIndex = 4;
+            this.groupView.TabStop = false;
+            this.groupView.Text = "View Mode";
+            // 
+            // rbtnViewAll
+            // 
+            this.rbtnViewAll.AutoSize = true;
+            this.rbtnViewAll.Checked = true;
+            this.rbtnViewAll.Location = new System.Drawing.Point(27, 18);
+            this.rbtnViewAll.Name = "rbtnViewAll";
+            this.rbtnViewAll.Size = new System.Drawing.Size(41, 16);
+            this.rbtnViewAll.TabIndex = 0;
+            this.rbtnViewAll.TabStop = true;
+            this.rbtnViewAll.Text = "All";
+            this.rbtnViewAll.UseVisualStyleBackColor = true;
+            this.rbtnViewAll.CheckedChanged += new System.EventHandler(this.rbtnViewAll_CheckedChanged);
+            // 
+            // rbtnViewBasic
+            // 
+            this.rbtnViewBasic.AutoSize = true;
+            this.rbtnViewBasic.Location = new System.Drawing.Point(69, 18);
+            this.rbtnViewBasic.Name = "rbtnViewBasic";
+            this.rbtnViewBasic.Size = new System.Drawing.Size(53, 16);
+            this.rbtnViewBasic.TabIndex = 1;
+            this.rbtnViewBasic.Text = "Basic";
+            this.rbtnViewBasic.UseVisualStyleBackColor = true;
+            this.rbtnViewBasic.CheckedChanged += new System.EventHandler(this.rbtnViewBasic_CheckedChanged);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(461, 8);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(47, 12);
+            this.lblSearch.TabIndex = 1;
+            this.lblSearch.Text = "Search:";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(464, 23);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(141, 21);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.monsterInfoGridView);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 43);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(956, 400);
+            this.panel2.TabIndex = 2;
+            // 
             // MonsterInfoFormNew
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 480);
+            this.ClientSize = new System.Drawing.Size(956, 443);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "MonsterInfoFormNew";

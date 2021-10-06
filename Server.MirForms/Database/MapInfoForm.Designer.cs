@@ -53,6 +53,7 @@ namespace Server
             this.FileNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.NoReincarnation = new System.Windows.Forms.CheckBox();
             this.NoTownTeleportCheckbox = new System.Windows.Forms.CheckBox();
             this.NoFightCheckbox = new System.Windows.Forms.CheckBox();
             this.NeedBridleCheckbox = new System.Windows.Forms.CheckBox();
@@ -158,7 +159,8 @@ namespace Server
             this.ExportMongenButton = new System.Windows.Forms.Button();
             this.VisualizerButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.NoReincarnation = new System.Windows.Forms.CheckBox();
+            this.tbxMapName = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.MapTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -186,7 +188,7 @@ namespace Server
             this.MapTabs.Location = new System.Drawing.Point(207, 57);
             this.MapTabs.Name = "MapTabs";
             this.MapTabs.SelectedIndex = 0;
-            this.MapTabs.Size = new System.Drawing.Size(540, 252);
+            this.MapTabs.Size = new System.Drawing.Size(761, 506);
             this.MapTabs.TabIndex = 8;
             // 
             // tabPage1
@@ -210,7 +212,7 @@ namespace Server
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(532, 226);
+            this.tabPage1.Size = new System.Drawing.Size(753, 480);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -386,10 +388,21 @@ namespace Server
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(532, 226);
+            this.tabPage6.Size = new System.Drawing.Size(753, 480);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Attributes";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // NoReincarnation
+            // 
+            this.NoReincarnation.AutoSize = true;
+            this.NoReincarnation.Location = new System.Drawing.Point(15, 183);
+            this.NoReincarnation.Name = "NoReincarnation";
+            this.NoReincarnation.Size = new System.Drawing.Size(120, 16);
+            this.NoReincarnation.TabIndex = 45;
+            this.NoReincarnation.Text = "No Reincarnation";
+            this.NoReincarnation.UseVisualStyleBackColor = true;
+            this.NoReincarnation.CheckedChanged += new System.EventHandler(this.NoReincarnation_CheckedChanged);
             // 
             // NoTownTeleportCheckbox
             // 
@@ -638,7 +651,7 @@ namespace Server
             this.tabPage3.Controls.Add(this.SafeZoneInfoListBox);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(532, 226);
+            this.tabPage3.Size = new System.Drawing.Size(753, 480);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Safe Zones";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -665,8 +678,8 @@ namespace Server
             // 
             // SafeZoneInfoPanel
             // 
-            this.SafeZoneInfoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.SafeZoneInfoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SafeZoneInfoPanel.Controls.Add(this.label12);
             this.SafeZoneInfoPanel.Controls.Add(this.SZYTextBox);
@@ -678,7 +691,7 @@ namespace Server
             this.SafeZoneInfoPanel.Enabled = false;
             this.SafeZoneInfoPanel.Location = new System.Drawing.Point(189, 32);
             this.SafeZoneInfoPanel.Name = "SafeZoneInfoPanel";
-            this.SafeZoneInfoPanel.Size = new System.Drawing.Size(197, 128);
+            this.SafeZoneInfoPanel.Size = new System.Drawing.Size(418, 244);
             this.SafeZoneInfoPanel.TabIndex = 10;
             // 
             // label12
@@ -748,14 +761,14 @@ namespace Server
             // 
             // SafeZoneInfoListBox
             // 
-            this.SafeZoneInfoListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.SafeZoneInfoListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.SafeZoneInfoListBox.FormattingEnabled = true;
             this.SafeZoneInfoListBox.ItemHeight = 12;
             this.SafeZoneInfoListBox.Location = new System.Drawing.Point(6, 32);
             this.SafeZoneInfoListBox.Name = "SafeZoneInfoListBox";
             this.SafeZoneInfoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.SafeZoneInfoListBox.Size = new System.Drawing.Size(177, 124);
+            this.SafeZoneInfoListBox.Size = new System.Drawing.Size(177, 244);
             this.SafeZoneInfoListBox.TabIndex = 9;
             this.SafeZoneInfoListBox.SelectedIndexChanged += new System.EventHandler(this.SafeZoneInfoListBox_SelectedIndexChanged);
             // 
@@ -770,7 +783,7 @@ namespace Server
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(532, 226);
+            this.tabPage2.Size = new System.Drawing.Size(753, 480);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Respawns";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -823,7 +836,7 @@ namespace Server
             this.RespawnInfoListBox.Location = new System.Drawing.Point(6, 32);
             this.RespawnInfoListBox.Name = "RespawnInfoListBox";
             this.RespawnInfoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.RespawnInfoListBox.Size = new System.Drawing.Size(260, 136);
+            this.RespawnInfoListBox.Size = new System.Drawing.Size(260, 304);
             this.RespawnInfoListBox.TabIndex = 14;
             this.RespawnInfoListBox.SelectedIndexChanged += new System.EventHandler(this.RespawnInfoListBox_SelectedIndexChanged);
             // 
@@ -855,7 +868,7 @@ namespace Server
             this.RespawnInfoPanel.Enabled = false;
             this.RespawnInfoPanel.Location = new System.Drawing.Point(272, 32);
             this.RespawnInfoPanel.Name = "RespawnInfoPanel";
-            this.RespawnInfoPanel.Size = new System.Drawing.Size(254, 189);
+            this.RespawnInfoPanel.Size = new System.Drawing.Size(475, 304);
             this.RespawnInfoPanel.TabIndex = 11;
             // 
             // chkrespawnsave
@@ -1055,7 +1068,7 @@ namespace Server
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(532, 226);
+            this.tabPage4.Size = new System.Drawing.Size(753, 480);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Movements";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1082,8 +1095,8 @@ namespace Server
             // 
             // MovementInfoPanel
             // 
-            this.MovementInfoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.MovementInfoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MovementInfoPanel.Controls.Add(this.label25);
             this.MovementInfoPanel.Controls.Add(this.ConquestComboBox);
@@ -1102,7 +1115,7 @@ namespace Server
             this.MovementInfoPanel.Enabled = false;
             this.MovementInfoPanel.Location = new System.Drawing.Point(239, 32);
             this.MovementInfoPanel.Name = "MovementInfoPanel";
-            this.MovementInfoPanel.Size = new System.Drawing.Size(256, 189);
+            this.MovementInfoPanel.Size = new System.Drawing.Size(477, 304);
             this.MovementInfoPanel.TabIndex = 14;
             // 
             // label25
@@ -1240,14 +1253,14 @@ namespace Server
             // 
             // MovementInfoListBox
             // 
-            this.MovementInfoListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.MovementInfoListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.MovementInfoListBox.FormattingEnabled = true;
             this.MovementInfoListBox.ItemHeight = 12;
             this.MovementInfoListBox.Location = new System.Drawing.Point(6, 32);
             this.MovementInfoListBox.Name = "MovementInfoListBox";
             this.MovementInfoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.MovementInfoListBox.Size = new System.Drawing.Size(227, 160);
+            this.MovementInfoListBox.Size = new System.Drawing.Size(227, 304);
             this.MovementInfoListBox.TabIndex = 13;
             this.MovementInfoListBox.SelectedIndexChanged += new System.EventHandler(this.MovementInfoListBox_SelectedIndexChanged);
             // 
@@ -1260,7 +1273,7 @@ namespace Server
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(532, 226);
+            this.tabPage7.Size = new System.Drawing.Size(753, 480);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "MineZones";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1287,8 +1300,8 @@ namespace Server
             // 
             // MineZonepanel
             // 
-            this.MineZonepanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.MineZonepanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MineZonepanel.Controls.Add(this.label27);
             this.MineZonepanel.Controls.Add(this.MineZoneComboBox);
@@ -1301,7 +1314,7 @@ namespace Server
             this.MineZonepanel.Enabled = false;
             this.MineZonepanel.Location = new System.Drawing.Point(189, 32);
             this.MineZonepanel.Name = "MineZonepanel";
-            this.MineZonepanel.Size = new System.Drawing.Size(241, 128);
+            this.MineZonepanel.Size = new System.Drawing.Size(462, 244);
             this.MineZonepanel.TabIndex = 14;
             // 
             // label27
@@ -1379,20 +1392,20 @@ namespace Server
             // 
             // MZListlistBox
             // 
-            this.MZListlistBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.MZListlistBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.MZListlistBox.FormattingEnabled = true;
             this.MZListlistBox.ItemHeight = 12;
             this.MZListlistBox.Location = new System.Drawing.Point(6, 32);
             this.MZListlistBox.Name = "MZListlistBox";
             this.MZListlistBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.MZListlistBox.Size = new System.Drawing.Size(177, 124);
+            this.MZListlistBox.Size = new System.Drawing.Size(177, 244);
             this.MZListlistBox.TabIndex = 13;
             this.MZListlistBox.SelectedIndexChanged += new System.EventHandler(this.MZListlistBox_SelectedIndexChanged);
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(126, 30);
+            this.RemoveButton.Location = new System.Drawing.Point(126, 5);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(75, 21);
             this.RemoveButton.TabIndex = 6;
@@ -1402,7 +1415,7 @@ namespace Server
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(12, 30);
+            this.AddButton.Location = new System.Drawing.Point(12, 5);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 21);
             this.AddButton.TabIndex = 5;
@@ -1412,20 +1425,20 @@ namespace Server
             // 
             // MapInfoListBox
             // 
-            this.MapInfoListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.MapInfoListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.MapInfoListBox.FormattingEnabled = true;
             this.MapInfoListBox.ItemHeight = 12;
-            this.MapInfoListBox.Location = new System.Drawing.Point(12, 57);
+            this.MapInfoListBox.Location = new System.Drawing.Point(12, 84);
             this.MapInfoListBox.Name = "MapInfoListBox";
             this.MapInfoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.MapInfoListBox.Size = new System.Drawing.Size(189, 244);
+            this.MapInfoListBox.Size = new System.Drawing.Size(189, 472);
             this.MapInfoListBox.TabIndex = 7;
             this.MapInfoListBox.SelectedIndexChanged += new System.EventHandler(this.MapInfoListBox_SelectedIndexChanged);
             // 
             // PasteMapButton
             // 
-            this.PasteMapButton.Location = new System.Drawing.Point(288, 30);
+            this.PasteMapButton.Location = new System.Drawing.Point(288, 5);
             this.PasteMapButton.Name = "PasteMapButton";
             this.PasteMapButton.Size = new System.Drawing.Size(75, 21);
             this.PasteMapButton.TabIndex = 24;
@@ -1435,7 +1448,7 @@ namespace Server
             // 
             // CopyMapButton
             // 
-            this.CopyMapButton.Location = new System.Drawing.Point(207, 30);
+            this.CopyMapButton.Location = new System.Drawing.Point(207, 5);
             this.CopyMapButton.Name = "CopyMapButton";
             this.CopyMapButton.Size = new System.Drawing.Size(75, 21);
             this.CopyMapButton.TabIndex = 23;
@@ -1492,22 +1505,30 @@ namespace Server
             this.VisualizerButton.UseVisualStyleBackColor = true;
             this.VisualizerButton.Click += new System.EventHandler(this.VisualizerButton_Click);
             // 
-            // NoReincarnation
+            // tbxMapName
             // 
-            this.NoReincarnation.AutoSize = true;
-            this.NoReincarnation.Location = new System.Drawing.Point(15, 183);
-            this.NoReincarnation.Name = "NoReincarnation";
-            this.NoReincarnation.Size = new System.Drawing.Size(109, 17);
-            this.NoReincarnation.TabIndex = 45;
-            this.NoReincarnation.Text = "No Reincarnation";
-            this.NoReincarnation.UseVisualStyleBackColor = true;
-            this.NoReincarnation.CheckedChanged += new System.EventHandler(this.NoReincarnation_CheckedChanged);
+            this.tbxMapName.Location = new System.Drawing.Point(12, 57);
+            this.tbxMapName.Name = "tbxMapName";
+            this.tbxMapName.Size = new System.Drawing.Size(189, 21);
+            this.tbxMapName.TabIndex = 32;
+            this.tbxMapName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxMapName_KeyDown);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(12, 38);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(29, 12);
+            this.lblSearch.TabIndex = 33;
+            this.lblSearch.Text = "搜索";
             // 
             // MapInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 310);
+            this.ClientSize = new System.Drawing.Size(980, 564);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.tbxMapName);
             this.Controls.Add(this.VisualizerButton);
             this.Controls.Add(this.ExportMongenButton);
             this.Controls.Add(this.ImportMongenButton);
@@ -1540,6 +1561,7 @@ namespace Server
             this.MineZonepanel.ResumeLayout(false);
             this.MineZonepanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1670,5 +1692,7 @@ namespace Server
         private Label label25;
         private CheckBox NoTownTeleportCheckbox;
         private CheckBox NoReincarnation;
+        private TextBox tbxMapName;
+        private Label lblSearch;
     }
 }

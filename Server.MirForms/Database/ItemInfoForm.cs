@@ -1814,5 +1814,16 @@ namespace Server
             for (int i = 0; i < _selectedItemInfos.Count; i++)
                 _selectedItemInfos[i].Slots = temp;
         }
+
+        private void tbxItemSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                var searchName = tbxItemSearch.Text.Trim().ToLower();
+                var itemList = Envir.ItemInfoList.FindAll(x => x.FriendlyName.ToLower().Contains(searchName)).ToArray();
+                ItemInfoListBox.Items.Clear();
+                ItemInfoListBox.Items.AddRange(itemList);
+            }
+        }
     }
 }

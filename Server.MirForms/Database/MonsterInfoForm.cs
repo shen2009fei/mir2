@@ -43,15 +43,20 @@ namespace Server
             UpdateInterface();
         }
 
-        private void UpdateInterface()
+        private void UpdateInterface(bool refreshList = true)
         {
-            if (MonsterInfoListBox.Items.Count != Envir.MonsterInfoList.Count)
-            {
-                MonsterInfoListBox.Items.Clear();
 
-                for (int i = 0; i < Envir.MonsterInfoList.Count; i++)
-                    MonsterInfoListBox.Items.Add(Envir.MonsterInfoList[i]);
+            if (refreshList)
+            {
+                if (MonsterInfoListBox.Items.Count != Envir.MonsterInfoList.Count)
+                {
+                    MonsterInfoListBox.Items.Clear();
+
+                    for (int i = 0; i < Envir.MonsterInfoList.Count; i++)
+                        MonsterInfoListBox.Items.Add(Envir.MonsterInfoList[i]);
+                }
             }
+          
 
             _selectedMonsterInfos = MonsterInfoListBox.SelectedItems.Cast<MonsterInfo>().ToList();
 
@@ -195,7 +200,7 @@ namespace Server
         }
         private void MonsterInfoListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateInterface();
+            UpdateInterface(false);
         }
         private void MonsterNameTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -704,6 +709,17 @@ namespace Server
             MirForms.DropBuilder.DropGenForm GenForm = new MirForms.DropBuilder.DropGenForm();
 
             GenForm.ShowDialog();
+        }
+
+        private void tbxMonsterSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                var monsterName = tbxMonsterSearch.Text.Trim().ToLower();
+                var monsterList = Envir.MonsterInfoList.FindAll(x => x.Name.ToLower().Contains(monsterName)).ToArray();
+                MonsterInfoListBox.Items.Clear();
+                MonsterInfoListBox.Items.AddRange(monsterList);
+            }
         }
     }
 }

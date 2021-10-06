@@ -45,21 +45,35 @@ namespace Server
         }
 
 
-        private void UpdateInterface()
+        private void UpdateInterface(bool refreshList = true)
         {
             //Group<MapInfo> orderedMapInfoList = Envir.MapInfoList.OrderBy(m => m.Title).ToList();
-
-            if (MapInfoListBox.Items.Count != Envir.MapInfoList.Count)
+            //如果地图listbox
+            if (refreshList)
             {
-                MapInfoListBox.Items.Clear();
-                DestMapComboBox.Items.Clear();
-
-                for (int i = 0; i < Envir.MapInfoList.Count; i++)
+                if (MapInfoListBox.Items.Count != Envir.MapInfoList.Count)
                 {
-                    MapInfoListBox.Items.Add(Envir.MapInfoList[i]);
-                    DestMapComboBox.Items.Add(Envir.MapInfoList[i]);
+                    MapInfoListBox.Items.Clear();
+                    DestMapComboBox.Items.Clear();
+
+                    for (int i = 0; i < Envir.MapInfoList.Count; i++)
+                    {
+                        MapInfoListBox.Items.Add(Envir.MapInfoList[i]);
+                        DestMapComboBox.Items.Add(Envir.MapInfoList[i]);
+                    }
                 }
             }
+            //if (MapInfoListBox.Items.Count != Envir.MapInfoList.Count)
+            //{
+            //    var mapName = tbxMapName.Text.Trim();
+            //    var maplist = Envir.MapInfoList.FindAll(x => x.Title.Contains(mapName)).ToArray();
+            //    MapInfoListBox.Items.Clear();
+            //    DestMapComboBox.Items.Clear();
+
+            //    MapInfoListBox.Items.AddRange(maplist);
+            //    DestMapComboBox.Items.AddRange(maplist);
+            //}
+
 
             _selectedMapInfos = MapInfoListBox.SelectedItems.Cast<MapInfo>().ToList();
 
@@ -596,7 +610,7 @@ namespace Server
             RespawnInfoListBox.Items.Clear();
             MovementInfoListBox.Items.Clear();
             MZListlistBox.Items.Clear();
-            UpdateInterface();
+            UpdateInterface(false);
         }
         private void FileNameTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -1708,6 +1722,32 @@ namespace Server
             if (ActiveControl != sender) return;
             for (int i = 0; i < _selectedMapInfos.Count; i++)
                 _selectedMapInfos[i].NoReincarnation = NoReincarnation.Checked;
+        }
+
+        private void btnSearchMap_Click(object sender, EventArgs e)
+        {
+           var mapName = tbxMapName.Text.Trim();
+            var maplist = Envir.MapInfoList.FindAll(x => x.Title.Contains(mapName)).ToArray();
+            MapInfoListBox.Items.Clear();
+            DestMapComboBox.Items.Clear();       
+         
+            MapInfoListBox.Items.AddRange(maplist);
+            DestMapComboBox.Items.AddRange(maplist);
+        }
+
+        private void tbxMapName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                var mapName = tbxMapName.Text.Trim().ToLower();
+                var maplist = Envir.MapInfoList.FindAll(x => x.Title.ToLower().Contains(mapName)).ToArray();
+                MapInfoListBox.Items.Clear();
+                DestMapComboBox.Items.Clear();
+
+                MapInfoListBox.Items.AddRange(maplist);
+                DestMapComboBox.Items.AddRange(maplist);
+            }
+
         }
     }
 }
