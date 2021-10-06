@@ -2864,6 +2864,26 @@ namespace Server.MirEnvir
             return MapList.FirstOrDefault(t => t.Info.Index == index);
         }
 
+        public Map GetMapByTitleOrNameAndInstance(string name, int instanceValue = 0)
+        {
+            if (instanceValue < 0) instanceValue = 0;
+            if (instanceValue > 0) instanceValue--;
+
+            var instanceTitleMapList = MapList.Where(t => string.Equals(t.Info.Title, name, StringComparison.CurrentCultureIgnoreCase)).ToList();
+            var instanceNameMapList = MapList.Where(t => string.Equals(t.Info.FileName, name, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            var instanceMapList = instanceNameMapList.Union(instanceTitleMapList).ToList();
+           
+            return instanceValue < instanceMapList.Count() ? instanceMapList[instanceValue] : null;
+        }
+        public Map GetMapByTitleAndInstance(string name, int instanceValue = 0)
+        {
+            if (instanceValue < 0) instanceValue = 0;
+            if (instanceValue > 0) instanceValue--;
+
+            var instanceMapList = MapList.Where(t => string.Equals(t.Info.Title, name, StringComparison.CurrentCultureIgnoreCase)).ToList();
+            return instanceValue < instanceMapList.Count() ? instanceMapList[instanceValue] : null;
+        }
         public Map GetMapByNameAndInstance(string name, int instanceValue = 0)
         {
             if (instanceValue < 0) instanceValue = 0;

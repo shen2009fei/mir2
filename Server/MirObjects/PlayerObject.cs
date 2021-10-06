@@ -4032,7 +4032,8 @@ namespace Server.MirObjects
 
                         if (instanceID < 1) instanceID = 1;
 
-                        var map = Envir.GetMapByNameAndInstance(parts[1], instanceID);
+                        //var map = Envir.GetMapByNameAndInstance(parts[1], instanceID);
+                        var map = Envir.GetMapByTitleOrNameAndInstance(parts[1], instanceID);
                         if (map == null)
                         {
                             ReceiveChat((string.Format("Map {0}:[{1}] could not be found", parts[1], instanceID)), ChatType.System);
