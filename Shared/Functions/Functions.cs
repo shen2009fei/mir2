@@ -93,19 +93,19 @@ public static class Functions
         string answer;
         if (t.TotalMinutes < 1.0)
         {
-            answer = string.Format("{0}s", t.Seconds);
+            answer = string.Format(GameLanguage.TimeSpanSecond, t.Seconds);
         }
         else if (t.TotalHours < 1.0)
         {
-            answer = accurate ? string.Format("{0}m {1:D2}s", t.Minutes, t.Seconds) : string.Format("{0}m", t.Minutes);
+            answer = accurate ? string.Format(GameLanguage.TimeSpanMinuteSecond, t.Minutes, t.Seconds) : string.Format(GameLanguage.TimeSpanMinute, t.Minutes);
         }
         else if (t.TotalDays < 1.0)
         {
-            answer = accurate ? string.Format("{0}h {1:D2}m {2:D2}s", (int)t.Hours, t.Minutes, t.Seconds) : string.Format("{0}h {1:D2}m", (int)t.TotalHours, t.Minutes);
+            answer = accurate ? string.Format(GameLanguage.TimeSpanHourMinuteSecond, (int)t.Hours, t.Minutes, t.Seconds) : string.Format(GameLanguage.TimeSpanHourMinute, (int)t.TotalHours, t.Minutes);
         }
         else // more than 1 day
         {
-            answer = accurate ? string.Format("{0}d {1:D2}h {2:D2}m {3:D2}s", (int)t.Days, (int)t.Hours, t.Minutes, t.Seconds) : string.Format("{0}d {1}h {2:D2}m", (int)t.TotalDays, (int)t.Hours, t.Minutes);
+            answer = accurate ? string.Format(GameLanguage.TimeSpanDayHourMinuteSecond, (int)t.Days, (int)t.Hours, t.Minutes, t.Seconds) : string.Format(GameLanguage.TimeSpanDayHourMinute, (int)t.TotalDays, (int)t.Hours, t.Minutes);
         }
 
         return answer;

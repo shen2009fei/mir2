@@ -92,7 +92,27 @@ public class GameLanguage
                          MAC = "MAC + {0}~{1} (+{2})",
                          MAC2 = "MAC + {0}~{1}",
                          Luck = "Luck + {0}",
+                         Flexibility = "Flexibility: + {0} (+{ 1})",
+                         Flexibility2 = "Flexibility: + {0}",
 
+                         AttackSpeed= "A.Speed",
+                         Adds= "Adds",
+                         SuccessChance = "Success Chance",
+                         SocketDesc = "Socket : {0}",
+                         SocketEmpty = "Empty",
+                         OpenSockets = "Ctrl + Right Click To Open Sockets",
+                         CannotSell = "Can't sell",
+
+                         TimeSpanSecond= "{0}s",
+                         TimeSpanMinute= "{0}m",
+                         TimeSpanMinuteSecond= "{0}m {1:D2}s",
+                         TimeSpanHourMinuteSecond= "{0}h {1:D2}m {2:D2}s",
+                         TimeSpanHourMinute= "{0}h {1:D2}m",
+                         TimeSpanDayHourMinuteSecond="{0}d {1:D2}h {2:D2}m {3:D2}s",
+                         TimeSpanDayHourMinute= "{0}d {1}h {2:D2}m",
+
+                         ExpireIn="Expires in {0}",
+                         Expired="Expired",
                          DeleteCharacter = "Are you sure you want to Delete the character {0}",
                          CharacterDeleted = "Your character was deleted successfully.",
                          CharacterCreated = "Your character was created successfully.",
@@ -368,6 +388,27 @@ public class GameLanguage
         GameLanguage.MAC = reader.ReadString("Language", "MAC", GameLanguage.MAC);
         GameLanguage.MAC2 = reader.ReadString("Language", "MAC2", GameLanguage.MAC2);
         GameLanguage.Luck = reader.ReadString("Language", "Luck", GameLanguage.Luck);
+        GameLanguage.Flexibility = reader.ReadString("Language", "Flexibility", GameLanguage.Flexibility);
+        GameLanguage.Flexibility2 = reader.ReadString("Language", "Flexibility2", GameLanguage.Flexibility2);
+        GameLanguage.AttackSpeed = reader.ReadString("Language", "AttackSpeed", GameLanguage.AttackSpeed);
+        GameLanguage.Adds = reader.ReadString("Language", "Adds", GameLanguage.Adds);
+        GameLanguage.SuccessChance = reader.ReadString("Language", "SuccessChance", GameLanguage.SuccessChance);
+        GameLanguage.SocketDesc = reader.ReadString("Language", "SocketDesc", GameLanguage.SocketDesc);
+        GameLanguage.SocketEmpty = reader.ReadString("Language", "SocketEmpty", GameLanguage.SocketEmpty);
+        GameLanguage.OpenSockets = reader.ReadString("Language", "OpenSockets", GameLanguage.OpenSockets);
+
+        GameLanguage.CannotSell = reader.ReadString("Language", "CannotSell", GameLanguage.CannotSell);
+
+        GameLanguage.TimeSpanSecond = reader.ReadString("Language", "TimeSpanSecond", GameLanguage.TimeSpanSecond);
+        GameLanguage.TimeSpanMinuteSecond = reader.ReadString("Language", "TimeSpanMinuteSecond", GameLanguage.TimeSpanMinuteSecond);
+        GameLanguage.TimeSpanMinute = reader.ReadString("Language", "TimeSpanMinute", GameLanguage.TimeSpanMinute);
+        GameLanguage.TimeSpanHourMinuteSecond = reader.ReadString("Language", "TimeSpanHourMinuteSecond", GameLanguage.TimeSpanHourMinuteSecond);
+        GameLanguage.TimeSpanHourMinute = reader.ReadString("Language", "TimeSpanHourMinute", GameLanguage.TimeSpanHourMinute);
+        GameLanguage.TimeSpanDayHourMinuteSecond = reader.ReadString("Language", "TimeSpanDayHourMinuteSecond", GameLanguage.TimeSpanDayHourMinuteSecond);
+        GameLanguage.TimeSpanDayHourMinute = reader.ReadString("Language", "TimeSpanDayHourMinute", GameLanguage.TimeSpanDayHourMinute);
+
+        GameLanguage.ExpireIn = reader.ReadString("Language", "ExpireIn", GameLanguage.ExpireIn);
+        GameLanguage.Expired = reader.ReadString("Language", "Expired", GameLanguage.Expired);
 
         GameLanguage.DeleteCharacter = reader.ReadString("Language", "DeleteCharacter", GameLanguage.DeleteCharacter);
         GameLanguage.CharacterDeleted = reader.ReadString("Language", "CharacterDeleted", GameLanguage.CharacterDeleted);
@@ -597,6 +638,28 @@ public class GameLanguage
         reader.Write("Language", "AC", GameLanguage.AC);
         reader.Write("Language", "MAC", GameLanguage.MAC);
         reader.Write("Language", "Luck", GameLanguage.Luck);
+        reader.Write("Language", "Flexibility", GameLanguage.Flexibility);
+        reader.Write("Language", "Flexibility2", GameLanguage.Flexibility2);
+        reader.Write("Language", "AttackSpeed", GameLanguage.AttackSpeed);
+        reader.Write("Language", "Adds", GameLanguage.Adds);
+        reader.Write("Language", "SuccessChance", GameLanguage.SuccessChance);
+
+        reader.Write("Language", "SocketDesc", GameLanguage.SocketDesc);
+        reader.Write("Language", "SocketEmpty", GameLanguage.SocketEmpty);
+        reader.Write("Language", "OpenSockets", GameLanguage.OpenSockets);
+
+        reader.Write("Language", "CannotSell", GameLanguage.CannotSell);
+
+        reader.Write("Language", "TimeSpanSecond", GameLanguage.TimeSpanSecond);
+        reader.Write("Language", "TimeSpanMinuteSecond", GameLanguage.TimeSpanMinuteSecond);
+        reader.Write("Language", "TimeSpanMinute", GameLanguage.TimeSpanMinute);
+        reader.Write("Language", "TimeSpanHourMinuteSecond", GameLanguage.TimeSpanHourMinuteSecond);
+        reader.Write("Language", "TimeSpanHourMinute", GameLanguage.TimeSpanHourMinute);
+        reader.Write("Language", "TimeSpanDayHourMinuteSecond", GameLanguage.TimeSpanDayHourMinuteSecond);
+        reader.Write("Language", "TimeSpanDayHourMinute", GameLanguage.TimeSpanDayHourMinute);
+
+        reader.Write("Language", "ExpireIn", GameLanguage.ExpireIn);
+        reader.Write("Language", "Expired", GameLanguage.Expired);
 
         reader.Write("Language", "DeleteCharacter", GameLanguage.DeleteCharacter);
         reader.Write("Language", "CharacterDeleted", GameLanguage.CharacterDeleted);
