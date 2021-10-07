@@ -819,21 +819,10 @@ public class GameLanguage
         InIReader reader = new InIReader(languageIniPath);
         GameLanguage.Welcome = reader.ReadString("Language", "Welcome", GameLanguage.Welcome);
         GameLanguage.OnlinePlayers = reader.ReadString("Language", "OnlinePlayers", GameLanguage.OnlinePlayers);
-        GameLanguage.LowLevel = reader.ReadString("Language", "LowLevel", GameLanguage.LowLevel);
-        GameLanguage.LowGold = reader.ReadString("Language", "LowGold", GameLanguage.LowGold);
-        GameLanguage.LowDC = reader.ReadString("Language", "LowDC", GameLanguage.LowDC);
-        GameLanguage.LowMC = reader.ReadString("Language", "LowMC", GameLanguage.LowMC);
-        GameLanguage.LowSC = reader.ReadString("Language", "LowSC", GameLanguage.LowSC);
-
-        GameLanguage.LevelUp = reader.ReadString("Language", "LevelUp", GameLanguage.LevelUp);
-
         GameLanguage.WeaponLuck = reader.ReadString("Language", "WeaponLuck", GameLanguage.WeaponLuck);
         GameLanguage.WeaponCurse = reader.ReadString("Language", "WeaponCurse", GameLanguage.WeaponCurse);
         GameLanguage.WeaponNoEffect = reader.ReadString("Language", "WeaponNoEffect", GameLanguage.WeaponNoEffect);
-
-        GameLanguage.InventoryIncreased = reader.ReadString("Language", "InventoryIncreased", GameLanguage.InventoryIncreased);
-        GameLanguage.ExpandedStorageExpiresOn = reader.ReadString("Language", "ExpandedStorageExpiresOn", GameLanguage.ExpandedStorageExpiresOn);
-        GameLanguage.GameName = reader.ReadString("Language", "GameName", GameLanguage.GameName);
+        GameLanguage.InventoryIncreased = reader.ReadString("Language", "InventoryIncreased", GameLanguage.InventoryIncreased);        
         GameLanguage.FaceToTrade = reader.ReadString("Language", "FaceToTrade", GameLanguage.FaceToTrade);
         GameLanguage.NoTownTeleport = reader.ReadString("Language", "NoTownTeleport", GameLanguage.NoTownTeleport);
         GameLanguage.CanNotRandom = reader.ReadString("Language", "CanNotRandom", GameLanguage.CanNotRandom);
@@ -841,53 +830,69 @@ public class GameLanguage
         GameLanguage.CannotResurrection = reader.ReadString("Language", "CannotResurrection", GameLanguage.CannotResurrection);
         GameLanguage.CanNotDrop = reader.ReadString("Language", "CanNotDrop", GameLanguage.CanNotDrop);
 
+        GameLanguage.NewMail = reader.ReadString("Language", "NewMail", GameLanguage.NewMail);
+        GameLanguage.CouldNotFindPlayer = reader.ReadString("Language", "CouldNotFindPlayer", GameLanguage.CouldNotFindPlayer);
+        GameLanguage.BeenPoisoned = reader.ReadString("Language", "BeenPoisoned", GameLanguage.BeenPoisoned);
+        GameLanguage.AllowingMentorRequests = reader.ReadString("Language", "AllowingMentorRequests", GameLanguage.AllowingMentorRequests);
+        GameLanguage.BlockingMentorRequests = reader.ReadString("Language", "BlockingMentorRequests", GameLanguage.BlockingMentorRequests);
+        //common
+        GameLanguage.LevelUp = reader.ReadString("Language", "LevelUp", GameLanguage.LevelUp);
+        GameLanguage.LowLevel = reader.ReadString("Language", "LowLevel", GameLanguage.LowLevel);
+        GameLanguage.LowGold = reader.ReadString("Language", "LowGold", GameLanguage.LowGold);
+        GameLanguage.LowDC = reader.ReadString("Language", "LowDC", GameLanguage.LowDC);
+        GameLanguage.LowMC = reader.ReadString("Language", "LowMC", GameLanguage.LowMC);
+        GameLanguage.LowSC = reader.ReadString("Language", "LowSC", GameLanguage.LowSC);
+        GameLanguage.GameName = reader.ReadString("Language", "GameName", GameLanguage.GameName);
+        GameLanguage.ExpandedStorageExpiresOn = reader.ReadString("Language", "ExpandedStorageExpiresOn", GameLanguage.ExpandedStorageExpiresOn);
+
         GameLanguage.NotFemale = reader.ReadString("Language", "NotFemale", GameLanguage.NotFemale);
         GameLanguage.NotMale = reader.ReadString("Language", "NotMale", GameLanguage.NotMale);
         GameLanguage.NotInGuild = reader.ReadString("Language", "NotInGuild", GameLanguage.NotInGuild);
-        GameLanguage.NewMail = reader.ReadString("Language", "NewMail", GameLanguage.NewMail);
-        GameLanguage.CouldNotFindPlayer = reader.ReadString("Language", "CouldNotFindPlayer", GameLanguage.CouldNotFindPlayer);
         GameLanguage.NoMentorship = reader.ReadString("Language", "NoMentorship", GameLanguage.NoMentorship);
         GameLanguage.NoBagSpace = reader.ReadString("Language", "NoBagSpace", GameLanguage.NoBagSpace);
-        GameLanguage.AllowingMentorRequests = reader.ReadString("Language", "AllowingMentorRequests", GameLanguage.AllowingMentorRequests);
-        GameLanguage.BlockingMentorRequests = reader.ReadString("Language", "BlockingMentorRequests", GameLanguage.BlockingMentorRequests);
+
+
     }
 
     public static void SaveServerLanguage(string languageIniPath)
     {
         File.Delete(languageIniPath);
         InIReader reader = new InIReader(languageIniPath);
+        //server
         reader.Write("Language", "Welcome", GameLanguage.Welcome);
-        reader.Write("Language", "OnlinePlayers", GameLanguage.OnlinePlayers);
-        reader.Write("Language", "LowLevel", GameLanguage.LowLevel);
-        reader.Write("Language", "LowGold", GameLanguage.LowGold);
-        reader.Write("Language", "LowDC", GameLanguage.LowDC);
-        reader.Write("Language", "LowMC", GameLanguage.LowMC);
-        reader.Write("Language", "LowSC", GameLanguage.LowSC);
-
-        reader.Write("Language", "LevelUp", GameLanguage.LevelUp);
-
+        reader.Write("Language", "OnlinePlayers", GameLanguage.OnlinePlayers); 
         reader.Write("Language", "WeaponLuck", GameLanguage.WeaponLuck);
         reader.Write("Language", "WeaponCurse", GameLanguage.WeaponCurse);
         reader.Write("Language", "WeaponNoEffect", GameLanguage.WeaponNoEffect);
-
         reader.Write("Language", "InventoryIncreased", GameLanguage.InventoryIncreased);
-        reader.Write("Language", "ExpandedStorageExpiresOn", GameLanguage.ExpandedStorageExpiresOn);
-        reader.Write("Language", "GameName", GameLanguage.GameName);
         reader.Write("Language", "FaceToTrade", GameLanguage.FaceToTrade);
         reader.Write("Language", "NoTownTeleport", GameLanguage.NoTownTeleport);
         reader.Write("Language", "CanNotRandom", GameLanguage.CanNotRandom);
         reader.Write("Language", "CanNotDungeon", GameLanguage.CanNotDungeon);
         reader.Write("Language", "CannotResurrection", GameLanguage.CannotResurrection);
         reader.Write("Language", "CanNotDrop", GameLanguage.CanNotDrop);
+        reader.Write("Language", "NewMail", GameLanguage.NewMail);
+        reader.Write("Language", "CouldNotFindPlayer", GameLanguage.CouldNotFindPlayer);
+        reader.Write("Language", "BeenPoisoned", GameLanguage.BeenPoisoned);
+        reader.Write("Language", "AllowingMentorRequests", GameLanguage.AllowingMentorRequests);
+        reader.Write("Language", "BlockingMentorRequests", GameLanguage.BlockingMentorRequests);
+        //common
+        reader.Write("Language", "LevelUp", GameLanguage.LevelUp);       
+
+        reader.Write("Language", "LowLevel", GameLanguage.LowLevel);
+        reader.Write("Language", "LowGold", GameLanguage.LowGold);
+        reader.Write("Language", "LowDC", GameLanguage.LowDC);
+        reader.Write("Language", "LowMC", GameLanguage.LowMC);
+        reader.Write("Language", "LowSC", GameLanguage.LowSC);
+        reader.Write("Language", "GameName", GameLanguage.GameName);
+        reader.Write("Language", "ExpandedStorageExpiresOn", GameLanguage.ExpandedStorageExpiresOn);
 
         reader.Write("Language", "NotFemale", GameLanguage.NotFemale);
         reader.Write("Language", "NotMale", GameLanguage.NotMale);
         reader.Write("Language", "NotInGuild", GameLanguage.NotInGuild);
-        reader.Write("Language", "NewMail", GameLanguage.NewMail);
-        reader.Write("Language", "CouldNotFindPlayer", GameLanguage.CouldNotFindPlayer);
         reader.Write("Language", "NoMentorship", GameLanguage.NoMentorship);
         reader.Write("Language", "NoBagSpace", GameLanguage.NoBagSpace);
-        reader.Write("Language", "AllowingMentorRequests", GameLanguage.AllowingMentorRequests);
-        reader.Write("Language", "BlockingMentorRequests", GameLanguage.BlockingMentorRequests);
+
+
     }
 }
