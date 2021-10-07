@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 public enum MouseCursor : byte
 {
@@ -1006,11 +1007,17 @@ public enum SpecialItemMode : short
 [Flags]
 public enum RequiredClass : byte
 {
+    [Description("战士")]
     Warrior = 1,
+    [Description("魔法师")]
     Wizard = 2,
+    [Description("道士")]
     Taoist = 4,
+    [Description("刺客")]
     Assassin = 8,
+    [Description("弓箭手")]
     Archer = 16,
+    [Description("战法道")]
     WarWizTao = Warrior | Wizard | Taoist,
     None = WarWizTao | Assassin | Archer
 }

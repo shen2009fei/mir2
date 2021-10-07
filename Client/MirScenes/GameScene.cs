@@ -21,7 +21,7 @@ using Effect = Client.MirObjects.Effect;
 using Client.MirScenes.Dialogs;
 using System.Drawing.Imaging;
 using Client.Utils;
-
+using Shared.Extensions;
 namespace Client.MirScenes
 {
     public sealed class GameScene : MirScene
@@ -6695,11 +6695,11 @@ namespace Client.MirScenes
                 {
                     if (HoverItem.Info.Type == ItemType.Float)
                     {
-                        ACLabel.Text = string.Format("Nibble Chance + " + (addValue > 0 ? "{0}~{1}% (+{2})" : "{0}~{1}%"), minValue, maxValue + addValue);
+                        ACLabel.Text = string.Format(GameLanguage.NibbleChance+ " + " + (addValue > 0 ? "{0}~{1}% (+{2})" : "{0}~{1}%"), minValue, maxValue + addValue);
                     }
                     else if (HoverItem.Info.Type == ItemType.Finder)
                     {
-                        ACLabel.Text = string.Format("Finder Increase + " + (addValue > 0 ? "{0}~{1}% (+{2})" : "{0}~{1}%"), minValue, maxValue + addValue);
+                        ACLabel.Text = string.Format(GameLanguage.FinderIncrease + " + " + (addValue > 0 ? "{0}~{1}% (+{2})" : "{0}~{1}%"), minValue, maxValue + addValue);
                     }
                     else
                     {
@@ -7607,7 +7607,7 @@ namespace Client.MirScenes
                             colour = Color.Red;
                         break;
                 }
-
+                
                 MirLabel CLASSLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -7615,7 +7615,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = string.Format(GameLanguage.ClassRequired, realItem.RequiredClass)
+                    Text = string.Format(GameLanguage.ClassRequired, realItem.RequiredClass.ToDescription())
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, CLASSLabel.DisplayRectangle.Right + 4),

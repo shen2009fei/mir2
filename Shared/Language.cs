@@ -92,7 +92,7 @@ public class GameLanguage
                          MAC = "MAC + {0}~{1} (+{2})",
                          MAC2 = "MAC + {0}~{1}",
                          Luck = "Luck + {0}",
-                         Flexibility = "Flexibility: + {0} (+{ 1})",
+                         Flexibility = "Flexibility: + {0} (+{1})",
                          Flexibility2 = "Flexibility: + {0}",
 
                          AttackSpeed= "A.Speed",
@@ -113,6 +113,10 @@ public class GameLanguage
 
                          ExpireIn="Expires in {0}",
                          Expired="Expired",
+                         Keyboard="Keyboard",
+                         NibbleChance="Nibble Chance",
+                         FinderIncrease="Finder Increase",
+
                          DeleteCharacter = "Are you sure you want to Delete the character {0}",
                          CharacterDeleted = "Your character was deleted successfully.",
                          CharacterCreated = "Your character was created successfully.",
@@ -397,7 +401,7 @@ public class GameLanguage
         GameLanguage.SocketEmpty = reader.ReadString("Language", "SocketEmpty", GameLanguage.SocketEmpty);
         GameLanguage.OpenSockets = reader.ReadString("Language", "OpenSockets", GameLanguage.OpenSockets);
 
-        GameLanguage.CannotSell = reader.ReadString("Language", "CannotSell", GameLanguage.CannotSell);
+        GameLanguage.CannotSell = reader.ReadString("Language", "CannotSell", GameLanguage.CannotSell);     
 
         GameLanguage.TimeSpanSecond = reader.ReadString("Language", "TimeSpanSecond", GameLanguage.TimeSpanSecond);
         GameLanguage.TimeSpanMinuteSecond = reader.ReadString("Language", "TimeSpanMinuteSecond", GameLanguage.TimeSpanMinuteSecond);
@@ -409,6 +413,9 @@ public class GameLanguage
 
         GameLanguage.ExpireIn = reader.ReadString("Language", "ExpireIn", GameLanguage.ExpireIn);
         GameLanguage.Expired = reader.ReadString("Language", "Expired", GameLanguage.Expired);
+        GameLanguage.Keyboard = reader.ReadString("Language", "Keyboard", GameLanguage.Keyboard);
+        GameLanguage.NibbleChance = reader.ReadString("Language", "NibbleChance", GameLanguage.NibbleChance);
+        GameLanguage.FinderIncrease = reader.ReadString("Language", "FinderIncrease", GameLanguage.FinderIncrease);
 
         GameLanguage.DeleteCharacter = reader.ReadString("Language", "DeleteCharacter", GameLanguage.DeleteCharacter);
         GameLanguage.CharacterDeleted = reader.ReadString("Language", "CharacterDeleted", GameLanguage.CharacterDeleted);
@@ -660,6 +667,9 @@ public class GameLanguage
 
         reader.Write("Language", "ExpireIn", GameLanguage.ExpireIn);
         reader.Write("Language", "Expired", GameLanguage.Expired);
+        reader.Write("Language", "Keyboard", GameLanguage.Keyboard);
+        reader.Write("Language", "NibbleChance", GameLanguage.NibbleChance);
+        reader.Write("Language", "FinderIncrease", GameLanguage.FinderIncrease);
 
         reader.Write("Language", "DeleteCharacter", GameLanguage.DeleteCharacter);
         reader.Write("Language", "CharacterDeleted", GameLanguage.CharacterDeleted);
