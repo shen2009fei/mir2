@@ -120,6 +120,9 @@
   <data name="ExitTheGame" xml:space="preserve">
     <value>Exit the game</value>
   </data>
+  <data name="HealthRecovery" xml:space="preserve">
+    <value>Health Recovery</value>
+  </data>
   <data name="InventoryWindowOpenClose" xml:space="preserve">
     <value>Inventory window (open / close)</value>
   </data>

@@ -117,28 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArmourWeight" xml:space="preserve">
+    <value>穿戴重量</value>
+  </data>
   <data name="BagWeight" xml:space="preserve">
     <value>背包重量</value>
-  </data>
-  <data name="ExitTheGame" xml:space="preserve">
-    <value>退出游戏</value>
   </data>
   <data name="Experience" xml:space="preserve">
     <value>经验</value>
   </data>
+  <data name="FrostPower" xml:space="preserve">
+    <value>石化力</value>
+  </data>
+  <data name="HandWeight" xml:space="preserve">
+    <value>腕力</value>
+  </data>
   <data name="HealthRecovery" xml:space="preserve">
-    <value>生命值恢复</value>
+    <value>体力恢复</value>
   </data>
-  <data name="InventoryWindowOpenClose" xml:space="preserve">
-    <value>背包窗口 (打开 / 关闭)</value>
+  <data name="HolyPower" xml:space="preserve">
+    <value>神圣力</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>登出</value>
+  <data name="MagicResistance" xml:space="preserve">
+    <value>魔法躲避</value>
   </data>
-  <data name="SkillButtons" xml:space="preserve">
-    <value>技能按钮</value>
+  <data name="ManaRecovery" xml:space="preserve">
+    <value>魔法恢复</value>
   </data>
-  <data name="StatusWindowOpenClose" xml:space="preserve">
-    <value>状态窗口 (打开 / 关闭)</value>
+  <data name="PoisonPower" xml:space="preserve">
+    <value>毒伤力</value>
+  </data>
+  <data name="PoisonRecovery" xml:space="preserve">
+    <value>中毒恢复</value>
+  </data>
+  <data name="PoisonResistance" xml:space="preserve">
+    <value>毒物躲避</value>
   </data>
 </root>

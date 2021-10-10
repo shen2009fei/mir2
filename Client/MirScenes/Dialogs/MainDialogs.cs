@@ -2248,6 +2248,7 @@ namespace Client.MirScenes.Dialogs
         public MirLabel ACLabel, MACLabel, DCLabel, MCLabel, SCLabel, HealthLabel, ManaLabel;
         public MirLabel CritRLabel, CritDLabel, LuckLabel, AttkSpdLabel, AccLabel, AgilLabel;
         public MirLabel ExpPLabel, BagWLabel, WearWLabel, HandWLabel, MagicRLabel, PoisonRecLabel, HealthRLabel, ManaRLabel, PoisonResLabel, HolyTLabel, FreezeLabel, PoisonAtkLabel;
+        public MirLabel ExpPLabel_N, BagWLabel_N, WearWLabel_N, HandWLabel_N, MagicRLabel_N, PoisonRecLabel_N, HealthRLabel_N, ManaRLabel_N, PoisonResLabel_N, HolyTLabel_N, FreezeLabel_N, PoisonAtkLabel_N;
         public MirLabel HeadingLabel, StatLabel;
         public MirButton NextButton, BackButton;
 
@@ -2680,6 +2681,15 @@ namespace Client.MirScenes.Dialogs
                 NotControl = true
             };
             // STATS II 
+            ExpPLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 20),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.Experience,
+            };
+
             ExpPLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2687,6 +2697,15 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(126, 20),
                 NotControl = true,
                 Text = "0-0",
+            };
+
+            BagWLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 38),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.BagWeight,
             };
 
             BagWLabel = new MirLabel
@@ -2698,6 +2717,14 @@ namespace Client.MirScenes.Dialogs
                 Text = "0-0",
             };
 
+            WearWLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 56),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.ArmourWeight,
+            };
             WearWLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2707,6 +2734,14 @@ namespace Client.MirScenes.Dialogs
                 Text = "0-0",
             };
 
+            HandWLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 74),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.HandWeight,
+            };
             HandWLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2714,6 +2749,14 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(126, 74),
                 NotControl = true,
                 Text = "0-0",
+            };
+            MagicRLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 92),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.MagicResistance
             };
             MagicRLabel = new MirLabel
             {
@@ -2723,6 +2766,14 @@ namespace Client.MirScenes.Dialogs
                 NotControl = true,
                 Text = "0-0"
             };
+            PoisonResLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 110),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.PoisonResistance
+            };
             PoisonResLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2730,6 +2781,14 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(126, 110),
                 NotControl = true,
                 Text = "0/0"
+            };
+            HealthRLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 128),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.HealthRecovery
             };
             HealthRLabel = new MirLabel
             {
@@ -2740,12 +2799,28 @@ namespace Client.MirScenes.Dialogs
                 Text = "0/0"
             };
             //Breezer
+            ManaRLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 146),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.ManaRecovery
+            };
             ManaRLabel = new MirLabel
             {
                 AutoSize = true,
                 Parent = StatePage,
                 Location = new Point(126, 146),
                 NotControl = true
+            };
+            PoisonRecLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 164),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.PoisonRecovery
             };
             PoisonRecLabel = new MirLabel
             {
@@ -2754,6 +2829,14 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(126, 164),
                 NotControl = true
             };
+            HolyTLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 182),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.HolyPower
+            };
             HolyTLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2761,12 +2844,28 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(126, 182),
                 NotControl = true
             };
+            FreezeLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 200),
+                NotControl = true,
+                Text= Resources.ResourceCharStat2.FrostPower
+            };
             FreezeLabel = new MirLabel
             {
                 AutoSize = true,
                 Parent = StatePage,
                 Location = new Point(126, 200),
                 NotControl = true
+            };
+            PoisonAtkLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatePage,
+                Location = new Point(60, 218),
+                NotControl = true,
+                Text = Resources.ResourceCharStat2.PoisonPower
             };
             PoisonAtkLabel = new MirLabel
             {

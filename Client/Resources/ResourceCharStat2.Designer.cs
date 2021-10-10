@@ -22,14 +22,14 @@ namespace Client.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource1 {
+    internal class ResourceCharStat2 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resource1() {
+        internal ResourceCharStat2() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Client.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Client.Resources.Resource1", typeof(Resource1).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Client.Resources.ResourceCharStat2", typeof(ResourceCharStat2).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,47 @@ namespace Client.Resources {
         }
         
         /// <summary>
-        ///   查找类似 Exit the game 的本地化字符串。
+        ///   查找类似 Armour Weight 的本地化字符串。
         /// </summary>
-        internal static string ExitTheGame {
+        internal static string ArmourWeight {
             get {
-                return ResourceManager.GetString("ExitTheGame", resourceCulture);
+                return ResourceManager.GetString("ArmourWeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Bag Weight 的本地化字符串。
+        /// </summary>
+        internal static string BagWeight {
+            get {
+                return ResourceManager.GetString("BagWeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Experience 的本地化字符串。
+        /// </summary>
+        internal static string Experience {
+            get {
+                return ResourceManager.GetString("Experience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Frost Power 的本地化字符串。
+        /// </summary>
+        internal static string FrostPower {
+            get {
+                return ResourceManager.GetString("FrostPower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hand Weight 的本地化字符串。
+        /// </summary>
+        internal static string HandWeight {
+            get {
+                return ResourceManager.GetString("HandWeight", resourceCulture);
             }
         }
         
@@ -79,38 +115,56 @@ namespace Client.Resources {
         }
         
         /// <summary>
-        ///   查找类似 Inventory window (open / close) 的本地化字符串。
+        ///   查找类似 Holy Power 的本地化字符串。
         /// </summary>
-        internal static string InventoryWindowOpenClose {
+        internal static string HolyPower {
             get {
-                return ResourceManager.GetString("InventoryWindowOpenClose", resourceCulture);
+                return ResourceManager.GetString("HolyPower", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 Log out 的本地化字符串。
+        ///   查找类似 Magic Resistance 的本地化字符串。
         /// </summary>
-        internal static string LogOut {
+        internal static string MagicResistance {
             get {
-                return ResourceManager.GetString("LogOut", resourceCulture);
+                return ResourceManager.GetString("MagicResistance", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 Skill buttons 的本地化字符串。
+        ///   查找类似 Mana Recovery 的本地化字符串。
         /// </summary>
-        internal static string SkillButtons {
+        internal static string ManaRecovery {
             get {
-                return ResourceManager.GetString("SkillButtons", resourceCulture);
+                return ResourceManager.GetString("ManaRecovery", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 Status window (open / close) 的本地化字符串。
+        ///   查找类似 Poison Power 的本地化字符串。
         /// </summary>
-        internal static string StatusWindowOpenClose {
+        internal static string PoisonPower {
             get {
-                return ResourceManager.GetString("StatusWindowOpenClose", resourceCulture);
+                return ResourceManager.GetString("PoisonPower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Poison Recovery 的本地化字符串。
+        /// </summary>
+        internal static string PoisonRecovery {
+            get {
+                return ResourceManager.GetString("PoisonRecovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Poison Resistance 的本地化字符串。
+        /// </summary>
+        internal static string PoisonResistance {
+            get {
+                return ResourceManager.GetString("PoisonResistance", resourceCulture);
             }
         }
     }

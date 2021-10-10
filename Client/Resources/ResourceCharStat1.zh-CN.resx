@@ -117,28 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BagWeight" xml:space="preserve">
-    <value>背包重量</value>
+  <data name="AC" xml:space="preserve">
+    <value>防御</value>
   </data>
-  <data name="ExitTheGame" xml:space="preserve">
-    <value>退出游戏</value>
+  <data name="Accuracy" xml:space="preserve">
+    <value>准确</value>
   </data>
-  <data name="Experience" xml:space="preserve">
-    <value>经验</value>
+  <data name="Agility" xml:space="preserve">
+    <value>敏捷</value>
   </data>
-  <data name="HealthRecovery" xml:space="preserve">
-    <value>生命值恢复</value>
+  <data name="AMC" xml:space="preserve">
+    <value>魔御</value>
   </data>
-  <data name="InventoryWindowOpenClose" xml:space="preserve">
-    <value>背包窗口 (打开 / 关闭)</value>
+  <data name="Attack Speed" xml:space="preserve">
+    <value>攻击速度</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>登出</value>
+  <data name="Crit Damage" xml:space="preserve">
+    <value>暴击伤害</value>
   </data>
-  <data name="SkillButtons" xml:space="preserve">
-    <value>技能按钮</value>
+  <data name="Crit Rate" xml:space="preserve">
+    <value>暴击率</value>
   </data>
-  <data name="StatusWindowOpenClose" xml:space="preserve">
-    <value>状态窗口 (打开 / 关闭)</value>
+  <data name="DC" xml:space="preserve">
+    <value>攻击</value>
+  </data>
+  <data name="HealthPoints" xml:space="preserve">
+    <value>体力值</value>
+  </data>
+  <data name="Luck" xml:space="preserve">
+    <value>幸运</value>
+  </data>
+  <data name="ManaPoints" xml:space="preserve">
+    <value>魔法值</value>
+  </data>
+  <data name="MC" xml:space="preserve">
+    <value>魔法</value>
+  </data>
+  <data name="SC" xml:space="preserve">
+    <value>道术</value>
   </data>
 </root>
