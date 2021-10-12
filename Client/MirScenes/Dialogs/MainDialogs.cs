@@ -2246,7 +2246,9 @@ namespace Client.MirScenes.Dialogs
 
         public MirLabel NameLabel, GuildLabel, LoverLabel;
         public MirLabel ACLabel, MACLabel, DCLabel, MCLabel, SCLabel, HealthLabel, ManaLabel;
+        public MirLabel ACLabel_N, MACLabel_N, DCLabel_N, MCLabel_N, SCLabel_N, HealthLabel_N, ManaLabel_N;
         public MirLabel CritRLabel, CritDLabel, LuckLabel, AttkSpdLabel, AccLabel, AgilLabel;
+        public MirLabel CritRLabel_N, CritDLabel_N, LuckLabel_N, AttkSpdLabel_N, AccLabel_N, AgilLabel_N;
         public MirLabel ExpPLabel, BagWLabel, WearWLabel, HandWLabel, MagicRLabel, PoisonRecLabel, HealthRLabel, ManaRLabel, PoisonResLabel, HolyTLabel, FreezeLabel, PoisonAtkLabel;
         public MirLabel ExpPLabel_N, BagWLabel_N, WearWLabel_N, HandWLabel_N, MagicRLabel_N, PoisonRecLabel_N, HealthRLabel_N, ManaRLabel_N, PoisonResLabel_N, HolyTLabel_N, FreezeLabel_N, PoisonAtkLabel_N;
         public MirLabel HeadingLabel, StatLabel;
@@ -2315,6 +2317,7 @@ namespace Client.MirScenes.Dialogs
 
             StatusPage = new MirImageControl
             {
+                //Index = 507,
                 Index = 506,
                 Parent = this,
                 Library = Libraries.Title,
@@ -2578,6 +2581,14 @@ namespace Client.MirScenes.Dialogs
             };
 
             // STATS I
+            HealthLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 20),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.HealthPoints,
+            };
             HealthLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2586,7 +2597,14 @@ namespace Client.MirScenes.Dialogs
                 NotControl = true,
                 Text = "0-0",
             };
-
+            ManaLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 38),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.ManaPoints,
+            };
             ManaLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2595,7 +2613,14 @@ namespace Client.MirScenes.Dialogs
                 NotControl = true,
                 Text = "0-0",
             };
-
+            ACLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 56),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.AC,
+            };
             ACLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2604,7 +2629,14 @@ namespace Client.MirScenes.Dialogs
                 NotControl = true,
                 Text = "0-0",
             };
-
+            MACLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 74),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.AMC,
+            };
             MACLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2612,6 +2644,14 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(126, 74),
                 NotControl = true,
                 Text = "0-0",
+            };
+            DCLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 92),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.DC
             };
             DCLabel = new MirLabel
             {
@@ -2621,6 +2661,14 @@ namespace Client.MirScenes.Dialogs
                 NotControl = true,
                 Text = "0-0"
             };
+            MCLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 110),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.MC
+            };
             MCLabel = new MirLabel
             {
                 AutoSize = true,
@@ -2628,6 +2676,14 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(126, 110),
                 NotControl = true,
                 Text = "0/0"
+            };
+            SCLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 128),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.SC
             };
             SCLabel = new MirLabel
             {
@@ -2638,12 +2694,28 @@ namespace Client.MirScenes.Dialogs
                 Text = "0/0"
             };
             //Breezer - New Labels
+            CritRLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 146),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.Crit_Rate
+            };
             CritRLabel = new MirLabel
             {
                 AutoSize = true,
                 Parent = StatusPage,
                 Location = new Point(126, 146),
                 NotControl = true
+            };
+            CritDLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 164),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.Crit_Damage
             };
             CritDLabel = new MirLabel
             {
@@ -2652,12 +2724,28 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(126, 164),
                 NotControl = true
             };
+            AttkSpdLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 182),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.Attack_Speed
+            };
             AttkSpdLabel = new MirLabel
             {
                 AutoSize = true,
                 Parent = StatusPage,
                 Location = new Point(126, 182),
                 NotControl = true
+            };
+            AccLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 200),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.Accuracy
             };
             AccLabel = new MirLabel
             {
@@ -2666,12 +2754,28 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(126, 200),
                 NotControl = true
             };
+            AgilLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 218),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.Agility
+            };
             AgilLabel = new MirLabel
             {
                 AutoSize = true,
                 Parent = StatusPage,
                 Location = new Point(126, 218),
                 NotControl = true
+            };
+            LuckLabel_N = new MirLabel
+            {
+                AutoSize = true,
+                Parent = StatusPage,
+                Location = new Point(60, 236),
+                NotControl = true,
+                Text = Resources.ResourceCharStat1.Luck
             };
             LuckLabel = new MirLabel
             {
