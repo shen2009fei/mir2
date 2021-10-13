@@ -359,14 +359,14 @@ namespace Client.MirScenes
                         Library = Libraries.Title,
                         Parent = this,
                     };
-                TitleLabel.Location = new Point((Size.Width - TitleLabel.Size.Width)/2, 12);
+                TitleLabel.Location = new Point((Size.Width - TitleLabel.Size.Width*2)/2, 12);
 
                 AccountIDLabel = new MirImageControl
                     {
                         Index = 31,
                         Library = Libraries.Title,
                         Parent = this,
-                        Location = new Point(52, 83),
+                        Location = new Point(43, 83),
                     };
 
                 PassLabel = new MirImageControl
@@ -1090,45 +1090,45 @@ namespace Client.MirScenes
             private void AccountIDTextBox_GotFocus(object sender, EventArgs e)
             {
                 Description.Visible = true;
-                Description.Text = " Description: Account ID.\n Accepted characters: a-z A-Z 0-9.\n Length: between " +
-                                   Globals.MinAccountIDLength + " and " + Globals.MaxAccountIDLength + " characters.";
+                Description.Text = " 描述: 账户 ID.\n 允许字符: a-z A-Z 0-9.\n 长度: " +
+                                   Globals.MinAccountIDLength + " 至 " + Globals.MaxAccountIDLength + " 个字符.";
             }
             private void PasswordTextBox_GotFocus(object sender, EventArgs e)
             {
                 Description.Visible = true;
-                Description.Text = " Description: Password.\n Accepted characters: a-z A-Z 0-9.\n Length: between " +
-                                   Globals.MinPasswordLength + " and " + Globals.MaxPasswordLength + " characters.";
+                Description.Text = " 描述: 密码.\n 允许字符: a-z A-Z 0-9.\n 长度: " +
+                                   Globals.MinPasswordLength + " 至 " + Globals.MaxPasswordLength + " 个字符.";
             }
             private void EMailTextBox_GotFocus(object sender, EventArgs e)
             {
                 Description.Visible = true;
                 Description.Text =
-                    " Description: E-Mail Address.\n Format: Example@Example.Com.\n Max Length: 50 characters.\n Optional Field.";
+                    " 描述: 邮件地址.\n 格式: example@example.com.\n 最大长度: 50 个字符.\n 可选项.";
             }
             private void UserNameTextBox_GotFocus(object sender, EventArgs e)
             {
                 Description.Visible = true;
                 Description.Text =
-                    " Description: User Name.\n Accepted characters:All.\n Length: between 0 and 20 characters.\n Optional Field.";
+                    " 描述: 真实姓名.\n 允许字符:所有.\n 长度:  0 至 20 个字符.\n 可选项.";
             }
             private void BirthDateTextBox_GotFocus(object sender, EventArgs e)
             {
                 Description.Visible = true;
                 Description.Text =
-                    string.Format(" Description: Birth Date.\n Format: {0}.\n Length: 10 characters.\n Optional Field.",
+                    string.Format(" 描述: 生日.\n 格式: {0}.\n 长度: 10 个字符.\n 可选项.",
                                   Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortDatePattern.ToUpper());
             }
             private void QuestionTextBox_GotFocus(object sender, EventArgs e)
             {
                 Description.Visible = true;
                 Description.Text =
-                    " Description: Secret Question.\n Accepted characters: All.\n Length: between 0 and 30 characters.\n Optional Field.";
+                    " 描述: 安全问题.\n 允许字符: 所有.\n 长度:  0 至 30 个字符.\n 可选项.";
             }
             private void AnswerTextBox_GotFocus(object sender, EventArgs e)
             {
                 Description.Visible = true;
                 Description.Text =
-                    " Description: Secret Answer.\n Accepted characters: All.\n Length: between 0 and 30 characters.\n Optional Field.";
+                    " 描述: 答案.\n 允许字符: 所有.\n 长度:  0 至 30 个字符.\n 可选项.";
             }
 
             private void RefreshConfirmButton()
