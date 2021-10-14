@@ -214,7 +214,7 @@ namespace Client.MirScenes
             {
                 Location = new Point(-65, 0),
                 Parent = LastAccessLabel,
-                Text = "Last Online:",
+                Text = "最后在线:",
                 Size = new Size(100, 21),
                 DrawFormat = TextFormatFlags.Left | TextFormatFlags.VerticalCenter,
                 Border = true,
@@ -571,30 +571,35 @@ namespace Client.MirScenes
             private MirGender _gender;
 
             #region Descriptions
-            public const string WarriorDescription =
-                "Warriors are a class of great strength and vitality. They are not easily killed in battle and have the advantage of being able to use" +
-                " a variety of heavy weapons and Armour. Therefore, Warriors favor attacks that are based on melee physical damage. They are weak in ranged" +
-                " attacks, however the variety of equipment that are developed specifically for Warriors complement their weakness in ranged combat.";
+            public static  string WarriorDescription =
+                GameLanguage.WarriorsDes;
+            //"Warriors are a class of great strength and vitality. They are not easily killed in battle and have the advantage of being able to use" +
+            //" a variety of heavy weapons and Armour. Therefore, Warriors favor attacks that are based on melee physical damage. They are weak in ranged" +
+            //" attacks, however the variety of equipment that are developed specifically for Warriors complement their weakness in ranged combat.";
 
-            public const string WizardDescription =
-                "Wizards are a class of low strength and stamina, but have the ability to use powerful spells. Their offensive spells are very effective, but" +
-                " because it takes time to cast these spells, they're likely to leave themselves open for enemy's attacks. Therefore, the physically weak wizards" +
-                " must aim to attack their enemies from a safe distance.";
+            public static string WizardDescription =
+                GameLanguage.WizardDes;
+            //"Wizards are a class of low strength and stamina, but have the ability to use powerful spells. Their offensive spells are very effective, but" +
+            //" because it takes time to cast these spells, they're likely to leave themselves open for enemy's attacks. Therefore, the physically weak wizards" +
+            //" must aim to attack their enemies from a safe distance.";
 
-            public const string TaoistDescription =
-                "Taoists are well disciplined in the study of Astronomy, Medicine, and others aside from Mu-Gong. Rather then directly engaging the enemies, their" +
-                " specialty lies in assisting their allies with support. Taoists can summon powerful creatures and have a high resistance to magic, and is a class" +
-                " with well balanced offensive and defensive abilities.";
+            public static string TaoistDescription =
+                GameLanguage.TaoistDes;
+            //"Taoists are well disciplined in the study of Astronomy, Medicine, and others aside from Mu-Gong. Rather then directly engaging the enemies, their" +
+            //" specialty lies in assisting their allies with support. Taoists can summon powerful creatures and have a high resistance to magic, and is a class" +
+            //" with well balanced offensive and defensive abilities.";
 
-            public const string AssassinDescription =
-                "Assassins are members of a secret organization and their history is relatively unknown. They're capable of hiding themselves and performing attacks" +
-                " while being unseen by others, which naturally makes them excellent at making fast kills. It is necessary for them to avoid being in battles with" +
-                " multiple enemies due to their weak vitality and strength.";
+            public static string AssassinDescription =
+                GameLanguage.AssassinDes;
+            //"Assassins are members of a secret organization and their history is relatively unknown. They're capable of hiding themselves and performing attacks" +
+            //" while being unseen by others, which naturally makes them excellent at making fast kills. It is necessary for them to avoid being in battles with" +
+            //" multiple enemies due to their weak vitality and strength.";
 
-            public const string ArcherDescription =
-                "Archers are a class of great accuracy and strength, using their powerful skills with bows to deal extraordinary damage from range. Much like" +
-                " wizards, they rely on their keen instincts to dodge oncoming attacks as they tend to leave themselves open to frontal attacks. However, their" +
-                " physical prowess and deadly aim allows them to instil fear into anyone they hit.";
+            public static string ArcherDescription =
+                GameLanguage.ArcherDes;
+                //"Archers are a class of great accuracy and strength, using their powerful skills with bows to deal extraordinary damage from range. Much like" +
+                //" wizards, they rely on their keen instincts to dodge oncoming attacks as they tend to leave themselves open to frontal attacks. However, their" +
+                //" physical prowess and deadly aim allows them to instil fear into anyone they hit.";
 
             #endregion
 
