@@ -284,21 +284,21 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(689, 404);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "General";
+            this.tabPage1.Text = "常规";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(545, 94);
+            this.label57.Location = new System.Drawing.Point(566, 90);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(41, 12);
+            this.label57.Size = new System.Drawing.Size(35, 12);
             this.label57.TabIndex = 126;
-            this.label57.Text = "Slots:";
+            this.label57.Text = "插槽:";
             // 
             // SlotsTextBox
             // 
-            this.SlotsTextBox.Location = new System.Drawing.Point(584, 91);
+            this.SlotsTextBox.Location = new System.Drawing.Point(610, 87);
             this.SlotsTextBox.Name = "SlotsTextBox";
             this.SlotsTextBox.Size = new System.Drawing.Size(30, 21);
             this.SlotsTextBox.TabIndex = 125;
@@ -329,11 +329,11 @@
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(45, 215);
+            this.label56.Location = new System.Drawing.Point(42, 215);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(53, 12);
+            this.label56.Size = new System.Drawing.Size(59, 12);
             this.label56.TabIndex = 123;
-            this.label56.Text = "ToolTip:";
+            this.label56.Text = "物品提示:";
             // 
             // TooltipTextBox
             // 
@@ -358,11 +358,11 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(24, 90);
+            this.label55.Location = new System.Drawing.Point(42, 90);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(71, 12);
+            this.label55.Size = new System.Drawing.Size(59, 12);
             this.label55.TabIndex = 120;
-            this.label55.Text = "Item Grade:";
+            this.label55.Text = "物品等级:";
             // 
             // IGradeComboBox
             // 
@@ -370,7 +370,7 @@
             this.IGradeComboBox.FormattingEnabled = true;
             this.IGradeComboBox.Location = new System.Drawing.Point(108, 87);
             this.IGradeComboBox.Name = "IGradeComboBox";
-            this.IGradeComboBox.Size = new System.Drawing.Size(92, 20);
+            this.IGradeComboBox.Size = new System.Drawing.Size(127, 20);
             this.IGradeComboBox.TabIndex = 119;
             this.IGradeComboBox.SelectedIndexChanged += new System.EventHandler(this.IGradeComboBox_SelectedIndexChanged);
             // 
@@ -386,11 +386,11 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(291, 18);
+            this.label54.Location = new System.Drawing.Point(307, 15);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(83, 12);
+            this.label54.Size = new System.Drawing.Size(71, 12);
             this.label54.TabIndex = 114;
-            this.label54.Text = "Random Stats:";
+            this.label54.Text = "随机属性点:";
             // 
             // LightIntensitytextBox
             // 
@@ -406,9 +406,9 @@
             this.label53.AutoSize = true;
             this.label53.Location = new System.Drawing.Point(444, 141);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(65, 12);
+            this.label53.Size = new System.Drawing.Size(35, 12);
             this.label53.TabIndex = 113;
-            this.label53.Text = "Intensity:";
+            this.label53.Text = "强度:";
             // 
             // NeedIdentifycheckbox
             // 
@@ -424,11 +424,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 12);
+            this.label1.Location = new System.Drawing.Point(42, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 12);
+            this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Item Index:";
+            this.label1.Text = "物品索引:";
             // 
             // ItemIndexTextBox
             // 
@@ -485,11 +485,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 38);
+            this.label3.Location = new System.Drawing.Point(42, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.Size = new System.Drawing.Size(59, 12);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Item Name:";
+            this.label3.Text = "物品名称:";
             // 
             // ItemNameTextBox
             // 
@@ -502,15 +502,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 65);
+            this.label2.Location = new System.Drawing.Point(42, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.Size = new System.Drawing.Size(59, 12);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Item Type:";
+            this.label2.Text = "物品类型:";
             // 
             // EffectTextBox
             // 
-            this.EffectTextBox.Location = new System.Drawing.Point(584, 65);
+            this.EffectTextBox.Location = new System.Drawing.Point(610, 61);
             this.EffectTextBox.Name = "EffectTextBox";
             this.EffectTextBox.Size = new System.Drawing.Size(30, 21);
             this.EffectTextBox.TabIndex = 73;
@@ -522,31 +522,31 @@
             this.ITypeComboBox.FormattingEnabled = true;
             this.ITypeComboBox.Location = new System.Drawing.Point(108, 62);
             this.ITypeComboBox.Name = "ITypeComboBox";
-            this.ITypeComboBox.Size = new System.Drawing.Size(92, 20);
+            this.ITypeComboBox.Size = new System.Drawing.Size(127, 20);
             this.ITypeComboBox.TabIndex = 5;
             this.ITypeComboBox.SelectedIndexChanged += new System.EventHandler(this.ITypeComboBox_SelectedIndexChanged);
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(540, 67);
+            this.label34.Location = new System.Drawing.Point(566, 64);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(47, 12);
+            this.label34.Size = new System.Drawing.Size(35, 12);
             this.label34.TabIndex = 72;
-            this.label34.Text = "Effect:";
+            this.label34.Text = "效果:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 114);
+            this.label4.Location = new System.Drawing.Point(42, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 12);
+            this.label4.Size = new System.Drawing.Size(59, 12);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Required Type:";
+            this.label4.Text = "需要类型:";
             // 
             // PriceTextBox
             // 
-            this.PriceTextBox.Location = new System.Drawing.Point(388, 184);
+            this.PriceTextBox.Location = new System.Drawing.Point(388, 187);
             this.PriceTextBox.MaxLength = 10;
             this.PriceTextBox.Name = "PriceTextBox";
             this.PriceTextBox.Size = new System.Drawing.Size(69, 21);
@@ -559,22 +559,22 @@
             this.RTypeComboBox.FormattingEnabled = true;
             this.RTypeComboBox.Location = new System.Drawing.Point(107, 112);
             this.RTypeComboBox.Name = "RTypeComboBox";
-            this.RTypeComboBox.Size = new System.Drawing.Size(92, 20);
+            this.RTypeComboBox.Size = new System.Drawing.Size(128, 20);
             this.RTypeComboBox.TabIndex = 9;
             this.RTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.RTypeComboBox_SelectedIndexChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(334, 187);
+            this.label12.Location = new System.Drawing.Point(343, 190);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 12);
+            this.label12.Size = new System.Drawing.Size(35, 12);
             this.label12.TabIndex = 28;
-            this.label12.Text = "Price:";
+            this.label12.Text = "价格:";
             // 
             // DuraTextBox
             // 
-            this.DuraTextBox.Location = new System.Drawing.Point(388, 157);
+            this.DuraTextBox.Location = new System.Drawing.Point(388, 162);
             this.DuraTextBox.MaxLength = 5;
             this.DuraTextBox.Name = "DuraTextBox";
             this.DuraTextBox.Size = new System.Drawing.Size(40, 21);
@@ -584,20 +584,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 163);
+            this.label5.Location = new System.Drawing.Point(42, 163);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 12);
+            this.label5.Size = new System.Drawing.Size(59, 12);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Required Class:";
+            this.label5.Text = "需要职业:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(314, 163);
+            this.label11.Location = new System.Drawing.Point(343, 165);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 12);
+            this.label11.Size = new System.Drawing.Size(35, 12);
             this.label11.TabIndex = 24;
-            this.label11.Text = "Durability:";
+            this.label11.Text = "持久:";
             // 
             // RClassComboBox
             // 
@@ -605,13 +605,13 @@
             this.RClassComboBox.FormattingEnabled = true;
             this.RClassComboBox.Location = new System.Drawing.Point(108, 161);
             this.RClassComboBox.Name = "RClassComboBox";
-            this.RClassComboBox.Size = new System.Drawing.Size(92, 20);
+            this.RClassComboBox.Size = new System.Drawing.Size(127, 20);
             this.RClassComboBox.TabIndex = 11;
             this.RClassComboBox.SelectedIndexChanged += new System.EventHandler(this.RClassComboBox_SelectedIndexChanged);
             // 
             // LightTextBox
             // 
-            this.LightTextBox.Location = new System.Drawing.Point(388, 133);
+            this.LightTextBox.Location = new System.Drawing.Point(388, 137);
             this.LightTextBox.MaxLength = 3;
             this.LightTextBox.Name = "LightTextBox";
             this.LightTextBox.Size = new System.Drawing.Size(30, 21);
@@ -621,20 +621,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(276, 43);
+            this.label6.Location = new System.Drawing.Point(319, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 12);
+            this.label6.Size = new System.Drawing.Size(59, 12);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Required Amount:";
+            this.label6.Text = "需要金额:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(301, 139);
+            this.label9.Location = new System.Drawing.Point(319, 140);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 12);
+            this.label9.Size = new System.Drawing.Size(59, 12);
             this.label9.TabIndex = 22;
-            this.label9.Text = "Light Range:";
+            this.label9.Text = "照明范围:";
             // 
             // RAmountTextBox
             // 
@@ -647,7 +647,7 @@
             // 
             // WeightTextBox
             // 
-            this.WeightTextBox.Location = new System.Drawing.Point(388, 109);
+            this.WeightTextBox.Location = new System.Drawing.Point(388, 112);
             this.WeightTextBox.MaxLength = 3;
             this.WeightTextBox.Name = "WeightTextBox";
             this.WeightTextBox.Size = new System.Drawing.Size(30, 21);
@@ -657,24 +657,24 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(329, 65);
+            this.label10.Location = new System.Drawing.Point(343, 65);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 12);
+            this.label10.Size = new System.Drawing.Size(35, 12);
             this.label10.TabIndex = 26;
-            this.label10.Text = "Image:";
+            this.label10.Text = "图片:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(327, 115);
+            this.label8.Location = new System.Drawing.Point(343, 115);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 12);
+            this.label8.Size = new System.Drawing.Size(35, 12);
             this.label8.TabIndex = 20;
-            this.label8.Text = "Weight:";
+            this.label8.Text = "重量:";
             // 
             // ImageTextBox
             // 
-            this.ImageTextBox.Location = new System.Drawing.Point(388, 64);
+            this.ImageTextBox.Location = new System.Drawing.Point(388, 62);
             this.ImageTextBox.MaxLength = 5;
             this.ImageTextBox.Name = "ImageTextBox";
             this.ImageTextBox.Size = new System.Drawing.Size(40, 21);
@@ -683,7 +683,7 @@
             // 
             // ShapeTextBox
             // 
-            this.ShapeTextBox.Location = new System.Drawing.Point(491, 65);
+            this.ShapeTextBox.Location = new System.Drawing.Point(517, 62);
             this.ShapeTextBox.MaxLength = 3;
             this.ShapeTextBox.Name = "ShapeTextBox";
             this.ShapeTextBox.Size = new System.Drawing.Size(30, 21);
@@ -692,7 +692,7 @@
             // 
             // SSizeTextBox
             // 
-            this.SSizeTextBox.Location = new System.Drawing.Point(388, 88);
+            this.SSizeTextBox.Location = new System.Drawing.Point(388, 87);
             this.SSizeTextBox.MaxLength = 10;
             this.SSizeTextBox.Name = "SSizeTextBox";
             this.SSizeTextBox.Size = new System.Drawing.Size(69, 21);
@@ -702,29 +702,29 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(444, 67);
+            this.label7.Location = new System.Drawing.Point(470, 64);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.Size = new System.Drawing.Size(35, 12);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Shape:";
+            this.label7.Text = "形状:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(307, 91);
+            this.label13.Location = new System.Drawing.Point(319, 90);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(71, 12);
+            this.label13.Size = new System.Drawing.Size(59, 12);
             this.label13.TabIndex = 30;
-            this.label13.Text = "Stack Size:";
+            this.label13.Text = "堆叠大小:";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(0, 138);
+            this.label33.Location = new System.Drawing.Point(42, 138);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(101, 12);
+            this.label33.Size = new System.Drawing.Size(59, 12);
             this.label33.TabIndex = 71;
-            this.label33.Text = "Required Gender:";
+            this.label33.Text = "需要性别:";
             // 
             // RGenderComboBox
             // 
@@ -732,7 +732,7 @@
             this.RGenderComboBox.FormattingEnabled = true;
             this.RGenderComboBox.Location = new System.Drawing.Point(107, 136);
             this.RGenderComboBox.Name = "RGenderComboBox";
-            this.RGenderComboBox.Size = new System.Drawing.Size(92, 20);
+            this.RGenderComboBox.Size = new System.Drawing.Size(128, 20);
             this.RGenderComboBox.TabIndex = 70;
             this.RGenderComboBox.SelectedIndexChanged += new System.EventHandler(this.RGenderComboBox_SelectedIndexChanged);
             // 
@@ -742,18 +742,18 @@
             this.ISetComboBox.FormattingEnabled = true;
             this.ISetComboBox.Location = new System.Drawing.Point(107, 187);
             this.ISetComboBox.Name = "ISetComboBox";
-            this.ISetComboBox.Size = new System.Drawing.Size(92, 20);
+            this.ISetComboBox.Size = new System.Drawing.Size(128, 20);
             this.ISetComboBox.TabIndex = 74;
             this.ISetComboBox.SelectedIndexChanged += new System.EventHandler(this.ISetComboBox_SelectedIndexChanged);
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(42, 189);
+            this.label35.Location = new System.Drawing.Point(54, 189);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(59, 12);
+            this.label35.Size = new System.Drawing.Size(47, 12);
             this.label35.TabIndex = 75;
-            this.label35.Text = "Item Set:";
+            this.label35.Text = "物品集:";
             // 
             // tabPage2
             // 
@@ -827,7 +827,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(689, 404);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Basic Stats";
+            this.tabPage2.Text = "基础属性";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -1516,7 +1516,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(689, 404);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Binding";
+            this.tabPage3.Text = "绑定";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // noMailBox
@@ -1703,7 +1703,7 @@
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(689, 404);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Special Stats";
+            this.tabPage4.Text = "特殊属性";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // PickaxecheckBox

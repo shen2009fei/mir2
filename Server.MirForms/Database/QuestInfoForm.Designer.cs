@@ -77,10 +77,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(174, 38);
+            this.tabControl1.Location = new System.Drawing.Point(245, 38);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(602, 265);
+            this.tabControl1.Size = new System.Drawing.Size(610, 452);
             this.tabControl1.TabIndex = 16;
             // 
             // tabPage1
@@ -89,7 +89,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(594, 239);
+            this.tabPage1.Size = new System.Drawing.Size(602, 426);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.QuestInfoPanel.Enabled = false;
             this.QuestInfoPanel.Location = new System.Drawing.Point(3, 6);
             this.QuestInfoPanel.Name = "QuestInfoPanel";
-            this.QuestInfoPanel.Size = new System.Drawing.Size(585, 230);
+            this.QuestInfoPanel.Size = new System.Drawing.Size(593, 417);
             this.QuestInfoPanel.TabIndex = 11;
             // 
             // label4
@@ -153,7 +153,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 203);
+            this.label3.Location = new System.Drawing.Point(21, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 55;
@@ -161,7 +161,7 @@
             // 
             // QFlagTextBox
             // 
-            this.QFlagTextBox.Location = new System.Drawing.Point(87, 200);
+            this.QFlagTextBox.Location = new System.Drawing.Point(97, 200);
             this.QFlagTextBox.Name = "QFlagTextBox";
             this.QFlagTextBox.Size = new System.Drawing.Size(180, 21);
             this.QFlagTextBox.TabIndex = 54;
@@ -170,7 +170,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 178);
+            this.label14.Location = new System.Drawing.Point(21, 178);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 12);
             this.label14.TabIndex = 53;
@@ -179,7 +179,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(34, 153);
+            this.label12.Location = new System.Drawing.Point(21, 153);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 12);
             this.label12.TabIndex = 52;
@@ -188,7 +188,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 128);
+            this.label10.Location = new System.Drawing.Point(21, 128);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 12);
             this.label10.TabIndex = 51;
@@ -196,7 +196,7 @@
             // 
             // QItemTextBox
             // 
-            this.QItemTextBox.Location = new System.Drawing.Point(87, 175);
+            this.QItemTextBox.Location = new System.Drawing.Point(97, 175);
             this.QItemTextBox.Name = "QItemTextBox";
             this.QItemTextBox.Size = new System.Drawing.Size(180, 21);
             this.QItemTextBox.TabIndex = 49;
@@ -204,7 +204,7 @@
             // 
             // QKillTextBox
             // 
-            this.QKillTextBox.Location = new System.Drawing.Point(87, 150);
+            this.QKillTextBox.Location = new System.Drawing.Point(97, 150);
             this.QKillTextBox.Name = "QKillTextBox";
             this.QKillTextBox.Size = new System.Drawing.Size(180, 21);
             this.QKillTextBox.TabIndex = 48;
@@ -212,7 +212,7 @@
             // 
             // QGotoTextBox
             // 
-            this.QGotoTextBox.Location = new System.Drawing.Point(87, 126);
+            this.QGotoTextBox.Location = new System.Drawing.Point(97, 126);
             this.QGotoTextBox.Name = "QGotoTextBox";
             this.QGotoTextBox.Size = new System.Drawing.Size(180, 21);
             this.QGotoTextBox.TabIndex = 47;
@@ -277,7 +277,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 78);
+            this.label2.Location = new System.Drawing.Point(51, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 32;
@@ -287,7 +287,7 @@
             // 
             this.QTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.QTypeComboBox.FormattingEnabled = true;
-            this.QTypeComboBox.Location = new System.Drawing.Point(87, 76);
+            this.QTypeComboBox.Location = new System.Drawing.Point(97, 76);
             this.QTypeComboBox.Name = "QTypeComboBox";
             this.QTypeComboBox.Size = new System.Drawing.Size(180, 20);
             this.QTypeComboBox.TabIndex = 31;
@@ -296,7 +296,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 103);
+            this.label11.Location = new System.Drawing.Point(21, 103);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 12);
             this.label11.TabIndex = 23;
@@ -304,7 +304,7 @@
             // 
             // OpenQButton
             // 
-            this.OpenQButton.Location = new System.Drawing.Point(277, 99);
+            this.OpenQButton.Location = new System.Drawing.Point(293, 101);
             this.OpenQButton.Name = "OpenQButton";
             this.OpenQButton.Size = new System.Drawing.Size(75, 21);
             this.OpenQButton.TabIndex = 30;
@@ -314,7 +314,7 @@
             // 
             // QFileNameTextBox
             // 
-            this.QFileNameTextBox.Location = new System.Drawing.Point(87, 101);
+            this.QFileNameTextBox.Location = new System.Drawing.Point(97, 101);
             this.QFileNameTextBox.Name = "QFileNameTextBox";
             this.QFileNameTextBox.Size = new System.Drawing.Size(180, 21);
             this.QFileNameTextBox.TabIndex = 22;
@@ -324,7 +324,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label29.Location = new System.Drawing.Point(42, 54);
+            this.label29.Location = new System.Drawing.Point(45, 54);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(41, 12);
             this.label29.TabIndex = 21;
@@ -332,7 +332,7 @@
             // 
             // QGroupTextBox
             // 
-            this.QGroupTextBox.Location = new System.Drawing.Point(87, 52);
+            this.QGroupTextBox.Location = new System.Drawing.Point(97, 52);
             this.QGroupTextBox.MaxLength = 20;
             this.QGroupTextBox.Name = "QGroupTextBox";
             this.QGroupTextBox.Size = new System.Drawing.Size(180, 21);
@@ -341,7 +341,7 @@
             // 
             // QNameTextBox
             // 
-            this.QNameTextBox.Location = new System.Drawing.Point(87, 28);
+            this.QNameTextBox.Location = new System.Drawing.Point(97, 28);
             this.QNameTextBox.MaxLength = 30;
             this.QNameTextBox.Name = "QNameTextBox";
             this.QNameTextBox.Size = new System.Drawing.Size(180, 21);
@@ -351,7 +351,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(43, 30);
+            this.label13.Location = new System.Drawing.Point(51, 30);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 12);
             this.label13.TabIndex = 15;
@@ -359,7 +359,7 @@
             // 
             // QuestIndexTextBox
             // 
-            this.QuestIndexTextBox.Location = new System.Drawing.Point(87, 4);
+            this.QuestIndexTextBox.Location = new System.Drawing.Point(97, 4);
             this.QuestIndexTextBox.Name = "QuestIndexTextBox";
             this.QuestIndexTextBox.ReadOnly = true;
             this.QuestIndexTextBox.Size = new System.Drawing.Size(47, 21);
@@ -368,7 +368,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 6);
+            this.label1.Location = new System.Drawing.Point(9, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 12);
             this.label1.TabIndex = 4;
@@ -403,7 +403,7 @@
             this.QuestInfoListBox.Location = new System.Drawing.Point(12, 38);
             this.QuestInfoListBox.Name = "QuestInfoListBox";
             this.QuestInfoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.QuestInfoListBox.Size = new System.Drawing.Size(156, 256);
+            this.QuestInfoListBox.Size = new System.Drawing.Size(227, 448);
             this.QuestInfoListBox.TabIndex = 15;
             this.QuestInfoListBox.SelectedIndexChanged += new System.EventHandler(this.QuestInfoListBox_SelectedIndexChanged);
             // 
@@ -460,7 +460,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 307);
+            this.ClientSize = new System.Drawing.Size(867, 494);
             this.Controls.Add(this.ExportSelectedButton);
             this.Controls.Add(this.ImportButton);
             this.Controls.Add(this.ExportButton);
