@@ -239,6 +239,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceCharStat2.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\ResourceItemInfo.zh-CN.Designer.cs">
+      <DependentUpon>ResourceItemInfo.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ResourceItemInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceItemInfo.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Utils\BrowserHelper.cs" />
     <EmbeddedResource Include="Forms\AMain.resx">
@@ -279,6 +289,14 @@
     <EmbeddedResource Include="Resources\ResourceCharStat2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceCharStat2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceItemInfo.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceItemInfo.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceItemInfo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceItemInfo.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
