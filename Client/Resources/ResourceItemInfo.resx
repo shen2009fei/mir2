@@ -120,11 +120,29 @@
   <data name="BagWeight" xml:space="preserve">
     <value>BagWeight</value>
   </data>
+  <data name="CantDrop" xml:space="preserve">
+    <value>Can't drop</value>
+  </data>
+  <data name="CantDropOnDeath" xml:space="preserve">
+    <value>Can't drop on death</value>
+  </data>
+  <data name="CantTrade" xml:space="preserve">
+    <value>Can't trade</value>
+  </data>
+  <data name="DestroyedWhenDropped" xml:space="preserve">
+    <value>Destroyed when dropped</value>
+  </data>
   <data name="Drop" xml:space="preserve">
     <value>Drop</value>
   </data>
   <data name="Exp" xml:space="preserve">
     <value>Exp</value>
+  </data>
+  <data name="MaxHP" xml:space="preserve">
+    <value>Max HP</value>
+  </data>
+  <data name="MaxMP" xml:space="preserve">
+    <value>Max MP</value>
   </data>
   <data name="Time" xml:space="preserve">
     <value>Time</value>

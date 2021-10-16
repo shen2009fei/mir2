@@ -70,6 +70,42 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Can&apos;t drop 的本地化字符串。
+        /// </summary>
+        internal static string CantDrop {
+            get {
+                return ResourceManager.GetString("CantDrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Can&apos;t drop on death 的本地化字符串。
+        /// </summary>
+        internal static string CantDropOnDeath {
+            get {
+                return ResourceManager.GetString("CantDropOnDeath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Can&apos;t trade 的本地化字符串。
+        /// </summary>
+        internal static string CantTrade {
+            get {
+                return ResourceManager.GetString("CantTrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Destroyed when dropped 的本地化字符串。
+        /// </summary>
+        internal static string DestroyedWhenDropped {
+            get {
+                return ResourceManager.GetString("DestroyedWhenDropped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Drop 的本地化字符串。
         /// </summary>
         internal static string Drop {
@@ -84,6 +120,24 @@ namespace Client.Resources {
         internal static string Exp {
             get {
                 return ResourceManager.GetString("Exp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Max HP 的本地化字符串。
+        /// </summary>
+        internal static string MaxHP {
+            get {
+                return ResourceManager.GetString("MaxHP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Max MP 的本地化字符串。
+        /// </summary>
+        internal static string MaxMP {
+            get {
+                return ResourceManager.GetString("MaxMP", resourceCulture);
             }
         }
         
