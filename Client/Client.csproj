@@ -249,6 +249,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceItemInfo.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\ResourceMailDialog.zh-CN.Designer.cs">
+      <DependentUpon>ResourceMailDialog.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\ResourceMailDialog.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -312,6 +317,10 @@
     <EmbeddedResource Include="Resources\ResourceItemInfo.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceItemInfo.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceMailDialog.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceMailDialog.zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ResourceMailDialog.resx">
       <Generator>ResXFileCodeGenerator</Generator>
