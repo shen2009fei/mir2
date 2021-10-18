@@ -259,6 +259,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceMailDialog.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\ResourceNPCDrop.zh-CN.Designer.cs">
+      <DependentUpon>ResourceNPCDrop.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ResourceNPCDrop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceNPCDrop.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\ResourceRankDialog.zh-CN.Designer.cs">
       <DependentUpon>ResourceRankDialog.zh-CN.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -325,6 +335,14 @@
     <EmbeddedResource Include="Resources\ResourceMailDialog.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceMailDialog.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceNPCDrop.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceNPCDrop.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceNPCDrop.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceNPCDrop.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ResourceRankDialog.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>

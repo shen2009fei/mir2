@@ -1118,19 +1118,19 @@ namespace Client.MirScenes.Dialogs
             switch (PType)
             {
                 case PanelType.Sell:
-                    text = "Sale: ";
+                    text = Resources.ResourceNPCDrop.Sale + ": ";
                     break;
                 case PanelType.Repair:
-                    text = "Repair: ";
+                    text = Resources.ResourceNPCDrop.Repair + ": ";
                     break;
                 case PanelType.SpecialRepair:
-                    text = "S. Repair: ";
+                    text = Resources.ResourceNPCDrop.SpecialRepair + ": ";
                     break;
                 case PanelType.Consign:
-                    InfoLabel.Text = "Consignment: ";
+                    InfoLabel.Text = Resources.ResourceNPCDrop.Consignment + ": ";
                     return;
                 case PanelType.Disassemble:
-                    text = "Item will be Destroyed\n\n\n\n\n\n\n\n         ";
+                    text = Resources.ResourceNPCDrop.ItemWillBeDestroyed + "\n\n\n\n\n\n\n\n         ";
                     HoldButton.Visible = false;
                     Index = 711;
                     Library = Libraries.Title;
@@ -1143,26 +1143,26 @@ namespace Client.MirScenes.Dialogs
                     ItemCell.Location = new Point(83, 94);
                     break;
                 case PanelType.Downgrade:
-                    text = "Downgrade: ";
+                    text = Resources.ResourceNPCDrop.Downgrade + ": ";
                     HoldButton.Visible = false;
                     break;
                 case PanelType.Reset:
-                    text = "Reset: ";
+                    text = Resources.ResourceNPCDrop.Reset + ": ";
                     HoldButton.Visible = false;
                     break;
                 case PanelType.Refine:
-                    text = "Refine: ";
+                    text = Resources.ResourceNPCDrop.Refine + ": ";
                     HoldButton.Visible = false;
                     ConfirmButton.Visible = true;
                     GameScene.Scene.RefineDialog.Show();
                     break;
                 case PanelType.CheckRefine:
-                    text = "Check Refine";
+                    text = Resources.ResourceNPCDrop.CheckRefine;
                     HoldButton.Visible = false;
                     ConfirmButton.Visible = true;
                     break;
                 case PanelType.ReplaceWedRing:
-                    text = "Replace: ";
+                    text = Resources.ResourceNPCDrop.Replace;
                     HoldButton.Visible = false;
                     ConfirmButton.Visible = true;
                     break;
@@ -1203,7 +1203,7 @@ namespace Client.MirScenes.Dialogs
                     default: return;
                 }
 
-                text += " Gold";
+                text += " " + Resources.ResourceNPCDrop.Gold ;
             }
 
             InfoLabel.Text = text;
@@ -1905,27 +1905,27 @@ namespace Client.MirScenes.Dialogs
 
             if (RecipeItem.Weight > (MapObject.User.Stats[Stat.BagWeight] - MapObject.User.CurrentBagWeight))
             {
-                GameScene.Scene.ChatDialog.ReceiveChat("You do not have enough weight.", ChatType.System);
+                GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDrop.YouDoNotHaveEnoughWeight, ChatType.System);
                 return;
             }
 
             if (Recipe.Gold > GameScene.Gold)
             {
-                GameScene.Scene.ChatDialog.ReceiveChat("You do not have enough gold.", ChatType.System);
+                GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDrop.YouDoNotHaveEnoughGold, ChatType.System);
                 return;
             }
 
             if (max > 1)
             {
-                MirAmountBox amountBox = new MirAmountBox("Craft Amount:", RecipeItem.Info.Image, max, 0, max);
+                MirAmountBox amountBox = new MirAmountBox(Resources.ResourceNPCDrop.CraftAmount, RecipeItem.Info.Image, max, 0, max);
 
                 amountBox.OKButton.Click += (o, e) =>
                 {
                     if (amountBox.Amount > 0)
                     {
                         if (!HasCraftItems((ushort)amountBox.Amount))
-                        {
-                            GameScene.Scene.ChatDialog.ReceiveChat("You do not have the required tools or ingredients.", ChatType.System);
+                        {                            
+                            GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDrop.YouDoDotHaveTheRequiredToolsOrIngredients, ChatType.System);
                             return;
                         }
 

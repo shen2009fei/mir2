@@ -50,7 +50,7 @@ namespace Client.MirScenes.Dialogs
 
             TitleTypeLabel = new MirLabel
             {
-                Text = "TYPE",
+                Text = Resources.ResourceMailDialog.TYPE,
                 Parent = this,
                 Font = new Font(Settings.FontName, Settings.FontSize - 1, FontStyle.Italic),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
@@ -60,7 +60,7 @@ namespace Client.MirScenes.Dialogs
 
             TitleSenderLabel = new MirLabel
             {
-                Text = "SENDER",
+                Text = Resources.ResourceMailDialog.SENDER,
                 Parent = this,
                 Font = new Font(Settings.FontName, Settings.FontSize - 1, FontStyle.Italic),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
@@ -70,7 +70,7 @@ namespace Client.MirScenes.Dialogs
 
             TitleMessageLabel = new MirLabel
             {
-                Text = "MESSAGE",
+                Text = Resources.ResourceMailDialog.MESSAGE,
                 Parent = this,
                 Font = new Font(Settings.FontName, Settings.FontSize - 1, FontStyle.Italic),
                 DrawFormat = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter,
