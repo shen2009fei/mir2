@@ -16,6 +16,11 @@ namespace Server
         public MagicInfoForm()
         {
             InitializeComponent();
+            InitMagicListBox();
+        }
+
+        private void InitMagicListBox()
+        {
             for (int i = 0; i < Envir.MagicInfoList.Count; i++)
                 MagiclistBox.Items.Add(Envir.MagicInfoList[i]);
             UpdateMagicForm();
@@ -109,6 +114,9 @@ namespace Server
             this.MagiclistBox = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.lblDamageExample = new System.Windows.Forms.Label();
             this.lblDamageExplained = new System.Windows.Forms.Label();
             this.lblSelected = new System.Windows.Forms.Label();
@@ -158,9 +166,8 @@ namespace Server
             this.label1 = new System.Windows.Forms.Label();
             this.lblBookValid = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.tbxSearchMagic = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -171,19 +178,19 @@ namespace Server
             // 
             // MagiclistBox
             // 
-            this.MagiclistBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.MagiclistBox.FormattingEnabled = true;
             this.MagiclistBox.ItemHeight = 12;
-            this.MagiclistBox.Location = new System.Drawing.Point(0, 0);
+            this.MagiclistBox.Location = new System.Drawing.Point(0, 36);
             this.MagiclistBox.Name = "MagiclistBox";
-            this.MagiclistBox.Size = new System.Drawing.Size(225, 542);
+            this.MagiclistBox.Size = new System.Drawing.Size(225, 506);
             this.MagiclistBox.TabIndex = 0;
             this.MagiclistBox.SelectedIndexChanged += new System.EventHandler(this.MagiclistBox_SelectedIndexChanged);
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(225, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -212,6 +219,32 @@ namespace Server
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basics";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(20, 23);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(65, 12);
+            this.label24.TabIndex = 12;
+            this.label24.Text = "SkillName:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(181, 3);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(35, 12);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "book:";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(89, 18);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(112, 21);
+            this.textBoxName.TabIndex = 10;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // lblDamageExample
             // 
@@ -258,12 +291,12 @@ namespace Server
             this.panel4.Controls.Add(this.label15);
             this.panel4.Location = new System.Drawing.Point(14, 166);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(233, 191);
+            this.panel4.Size = new System.Drawing.Size(281, 191);
             this.panel4.TabIndex = 6;
             // 
             // txtDmgMultBoost
             // 
-            this.txtDmgMultBoost.Location = new System.Drawing.Point(168, 157);
+            this.txtDmgMultBoost.Location = new System.Drawing.Point(220, 157);
             this.txtDmgMultBoost.Name = "txtDmgMultBoost";
             this.txtDmgMultBoost.Size = new System.Drawing.Size(46, 21);
             this.txtDmgMultBoost.TabIndex = 14;
@@ -272,7 +305,7 @@ namespace Server
             // 
             // txtDmgMultBase
             // 
-            this.txtDmgMultBase.Location = new System.Drawing.Point(168, 131);
+            this.txtDmgMultBase.Location = new System.Drawing.Point(220, 131);
             this.txtDmgMultBase.Name = "txtDmgMultBase";
             this.txtDmgMultBase.Size = new System.Drawing.Size(46, 21);
             this.txtDmgMultBase.TabIndex = 13;
@@ -299,7 +332,7 @@ namespace Server
             // 
             // txtDmgBonusMax
             // 
-            this.txtDmgBonusMax.Location = new System.Drawing.Point(168, 105);
+            this.txtDmgBonusMax.Location = new System.Drawing.Point(220, 105);
             this.txtDmgBonusMax.Name = "txtDmgBonusMax";
             this.txtDmgBonusMax.Size = new System.Drawing.Size(46, 21);
             this.txtDmgBonusMax.TabIndex = 10;
@@ -308,7 +341,7 @@ namespace Server
             // 
             // txtDmgBonusMin
             // 
-            this.txtDmgBonusMin.Location = new System.Drawing.Point(168, 79);
+            this.txtDmgBonusMin.Location = new System.Drawing.Point(220, 79);
             this.txtDmgBonusMin.Name = "txtDmgBonusMin";
             this.txtDmgBonusMin.Size = new System.Drawing.Size(46, 21);
             this.txtDmgBonusMin.TabIndex = 9;
@@ -336,7 +369,7 @@ namespace Server
             // 
             // txtDmgBaseMax
             // 
-            this.txtDmgBaseMax.Location = new System.Drawing.Point(168, 53);
+            this.txtDmgBaseMax.Location = new System.Drawing.Point(220, 53);
             this.txtDmgBaseMax.Name = "txtDmgBaseMax";
             this.txtDmgBaseMax.Size = new System.Drawing.Size(46, 21);
             this.txtDmgBaseMax.TabIndex = 6;
@@ -345,7 +378,7 @@ namespace Server
             // 
             // txtDmgBaseMin
             // 
-            this.txtDmgBaseMin.Location = new System.Drawing.Point(168, 27);
+            this.txtDmgBaseMin.Location = new System.Drawing.Point(220, 27);
             this.txtDmgBaseMin.Name = "txtDmgBaseMin";
             this.txtDmgBaseMin.Size = new System.Drawing.Size(46, 21);
             this.txtDmgBaseMin.TabIndex = 5;
@@ -389,9 +422,9 @@ namespace Server
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(253, 166);
+            this.panel3.Location = new System.Drawing.Point(301, 166);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(216, 191);
+            this.panel3.Size = new System.Drawing.Size(247, 191);
             this.panel3.TabIndex = 5;
             this.toolTip1.SetToolTip(this.panel3, "delay = <base delay> - (skill level * <decrease>)");
             // 
@@ -406,7 +439,7 @@ namespace Server
             // 
             // txtRange
             // 
-            this.txtRange.Location = new System.Drawing.Point(121, 74);
+            this.txtRange.Location = new System.Drawing.Point(156, 74);
             this.txtRange.Name = "txtRange";
             this.txtRange.Size = new System.Drawing.Size(79, 21);
             this.txtRange.TabIndex = 14;
@@ -414,7 +447,7 @@ namespace Server
             // 
             // txtDelayReduction
             // 
-            this.txtDelayReduction.Location = new System.Drawing.Point(121, 47);
+            this.txtDelayReduction.Location = new System.Drawing.Point(156, 47);
             this.txtDelayReduction.Name = "txtDelayReduction";
             this.txtDelayReduction.Size = new System.Drawing.Size(79, 21);
             this.txtDelayReduction.TabIndex = 13;
@@ -423,7 +456,7 @@ namespace Server
             // 
             // txtDelayBase
             // 
-            this.txtDelayBase.Location = new System.Drawing.Point(121, 22);
+            this.txtDelayBase.Location = new System.Drawing.Point(156, 22);
             this.txtDelayBase.Name = "txtDelayBase";
             this.txtDelayBase.Size = new System.Drawing.Size(79, 21);
             this.txtDelayBase.TabIndex = 12;
@@ -465,14 +498,14 @@ namespace Server
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(253, 53);
+            this.panel2.Location = new System.Drawing.Point(301, 53);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(216, 107);
+            this.panel2.Size = new System.Drawing.Size(247, 107);
             this.panel2.TabIndex = 4;
             // 
             // txtMPIncrease
             // 
-            this.txtMPIncrease.Location = new System.Drawing.Point(135, 47);
+            this.txtMPIncrease.Location = new System.Drawing.Point(189, 47);
             this.txtMPIncrease.Name = "txtMPIncrease";
             this.txtMPIncrease.Size = new System.Drawing.Size(46, 21);
             this.txtMPIncrease.TabIndex = 12;
@@ -481,7 +514,7 @@ namespace Server
             // 
             // txtMPBase
             // 
-            this.txtMPBase.Location = new System.Drawing.Point(135, 22);
+            this.txtMPBase.Location = new System.Drawing.Point(189, 22);
             this.txtMPBase.Name = "txtMPBase";
             this.txtMPBase.Size = new System.Drawing.Size(46, 21);
             this.txtMPBase.TabIndex = 11;
@@ -533,12 +566,12 @@ namespace Server
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(13, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(234, 107);
+            this.panel1.Size = new System.Drawing.Size(282, 107);
             this.panel1.TabIndex = 3;
             // 
             // txtSkillLvl3Points
             // 
-            this.txtSkillLvl3Points.Location = new System.Drawing.Point(169, 72);
+            this.txtSkillLvl3Points.Location = new System.Drawing.Point(220, 72);
             this.txtSkillLvl3Points.Name = "txtSkillLvl3Points";
             this.txtSkillLvl3Points.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl3Points.TabIndex = 12;
@@ -546,7 +579,7 @@ namespace Server
             // 
             // txtSkillLvl2Points
             // 
-            this.txtSkillLvl2Points.Location = new System.Drawing.Point(169, 47);
+            this.txtSkillLvl2Points.Location = new System.Drawing.Point(220, 47);
             this.txtSkillLvl2Points.Name = "txtSkillLvl2Points";
             this.txtSkillLvl2Points.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl2Points.TabIndex = 11;
@@ -554,7 +587,7 @@ namespace Server
             // 
             // txtSkillLvl1Points
             // 
-            this.txtSkillLvl1Points.Location = new System.Drawing.Point(169, 22);
+            this.txtSkillLvl1Points.Location = new System.Drawing.Point(220, 22);
             this.txtSkillLvl1Points.Name = "txtSkillLvl1Points";
             this.txtSkillLvl1Points.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl1Points.TabIndex = 10;
@@ -563,7 +596,7 @@ namespace Server
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(110, 75);
+            this.label6.Location = new System.Drawing.Point(137, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 12);
             this.label6.TabIndex = 9;
@@ -572,7 +605,7 @@ namespace Server
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(110, 50);
+            this.label7.Location = new System.Drawing.Point(137, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 12);
             this.label7.TabIndex = 8;
@@ -581,7 +614,7 @@ namespace Server
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(110, 25);
+            this.label8.Location = new System.Drawing.Point(137, 25);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 12);
             this.label8.TabIndex = 7;
@@ -589,7 +622,7 @@ namespace Server
             // 
             // txtSkillLvl3Req
             // 
-            this.txtSkillLvl3Req.Location = new System.Drawing.Point(57, 72);
+            this.txtSkillLvl3Req.Location = new System.Drawing.Point(71, 72);
             this.txtSkillLvl3Req.Name = "txtSkillLvl3Req";
             this.txtSkillLvl3Req.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl3Req.TabIndex = 6;
@@ -597,7 +630,7 @@ namespace Server
             // 
             // txtSkillLvl2Req
             // 
-            this.txtSkillLvl2Req.Location = new System.Drawing.Point(57, 47);
+            this.txtSkillLvl2Req.Location = new System.Drawing.Point(71, 47);
             this.txtSkillLvl2Req.Name = "txtSkillLvl2Req";
             this.txtSkillLvl2Req.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl2Req.TabIndex = 5;
@@ -605,7 +638,7 @@ namespace Server
             // 
             // txtSkillLvl1Req
             // 
-            this.txtSkillLvl1Req.Location = new System.Drawing.Point(57, 22);
+            this.txtSkillLvl1Req.Location = new System.Drawing.Point(71, 22);
             this.txtSkillLvl1Req.Name = "txtSkillLvl1Req";
             this.txtSkillLvl1Req.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl1Req.TabIndex = 4;
@@ -649,7 +682,7 @@ namespace Server
             // 
             // txtSkillIcon
             // 
-            this.txtSkillIcon.Location = new System.Drawing.Point(311, 20);
+            this.txtSkillIcon.Location = new System.Drawing.Point(330, 18);
             this.txtSkillIcon.Name = "txtSkillIcon";
             this.txtSkillIcon.Size = new System.Drawing.Size(41, 21);
             this.txtSkillIcon.TabIndex = 2;
@@ -673,35 +706,28 @@ namespace Server
             this.lblBookValid.TabIndex = 0;
             this.lblBookValid.Text = "Searching for books";
             // 
-            // textBoxName
+            // tbxSearchMagic
             // 
-            this.textBoxName.Location = new System.Drawing.Point(89, 18);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(112, 21);
-            this.textBoxName.TabIndex = 10;
-            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
+            this.tbxSearchMagic.Location = new System.Drawing.Point(45, 12);
+            this.tbxSearchMagic.Name = "tbxSearchMagic";
+            this.tbxSearchMagic.Size = new System.Drawing.Size(174, 21);
+            this.tbxSearchMagic.TabIndex = 2;
+            this.tbxSearchMagic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxSearchMagic_KeyDown);
             // 
-            // label23
+            // label25
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(181, 3);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(35, 12);
-            this.label23.TabIndex = 11;
-            this.label23.Text = "book:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(20, 23);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(65, 12);
-            this.label24.TabIndex = 12;
-            this.label24.Text = "SkillName:";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 16);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(29, 12);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "搜索";
             // 
             // MagicInfoForm
             // 
             this.ClientSize = new System.Drawing.Size(927, 542);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.tbxSearchMagic);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.MagiclistBox);
             this.Name = "MagicInfoForm";
@@ -719,6 +745,7 @@ namespace Server
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -980,6 +1007,18 @@ namespace Server
             else {
                 ActiveControl.BackColor = SystemColors.Window;              
             }            
+        }
+
+        private void tbxSearchMagic_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var searchName = tbxSearchMagic.Text.Trim().ToLower();
+                var itemList = Envir.MagicInfoList.FindAll(x => x.Name.ToLower().Contains(searchName)).ToArray();
+
+                MagiclistBox.Items.Clear();
+                MagiclistBox.Items.AddRange(itemList);
+            }
         }
     }
 }

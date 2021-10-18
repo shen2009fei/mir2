@@ -58,5 +58,7 @@
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox tbxSearchMagic;
+        private System.Windows.Forms.Label label25;
     }
 }
