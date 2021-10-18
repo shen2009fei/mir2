@@ -239,6 +239,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceCharStat2.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\ResourceCommon.zh-CN.Designer.cs">
+      <DependentUpon>ResourceCommon.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ResourceCommon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceCommon.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourceCreatureDialog.zh-CN.Designer.cs">
+      <DependentUpon>ResourceCreatureDialog.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ResourceCreatureDialog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceCreatureDialog.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourceItemGrade.zh-CN.Designer.cs">
+      <DependentUpon>ResourceItemGrade.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ResourceItemGrade.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceItemGrade.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\ResourceItemInfo.zh-CN.Designer.cs">
       <DependentUpon>ResourceItemInfo.zh-CN.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -248,6 +278,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceItemInfo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourceItemType.zh-CN.Designer.cs">
+      <DependentUpon>ResourceItemType.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ResourceItemType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceItemType.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\ResourceMailDialog.zh-CN.Designer.cs">
       <DependentUpon>ResourceMailDialog.zh-CN.resx</DependentUpon>
@@ -320,6 +360,30 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceCharStat2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceCommon.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceCommon.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceCommon.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceCommon.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceCreatureDialog.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceCreatureDialog.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceCreatureDialog.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceCreatureDialog.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceItemGrade.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceItemGrade.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceItemGrade.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceItemGrade.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\ResourceItemInfo.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceItemInfo.zh-CN.Designer.cs</LastGenOutput>
@@ -327,6 +391,14 @@
     <EmbeddedResource Include="Resources\ResourceItemInfo.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceItemInfo.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceItemType.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceItemType.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceItemType.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceItemType.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ResourceMailDialog.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
