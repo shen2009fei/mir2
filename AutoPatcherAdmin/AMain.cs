@@ -221,11 +221,9 @@ namespace AutoPatcherAdmin
         {
             try
             {
-                using (WebClient client = new WebClient())
-                {
-                    client.Credentials = new NetworkCredential(Settings.Login, Settings.Password);
-                    return client.DownloadData(Settings.Host + "/" + fileName);
-                }
+                using WebClient client = new WebClient();
+                client.Credentials = new NetworkCredential(Settings.Login, Settings.Password);
+                return client.DownloadData(Settings.Host + "/" + fileName);
             }
             catch
             {

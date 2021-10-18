@@ -69,9 +69,9 @@ namespace Launcher
 
                 if (data != null)
                 {
-                    using (MemoryStream stream = new MemoryStream(data))
-                    using (BinaryReader reader = new BinaryReader(stream))
-                        ParseOld(reader);
+                    using MemoryStream stream = new MemoryStream(data);
+                    using BinaryReader reader = new BinaryReader(stream);
+                    ParseOld(reader);
                 }
                 else
                 {
@@ -210,51 +210,49 @@ namespace Launcher
 
             try
             {
-                using (WebClient client = new WebClient())
-                {
-                    client.DownloadProgressChanged += (o, e) =>
+                using WebClient client = new WebClient();
+                client.DownloadProgressChanged += (o, e) =>
+                    {
+                        _currentBytes = e.BytesReceived;
+                    };
+                client.DownloadDataCompleted += (o, e) =>
+                    {
+                        if (e.Error != null)
                         {
-                            _currentBytes = e.BytesReceived;
-                        };
-                    client.DownloadDataCompleted += (o, e) =>
+                            File.AppendAllText(@".\Error.txt",
+                                   string.Format("[{0}] {1}{2}", DateTime.Now, info.FileName + " could not be downloaded. (" + e.Error.Message + ")", Environment.NewLine));
+                            ErrorFound = true;
+                        }
+                        else
                         {
-                            if (e.Error != null)
+                            _currentCount++;
+                            _completedBytes += _currentBytes;
+                            _currentBytes = 0;
+                            _stopwatch.Stop();
+
+                            byte[] raw = e.Result;
+
+                            if (info.Compressed > 0 && info.Compressed != info.Length)
                             {
-                                File.AppendAllText(@".\Error.txt",
-                                       string.Format("[{0}] {1}{2}", DateTime.Now, info.FileName + " could not be downloaded. (" + e.Error.Message + ")", Environment.NewLine));
-                                ErrorFound = true;
+                                raw = Decompress(e.Result);
                             }
-                            else
+
+                            if (!Directory.Exists(Settings.P_Client + Path.GetDirectoryName(info.FileName)))
                             {
-                                _currentCount++;
-                                _completedBytes += _currentBytes;
-                                _currentBytes = 0;
-                                _stopwatch.Stop();
-
-                                byte[] raw = e.Result;
-
-                                if (info.Compressed > 0 && info.Compressed != info.Length)
-                                {
-                                    raw = Decompress(e.Result);
-                                }
-
-                                if (!Directory.Exists(Settings.P_Client + Path.GetDirectoryName(info.FileName)))
-                                {
-                                    Directory.CreateDirectory(Settings.P_Client + Path.GetDirectoryName(info.FileName));
-                                }
-
-                                File.WriteAllBytes(Settings.P_Client + info.FileName, raw);
-                                File.SetLastWriteTime(Settings.P_Client + info.FileName, info.Creation);
+                                Directory.CreateDirectory(Settings.P_Client + Path.GetDirectoryName(info.FileName));
                             }
-                            BeginDownload();
-                        };
 
-                    if (Settings.P_NeedLogin) client.Credentials = new NetworkCredential(Settings.P_Login, Settings.P_Password);
+                            File.WriteAllBytes(Settings.P_Client + info.FileName, raw);
+                            File.SetLastWriteTime(Settings.P_Client + info.FileName, info.Creation);
+                        }
+                        BeginDownload();
+                    };
+
+                if (Settings.P_NeedLogin) client.Credentials = new NetworkCredential(Settings.P_Login, Settings.P_Password);
 
 
-                    _stopwatch = Stopwatch.StartNew();
-                    client.DownloadDataAsync(new Uri(Settings.P_Host + fileName));
-                }
+                _stopwatch = Stopwatch.StartNew();
+                client.DownloadDataAsync(new Uri(Settings.P_Host + fileName));
             }
             catch
             {
@@ -271,15 +269,13 @@ namespace Launcher
 
             try
             {
-                using (WebClient client = new WebClient())
-                {
-                    if (Settings.P_NeedLogin)
-                        client.Credentials = new NetworkCredential(Settings.P_Login, Settings.P_Password);
-                    else
-                        client.Credentials = new NetworkCredential("", "");
+                using WebClient client = new WebClient();
+                if (Settings.P_NeedLogin)
+                    client.Credentials = new NetworkCredential(Settings.P_Login, Settings.P_Password);
+                else
+                    client.Credentials = new NetworkCredential("", "");
 
-                    return client.DownloadData(Settings.P_Host + Path.ChangeExtension(fileName, ".gz"));
-                }
+                return client.DownloadData(Settings.P_Host + Path.ChangeExtension(fileName, ".gz"));
             }
             catch
             {
@@ -288,33 +284,27 @@ namespace Launcher
         }
         public static byte[] Decompress(byte[] raw)
         {
-            using (GZipStream gStream = new GZipStream(new MemoryStream(raw), CompressionMode.Decompress))
+            using GZipStream gStream = new GZipStream(new MemoryStream(raw), CompressionMode.Decompress);
+            const int size = 4096; //4kb
+            byte[] buffer = new byte[size];
+            using MemoryStream mStream = new MemoryStream();
+            int count;
+            do
             {
-                const int size = 4096; //4kb
-                byte[] buffer = new byte[size];
-                using (MemoryStream mStream = new MemoryStream())
+                count = gStream.Read(buffer, 0, size);
+                if (count > 0)
                 {
-                    int count;
-                    do
-                    {
-                        count = gStream.Read(buffer, 0, size);
-                        if (count > 0)
-                        {
-                            mStream.Write(buffer, 0, count);
-                        }
-                    } while (count > 0);
-                    return mStream.ToArray();
+                    mStream.Write(buffer, 0, count);
                 }
-            }
+            } while (count > 0);
+            return mStream.ToArray();
         }
         public static byte[] Compress(byte[] raw)
         {
-            using (MemoryStream mStream = new MemoryStream())
-            {
-                using (GZipStream gStream = new GZipStream(mStream, CompressionMode.Compress, true))
-                    gStream.Write(raw, 0, raw.Length);
-                return mStream.ToArray();
-            }
+            using MemoryStream mStream = new MemoryStream();
+            using (GZipStream gStream = new GZipStream(mStream, CompressionMode.Compress, true))
+                gStream.Write(raw, 0, raw.Length);
+            return mStream.ToArray();
         }
 
         public FileInformation GetFileInformation(string fileName)

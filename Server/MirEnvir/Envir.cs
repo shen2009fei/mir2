@@ -882,55 +882,53 @@ namespace Server.MirEnvir
 
         public void SaveDB()
         {
-            using (var stream = File.Create(DatabasePath))
-            using (var writer = new BinaryWriter(stream))
-            {
-                writer.Write(Version);
-                writer.Write(CustomVersion);
-                writer.Write(MapIndex);
-                writer.Write(ItemIndex);
-                writer.Write(MonsterIndex);
-                writer.Write(NPCIndex);
-                writer.Write(QuestIndex);
-                writer.Write(GameshopIndex);
-                writer.Write(ConquestIndex);
-                writer.Write(RespawnIndex);
+            using var stream = File.Create(DatabasePath);
+            using var writer = new BinaryWriter(stream);
+            writer.Write(Version);
+            writer.Write(CustomVersion);
+            writer.Write(MapIndex);
+            writer.Write(ItemIndex);
+            writer.Write(MonsterIndex);
+            writer.Write(NPCIndex);
+            writer.Write(QuestIndex);
+            writer.Write(GameshopIndex);
+            writer.Write(ConquestIndex);
+            writer.Write(RespawnIndex);
 
-                writer.Write(MapInfoList.Count);
-                for (var i = 0; i < MapInfoList.Count; i++)
-                    MapInfoList[i].Save(writer);
+            writer.Write(MapInfoList.Count);
+            for (var i = 0; i < MapInfoList.Count; i++)
+                MapInfoList[i].Save(writer);
 
-                writer.Write(ItemInfoList.Count);
-                for (var i = 0; i < ItemInfoList.Count; i++)
-                    ItemInfoList[i].Save(writer);
+            writer.Write(ItemInfoList.Count);
+            for (var i = 0; i < ItemInfoList.Count; i++)
+                ItemInfoList[i].Save(writer);
 
-                writer.Write(MonsterInfoList.Count);
-                for (var i = 0; i < MonsterInfoList.Count; i++)
-                    MonsterInfoList[i].Save(writer);
+            writer.Write(MonsterInfoList.Count);
+            for (var i = 0; i < MonsterInfoList.Count; i++)
+                MonsterInfoList[i].Save(writer);
 
-                writer.Write(NPCInfoList.Count);
-                for (var i = 0; i < NPCInfoList.Count; i++)
-                    NPCInfoList[i].Save(writer);
+            writer.Write(NPCInfoList.Count);
+            for (var i = 0; i < NPCInfoList.Count; i++)
+                NPCInfoList[i].Save(writer);
 
-                writer.Write(QuestInfoList.Count);
-                for (var i = 0; i < QuestInfoList.Count; i++)
-                    QuestInfoList[i].Save(writer);
+            writer.Write(QuestInfoList.Count);
+            for (var i = 0; i < QuestInfoList.Count; i++)
+                QuestInfoList[i].Save(writer);
 
-                DragonInfo.Save(writer);
-                writer.Write(MagicInfoList.Count);
-                for (var i = 0; i < MagicInfoList.Count; i++)
-                    MagicInfoList[i].Save(writer);
+            DragonInfo.Save(writer);
+            writer.Write(MagicInfoList.Count);
+            for (var i = 0; i < MagicInfoList.Count; i++)
+                MagicInfoList[i].Save(writer);
 
-                writer.Write(GameShopList.Count);
-                for (var i = 0; i < GameShopList.Count; i++)
-                    GameShopList[i].Save(writer);
+            writer.Write(GameShopList.Count);
+            for (var i = 0; i < GameShopList.Count; i++)
+                GameShopList[i].Save(writer);
 
-                writer.Write(ConquestInfos.Count);
-                for (var i = 0; i < ConquestInfos.Count; i++)
-                    ConquestInfos[i].Save(writer);
+            writer.Write(ConquestInfos.Count);
+            for (var i = 0; i < ConquestInfos.Count; i++)
+                ConquestInfos[i].Save(writer);
 
-                RespawnTick.Save(writer);
-            }
+            RespawnTick.Save(writer);
         }
         public void SaveAccounts()
         {

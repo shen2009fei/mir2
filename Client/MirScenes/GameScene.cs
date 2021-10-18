@@ -9640,24 +9640,14 @@ namespace Client.MirScenes
             {
                 case LightSetting.Night:
                     {
-                        switch (MapDarkLight)
+                        darkness = MapDarkLight switch
                         {
-                            case 1:
-                                darkness = Color.FromArgb(255, 20, 20, 20);
-                                break;
-                            case 2:
-                                darkness = Color.LightSlateGray;
-                                break;
-                            case 3:
-                                darkness = Color.SkyBlue;
-                                break;
-                            case 4:
-                                darkness = Color.Goldenrod;
-                                break;
-                            default:
-                                darkness = Color.Black;
-                                break;
-                        }
+                            1 => Color.FromArgb(255, 20, 20, 20),
+                            2 => Color.LightSlateGray,
+                            3 => Color.SkyBlue,
+                            4 => Color.Goldenrod,
+                            _ => Color.Black,
+                        };
                     }
                     break;
                 case LightSetting.Evening:
@@ -9702,24 +9692,18 @@ namespace Client.MirScenes
 
                     if (ob.Race == ObjectType.Player)
                     {
-                        switch (light / 15)
+                        lightColour = (light / 15) switch
                         {
-                            case 0://no light source
-                                lightColour = Color.FromArgb(255, 60, 60, 60);
-                                break;
-                            case 1:
-                                lightColour = Color.FromArgb(255, 120, 120, 120);
-                                break;
-                            case 2://Candle
-                                lightColour = Color.FromArgb(255, 180, 180, 180);
-                                break;
-                            case 3://Torch
-                                lightColour = Color.FromArgb(255, 240, 240, 240);
-                                break;
-                            default://Peddler Torch
-                                lightColour = Color.FromArgb(255, 255, 255, 255);
-                                break;
-                        }
+                            //no light source
+                            0 => Color.FromArgb(255, 60, 60, 60),
+                            1 => Color.FromArgb(255, 120, 120, 120),
+                            //Candle
+                            2 => Color.FromArgb(255, 180, 180, 180),
+                            //Torch
+                            3 => Color.FromArgb(255, 240, 240, 240),
+                            //Peddler Torch
+                            _ => Color.FromArgb(255, 255, 255, 255),
+                        };
                     }
                     else if (ob.Race == ObjectType.Merchant)
                     {
@@ -9808,30 +9792,15 @@ namespace Client.MirScenes
                     int imageIndex = (M2CellInfo[x, y].FrontImage & 0x7FFF) - 1;
                     if (M2CellInfo[x, y].Light <= 0 || M2CellInfo[x, y].Light >= 10) continue;
                     if (M2CellInfo[x, y].Light == 0) continue;
-
-                    Color lightIntensity;
-
                     light = (M2CellInfo[x, y].Light % 10) * 3;
-
-                    switch (M2CellInfo[x, y].Light / 10)
+                    var lightIntensity = (M2CellInfo[x, y].Light / 10) switch
                     {
-                        case 1:
-                            lightIntensity = Color.FromArgb(255, 255, 255, 255);
-                            break;
-                        case 2:
-                            lightIntensity = Color.FromArgb(255, 120, 180, 255);
-                            break;
-                        case 3:
-                            lightIntensity = Color.FromArgb(255, 255, 180, 120);
-                            break;
-                        case 4:
-                            lightIntensity = Color.FromArgb(255, 22, 160, 5);
-                            break;
-                        default:
-                            lightIntensity = Color.FromArgb(255, 255, 255, 255);
-                            break;
-                    }
-
+                        1 => Color.FromArgb(255, 255, 255, 255),
+                        2 => Color.FromArgb(255, 120, 180, 255),
+                        3 => Color.FromArgb(255, 255, 180, 120),
+                        4 => Color.FromArgb(255, 22, 160, 5),
+                        _ => Color.FromArgb(255, 255, 255, 255),
+                    };
                     if (MapObject.User.Poison.HasFlag(PoisonType.Blindness))
                     {
                         lightIntensity = GetBlindLight(lightIntensity);

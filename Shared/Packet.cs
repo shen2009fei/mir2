@@ -57,17 +57,15 @@ public abstract class Packet
         {
             stream.SetLength(2);
             stream.Seek(2, SeekOrigin.Begin);
-            using (BinaryWriter writer = new BinaryWriter(stream))
-            {
-                writer.Write(Index);
-                WritePacket(writer);
-                stream.Seek(0, SeekOrigin.Begin);
-                writer.Write((short)stream.Length);
-                stream.Seek(0, SeekOrigin.Begin);
+            using BinaryWriter writer = new BinaryWriter(stream);
+            writer.Write(Index);
+            WritePacket(writer);
+            stream.Seek(0, SeekOrigin.Begin);
+            writer.Write((short)stream.Length);
+            stream.Seek(0, SeekOrigin.Begin);
 
-                data = new byte[stream.Length];
-                stream.Read(data, 0, data.Length);
-            }
+            data = new byte[stream.Length];
+            stream.Read(data, 0, data.Length);
         }
 
         return data;
@@ -78,775 +76,395 @@ public abstract class Packet
 
     private static Packet GetClientPacket(short index)
     {
-        switch (index)
+        return index switch
         {
-            case (short)ClientPacketIds.ClientVersion:
-                return new C.ClientVersion();
-            case (short)ClientPacketIds.Disconnect:
-                return new C.Disconnect();
-            case (short)ClientPacketIds.KeepAlive:
-                return new C.KeepAlive();
-            case (short)ClientPacketIds.NewAccount:
-                return new C.NewAccount();
-            case (short)ClientPacketIds.ChangePassword:
-                return new C.ChangePassword();
-            case (short)ClientPacketIds.Login:
-                return new C.Login();
-            case (short)ClientPacketIds.NewCharacter:
-                return new C.NewCharacter();
-            case (short)ClientPacketIds.DeleteCharacter:
-                return new C.DeleteCharacter();
-            case (short)ClientPacketIds.StartGame:
-                return new C.StartGame();
-            case (short)ClientPacketIds.LogOut:
-                return new C.LogOut();
-            case (short)ClientPacketIds.Turn:
-                return new C.Turn();
-            case (short)ClientPacketIds.Walk:
-                return new C.Walk();
-            case (short)ClientPacketIds.Run:
-                return new C.Run();
-            case (short)ClientPacketIds.Chat:
-                return new C.Chat();
-            case (short)ClientPacketIds.MoveItem:
-                return new C.MoveItem();
-            case (short)ClientPacketIds.StoreItem:
-                return new C.StoreItem();
-            case (short)ClientPacketIds.TakeBackItem:
-                return new C.TakeBackItem();
-            case (short)ClientPacketIds.MergeItem:
-                return new C.MergeItem();
-            case (short)ClientPacketIds.EquipItem:
-                return new C.EquipItem();
-            case (short)ClientPacketIds.RemoveItem:
-                return new C.RemoveItem();
-            case (short)ClientPacketIds.RemoveSlotItem:
-                return new C.RemoveSlotItem();
-            case (short)ClientPacketIds.SplitItem:
-                return new C.SplitItem();
-            case (short)ClientPacketIds.UseItem:
-                return new C.UseItem();
-            case (short)ClientPacketIds.DropItem:
-                return new C.DropItem();
-            case (short)ClientPacketIds.DepositRefineItem:
-                return new C.DepositRefineItem();
-            case (short)ClientPacketIds.RetrieveRefineItem:
-                return new C.RetrieveRefineItem();
-            case (short)ClientPacketIds.RefineCancel:
-                return new C.RefineCancel();
-            case (short)ClientPacketIds.RefineItem:
-                return new C.RefineItem();
-            case (short)ClientPacketIds.CheckRefine:
-                return new C.CheckRefine();
-            case (short)ClientPacketIds.ReplaceWedRing:
-                return new C.ReplaceWedRing();
-            case (short)ClientPacketIds.DepositTradeItem:
-                return new C.DepositTradeItem();
-            case (short)ClientPacketIds.RetrieveTradeItem:
-                return new C.RetrieveTradeItem();
-            case (short)ClientPacketIds.DropGold:
-                return new C.DropGold();
-            case (short)ClientPacketIds.PickUp:
-                return new C.PickUp();
-            case (short)ClientPacketIds.Inspect:
-                return new C.Inspect();
-            case (short)ClientPacketIds.ChangeAMode:
-                return new C.ChangeAMode();
-            case (short)ClientPacketIds.ChangePMode:
-                return new C.ChangePMode();
-            case (short)ClientPacketIds.ChangeTrade:
-                return new C.ChangeTrade();
-            case (short)ClientPacketIds.Attack:
-                return new C.Attack();
-            case (short)ClientPacketIds.RangeAttack:
-                return new C.RangeAttack();
-            case (short)ClientPacketIds.Harvest:
-                return new C.Harvest();
-            case (short)ClientPacketIds.CallNPC:
-                return new C.CallNPC();
-            case (short)ClientPacketIds.BuyItem:
-                return new C.BuyItem();
-            case (short)ClientPacketIds.SellItem:
-                return new C.SellItem();
-            case (short)ClientPacketIds.CraftItem:
-                return new C.CraftItem();
-            case (short)ClientPacketIds.RepairItem:
-                return new C.RepairItem();
-            case (short)ClientPacketIds.BuyItemBack:
-                return new C.BuyItemBack();
-            case (short)ClientPacketIds.SRepairItem:
-                return new C.SRepairItem();
-            case (short)ClientPacketIds.MagicKey:
-                return new C.MagicKey();
-            case (short)ClientPacketIds.Magic:
-                return new C.Magic();
-            case (short)ClientPacketIds.SwitchGroup:
-                return new C.SwitchGroup();
-            case (short)ClientPacketIds.AddMember:
-                return new C.AddMember();
-            case (short)ClientPacketIds.DellMember:
-                return new C.DelMember();
-            case (short)ClientPacketIds.GroupInvite:
-                return new C.GroupInvite();
-            case (short)ClientPacketIds.TownRevive:
-                return new C.TownRevive();
-            case (short)ClientPacketIds.SpellToggle:
-                return new C.SpellToggle();
-            case (short)ClientPacketIds.ConsignItem:
-                return new C.ConsignItem();
-            case (short)ClientPacketIds.MarketSearch:
-                return new C.MarketSearch();
-            case (short)ClientPacketIds.MarketRefresh:
-                return new C.MarketRefresh();
-            case (short)ClientPacketIds.MarketPage:
-                return new C.MarketPage();
-            case (short)ClientPacketIds.MarketBuy:
-                return new C.MarketBuy();
-            case (short)ClientPacketIds.MarketGetBack:
-                return new C.MarketGetBack();
-            case (short)ClientPacketIds.MarketSellNow:
-                return new C.MarketSellNow();
-            case (short)ClientPacketIds.RequestUserName:
-                return new C.RequestUserName();
-            case (short)ClientPacketIds.RequestChatItem:
-                return new C.RequestChatItem();
-            case (short)ClientPacketIds.EditGuildMember:
-                return new C.EditGuildMember();
-            case (short)ClientPacketIds.EditGuildNotice:
-                return new C.EditGuildNotice();
-            case (short)ClientPacketIds.GuildInvite:
-                return new C.GuildInvite();
-            case (short)ClientPacketIds.GuildNameReturn:
-                return new C.GuildNameReturn();
-            case (short)ClientPacketIds.RequestGuildInfo:
-                return new C.RequestGuildInfo();
-            case (short)ClientPacketIds.GuildStorageGoldChange:
-                return new C.GuildStorageGoldChange();
-            case (short)ClientPacketIds.GuildStorageItemChange:
-                return new C.GuildStorageItemChange();
-            case (short)ClientPacketIds.GuildWarReturn:
-                return new C.GuildWarReturn();
-            case (short)ClientPacketIds.MarriageRequest:
-                return new C.MarriageRequest();
-            case (short)ClientPacketIds.MarriageReply:
-                return new C.MarriageReply();
-            case (short)ClientPacketIds.ChangeMarriage:
-                return new C.ChangeMarriage();
-            case (short)ClientPacketIds.DivorceRequest:
-                return new C.DivorceRequest();
-            case (short)ClientPacketIds.DivorceReply:
-                return new C.DivorceReply();
-            case (short)ClientPacketIds.AddMentor:
-                return new C.AddMentor();
-            case (short)ClientPacketIds.MentorReply:
-                return new C.MentorReply();
-            case (short)ClientPacketIds.AllowMentor:
-                return new C.AllowMentor();
-            case (short)ClientPacketIds.CancelMentor:
-                return new C.CancelMentor();
-            case (short)ClientPacketIds.TradeRequest:
-                return new C.TradeRequest();
-            case (short)ClientPacketIds.TradeReply:
-                return new C.TradeReply();
-            case (short)ClientPacketIds.TradeGold:
-                return new C.TradeGold();
-            case (short)ClientPacketIds.TradeConfirm:
-                return new C.TradeConfirm();
-            case (short)ClientPacketIds.TradeCancel:
-                return new C.TradeCancel();
-            case (short)ClientPacketIds.EquipSlotItem:
-                return new C.EquipSlotItem();
-            case (short)ClientPacketIds.FishingCast:
-                return new C.FishingCast();
-            case (short)ClientPacketIds.FishingChangeAutocast:
-                return new C.FishingChangeAutocast();
-            case (short)ClientPacketIds.AcceptQuest:
-                return new C.AcceptQuest();
-            case (short)ClientPacketIds.FinishQuest:
-                return new C.FinishQuest();
-            case (short)ClientPacketIds.AbandonQuest:
-                return new C.AbandonQuest();
-            case (short)ClientPacketIds.ShareQuest:
-                return new C.ShareQuest();
-            case (short)ClientPacketIds.AcceptReincarnation:
-                return new C.AcceptReincarnation();
-            case (short)ClientPacketIds.CancelReincarnation:
-                return new C.CancelReincarnation();
-            case (short)ClientPacketIds.CombineItem:
-                return new C.CombineItem();
-            case (short)ClientPacketIds.AwakeningNeedMaterials:
-                return new C.AwakeningNeedMaterials();
-            case (short)ClientPacketIds.AwakeningLockedItem:
-                return new C.AwakeningLockedItem();
-            case (short)ClientPacketIds.Awakening:
-                return new C.Awakening();
-            case (short)ClientPacketIds.DisassembleItem:
-                return new C.DisassembleItem();
-            case (short)ClientPacketIds.DowngradeAwakening:
-                return new C.DowngradeAwakening();
-            case (short)ClientPacketIds.ResetAddedItem:
-                return new C.ResetAddedItem();
-            case (short)ClientPacketIds.SendMail:
-                return new C.SendMail();
-            case (short)ClientPacketIds.ReadMail:
-                return new C.ReadMail();
-            case (short)ClientPacketIds.CollectParcel:
-                return new C.CollectParcel();
-            case (short)ClientPacketIds.DeleteMail:
-                return new C.DeleteMail();
-            case (short)ClientPacketIds.LockMail:
-                return new C.LockMail();
-            case (short)ClientPacketIds.MailLockedItem:
-                return new C.MailLockedItem();
-            case (short)ClientPacketIds.MailCost:
-                return new C.MailCost();
-            case (short)ClientPacketIds.RequestIntelligentCreatureUpdates:
-                return new C.RequestIntelligentCreatureUpdates();
-            case (short)ClientPacketIds.UpdateIntelligentCreature:
-                return new C.UpdateIntelligentCreature();
-            case (short)ClientPacketIds.IntelligentCreaturePickup:
-                return new C.IntelligentCreaturePickup();
-            case (short)ClientPacketIds.AddFriend:
-                return new C.AddFriend();
-            case (short)ClientPacketIds.RemoveFriend:
-                return new C.RemoveFriend();
-            case (short)ClientPacketIds.RefreshFriends:
-                return new C.RefreshFriends();
-            case (short)ClientPacketIds.AddMemo:
-                return new C.AddMemo();
-            case (short)ClientPacketIds.GuildBuffUpdate:
-                return new C.GuildBuffUpdate();
-            case (short)ClientPacketIds.GameshopBuy:
-                return new C.GameshopBuy();
-            case (short)ClientPacketIds.NPCConfirmInput:
-                return new C.NPCConfirmInput();
-            case (short)ClientPacketIds.ReportIssue:
-                return new C.ReportIssue();
-            case (short)ClientPacketIds.GetRanking:
-                return new C.GetRanking();
-            case (short)ClientPacketIds.Opendoor:
-                return new C.Opendoor();
-            case (short)ClientPacketIds.GetRentedItems:
-                return new C.GetRentedItems();
-            case (short)ClientPacketIds.ItemRentalRequest:
-                return new C.ItemRentalRequest();
-            case (short)ClientPacketIds.ItemRentalFee:
-                return new C.ItemRentalFee();
-            case (short)ClientPacketIds.ItemRentalPeriod:
-                return new C.ItemRentalPeriod();
-            case (short)ClientPacketIds.DepositRentalItem:
-                return new C.DepositRentalItem();
-            case (short)ClientPacketIds.RetrieveRentalItem:
-                return new C.RetrieveRentalItem();
-            case (short)ClientPacketIds.CancelItemRental:
-                return new C.CancelItemRental();
-            case (short)ClientPacketIds.ItemRentalLockFee:
-                return new C.ItemRentalLockFee();
-            case (short)ClientPacketIds.ItemRentalLockItem:
-                return new C.ItemRentalLockItem();
-            case (short)ClientPacketIds.ConfirmItemRental:
-                return new C.ConfirmItemRental();
-            default:
-                return null;
-        }
-
+            (short)ClientPacketIds.ClientVersion => new C.ClientVersion(),
+            (short)ClientPacketIds.Disconnect => new C.Disconnect(),
+            (short)ClientPacketIds.KeepAlive => new C.KeepAlive(),
+            (short)ClientPacketIds.NewAccount => new C.NewAccount(),
+            (short)ClientPacketIds.ChangePassword => new C.ChangePassword(),
+            (short)ClientPacketIds.Login => new C.Login(),
+            (short)ClientPacketIds.NewCharacter => new C.NewCharacter(),
+            (short)ClientPacketIds.DeleteCharacter => new C.DeleteCharacter(),
+            (short)ClientPacketIds.StartGame => new C.StartGame(),
+            (short)ClientPacketIds.LogOut => new C.LogOut(),
+            (short)ClientPacketIds.Turn => new C.Turn(),
+            (short)ClientPacketIds.Walk => new C.Walk(),
+            (short)ClientPacketIds.Run => new C.Run(),
+            (short)ClientPacketIds.Chat => new C.Chat(),
+            (short)ClientPacketIds.MoveItem => new C.MoveItem(),
+            (short)ClientPacketIds.StoreItem => new C.StoreItem(),
+            (short)ClientPacketIds.TakeBackItem => new C.TakeBackItem(),
+            (short)ClientPacketIds.MergeItem => new C.MergeItem(),
+            (short)ClientPacketIds.EquipItem => new C.EquipItem(),
+            (short)ClientPacketIds.RemoveItem => new C.RemoveItem(),
+            (short)ClientPacketIds.RemoveSlotItem => new C.RemoveSlotItem(),
+            (short)ClientPacketIds.SplitItem => new C.SplitItem(),
+            (short)ClientPacketIds.UseItem => new C.UseItem(),
+            (short)ClientPacketIds.DropItem => new C.DropItem(),
+            (short)ClientPacketIds.DepositRefineItem => new C.DepositRefineItem(),
+            (short)ClientPacketIds.RetrieveRefineItem => new C.RetrieveRefineItem(),
+            (short)ClientPacketIds.RefineCancel => new C.RefineCancel(),
+            (short)ClientPacketIds.RefineItem => new C.RefineItem(),
+            (short)ClientPacketIds.CheckRefine => new C.CheckRefine(),
+            (short)ClientPacketIds.ReplaceWedRing => new C.ReplaceWedRing(),
+            (short)ClientPacketIds.DepositTradeItem => new C.DepositTradeItem(),
+            (short)ClientPacketIds.RetrieveTradeItem => new C.RetrieveTradeItem(),
+            (short)ClientPacketIds.DropGold => new C.DropGold(),
+            (short)ClientPacketIds.PickUp => new C.PickUp(),
+            (short)ClientPacketIds.Inspect => new C.Inspect(),
+            (short)ClientPacketIds.ChangeAMode => new C.ChangeAMode(),
+            (short)ClientPacketIds.ChangePMode => new C.ChangePMode(),
+            (short)ClientPacketIds.ChangeTrade => new C.ChangeTrade(),
+            (short)ClientPacketIds.Attack => new C.Attack(),
+            (short)ClientPacketIds.RangeAttack => new C.RangeAttack(),
+            (short)ClientPacketIds.Harvest => new C.Harvest(),
+            (short)ClientPacketIds.CallNPC => new C.CallNPC(),
+            (short)ClientPacketIds.BuyItem => new C.BuyItem(),
+            (short)ClientPacketIds.SellItem => new C.SellItem(),
+            (short)ClientPacketIds.CraftItem => new C.CraftItem(),
+            (short)ClientPacketIds.RepairItem => new C.RepairItem(),
+            (short)ClientPacketIds.BuyItemBack => new C.BuyItemBack(),
+            (short)ClientPacketIds.SRepairItem => new C.SRepairItem(),
+            (short)ClientPacketIds.MagicKey => new C.MagicKey(),
+            (short)ClientPacketIds.Magic => new C.Magic(),
+            (short)ClientPacketIds.SwitchGroup => new C.SwitchGroup(),
+            (short)ClientPacketIds.AddMember => new C.AddMember(),
+            (short)ClientPacketIds.DellMember => new C.DelMember(),
+            (short)ClientPacketIds.GroupInvite => new C.GroupInvite(),
+            (short)ClientPacketIds.TownRevive => new C.TownRevive(),
+            (short)ClientPacketIds.SpellToggle => new C.SpellToggle(),
+            (short)ClientPacketIds.ConsignItem => new C.ConsignItem(),
+            (short)ClientPacketIds.MarketSearch => new C.MarketSearch(),
+            (short)ClientPacketIds.MarketRefresh => new C.MarketRefresh(),
+            (short)ClientPacketIds.MarketPage => new C.MarketPage(),
+            (short)ClientPacketIds.MarketBuy => new C.MarketBuy(),
+            (short)ClientPacketIds.MarketGetBack => new C.MarketGetBack(),
+            (short)ClientPacketIds.MarketSellNow => new C.MarketSellNow(),
+            (short)ClientPacketIds.RequestUserName => new C.RequestUserName(),
+            (short)ClientPacketIds.RequestChatItem => new C.RequestChatItem(),
+            (short)ClientPacketIds.EditGuildMember => new C.EditGuildMember(),
+            (short)ClientPacketIds.EditGuildNotice => new C.EditGuildNotice(),
+            (short)ClientPacketIds.GuildInvite => new C.GuildInvite(),
+            (short)ClientPacketIds.GuildNameReturn => new C.GuildNameReturn(),
+            (short)ClientPacketIds.RequestGuildInfo => new C.RequestGuildInfo(),
+            (short)ClientPacketIds.GuildStorageGoldChange => new C.GuildStorageGoldChange(),
+            (short)ClientPacketIds.GuildStorageItemChange => new C.GuildStorageItemChange(),
+            (short)ClientPacketIds.GuildWarReturn => new C.GuildWarReturn(),
+            (short)ClientPacketIds.MarriageRequest => new C.MarriageRequest(),
+            (short)ClientPacketIds.MarriageReply => new C.MarriageReply(),
+            (short)ClientPacketIds.ChangeMarriage => new C.ChangeMarriage(),
+            (short)ClientPacketIds.DivorceRequest => new C.DivorceRequest(),
+            (short)ClientPacketIds.DivorceReply => new C.DivorceReply(),
+            (short)ClientPacketIds.AddMentor => new C.AddMentor(),
+            (short)ClientPacketIds.MentorReply => new C.MentorReply(),
+            (short)ClientPacketIds.AllowMentor => new C.AllowMentor(),
+            (short)ClientPacketIds.CancelMentor => new C.CancelMentor(),
+            (short)ClientPacketIds.TradeRequest => new C.TradeRequest(),
+            (short)ClientPacketIds.TradeReply => new C.TradeReply(),
+            (short)ClientPacketIds.TradeGold => new C.TradeGold(),
+            (short)ClientPacketIds.TradeConfirm => new C.TradeConfirm(),
+            (short)ClientPacketIds.TradeCancel => new C.TradeCancel(),
+            (short)ClientPacketIds.EquipSlotItem => new C.EquipSlotItem(),
+            (short)ClientPacketIds.FishingCast => new C.FishingCast(),
+            (short)ClientPacketIds.FishingChangeAutocast => new C.FishingChangeAutocast(),
+            (short)ClientPacketIds.AcceptQuest => new C.AcceptQuest(),
+            (short)ClientPacketIds.FinishQuest => new C.FinishQuest(),
+            (short)ClientPacketIds.AbandonQuest => new C.AbandonQuest(),
+            (short)ClientPacketIds.ShareQuest => new C.ShareQuest(),
+            (short)ClientPacketIds.AcceptReincarnation => new C.AcceptReincarnation(),
+            (short)ClientPacketIds.CancelReincarnation => new C.CancelReincarnation(),
+            (short)ClientPacketIds.CombineItem => new C.CombineItem(),
+            (short)ClientPacketIds.AwakeningNeedMaterials => new C.AwakeningNeedMaterials(),
+            (short)ClientPacketIds.AwakeningLockedItem => new C.AwakeningLockedItem(),
+            (short)ClientPacketIds.Awakening => new C.Awakening(),
+            (short)ClientPacketIds.DisassembleItem => new C.DisassembleItem(),
+            (short)ClientPacketIds.DowngradeAwakening => new C.DowngradeAwakening(),
+            (short)ClientPacketIds.ResetAddedItem => new C.ResetAddedItem(),
+            (short)ClientPacketIds.SendMail => new C.SendMail(),
+            (short)ClientPacketIds.ReadMail => new C.ReadMail(),
+            (short)ClientPacketIds.CollectParcel => new C.CollectParcel(),
+            (short)ClientPacketIds.DeleteMail => new C.DeleteMail(),
+            (short)ClientPacketIds.LockMail => new C.LockMail(),
+            (short)ClientPacketIds.MailLockedItem => new C.MailLockedItem(),
+            (short)ClientPacketIds.MailCost => new C.MailCost(),
+            (short)ClientPacketIds.RequestIntelligentCreatureUpdates => new C.RequestIntelligentCreatureUpdates(),
+            (short)ClientPacketIds.UpdateIntelligentCreature => new C.UpdateIntelligentCreature(),
+            (short)ClientPacketIds.IntelligentCreaturePickup => new C.IntelligentCreaturePickup(),
+            (short)ClientPacketIds.AddFriend => new C.AddFriend(),
+            (short)ClientPacketIds.RemoveFriend => new C.RemoveFriend(),
+            (short)ClientPacketIds.RefreshFriends => new C.RefreshFriends(),
+            (short)ClientPacketIds.AddMemo => new C.AddMemo(),
+            (short)ClientPacketIds.GuildBuffUpdate => new C.GuildBuffUpdate(),
+            (short)ClientPacketIds.GameshopBuy => new C.GameshopBuy(),
+            (short)ClientPacketIds.NPCConfirmInput => new C.NPCConfirmInput(),
+            (short)ClientPacketIds.ReportIssue => new C.ReportIssue(),
+            (short)ClientPacketIds.GetRanking => new C.GetRanking(),
+            (short)ClientPacketIds.Opendoor => new C.Opendoor(),
+            (short)ClientPacketIds.GetRentedItems => new C.GetRentedItems(),
+            (short)ClientPacketIds.ItemRentalRequest => new C.ItemRentalRequest(),
+            (short)ClientPacketIds.ItemRentalFee => new C.ItemRentalFee(),
+            (short)ClientPacketIds.ItemRentalPeriod => new C.ItemRentalPeriod(),
+            (short)ClientPacketIds.DepositRentalItem => new C.DepositRentalItem(),
+            (short)ClientPacketIds.RetrieveRentalItem => new C.RetrieveRentalItem(),
+            (short)ClientPacketIds.CancelItemRental => new C.CancelItemRental(),
+            (short)ClientPacketIds.ItemRentalLockFee => new C.ItemRentalLockFee(),
+            (short)ClientPacketIds.ItemRentalLockItem => new C.ItemRentalLockItem(),
+            (short)ClientPacketIds.ConfirmItemRental => new C.ConfirmItemRental(),
+            _ => null,
+        };
     }
     public static Packet GetServerPacket(short index)
     {
-        switch (index)
+        return index switch
         {
-            case (short)ServerPacketIds.Connected:
-                return new S.Connected();
-            case (short)ServerPacketIds.ClientVersion:
-                return new S.ClientVersion();
-            case (short)ServerPacketIds.Disconnect:
-                return new S.Disconnect();
-            case (short)ServerPacketIds.KeepAlive:
-                return new S.KeepAlive();
-            case (short)ServerPacketIds.NewAccount:
-                return new S.NewAccount();
-            case (short)ServerPacketIds.ChangePassword:
-                return new S.ChangePassword();
-            case (short)ServerPacketIds.ChangePasswordBanned:
-                return new S.ChangePasswordBanned();
-            case (short)ServerPacketIds.Login:
-                return new S.Login();
-            case (short)ServerPacketIds.LoginBanned:
-                return new S.LoginBanned();
-            case (short)ServerPacketIds.LoginSuccess:
-                return new S.LoginSuccess();
-            case (short)ServerPacketIds.NewCharacter:
-                return new S.NewCharacter();
-            case (short)ServerPacketIds.NewCharacterSuccess:
-                return new S.NewCharacterSuccess();
-            case (short)ServerPacketIds.DeleteCharacter:
-                return new S.DeleteCharacter();
-            case (short)ServerPacketIds.DeleteCharacterSuccess:
-                return new S.DeleteCharacterSuccess();
-            case (short)ServerPacketIds.StartGame:
-                return new S.StartGame();
-            case (short)ServerPacketIds.StartGameBanned:
-                return new S.StartGameBanned();
-            case (short)ServerPacketIds.StartGameDelay:
-                return new S.StartGameDelay();
-            case (short)ServerPacketIds.MapInformation:
-                return new S.MapInformation();
-            case (short)ServerPacketIds.UserInformation:
-                return new S.UserInformation();
-            case (short)ServerPacketIds.UserSlotsRefresh:
-                return new S.UserSlotsRefresh();
-            case (short)ServerPacketIds.UserLocation:
-                return new S.UserLocation();
-            case (short)ServerPacketIds.ObjectPlayer:
-                return new S.ObjectPlayer();
-            case (short)ServerPacketIds.ObjectRemove:
-                return new S.ObjectRemove();
-            case (short)ServerPacketIds.ObjectTurn:
-                return new S.ObjectTurn();
-            case (short)ServerPacketIds.ObjectWalk:
-                return new S.ObjectWalk();
-            case (short)ServerPacketIds.ObjectRun:
-                return new S.ObjectRun();
-            case (short)ServerPacketIds.Chat:
-                return new S.Chat();
-            case (short)ServerPacketIds.ObjectChat:
-                return new S.ObjectChat();
-            case (short)ServerPacketIds.NewItemInfo:
-                return new S.NewItemInfo();
-            case (short)ServerPacketIds.NewChatItem:
-                return new S.NewChatItem();
-            case (short)ServerPacketIds.MoveItem:
-                return new S.MoveItem();
-            case (short)ServerPacketIds.EquipItem:
-                return new S.EquipItem();
-            case (short)ServerPacketIds.MergeItem:
-                return new S.MergeItem();
-            case (short)ServerPacketIds.RemoveItem:
-                return new S.RemoveItem();
-            case (short)ServerPacketIds.RemoveSlotItem:
-                return new S.RemoveSlotItem();
-            case (short)ServerPacketIds.TakeBackItem:
-                return new S.TakeBackItem();
-            case (short)ServerPacketIds.StoreItem:
-                return new S.StoreItem();
-            case (short)ServerPacketIds.DepositRefineItem:
-                return new S.DepositRefineItem();
-            case (short)ServerPacketIds.RetrieveRefineItem:
-                return new S.RetrieveRefineItem();
-            case (short)ServerPacketIds.RefineItem:
-                return new S.RefineItem();
-            case (short)ServerPacketIds.DepositTradeItem:
-                return new S.DepositTradeItem();
-            case (short)ServerPacketIds.RetrieveTradeItem:
-                return new S.RetrieveTradeItem();
-            case (short)ServerPacketIds.SplitItem:
-                return new S.SplitItem();
-            case (short)ServerPacketIds.SplitItem1:
-                return new S.SplitItem1();
-            case (short)ServerPacketIds.UseItem:
-                return new S.UseItem();
-            case (short)ServerPacketIds.DropItem:
-                return new S.DropItem();
-            case (short)ServerPacketIds.PlayerUpdate:
-                return new S.PlayerUpdate();
-            case (short)ServerPacketIds.PlayerInspect:
-                return new S.PlayerInspect();
-            case (short)ServerPacketIds.LogOutSuccess:
-                return new S.LogOutSuccess();
-            case (short)ServerPacketIds.LogOutFailed:
-                return new S.LogOutFailed();
-            case (short)ServerPacketIds.TimeOfDay:
-                return new S.TimeOfDay();
-            case (short)ServerPacketIds.ChangeAMode:
-                return new S.ChangeAMode();
-            case (short)ServerPacketIds.ChangePMode:
-                return new S.ChangePMode();
-            case (short)ServerPacketIds.ObjectItem:
-                return new S.ObjectItem();
-            case (short)ServerPacketIds.ObjectGold:
-                return new S.ObjectGold();
-            case (short)ServerPacketIds.GainedItem:
-                return new S.GainedItem();
-            case (short)ServerPacketIds.GainedGold:
-                return new S.GainedGold();
-            case (short)ServerPacketIds.LoseGold:
-                return new S.LoseGold();
-            case (short)ServerPacketIds.GainedCredit:
-                return new S.GainedCredit();
-            case (short)ServerPacketIds.LoseCredit:
-                return new S.LoseCredit();
-            case (short)ServerPacketIds.ObjectMonster:
-                return new S.ObjectMonster();
-            case (short)ServerPacketIds.ObjectAttack:
-                return new S.ObjectAttack();
-            case (short)ServerPacketIds.Struck:
-                return new S.Struck();
-            case (short)ServerPacketIds.DamageIndicator:
-                return new S.DamageIndicator();
-            case (short)ServerPacketIds.ObjectStruck:
-                return new S.ObjectStruck();
-            case (short)ServerPacketIds.DuraChanged:
-                return new S.DuraChanged();
-            case (short)ServerPacketIds.HealthChanged:
-                return new S.HealthChanged();
-            case (short)ServerPacketIds.DeleteItem:
-                return new S.DeleteItem();
-            case (short)ServerPacketIds.Death:
-                return new S.Death();
-            case (short)ServerPacketIds.ObjectDied:
-                return new S.ObjectDied();
-            case (short)ServerPacketIds.ColourChanged:
-                return new S.ColourChanged();
-            case (short)ServerPacketIds.ObjectColourChanged:
-                return new S.ObjectColourChanged();
-            case (short)ServerPacketIds.ObjectGuildNameChanged:
-                return new S.ObjectGuildNameChanged();
-            case (short)ServerPacketIds.GainExperience:
-                return new S.GainExperience();
-            case (short)ServerPacketIds.LevelChanged:
-                return new S.LevelChanged();
-            case (short)ServerPacketIds.ObjectLeveled:
-                return new S.ObjectLeveled();
-            case (short)ServerPacketIds.ObjectHarvest:
-                return new S.ObjectHarvest();
-            case (short)ServerPacketIds.ObjectHarvested:
-                return new S.ObjectHarvested();
-            case (short)ServerPacketIds.ObjectNpc:
-                return new S.ObjectNPC();
-            case (short)ServerPacketIds.NPCResponse:
-                return new S.NPCResponse();
-            case (short)ServerPacketIds.ObjectHide:
-                return new S.ObjectHide();
-            case (short)ServerPacketIds.ObjectShow:
-                return new S.ObjectShow();
-            case (short)ServerPacketIds.Poisoned:
-                return new S.Poisoned();
-            case (short)ServerPacketIds.ObjectPoisoned:
-                return new S.ObjectPoisoned();
-            case (short)ServerPacketIds.MapChanged:
-                return new S.MapChanged();
-            case (short)ServerPacketIds.ObjectTeleportOut:
-                return new S.ObjectTeleportOut();
-            case (short)ServerPacketIds.ObjectTeleportIn:
-                return new S.ObjectTeleportIn();
-            case (short)ServerPacketIds.TeleportIn:
-                return new S.TeleportIn();
-            case (short)ServerPacketIds.NPCGoods:
-                return new S.NPCGoods();
-            case (short)ServerPacketIds.NPCSell:
-                return new S.NPCSell();
-            case (short)ServerPacketIds.NPCRepair:
-                return new S.NPCRepair();
-            case (short)ServerPacketIds.NPCSRepair:
-                return new S.NPCSRepair();
-            case (short)ServerPacketIds.NPCRefine:
-                return new S.NPCRefine();
-            case (short)ServerPacketIds.NPCCheckRefine:
-                return new S.NPCCheckRefine();
-            case (short)ServerPacketIds.NPCCollectRefine:
-                return new S.NPCCollectRefine();
-            case (short)ServerPacketIds.NPCReplaceWedRing:
-                return new S.NPCReplaceWedRing();
-            case (short)ServerPacketIds.NPCStorage:
-                return new S.NPCStorage();
-            case (short)ServerPacketIds.SellItem:
-                return new S.SellItem();
-            case (short)ServerPacketIds.CraftItem:
-                return new S.CraftItem();
-            case (short)ServerPacketIds.RepairItem:
-                return new S.RepairItem();
-            case (short)ServerPacketIds.ItemRepaired:
-                return new S.ItemRepaired();
-            case (short)ServerPacketIds.ItemSlotSizeChanged:
-                return new S.ItemSlotSizeChanged();
-            case (short)ServerPacketIds.NewMagic:
-                return new S.NewMagic();
-            case (short)ServerPacketIds.MagicLeveled:
-                return new S.MagicLeveled();
-            case (short)ServerPacketIds.Magic:
-                return new S.Magic();
-            case (short)ServerPacketIds.MagicDelay:
-                return new S.MagicDelay();
-            case (short)ServerPacketIds.MagicCast:
-                return new S.MagicCast();
-            case (short)ServerPacketIds.ObjectMagic:
-                return new S.ObjectMagic();
-            case (short)ServerPacketIds.ObjectProjectile:
-                return new S.ObjectProjectile();
-            case (short)ServerPacketIds.ObjectEffect:
-                return new S.ObjectEffect();
-            case (short)ServerPacketIds.RangeAttack:
-                return new S.RangeAttack();
-            case (short)ServerPacketIds.Pushed:
-                return new S.Pushed();
-            case (short)ServerPacketIds.ObjectPushed:
-                return new S.ObjectPushed();
-            case (short)ServerPacketIds.ObjectName:
-                return new S.ObjectName();
-            case (short)ServerPacketIds.UserStorage:
-                return new S.UserStorage();
-            case (short)ServerPacketIds.SwitchGroup:
-                return new S.SwitchGroup();
-            case (short)ServerPacketIds.DeleteGroup:
-                return new S.DeleteGroup();
-            case (short)ServerPacketIds.DeleteMember:
-                return new S.DeleteMember();
-            case (short)ServerPacketIds.GroupInvite:
-                return new S.GroupInvite();
-            case (short)ServerPacketIds.AddMember:
-                return new S.AddMember();
-            case (short)ServerPacketIds.Revived:
-                return new S.Revived();
-            case (short)ServerPacketIds.ObjectRevived:
-                return new S.ObjectRevived();
-            case (short)ServerPacketIds.SpellToggle:
-                return new S.SpellToggle();
-            case (short)ServerPacketIds.ObjectHealth:
-                return new S.ObjectHealth();
-            case (short)ServerPacketIds.MapEffect:
-                return new S.MapEffect();
-            case (short)ServerPacketIds.ObjectRangeAttack:
-                return new S.ObjectRangeAttack();
-            case (short)ServerPacketIds.AddBuff:
-                return new S.AddBuff();
-            case (short)ServerPacketIds.RemoveBuff:
-                return new S.RemoveBuff();
-            case (short)ServerPacketIds.PauseBuff:
-                return new S.PauseBuff();
-            case (short)ServerPacketIds.ObjectHidden:
-                return new S.ObjectHidden();
-            case (short)ServerPacketIds.RefreshItem:
-                return new S.RefreshItem();
-            case (short)ServerPacketIds.ObjectSpell:
-                return new S.ObjectSpell();
-            case (short)ServerPacketIds.UserDash:
-                return new S.UserDash();
-            case (short)ServerPacketIds.ObjectDash:
-                return new S.ObjectDash();
-            case (short)ServerPacketIds.UserDashFail:
-                return new S.UserDashFail();
-            case (short)ServerPacketIds.ObjectDashFail:
-                return new S.ObjectDashFail();
-            case (short)ServerPacketIds.NPCConsign:
-                return new S.NPCConsign();
-            case (short)ServerPacketIds.NPCMarket:
-                return new S.NPCMarket();
-            case (short)ServerPacketIds.NPCMarketPage:
-                return new S.NPCMarketPage();
-            case (short)ServerPacketIds.ConsignItem:
-                return new S.ConsignItem();
-            case (short)ServerPacketIds.MarketFail:
-                return new S.MarketFail();
-            case (short)ServerPacketIds.MarketSuccess:
-                return new S.MarketSuccess();
-            case (short)ServerPacketIds.ObjectSitDown:
-                return new S.ObjectSitDown();
-            case (short)ServerPacketIds.InTrapRock:
-                return new S.InTrapRock();
-            case (short)ServerPacketIds.RemoveMagic:
-                return new S.RemoveMagic();
-            case (short)ServerPacketIds.BaseStatsInfo:
-                return new S.BaseStatsInfo();
-            case (short)ServerPacketIds.UserName:
-                return new S.UserName();
-            case (short)ServerPacketIds.ChatItemStats:
-                return new S.ChatItemStats();
-            case (short)ServerPacketIds.GuildMemberChange:
-                return new S.GuildMemberChange();
-            case (short)ServerPacketIds.GuildNoticeChange:
-                return new S.GuildNoticeChange();
-            case (short)ServerPacketIds.GuildStatus:
-                return new S.GuildStatus();
-            case (short)ServerPacketIds.GuildInvite:
-                return new S.GuildInvite();
-            case (short)ServerPacketIds.GuildExpGain:
-                return new S.GuildExpGain();
-            case (short)ServerPacketIds.GuildNameRequest:
-                return new S.GuildNameRequest();
-            case (short)ServerPacketIds.GuildStorageGoldChange:
-                return new S.GuildStorageGoldChange();
-            case (short)ServerPacketIds.GuildStorageItemChange:
-                return new S.GuildStorageItemChange();
-            case (short)ServerPacketIds.GuildStorageList:
-                return new S.GuildStorageList();
-            case (short)ServerPacketIds.GuildRequestWar:
-                return new S.GuildRequestWar();
-            case (short)ServerPacketIds.DefaultNPC:
-                return new S.DefaultNPC();
-            case (short)ServerPacketIds.NPCUpdate:
-                return new S.NPCUpdate();
-            case (short)ServerPacketIds.NPCImageUpdate:
-                return new S.NPCImageUpdate();
-            case (short)ServerPacketIds.MarriageRequest:
-                return new S.MarriageRequest();
-            case (short)ServerPacketIds.DivorceRequest:
-                return new S.DivorceRequest();
-            case (short)ServerPacketIds.MentorRequest:
-                return new S.MentorRequest();
-            case (short)ServerPacketIds.TradeRequest:
-                return new S.TradeRequest();
-            case (short)ServerPacketIds.TradeAccept:
-                return new S.TradeAccept();
-            case (short)ServerPacketIds.TradeGold:
-                return new S.TradeGold();
-            case (short)ServerPacketIds.TradeItem:
-                return new S.TradeItem();
-            case (short)ServerPacketIds.TradeConfirm:
-                return new S.TradeConfirm();
-            case (short)ServerPacketIds.TradeCancel:
-                return new S.TradeCancel();
-            case (short)ServerPacketIds.MountUpdate:
-                return new S.MountUpdate();
-            case (short)ServerPacketIds.TransformUpdate:
-                return new S.TransformUpdate();
-            case (short)ServerPacketIds.EquipSlotItem:
-                return new S.EquipSlotItem();
-            case (short)ServerPacketIds.FishingUpdate:
-                return new S.FishingUpdate();
-            case (short)ServerPacketIds.ChangeQuest:
-                return new S.ChangeQuest();
-            case (short)ServerPacketIds.CompleteQuest:
-                return new S.CompleteQuest();
-            case (short)ServerPacketIds.ShareQuest:
-                return new S.ShareQuest();
-            case (short)ServerPacketIds.NewQuestInfo:
-                return new S.NewQuestInfo();
-            case (short)ServerPacketIds.GainedQuestItem:
-                return new S.GainedQuestItem();
-            case (short)ServerPacketIds.DeleteQuestItem:
-                return new S.DeleteQuestItem();
-            case (short)ServerPacketIds.CancelReincarnation:
-                return new S.CancelReincarnation();
-            case (short)ServerPacketIds.RequestReincarnation:
-                return new S.RequestReincarnation();
-            case (short)ServerPacketIds.UserBackStep:
-                return new S.UserBackStep();
-            case (short)ServerPacketIds.ObjectBackStep:
-                return new S.ObjectBackStep();
-            case (short)ServerPacketIds.UserDashAttack:
-                return new S.UserDashAttack();
-            case (short)ServerPacketIds.ObjectDashAttack:
-                return new S.ObjectDashAttack();
-            case (short)ServerPacketIds.UserAttackMove://Warrior Skill - SlashingBurst
-                return new S.UserAttackMove();
-            case (short)ServerPacketIds.CombineItem:
-                return new S.CombineItem();
-            case (short)ServerPacketIds.ItemUpgraded:
-                return new S.ItemUpgraded();
-            case (short)ServerPacketIds.SetConcentration:
-                return new S.SetConcentration();
-            case (short)ServerPacketIds.SetElemental:
-                return new S.SetElemental();
-            case (short)ServerPacketIds.RemoveDelayedExplosion:
-                return new S.RemoveDelayedExplosion();
-            case (short)ServerPacketIds.ObjectDeco:
-                return new S.ObjectDeco();
-            case (short)ServerPacketIds.ObjectSneaking:
-                return new S.ObjectSneaking();
-            case (short)ServerPacketIds.ObjectLevelEffects:
-                return new S.ObjectLevelEffects();
-            case (short)ServerPacketIds.SetBindingShot:
-                return new S.SetBindingShot();
-            case (short)ServerPacketIds.SendOutputMessage:
-                return new S.SendOutputMessage();
-            case (short)ServerPacketIds.NPCAwakening:
-                return new S.NPCAwakening();
-            case (short)ServerPacketIds.NPCDisassemble:
-                return new S.NPCDisassemble();
-            case (short)ServerPacketIds.NPCDowngrade:
-                return new S.NPCDowngrade();
-            case (short)ServerPacketIds.NPCReset:
-                return new S.NPCReset();
-            case (short)ServerPacketIds.AwakeningNeedMaterials:
-                return new S.AwakeningNeedMaterials();
-            case (short)ServerPacketIds.AwakeningLockedItem:
-                return new S.AwakeningLockedItem();
-            case (short)ServerPacketIds.Awakening:
-                return new S.Awakening();
-            case (short)ServerPacketIds.ReceiveMail:
-                return new S.ReceiveMail();
-            case (short)ServerPacketIds.MailLockedItem:
-                return new S.MailLockedItem();
-            case (short)ServerPacketIds.MailSent:
-                return new S.MailSent();
-            case (short)ServerPacketIds.MailSendRequest:
-                return new S.MailSendRequest();
-            case (short)ServerPacketIds.ParcelCollected:
-                return new S.ParcelCollected();
-            case (short)ServerPacketIds.MailCost:
-                return new S.MailCost();
-            case (short)ServerPacketIds.ResizeInventory:
-                return new S.ResizeInventory();
-            case (short)ServerPacketIds.ResizeStorage:
-                return new S.ResizeStorage();
-            case (short)ServerPacketIds.NewIntelligentCreature:
-                return new S.NewIntelligentCreature();
-            case (short)ServerPacketIds.UpdateIntelligentCreatureList:
-                return new S.UpdateIntelligentCreatureList();
-            case (short)ServerPacketIds.IntelligentCreatureEnableRename:
-                return new S.IntelligentCreatureEnableRename();
-            case (short)ServerPacketIds.IntelligentCreaturePickup:
-                return new S.IntelligentCreaturePickup();
-            case (short)ServerPacketIds.NPCPearlGoods:
-                return new S.NPCPearlGoods();
-            case (short)ServerPacketIds.FriendUpdate:
-                return new S.FriendUpdate();
-            case (short)ServerPacketIds.LoverUpdate:
-                return new S.LoverUpdate();
-            case (short)ServerPacketIds.MentorUpdate:
-                return new S.MentorUpdate();
-            case (short)ServerPacketIds.GuildBuffList:
-                return new S.GuildBuffList();
-            case (short)ServerPacketIds.GameShopInfo:
-                return new S.GameShopInfo();
-            case (short)ServerPacketIds.GameShopStock:
-                return new S.GameShopStock();
-            case (short)ServerPacketIds.NPCRequestInput:
-                return new S.NPCRequestInput();
-            case (short)ServerPacketIds.Rankings:
-                return new S.Rankings();
-            case (short)ServerPacketIds.Opendoor:
-                return new S.Opendoor();
-            case (short)ServerPacketIds.GetRentedItems:
-                return new S.GetRentedItems();
-            case (short)ServerPacketIds.ItemRentalRequest:
-                return new S.ItemRentalRequest();
-            case (short)ServerPacketIds.ItemRentalFee:
-                return new S.ItemRentalFee();
-            case (short)ServerPacketIds.ItemRentalPeriod:
-                return new S.ItemRentalPeriod();
-            case (short)ServerPacketIds.DepositRentalItem:
-                return new S.DepositRentalItem();
-            case (short)ServerPacketIds.RetrieveRentalItem:
-                return new S.RetrieveRentalItem();
-            case (short)ServerPacketIds.UpdateRentalItem:
-                return new S.UpdateRentalItem();
-            case (short)ServerPacketIds.CancelItemRental:
-                return new S.CancelItemRental();
-            case (short)ServerPacketIds.ItemRentalLock:
-                return new S.ItemRentalLock();
-            case (short)ServerPacketIds.ItemRentalPartnerLock:
-                return new S.ItemRentalPartnerLock();
-            case (short)ServerPacketIds.CanConfirmItemRental:
-                return new S.CanConfirmItemRental();
-            case (short)ServerPacketIds.ConfirmItemRental:
-                return new S.ConfirmItemRental();
-            case (short)ServerPacketIds.NewRecipeInfo:
-                return new S.NewRecipeInfo();
-            case (short)ServerPacketIds.OpenBrowser:
-                return new S.OpenBrowser();
-            case (short)ServerPacketIds.PlaySound:
-                return new S.PlaySound();
-            case (short)ServerPacketIds.SetTimer:
-                return new S.SetTimer();
-            case (short)ServerPacketIds.ExpireTimer:
-                return new S.ExpireTimer();
-            case (short)ServerPacketIds.UpdateNotice:
-                return new S.UpdateNotice();
-            case (short)ServerPacketIds.Roll:
-                return new S.Roll();
-            default:
-                return null;
-        }
+            (short)ServerPacketIds.Connected => new S.Connected(),
+            (short)ServerPacketIds.ClientVersion => new S.ClientVersion(),
+            (short)ServerPacketIds.Disconnect => new S.Disconnect(),
+            (short)ServerPacketIds.KeepAlive => new S.KeepAlive(),
+            (short)ServerPacketIds.NewAccount => new S.NewAccount(),
+            (short)ServerPacketIds.ChangePassword => new S.ChangePassword(),
+            (short)ServerPacketIds.ChangePasswordBanned => new S.ChangePasswordBanned(),
+            (short)ServerPacketIds.Login => new S.Login(),
+            (short)ServerPacketIds.LoginBanned => new S.LoginBanned(),
+            (short)ServerPacketIds.LoginSuccess => new S.LoginSuccess(),
+            (short)ServerPacketIds.NewCharacter => new S.NewCharacter(),
+            (short)ServerPacketIds.NewCharacterSuccess => new S.NewCharacterSuccess(),
+            (short)ServerPacketIds.DeleteCharacter => new S.DeleteCharacter(),
+            (short)ServerPacketIds.DeleteCharacterSuccess => new S.DeleteCharacterSuccess(),
+            (short)ServerPacketIds.StartGame => new S.StartGame(),
+            (short)ServerPacketIds.StartGameBanned => new S.StartGameBanned(),
+            (short)ServerPacketIds.StartGameDelay => new S.StartGameDelay(),
+            (short)ServerPacketIds.MapInformation => new S.MapInformation(),
+            (short)ServerPacketIds.UserInformation => new S.UserInformation(),
+            (short)ServerPacketIds.UserSlotsRefresh => new S.UserSlotsRefresh(),
+            (short)ServerPacketIds.UserLocation => new S.UserLocation(),
+            (short)ServerPacketIds.ObjectPlayer => new S.ObjectPlayer(),
+            (short)ServerPacketIds.ObjectRemove => new S.ObjectRemove(),
+            (short)ServerPacketIds.ObjectTurn => new S.ObjectTurn(),
+            (short)ServerPacketIds.ObjectWalk => new S.ObjectWalk(),
+            (short)ServerPacketIds.ObjectRun => new S.ObjectRun(),
+            (short)ServerPacketIds.Chat => new S.Chat(),
+            (short)ServerPacketIds.ObjectChat => new S.ObjectChat(),
+            (short)ServerPacketIds.NewItemInfo => new S.NewItemInfo(),
+            (short)ServerPacketIds.NewChatItem => new S.NewChatItem(),
+            (short)ServerPacketIds.MoveItem => new S.MoveItem(),
+            (short)ServerPacketIds.EquipItem => new S.EquipItem(),
+            (short)ServerPacketIds.MergeItem => new S.MergeItem(),
+            (short)ServerPacketIds.RemoveItem => new S.RemoveItem(),
+            (short)ServerPacketIds.RemoveSlotItem => new S.RemoveSlotItem(),
+            (short)ServerPacketIds.TakeBackItem => new S.TakeBackItem(),
+            (short)ServerPacketIds.StoreItem => new S.StoreItem(),
+            (short)ServerPacketIds.DepositRefineItem => new S.DepositRefineItem(),
+            (short)ServerPacketIds.RetrieveRefineItem => new S.RetrieveRefineItem(),
+            (short)ServerPacketIds.RefineItem => new S.RefineItem(),
+            (short)ServerPacketIds.DepositTradeItem => new S.DepositTradeItem(),
+            (short)ServerPacketIds.RetrieveTradeItem => new S.RetrieveTradeItem(),
+            (short)ServerPacketIds.SplitItem => new S.SplitItem(),
+            (short)ServerPacketIds.SplitItem1 => new S.SplitItem1(),
+            (short)ServerPacketIds.UseItem => new S.UseItem(),
+            (short)ServerPacketIds.DropItem => new S.DropItem(),
+            (short)ServerPacketIds.PlayerUpdate => new S.PlayerUpdate(),
+            (short)ServerPacketIds.PlayerInspect => new S.PlayerInspect(),
+            (short)ServerPacketIds.LogOutSuccess => new S.LogOutSuccess(),
+            (short)ServerPacketIds.LogOutFailed => new S.LogOutFailed(),
+            (short)ServerPacketIds.TimeOfDay => new S.TimeOfDay(),
+            (short)ServerPacketIds.ChangeAMode => new S.ChangeAMode(),
+            (short)ServerPacketIds.ChangePMode => new S.ChangePMode(),
+            (short)ServerPacketIds.ObjectItem => new S.ObjectItem(),
+            (short)ServerPacketIds.ObjectGold => new S.ObjectGold(),
+            (short)ServerPacketIds.GainedItem => new S.GainedItem(),
+            (short)ServerPacketIds.GainedGold => new S.GainedGold(),
+            (short)ServerPacketIds.LoseGold => new S.LoseGold(),
+            (short)ServerPacketIds.GainedCredit => new S.GainedCredit(),
+            (short)ServerPacketIds.LoseCredit => new S.LoseCredit(),
+            (short)ServerPacketIds.ObjectMonster => new S.ObjectMonster(),
+            (short)ServerPacketIds.ObjectAttack => new S.ObjectAttack(),
+            (short)ServerPacketIds.Struck => new S.Struck(),
+            (short)ServerPacketIds.DamageIndicator => new S.DamageIndicator(),
+            (short)ServerPacketIds.ObjectStruck => new S.ObjectStruck(),
+            (short)ServerPacketIds.DuraChanged => new S.DuraChanged(),
+            (short)ServerPacketIds.HealthChanged => new S.HealthChanged(),
+            (short)ServerPacketIds.DeleteItem => new S.DeleteItem(),
+            (short)ServerPacketIds.Death => new S.Death(),
+            (short)ServerPacketIds.ObjectDied => new S.ObjectDied(),
+            (short)ServerPacketIds.ColourChanged => new S.ColourChanged(),
+            (short)ServerPacketIds.ObjectColourChanged => new S.ObjectColourChanged(),
+            (short)ServerPacketIds.ObjectGuildNameChanged => new S.ObjectGuildNameChanged(),
+            (short)ServerPacketIds.GainExperience => new S.GainExperience(),
+            (short)ServerPacketIds.LevelChanged => new S.LevelChanged(),
+            (short)ServerPacketIds.ObjectLeveled => new S.ObjectLeveled(),
+            (short)ServerPacketIds.ObjectHarvest => new S.ObjectHarvest(),
+            (short)ServerPacketIds.ObjectHarvested => new S.ObjectHarvested(),
+            (short)ServerPacketIds.ObjectNpc => new S.ObjectNPC(),
+            (short)ServerPacketIds.NPCResponse => new S.NPCResponse(),
+            (short)ServerPacketIds.ObjectHide => new S.ObjectHide(),
+            (short)ServerPacketIds.ObjectShow => new S.ObjectShow(),
+            (short)ServerPacketIds.Poisoned => new S.Poisoned(),
+            (short)ServerPacketIds.ObjectPoisoned => new S.ObjectPoisoned(),
+            (short)ServerPacketIds.MapChanged => new S.MapChanged(),
+            (short)ServerPacketIds.ObjectTeleportOut => new S.ObjectTeleportOut(),
+            (short)ServerPacketIds.ObjectTeleportIn => new S.ObjectTeleportIn(),
+            (short)ServerPacketIds.TeleportIn => new S.TeleportIn(),
+            (short)ServerPacketIds.NPCGoods => new S.NPCGoods(),
+            (short)ServerPacketIds.NPCSell => new S.NPCSell(),
+            (short)ServerPacketIds.NPCRepair => new S.NPCRepair(),
+            (short)ServerPacketIds.NPCSRepair => new S.NPCSRepair(),
+            (short)ServerPacketIds.NPCRefine => new S.NPCRefine(),
+            (short)ServerPacketIds.NPCCheckRefine => new S.NPCCheckRefine(),
+            (short)ServerPacketIds.NPCCollectRefine => new S.NPCCollectRefine(),
+            (short)ServerPacketIds.NPCReplaceWedRing => new S.NPCReplaceWedRing(),
+            (short)ServerPacketIds.NPCStorage => new S.NPCStorage(),
+            (short)ServerPacketIds.SellItem => new S.SellItem(),
+            (short)ServerPacketIds.CraftItem => new S.CraftItem(),
+            (short)ServerPacketIds.RepairItem => new S.RepairItem(),
+            (short)ServerPacketIds.ItemRepaired => new S.ItemRepaired(),
+            (short)ServerPacketIds.ItemSlotSizeChanged => new S.ItemSlotSizeChanged(),
+            (short)ServerPacketIds.NewMagic => new S.NewMagic(),
+            (short)ServerPacketIds.MagicLeveled => new S.MagicLeveled(),
+            (short)ServerPacketIds.Magic => new S.Magic(),
+            (short)ServerPacketIds.MagicDelay => new S.MagicDelay(),
+            (short)ServerPacketIds.MagicCast => new S.MagicCast(),
+            (short)ServerPacketIds.ObjectMagic => new S.ObjectMagic(),
+            (short)ServerPacketIds.ObjectProjectile => new S.ObjectProjectile(),
+            (short)ServerPacketIds.ObjectEffect => new S.ObjectEffect(),
+            (short)ServerPacketIds.RangeAttack => new S.RangeAttack(),
+            (short)ServerPacketIds.Pushed => new S.Pushed(),
+            (short)ServerPacketIds.ObjectPushed => new S.ObjectPushed(),
+            (short)ServerPacketIds.ObjectName => new S.ObjectName(),
+            (short)ServerPacketIds.UserStorage => new S.UserStorage(),
+            (short)ServerPacketIds.SwitchGroup => new S.SwitchGroup(),
+            (short)ServerPacketIds.DeleteGroup => new S.DeleteGroup(),
+            (short)ServerPacketIds.DeleteMember => new S.DeleteMember(),
+            (short)ServerPacketIds.GroupInvite => new S.GroupInvite(),
+            (short)ServerPacketIds.AddMember => new S.AddMember(),
+            (short)ServerPacketIds.Revived => new S.Revived(),
+            (short)ServerPacketIds.ObjectRevived => new S.ObjectRevived(),
+            (short)ServerPacketIds.SpellToggle => new S.SpellToggle(),
+            (short)ServerPacketIds.ObjectHealth => new S.ObjectHealth(),
+            (short)ServerPacketIds.MapEffect => new S.MapEffect(),
+            (short)ServerPacketIds.ObjectRangeAttack => new S.ObjectRangeAttack(),
+            (short)ServerPacketIds.AddBuff => new S.AddBuff(),
+            (short)ServerPacketIds.RemoveBuff => new S.RemoveBuff(),
+            (short)ServerPacketIds.PauseBuff => new S.PauseBuff(),
+            (short)ServerPacketIds.ObjectHidden => new S.ObjectHidden(),
+            (short)ServerPacketIds.RefreshItem => new S.RefreshItem(),
+            (short)ServerPacketIds.ObjectSpell => new S.ObjectSpell(),
+            (short)ServerPacketIds.UserDash => new S.UserDash(),
+            (short)ServerPacketIds.ObjectDash => new S.ObjectDash(),
+            (short)ServerPacketIds.UserDashFail => new S.UserDashFail(),
+            (short)ServerPacketIds.ObjectDashFail => new S.ObjectDashFail(),
+            (short)ServerPacketIds.NPCConsign => new S.NPCConsign(),
+            (short)ServerPacketIds.NPCMarket => new S.NPCMarket(),
+            (short)ServerPacketIds.NPCMarketPage => new S.NPCMarketPage(),
+            (short)ServerPacketIds.ConsignItem => new S.ConsignItem(),
+            (short)ServerPacketIds.MarketFail => new S.MarketFail(),
+            (short)ServerPacketIds.MarketSuccess => new S.MarketSuccess(),
+            (short)ServerPacketIds.ObjectSitDown => new S.ObjectSitDown(),
+            (short)ServerPacketIds.InTrapRock => new S.InTrapRock(),
+            (short)ServerPacketIds.RemoveMagic => new S.RemoveMagic(),
+            (short)ServerPacketIds.BaseStatsInfo => new S.BaseStatsInfo(),
+            (short)ServerPacketIds.UserName => new S.UserName(),
+            (short)ServerPacketIds.ChatItemStats => new S.ChatItemStats(),
+            (short)ServerPacketIds.GuildMemberChange => new S.GuildMemberChange(),
+            (short)ServerPacketIds.GuildNoticeChange => new S.GuildNoticeChange(),
+            (short)ServerPacketIds.GuildStatus => new S.GuildStatus(),
+            (short)ServerPacketIds.GuildInvite => new S.GuildInvite(),
+            (short)ServerPacketIds.GuildExpGain => new S.GuildExpGain(),
+            (short)ServerPacketIds.GuildNameRequest => new S.GuildNameRequest(),
+            (short)ServerPacketIds.GuildStorageGoldChange => new S.GuildStorageGoldChange(),
+            (short)ServerPacketIds.GuildStorageItemChange => new S.GuildStorageItemChange(),
+            (short)ServerPacketIds.GuildStorageList => new S.GuildStorageList(),
+            (short)ServerPacketIds.GuildRequestWar => new S.GuildRequestWar(),
+            (short)ServerPacketIds.DefaultNPC => new S.DefaultNPC(),
+            (short)ServerPacketIds.NPCUpdate => new S.NPCUpdate(),
+            (short)ServerPacketIds.NPCImageUpdate => new S.NPCImageUpdate(),
+            (short)ServerPacketIds.MarriageRequest => new S.MarriageRequest(),
+            (short)ServerPacketIds.DivorceRequest => new S.DivorceRequest(),
+            (short)ServerPacketIds.MentorRequest => new S.MentorRequest(),
+            (short)ServerPacketIds.TradeRequest => new S.TradeRequest(),
+            (short)ServerPacketIds.TradeAccept => new S.TradeAccept(),
+            (short)ServerPacketIds.TradeGold => new S.TradeGold(),
+            (short)ServerPacketIds.TradeItem => new S.TradeItem(),
+            (short)ServerPacketIds.TradeConfirm => new S.TradeConfirm(),
+            (short)ServerPacketIds.TradeCancel => new S.TradeCancel(),
+            (short)ServerPacketIds.MountUpdate => new S.MountUpdate(),
+            (short)ServerPacketIds.TransformUpdate => new S.TransformUpdate(),
+            (short)ServerPacketIds.EquipSlotItem => new S.EquipSlotItem(),
+            (short)ServerPacketIds.FishingUpdate => new S.FishingUpdate(),
+            (short)ServerPacketIds.ChangeQuest => new S.ChangeQuest(),
+            (short)ServerPacketIds.CompleteQuest => new S.CompleteQuest(),
+            (short)ServerPacketIds.ShareQuest => new S.ShareQuest(),
+            (short)ServerPacketIds.NewQuestInfo => new S.NewQuestInfo(),
+            (short)ServerPacketIds.GainedQuestItem => new S.GainedQuestItem(),
+            (short)ServerPacketIds.DeleteQuestItem => new S.DeleteQuestItem(),
+            (short)ServerPacketIds.CancelReincarnation => new S.CancelReincarnation(),
+            (short)ServerPacketIds.RequestReincarnation => new S.RequestReincarnation(),
+            (short)ServerPacketIds.UserBackStep => new S.UserBackStep(),
+            (short)ServerPacketIds.ObjectBackStep => new S.ObjectBackStep(),
+            (short)ServerPacketIds.UserDashAttack => new S.UserDashAttack(),
+            (short)ServerPacketIds.ObjectDashAttack => new S.ObjectDashAttack(),
+            //Warrior Skill - SlashingBurst
+            (short)ServerPacketIds.UserAttackMove => new S.UserAttackMove(),
+            (short)ServerPacketIds.CombineItem => new S.CombineItem(),
+            (short)ServerPacketIds.ItemUpgraded => new S.ItemUpgraded(),
+            (short)ServerPacketIds.SetConcentration => new S.SetConcentration(),
+            (short)ServerPacketIds.SetElemental => new S.SetElemental(),
+            (short)ServerPacketIds.RemoveDelayedExplosion => new S.RemoveDelayedExplosion(),
+            (short)ServerPacketIds.ObjectDeco => new S.ObjectDeco(),
+            (short)ServerPacketIds.ObjectSneaking => new S.ObjectSneaking(),
+            (short)ServerPacketIds.ObjectLevelEffects => new S.ObjectLevelEffects(),
+            (short)ServerPacketIds.SetBindingShot => new S.SetBindingShot(),
+            (short)ServerPacketIds.SendOutputMessage => new S.SendOutputMessage(),
+            (short)ServerPacketIds.NPCAwakening => new S.NPCAwakening(),
+            (short)ServerPacketIds.NPCDisassemble => new S.NPCDisassemble(),
+            (short)ServerPacketIds.NPCDowngrade => new S.NPCDowngrade(),
+            (short)ServerPacketIds.NPCReset => new S.NPCReset(),
+            (short)ServerPacketIds.AwakeningNeedMaterials => new S.AwakeningNeedMaterials(),
+            (short)ServerPacketIds.AwakeningLockedItem => new S.AwakeningLockedItem(),
+            (short)ServerPacketIds.Awakening => new S.Awakening(),
+            (short)ServerPacketIds.ReceiveMail => new S.ReceiveMail(),
+            (short)ServerPacketIds.MailLockedItem => new S.MailLockedItem(),
+            (short)ServerPacketIds.MailSent => new S.MailSent(),
+            (short)ServerPacketIds.MailSendRequest => new S.MailSendRequest(),
+            (short)ServerPacketIds.ParcelCollected => new S.ParcelCollected(),
+            (short)ServerPacketIds.MailCost => new S.MailCost(),
+            (short)ServerPacketIds.ResizeInventory => new S.ResizeInventory(),
+            (short)ServerPacketIds.ResizeStorage => new S.ResizeStorage(),
+            (short)ServerPacketIds.NewIntelligentCreature => new S.NewIntelligentCreature(),
+            (short)ServerPacketIds.UpdateIntelligentCreatureList => new S.UpdateIntelligentCreatureList(),
+            (short)ServerPacketIds.IntelligentCreatureEnableRename => new S.IntelligentCreatureEnableRename(),
+            (short)ServerPacketIds.IntelligentCreaturePickup => new S.IntelligentCreaturePickup(),
+            (short)ServerPacketIds.NPCPearlGoods => new S.NPCPearlGoods(),
+            (short)ServerPacketIds.FriendUpdate => new S.FriendUpdate(),
+            (short)ServerPacketIds.LoverUpdate => new S.LoverUpdate(),
+            (short)ServerPacketIds.MentorUpdate => new S.MentorUpdate(),
+            (short)ServerPacketIds.GuildBuffList => new S.GuildBuffList(),
+            (short)ServerPacketIds.GameShopInfo => new S.GameShopInfo(),
+            (short)ServerPacketIds.GameShopStock => new S.GameShopStock(),
+            (short)ServerPacketIds.NPCRequestInput => new S.NPCRequestInput(),
+            (short)ServerPacketIds.Rankings => new S.Rankings(),
+            (short)ServerPacketIds.Opendoor => new S.Opendoor(),
+            (short)ServerPacketIds.GetRentedItems => new S.GetRentedItems(),
+            (short)ServerPacketIds.ItemRentalRequest => new S.ItemRentalRequest(),
+            (short)ServerPacketIds.ItemRentalFee => new S.ItemRentalFee(),
+            (short)ServerPacketIds.ItemRentalPeriod => new S.ItemRentalPeriod(),
+            (short)ServerPacketIds.DepositRentalItem => new S.DepositRentalItem(),
+            (short)ServerPacketIds.RetrieveRentalItem => new S.RetrieveRentalItem(),
+            (short)ServerPacketIds.UpdateRentalItem => new S.UpdateRentalItem(),
+            (short)ServerPacketIds.CancelItemRental => new S.CancelItemRental(),
+            (short)ServerPacketIds.ItemRentalLock => new S.ItemRentalLock(),
+            (short)ServerPacketIds.ItemRentalPartnerLock => new S.ItemRentalPartnerLock(),
+            (short)ServerPacketIds.CanConfirmItemRental => new S.CanConfirmItemRental(),
+            (short)ServerPacketIds.ConfirmItemRental => new S.ConfirmItemRental(),
+            (short)ServerPacketIds.NewRecipeInfo => new S.NewRecipeInfo(),
+            (short)ServerPacketIds.OpenBrowser => new S.OpenBrowser(),
+            (short)ServerPacketIds.PlaySound => new S.PlaySound(),
+            (short)ServerPacketIds.SetTimer => new S.SetTimer(),
+            (short)ServerPacketIds.ExpireTimer => new S.ExpireTimer(),
+            (short)ServerPacketIds.UpdateNotice => new S.UpdateNotice(),
+            (short)ServerPacketIds.Roll => new S.Roll(),
+            _ => null,
+        };
     }
 }

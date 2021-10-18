@@ -791,7 +791,7 @@ namespace LibraryEditor
                 if (PreviewListView.Visible && PreviewListView.Items.Count > 0)
                 {
                     int index = PreviewListView.SelectedIndices[0];
-                    index = index - 1;
+                    index--;
                     PreviewListView.SelectedIndices.Clear();
                     this.PreviewListView.Items[index].Selected = true;
                     PreviewListView.Items[index].EnsureVisible();
@@ -816,7 +816,7 @@ namespace LibraryEditor
                 if (PreviewListView.Visible && PreviewListView.Items.Count > 0)
                 {
                     int index = PreviewListView.SelectedIndices[0];
-                    index = index + 1;
+                    index++;
                     PreviewListView.SelectedIndices.Clear();
                     this.PreviewListView.Items[index].Selected = true;
                     PreviewListView.Items[index].EnsureVisible();

@@ -1346,19 +1346,14 @@ namespace Client.MirScenes.Dialogs
 
         private Color GradeNameColor(ItemGrade grade)
         {
-            switch (grade)
+            return grade switch
             {
-                case ItemGrade.Common:
-                    return Color.Yellow;
-                case ItemGrade.Rare:
-                    return Color.DeepSkyBlue;
-                case ItemGrade.Legendary:
-                    return Color.DarkOrange;
-                case ItemGrade.Mythical:
-                    return Color.Plum;
-                default:
-                    return Color.White;
-            }
+                ItemGrade.Common => Color.Yellow,
+                ItemGrade.Rare => Color.DeepSkyBlue,
+                ItemGrade.Legendary => Color.DarkOrange,
+                ItemGrade.Mythical => Color.Plum,
+                _ => Color.White,
+            };
         }
 
         // public override void OnMouseDown(MouseEventArgs e)
