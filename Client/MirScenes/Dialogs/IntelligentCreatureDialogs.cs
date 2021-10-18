@@ -453,10 +453,10 @@ namespace Client.MirScenes.Dialogs
                 MirInputBox inputBox = new MirInputBox( Resources.ResourceCreatureDialog.PleaseEnterANewNameForTheCreature);
                 inputBox.InputTextBox.Text = GameScene.User.IntelligentCreatures[selectedCreature].CustomName;
                 inputBox.OKButton.Click += (o1, e1) =>
-                {
-                    Update();//refresh changes
+                {                 
                     GameScene.User.IntelligentCreatures[selectedCreature].CustomName = inputBox.InputTextBox.Text;
                     Network.Enqueue(new C.UpdateIntelligentCreature { Creature = GameScene.User.IntelligentCreatures[selectedCreature] });
+                    Update();//refresh changes
                     inputBox.Dispose();
                 };
                 inputBox.Show();
@@ -722,7 +722,7 @@ namespace Client.MirScenes.Dialogs
             var rules = GameScene.User.IntelligentCreatures[selectedCreature].CreatureRules;
 
             var semi = rules.SemiAutoPickupEnabled ? string.Format("{0}x{0} {1}{2}{3}", rules.AutoPickupRange, rules.AutoPickupEnabled ? Resources.ResourceCreatureDialog.Auto : "", rules.SemiAutoPickupEnabled ? Resources.ResourceCreatureDialog.SemiAuto : "", rules.MousePickupEnabled ? ", " : "") : "";
-            var mouse = rules.SemiAutoPickupEnabled ? string.Format("{0}x{0} "+Resources.ResourceCreatureDialog.Mouse, rules.MousePickupRange) : "";
+            var mouse = rules.SemiAutoPickupEnabled ? string.Format("{0}x{0} "+Resources.ResourceCreatureDialog.MousePickupRange, rules.MousePickupRange) : "";
 
             CreatureName.Text = GameScene.User.IntelligentCreatures[selectedCreature].CustomName;
             CreatureInfo.Text = string.Format(Resources.ResourceCreatureDialog.CanPickupItems, semi, mouse);

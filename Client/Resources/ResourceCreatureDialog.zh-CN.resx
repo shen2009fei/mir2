@@ -132,8 +132,8 @@
   <data name="FoodBuff" xml:space="preserve">
     <value>食物增益: {0}</value>
   </data>
-  <data name="Mouse" xml:space="preserve">
-    <value>鼠标</value>
+  <data name="MousePickupRange" xml:space="preserve">
+    <value>鼠标拾取范围</value>
   </data>
   <data name="NoProduction" xml:space="preserve">
     <value>没有生产。</value>

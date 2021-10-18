@@ -132,8 +132,8 @@
   <data name="FoodBuff" xml:space="preserve">
     <value>FoodBuff: {0}</value>
   </data>
-  <data name="Mouse" xml:space="preserve">
-    <value>mouse</value>
+  <data name="MousePickupRange" xml:space="preserve">
+    <value>mouse pickup range</value>
   </data>
   <data name="NoProduction" xml:space="preserve">
     <value>No Production.</value>

@@ -106,11 +106,11 @@ namespace Client.Resources {
         }
         
         /// <summary>
-        ///   查找类似 mouse 的本地化字符串。
+        ///   查找类似 mouse pickup range 的本地化字符串。
         /// </summary>
-        internal static string Mouse {
+        internal static string MousePickupRange {
             get {
-                return ResourceManager.GetString("Mouse", resourceCulture);
+                return ResourceManager.GetString("MousePickupRange", resourceCulture);
             }
         }
         
