@@ -242,58 +242,56 @@ namespace AutoPatcherAdmin
 
             try
             {
-                using (WebClient client = new WebClient())
+                using WebClient client = new WebClient();
+                client.DownloadProgressChanged += (o, e) =>
                 {
-                    client.DownloadProgressChanged += (o, e) =>
+                    _currentBytes = e.BytesReceived;
+
+                    int value = (int)(100 * _currentBytes / _currentFile.Length);
+                    progressBar2.Value = value > progressBar2.Maximum ? progressBar2.Maximum : value;
+
+                    FileLabel.Text = fileName;
+                    SizeLabel.Text = string.Format("{0} KB / {1} KB", _currentBytes / 1024, _currentFile.Length / 1024);
+                    SpeedLabel.Text = (_currentBytes / 1024F / _stopwatch.Elapsed.TotalSeconds).ToString("#,##0.##") + "KB/s";
+                };
+                client.DownloadDataCompleted += (o, e) =>
+                {
+                    if (e.Error != null)
                     {
-                        _currentBytes = e.BytesReceived;
-
-                        int value = (int)(100 * _currentBytes / _currentFile.Length);
-                        progressBar2.Value = value > progressBar2.Maximum ? progressBar2.Maximum : value;
-
-                        FileLabel.Text = fileName;
-                        SizeLabel.Text = string.Format("{0} KB / {1} KB", _currentBytes / 1024, _currentFile.Length / 1024);
-                        SpeedLabel.Text = (_currentBytes / 1024F / _stopwatch.Elapsed.TotalSeconds).ToString("#,##0.##") + "KB/s";
-                    };
-                    client.DownloadDataCompleted += (o, e) =>
+                        File.AppendAllText(@".\Error.txt",
+                               string.Format("[{0}] {1}{2}", DateTime.Now, info.FileName + " could not be downloaded. (" + e.Error.Message + ")", Environment.NewLine));
+                    }
+                    else
                     {
-                        if (e.Error != null)
+                        _currentCount++;
+                        _completedBytes += _currentBytes;
+                        _currentBytes = 0;
+                        _stopwatch.Stop();
+
+                        byte[] raw = e.Result;
+
+                        if (info.Compressed > 0 && info.Compressed != info.Length)
                         {
-                            File.AppendAllText(@".\Error.txt",
-                                   string.Format("[{0}] {1}{2}", DateTime.Now, info.FileName + " could not be downloaded. (" + e.Error.Message + ")", Environment.NewLine));
+                            raw = Decompress(e.Result);
                         }
-                        else
+
+                        if (!Directory.Exists(Settings.Client + Path.GetDirectoryName(info.FileName)))
                         {
-                            _currentCount++;
-                            _completedBytes += _currentBytes;
-                            _currentBytes = 0;
-                            _stopwatch.Stop();
-
-                            byte[] raw = e.Result;
-
-                            if (info.Compressed > 0 && info.Compressed != info.Length)
-                            {
-                                raw = Decompress(e.Result);
-                            }
-
-                            if (!Directory.Exists(Settings.Client + Path.GetDirectoryName(info.FileName)))
-                            {
-                                Directory.CreateDirectory(Settings.Client + Path.GetDirectoryName(info.FileName));
-                            }
-
-                            File.WriteAllBytes(Settings.Client + info.FileName, raw);
-                            File.SetLastWriteTime(Settings.Client + info.FileName, info.Creation);
+                            Directory.CreateDirectory(Settings.Client + Path.GetDirectoryName(info.FileName));
                         }
-                        BeginDownload();
-                    };
 
-                    client.Credentials = new NetworkCredential(Settings.Login, Settings.Password);
+                        File.WriteAllBytes(Settings.Client + info.FileName, raw);
+                        File.SetLastWriteTime(Settings.Client + info.FileName, info.Creation);
+                    }
+                    BeginDownload();
+                };
 
-                    progressBar1.Value = (int)(_completedBytes * 100 / _totalBytes) > 100 ? 100 : (int)(_completedBytes * 100 / _totalBytes);
+                client.Credentials = new NetworkCredential(Settings.Login, Settings.Password);
 
-                    _stopwatch = Stopwatch.StartNew();
-                    client.DownloadDataAsync(new Uri(Settings.Host + fileName));
-                }
+                progressBar1.Value = (int)(_completedBytes * 100 / _totalBytes) > 100 ? 100 : (int)(_completedBytes * 100 / _totalBytes);
+
+                _stopwatch = Stopwatch.StartNew();
+                client.DownloadDataAsync(new Uri(Settings.Host + fileName));
             }
             catch
             {
@@ -328,55 +326,53 @@ namespace AutoPatcherAdmin
         {
             string fileName = info.FileName.Replace(@"\", "/");
 
-            using (WebClient client = new WebClient())
+            using WebClient client = new WebClient();
+            client.Credentials = new NetworkCredential(Settings.Login, Settings.Password);
+
+            byte[] data = (!retry || !Settings.CompressFiles || fileName == "PList.gz" || fileName == "AutoPatcher.gz") ? raw : Compress(raw);
+            info.Compressed = data.Length;
+
+            if (fileName != "AutoPatcher.gz" && fileName != "PList.gz" && Settings.CompressFiles)
             {
-                client.Credentials = new NetworkCredential(Settings.Login, Settings.Password);
-
-                byte[] data = (!retry || !Settings.CompressFiles || fileName == "PList.gz" || fileName == "AutoPatcher.gz") ? raw : Compress(raw);
-                info.Compressed = data.Length;
-
-                if (fileName != "AutoPatcher.gz" && fileName != "PList.gz" && Settings.CompressFiles)
-                {
-                    fileName += ".gz";
-                }
-
-                client.UploadProgressChanged += (o, e) =>
-                    {
-                        int value = (int)(100 * e.BytesSent / e.TotalBytesToSend);
-                        progressBar2.Value = value > progressBar2.Maximum ? progressBar2.Maximum : value;
-
-                        FileLabel.Text = fileName;
-                        SizeLabel.Text = string.Format("{0} KB / {1} KB", e.BytesSent / 1024, e.TotalBytesToSend  / 1024);
-                        SpeedLabel.Text = ((double) e.BytesSent/1024/_stopwatch.Elapsed.TotalSeconds).ToString("0.##") + " KB/s";
-                    };
-
-                client.UploadDataCompleted += (o, e) =>
-                    {
-                        _completedBytes += info.Length;
-
-                        if (e.Error != null && retry)
-                        {
-                            CheckDirectory(Path.GetDirectoryName(fileName));
-                            Upload(info, data, false);
-                            return;
-                        }
-
-                        if (info.FileName == PatchFileName)
-                        {
-                            FileLabel.Text = "Complete...";
-                            SizeLabel.Text = "Complete...";
-                            SpeedLabel.Text = "Complete...";
-                            return;
-                        }
-
-                        progressBar1.Value = (int)(_completedBytes * 100 / _totalBytes) > 100 ? 100 : (int)(_completedBytes * 100 / _totalBytes);
-                        BeginUpload();
-                    };
-
-                _stopwatch = Stopwatch.StartNew();
-
-                client.UploadDataAsync(new Uri(Settings.Host + fileName), data);
+                fileName += ".gz";
             }
+
+            client.UploadProgressChanged += (o, e) =>
+                {
+                    int value = (int)(100 * e.BytesSent / e.TotalBytesToSend);
+                    progressBar2.Value = value > progressBar2.Maximum ? progressBar2.Maximum : value;
+
+                    FileLabel.Text = fileName;
+                    SizeLabel.Text = string.Format("{0} KB / {1} KB", e.BytesSent / 1024, e.TotalBytesToSend / 1024);
+                    SpeedLabel.Text = ((double)e.BytesSent / 1024 / _stopwatch.Elapsed.TotalSeconds).ToString("0.##") + " KB/s";
+                };
+
+            client.UploadDataCompleted += (o, e) =>
+                {
+                    _completedBytes += info.Length;
+
+                    if (e.Error != null && retry)
+                    {
+                        CheckDirectory(Path.GetDirectoryName(fileName));
+                        Upload(info, data, false);
+                        return;
+                    }
+
+                    if (info.FileName == PatchFileName)
+                    {
+                        FileLabel.Text = "Complete...";
+                        SizeLabel.Text = "Complete...";
+                        SpeedLabel.Text = "Complete...";
+                        return;
+                    }
+
+                    progressBar1.Value = (int)(_completedBytes * 100 / _totalBytes) > 100 ? 100 : (int)(_completedBytes * 100 / _totalBytes);
+                    BeginUpload();
+                };
+
+            _stopwatch = Stopwatch.StartNew();
+
+            client.UploadDataAsync(new Uri(Settings.Host + fileName), data);
         }
 
         private void BeginUpload()
@@ -440,33 +436,27 @@ namespace AutoPatcherAdmin
 
         public static byte[] Decompress(byte[] raw)
         {
-            using (GZipStream gStream = new GZipStream(new MemoryStream(raw), CompressionMode.Decompress))
+            using GZipStream gStream = new GZipStream(new MemoryStream(raw), CompressionMode.Decompress);
+            const int size = 4096; //4kb
+            byte[] buffer = new byte[size];
+            using MemoryStream mStream = new MemoryStream();
+            int count;
+            do
             {
-                const int size = 4096; //4kb
-                byte[] buffer = new byte[size];
-                using (MemoryStream mStream = new MemoryStream())
+                count = gStream.Read(buffer, 0, size);
+                if (count > 0)
                 {
-                    int count;
-                    do
-                    {
-                        count = gStream.Read(buffer, 0, size);
-                        if (count > 0)
-                        {
-                            mStream.Write(buffer, 0, count);
-                        }
-                    } while (count > 0);
-                    return mStream.ToArray();
+                    mStream.Write(buffer, 0, count);
                 }
-            }
+            } while (count > 0);
+            return mStream.ToArray();
         }
         public static byte[] Compress(byte[] raw)
         {
-            using (MemoryStream mStream = new MemoryStream())
-            {
-                using (GZipStream gStream = new GZipStream(mStream, CompressionMode.Compress, true))
-                    gStream.Write(raw, 0, raw.Length);
-                return mStream.ToArray();
-            }
+            using MemoryStream mStream = new MemoryStream();
+            using (GZipStream gStream = new GZipStream(mStream, CompressionMode.Compress, true))
+                gStream.Write(raw, 0, raw.Length);
+            return mStream.ToArray();
         }
 
         private void ListButton_Click(object sender, EventArgs e)
@@ -553,7 +543,7 @@ namespace AutoPatcherAdmin
 
         }
 
-        private void btnFixGZ_Click(object sender, EventArgs e)
+        private void BtnFixGZ_Click(object sender, EventArgs e)
         {
             btnFixGZ.Enabled = false;
 

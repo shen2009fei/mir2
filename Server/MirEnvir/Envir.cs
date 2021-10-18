@@ -953,39 +953,37 @@ namespace Server.MirEnvir
 
         private void SaveAccounts(Stream stream)
         {
-            using (var writer = new BinaryWriter(stream))
+            using BinaryWriter writer = new BinaryWriter(stream);
+            writer.Write(Version);
+            writer.Write(CustomVersion);
+            writer.Write(NextAccountID);
+            writer.Write(NextCharacterID);
+            writer.Write(NextUserItemID);
+            writer.Write(GuildList.Count);
+            writer.Write(NextGuildID);
+            writer.Write(AccountList.Count);
+            for (var i = 0; i < AccountList.Count; i++)
+                AccountList[i].Save(writer);
+
+            writer.Write(NextAuctionID);
+            writer.Write(Auctions.Count);
+            foreach (var auction in Auctions)
+                auction.Save(writer);
+
+            writer.Write(NextMailID);
+
+            writer.Write(GameshopLog.Count);
+            foreach (var item in GameshopLog)
             {
-                writer.Write(Version);
-                writer.Write(CustomVersion);
-                writer.Write(NextAccountID);
-                writer.Write(NextCharacterID);
-                writer.Write(NextUserItemID);
-                writer.Write(GuildList.Count);
-                writer.Write(NextGuildID);
-                writer.Write(AccountList.Count);
-                for (var i = 0; i < AccountList.Count; i++)
-                    AccountList[i].Save(writer);
+                writer.Write(item.Key);
+                writer.Write(item.Value);
+            }
 
-                writer.Write(NextAuctionID);
-                writer.Write(Auctions.Count);
-                foreach (var auction in Auctions)
-                    auction.Save(writer);
-
-                writer.Write(NextMailID);
-
-                writer.Write(GameshopLog.Count);
-                foreach (var item in GameshopLog)
-                {
-                    writer.Write(item.Key);
-                    writer.Write(item.Value);
-                }
-
-                writer.Write(SavedSpawns.Count);
-                foreach (var Spawn in SavedSpawns)
-                {
-                    var Save = new RespawnSave { RespawnIndex = Spawn.Info.RespawnIndex, NextSpawnTick = Spawn.NextSpawnTick, Spawned = Spawn.Count >= Spawn.Info.Count * SpawnMultiplier };
-                    Save.Save(writer);
-                }
+            writer.Write(SavedSpawns.Count);
+            foreach (var Spawn in SavedSpawns)
+            {
+                var Save = new RespawnSave { RespawnIndex = Spawn.Info.RespawnIndex, NextSpawnTick = Spawn.NextSpawnTick, Spawned = Spawn.Count >= Spawn.Info.Count * SpawnMultiplier };
+                Save.Save(writer);
             }
         }
 
@@ -1132,25 +1130,23 @@ namespace Server.MirEnvir
             if (Saving) return;
 
             Saving = true;
-            
 
-            using (var mStream = new MemoryStream())
+
+            using var mStream = new MemoryStream();
+            if (File.Exists(AccountPath))
             {
-                if (File.Exists(AccountPath))
-                {
-                    if (!Directory.Exists(BackUpPath)) Directory.CreateDirectory(BackUpPath);
-                    var fileName =
-                        $"Accounts {Now.Year:0000}-{Now.Month:00}-{Now.Day:00} {Now.Hour:00}-{Now.Minute:00}-{Now.Second:00}.bak";
-                    if (File.Exists(Path.Combine(BackUpPath, fileName))) File.Delete(Path.Combine(BackUpPath, fileName));
-                    File.Move(AccountPath, Path.Combine(BackUpPath, fileName));
-                }
-
-                SaveAccounts(mStream);
-                var fStream = new FileStream(AccountPath + "n", FileMode.Create);
-
-                var data = mStream.ToArray();
-                fStream.BeginWrite(data, 0, data.Length, EndSaveAccounts, fStream);
+                if (!Directory.Exists(BackUpPath)) Directory.CreateDirectory(BackUpPath);
+                var fileName =
+                    $"Accounts {Now.Year:0000}-{Now.Month:00}-{Now.Day:00} {Now.Hour:00}-{Now.Minute:00}-{Now.Second:00}.bak";
+                if (File.Exists(Path.Combine(BackUpPath, fileName))) File.Delete(Path.Combine(BackUpPath, fileName));
+                File.Move(AccountPath, Path.Combine(BackUpPath, fileName));
             }
+
+            SaveAccounts(mStream);
+            var fStream = new FileStream(AccountPath + "n", FileMode.Create);
+
+            var data = mStream.ToArray();
+            fStream.BeginWrite(data, 0, data.Length, EndSaveAccounts, fStream);
 
         }
         private void EndSaveAccounts(IAsyncResult result)
@@ -1319,96 +1315,94 @@ namespace Server.MirEnvir
                 if (!File.Exists(AccountPath))
                     SaveAccounts();
 
-                using (var stream = File.OpenRead(AccountPath))
-                using (var reader = new BinaryReader(stream))
+                using var stream = File.OpenRead(AccountPath);
+                using var reader = new BinaryReader(stream);
+                LoadVersion = reader.ReadInt32();
+                LoadCustomVersion = reader.ReadInt32();
+                NextAccountID = reader.ReadInt32();
+                NextCharacterID = reader.ReadInt32();
+                NextUserItemID = reader.ReadUInt64();
+
+                GuildCount = reader.ReadInt32();
+                NextGuildID = reader.ReadInt32();
+
+                var count = reader.ReadInt32();
+                AccountList.Clear();
+                CharacterList.Clear();
+                for (var i = 0; i < count; i++)
                 {
-                    LoadVersion = reader.ReadInt32();
-                    LoadCustomVersion = reader.ReadInt32();
-                    NextAccountID = reader.ReadInt32();
-                    NextCharacterID = reader.ReadInt32();
-                    NextUserItemID = reader.ReadUInt64();
+                    AccountList.Add(new AccountInfo(reader));
+                    CharacterList.AddRange(AccountList[i].Characters);
+                }
 
-                    GuildCount = reader.ReadInt32();
-                    NextGuildID = reader.ReadInt32();
+                foreach (var auction in Auctions)
+                    auction.SellerInfo.AccountInfo.Auctions.Remove(auction);
+                Auctions.Clear();
 
-                    var count = reader.ReadInt32();
-                    AccountList.Clear();
-                    CharacterList.Clear();
-                    for (var i = 0; i < count; i++)
-                    {
-                        AccountList.Add(new AccountInfo(reader));
-                        CharacterList.AddRange(AccountList[i].Characters);
-                    }
-
-                    foreach (var auction in Auctions)
-                        auction.SellerInfo.AccountInfo.Auctions.Remove(auction);
-                    Auctions.Clear();
-
-                    NextAuctionID = reader.ReadUInt64();
+                NextAuctionID = reader.ReadUInt64();
 
 
+                count = reader.ReadInt32();
+                for (var i = 0; i < count; i++)
+                {
+                    var auction = new AuctionInfo(reader, LoadVersion, LoadCustomVersion);
+
+                    if (!BindItem(auction.Item) || !BindCharacter(auction)) continue;
+
+                    Auctions.AddLast(auction);
+                    auction.SellerInfo.AccountInfo.Auctions.AddLast(auction);
+                }
+
+                NextMailID = reader.ReadUInt64();
+
+                if (LoadVersion <= 80)
+                {
                     count = reader.ReadInt32();
                     for (var i = 0; i < count; i++)
                     {
-                        var auction = new AuctionInfo(reader, LoadVersion, LoadCustomVersion);
+                        var mail = new MailInfo(reader, LoadVersion, LoadCustomVersion);
 
-                        if (!BindItem(auction.Item) || !BindCharacter(auction)) continue;
+                        mail.RecipientInfo = GetCharacterInfo(mail.RecipientIndex);
 
-                        Auctions.AddLast(auction);
-                        auction.SellerInfo.AccountInfo.Auctions.AddLast(auction);
+                        if (mail.RecipientInfo != null)
+                        {
+                            mail.RecipientInfo.Mail.Add(mail); //add to players inbox
+                        }
+                    }
+                }
+
+                if (LoadVersion >= 63)
+                {
+                    var logCount = reader.ReadInt32();
+                    for (var i = 0; i < logCount; i++)
+                    {
+                        GameshopLog.Add(reader.ReadInt32(), reader.ReadInt32());
                     }
 
-                    NextMailID = reader.ReadUInt64();
+                    if (ResetGS) ClearGameshopLog();
+                }
 
-                    if (LoadVersion <= 80)
+                if (LoadVersion >= 68)
+                {
+                    var saveCount = reader.ReadInt32();
+                    for (var i = 0; i < saveCount; i++)
                     {
-                        count = reader.ReadInt32();
-                        for (var i = 0; i < count; i++)
+                        var Saved = new RespawnSave(reader);
+                        foreach (var Respawn in SavedSpawns)
                         {
-                            var mail = new MailInfo(reader, LoadVersion, LoadCustomVersion);
+                            if (Respawn.Info.RespawnIndex != Saved.RespawnIndex) continue;
 
-                            mail.RecipientInfo = GetCharacterInfo(mail.RecipientIndex);
+                            Respawn.NextSpawnTick = Saved.NextSpawnTick;
 
-                            if (mail.RecipientInfo != null)
+                            if (!Saved.Spawned || Respawn.Info.Count * SpawnMultiplier <= Respawn.Count)
                             {
-                                mail.RecipientInfo.Mail.Add(mail); //add to players inbox
+                                continue;
                             }
-                        }
-                    }
 
-                    if (LoadVersion >= 63)
-                    {
-                        var logCount = reader.ReadInt32();
-                        for (var i = 0; i < logCount; i++)
-                        {
-                            GameshopLog.Add(reader.ReadInt32(), reader.ReadInt32());
-                        }
-
-                        if (ResetGS) ClearGameshopLog();
-                    }
-
-                    if (LoadVersion >= 68)
-                    {
-                        var saveCount = reader.ReadInt32();
-                        for (var i = 0; i < saveCount; i++)
-                        {
-                            var Saved = new RespawnSave(reader);
-                            foreach (var Respawn in SavedSpawns)
+                            var mobcount = Respawn.Info.Count * SpawnMultiplier - Respawn.Count;
+                            for (var j = 0; j < mobcount; j++)
                             {
-                                if (Respawn.Info.RespawnIndex != Saved.RespawnIndex) continue;
-
-                                Respawn.NextSpawnTick = Saved.NextSpawnTick;
-
-                                if (!Saved.Spawned || Respawn.Info.Count * SpawnMultiplier <= Respawn.Count)
-                                {
-                                    continue;
-                                }
-
-                                var mobcount = Respawn.Info.Count * SpawnMultiplier - Respawn.Count;
-                                for (var j = 0; j < mobcount; j++)
-                                {
-                                    Respawn.Spawn();
-                                }
+                                Respawn.Spawn();
                             }
                         }
                     }
@@ -2730,28 +2724,15 @@ namespace Server.MirEnvir
 
                 int.TryParse(match.Groups["Numeric"].Value, out num);
 
-                switch (alpha)
+                expiryInfo.ExpiryDate = alpha switch
                 {
-                    case "m":
-                        expiryInfo.ExpiryDate = DateTime.Now.AddMinutes(num);
-                        break;
-                    case "h":
-                        expiryInfo.ExpiryDate = DateTime.Now.AddHours(num);
-                        break;
-                    case "d":
-                        expiryInfo.ExpiryDate = DateTime.Now.AddDays(num);
-                        break;
-                    case "M":
-                        expiryInfo.ExpiryDate = DateTime.Now.AddMonths(num);
-                        break;
-                    case "y":
-                        expiryInfo.ExpiryDate = DateTime.Now.AddYears(num);
-                        break;
-                    default:
-                        expiryInfo.ExpiryDate = DateTime.MaxValue;
-                        break;
-                }
-
+                    "m" => DateTime.Now.AddMinutes(num),
+                    "h" => DateTime.Now.AddHours(num),
+                    "d" => DateTime.Now.AddDays(num),
+                    "M" => DateTime.Now.AddMonths(num),
+                    "y" => DateTime.Now.AddYears(num),
+                    _ => DateTime.MaxValue,
+                };
                 item.ExpireInfo = expiryInfo;
             }
         }
@@ -3034,19 +3015,12 @@ namespace Server.MirEnvir
 
             string message = "You have been mailed due to the following reason:\r\n\r\n";
 
-            switch (reason)
+            message += reason switch
             {
-                case 1:
-                    message += "Could not return item to bag after trade.";
-                    break;
-                case 99:
-                    message += "Code didn't correctly handle checking inventory space.";
-                    break;
-                default:
-                    message += customMessage ?? "No reason provided.";
-                    break;
-            }
-
+                1 => "Could not return item to bag after trade.",
+                99 => "Code didn't correctly handle checking inventory space.",
+                _ => customMessage ?? "No reason provided.",
+            };
             MailInfo mail = new MailInfo(info.Index)
             {
                 Sender = sender,

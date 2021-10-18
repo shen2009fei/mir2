@@ -1592,9 +1592,8 @@ namespace Server
         {
             if (ActiveControl != sender) return;
 
-            byte temp;
 
-            if (!byte.TryParse(ActiveControl.Text, out temp))
+            if (!byte.TryParse(ActiveControl.Text, out byte temp))
             {
                 ActiveControl.BackColor = Color.Red;
                 return;

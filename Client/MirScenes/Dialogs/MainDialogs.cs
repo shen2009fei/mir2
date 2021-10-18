@@ -1778,7 +1778,7 @@ namespace Client.MirScenes.Dialogs
             int openLevel = (GameScene.User.Inventory.Length - 46) / 4;
             for (int i = 0; i < LockBar.Length; i++)
             {
-                LockBar[i].Visible = (i < openLevel) ? false : true;
+                LockBar[i].Visible = i >= openLevel;
             }
 
             AddButton.Visible = openLevel >= 10 ? false : true;

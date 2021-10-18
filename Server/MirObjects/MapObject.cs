@@ -429,15 +429,12 @@ namespace Server.MirObjects
 
         public bool IsAttackTarget(MapObject attacker)
         {
-            switch (attacker.Race)
+            return attacker.Race switch
             {
-                case ObjectType.Player:
-                    return IsAttackTarget((PlayerObject)attacker);
-                case ObjectType.Monster:
-                    return IsAttackTarget((MonsterObject)attacker);
-                default:
-                    throw new NotSupportedException();
-            }
+                ObjectType.Player => IsAttackTarget((PlayerObject)attacker),
+                ObjectType.Monster => IsAttackTarget((MonsterObject)attacker),
+                _ => throw new NotSupportedException(),
+            };
         }
 
         public abstract bool IsAttackTarget(PlayerObject attacker);
@@ -516,15 +513,12 @@ namespace Server.MirObjects
 
         public bool IsFriendlyTarget(MapObject ally)
         {
-            switch (ally.Race)
+            return ally.Race switch
             {
-                case ObjectType.Player:
-                    return IsFriendlyTarget((PlayerObject)ally);
-                case ObjectType.Monster:
-                    return IsFriendlyTarget((MonsterObject)ally);
-                default:
-                    throw new NotSupportedException();
-            }
+                ObjectType.Player => IsFriendlyTarget((PlayerObject)ally),
+                ObjectType.Monster => IsFriendlyTarget((MonsterObject)ally),
+                _ => throw new NotSupportedException(),
+            };
         }
 
         public abstract bool IsFriendlyTarget(PlayerObject ally);

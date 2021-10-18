@@ -300,9 +300,11 @@ namespace Server
         {
             if (NPCs.Count == 0) return;
 
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.InitialDirectory = Path.Combine(Application.StartupPath, "Exports");
-            sfd.Filter = "Text File|*.txt";
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                InitialDirectory = Path.Combine(Application.StartupPath, "Exports"),
+                Filter = "Text File|*.txt"
+            };
             sfd.ShowDialog();
 
             if (sfd.FileName == string.Empty) return;

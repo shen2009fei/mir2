@@ -961,7 +961,7 @@
             this.txtSpawnTickSpeed.TabIndex = 3;
             this.toolTip1.SetToolTip(this.txtSpawnTickSpeed, "1.0 = normal speed\r\nlower value = ticks go faster (= faster respawn)\r\nfor example" +
         ":\r\n0.9 with a 20 minute default tick = now it\'s 18minutes/tick");
-            this.txtSpawnTickSpeed.TextChanged += new System.EventHandler(this.txtSpawnTickSpeed_TextChanged);
+            this.txtSpawnTickSpeed.TextChanged += new System.EventHandler(this.TxtSpawnTickSpeed_TextChanged);
             // 
             // txtSpawnTickUsers
             // 
@@ -1008,7 +1008,7 @@
             this.btnSpawnTickRemove.TabIndex = 1;
             this.btnSpawnTickRemove.Text = "Remove";
             this.btnSpawnTickRemove.UseVisualStyleBackColor = true;
-            this.btnSpawnTickRemove.Click += new System.EventHandler(this.btnSpawnTickRemove_Click);
+            this.btnSpawnTickRemove.Click += new System.EventHandler(this.BtnSpawnTickRemove_Click);
             // 
             // btnSpawnTickAdd
             // 
@@ -1018,7 +1018,7 @@
             this.btnSpawnTickAdd.TabIndex = 0;
             this.btnSpawnTickAdd.Text = "Add";
             this.btnSpawnTickAdd.UseVisualStyleBackColor = true;
-            this.btnSpawnTickAdd.Click += new System.EventHandler(this.btnSpawnTickAdd_Click);
+            this.btnSpawnTickAdd.Click += new System.EventHandler(this.BtnSpawnTickAdd_Click);
             // 
             // SystemInfoForm
             // 

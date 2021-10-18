@@ -1445,61 +1445,32 @@ namespace Client.MirScenes.Dialogs
         public string getAwakeTypeText(AwakeType type)
         {
             string typeName = "";
-            switch (type)
+            typeName = type switch
             {
-                case AwakeType.DC:
-                    typeName = "Bravery Glyph";
-                    break;
-                case AwakeType.MC:
-                    typeName = "Magic Glyph";
-                    break;
-                case AwakeType.SC:
-                    typeName = "Soul Glyph";
-                    break;
-                case AwakeType.AC:
-                    typeName = "Protection Glyph";
-                    break;
-                case AwakeType.MAC:
-                    typeName = "EvilSlayer Glyph";
-                    break;
-                case AwakeType.HPMP:
-                    typeName = "Body Glyph";
-                    break;
-                default:
-                    typeName = "Select Upgrade Item.";
-                    break;
-            }
+                AwakeType.DC => "Bravery Glyph",
+                AwakeType.MC => "Magic Glyph",
+                AwakeType.SC => "Soul Glyph",
+                AwakeType.AC => "Protection Glyph",
+                AwakeType.MAC => "EvilSlayer Glyph",
+                AwakeType.HPMP => "Body Glyph",
+                _ => "Select Upgrade Item.",
+            };
             return typeName;
         }
 
         public AwakeType getAwakeType(string typeName)
         {
             AwakeType type = AwakeType.None;
-            switch (typeName)
+            type = typeName switch
             {
-                case "Bravery Glyph":
-                    type = AwakeType.DC;
-                    break;
-                case "Magic Glyph":
-                    type = AwakeType.MC;
-                    break;
-                case "Soul Glyph":
-                    type = AwakeType.SC;
-                    break;
-                case "Protection Glyph":
-                    type = AwakeType.AC;
-                    break;
-                case "EvilSlayer Glyph":
-                    type = AwakeType.MAC;
-                    break;
-                case "Body Glyph":
-                    type = AwakeType.HPMP;
-                    break;
-                default:
-                    type = AwakeType.None;
-                    break;
-            }
-
+                "Bravery Glyph" => AwakeType.DC,
+                "Magic Glyph" => AwakeType.MC,
+                "Soul Glyph" => AwakeType.SC,
+                "Protection Glyph" => AwakeType.AC,
+                "EvilSlayer Glyph" => AwakeType.MAC,
+                "Body Glyph" => AwakeType.HPMP,
+                _ => AwakeType.None,
+            };
             return type;
         }
 
@@ -1614,10 +1585,10 @@ namespace Client.MirScenes.Dialogs
 
         private const int _toolCount = 3;
         private const int _ingredientCount = 6;
-        private static int _totalCount { get { return _toolCount + _ingredientCount; } }
+        private static int TotalCount { get { return _toolCount + _ingredientCount; } }
 
-        public static UserItem[] Slots = new UserItem[_totalCount];
-        public static UserItem[] ShadowItems = new UserItem[_totalCount];
+        public static UserItem[] Slots = new UserItem[TotalCount];
+        public static UserItem[] ShadowItems = new UserItem[TotalCount];
 
         public Dictionary<MirItemCell, ulong> Selected = new Dictionary<MirItemCell, ulong>();
 
@@ -1671,8 +1642,8 @@ namespace Client.MirScenes.Dialogs
                 NotControl = true
             };
 
-            Grid = new MirItemCell[_totalCount];
-            for (int x = 0; x < _totalCount; x++)
+            Grid = new MirItemCell[TotalCount];
+            for (int x = 0; x < TotalCount; x++)
             {
                 if (x >= _toolCount)
                 {

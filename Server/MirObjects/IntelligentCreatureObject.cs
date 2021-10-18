@@ -544,7 +544,7 @@ namespace Server.MirObjects
 
         protected override void Attack()
         {
-            bool singleitem = CurrentPickupMode == IntelligentCreaturePickupMode.SemiAutomatic ? true : false;
+            bool singleitem = CurrentPickupMode == IntelligentCreaturePickupMode.SemiAutomatic;
             PickupAllItems(Target.CurrentLocation);
 
             if (Target.CurrentLocation != CurrentLocation)

@@ -718,7 +718,7 @@ namespace Server
             SpawnChanged = true;
         }
 
-        private void btnSpawnTickAdd_Click(object sender, EventArgs e)
+        private void BtnSpawnTickAdd_Click(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             RespawnTickOption Option = new RespawnTickOption();
@@ -729,7 +729,7 @@ namespace Server
             SpawnChanged = true;
         }
 
-        private void btnSpawnTickRemove_Click(object sender, EventArgs e)
+        private void BtnSpawnTickRemove_Click(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             if (lbSpawnTickList.SelectedIndex == -1) return;
@@ -766,7 +766,7 @@ namespace Server
             SpawnChanged = true;
         }
 
-        private void txtSpawnTickSpeed_TextChanged(object sender, EventArgs e)
+        private void TxtSpawnTickSpeed_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             if (lbSpawnTickList.SelectedIndex == -1) return;

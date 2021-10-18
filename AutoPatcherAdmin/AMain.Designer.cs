@@ -263,7 +263,7 @@
             this.btnFixGZ.TabIndex = 24;
             this.btnFixGZ.Text = "Fix *.gz";
             this.btnFixGZ.UseVisualStyleBackColor = true;
-            this.btnFixGZ.Click += new System.EventHandler(this.btnFixGZ_Click);
+            this.btnFixGZ.Click += new System.EventHandler(this.BtnFixGZ_Click);
             // 
             // AMain
             // 

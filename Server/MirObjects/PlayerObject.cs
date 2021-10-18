@@ -480,34 +480,22 @@ namespace Server.MirObjects
 
         private string LogOutReason(byte reason)
         {
-            switch (reason)
+            return reason switch
             {
                 //0-10 are 'senddisconnect to client'
-                case 0:
-                    return string.Format("{0} Has logged out. Reason: Server closed", Name);
-                case 1:
-                    return string.Format("{0} Has logged out. Reason: Double login", Name);
-                case 2:
-                    return string.Format("{0} Has logged out. Reason: Chat message too long", Name);
-                case 3:
-                    return string.Format("{0} Has logged out. Reason: Server crashed", Name);
-                case 4:
-                    return string.Format("{0} Has logged out. Reason: Kicked by admin", Name);
-                case 5:
-                    return string.Format("{0} Has logged out. Reason: Maximum connections reached", Name);
-                case 10:
-                    return string.Format("{0} Has logged out. Reason: Wrong client version", Name);
-                case 20:
-                    return string.Format("{0} Has logged out. Reason: User gone missing / disconnected", Name);
-                case 21:
-                    return string.Format("{0} Has logged out. Reason: Connection timed out", Name);
-                case 22:
-                    return string.Format("{0} Has logged out. Reason: User closed game", Name);
-                case 23:
-                    return string.Format("{0} Has logged out. Reason: User returned to select char", Name);
-                default:
-                    return string.Format("{0} Has logged out. Reason: Unknown", Name);
-            }
+                0 => string.Format("{0} Has logged out. Reason: Server closed", Name),
+                1 => string.Format("{0} Has logged out. Reason: Double login", Name),
+                2 => string.Format("{0} Has logged out. Reason: Chat message too long", Name),
+                3 => string.Format("{0} Has logged out. Reason: Server crashed", Name),
+                4 => string.Format("{0} Has logged out. Reason: Kicked by admin", Name),
+                5 => string.Format("{0} Has logged out. Reason: Maximum connections reached", Name),
+                10 => string.Format("{0} Has logged out. Reason: Wrong client version", Name),
+                20 => string.Format("{0} Has logged out. Reason: User gone missing / disconnected", Name),
+                21 => string.Format("{0} Has logged out. Reason: Connection timed out", Name),
+                22 => string.Format("{0} Has logged out. Reason: User closed game", Name),
+                23 => string.Format("{0} Has logged out. Reason: User returned to select char", Name),
+                _ => string.Format("{0} Has logged out. Reason: Unknown", Name),
+            };
         }
 
         private void NewCharacter()
@@ -3950,10 +3938,8 @@ namespace Server.MirObjects
                         
                         using (System.IO.FileStream stream = System.IO.File.Create(string.Format("Character Backups/{0}", tempInfo.Name)))
                         {
-                            using (System.IO.BinaryWriter writer = new System.IO.BinaryWriter(stream))
-                            {
-                                tempInfo.Save(writer);
-                            }
+                            using System.IO.BinaryWriter writer = new System.IO.BinaryWriter(stream);
+                            tempInfo.Save(writer);
                         }
 
                         break;
@@ -3975,21 +3961,17 @@ namespace Server.MirObjects
 
                                 tempInfo = Envir.AccountList[i].Characters[j];
 
-                                using (System.IO.FileStream stream = System.IO.File.OpenRead(string.Format("Character Backups/{0}", tempInfo.Name)))
+                                using System.IO.FileStream stream = System.IO.File.OpenRead(string.Format("Character Backups/{0}", tempInfo.Name));
+                                using System.IO.BinaryReader reader = new System.IO.BinaryReader(stream);
+                                CharacterInfo tt = new CharacterInfo(reader);
+
+                                if (Envir.AccountList[i].Characters[j].Index != tt.Index)
                                 {
-                                    using (System.IO.BinaryReader reader = new System.IO.BinaryReader(stream))
-                                    {
-                                        CharacterInfo tt = new CharacterInfo(reader);
-
-                                        if(Envir.AccountList[i].Characters[j].Index != tt.Index)
-                                        {
-                                            ReceiveChat("Player name was matched however IDs did not. Likely due to player being recreated. Player not restored", ChatType.System);
-                                            return;
-                                        }
-
-                                        Envir.AccountList[i].Characters[j] = tt;
-                                    }
+                                    ReceiveChat("Player name was matched however IDs did not. Likely due to player being recreated. Player not restored", ChatType.System);
+                                    return;
                                 }
+
+                                Envir.AccountList[i].Characters[j] = tt;
                             }
                         }
                         
@@ -4727,7 +4709,7 @@ namespace Server.MirObjects
 
                                 if (Account.ExpandedStorageExpiryDate > Envir.Now)
                                 {
-                                    Account.ExpandedStorageExpiryDate = Account.ExpandedStorageExpiryDate + addedTime;
+                                    Account.ExpandedStorageExpiryDate += addedTime;
                                     ReceiveChat(GameLanguage.ExpandedStorageExpiresOn + Account.ExpandedStorageExpiryDate.ToString(), ChatType.System);
                                 }
                                 else
@@ -9992,23 +9974,16 @@ namespace Server.MirObjects
             if (Dead || InSafeZone || attacker.InSafeZone || attacker == this || GMGameMaster) return false;
             if (CurrentMap.Info.NoFight) return false;
 
-            switch (attacker.AMode)
+            return attacker.AMode switch
             {
-                case AttackMode.All:
-                    return true;
-                case AttackMode.Group:
-                    return GroupMembers == null || !GroupMembers.Contains(attacker);
-                case AttackMode.Guild:
-                    return MyGuild == null || MyGuild != attacker.MyGuild;
-                case AttackMode.EnemyGuild:
-                    return MyGuild != null && MyGuild.IsEnemy(attacker.MyGuild);
-                case AttackMode.Peace:
-                    return false;
-                case AttackMode.RedBrown:
-                    return PKPoints >= 200 || Envir.Time < BrownTime;
-            }
-
-            return true;
+                AttackMode.All => true,
+                AttackMode.Group => GroupMembers == null || !GroupMembers.Contains(attacker),
+                AttackMode.Guild => MyGuild == null || MyGuild != attacker.MyGuild,
+                AttackMode.EnemyGuild => MyGuild != null && MyGuild.IsEnemy(attacker.MyGuild),
+                AttackMode.Peace => false,
+                AttackMode.RedBrown => PKPoints >= 200 || Envir.Time < BrownTime,
+                _ => true,
+            };
         }
         public override bool IsAttackTarget(MonsterObject attacker)
         {
@@ -10034,41 +10009,30 @@ namespace Server.MirObjects
                     return false;
             }
 
-            switch (attacker.Master.AMode)
+            return attacker.Master.AMode switch
             {
-                case AttackMode.All:
-                    return true;
-                case AttackMode.Group:
-                    return GroupMembers == null || !GroupMembers.Contains(attacker.Master);
-                case AttackMode.Guild:
-                    return true;
-                case AttackMode.EnemyGuild:
-                    return false;
-                case AttackMode.Peace:
-                    return false;
-                case AttackMode.RedBrown:
-                    return PKPoints >= 200 || Envir.Time < BrownTime;
-            }
-
-            return true;
+                AttackMode.All => true,
+                AttackMode.Group => GroupMembers == null || !GroupMembers.Contains(attacker.Master),
+                AttackMode.Guild => true,
+                AttackMode.EnemyGuild => false,
+                AttackMode.Peace => false,
+                AttackMode.RedBrown => PKPoints >= 200 || Envir.Time < BrownTime,
+                _ => true,
+            };
         }
 
         public override bool IsFriendlyTarget(PlayerObject ally)
         {
             if (ally == this) return true;
 
-            switch (ally.AMode)
+            return ally.AMode switch
             {
-                case AttackMode.Group:
-                    return GroupMembers != null && GroupMembers.Contains(ally);
-                case AttackMode.RedBrown:
-                    return PKPoints < 200 & Envir.Time > BrownTime;
-                case AttackMode.Guild:
-                    return MyGuild != null && MyGuild == ally.MyGuild;
-                case AttackMode.EnemyGuild:
-                    return true;
-            }
-            return true;
+                AttackMode.Group => GroupMembers != null && GroupMembers.Contains(ally),
+                AttackMode.RedBrown => PKPoints < 200 & Envir.Time > BrownTime,
+                AttackMode.Guild => MyGuild != null && MyGuild == ally.MyGuild,
+                AttackMode.EnemyGuild => true,
+                _ => true,
+            };
         }
         public override bool IsFriendlyTarget(MonsterObject ally)
         {
@@ -12070,102 +12034,43 @@ namespace Server.MirObjects
                     {
                         Stat GemType = GetGemType(tempFrom);
 
-                        switch (GemType)
+                        successchance *= GemType switch
                         {
-                            case Stat.MaxAC:
-                                successchance *= (int)tempTo.AddedStats[Stat.MaxAC];
-                                break;
-
-                            case Stat.MaxMAC:
-                                successchance *= (int)tempTo.AddedStats[Stat.MaxMAC];
-                                break;
-
-                            case Stat.MaxDC:
-                                successchance *= (int)tempTo.AddedStats[Stat.MaxDC];
-                                break;
-
-                            case Stat.MaxMC:
-                                successchance *= (int)tempTo.AddedStats[Stat.MaxMC];
-                                break;
-
-                            case Stat.MaxSC:
-                                successchance *= (int)tempTo.AddedStats[Stat.MaxSC];
-                                break;
-
-                            case Stat.AttackSpeed:
-                                successchance *= (int)tempTo.AddedStats[Stat.AttackSpeed];
-                                break;
-
-                            case Stat.Accuracy:
-                                successchance *= (int)tempTo.AddedStats[Stat.Accuracy];
-                                break;
-
-                            case Stat.Agility:
-                                successchance *= (int)tempTo.AddedStats[Stat.Agility];
-                                break;
-
-                            case Stat.Freezing:
-                                successchance *= (int)tempTo.AddedStats[Stat.Freezing];
-                                break;
-
-                            case Stat.PoisonAttack:
-                                successchance *= (int)tempTo.AddedStats[Stat.PoisonAttack];
-                                break;
-
-                            case Stat.MagicResist:
-                                successchance *= (int)tempTo.AddedStats[Stat.MagicResist];
-                                break;
-
-                            case Stat.PoisonResist:
-                                successchance *= (int)tempTo.AddedStats[Stat.PoisonResist];
-                                break;
-
+                            Stat.MaxAC => (int)tempTo.AddedStats[Stat.MaxAC],
+                            Stat.MaxMAC => (int)tempTo.AddedStats[Stat.MaxMAC],
+                            Stat.MaxDC => (int)tempTo.AddedStats[Stat.MaxDC],
+                            Stat.MaxMC => (int)tempTo.AddedStats[Stat.MaxMC],
+                            Stat.MaxSC => (int)tempTo.AddedStats[Stat.MaxSC],
+                            Stat.AttackSpeed => (int)tempTo.AddedStats[Stat.AttackSpeed],
+                            Stat.Accuracy => (int)tempTo.AddedStats[Stat.Accuracy],
+                            Stat.Agility => (int)tempTo.AddedStats[Stat.Agility],
+                            Stat.Freezing => (int)tempTo.AddedStats[Stat.Freezing],
+                            Stat.PoisonAttack => (int)tempTo.AddedStats[Stat.PoisonAttack],
+                            Stat.MagicResist => (int)tempTo.AddedStats[Stat.MagicResist],
+                            Stat.PoisonResist => (int)tempTo.AddedStats[Stat.PoisonResist],
                             // These attributes may not work as more than 1 stat is
                             // added per gem, i.e + 40 HP.
-
-                            case Stat.HP:
-                                successchance *= (int)tempTo.AddedStats[Stat.HP];
-                                break;
-
-                            case Stat.MP:
-                                successchance *= (int)tempTo.AddedStats[Stat.MP];
-                                break;
-
-                            case Stat.HealthRecovery:
-                                successchance *= (int)tempTo.AddedStats[Stat.HealthRecovery];
-                                break;
-                                
+                            Stat.HP => (int)tempTo.AddedStats[Stat.HP],
+                            Stat.MP => (int)tempTo.AddedStats[Stat.MP],
+                            Stat.HealthRecovery => (int)tempTo.AddedStats[Stat.HealthRecovery],
                             // I don't know if this conflicts with benes.
-                            case Stat.Luck:
-                                successchance *= (int)tempTo.AddedStats[Stat.Luck];
-                                break;
-
-                            case Stat.Strong:
-                                successchance *= (int)tempTo.AddedStats[Stat.Strong];
-                                break;
-
-                            case Stat.PoisonRecovery:
-                                successchance *= (int)tempTo.AddedStats[Stat.PoisonRecovery];
-                                break;
-
-
+                            Stat.Luck => (int)tempTo.AddedStats[Stat.Luck],
+                            Stat.Strong => (int)tempTo.AddedStats[Stat.Strong],
+                            Stat.PoisonRecovery => (int)tempTo.AddedStats[Stat.PoisonRecovery],
                             /*
-                                 Currently not supported.
-                                 Missing item definitions.
+Currently not supported.
+Missing item definitions.
 
-                                 case StatType.HP_Precent:
-                                 case StatType.MP_Precent:
-                                 case StatType.MP_Regen:
-                                 case StatType.Holy:
-                                 case StatType.Durability:
+case StatType.HP_Precent:
+case StatType.MP_Precent:
+case StatType.MP_Regen:
+case StatType.Holy:
+case StatType.Durability:
 
 
-                            */
-                            default:
-                                successchance *= (int)tempTo.GemCount;
-                                break;
-
-                        }
+*/
+                            _ => (int)tempTo.GemCount,
+                        };
                     }
                     // Gem is affected by the total added stats on the item.
                     else

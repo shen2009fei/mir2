@@ -346,20 +346,12 @@ namespace Client.MirScenes
             {
                 if (OutputMessages.Count > i)
                 {
-                    Color color;
-                    switch (OutputMessages[i].Type)
+                    var color = OutputMessages[i].Type switch
                     {
-                        case OutputMessageType.Quest:
-                            color = Color.Gold;
-                            break;
-                        case OutputMessageType.Guild:
-                            color = Color.DeepPink;
-                            break;
-                        default:
-                            color = Color.LimeGreen;
-                            break;
-                    }
-
+                        OutputMessageType.Quest => Color.Gold,
+                        OutputMessageType.Guild => Color.DeepPink,
+                        _ => Color.LimeGreen,
+                    };
                     OutputLines[i].Text = OutputMessages[i].Message;
                     OutputLines[i].ForeColour = color;
                     OutputLines[i].Visible = true;
@@ -4772,8 +4764,10 @@ namespace Client.MirScenes
                 TrackableEffect NetDropped = new TrackableEffect(new Effect(Libraries.MagicC, 7, 1, 1000, ob) { Repeat = true, RepeatUntil = CMain.Time + (p.Value - 1500) });
                 NetDropped.EffectName = "BindingShotDown";
 
-                TrackableEffect NetFall = new TrackableEffect(new Effect(Libraries.MagicC, 8, 8, 700, ob));
-                NetFall.EffectName = "BindingShotFall";
+                TrackableEffect NetFall = new TrackableEffect(new Effect(Libraries.MagicC, 8, 8, 700, ob))
+                {
+                    EffectName = "BindingShotFall"
+                };
 
                 NetDropped.Complete += (o1, e1) =>
                 {
@@ -5788,19 +5782,14 @@ namespace Client.MirScenes
 
         public Color GradeNameColor(ItemGrade grade)
         {
-            switch (grade)
+            return grade switch
             {
-                case ItemGrade.Common:
-                    return Color.Yellow;
-                case ItemGrade.Rare:
-                    return Color.DeepSkyBlue;
-                case ItemGrade.Legendary:
-                    return Color.DarkOrange;
-                case ItemGrade.Mythical:
-                    return Color.Plum;
-                default:
-                    return Color.Yellow;
-            }
+                ItemGrade.Common => Color.Yellow,
+                ItemGrade.Rare => Color.DeepSkyBlue,
+                ItemGrade.Legendary => Color.DarkOrange,
+                ItemGrade.Mythical => Color.Plum,
+                _ => Color.Yellow,
+            };
         }
 
         public void DisposeItemLabel()

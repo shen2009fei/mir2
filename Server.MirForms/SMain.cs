@@ -187,7 +187,7 @@ namespace Server
             form.ShowDialog();
         }
 
-        private void balanceConfigToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BalanceConfigToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BalanceConfigForm form = new BalanceConfigForm();
 
@@ -215,7 +215,7 @@ namespace Server
             form.ShowDialog();
         }
 
-        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AccountInfoForm form = new AccountInfoForm();
 
