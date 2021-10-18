@@ -72,7 +72,12 @@ namespace Server.MirObjects
 
         public override string Name
         {
-            get { return Master == null ? CustomName : (Dead ? CustomName : string.Format("{0}_{1}'s Pet", CustomName, Master.Name)); }
+            get {
+                //var creatureObjectName = "{0}_{1}'s Pet";
+                return Master == null ? 
+                    CustomName : 
+                    (Dead ? CustomName : string.Format(Resources.ResourceObject.CreatureObjectName, CustomName, Master.Name)); 
+            }
             set { throw new NotSupportedException(); }
         }
         protected override bool CanAttack
