@@ -120,8 +120,14 @@
   <data name="AllItems" xml:space="preserve">
     <value>所有物品</value>
   </data>
+  <data name="Crit" xml:space="preserve">
+    <value>暴击</value>
+  </data>
   <data name="Gold" xml:space="preserve">
     <value>金币</value>
+  </data>
+  <data name="Miss" xml:space="preserve">
+    <value>未命中</value>
   </data>
   <data name="Needed" xml:space="preserve">
     <value>需要</value>

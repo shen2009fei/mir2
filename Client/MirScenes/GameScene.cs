@@ -2957,10 +2957,10 @@ namespace Client.MirScenes
                             obj.Damages.Add(new Damage(p.Damage.ToString("#,##0"), 1000, obj.Race == ObjectType.Player ? Color.Red : Color.White, 50));
                             break;
                         case DamageType.Miss:
-                            obj.Damages.Add(new Damage("Miss", 1200, obj.Race == ObjectType.Player ? Color.LightCoral : Color.LightGray, 50));
+                            obj.Damages.Add(new Damage(Resources.ResourceCommon.Miss, 1200, obj.Race == ObjectType.Player ? Color.LightCoral : Color.LightGray, 50));
                             break;
                         case DamageType.Critical:
-                            obj.Damages.Add(new Damage("Crit", 1000, obj.Race == ObjectType.Player ? Color.DarkRed : Color.DarkRed, 50) { Offset = 15 });
+                            obj.Damages.Add(new Damage(Resources.ResourceCommon.Crit, 1000, obj.Race == ObjectType.Player ? Color.DarkRed : Color.DarkRed, 50) { Offset = 15 });
                             break;
                     }
                 }

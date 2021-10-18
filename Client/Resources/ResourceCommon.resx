@@ -120,8 +120,14 @@
   <data name="AllItems" xml:space="preserve">
     <value>All Items</value>
   </data>
+  <data name="Crit" xml:space="preserve">
+    <value>Crit</value>
+  </data>
   <data name="Gold" xml:space="preserve">
     <value>Gold</value>
+  </data>
+  <data name="Miss" xml:space="preserve">
+    <value>Miss</value>
   </data>
   <data name="Needed" xml:space="preserve">
     <value>Needed</value>

@@ -70,11 +70,29 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Crit 的本地化字符串。
+        /// </summary>
+        internal static string Crit {
+            get {
+                return ResourceManager.GetString("Crit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Gold 的本地化字符串。
         /// </summary>
         internal static string Gold {
             get {
                 return ResourceManager.GetString("Gold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Miss 的本地化字符串。
+        /// </summary>
+        internal static string Miss {
+            get {
+                return ResourceManager.GetString("Miss", resourceCulture);
             }
         }
         
