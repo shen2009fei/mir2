@@ -117,37 +117,133 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BagWeight" xml:space="preserve">
-    <value>背包重量</value>
+  <data name="AllAttackModeAttackAllSubjects" xml:space="preserve">
+    <value>All Attack Mode - Attack all subjects</value>
   </data>
-  <data name="CantDrop" xml:space="preserve">
-    <value>不会掉落</value>
+  <data name="AutoRunOnOff" xml:space="preserve">
+    <value>Auto run on / off</value>
   </data>
-  <data name="CantDropOnDeath" xml:space="preserve">
-    <value>死亡时不会掉落</value>
+  <data name="BeltWindowOpenClose" xml:space="preserve">
+    <value>Belt window (open / close)</value>
   </data>
-  <data name="CantTrade" xml:space="preserve">
-    <value>不能交易</value>
+  <data name="CommandToGuildChat" xml:space="preserve">
+    <value>Command to guild chat</value>
   </data>
-  <data name="DestroyedWhenDropped" xml:space="preserve">
-    <value>丢弃时销毁</value>
+  <data name="CommandToShoutToOthersNearby" xml:space="preserve">
+    <value>Command to shout to others nearby</value>
   </data>
-  <data name="Drop" xml:space="preserve">
-    <value>掉落</value>
+  <data name="CommandToWhisperToOthers" xml:space="preserve">
+    <value>Command to whisper to others</value>
   </data>
-  <data name="Exp" xml:space="preserve">
-    <value>经验</value>
+  <data name="CreaturePickupMultiMouseTarget" xml:space="preserve">
+    <value>Creature Pickup (Multi Mouse Target)</value>
   </data>
-  <data name="HealthRecovery" xml:space="preserve">
-    <value>生命值恢复</value>
+  <data name="CreaturePickupSingleMouseTarget" xml:space="preserve">
+    <value>Creature Pickup (Single Mouse Target)</value>
   </data>
-  <data name="MaxHP" xml:space="preserve">
-    <value>最大生命值</value>
+  <data name="EngagementWindowOpenClose" xml:space="preserve">
+    <value>Engagement window (open / close)</value>
   </data>
-  <data name="MaxMP" xml:space="preserve">
-    <value>最大魔法值</value>
+  <data name="ExitTheGame" xml:space="preserve">
+    <value>Exit the game</value>
   </data>
-  <data name="Time" xml:space="preserve">
-    <value>时间</value>
+  <data name="FishingWindowOpenClose" xml:space="preserve">
+    <value>Fishing window (open / close)</value>
+  </data>
+  <data name="FriendWindowOpenClose" xml:space="preserve">
+    <value>Friend window (open / close)</value>
+  </data>
+  <data name="GameshopWindowOpenClose" xml:space="preserve">
+    <value>Gameshop window (open / close)</value>
+  </data>
+  <data name="GoodEvilModeAttackPKPlayersAndMonstersOnly" xml:space="preserve">
+    <value>Good/Evil Mode - Attack PK players and monsters only</value>
+  </data>
+  <data name="GroupModeAttackAllSubjectsExceptYourGroupMembers" xml:space="preserve">
+    <value>Group Mode - Attack all subjects except your group members</value>
+  </data>
+  <data name="GroupWindowOpenClose" xml:space="preserve">
+    <value>Group window (open / close)</value>
+  </data>
+  <data name="GuildModeAttackAllSubjectsExceptYourGuildMembers" xml:space="preserve">
+    <value>Guild Mode - Attack all subjects except your guild members</value>
+  </data>
+  <data name="GuildWindowOpenClose" xml:space="preserve">
+    <value>Guild window (open / close)</value>
+  </data>
+  <data name="HelpWindowOpenClose" xml:space="preserve">
+    <value>Help window (open / close)</value>
+  </data>
+  <data name="HighlightPickupItems" xml:space="preserve">
+    <value>Highlight / Pickup Items</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="InventoryWindowOpenClose" xml:space="preserve">
+    <value>Inventory window (open / close)</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="MentorWindowOpenClose" xml:space="preserve">
+    <value>Mentor window (open / close)</value>
+  </data>
+  <data name="MinimapWindowOpenClose" xml:space="preserve">
+    <value>Minimap window (open / close)</value>
+  </data>
+  <data name="MountDismounRide" xml:space="preserve">
+    <value>Mount / Dismount ride</value>
+  </data>
+  <data name="OptionWindowOpenClose" xml:space="preserve">
+    <value>Option window (open / close)</value>
+  </data>
+  <data name="PeaceModeAttackMonstersOnly" xml:space="preserve">
+    <value>Peace Mode - Attack monsters only</value>
+  </data>
+  <data name="RightClick" xml:space="preserve">
+    <value>Right Click</value>
+  </data>
+  <data name="ScreenCapture" xml:space="preserve">
+    <value>Screen Capture</value>
+  </data>
+  <data name="Shortcuts" xml:space="preserve">
+    <value>Shortcuts</value>
+  </data>
+  <data name="ShowHideInterface" xml:space="preserve">
+    <value>Show / Hide interface</value>
+  </data>
+  <data name="ShowOtherPlayersKits" xml:space="preserve">
+    <value>Show other players kits</value>
+  </data>
+  <data name="ShowTheFieldMap" xml:space="preserve">
+    <value>Show the field map</value>
+  </data>
+  <data name="ShowTheSkillBar" xml:space="preserve">
+    <value>Show the skill bar</value>
+  </data>
+  <data name="SkillButtons" xml:space="preserve">
+    <value>Skill buttons</value>
+  </data>
+  <data name="SkillWindowOpenClose" xml:space="preserve">
+    <value>Skill window (open / close)</value>
+  </data>
+  <data name="StatusWindowOpenClose" xml:space="preserve">
+    <value>Status window (open / close)</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>text</value>
+  </data>
+  <data name="TogglePetAttackMode" xml:space="preserve">
+    <value>Toggle pet attack mode</value>
+  </data>
+  <data name="TogglePlayerAttackMode" xml:space="preserve">
+    <value>Toggle player attack mode</value>
+  </data>
+  <data name="TradeWindowOpenClose" xml:space="preserve">
+    <value>Trade window (open / close)</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>username</value>
   </data>
 </root>

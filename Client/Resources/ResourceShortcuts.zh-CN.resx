@@ -117,37 +117,133 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BagWeight" xml:space="preserve">
-    <value>背包重量</value>
+  <data name="AllAttackModeAttackAllSubjects" xml:space="preserve">
+    <value>全体攻击模式 - 攻击所有对象</value>
   </data>
-  <data name="CantDrop" xml:space="preserve">
-    <value>不会掉落</value>
+  <data name="AutoRunOnOff" xml:space="preserve">
+    <value>自动跑 开 / 关</value>
   </data>
-  <data name="CantDropOnDeath" xml:space="preserve">
-    <value>死亡时不会掉落</value>
+  <data name="BeltWindowOpenClose" xml:space="preserve">
+    <value>快捷物品栏 (打开 / 关闭)</value>
   </data>
-  <data name="CantTrade" xml:space="preserve">
-    <value>不能交易</value>
+  <data name="CommandToGuildChat" xml:space="preserve">
+    <value>命令 - 行会聊天</value>
   </data>
-  <data name="DestroyedWhenDropped" xml:space="preserve">
-    <value>丢弃时销毁</value>
+  <data name="CommandToShoutToOthersNearby" xml:space="preserve">
+    <value>命令 - 对附近其他玩家喊话</value>
   </data>
-  <data name="Drop" xml:space="preserve">
-    <value>掉落</value>
+  <data name="CommandToWhisperToOthers" xml:space="preserve">
+    <value>命令 - 对他人发送密语</value>
   </data>
-  <data name="Exp" xml:space="preserve">
-    <value>经验</value>
+  <data name="CreaturePickupMultiMouseTarget" xml:space="preserve">
+    <value>灵兽拾取（多鼠标目标）</value>
   </data>
-  <data name="HealthRecovery" xml:space="preserve">
-    <value>生命值恢复</value>
+  <data name="CreaturePickupSingleMouseTarget" xml:space="preserve">
+    <value>灵兽拾取（单鼠标目标）</value>
   </data>
-  <data name="MaxHP" xml:space="preserve">
-    <value>最大生命值</value>
+  <data name="EngagementWindowOpenClose" xml:space="preserve">
+    <value>婚约窗口 (打开 / 关闭)</value>
   </data>
-  <data name="MaxMP" xml:space="preserve">
-    <value>最大魔法值</value>
+  <data name="ExitTheGame" xml:space="preserve">
+    <value>退出游戏</value>
   </data>
-  <data name="Time" xml:space="preserve">
-    <value>时间</value>
+  <data name="FishingWindowOpenClose" xml:space="preserve">
+    <value>钓鱼窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="FriendWindowOpenClose" xml:space="preserve">
+    <value>好友窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="GameshopWindowOpenClose" xml:space="preserve">
+    <value>游戏商城窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="GoodEvilModeAttackPKPlayersAndMonstersOnly" xml:space="preserve">
+    <value>善恶模式 - 只攻击 PK 玩家和怪物</value>
+  </data>
+  <data name="GroupModeAttackAllSubjectsExceptYourGroupMembers" xml:space="preserve">
+    <value>小组模式 - 攻击除小组成员以外的所有对象</value>
+  </data>
+  <data name="GroupWindowOpenClose" xml:space="preserve">
+    <value>组队窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="GuildModeAttackAllSubjectsExceptYourGuildMembers" xml:space="preserve">
+    <value>行会模式 - 攻击除行会成员以外的所有对象</value>
+  </data>
+  <data name="GuildWindowOpenClose" xml:space="preserve">
+    <value>行会窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="HelpWindowOpenClose" xml:space="preserve">
+    <value>帮助窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="HighlightPickupItems" xml:space="preserve">
+    <value>高亮显示物品 / 拾取物品</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="InventoryWindowOpenClose" xml:space="preserve">
+    <value>背包窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="MentorWindowOpenClose" xml:space="preserve">
+    <value>师徒窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="MinimapWindowOpenClose" xml:space="preserve">
+    <value>迷你地图窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="MountDismounRide" xml:space="preserve">
+    <value>上马 / 下马</value>
+  </data>
+  <data name="OptionWindowOpenClose" xml:space="preserve">
+    <value>选项窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="PeaceModeAttackMonstersOnly" xml:space="preserve">
+    <value>和平模式 - 只攻击怪物</value>
+  </data>
+  <data name="RightClick" xml:space="preserve">
+    <value>右键</value>
+  </data>
+  <data name="ScreenCapture" xml:space="preserve">
+    <value>屏幕截图</value>
+  </data>
+  <data name="Shortcuts" xml:space="preserve">
+    <value>快捷键</value>
+  </data>
+  <data name="ShowHideInterface" xml:space="preserve">
+    <value>显示/隐藏界面</value>
+  </data>
+  <data name="ShowOtherPlayersKits" xml:space="preserve">
+    <value>展示其他玩家装备</value>
+  </data>
+  <data name="ShowTheFieldMap" xml:space="preserve">
+    <value>显示当前地图的大地图</value>
+  </data>
+  <data name="ShowTheSkillBar" xml:space="preserve">
+    <value>显示技能栏</value>
+  </data>
+  <data name="SkillButtons" xml:space="preserve">
+    <value>技能按钮</value>
+  </data>
+  <data name="SkillWindowOpenClose" xml:space="preserve">
+    <value>技能窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="StatusWindowOpenClose" xml:space="preserve">
+    <value>状态窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="TogglePetAttackMode" xml:space="preserve">
+    <value>切换宠物攻击模式</value>
+  </data>
+  <data name="TogglePlayerAttackMode" xml:space="preserve">
+    <value>切换玩家攻击模式</value>
+  </data>
+  <data name="TradeWindowOpenClose" xml:space="preserve">
+    <value>交易窗口 (打开 / 关闭)</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>用户名</value>
   </data>
 </root>

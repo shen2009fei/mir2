@@ -117,22 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ExitTheGame" xml:space="preserve">
-    <value>Exit the game</value>
+  <data name="Attacking" xml:space="preserve">
+    <value>攻击</value>
   </data>
-  <data name="HealthRecovery" xml:space="preserve">
-    <value>Health Recovery</value>
+  <data name="Chat Shortcuts" xml:space="preserve">
+    <value>聊天快捷键</value>
   </data>
-  <data name="InventoryWindowOpenClose" xml:space="preserve">
-    <value>Inventory window (open / close)</value>
+  <data name="Chatting" xml:space="preserve">
+    <value>聊天</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Log out</value>
+  <data name="CollectingItems" xml:space="preserve">
+    <value>收集物品</value>
   </data>
-  <data name="SkillButtons" xml:space="preserve">
-    <value>Skill buttons</value>
+  <data name="Durability" xml:space="preserve">
+    <value>耐久度</value>
   </data>
-  <data name="StatusWindowOpenClose" xml:space="preserve">
-    <value>Status window (open / close)</value>
+  <data name="Fishing" xml:space="preserve">
+    <value>钓鱼</value>
+  </data>
+  <data name="GemsAndOrbs" xml:space="preserve">
+    <value>宝石与宝珠</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>组队</value>
+  </data>
+  <data name="Health" xml:space="preserve">
+    <value>生命值</value>
+  </data>
+  <data name="Inspecting" xml:space="preserve">
+    <value>探查</value>
+  </data>
+  <data name="Mana" xml:space="preserve">
+    <value>魔法值</value>
+  </data>
+  <data name="Mounts" xml:space="preserve">
+    <value>坐骑</value>
+  </data>
+  <data name="Movements" xml:space="preserve">
+    <value>移动</value>
+  </data>
+  <data name="Purchasing" xml:space="preserve">
+    <value>购买</value>
+  </data>
+  <data name="Quests" xml:space="preserve">
+    <value>任务</value>
+  </data>
+  <data name="Repairing" xml:space="preserve">
+    <value>修理</value>
+  </data>
+  <data name="Selling" xml:space="preserve">
+    <value>出售</value>
+  </data>
+  <data name="ShortcutInformation" xml:space="preserve">
+    <value>快捷键信息</value>
+  </data>
+  <data name="Skills" xml:space="preserve">
+    <value>技能</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>状态属性</value>
+  </data>
+  <data name="Trading" xml:space="preserve">
+    <value>交易</value>
   </data>
 </root>

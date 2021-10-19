@@ -117,28 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BagWeight" xml:space="preserve">
-    <value>背包重量</value>
+  <data name="Attacking" xml:space="preserve">
+    <value>Attacking</value>
   </data>
-  <data name="ExitTheGame" xml:space="preserve">
-    <value>退出游戏</value>
+  <data name="ChatShortcuts" xml:space="preserve">
+    <value>Chat Shortcuts</value>
   </data>
-  <data name="Experience" xml:space="preserve">
-    <value>经验</value>
+  <data name="Chatting" xml:space="preserve">
+    <value>Chatting</value>
   </data>
-  <data name="HealthRecovery" xml:space="preserve">
-    <value>生命值恢复</value>
+  <data name="CollectingItems" xml:space="preserve">
+    <value>Collecting Items</value>
   </data>
-  <data name="InventoryWindowOpenClose" xml:space="preserve">
-    <value>背包窗口 (打开 / 关闭)</value>
+  <data name="Durability" xml:space="preserve">
+    <value>Durability</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>登出</value>
+  <data name="Fishing" xml:space="preserve">
+    <value>Fishing</value>
   </data>
-  <data name="SkillButtons" xml:space="preserve">
-    <value>技能按钮</value>
+  <data name="GemsAndOrbs" xml:space="preserve">
+    <value>Gems and Orbs</value>
   </data>
-  <data name="StatusWindowOpenClose" xml:space="preserve">
-    <value>状态窗口 (打开 / 关闭)</value>
+  <data name="Groups" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="Health" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="Inspecting" xml:space="preserve">
+    <value>Inspecting</value>
+  </data>
+  <data name="Mana" xml:space="preserve">
+    <value>Mana</value>
+  </data>
+  <data name="Mounts" xml:space="preserve">
+    <value>Mounts</value>
+  </data>
+  <data name="Movements" xml:space="preserve">
+    <value>Movements</value>
+  </data>
+  <data name="Purchasing" xml:space="preserve">
+    <value>Purchasing</value>
+  </data>
+  <data name="Quests" xml:space="preserve">
+    <value>Quests</value>
+  </data>
+  <data name="Repairing" xml:space="preserve">
+    <value>Repairing</value>
+  </data>
+  <data name="Selling" xml:space="preserve">
+    <value>Selling</value>
+  </data>
+  <data name="ShortcutInformation" xml:space="preserve">
+    <value>Shortcut Information</value>
+  </data>
+  <data name="Skills" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="Trading" xml:space="preserve">
+    <value>Trading</value>
   </data>
 </root>

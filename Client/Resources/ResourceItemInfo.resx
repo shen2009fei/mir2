@@ -138,6 +138,9 @@
   <data name="Exp" xml:space="preserve">
     <value>Exp</value>
   </data>
+  <data name="HealthRecovery" xml:space="preserve">
+    <value>Health Recovery</value>
+  </data>
   <data name="MaxHP" xml:space="preserve">
     <value>Max HP</value>
   </data>

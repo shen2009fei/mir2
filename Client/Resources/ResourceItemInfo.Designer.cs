@@ -124,6 +124,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Health Recovery 的本地化字符串。
+        /// </summary>
+        internal static string HealthRecovery {
+            get {
+                return ResourceManager.GetString("HealthRecovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Max HP 的本地化字符串。
         /// </summary>
         internal static string MaxHP {

@@ -6910,7 +6910,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = string.Format(addValue > 0 ? Resources.Resource1.HealthRecovery + " + {0} (+{1})" : Resources.Resource1.HealthRecovery + " + {0}", minValue + addValue, addValue)
+                    Text = string.Format(addValue > 0 ? Resources.ResourceItemInfo.HealthRecovery + " + {0} (+{1})" : Resources.ResourceItemInfo.HealthRecovery + " + {0}", minValue + addValue, addValue)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, HEALTH_RECOVERYLabel.DisplayRectangle.Right + 4),

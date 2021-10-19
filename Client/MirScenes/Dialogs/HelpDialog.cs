@@ -118,38 +118,38 @@ namespace Client.MirScenes.Dialogs
             Dictionary<string, string> keybinds = new Dictionary<string, string>();
 
             List<HelpPage> imagePages = new List<HelpPage> { 
-                new HelpPage("Shortcut Information", -1, new ShortcutPage1 { Parent = this } ) { Parent = this, Location = location, Visible = false }, 
-                new HelpPage("Shortcut Information", -1, new ShortcutPage2 { Parent = this } ) { Parent = this, Location = location, Visible = false }, 
-                new HelpPage("Chat Shortcuts", -1, new ShortcutPage3 { Parent = this } ) { Parent = this, Location = location, Visible = false }, 
-                new HelpPage("Movements", 0, null) { Parent = this, Location = location, Visible = false }, 
-                new HelpPage("Attacking", 1, null) { Parent = this, Location = location, Visible = false }, 
-                new HelpPage("Collecting Items", 2, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Health", 3, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Skills", 4, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Skills", 5, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Mana", 6, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Chatting", 7, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Groups", 8, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Durability", 9, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Purchasing", 10, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Selling", 11, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Repairing", 12, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Trading", 13, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Inspecting", 14, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Statistics", 15, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Statistics", 16, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Statistics", 17, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Statistics", 18, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Statistics", 19, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Statistics", 20, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Quests", 21, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Quests", 22, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Quests", 23, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Quests", 24, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Mounts", 25, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Mounts", 26, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Fishing", 27, null) { Parent = this, Location = location, Visible = false },
-                new HelpPage("Gems and Orbs", 28, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.ShortcutInformation, -1, new ShortcutPage1 { Parent = this } ) { Parent = this, Location = location, Visible = false }, 
+                new HelpPage(Resources.ResourceHelpDialog.ShortcutInformation, -1, new ShortcutPage2 { Parent = this } ) { Parent = this, Location = location, Visible = false }, 
+                new HelpPage(Resources.ResourceHelpDialog.ChatShortcuts, -1, new ShortcutPage3 { Parent = this } ) { Parent = this, Location = location, Visible = false }, 
+                new HelpPage(Resources.ResourceHelpDialog.Movements, 0, null) { Parent = this, Location = location, Visible = false }, 
+                new HelpPage(Resources.ResourceHelpDialog.Attacking, 1, null) { Parent = this, Location = location, Visible = false }, 
+                new HelpPage(Resources.ResourceHelpDialog.CollectingItems, 2, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Health, 3, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Skills, 4, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Skills, 5, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Mana, 6, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Chatting, 7, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Groups, 8, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Durability, 9, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Purchasing, 10, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Selling, 11, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Repairing, 12, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Trading, 13, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Inspecting, 14, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Statistics, 15, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Statistics, 16, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Statistics, 17, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Statistics, 18, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Statistics, 19, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Statistics, 20, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Quests, 21, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Quests, 22, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Quests, 23, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Quests, 24, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Mounts, 25, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Mounts, 26, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.Fishing, 27, null) { Parent = this, Location = location, Visible = false },
+                new HelpPage(Resources.ResourceHelpDialog.GemsAndOrbs, 28, null) { Parent = this, Location = location, Visible = false },
             };
 
             Pages.AddRange(imagePages);
@@ -213,24 +213,24 @@ namespace Client.MirScenes.Dialogs
         {
             Shortcuts = new List<ShortcutInfo>
             {
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Exit), Resources.Resource1.ExitTheGame),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Logout), Resources.Resource1.LogOut),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Bar1Skill1) + "-" + CMain.InputKeys.GetKey(KeybindOptions.Bar1Skill8), Resources.Resource1.SkillButtons),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Inventory), Resources.Resource1.InventoryWindowOpenClose),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Equipment), Resources.Resource1.StatusWindowOpenClose),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Skills), "Skill window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Group), "Group window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Trade), "Trade window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Friends), "Friend window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Minimap), "Minimap window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Guilds), "Guild window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.GameShop), "Gameshop window (open / close)"),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Exit), Resources.ResourceShortcuts.ExitTheGame),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Logout), Resources.ResourceShortcuts.LogOut),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Bar1Skill1) + "-" + CMain.InputKeys.GetKey(KeybindOptions.Bar1Skill8), Resources.ResourceShortcuts.SkillButtons),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Inventory), Resources.ResourceShortcuts.InventoryWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Equipment), Resources.ResourceShortcuts.StatusWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Skills), Resources.ResourceShortcuts.SkillWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Group), Resources.ResourceShortcuts.GroupWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Trade), Resources.ResourceShortcuts.TradeWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Friends), Resources.ResourceShortcuts.FriendWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Minimap), Resources.ResourceShortcuts.MinimapWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Guilds), Resources.ResourceShortcuts.GuildWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.GameShop), Resources.ResourceShortcuts.GameshopWindowOpenClose),
                 //Shortcuts.Add(new ShortcutInfo("K", "Rental window (open / close)"));
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Relationship), "Engagement window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Belt), "Belt window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Options), "Option window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Help), "Help window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Mount), "Mount / Dismount ride")
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Relationship), Resources.ResourceShortcuts.EngagementWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Belt), Resources.ResourceShortcuts.BeltWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Options), Resources.ResourceShortcuts.OptionWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Help), Resources.ResourceShortcuts.HelpWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Mount), Resources.ResourceShortcuts.MountDismounRide)
             };
 
             LoadKeyBinds();
@@ -242,26 +242,26 @@ namespace Client.MirScenes.Dialogs
         {
             Shortcuts = new List<ShortcutInfo>
             {
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.ChangePetmode), "Toggle pet attack pet"),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.ChangePetmode), Resources.ResourceShortcuts.TogglePetAttackMode),
                 //Shortcuts.Add(new ShortcutInfo("Ctrl + F", "Change the font in the chat box"));
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.ChangeAttackmode), "Toggle player attack mode"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodePeace), "Peace Mode - Attack monsters only"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodeGroup), "Group Mode - Attack all subjects except your group members"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodeGuild), "Guild Mode - Attack all subjects except your guild members"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodeRedbrown), "Good/Evil Mode - Attack PK players and monsters only"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodeAll), "All Attack Mode - Attack all subjects"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Bigmap), "Show the field map"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Skillbar), "Show the skill bar"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Autorun), "Auto run on / off"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Cameramode), "Show / Hide interface"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Pickup), "Highlight / Pickup Items"),
-                new ShortcutInfo("Ctrl + Right Click", "Show other players kits"),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.ChangeAttackmode), Resources.ResourceShortcuts.TogglePlayerAttackMode),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodePeace), Resources.ResourceShortcuts.PeaceModeAttackMonstersOnly),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodeGroup), Resources.ResourceShortcuts.GroupModeAttackAllSubjectsExceptYourGroupMembers),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodeGuild), Resources.ResourceShortcuts.GuildModeAttackAllSubjectsExceptYourGuildMembers),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodeRedbrown), Resources.ResourceShortcuts.GoodEvilModeAttackPKPlayersAndMonstersOnly),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.AttackmodeAll), Resources.ResourceShortcuts.AllAttackModeAttackAllSubjects),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Bigmap), Resources.ResourceShortcuts.ShowTheFieldMap),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Skillbar), Resources.ResourceShortcuts.ShowTheSkillBar),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Autorun), Resources.ResourceShortcuts.AutoRunOnOff),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Cameramode), Resources.ResourceShortcuts.ShowHideInterface),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Pickup), Resources.ResourceShortcuts.HighlightPickupItems),
+                new ShortcutInfo("Ctrl + "+Resources.ResourceShortcuts.RightClick, Resources.ResourceShortcuts.ShowOtherPlayersKits),
                 //Shortcuts.Add(new ShortcutInfo("F12", "Chat macros"));
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Screenshot), "Screen Capture"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Fishing), "Open / Close fishing window"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Mentor), "Mentor window (open / close)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.CreaturePickup), "Creature Pickup (Multi Mouse Target)"),
-                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.CreatureAutoPickup), "Creature Pickup (Single Mouse Target)")
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Screenshot), Resources.ResourceShortcuts.ScreenCapture),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Fishing), Resources.ResourceShortcuts.FishingWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.Mentor), Resources.ResourceShortcuts.MentorWindowOpenClose),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.CreaturePickup), Resources.ResourceShortcuts.CreaturePickupMultiMouseTarget),
+                new ShortcutInfo(CMain.InputKeys.GetKey(KeybindOptions.CreatureAutoPickup), Resources.ResourceShortcuts.CreaturePickupSingleMouseTarget)
             };
 
             LoadKeyBinds();
@@ -273,9 +273,9 @@ namespace Client.MirScenes.Dialogs
         {
             Shortcuts = new List<ShortcutInfo>();
             //Shortcuts.Add(new ShortcutInfo("` / Ctrl", "Change the skill bar"));
-            Shortcuts.Add(new ShortcutInfo("/(username)", "Command to whisper to others"));
-            Shortcuts.Add(new ShortcutInfo("!(text)", "Command to shout to others nearby"));
-            Shortcuts.Add(new ShortcutInfo("!~(text)", "Command to guild chat"));
+            Shortcuts.Add(new ShortcutInfo(string.Format("/({0})",Resources.ResourceShortcuts.Username), Resources.ResourceShortcuts.CommandToWhisperToOthers));
+            Shortcuts.Add(new ShortcutInfo(string.Format("!({0})", Resources.ResourceShortcuts.Text), Resources.ResourceShortcuts.CommandToShoutToOthersNearby));
+            Shortcuts.Add(new ShortcutInfo(string.Format("!~({0})",Resources.ResourceShortcuts.Text), Resources.ResourceShortcuts.CommandToGuildChat));
 
             LoadKeyBinds();
         }
@@ -303,7 +303,7 @@ namespace Client.MirScenes.Dialogs
 
             MirLabel shortcutTitleLabel = new MirLabel
             {
-                Text = "Shortcuts",
+                Text = Resources.ResourceShortcuts.Shortcuts,
                 DrawFormat = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter,
                 ForeColour = Color.White,
                 Font = new Font(Settings.FontName, 10F),
@@ -315,7 +315,7 @@ namespace Client.MirScenes.Dialogs
 
             MirLabel infoTitleLabel = new MirLabel
             {
-                Text = "Information",
+                Text = Resources.ResourceShortcuts.Information,
                 DrawFormat = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter,
                 ForeColour = Color.White,
                 Font = new Font(Settings.FontName, 10F),
