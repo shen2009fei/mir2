@@ -14,9 +14,13 @@ namespace Client.MirScenes.Dialogs
 {
     public class MailListDialog : MirImageControl
     {
-        MirImageControl TitleLabel;
-        MirButton HelpButton, CloseButton;
-        MirLabel TitleTypeLabel, TitleSenderLabel, TitleMessageLabel;
+        readonly MirImageControl TitleLabel;
+        private readonly MirButton HelpButton;
+        private MirButton CloseButton;
+        private readonly MirLabel TitleTypeLabel;
+        private readonly MirLabel TitleSenderLabel;
+        private readonly MirLabel TitleMessageLabel;
+
         //Send / Reply (Can only reply if index exists, button will disapear if not) / Read / Delete / Block List / Bug Report (new system??)
 
         MirLabel PageLabel;
@@ -601,9 +605,11 @@ namespace Client.MirScenes.Dialogs
 
     public class MailComposeLetterDialog : MirImageControl
     {
-        MirLabel RecipientNameLabel;
-        MirTextBox MessageTextBox;
-        MirButton SendButton, CancelButton, CloseButton;
+        readonly MirLabel RecipientNameLabel;
+        readonly MirTextBox MessageTextBox;
+        private readonly MirButton SendButton;
+        private readonly MirButton CancelButton;
+        private readonly MirButton CloseButton;
 
         public MailComposeLetterDialog()
         {

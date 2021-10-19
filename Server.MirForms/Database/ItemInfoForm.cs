@@ -1758,7 +1758,7 @@ namespace Server
                 _selectedItemInfos[i].Bind = (NoWeddingRingcheckbox.Checked ? _selectedItemInfos[i].Bind |= BindMode.NoWeddingRing : _selectedItemInfos[i].Bind ^= BindMode.NoWeddingRing);
         }
 
-        private void unableToRent_CheckBox_CheckedChanged(object sender, EventArgs e)
+        private void UnableToRent_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender)
                 return;
@@ -1769,7 +1769,7 @@ namespace Server
                     : selectedItem.Bind ^= BindMode.UnableToRent;
         }
 
-        private void unableToDisassemble_CheckBox_CheckedChanged(object sender, EventArgs e)
+        private void UnableToDisassemble_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender)
                 return;
@@ -1780,7 +1780,7 @@ namespace Server
                     : selectedItem.Bind ^= BindMode.UnableToDisassemble;
         }
 
-        private void globalDropNotify_CheckBox_CheckedChanged(object sender, EventArgs e)
+        private void GlobalDropNotify_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender)
                 return;
@@ -1789,7 +1789,7 @@ namespace Server
                 itemInfo.GlobalDropNotify = globalDropNotify_CheckBox.Checked;
         }
 
-        private void noMailBox_CheckedChanged(object sender, EventArgs e)
+        private void NoMailBox_CheckedChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             for (int i = 0; i < _selectedItemInfos.Count; i++)
@@ -1814,7 +1814,7 @@ namespace Server
                 _selectedItemInfos[i].Slots = temp;
         }
 
-        private void tbxItemSearch_KeyDown(object sender, KeyEventArgs e)
+        private void TbxItemSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode==Keys.Enter)
             {

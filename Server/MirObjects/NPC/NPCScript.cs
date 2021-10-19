@@ -191,29 +191,25 @@ namespace Server.MirObjects
 
                 if (!File.Exists(path)) return;
 
-                using (FileStream stream = File.OpenRead(path))
+                using FileStream stream = File.OpenRead(path);
+                using BinaryReader reader = new BinaryReader(stream);
+                int version = reader.ReadInt32();
+                int count = version;
+                int customversion = Envir.LoadCustomVersion;
+                if (version == 9999)//the only real way to tell if the file was made before or after version code got added: assuming nobody had a config option to save more then 10000 sold items
                 {
-                    using (BinaryReader reader = new BinaryReader(stream))
-                    {
-                        int version = reader.ReadInt32();
-                        int count = version;
-                        int customversion = Envir.LoadCustomVersion;
-                        if (version == 9999)//the only real way to tell if the file was made before or after version code got added: assuming nobody had a config option to save more then 10000 sold items
-                        {
-                            version = reader.ReadInt32();
-                            customversion = reader.ReadInt32();
-                            count = reader.ReadInt32();
-                        }
-                        else
-                            version = Envir.LoadVersion;
+                    version = reader.ReadInt32();
+                    customversion = reader.ReadInt32();
+                    count = reader.ReadInt32();
+                }
+                else
+                    version = Envir.LoadVersion;
 
-                        for (int k = 0; k < count; k++)
-                        {
-                            UserItem item = new UserItem(reader, version, customversion);
-                            if (Envir.BindItem(item))
-                                loadedNPC.UsedGoods.Add(item);
-                        }
-                    }
+                for (int k = 0; k < count; k++)
+                {
+                    UserItem item = new UserItem(reader, version, customversion);
+                    if (Envir.BindItem(item))
+                        loadedNPC.UsedGoods.Add(item);
                 }
             }
         }
@@ -663,13 +659,17 @@ namespace Server.MirObjects
 
                     ItemInfo info = Envir.GetItemInfo(data[0]);
                     if (info == null)
+                    {
+                        MessageQueue.Enqueue(string.Format("Could not find Item: {0}, File: {1}", lines[i], FileName));
                         continue;
+                    }
+                        
 
                     UserItem goods = Envir.CreateShopItem(info, (uint)i);
 
                     if (goods == null || Goods.Contains(goods))
                     {
-                        MessageQueue.Enqueue(string.Format("Could not find Item: {0}, File: {1}", lines[i], FileName));
+                        MessageQueue.Enqueue(string.Format("Could not find goods Item: {0}, File: {1}", lines[i], FileName));
                         continue;
                     }
 

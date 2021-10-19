@@ -118,10 +118,10 @@ namespace Server.Database
             this.itemInfoGridView.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.itemInfoGridView.Size = new System.Drawing.Size(956, 433);
             this.itemInfoGridView.TabIndex = 0;
-            this.itemInfoGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.itemInfoGridView_CellValidating);
-            this.itemInfoGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.itemInfoGridView_DataError);
-            this.itemInfoGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.itemInfoGridView_DefaultValuesNeeded);
-            this.itemInfoGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.itemInfoGridView_UserDeletingRow);
+            this.itemInfoGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.ItemInfoGridView_CellValidating);
+            this.itemInfoGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.ItemInfoGridView_DataError);
+            this.itemInfoGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.ItemInfoGridView_DefaultValuesNeeded);
+            this.itemInfoGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.ItemInfoGridView_UserDeletingRow);
             // 
             // panel1
             // 
@@ -155,7 +155,7 @@ namespace Server.Database
             this.btnExport.TabIndex = 6;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            this.btnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // btnImport
             // 
@@ -165,7 +165,7 @@ namespace Server.Database
             this.btnImport.TabIndex = 5;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            this.btnImport.Click += new System.EventHandler(this.BtnImport_Click);
             // 
             // lblFilterType
             // 
@@ -200,7 +200,7 @@ namespace Server.Database
             this.rBtnViewSpecial.TabStop = true;
             this.rBtnViewSpecial.Text = "Special";
             this.rBtnViewSpecial.UseVisualStyleBackColor = true;
-            this.rBtnViewSpecial.CheckedChanged += new System.EventHandler(this.rBtnViewSpecial_CheckedChanged);
+            this.rBtnViewSpecial.CheckedChanged += new System.EventHandler(this.RBtnViewSpecial_CheckedChanged);
             // 
             // rbtnViewAll
             // 
@@ -213,7 +213,7 @@ namespace Server.Database
             this.rbtnViewAll.TabStop = true;
             this.rbtnViewAll.Text = "All";
             this.rbtnViewAll.UseVisualStyleBackColor = true;
-            this.rbtnViewAll.CheckedChanged += new System.EventHandler(this.rbtnViewAll_CheckedChanged);
+            this.rbtnViewAll.CheckedChanged += new System.EventHandler(this.RbtnViewAll_CheckedChanged);
             // 
             // rbtnViewBinding
             // 
@@ -225,7 +225,7 @@ namespace Server.Database
             this.rbtnViewBinding.TabStop = true;
             this.rbtnViewBinding.Text = "Binding";
             this.rbtnViewBinding.UseVisualStyleBackColor = true;
-            this.rbtnViewBinding.CheckedChanged += new System.EventHandler(this.rbtnViewBinding_CheckedChanged);
+            this.rbtnViewBinding.CheckedChanged += new System.EventHandler(this.RbtnViewBinding_CheckedChanged);
             // 
             // rbtnViewBasic
             // 
@@ -237,7 +237,7 @@ namespace Server.Database
             this.rbtnViewBasic.TabStop = true;
             this.rbtnViewBasic.Text = "Basic";
             this.rbtnViewBasic.UseVisualStyleBackColor = true;
-            this.rbtnViewBasic.CheckedChanged += new System.EventHandler(this.rbtnViewBasic_CheckedChanged);
+            this.rbtnViewBasic.CheckedChanged += new System.EventHandler(this.RbtnViewBasic_CheckedChanged);
             // 
             // rbtnViewStats
             // 
@@ -249,7 +249,7 @@ namespace Server.Database
             this.rbtnViewStats.TabStop = true;
             this.rbtnViewStats.Text = "Stats";
             this.rbtnViewStats.UseVisualStyleBackColor = true;
-            this.rbtnViewStats.CheckedChanged += new System.EventHandler(this.rbtnViewStats_CheckedChanged);
+            this.rbtnViewStats.CheckedChanged += new System.EventHandler(this.RbtnViewStats_CheckedChanged);
             // 
             // drpFilterType
             // 
@@ -259,7 +259,7 @@ namespace Server.Database
             this.drpFilterType.Name = "drpFilterType";
             this.drpFilterType.Size = new System.Drawing.Size(121, 21);
             this.drpFilterType.TabIndex = 2;
-            this.drpFilterType.SelectedIndexChanged += new System.EventHandler(this.drpFilterType_SelectedIndexChanged);
+            this.drpFilterType.SelectedIndexChanged += new System.EventHandler(this.DrpFilterType_SelectedIndexChanged);
             // 
             // lblSearch
             // 
@@ -276,7 +276,7 @@ namespace Server.Database
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(141, 20);
             this.txtSearch.TabIndex = 0;
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyDown);
             // 
             // panel2
             // 

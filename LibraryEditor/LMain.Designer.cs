@@ -161,7 +161,7 @@ namespace LibraryEditor
             this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.ToolTipText = "New .Lib";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
@@ -170,7 +170,7 @@ namespace LibraryEditor
             this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.ToolTipText = "Open Shanda or Wemade files.";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -184,7 +184,7 @@ namespace LibraryEditor
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.ToolTipText = "Saves currently open .Lib";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -193,7 +193,7 @@ namespace LibraryEditor
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.ToolTipText = ".Lib Only.";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -207,7 +207,7 @@ namespace LibraryEditor
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.ToolTipText = "Exit Application.";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
             // functionsToolStripMenuItem
             // 
@@ -229,7 +229,7 @@ namespace LibraryEditor
             this.copyToToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.copyToToolStripMenuItem.Text = "Copy To..";
             this.copyToToolStripMenuItem.ToolTipText = "Copy to a new .Lib or to the end of an exsisting one.";
-            this.copyToToolStripMenuItem.Click += new System.EventHandler(this.copyToToolStripMenuItem_Click);
+            this.copyToToolStripMenuItem.Click += new System.EventHandler(this.CopyToToolStripMenuItem_Click);
             // 
             // countBlanksToolStripMenuItem
             // 
@@ -238,7 +238,7 @@ namespace LibraryEditor
             this.countBlanksToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.countBlanksToolStripMenuItem.Text = "Count Blanks";
             this.countBlanksToolStripMenuItem.ToolTipText = "Counts the blank images in the .Lib";
-            this.countBlanksToolStripMenuItem.Click += new System.EventHandler(this.countBlanksToolStripMenuItem_Click);
+            this.countBlanksToolStripMenuItem.Click += new System.EventHandler(this.CountBlanksToolStripMenuItem_Click);
             // 
             // removeBlanksToolStripMenuItem
             // 
@@ -249,7 +249,7 @@ namespace LibraryEditor
             this.removeBlanksToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.removeBlanksToolStripMenuItem.Text = "Remove Blanks";
             this.removeBlanksToolStripMenuItem.ToolTipText = "Quick removal of blanks.";
-            this.removeBlanksToolStripMenuItem.Click += new System.EventHandler(this.removeBlanksToolStripMenuItem_Click);
+            this.removeBlanksToolStripMenuItem.Click += new System.EventHandler(this.RemoveBlanksToolStripMenuItem_Click);
             // 
             // safeToolStripMenuItem
             // 
@@ -258,7 +258,7 @@ namespace LibraryEditor
             this.safeToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.safeToolStripMenuItem.Text = "Safe";
             this.safeToolStripMenuItem.ToolTipText = "Use the safe method of removing blanks.";
-            this.safeToolStripMenuItem.Click += new System.EventHandler(this.safeToolStripMenuItem_Click);
+            this.safeToolStripMenuItem.Click += new System.EventHandler(this.SafeToolStripMenuItem_Click);
             // 
             // convertToolStripMenuItem
             // 
@@ -267,7 +267,7 @@ namespace LibraryEditor
             this.convertToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.convertToolStripMenuItem.Text = "Converter";
             this.convertToolStripMenuItem.ToolTipText = "Convert Wil/Wzl/Miz to .Lib";
-            this.convertToolStripMenuItem.Click += new System.EventHandler(this.convertToolStripMenuItem_Click);
+            this.convertToolStripMenuItem.Click += new System.EventHandler(this.ConvertToolStripMenuItem_Click);
             // 
             // populateFramesToolStripMenuItem
             // 
@@ -287,7 +287,7 @@ namespace LibraryEditor
             this.defaultMonsterFramesToolStripMenuItem.Name = "defaultMonsterFramesToolStripMenuItem";
             this.defaultMonsterFramesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.defaultMonsterFramesToolStripMenuItem.Text = "Default Monster Frames";
-            this.defaultMonsterFramesToolStripMenuItem.Click += new System.EventHandler(this.defaultMonsterFramesToolStripMenuItem_Click);
+            this.defaultMonsterFramesToolStripMenuItem.Click += new System.EventHandler(this.DefaultMonsterFramesToolStripMenuItem_Click);
             // 
             // defaultNPCFramesToolStripMenuItem
             // 
@@ -295,7 +295,7 @@ namespace LibraryEditor
             this.defaultNPCFramesToolStripMenuItem.Name = "defaultNPCFramesToolStripMenuItem";
             this.defaultNPCFramesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.defaultNPCFramesToolStripMenuItem.Text = "Default NPC Frames";
-            this.defaultNPCFramesToolStripMenuItem.Click += new System.EventHandler(this.defaultNPCFramesToolStripMenuItem_Click);
+            this.defaultNPCFramesToolStripMenuItem.Click += new System.EventHandler(this.DefaultNPCFramesToolStripMenuItem_Click);
             // 
             // defaultPlayerFramesToolStripMenuItem
             // 
@@ -303,7 +303,7 @@ namespace LibraryEditor
             this.defaultPlayerFramesToolStripMenuItem.Name = "defaultPlayerFramesToolStripMenuItem";
             this.defaultPlayerFramesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.defaultPlayerFramesToolStripMenuItem.Text = "Default Player Frames";
-            this.defaultPlayerFramesToolStripMenuItem.Click += new System.EventHandler(this.defaultPlayerFramesToolStripMenuItem_Click);
+            this.defaultPlayerFramesToolStripMenuItem.Click += new System.EventHandler(this.DefaultPlayerFramesToolStripMenuItem_Click);
             // 
             // autofillFromCodeToolStripMenuItem
             // 
@@ -311,7 +311,7 @@ namespace LibraryEditor
             this.autofillFromCodeToolStripMenuItem.Name = "autofillFromCodeToolStripMenuItem";
             this.autofillFromCodeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.autofillFromCodeToolStripMenuItem.Text = "AutoFill From Code";
-            this.autofillFromCodeToolStripMenuItem.Click += new System.EventHandler(this.autofillNpcFramesToolStripMenuItem_Click);
+            this.autofillFromCodeToolStripMenuItem.Click += new System.EventHandler(this.AutofillNpcFramesToolStripMenuItem_Click);
             // 
             // skinToolStripMenuItem
             // 
@@ -395,8 +395,8 @@ namespace LibraryEditor
             this.nudJump.Name = "nudJump";
             this.nudJump.Size = new System.Drawing.Size(77, 20);
             this.nudJump.TabIndex = 21;
-            this.nudJump.ValueChanged += new System.EventHandler(this.nudJump_ValueChanged);
-            this.nudJump.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nudJump_KeyDown);
+            this.nudJump.ValueChanged += new System.EventHandler(this.NudJump_ValueChanged);
+            this.nudJump.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NudJump_KeyDown);
             // 
             // checkBoxPreventAntiAliasing
             // 
@@ -407,7 +407,7 @@ namespace LibraryEditor
             this.checkBoxPreventAntiAliasing.TabIndex = 20;
             this.checkBoxPreventAntiAliasing.Text = "No Anti-aliasing";
             this.checkBoxPreventAntiAliasing.UseVisualStyleBackColor = true;
-            this.checkBoxPreventAntiAliasing.CheckedChanged += new System.EventHandler(this.checkBoxPreventAntiAliasing_CheckedChanged);
+            this.checkBoxPreventAntiAliasing.CheckedChanged += new System.EventHandler(this.CheckBoxPreventAntiAliasing_CheckedChanged);
             // 
             // checkBoxQuality
             // 
@@ -418,7 +418,7 @@ namespace LibraryEditor
             this.checkBoxQuality.TabIndex = 19;
             this.checkBoxQuality.Text = "No Blurring";
             this.checkBoxQuality.UseVisualStyleBackColor = true;
-            this.checkBoxQuality.CheckedChanged += new System.EventHandler(this.checkBoxQuality_CheckedChanged);
+            this.checkBoxQuality.CheckedChanged += new System.EventHandler(this.CheckBoxQuality_CheckedChanged);
             // 
             // buttonSkipPrevious
             // 
@@ -431,7 +431,7 @@ namespace LibraryEditor
             this.buttonSkipPrevious.Tag = "";
             this.buttonSkipPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSkipPrevious.UseVisualStyleBackColor = true;
-            this.buttonSkipPrevious.Click += new System.EventHandler(this.buttonSkipPrevious_Click);
+            this.buttonSkipPrevious.Click += new System.EventHandler(this.ButtonSkipPrevious_Click);
             // 
             // buttonSkipNext
             // 
@@ -444,7 +444,7 @@ namespace LibraryEditor
             this.buttonSkipNext.Tag = "";
             this.buttonSkipNext.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSkipNext.UseVisualStyleBackColor = true;
-            this.buttonSkipNext.Click += new System.EventHandler(this.buttonSkipNext_Click);
+            this.buttonSkipNext.Click += new System.EventHandler(this.ButtonSkipNext_Click);
             // 
             // buttonReplace
             // 
@@ -459,7 +459,7 @@ namespace LibraryEditor
             this.buttonReplace.Text = "Replace Image";
             this.buttonReplace.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonReplace.UseVisualStyleBackColor = true;
-            this.buttonReplace.Click += new System.EventHandler(this.buttonReplace_Click);
+            this.buttonReplace.Click += new System.EventHandler(this.ButtonReplace_Click);
             // 
             // pictureBox
             // 
@@ -471,7 +471,7 @@ namespace LibraryEditor
             this.pictureBox.TabIndex = 14;
             this.pictureBox.TabStop = false;
             this.toolTip.SetToolTip(this.pictureBox, "Switch from Black to White background.");
-            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
+            this.pictureBox.Click += new System.EventHandler(this.PictureBox_Click);
             // 
             // ZoomTrackBar
             // 
@@ -653,7 +653,7 @@ namespace LibraryEditor
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1034, 353);
             this.tabControl.TabIndex = 0;
-            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
             // 
             // tabImages
             // 
@@ -721,9 +721,9 @@ namespace LibraryEditor
             this.frameGridView.Name = "frameGridView";
             this.frameGridView.Size = new System.Drawing.Size(1026, 327);
             this.frameGridView.TabIndex = 2;
-            this.frameGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.frameGridView_CellValidating);
-            this.frameGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.frameGridView_DefaultValuesNeeded);
-            this.frameGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.frameGridView_RowEnter);
+            this.frameGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.FrameGridView_CellValidating);
+            this.frameGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.FrameGridView_DefaultValuesNeeded);
+            this.frameGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.FrameGridView_RowEnter);
             // 
             // FrameAction
             // 

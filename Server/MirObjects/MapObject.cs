@@ -909,9 +909,8 @@ namespace Server.MirObjects
         {
             set
             {
-                if (this is PlayerObject)
+                if (this is PlayerObject player)
                 {
-                    PlayerObject player = (PlayerObject)this;
                     player.Enqueue(new S.InTrapRock { Trapped = value });
                 }
             }
@@ -937,9 +936,8 @@ namespace Server.MirObjects
                         switch (ob.Race)
                         {
                             case ObjectType.Monster:
-                                if (ob is TrapRock)
+                                if (ob is TrapRock rock)
                                 {
-                                    TrapRock rock = (TrapRock)ob;
                                     if (rock.Dead) continue;
                                     if (rock.Target != this) continue;
                                     if (!rock.Visible) continue;

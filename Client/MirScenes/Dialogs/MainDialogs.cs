@@ -1781,7 +1781,7 @@ namespace Client.MirScenes.Dialogs
                 LockBar[i].Visible = i >= openLevel;
             }
 
-            AddButton.Visible = openLevel >= 10 ? false : true;
+            AddButton.Visible = openLevel < 10;
         }
 
         public void Process()
@@ -2635,7 +2635,7 @@ namespace Client.MirScenes.Dialogs
                 Parent = StatusPage,
                 Location = new Point(60, 74),
                 NotControl = true,
-                Text = Resources.ResourceCharStat1.AMC,
+                Text = Resources.ResourceCharStat1.MAC,
             };
             MACLabel = new MirLabel
             {
@@ -2700,7 +2700,7 @@ namespace Client.MirScenes.Dialogs
                 Parent = StatusPage,
                 Location = new Point(60, 146),
                 NotControl = true,
-                Text = Resources.ResourceCharStat1.Crit_Rate
+                Text = Resources.ResourceCharStat1.CritRate
             };
             CritRLabel = new MirLabel
             {
@@ -2715,7 +2715,7 @@ namespace Client.MirScenes.Dialogs
                 Parent = StatusPage,
                 Location = new Point(60, 164),
                 NotControl = true,
-                Text = Resources.ResourceCharStat1.Crit_Damage
+                Text = Resources.ResourceCharStat1.CritDamage
             };
             CritDLabel = new MirLabel
             {
@@ -2730,7 +2730,7 @@ namespace Client.MirScenes.Dialogs
                 Parent = StatusPage,
                 Location = new Point(60, 182),
                 NotControl = true,
-                Text = Resources.ResourceCharStat1.Attack_Speed
+                Text = Resources.ResourceCharStat1.AttackSpeed
             };
             AttkSpdLabel = new MirLabel
             {

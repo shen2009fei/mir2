@@ -1718,7 +1718,7 @@ namespace Client.MirScenes.Dialogs
 
             for (int i = 0; i < Quests.Count; i++)
             {
-                bool Track = Settings.TrackedQuests.Contains(Quests[i].Id) ? true : false;
+                bool Track = Settings.TrackedQuests.Contains(Quests[i].Id);
                 QuestSingleQuestItem singleQuest = new QuestSingleQuestItem(Quests[i])
                 {
                     Parent = this,
@@ -1846,9 +1846,7 @@ namespace Client.MirScenes.Dialogs
 
             _questLabel.Click += (o, e) =>
             {
-                MouseEventArgs me = e as MouseEventArgs;
-
-                if (me == null) return;
+                if (!(e is MouseEventArgs me)) return;
 
                 switch (me.Button)
                 {

@@ -126,16 +126,13 @@
   <data name="Agility" xml:space="preserve">
     <value>Agility</value>
   </data>
-  <data name="AMC" xml:space="preserve">
-    <value>AMC</value>
-  </data>
-  <data name="Attack Speed" xml:space="preserve">
+  <data name="AttackSpeed" xml:space="preserve">
     <value>Attack Speed</value>
   </data>
-  <data name="Crit Damage" xml:space="preserve">
+  <data name="CritDamage" xml:space="preserve">
     <value>Crit Damage</value>
   </data>
-  <data name="Crit Rate" xml:space="preserve">
+  <data name="CritRate" xml:space="preserve">
     <value>Crit Rate</value>
   </data>
   <data name="DC" xml:space="preserve">
@@ -146,6 +143,9 @@
   </data>
   <data name="Luck" xml:space="preserve">
     <value>Luck</value>
+  </data>
+  <data name="MAC" xml:space="preserve">
+    <value>AMC</value>
   </data>
   <data name="ManaPoints" xml:space="preserve">
     <value>Mana Points</value>

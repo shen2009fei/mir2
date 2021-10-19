@@ -271,11 +271,13 @@ namespace Client.MirScenes.Dialogs
     {
         public ShortcutPage3()
         {
-            Shortcuts = new List<ShortcutInfo>();
-            //Shortcuts.Add(new ShortcutInfo("` / Ctrl", "Change the skill bar"));
-            Shortcuts.Add(new ShortcutInfo(string.Format("/({0})",Resources.ResourceShortcuts.Username), Resources.ResourceShortcuts.CommandToWhisperToOthers));
-            Shortcuts.Add(new ShortcutInfo(string.Format("!({0})", Resources.ResourceShortcuts.Text), Resources.ResourceShortcuts.CommandToShoutToOthersNearby));
-            Shortcuts.Add(new ShortcutInfo(string.Format("!~({0})",Resources.ResourceShortcuts.Text), Resources.ResourceShortcuts.CommandToGuildChat));
+            Shortcuts = new List<ShortcutInfo>
+            {
+                //Shortcuts.Add(new ShortcutInfo("` / Ctrl", "Change the skill bar"));
+                new ShortcutInfo(string.Format("/({0})", Resources.ResourceShortcuts.Username), Resources.ResourceShortcuts.CommandToWhisperToOthers),
+                new ShortcutInfo(string.Format("!({0})", Resources.ResourceShortcuts.Text), Resources.ResourceShortcuts.CommandToShoutToOthersNearby),
+                new ShortcutInfo(string.Format("!~({0})", Resources.ResourceShortcuts.Text), Resources.ResourceShortcuts.CommandToGuildChat)
+            };
 
             LoadKeyBinds();
         }

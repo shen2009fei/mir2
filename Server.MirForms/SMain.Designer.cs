@@ -356,21 +356,21 @@ namespace Server
             this.startServerToolStripMenuItem.Name = "startServerToolStripMenuItem";
             this.startServerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.startServerToolStripMenuItem.Text = "Start Server";
-            this.startServerToolStripMenuItem.Click += new System.EventHandler(this.startServerToolStripMenuItem_Click);
+            this.startServerToolStripMenuItem.Click += new System.EventHandler(this.StartServerToolStripMenuItem_Click);
             // 
             // stopServerToolStripMenuItem
             // 
             this.stopServerToolStripMenuItem.Name = "stopServerToolStripMenuItem";
             this.stopServerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.stopServerToolStripMenuItem.Text = "Stop Server";
-            this.stopServerToolStripMenuItem.Click += new System.EventHandler(this.stopServerToolStripMenuItem_Click);
+            this.stopServerToolStripMenuItem.Click += new System.EventHandler(this.StopServerToolStripMenuItem_Click);
             // 
             // rebootServerToolStripMenuItem
             // 
             this.rebootServerToolStripMenuItem.Name = "rebootServerToolStripMenuItem";
             this.rebootServerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.rebootServerToolStripMenuItem.Text = "Reboot Server";
-            this.rebootServerToolStripMenuItem.Click += new System.EventHandler(this.rebootServerToolStripMenuItem_Click);
+            this.rebootServerToolStripMenuItem.Click += new System.EventHandler(this.RebootServerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -382,14 +382,14 @@ namespace Server
             this.reloadNPCsToolStripMenuItem.Name = "reloadNPCsToolStripMenuItem";
             this.reloadNPCsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.reloadNPCsToolStripMenuItem.Text = "Reload NPCs";
-            this.reloadNPCsToolStripMenuItem.Click += new System.EventHandler(this.reloadNPCsToolStripMenuItem_Click);
+            this.reloadNPCsToolStripMenuItem.Click += new System.EventHandler(this.ReloadNPCsToolStripMenuItem_Click);
             // 
             // reloadDropsToolStripMenuItem
             // 
             this.reloadDropsToolStripMenuItem.Name = "reloadDropsToolStripMenuItem";
             this.reloadDropsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.reloadDropsToolStripMenuItem.Text = "Reload Drops";
-            this.reloadDropsToolStripMenuItem.Click += new System.EventHandler(this.reloadDropsToolStripMenuItem_Click);
+            this.reloadDropsToolStripMenuItem.Click += new System.EventHandler(this.ReloadDropsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -401,7 +401,7 @@ namespace Server
             this.closeServerToolStripMenuItem.Name = "closeServerToolStripMenuItem";
             this.closeServerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.closeServerToolStripMenuItem.Text = "Close Server";
-            this.closeServerToolStripMenuItem.Click += new System.EventHandler(this.closeServerToolStripMenuItem_Click);
+            this.closeServerToolStripMenuItem.Click += new System.EventHandler(this.CloseServerToolStripMenuItem_Click);
             // 
             // accountToolStripMenuItem
             // 
@@ -431,56 +431,56 @@ namespace Server
             this.mapInfoToolStripMenuItem.Name = "mapInfoToolStripMenuItem";
             this.mapInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.mapInfoToolStripMenuItem.Text = "Map";
-            this.mapInfoToolStripMenuItem.Click += new System.EventHandler(this.mapInfoToolStripMenuItem_Click);
+            this.mapInfoToolStripMenuItem.Click += new System.EventHandler(this.MapInfoToolStripMenuItem_Click);
             // 
             // itemInfoToolStripMenuItem
             // 
             this.itemInfoToolStripMenuItem.Name = "itemInfoToolStripMenuItem";
             this.itemInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.itemInfoToolStripMenuItem.Text = "Item";
-            this.itemInfoToolStripMenuItem.Click += new System.EventHandler(this.itemInfoToolStripMenuItem_Click);
+            this.itemInfoToolStripMenuItem.Click += new System.EventHandler(this.ItemInfoToolStripMenuItem_Click);
             // 
             // monsterInfoToolStripMenuItem
             // 
             this.monsterInfoToolStripMenuItem.Name = "monsterInfoToolStripMenuItem";
             this.monsterInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.monsterInfoToolStripMenuItem.Text = "Monster";
-            this.monsterInfoToolStripMenuItem.Click += new System.EventHandler(this.monsterInfoToolStripMenuItem_Click);
+            this.monsterInfoToolStripMenuItem.Click += new System.EventHandler(this.MonsterInfoToolStripMenuItem_Click);
             // 
             // nPCInfoToolStripMenuItem
             // 
             this.nPCInfoToolStripMenuItem.Name = "nPCInfoToolStripMenuItem";
             this.nPCInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.nPCInfoToolStripMenuItem.Text = "NPC";
-            this.nPCInfoToolStripMenuItem.Click += new System.EventHandler(this.nPCInfoToolStripMenuItem_Click);
+            this.nPCInfoToolStripMenuItem.Click += new System.EventHandler(this.NPCInfoToolStripMenuItem_Click);
             // 
             // questInfoToolStripMenuItem
             // 
             this.questInfoToolStripMenuItem.Name = "questInfoToolStripMenuItem";
             this.questInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.questInfoToolStripMenuItem.Text = "Quest";
-            this.questInfoToolStripMenuItem.Click += new System.EventHandler(this.questInfoToolStripMenuItem_Click);
+            this.questInfoToolStripMenuItem.Click += new System.EventHandler(this.QuestInfoToolStripMenuItem_Click);
             // 
             // magicInfoToolStripMenuItem
             // 
             this.magicInfoToolStripMenuItem.Name = "magicInfoToolStripMenuItem";
             this.magicInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.magicInfoToolStripMenuItem.Text = "Magic";
-            this.magicInfoToolStripMenuItem.Click += new System.EventHandler(this.magicInfoToolStripMenuItem_Click);
+            this.magicInfoToolStripMenuItem.Click += new System.EventHandler(this.MagicInfoToolStripMenuItem_Click);
             // 
             // gameshopToolStripMenuItem
             // 
             this.gameshopToolStripMenuItem.Name = "gameshopToolStripMenuItem";
             this.gameshopToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.gameshopToolStripMenuItem.Text = "Gameshop";
-            this.gameshopToolStripMenuItem.Click += new System.EventHandler(this.gameshopToolStripMenuItem_Click);
+            this.gameshopToolStripMenuItem.Click += new System.EventHandler(this.GameshopToolStripMenuItem_Click);
             // 
             // itemNEWToolStripMenuItem
             // 
             this.itemNEWToolStripMenuItem.Name = "itemNEWToolStripMenuItem";
             this.itemNEWToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.itemNEWToolStripMenuItem.Text = "Item (Experimental)";
-            this.itemNEWToolStripMenuItem.Click += new System.EventHandler(this.itemNEWToolStripMenuItem_Click);
+            this.itemNEWToolStripMenuItem.Click += new System.EventHandler(this.ItemNEWToolStripMenuItem_Click);
             // 
             // configToolStripMenuItem1
             // 
@@ -498,14 +498,14 @@ namespace Server
             this.serverToolStripMenuItem.Name = "serverToolStripMenuItem";
             this.serverToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.serverToolStripMenuItem.Text = "Server";
-            this.serverToolStripMenuItem.Click += new System.EventHandler(this.serverToolStripMenuItem_Click);
+            this.serverToolStripMenuItem.Click += new System.EventHandler(this.ServerToolStripMenuItem_Click);
             // 
             // balanceToolStripMenuItem
             // 
             this.balanceToolStripMenuItem.Name = "balanceToolStripMenuItem";
             this.balanceToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.balanceToolStripMenuItem.Text = "Balance";
-            this.balanceToolStripMenuItem.Click += new System.EventHandler(this.balanceToolStripMenuItem_Click);
+            this.balanceToolStripMenuItem.Click += new System.EventHandler(this.BalanceToolStripMenuItem_Click);
             // 
             // systemToolStripMenuItem
             // 
@@ -531,91 +531,91 @@ namespace Server
             this.dragonSystemToolStripMenuItem.Name = "dragonSystemToolStripMenuItem";
             this.dragonSystemToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.dragonSystemToolStripMenuItem.Text = "Dragon";
-            this.dragonSystemToolStripMenuItem.Click += new System.EventHandler(this.dragonSystemToolStripMenuItem_Click);
+            this.dragonSystemToolStripMenuItem.Click += new System.EventHandler(this.DragonSystemToolStripMenuItem_Click);
             // 
             // miningToolStripMenuItem
             // 
             this.miningToolStripMenuItem.Name = "miningToolStripMenuItem";
             this.miningToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.miningToolStripMenuItem.Text = "Mining";
-            this.miningToolStripMenuItem.Click += new System.EventHandler(this.miningToolStripMenuItem_Click);
+            this.miningToolStripMenuItem.Click += new System.EventHandler(this.MiningToolStripMenuItem_Click);
             // 
             // guildsToolStripMenuItem
             // 
             this.guildsToolStripMenuItem.Name = "guildsToolStripMenuItem";
             this.guildsToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.guildsToolStripMenuItem.Text = "Guilds";
-            this.guildsToolStripMenuItem.Click += new System.EventHandler(this.guildsToolStripMenuItem_Click);
+            this.guildsToolStripMenuItem.Click += new System.EventHandler(this.GuildsToolStripMenuItem_Click);
             // 
             // fishingToolStripMenuItem
             // 
             this.fishingToolStripMenuItem.Name = "fishingToolStripMenuItem";
             this.fishingToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.fishingToolStripMenuItem.Text = "Fishing";
-            this.fishingToolStripMenuItem.Click += new System.EventHandler(this.fishingToolStripMenuItem_Click);
+            this.fishingToolStripMenuItem.Click += new System.EventHandler(this.FishingToolStripMenuItem_Click);
             // 
             // mailToolStripMenuItem
             // 
             this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
             this.mailToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.mailToolStripMenuItem.Text = "Mail";
-            this.mailToolStripMenuItem.Click += new System.EventHandler(this.mailToolStripMenuItem_Click);
+            this.mailToolStripMenuItem.Click += new System.EventHandler(this.MailToolStripMenuItem_Click);
             // 
             // goodsToolStripMenuItem
             // 
             this.goodsToolStripMenuItem.Name = "goodsToolStripMenuItem";
             this.goodsToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.goodsToolStripMenuItem.Text = "Goods";
-            this.goodsToolStripMenuItem.Click += new System.EventHandler(this.goodsToolStripMenuItem_Click);
+            this.goodsToolStripMenuItem.Click += new System.EventHandler(this.GoodsToolStripMenuItem_Click);
             // 
             // refiningToolStripMenuItem
             // 
             this.refiningToolStripMenuItem.Name = "refiningToolStripMenuItem";
             this.refiningToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.refiningToolStripMenuItem.Text = "Refining";
-            this.refiningToolStripMenuItem.Click += new System.EventHandler(this.refiningToolStripMenuItem_Click);
+            this.refiningToolStripMenuItem.Click += new System.EventHandler(this.RefiningToolStripMenuItem_Click);
             // 
             // relationshipToolStripMenuItem
             // 
             this.relationshipToolStripMenuItem.Name = "relationshipToolStripMenuItem";
             this.relationshipToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.relationshipToolStripMenuItem.Text = "Relationship";
-            this.relationshipToolStripMenuItem.Click += new System.EventHandler(this.relationshipToolStripMenuItem_Click);
+            this.relationshipToolStripMenuItem.Click += new System.EventHandler(this.RelationshipToolStripMenuItem_Click);
             // 
             // mentorToolStripMenuItem
             // 
             this.mentorToolStripMenuItem.Name = "mentorToolStripMenuItem";
             this.mentorToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.mentorToolStripMenuItem.Text = "Mentor";
-            this.mentorToolStripMenuItem.Click += new System.EventHandler(this.mentorToolStripMenuItem_Click);
+            this.mentorToolStripMenuItem.Click += new System.EventHandler(this.MentorToolStripMenuItem_Click);
             // 
             // gemToolStripMenuItem
             // 
             this.gemToolStripMenuItem.Name = "gemToolStripMenuItem";
             this.gemToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.gemToolStripMenuItem.Text = "Gem";
-            this.gemToolStripMenuItem.Click += new System.EventHandler(this.gemToolStripMenuItem_Click);
+            this.gemToolStripMenuItem.Click += new System.EventHandler(this.GemToolStripMenuItem_Click);
             // 
             // conquestToolStripMenuItem
             // 
             this.conquestToolStripMenuItem.Name = "conquestToolStripMenuItem";
             this.conquestToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.conquestToolStripMenuItem.Text = "Conquest";
-            this.conquestToolStripMenuItem.Click += new System.EventHandler(this.conquestToolStripMenuItem_Click);
+            this.conquestToolStripMenuItem.Click += new System.EventHandler(this.ConquestToolStripMenuItem_Click);
             // 
             // respawnsToolStripMenuItem
             // 
             this.respawnsToolStripMenuItem.Name = "respawnsToolStripMenuItem";
             this.respawnsToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.respawnsToolStripMenuItem.Text = "SpawnTick";
-            this.respawnsToolStripMenuItem.Click += new System.EventHandler(this.respawnsToolStripMenuItem_Click);
+            this.respawnsToolStripMenuItem.Click += new System.EventHandler(this.RespawnsToolStripMenuItem_Click);
             // 
             // monsterTunerToolStripMenuItem
             // 
             this.monsterTunerToolStripMenuItem.Name = "monsterTunerToolStripMenuItem";
             this.monsterTunerToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.monsterTunerToolStripMenuItem.Text = "Monster Tuner";
-            this.monsterTunerToolStripMenuItem.Click += new System.EventHandler(this.monsterTunerToolStripMenuItem_Click);
+            this.monsterTunerToolStripMenuItem.Click += new System.EventHandler(this.MonsterTunerToolStripMenuItem_Click);
             // 
             // InterfaceTimer
             // 
@@ -627,7 +627,7 @@ namespace Server
             this.monsterExperimentalToolStripMenuItem.Name = "monsterExperimentalToolStripMenuItem";
             this.monsterExperimentalToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.monsterExperimentalToolStripMenuItem.Text = "Monster (Experimental)";
-            this.monsterExperimentalToolStripMenuItem.Click += new System.EventHandler(this.monsterExperimentalToolStripMenuItem_Click);
+            this.monsterExperimentalToolStripMenuItem.Click += new System.EventHandler(this.MonsterExperimentalToolStripMenuItem_Click);
             // 
             // SMain
             // 

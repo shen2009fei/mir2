@@ -61,6 +61,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Adds 的本地化字符串。
+        /// </summary>
+        internal static string Adds {
+            get {
+                return ResourceManager.GetString("Adds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 BagWeight 的本地化字符串。
         /// </summary>
         internal static string BagWeight {
@@ -115,6 +124,24 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Durability 的本地化字符串。
+        /// </summary>
+        internal static string Durability {
+            get {
+                return ResourceManager.GetString("Durability", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Duration 的本地化字符串。
+        /// </summary>
+        internal static string Duration {
+            get {
+                return ResourceManager.GetString("Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Exp 的本地化字符串。
         /// </summary>
         internal static string Exp {
@@ -129,6 +156,15 @@ namespace Client.Resources {
         internal static string HealthRecovery {
             get {
                 return ResourceManager.GetString("HealthRecovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Loyalty 的本地化字符串。
+        /// </summary>
+        internal static string Loyalty {
+            get {
+                return ResourceManager.GetString("Loyalty", resourceCulture);
             }
         }
         
@@ -151,11 +187,47 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Nutrition 的本地化字符串。
+        /// </summary>
+        internal static string Nutrition {
+            get {
+                return ResourceManager.GetString("Nutrition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Purity 的本地化字符串。
+        /// </summary>
+        internal static string Purity {
+            get {
+                return ResourceManager.GetString("Purity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Quality 的本地化字符串。
+        /// </summary>
+        internal static string Quality {
+            get {
+                return ResourceManager.GetString("Quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Time 的本地化字符串。
         /// </summary>
         internal static string Time {
             get {
                 return ResourceManager.GetString("Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Usage 的本地化字符串。
+        /// </summary>
+        internal static string Usage {
+            get {
+                return ResourceManager.GetString("Usage", resourceCulture);
             }
         }
     }

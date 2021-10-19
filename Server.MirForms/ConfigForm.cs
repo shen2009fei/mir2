@@ -68,10 +68,10 @@ namespace Server
                 Settings.IPAddress = tempIP.ToString();
 
             Settings.StartHTTPService = StartHTTPCheckBox.Checked;
-            if (tryParseHttp())
+            if (TryParseHttp())
                 Settings.HTTPIPAddress = HTTPIPAddressTextBox.Text.ToString();
 
-            if (tryParseTrustedHttp())
+            if (TryParseTrustedHttp())
                 Settings.HTTPTrustedIPAddress = HTTPTrustedIPAddressTextBox.Text.ToString();
 
             ushort tempshort;
@@ -115,9 +115,8 @@ namespace Server
         {
             if (ActiveControl != sender) return;
 
-            IPAddress temp;
 
-            ActiveControl.BackColor = !IPAddress.TryParse(ActiveControl.Text, out temp) ? Color.Red : SystemColors.Window;
+            ActiveControl.BackColor = !IPAddress.TryParse(ActiveControl.Text, out IPAddress temp) ? Color.Red : SystemColors.Window;
         }
 
         private void CheckUShort(object sender, EventArgs e)
@@ -141,13 +140,12 @@ namespace Server
         {
             if (ActiveControl != sender) return;
 
-            int temp;
 
-            ActiveControl.BackColor = !int.TryParse(ActiveControl.Text, out temp) ? Color.Red : SystemColors.Window;
+            ActiveControl.BackColor = !int.TryParse(ActiveControl.Text, out int temp) ? Color.Red : SystemColors.Window;
 
         }
 
-        private void tabPage3_Click(object sender, EventArgs e)
+        private void TabPage3_Click(object sender, EventArgs e)
         {
 
         }
@@ -165,17 +163,17 @@ namespace Server
         private void HTTPIPAddressTextBox_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
-            ActiveControl.BackColor = !tryParseHttp() ? Color.Red : SystemColors.Window;
+            ActiveControl.BackColor = !TryParseHttp() ? Color.Red : SystemColors.Window;
         }
 
 
         private void HTTPTrustedIPAddressTextBox_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
-            ActiveControl.BackColor = !tryParseTrustedHttp() ? Color.Red : SystemColors.Window;
+            ActiveControl.BackColor = !TryParseTrustedHttp() ? Color.Red : SystemColors.Window;
         }
 
-        bool tryParseHttp()
+        bool TryParseHttp()
         {
             if ((HTTPIPAddressTextBox.Text.StartsWith("http://") || HTTPIPAddressTextBox.Text.StartsWith("https://")) && HTTPIPAddressTextBox.Text.EndsWith("/"))
             {
@@ -184,7 +182,7 @@ namespace Server
             return false;
         }
 
-        bool tryParseTrustedHttp()
+        bool TryParseTrustedHttp()
         {
             string pattern = @"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}";
             return Regex.IsMatch(HTTPTrustedIPAddressTextBox.Text, pattern);

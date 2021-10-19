@@ -313,7 +313,7 @@
             this.globalDropNotify_CheckBox.TabIndex = 124;
             this.globalDropNotify_CheckBox.Text = "Notify Server on Drop";
             this.globalDropNotify_CheckBox.UseVisualStyleBackColor = true;
-            this.globalDropNotify_CheckBox.CheckedChanged += new System.EventHandler(this.globalDropNotify_CheckBox_CheckedChanged);
+            this.globalDropNotify_CheckBox.CheckedChanged += new System.EventHandler(this.GlobalDropNotify_CheckBox_CheckedChanged);
             // 
             // CanAwaken
             // 
@@ -1528,7 +1528,7 @@
             this.noMailBox.TabIndex = 119;
             this.noMailBox.Text = "Unable To Mail";
             this.noMailBox.UseVisualStyleBackColor = true;
-            this.noMailBox.CheckedChanged += new System.EventHandler(this.noMailBox_CheckedChanged);
+            this.noMailBox.CheckedChanged += new System.EventHandler(this.NoMailBox_CheckedChanged);
             // 
             // unableToDisassemble_CheckBox
             // 
@@ -1539,7 +1539,7 @@
             this.unableToDisassemble_CheckBox.TabIndex = 117;
             this.unableToDisassemble_CheckBox.Text = "Unable To Disassemble";
             this.unableToDisassemble_CheckBox.UseVisualStyleBackColor = true;
-            this.unableToDisassemble_CheckBox.CheckedChanged += new System.EventHandler(this.unableToDisassemble_CheckBox_CheckedChanged);
+            this.unableToDisassemble_CheckBox.CheckedChanged += new System.EventHandler(this.UnableToDisassemble_CheckBox_CheckedChanged);
             // 
             // unableToRent_CheckBox
             // 
@@ -1550,7 +1550,7 @@
             this.unableToRent_CheckBox.TabIndex = 116;
             this.unableToRent_CheckBox.Text = "Unable To Rent";
             this.unableToRent_CheckBox.UseVisualStyleBackColor = true;
-            this.unableToRent_CheckBox.CheckedChanged += new System.EventHandler(this.unableToRent_CheckBox_CheckedChanged);
+            this.unableToRent_CheckBox.CheckedChanged += new System.EventHandler(this.UnableToRent_CheckBox_CheckedChanged);
             // 
             // NoWeddingRingcheckbox
             // 
@@ -1932,7 +1932,7 @@
             this.tbxItemSearch.Name = "tbxItemSearch";
             this.tbxItemSearch.Size = new System.Drawing.Size(156, 21);
             this.tbxItemSearch.TabIndex = 30;
-            this.tbxItemSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxItemSearch_KeyDown);
+            this.tbxItemSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxItemSearch_KeyDown);
             // 
             // lblSearch
             // 

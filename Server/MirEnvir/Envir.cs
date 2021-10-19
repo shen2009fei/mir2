@@ -484,8 +484,10 @@ namespace Server.MirEnvir
                 {
                     for (var j = 0; j < MobThreads.Length; j++)
                     {
-                        MobThreads[j] = new MobThread();
-                        MobThreads[j].Id = j;
+                        MobThreads[j] = new MobThread
+                        {
+                            Id = j
+                        };
                     }
                 }
 
@@ -998,7 +1000,7 @@ namespace Server.MirEnvir
                     var mStream = new MemoryStream();
                     var writer = new BinaryWriter(mStream);
                     GuildList[i].Save(writer);
-                    var fStream = new FileStream(Path.Combine(Settings.GuildPath, i + ".mgdn"), FileMode.Create);
+                    FileStream fStream = new FileStream(Path.Combine(Settings.GuildPath, i + ".mgdn"), FileMode.Create);
                     var data = mStream.ToArray();
                     fStream.BeginWrite(data, 0, data.Length, EndSaveGuildsAsync, fStream);
                 }
@@ -1006,10 +1008,9 @@ namespace Server.MirEnvir
         }
         private void EndSaveGuildsAsync(IAsyncResult result)
         {
-            var fStream = result.AsyncState as FileStream;
             try
             {
-                if (fStream == null) return;
+                if (!(result.AsyncState is FileStream fStream)) return;
                 var oldfilename = fStream.Name.Substring(0, fStream.Name.Length - 1);
                 var newfilename = fStream.Name;
                 fStream.EndWrite(result);
@@ -1071,8 +1072,7 @@ namespace Server.MirEnvir
         {
             try
             {
-                var fStream = result.AsyncState as FileStream;
-                if (fStream == null) return;
+                if (!(result.AsyncState is FileStream fStream)) return;
                 var oldfilename = fStream.Name.Substring(0, fStream.Name.Length - 1);
                 var newfilename = fStream.Name;
                 fStream.EndWrite(result);
@@ -1105,10 +1105,9 @@ namespace Server.MirEnvir
         }
         private void EndSaveConquestsAsync(IAsyncResult result)
         {
-            var fStream = result.AsyncState as FileStream;
             try
             {
-                if (fStream == null) return;
+                if (!(result.AsyncState is FileStream fStream)) return;
                 var oldfilename = fStream.Name.Substring(0, fStream.Name.Length - 1);
                 var newfilename = fStream.Name;
                 fStream.EndWrite(result);
@@ -1121,7 +1120,7 @@ namespace Server.MirEnvir
             }
             catch (Exception)
             {
-                
+
             }
         }
 
@@ -1151,10 +1150,9 @@ namespace Server.MirEnvir
         }
         private void EndSaveAccounts(IAsyncResult result)
         {
-            var fStream = result.AsyncState as FileStream;
             try
             {
-                if (fStream != null)
+                if (result.AsyncState is FileStream fStream)
                 {
                     var oldfilename = fStream.Name.Substring(0, fStream.Name.Length - 1);
                     var newfilename = fStream.Name;
@@ -2720,9 +2718,7 @@ namespace Server.MirEnvir
                 var match = numAlpha.Match(parameter);
 
                 var alpha = match.Groups["Alpha"].Value;
-                var num = 0;
-
-                int.TryParse(match.Groups["Numeric"].Value, out num);
+                int.TryParse(match.Groups["Numeric"].Value, out int num);
 
                 expiryInfo.ExpiryDate = alpha switch
                 {

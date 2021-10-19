@@ -245,7 +245,7 @@ namespace LibraryEditor
             toolStripProgressBar.Value = 0;
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (SaveLibraryDialog.ShowDialog() != DialogResult.OK) return;
 
@@ -257,7 +257,7 @@ namespace LibraryEditor
             UpdateFrameGridView();
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (OpenLibraryDialog.ShowDialog() != DialogResult.OK) return;
 
@@ -286,7 +286,7 @@ namespace LibraryEditor
             UpdateFrameGridView();
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_library == null) return;
 
@@ -295,7 +295,7 @@ namespace LibraryEditor
             _library.Save();
         }
 
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_library == null) return;
             if (SaveLibraryDialog.ShowDialog() != DialogResult.OK) return;
@@ -306,7 +306,7 @@ namespace LibraryEditor
             _library.Save();
         }
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -336,7 +336,7 @@ namespace LibraryEditor
             PreviewListView.VirtualListSize -= removeList.Count;
         }
 
-        private void convertToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ConvertToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (OpenWeMadeDialog.ShowDialog() != DialogResult.OK) return;
 
@@ -378,7 +378,7 @@ namespace LibraryEditor
                 (OpenWeMadeDialog.FileNames.Length > 1) ? "libraries" : "library"));
         }
 
-        private void copyToToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CopyToToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (PreviewListView.SelectedIndices.Count == 0) return;
             if (SaveLibraryDialog.ShowDialog() != DialogResult.OK) return;
@@ -401,7 +401,7 @@ namespace LibraryEditor
             tempLibrary.Save();
         }
 
-        private void removeBlanksToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RemoveBlanksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to remove the blank images?",
                 "Remove Blanks",
@@ -413,7 +413,7 @@ namespace LibraryEditor
             PreviewListView.VirtualListSize = _library.Count;
         }
 
-        private void countBlanksToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CountBlanksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenLibraryDialog.Multiselect = true;
 
@@ -448,13 +448,10 @@ namespace LibraryEditor
 
         private void OffSetXTextBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox control = sender as TextBox;
+            if (!(sender is TextBox control) || !control.Focused) return;
 
-            if (control == null || !control.Focused) return;
 
-            short temp;
-
-            if (!short.TryParse(control.Text, out temp))
+            if (!short.TryParse(control.Text, out short temp))
             {
                 control.BackColor = Color.Red;
                 return;
@@ -471,13 +468,10 @@ namespace LibraryEditor
 
         private void OffSetYTextBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox control = sender as TextBox;
+            if (!(sender is TextBox control) || !control.Focused) return;
 
-            if (control == null || !control.Focused) return;
 
-            short temp;
-
-            if (!short.TryParse(control.Text, out temp))
+            if (!short.TryParse(control.Text, out short temp))
             {
                 control.BackColor = Color.Red;
                 return;
@@ -551,7 +545,7 @@ namespace LibraryEditor
             _library.Save();
         }
 
-        private void safeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SafeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to remove the blank images?",
                 "Remove Blanks", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
@@ -731,7 +725,7 @@ namespace LibraryEditor
         }
 
         // Swap the image panel background colour Black/White.
-        private void pictureBox_Click(object sender, EventArgs e)
+        private void PictureBox_Click(object sender, EventArgs e)
         {
             if (panel.BackColor == Color.Black)
             {
@@ -755,7 +749,7 @@ namespace LibraryEditor
             }
         }
 
-        private void buttonReplace_Click(object sender, EventArgs e)
+        private void ButtonReplace_Click(object sender, EventArgs e)
         {
             if (_library == null) return;
             if (_library.FileName == null) return;
@@ -784,7 +778,7 @@ namespace LibraryEditor
             }
         }
 
-        private void previousImageToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PreviousImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -798,7 +792,7 @@ namespace LibraryEditor
 
                     if (_selectedImage.Height == 1 && _selectedImage.Width == 1 && PreviewListView.SelectedIndices[0] != 0)
                     {
-                        previousImageToolStripMenuItem_Click(null, null);
+                        PreviousImageToolStripMenuItem_Click(null, null);
                     }
                 }
             }
@@ -809,7 +803,7 @@ namespace LibraryEditor
             }
         }
 
-        private void nextImageToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NextImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -823,7 +817,7 @@ namespace LibraryEditor
 
                     if (_selectedImage.Height == 1 && _selectedImage.Width == 1 && PreviewListView.SelectedIndices[0] != 0)
                     {
-                        nextImageToolStripMenuItem_Click(null, null);
+                        NextImageToolStripMenuItem_Click(null, null);
                     }
                 }
             }
@@ -841,13 +835,13 @@ namespace LibraryEditor
 
             if (keyData == Keys.Left)
             {
-                previousImageToolStripMenuItem_Click(null, null);
+                PreviousImageToolStripMenuItem_Click(null, null);
                 return true;
             }
 
             if (keyData == Keys.Right)
             {
-                nextImageToolStripMenuItem_Click(null, null);
+                NextImageToolStripMenuItem_Click(null, null);
                 return true;
             }
 
@@ -882,27 +876,27 @@ namespace LibraryEditor
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void buttonSkipNext_Click(object sender, EventArgs e)
+        private void ButtonSkipNext_Click(object sender, EventArgs e)
         {
-            nextImageToolStripMenuItem_Click(null, null);
+            NextImageToolStripMenuItem_Click(null, null);
         }
 
-        private void buttonSkipPrevious_Click(object sender, EventArgs e)
+        private void ButtonSkipPrevious_Click(object sender, EventArgs e)
         {
-            previousImageToolStripMenuItem_Click(null, null);
+            PreviousImageToolStripMenuItem_Click(null, null);
         }
 
-        private void checkBoxQuality_CheckedChanged(object sender, EventArgs e)
-        {
-            ZoomTrackBar_Scroll(null, null);
-        }
-
-        private void checkBoxPreventAntiAliasing_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxQuality_CheckedChanged(object sender, EventArgs e)
         {
             ZoomTrackBar_Scroll(null, null);
         }
 
-        private void nudJump_ValueChanged(object sender, EventArgs e)
+        private void CheckBoxPreventAntiAliasing_CheckedChanged(object sender, EventArgs e)
+        {
+            ZoomTrackBar_Scroll(null, null);
+        }
+
+        private void NudJump_ValueChanged(object sender, EventArgs e)
         {
             if (PreviewListView.Items.Count - 1 >= nudJump.Value)
             {
@@ -912,7 +906,7 @@ namespace LibraryEditor
             }
         }
 
-        private void nudJump_KeyDown(object sender, KeyEventArgs e)
+        private void NudJump_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -930,7 +924,7 @@ namespace LibraryEditor
 
         #region Frames
 
-        private void defaultMonsterFramesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DefaultMonsterFramesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _library.Frames.Clear();
             _library.Frames = new FrameSet(FrameSet.DefaultMonsterFrameSet);
@@ -938,7 +932,7 @@ namespace LibraryEditor
             UpdateFrameGridView();
         }
 
-        private void defaultNPCFramesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DefaultNPCFramesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _library.Frames.Clear();
             _library.Frames = new FrameSet(FrameSet.DefaultNPCFrameSet);
@@ -946,12 +940,12 @@ namespace LibraryEditor
             UpdateFrameGridView();
         }
 
-        private void defaultPlayerFramesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DefaultPlayerFramesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (tabControl.SelectedIndex)
             {
@@ -968,7 +962,7 @@ namespace LibraryEditor
             }
         }
 
-        private void autofillNpcFramesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AutofillNpcFramesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (FolderLibraryDialog.ShowDialog() != DialogResult.OK) return;
 
@@ -997,7 +991,7 @@ namespace LibraryEditor
             }
         }
 
-        private void frameGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        private void FrameGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             frameGridView.Rows[e.RowIndex].ErrorText = "";
 
@@ -1013,7 +1007,7 @@ namespace LibraryEditor
             }
         }
 
-        private void frameGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        private void FrameGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells["FrameStart"].Value = 0;
             e.Row.Cells["FrameCount"].Value = 0;
@@ -1091,7 +1085,7 @@ namespace LibraryEditor
             }
         }
 
-        private void frameGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void FrameGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             var row = frameGridView.Rows[e.RowIndex];
 

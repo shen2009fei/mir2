@@ -54,7 +54,7 @@ namespace Server
             MessageQueue.Enqueue(msg);
         }
 
-        private void configToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ConfigToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -74,7 +74,7 @@ namespace Server
                     for (int i = 0; i < Envir.MobThreads.Length; i++)
                     {
                         if (Envir.MobThreads[i] == null) break;
-                        CycleDelayLabel.Text = CycleDelayLabel.Text + $"|{Envir.MobThreads[i].LastRunTime:0000}";
+                        CycleDelayLabel.Text += $"|{Envir.MobThreads[i].LastRunTime:0000}";
 
                     }
                 }
@@ -145,12 +145,12 @@ namespace Server
             }
         }
 
-        private void startServerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void StartServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Envir.Start();
         }
 
-        private void stopServerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void StopServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Envir.Stop();
             Envir.MonsterCount = 0;
@@ -161,26 +161,26 @@ namespace Server
             Envir.Stop();
         }
 
-        private void closeServerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CloseServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void itemInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ItemInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ItemInfoForm form = new ItemInfoForm();
 
             form.ShowDialog();
         }
 
-        private void monsterInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MonsterInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MonsterInfoForm form = new MonsterInfoForm();
 
             form.ShowDialog();
         }
 
-        private void nPCInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NPCInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NPCInfoForm form = new NPCInfoForm();
 
@@ -194,21 +194,21 @@ namespace Server
             form.ShowDialog();
         }
 
-        private void questInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void QuestInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QuestInfoForm form = new QuestInfoForm();
 
             form.ShowDialog();
         }
 
-        private void serverToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConfigForm form = new ConfigForm();
 
             form.ShowDialog();
         }
 
-        private void balanceToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BalanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BalanceConfigForm form = new BalanceConfigForm();
 
@@ -222,63 +222,63 @@ namespace Server
             form.ShowDialog();
         }
 
-        private void mapInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MapInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MapInfoForm form = new MapInfoForm();
 
             form.ShowDialog();
         }
 
-        private void itemInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void ItemInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ItemInfoForm form = new ItemInfoForm();
 
             form.ShowDialog();
         }
 
-        private void monsterInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void MonsterInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             MonsterInfoForm form = new MonsterInfoForm();
 
             form.ShowDialog();
         }
 
-        private void nPCInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void NPCInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             NPCInfoForm form = new NPCInfoForm();
 
             form.ShowDialog();
         }
 
-        private void questInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void QuestInfoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             QuestInfoForm form = new QuestInfoForm();
 
             form.ShowDialog();
         }
 
-        private void dragonSystemToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DragonSystemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DragonInfoForm form = new DragonInfoForm();
 
             form.ShowDialog();
         }
 
-        private void miningToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MiningToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MiningInfoForm form = new MiningInfoForm();
 
             form.ShowDialog();
         }
 
-        private void guildsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GuildsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GuildInfoForm form = new GuildInfoForm();
 
             form.ShowDialog();
         }
 
-        private void fishingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FishingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SystemInfoForm form = new SystemInfoForm(0);
 
@@ -319,42 +319,42 @@ namespace Server
             e.NewWidth = PlayersOnlineListView.Columns[e.ColumnIndex].Width;
         }
 
-        private void mailToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MailToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SystemInfoForm form = new SystemInfoForm(1);
 
             form.ShowDialog();
         }
 
-        private void goodsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GoodsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SystemInfoForm form = new SystemInfoForm(2);
 
             form.ShowDialog();
         }
 
-        private void relationshipToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RelationshipToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SystemInfoForm form = new SystemInfoForm(4);
 
             form.ShowDialog();
         }
 
-        private void refiningToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RefiningToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SystemInfoForm form = new SystemInfoForm(3);
 
             form.ShowDialog();
         }
 
-        private void mentorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MentorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SystemInfoForm form = new SystemInfoForm(5);
 
             form.ShowDialog();
         }
 
-        private void magicInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MagicInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MagicInfoForm form = new MagicInfoForm();
             form.ShowDialog();
@@ -372,33 +372,33 @@ namespace Server
             AutoResize();
         }
 
-        private void gemToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SystemInfoForm form = new SystemInfoForm(6);
 
             form.ShowDialog();
         }
 
-        private void conquestToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ConquestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConquestInfoForm form = new ConquestInfoForm();
 
             form.ShowDialog();
         }
 
-        private void rebootServerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RebootServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Envir.Reboot();
         }
 
-        private void respawnsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RespawnsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SystemInfoForm form = new SystemInfoForm(7);
 
             form.ShowDialog();
         }
 
-        private void monsterTunerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MonsterTunerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!SMain.Envir.Running)
             {
@@ -412,30 +412,30 @@ namespace Server
             form.ShowDialog();
         }
 
-        private void reloadNPCsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ReloadNPCsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Envir.ReloadNPCs();
         }
 
-        private void reloadDropsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ReloadDropsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Envir.ReloadDrops();
         }
 
-        private void gameshopToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GameshopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GameShop form = new GameShop();
             form.ShowDialog();
         }
 
-        private void itemNEWToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ItemNEWToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ItemInfoFormNew form = new ItemInfoFormNew();
 
             form.ShowDialog();
         }
 
-        private void monsterExperimentalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MonsterExperimentalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MonsterInfoFormNew form = new MonsterInfoFormNew();
 

@@ -323,8 +323,10 @@ namespace Server
         {
             string Path = string.Empty;
 
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Text File|*.txt";
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "Text File|*.txt"
+            };
             ofd.ShowDialog();
 
             if (ofd.FileName == string.Empty) return;
@@ -542,7 +544,7 @@ namespace Server
                 _selectedNPCInfos[i].FlagNeeded = temp;
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             MessageBox.Show(DateTime.Now.TimeOfDay.ToString());
         }

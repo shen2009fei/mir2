@@ -251,9 +251,7 @@ namespace Client
         {
             if (Program.Form.ActiveControl is TextBox)
             {
-                MirTextBox textBox = Program.Form.ActiveControl.Tag as MirTextBox;
-
-                if (textBox != null && textBox.CanLoseFocus)
+                if (Program.Form.ActiveControl.Tag is MirTextBox textBox && textBox.CanLoseFocus)
                     Program.Form.ActiveControl = null;
             }
 
@@ -616,8 +614,7 @@ namespace Client
         {
             get
             {
-                PeekMsg msg;
-                return !PeekMessage(out msg, IntPtr.Zero, 0, 0, 0);
+                return !PeekMessage(out PeekMsg msg, IntPtr.Zero, 0, 0, 0);
             }
         }
 

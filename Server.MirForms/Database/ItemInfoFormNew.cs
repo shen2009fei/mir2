@@ -365,7 +365,7 @@ namespace Server.Database
             return null;
         }
 
-        private void itemInfoGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        private void ItemInfoGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             var col = itemInfoGridView.Columns[e.ColumnIndex];
 
@@ -416,7 +416,7 @@ namespace Server.Database
             }
         }
 
-        private void rbtnViewAll_CheckedChanged(object sender, EventArgs e)
+        private void RbtnViewAll_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnViewAll.Checked)
             {
@@ -430,7 +430,7 @@ namespace Server.Database
             }
         }
 
-        private void rbtnViewBasic_CheckedChanged(object sender, EventArgs e)
+        private void RbtnViewBasic_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnViewBasic.Checked)
             {
@@ -452,7 +452,7 @@ namespace Server.Database
             }
         }
 
-        private void rbtnViewStats_CheckedChanged(object sender, EventArgs e)
+        private void RbtnViewStats_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnViewStats.Checked)
             {
@@ -474,7 +474,7 @@ namespace Server.Database
             }
         }
 
-        private void rbtnViewBinding_CheckedChanged(object sender, EventArgs e)
+        private void RbtnViewBinding_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnViewBinding.Checked)
             {
@@ -496,7 +496,7 @@ namespace Server.Database
             }
         }
 
-        private void rBtnViewSpecial_CheckedChanged(object sender, EventArgs e)
+        private void RBtnViewSpecial_CheckedChanged(object sender, EventArgs e)
         {
             if (rBtnViewSpecial.Checked)
             {
@@ -518,7 +518,7 @@ namespace Server.Database
             }
         }
 
-        private void drpFilterType_SelectedIndexChanged(object sender, EventArgs e)
+        private void DrpFilterType_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateFilter();
 
@@ -532,7 +532,7 @@ namespace Server.Database
             }
         }
 
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        private void TxtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -543,10 +543,12 @@ namespace Server.Database
             }
         }
 
-        private void btnImport_Click(object sender, EventArgs e)
+        private void BtnImport_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "CSV (*.csv)|*.csv";
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "CSV (*.csv)|*.csv"
+            };
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -667,13 +669,15 @@ namespace Server.Database
             }
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private void BtnExport_Click(object sender, EventArgs e)
         {
             if (itemInfoGridView.Rows.Count > 0)
             {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "CSV (*.csv)|*.csv";
-                sfd.FileName = "ItemInfo Output.csv";
+                SaveFileDialog sfd = new SaveFileDialog
+                {
+                    Filter = "CSV (*.csv)|*.csv",
+                    FileName = "ItemInfo Output.csv"
+                };
                 bool fileError = false;
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -747,7 +751,7 @@ namespace Server.Database
             }
         }
 
-        private void itemInfoGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        private void ItemInfoGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             var row = e.Row;
 
@@ -796,7 +800,7 @@ namespace Server.Database
             }
         }
 
-        private void itemInfoGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        private void ItemInfoGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             var row = e.Row;
 
@@ -816,7 +820,7 @@ namespace Server.Database
             Envir.SaveDB();
         }
 
-        private void itemInfoGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        private void ItemInfoGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
         }

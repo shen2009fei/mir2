@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Adds" xml:space="preserve">
+    <value>Adds</value>
+  </data>
   <data name="BagWeight" xml:space="preserve">
     <value>BagWeight</value>
   </data>
@@ -135,11 +138,20 @@
   <data name="Drop" xml:space="preserve">
     <value>Drop</value>
   </data>
+  <data name="Durability" xml:space="preserve">
+    <value>Durability</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
   <data name="Exp" xml:space="preserve">
     <value>Exp</value>
   </data>
   <data name="HealthRecovery" xml:space="preserve">
     <value>Health Recovery</value>
+  </data>
+  <data name="Loyalty" xml:space="preserve">
+    <value>Loyalty</value>
   </data>
   <data name="MaxHP" xml:space="preserve">
     <value>Max HP</value>
@@ -147,7 +159,19 @@
   <data name="MaxMP" xml:space="preserve">
     <value>Max MP</value>
   </data>
+  <data name="Nutrition" xml:space="preserve">
+    <value>Nutrition</value>
+  </data>
+  <data name="Purity" xml:space="preserve">
+    <value>Purity</value>
+  </data>
+  <data name="Quality" xml:space="preserve">
+    <value>Quality</value>
+  </data>
   <data name="Time" xml:space="preserve">
     <value>Time</value>
+  </data>
+  <data name="Usage" xml:space="preserve">
+    <value>Usage</value>
   </data>
 </root>

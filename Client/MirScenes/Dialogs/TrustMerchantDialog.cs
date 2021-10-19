@@ -1477,21 +1477,13 @@ namespace Client.MirScenes.Dialogs
 
                 if (UserMode)
                 {
-                    switch (Listing.Seller)
+                    SellerLabel.ForeColour = Listing.Seller switch
                     {
-                        case "Sold":
-                            SellerLabel.ForeColour = Color.Gold;
-                            break;
-                        case "Expired":
-                            SellerLabel.ForeColour = Color.Red;
-                            break;
-                        case "Bid Met":
-                            SellerLabel.ForeColour = Color.LawnGreen;
-                            break;
-                        default:
-                            SellerLabel.ForeColour = Color.White;
-                            break;
-                    }
+                        "Sold" => Color.Gold,
+                        "Expired" => Color.Red,
+                        "Bid Met" => Color.LawnGreen,
+                        _ => Color.White,
+                    };
                 }
                 Visible = true;
             }

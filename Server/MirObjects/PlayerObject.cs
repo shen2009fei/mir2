@@ -2351,7 +2351,7 @@ namespace Server.MirObjects
                 QuestInventory = new UserItem[Info.QuestInventory.Length],
                 Gold = Account.Gold,
                 Credit = Account.Credit,
-                HasExpandedStorage = Account.ExpandedStorageExpiryDate > Envir.Now ? true : false,
+                HasExpandedStorage = Account.ExpandedStorageExpiryDate > Envir.Now,
                 ExpandedStorageExpiryTime = Account.ExpandedStorageExpiryDate
             };
 
@@ -3011,10 +3011,9 @@ namespace Server.MirObjects
         {
             foreach (var skill in skillsToAdd)
             {
-                Spell spelltype;
                 bool hasSkill = false;
 
-                if (!Enum.TryParse(skill, out spelltype)) return;
+                if (!Enum.TryParse(skill, out Spell spelltype)) return;
 
                 for (var i = Info.Magics.Count - 1; i >= 0; i--)
                     if (Info.Magics[i].Spell == spelltype) hasSkill = true;
@@ -4505,9 +4504,8 @@ namespace Server.MirObjects
                         }
                         else
                         {
-                            byte tempByte = 0;
 
-                            byte.TryParse(parts[1], out tempByte);
+                            byte.TryParse(parts[1], out byte tempByte);
 
                             Info.Hair = tempByte;
                         }
@@ -4560,9 +4558,8 @@ namespace Server.MirObjects
                         {
                             if ((!IsGM && !Settings.TestServer) || parts.Length < 3) return;
 
-                            ItemType type;
 
-                            if (!Enum.TryParse(parts[1], true, out type)) return;
+                            if (!Enum.TryParse(parts[1], true, out ItemType type)) return;
 
                             AwakeType awakeType;
 
@@ -9914,7 +9911,7 @@ namespace Server.MirObjects
                 if (MyGuild.Conquest != null)
                 {
                     conquest = "[" + MyGuild.Conquest.Info.Name + "]";
-                    gName = gName + conquest;
+                    gName += conquest;
                 }
                     
             }
@@ -12622,7 +12619,7 @@ case StatType.Durability:
                 GainGold(gold);
                 return;
             }
-            gold = gold / count;
+            gold /= count;
 
             for (int i = 0; i < GroupMembers.Count; i++)
             {
@@ -18715,7 +18712,6 @@ case StatType.Durability:
             short requiredLevel = 0;
             short durability = 0;
             short currentDura = 0;
-            short addedStats = 0;
             UserItem ingredient;
 
             for (int i = 0; i < Info.Refine.Length; i++)
@@ -18834,7 +18830,7 @@ case StatType.Durability:
 
             int successChance = (itemSuccess + oreSuccess + luckSuccess + baseSuccess);
 
-            addedStats = (byte)(Info.CurrentRefine.AddedStats[Stat.MaxDC] + Info.CurrentRefine.AddedStats[Stat.MaxMC] + Info.CurrentRefine.AddedStats[Stat.MaxSC]);
+            short addedStats = (byte)(Info.CurrentRefine.AddedStats[Stat.MaxDC] + Info.CurrentRefine.AddedStats[Stat.MaxMC] + Info.CurrentRefine.AddedStats[Stat.MaxSC]);
             if (Info.CurrentRefine.Info.Type == ItemType.Weapon) addedStats = (short)(addedStats * Settings.RefineWepStatReduce);
             else addedStats = (short)(addedStats * Settings.RefineItemStatReduce);
             if (addedStats > 50) addedStats = 50;
@@ -19068,8 +19064,6 @@ case StatType.Durability:
             if (Dead) return;
 
             if (NPCPage == null || (!String.Equals(NPCPage.Key, NPCScript.ReplaceWedRingKey, StringComparison.CurrentCultureIgnoreCase))) return;
-
-            UserItem temp = null;
             UserItem CurrentRing = Info.Equipment[(int)EquipmentSlot.RingL];
 
             if (CurrentRing == null)
@@ -19086,6 +19080,8 @@ case StatType.Durability:
 
             int index = -1;
 
+
+            UserItem temp;
             for (int i = 0; i < Info.Inventory.Length; i++)
             {
                 temp = Info.Inventory[i];

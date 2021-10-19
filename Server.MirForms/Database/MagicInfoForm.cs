@@ -244,7 +244,7 @@ namespace Server
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(112, 21);
             this.textBoxName.TabIndex = 10;
-            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
+            this.textBoxName.TextChanged += new System.EventHandler(this.TextBoxName_TextChanged);
             // 
             // lblDamageExample
             // 
@@ -301,7 +301,7 @@ namespace Server
             this.txtDmgMultBoost.Size = new System.Drawing.Size(46, 21);
             this.txtDmgMultBoost.TabIndex = 14;
             this.toolTip1.SetToolTip(this.txtDmgMultBoost, "extra multiplyer apply\'d for every skill level");
-            this.txtDmgMultBoost.TextChanged += new System.EventHandler(this.txtDmgMultBoost_TextChanged);
+            this.txtDmgMultBoost.TextChanged += new System.EventHandler(this.TxtDmgMultBoost_TextChanged);
             // 
             // txtDmgMultBase
             // 
@@ -310,7 +310,7 @@ namespace Server
             this.txtDmgMultBase.Size = new System.Drawing.Size(46, 21);
             this.txtDmgMultBase.TabIndex = 13;
             this.toolTip1.SetToolTip(this.txtDmgMultBase, "multiplier apply\'d to total skill dmg");
-            this.txtDmgMultBase.TextChanged += new System.EventHandler(this.txtDmgMultBase_TextChanged);
+            this.txtDmgMultBase.TextChanged += new System.EventHandler(this.TxtDmgMultBase_TextChanged);
             // 
             // label21
             // 
@@ -337,7 +337,7 @@ namespace Server
             this.txtDmgBonusMax.Size = new System.Drawing.Size(46, 21);
             this.txtDmgBonusMax.TabIndex = 10;
             this.toolTip1.SetToolTip(this.txtDmgBonusMax, "Damage bonus at skill level \'4\' ");
-            this.txtDmgBonusMax.TextChanged += new System.EventHandler(this.txtDmgBonusMax_TextChanged);
+            this.txtDmgBonusMax.TextChanged += new System.EventHandler(this.TxtDmgBonusMax_TextChanged);
             // 
             // txtDmgBonusMin
             // 
@@ -347,7 +347,7 @@ namespace Server
             this.txtDmgBonusMin.TabIndex = 9;
             this.toolTip1.SetToolTip(this.txtDmgBonusMin, "Damage bonus at skill level \'4\' \r\nyou will get 1/4th of this bonus for every skil" +
         "l level\r\nnote ingame level 0 = 1 bonus, so level 3 = max bonus (4)");
-            this.txtDmgBonusMin.TextChanged += new System.EventHandler(this.txtDmgBonusMin_TextChanged);
+            this.txtDmgBonusMin.TextChanged += new System.EventHandler(this.TxtDmgBonusMin_TextChanged);
             // 
             // label18
             // 
@@ -374,7 +374,7 @@ namespace Server
             this.txtDmgBaseMax.Size = new System.Drawing.Size(46, 21);
             this.txtDmgBaseMax.TabIndex = 6;
             this.toolTip1.SetToolTip(this.txtDmgBaseMax, "Damage at skill level 0");
-            this.txtDmgBaseMax.TextChanged += new System.EventHandler(this.txtDmgBaseMax_TextChanged);
+            this.txtDmgBaseMax.TextChanged += new System.EventHandler(this.TxtDmgBaseMax_TextChanged);
             // 
             // txtDmgBaseMin
             // 
@@ -383,7 +383,7 @@ namespace Server
             this.txtDmgBaseMin.Size = new System.Drawing.Size(46, 21);
             this.txtDmgBaseMin.TabIndex = 5;
             this.toolTip1.SetToolTip(this.txtDmgBaseMin, "Damage at skill level 0");
-            this.txtDmgBaseMin.TextChanged += new System.EventHandler(this.txtDmgBaseMin_TextChanged);
+            this.txtDmgBaseMin.TextChanged += new System.EventHandler(this.TxtDmgBaseMin_TextChanged);
             // 
             // label17
             // 
@@ -443,7 +443,7 @@ namespace Server
             this.txtRange.Name = "txtRange";
             this.txtRange.Size = new System.Drawing.Size(79, 21);
             this.txtRange.TabIndex = 14;
-            this.txtRange.TextChanged += new System.EventHandler(this.txtRange_TextChanged);
+            this.txtRange.TextChanged += new System.EventHandler(this.TxtRange_TextChanged);
             // 
             // txtDelayReduction
             // 
@@ -452,7 +452,7 @@ namespace Server
             this.txtDelayReduction.Size = new System.Drawing.Size(79, 21);
             this.txtDelayReduction.TabIndex = 13;
             this.toolTip1.SetToolTip(this.txtDelayReduction, "delay = <base delay> - (skill level * <decrease>)");
-            this.txtDelayReduction.TextChanged += new System.EventHandler(this.txtDelayReduction_TextChanged);
+            this.txtDelayReduction.TextChanged += new System.EventHandler(this.TxtDelayReduction_TextChanged);
             // 
             // txtDelayBase
             // 
@@ -461,7 +461,7 @@ namespace Server
             this.txtDelayBase.Size = new System.Drawing.Size(79, 21);
             this.txtDelayBase.TabIndex = 12;
             this.toolTip1.SetToolTip(this.txtDelayBase, "delay = <base delay> - (skill level * <decrease>)");
-            this.txtDelayBase.TextChanged += new System.EventHandler(this.txtDelayBase_TextChanged);
+            this.txtDelayBase.TextChanged += new System.EventHandler(this.TxtDelayBase_TextChanged);
             // 
             // label14
             // 
@@ -510,7 +510,7 @@ namespace Server
             this.txtMPIncrease.Size = new System.Drawing.Size(46, 21);
             this.txtMPIncrease.TabIndex = 12;
             this.toolTip1.SetToolTip(this.txtMPIncrease, "extra amount of mp used each level");
-            this.txtMPIncrease.TextChanged += new System.EventHandler(this.txtMPIncrease_TextChanged);
+            this.txtMPIncrease.TextChanged += new System.EventHandler(this.TxtMPIncrease_TextChanged);
             // 
             // txtMPBase
             // 
@@ -519,7 +519,7 @@ namespace Server
             this.txtMPBase.Size = new System.Drawing.Size(46, 21);
             this.txtMPBase.TabIndex = 11;
             this.toolTip1.SetToolTip(this.txtMPBase, "Mp usage when skill is level 0");
-            this.txtMPBase.TextChanged += new System.EventHandler(this.txtMPBase_TextChanged);
+            this.txtMPBase.TextChanged += new System.EventHandler(this.TxtMPBase_TextChanged);
             // 
             // label11
             // 
@@ -575,7 +575,7 @@ namespace Server
             this.txtSkillLvl3Points.Name = "txtSkillLvl3Points";
             this.txtSkillLvl3Points.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl3Points.TabIndex = 12;
-            this.txtSkillLvl3Points.TextChanged += new System.EventHandler(this.txtSkillLvl3Points_TextChanged);
+            this.txtSkillLvl3Points.TextChanged += new System.EventHandler(this.TxtSkillLvl3Points_TextChanged);
             // 
             // txtSkillLvl2Points
             // 
@@ -583,7 +583,7 @@ namespace Server
             this.txtSkillLvl2Points.Name = "txtSkillLvl2Points";
             this.txtSkillLvl2Points.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl2Points.TabIndex = 11;
-            this.txtSkillLvl2Points.TextChanged += new System.EventHandler(this.txtSkillLvl2Points_TextChanged);
+            this.txtSkillLvl2Points.TextChanged += new System.EventHandler(this.TxtSkillLvl2Points_TextChanged);
             // 
             // txtSkillLvl1Points
             // 
@@ -591,7 +591,7 @@ namespace Server
             this.txtSkillLvl1Points.Name = "txtSkillLvl1Points";
             this.txtSkillLvl1Points.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl1Points.TabIndex = 10;
-            this.txtSkillLvl1Points.TextChanged += new System.EventHandler(this.txtSkillLvl1Points_TextChanged);
+            this.txtSkillLvl1Points.TextChanged += new System.EventHandler(this.TxtSkillLvl1Points_TextChanged);
             // 
             // label6
             // 
@@ -626,7 +626,7 @@ namespace Server
             this.txtSkillLvl3Req.Name = "txtSkillLvl3Req";
             this.txtSkillLvl3Req.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl3Req.TabIndex = 6;
-            this.txtSkillLvl3Req.TextChanged += new System.EventHandler(this.txtSkillLvl3Req_TextChanged);
+            this.txtSkillLvl3Req.TextChanged += new System.EventHandler(this.TxtSkillLvl3Req_TextChanged);
             // 
             // txtSkillLvl2Req
             // 
@@ -634,7 +634,7 @@ namespace Server
             this.txtSkillLvl2Req.Name = "txtSkillLvl2Req";
             this.txtSkillLvl2Req.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl2Req.TabIndex = 5;
-            this.txtSkillLvl2Req.TextChanged += new System.EventHandler(this.txtSkillLvl2Req_TextChanged);
+            this.txtSkillLvl2Req.TextChanged += new System.EventHandler(this.TxtSkillLvl2Req_TextChanged);
             // 
             // txtSkillLvl1Req
             // 
@@ -642,7 +642,7 @@ namespace Server
             this.txtSkillLvl1Req.Name = "txtSkillLvl1Req";
             this.txtSkillLvl1Req.Size = new System.Drawing.Size(46, 21);
             this.txtSkillLvl1Req.TabIndex = 4;
-            this.txtSkillLvl1Req.TextChanged += new System.EventHandler(this.txtSkillLvl1Req_TextChanged);
+            this.txtSkillLvl1Req.TextChanged += new System.EventHandler(this.TxtSkillLvl1Req_TextChanged);
             // 
             // label5
             // 
@@ -686,7 +686,7 @@ namespace Server
             this.txtSkillIcon.Name = "txtSkillIcon";
             this.txtSkillIcon.Size = new System.Drawing.Size(41, 21);
             this.txtSkillIcon.TabIndex = 2;
-            this.txtSkillIcon.TextChanged += new System.EventHandler(this.txtSkillIcon_TextChanged);
+            this.txtSkillIcon.TextChanged += new System.EventHandler(this.TxtSkillIcon_TextChanged);
             // 
             // label1
             // 
@@ -712,7 +712,7 @@ namespace Server
             this.tbxSearchMagic.Name = "tbxSearchMagic";
             this.tbxSearchMagic.Size = new System.Drawing.Size(174, 21);
             this.tbxSearchMagic.TabIndex = 2;
-            this.tbxSearchMagic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxSearchMagic_KeyDown);
+            this.tbxSearchMagic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxSearchMagic_KeyDown);
             // 
             // label25
             // 
@@ -799,7 +799,7 @@ namespace Server
             return true;
         }
 
-        private void txtSkillIcon_TextChanged(object sender, EventArgs e)
+        private void TxtSkillIcon_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             byte temp = 0;
@@ -809,7 +809,7 @@ namespace Server
             _selectedMagicInfo.Icon = temp;
         }
 
-        private void txtSkillLvl1Req_TextChanged(object sender, EventArgs e)
+        private void TxtSkillLvl1Req_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             byte temp = 0;
@@ -819,7 +819,7 @@ namespace Server
             _selectedMagicInfo.Level1 = temp;
         }
 
-        private void txtSkillLvl2Req_TextChanged(object sender, EventArgs e)
+        private void TxtSkillLvl2Req_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             byte temp = 0;
@@ -829,7 +829,7 @@ namespace Server
             _selectedMagicInfo.Level2 = temp;
         }
 
-        private void txtSkillLvl3Req_TextChanged(object sender, EventArgs e)
+        private void TxtSkillLvl3Req_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             byte temp = 0;
@@ -839,7 +839,7 @@ namespace Server
             _selectedMagicInfo.Level3 = temp;
         }
 
-        private void txtSkillLvl1Points_TextChanged(object sender, EventArgs e)
+        private void TxtSkillLvl1Points_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             ushort temp = 0;
@@ -849,7 +849,7 @@ namespace Server
             _selectedMagicInfo.Need1 = temp;
         }
 
-        private void txtSkillLvl2Points_TextChanged(object sender, EventArgs e)
+        private void TxtSkillLvl2Points_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             ushort temp = 0;
@@ -859,7 +859,7 @@ namespace Server
             _selectedMagicInfo.Need2 = temp;
         }
 
-        private void txtSkillLvl3Points_TextChanged(object sender, EventArgs e)
+        private void TxtSkillLvl3Points_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             ushort temp = 0;
@@ -869,7 +869,7 @@ namespace Server
             _selectedMagicInfo.Need3 = temp;
         }
 
-        private void txtMPBase_TextChanged(object sender, EventArgs e)
+        private void TxtMPBase_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             byte temp = 0;
@@ -879,7 +879,7 @@ namespace Server
             _selectedMagicInfo.BaseCost = temp;
         }
 
-        private void txtMPIncrease_TextChanged(object sender, EventArgs e)
+        private void TxtMPIncrease_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             byte temp = 0;
@@ -889,7 +889,7 @@ namespace Server
             _selectedMagicInfo.LevelCost = temp;
         }
 
-        private void txtDmgBaseMin_TextChanged(object sender, EventArgs e)
+        private void TxtDmgBaseMin_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             ushort temp = 0;
@@ -900,7 +900,7 @@ namespace Server
             UpdateMagicForm();
         }
 
-        private void txtDmgBaseMax_TextChanged(object sender, EventArgs e)
+        private void TxtDmgBaseMax_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             ushort temp = 0;
@@ -915,7 +915,7 @@ namespace Server
             UpdateMagicForm();
         }
 
-        private void txtDmgBonusMin_TextChanged(object sender, EventArgs e)
+        private void TxtDmgBonusMin_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             ushort temp = 0;
@@ -926,7 +926,7 @@ namespace Server
             UpdateMagicForm();
         }
 
-        private void txtDmgBonusMax_TextChanged(object sender, EventArgs e)
+        private void TxtDmgBonusMax_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             ushort temp = 0;
@@ -942,7 +942,7 @@ namespace Server
             UpdateMagicForm();
         }
 
-        private void txtDelayBase_TextChanged(object sender, EventArgs e)
+        private void TxtDelayBase_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             uint temp = 0;
@@ -952,7 +952,7 @@ namespace Server
             _selectedMagicInfo.DelayBase = temp;
         }
 
-        private void txtDelayReduction_TextChanged(object sender, EventArgs e)
+        private void TxtDelayReduction_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             uint temp = 0;
@@ -962,7 +962,7 @@ namespace Server
             _selectedMagicInfo.DelayReduction = temp;
         }
 
-        private void txtRange_TextChanged(object sender, EventArgs e)
+        private void TxtRange_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             byte temp = 0;
@@ -972,7 +972,7 @@ namespace Server
             _selectedMagicInfo.Range = temp;
         }
 
-        private void txtDmgMultBase_TextChanged(object sender, EventArgs e)
+        private void TxtDmgMultBase_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             float temp = 0;
@@ -984,7 +984,7 @@ namespace Server
             UpdateMagicForm(1);
         }
 
-        private void txtDmgMultBoost_TextChanged(object sender, EventArgs e)
+        private void TxtDmgMultBoost_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             float temp = 0;
@@ -995,7 +995,7 @@ namespace Server
             UpdateMagicForm(2);
         }
 
-        private void textBoxName_TextChanged(object sender, EventArgs e)
+        private void TextBoxName_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             _selectedMagicInfo.Name = ActiveControl.Text;
@@ -1009,13 +1009,14 @@ namespace Server
             }            
         }
 
-        private void tbxSearchMagic_KeyDown(object sender, KeyEventArgs e)
+        private void TbxSearchMagic_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 var searchName = tbxSearchMagic.Text.Trim().ToLower();
                 var itemList = Envir.MagicInfoList.FindAll(x => x.Name.ToLower().Contains(searchName)).ToArray();
 
+                //itemList.Sort((x, y) => x.Name.CompareTo(y.Name));
                 MagiclistBox.Items.Clear();
                 MagiclistBox.Items.AddRange(itemList);
             }

@@ -88,38 +88,29 @@ namespace Client.Resources {
         }
         
         /// <summary>
-        ///   查找类似 AMC 的本地化字符串。
-        /// </summary>
-        internal static string AMC {
-            get {
-                return ResourceManager.GetString("AMC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Attack Speed 的本地化字符串。
         /// </summary>
-        internal static string Attack_Speed {
+        internal static string AttackSpeed {
             get {
-                return ResourceManager.GetString("Attack Speed", resourceCulture);
+                return ResourceManager.GetString("AttackSpeed", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Crit Damage 的本地化字符串。
         /// </summary>
-        internal static string Crit_Damage {
+        internal static string CritDamage {
             get {
-                return ResourceManager.GetString("Crit Damage", resourceCulture);
+                return ResourceManager.GetString("CritDamage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Crit Rate 的本地化字符串。
         /// </summary>
-        internal static string Crit_Rate {
+        internal static string CritRate {
             get {
-                return ResourceManager.GetString("Crit Rate", resourceCulture);
+                return ResourceManager.GetString("CritRate", resourceCulture);
             }
         }
         
@@ -147,6 +138,15 @@ namespace Client.Resources {
         internal static string Luck {
             get {
                 return ResourceManager.GetString("Luck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 AMC 的本地化字符串。
+        /// </summary>
+        internal static string MAC {
+            get {
+                return ResourceManager.GetString("MAC", resourceCulture);
             }
         }
         

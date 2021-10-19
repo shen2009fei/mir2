@@ -702,7 +702,7 @@ namespace Server
         }
         #endregion
 
-        private void txtSpawnTickDefault_TextChanged(object sender, EventArgs e)
+        private void TxtSpawnTickDefault_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             byte temp;
@@ -741,12 +741,12 @@ namespace Server
             SpawnChanged = true;
         }
 
-        private void lbSpawnTickList_SelectedIndexChanged(object sender, EventArgs e)
+        private void LbSpawnTickList_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateSpawnTick();
         }
 
-        private void txtSpawnTickUsers_TextChanged(object sender, EventArgs e)
+        private void TxtSpawnTickUsers_TextChanged(object sender, EventArgs e)
         {
             if (ActiveControl != sender) return;
             if (lbSpawnTickList.SelectedIndex == -1) return;

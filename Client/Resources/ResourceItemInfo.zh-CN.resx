@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Adds" xml:space="preserve">
+    <value>镶嵌</value>
+  </data>
   <data name="BagWeight" xml:space="preserve">
     <value>背包重量</value>
   </data>
@@ -135,11 +138,20 @@
   <data name="Drop" xml:space="preserve">
     <value>掉落</value>
   </data>
+  <data name="Durability" xml:space="preserve">
+    <value>耐久</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>持续时间</value>
+  </data>
   <data name="Exp" xml:space="preserve">
     <value>经验</value>
   </data>
   <data name="HealthRecovery" xml:space="preserve">
     <value>生命值恢复</value>
+  </data>
+  <data name="Loyalty" xml:space="preserve">
+    <value>忠诚度</value>
   </data>
   <data name="MaxHP" xml:space="preserve">
     <value>最大生命值</value>
@@ -147,7 +159,19 @@
   <data name="MaxMP" xml:space="preserve">
     <value>最大魔法值</value>
   </data>
+  <data name="Nutrition" xml:space="preserve">
+    <value>营养</value>
+  </data>
+  <data name="Purity" xml:space="preserve">
+    <value>纯度</value>
+  </data>
+  <data name="Quality" xml:space="preserve">
+    <value>品质</value>
+  </data>
   <data name="Time" xml:space="preserve">
     <value>时间</value>
+  </data>
+  <data name="Usage" xml:space="preserve">
+    <value>使用</value>
   </data>
 </root>

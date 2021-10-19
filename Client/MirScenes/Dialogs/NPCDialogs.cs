@@ -868,9 +868,7 @@ namespace Client.MirScenes.Dialogs
 
         private void NPCDropPanel_Click(object sender, EventArgs e)
         {
-            MouseEventArgs me = e as MouseEventArgs;
-
-            if (me == null) return;
+            if (!(e is MouseEventArgs me)) return;
             int x = me.X - DisplayLocation.X;
             int y = me.Y - DisplayLocation.Y;
 
@@ -1432,7 +1430,7 @@ namespace Client.MirScenes.Dialogs
                 }
                 else
                 {
-                    SelectAwakeType.Items.Add(getAwakeTypeText(Items[0].Awake.Type));
+                    SelectAwakeType.Items.Add(GetAwakeTypeText(Items[0].Awake.Type));
                     if (CurrentAwakeType != Items[0].Awake.Type)
                     {
                         CurrentAwakeType = Items[0].Awake.Type;
@@ -1442,7 +1440,7 @@ namespace Client.MirScenes.Dialogs
             }
         }
 
-        public string getAwakeTypeText(AwakeType type)
+        public string GetAwakeTypeText(AwakeType type)
         {
             string typeName = "";
             typeName = type switch
@@ -1458,7 +1456,7 @@ namespace Client.MirScenes.Dialogs
             return typeName;
         }
 
-        public AwakeType getAwakeType(string typeName)
+        public AwakeType GetAwakeType(string typeName)
         {
             AwakeType type = AwakeType.None;
             type = typeName switch
@@ -1478,7 +1476,7 @@ namespace Client.MirScenes.Dialogs
         {
             SelectAwakeType.SelectedIndex = Index;
 
-            AwakeType type = getAwakeType(SelectAwakeType.Items[SelectAwakeType.SelectedIndex]);
+            AwakeType type = GetAwakeType(SelectAwakeType.Items[SelectAwakeType.SelectedIndex]);
             CurrentAwakeType = type;
             if (type != AwakeType.None)
             {
@@ -1486,12 +1484,14 @@ namespace Client.MirScenes.Dialogs
             }
         }
 
-        public void setNeedItems(ItemInfo[] Materials, byte[] MaterialsCount)
+        public void SetNeedItems(ItemInfo[] Materials, byte[] MaterialsCount)
         {
             if (MaterialsCount[0] != 0)
             {
-                ItemCells[1].Item = new UserItem(Materials[0]);
-                ItemCells[1].Item.Count = MaterialsCount[0];
+                ItemCells[1].Item = new UserItem(Materials[0])
+                {
+                    Count = MaterialsCount[0]
+                };
                 NeedItemLabel1.Text = Regex.Replace(ItemCells[1].Item.Info.Name, @"[\d-]", string.Empty) + "\nQuantity: " + MaterialsCount[0].ToString();
             }
             else
@@ -1502,8 +1502,10 @@ namespace Client.MirScenes.Dialogs
 
             if (MaterialsCount[1] != 0)
             {
-                ItemCells[2].Item = new UserItem(Materials[1]);
-                ItemCells[2].Item.Count = MaterialsCount[1];
+                ItemCells[2].Item = new UserItem(Materials[1])
+                {
+                    Count = MaterialsCount[1]
+                };
                 NeedItemLabel2.Text = Regex.Replace(ItemCells[2].Item.Info.Name, @"[\d-]", string.Empty) + "\nQuantity:" + MaterialsCount[1].ToString();
             }
             else
@@ -1538,7 +1540,7 @@ namespace Client.MirScenes.Dialogs
         {
             if (CheckNeedMaterials())
             {
-                AwakeType type = getAwakeType(SelectAwakeType.Items[SelectAwakeType.SelectedIndex]);
+                AwakeType type = GetAwakeType(SelectAwakeType.Items[SelectAwakeType.SelectedIndex]);
 
                 if (type != AwakeType.None)
                 {

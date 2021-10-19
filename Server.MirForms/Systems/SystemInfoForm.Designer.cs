@@ -931,7 +931,7 @@
             this.txtSpawnTickDefault.TabIndex = 1;
             this.toolTip1.SetToolTip(this.txtSpawnTickDefault, "how long is 1 tick with no users onilne?\r\n(default suggested value = 20)\r\ntime in" +
         " minutes!");
-            this.txtSpawnTickDefault.TextChanged += new System.EventHandler(this.txtSpawnTickDefault_TextChanged);
+            this.txtSpawnTickDefault.TextChanged += new System.EventHandler(this.TxtSpawnTickDefault_TextChanged);
             // 
             // label32
             // 
@@ -970,7 +970,7 @@
             this.txtSpawnTickUsers.Size = new System.Drawing.Size(100, 21);
             this.txtSpawnTickUsers.TabIndex = 2;
             this.toolTip1.SetToolTip(this.txtSpawnTickUsers, "At least how many users should bere be online to be using this rate?");
-            this.txtSpawnTickUsers.TextChanged += new System.EventHandler(this.txtSpawnTickUsers_TextChanged);
+            this.txtSpawnTickUsers.TextChanged += new System.EventHandler(this.TxtSpawnTickUsers_TextChanged);
             // 
             // label31
             // 
@@ -998,7 +998,7 @@
             this.lbSpawnTickList.Name = "lbSpawnTickList";
             this.lbSpawnTickList.Size = new System.Drawing.Size(140, 172);
             this.lbSpawnTickList.TabIndex = 2;
-            this.lbSpawnTickList.SelectedIndexChanged += new System.EventHandler(this.lbSpawnTickList_SelectedIndexChanged);
+            this.lbSpawnTickList.SelectedIndexChanged += new System.EventHandler(this.LbSpawnTickList_SelectedIndexChanged);
             // 
             // btnSpawnTickRemove
             // 

@@ -964,13 +964,14 @@ namespace Client.MirScenes
             TimerControl.Process();
             CompassControl.Process();
 
-            MirItemCell cell = MouseControl as MirItemCell;
-
-            if (cell != null && HoverItem != cell.Item && HoverItem != cell.ShadowItem)
+            using (var cell = MouseControl as MirItemCell)
             {
-                DisposeItemLabel();
-                HoverItem = null;
-                CreateItemLabel(cell.Item);
+                if (cell != null && HoverItem != cell.Item && HoverItem != cell.ShadowItem)
+                {
+                    DisposeItemLabel();
+                    HoverItem = null;
+                    CreateItemLabel(cell.Item);
+                }
             }
 
             if (ItemLabel != null && !ItemLabel.IsDisposed)
@@ -2455,8 +2456,7 @@ namespace Client.MirScenes
             {
                 if (MapControl.Objects[i].ObjectID != p.ObjectID) continue;
 
-                PlayerObject player = MapControl.Objects[i] as PlayerObject;
-                if (player != null)
+                if (MapControl.Objects[i] is PlayerObject player)
                 {
                     player.MountUpdate(p);
                 }
@@ -2493,8 +2493,7 @@ namespace Client.MirScenes
             {
                 if (MapControl.Objects[i].ObjectID != p.ObjectID) continue;
 
-                PlayerObject player = MapControl.Objects[i] as PlayerObject;
-                if (player != null)
+                if (MapControl.Objects[i] is PlayerObject player)
                 {
                     player.FishingUpdate(p);
 
@@ -2600,8 +2599,7 @@ namespace Client.MirScenes
             {
                 if (MapControl.Objects[i].ObjectID != p.ObjectID) continue;
 
-                PlayerObject player = MapControl.Objects[i] as PlayerObject;
-                if (player != null) player.Update(p);
+                if (MapControl.Objects[i] is PlayerObject player) player.Update(p);
                 return;
             }
         }
@@ -4757,12 +4755,16 @@ namespace Client.MirScenes
                 if (ob.ObjectID != p.ObjectID) continue;
                 if (ob.Race != ObjectType.Monster) continue;
 
-                TrackableEffect NetCast = new TrackableEffect(new Effect(Libraries.MagicC, 0, 8, 700, ob));
-                NetCast.EffectName = "BindingShotDrop";
+                TrackableEffect NetCast = new TrackableEffect(new Effect(Libraries.MagicC, 0, 8, 700, ob))
+                {
+                    EffectName = "BindingShotDrop"
+                };
 
                 //TrackableEffect NetDropped = new TrackableEffect(new Effect(Libraries.ArcherMagic, 7, 1, 1000, ob, CMain.Time + 600) { Repeat = true, RepeatUntil = CMain.Time + (p.Value - 1500) });
-                TrackableEffect NetDropped = new TrackableEffect(new Effect(Libraries.MagicC, 7, 1, 1000, ob) { Repeat = true, RepeatUntil = CMain.Time + (p.Value - 1500) });
-                NetDropped.EffectName = "BindingShotDown";
+                TrackableEffect NetDropped = new TrackableEffect(new Effect(Libraries.MagicC, 7, 1, 1000, ob) { Repeat = true, RepeatUntil = CMain.Time + (p.Value - 1500) })
+                {
+                    EffectName = "BindingShotDown"
+                };
 
                 TrackableEffect NetFall = new TrackableEffect(new Effect(Libraries.MagicC, 8, 8, 700, ob))
                 {
@@ -5359,7 +5361,7 @@ namespace Client.MirScenes
         }
         private void AwakeningNeedMaterials(S.AwakeningNeedMaterials p)
         {
-            NPCAwakeDialog.setNeedItems(p.Materials, p.MaterialsCount);
+            NPCAwakeDialog.SetNeedItems(p.Materials, p.MaterialsCount);
         }
         private void AwakeningLockedItem(S.AwakeningLockedItem p)
         {
@@ -5865,19 +5867,19 @@ namespace Client.MirScenes
                 switch (HoverItem.Info.Type)
                 {
                     case ItemType.Amulet:
-                        text += string.Format(" Usage {0}/{1}", HoverItem.CurrentDura, HoverItem.MaxDura);
+                        text += string.Format(" {0} {1}/{2}",Resources.ResourceItemInfo.Usage, HoverItem.CurrentDura, HoverItem.MaxDura);
                         break;
                     case ItemType.Ore:
-                        text += string.Format(" Purity {0}", Math.Floor(HoverItem.CurrentDura / 1000M));
+                        text += string.Format(" {0} {1}", Resources.ResourceItemInfo.Purity, Math.Floor(HoverItem.CurrentDura / 1000M));
                         break;
                     case ItemType.Meat:
-                        text += string.Format(" Quality {0}", Math.Floor(HoverItem.CurrentDura / 1000M));
+                        text += string.Format(" {0} {1}", Resources.ResourceItemInfo.Quality , Math.Floor(HoverItem.CurrentDura / 1000M));
                         break;
                     case ItemType.Mount:
-                        text += string.Format(" Loyalty {0} / {1}", HoverItem.CurrentDura, HoverItem.MaxDura);
+                        text += string.Format(" {0} {1}/{2}", Resources.ResourceItemInfo.Loyalty, HoverItem.CurrentDura, HoverItem.MaxDura);
                         break;
                     case ItemType.Food:
-                        text += string.Format(" Nutrition {0}", HoverItem.CurrentDura);
+                        text += string.Format(" {0} {1}", Resources.ResourceItemInfo.Nutrition, HoverItem.CurrentDura);
                         break;
                     case ItemType.Gem:
                         break;
@@ -5889,7 +5891,7 @@ namespace Client.MirScenes
                         if (HoverItem.Info.Shape == 26 || HoverItem.Info.Shape == 28)//WonderDrug, Knapsack
                         {
                             string strTime = Functions.PrintTimeSpanFromSeconds((HoverItem.CurrentDura * 3600), false);
-                            text += string.Format(" Duration {0}", strTime);
+                            text += string.Format(" {0} {1}", Resources.ResourceItemInfo.Duration, strTime);
                         }
                         break;
                     default:
@@ -6083,18 +6085,15 @@ namespace Client.MirScenes
             }
 
             int count = 0;
-            int minValue = 0;
-            int maxValue = 0;
-            int addValue = 0;
-            string text = "";
 
             #region Dura gem
-            minValue = realItem.Durability;
+            int minValue = realItem.Durability;
 
+            string text;
             if (minValue > 0 && realItem.Type == ItemType.Gem)
             {
                 count++;
-                text = string.Format("Adds +{0} Durability", minValue / 1000);
+                text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue / 1000, Resources.ResourceItemInfo.Durability);
                 MirLabel DuraLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6113,8 +6112,8 @@ namespace Client.MirScenes
 
             #region DC
             minValue = realItem.Stats[Stat.MinDC];
-            maxValue = realItem.Stats[Stat.MaxDC];
-            addValue = (!hideAdded && (!HoverItem.Info.NeedIdentify || HoverItem.Identified)) ? HoverItem.AddedStats[Stat.MaxDC] : 0;
+            int maxValue = realItem.Stats[Stat.MaxDC];
+            int addValue = !hideAdded && (!HoverItem.Info.NeedIdentify || HoverItem.Identified) ? HoverItem.AddedStats[Stat.MaxDC] : 0;
 
             if (minValue > 0 || maxValue > 0 || addValue > 0)
             {
@@ -6122,7 +6121,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.DC : GameLanguage.DC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} DC", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.DC);
                 MirLabel DCLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6151,7 +6150,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.MC : GameLanguage.MC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} MC", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.MC);
                 MirLabel MCLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6180,7 +6179,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.SC : GameLanguage.SC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} SC", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.SC);
                 MirLabel SCLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6255,7 +6254,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.Accuracy : GameLanguage.Accuracy2, minValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} Accuracy", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.Accuracy);
                 MirLabel ACCLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6314,11 +6313,11 @@ namespace Client.MirScenes
                 {
                     string negative = "+";
                     if (addValue < 0) negative = "";
-                    text = string.Format(addValue != 0 ? GameLanguage.AttackSpeed + ": " + plus + "{0} ({2}{1})" : GameLanguage.AttackSpeed + ": " + plus + "{0}", minValue + addValue, addValue, negative);
+                    text = string.Format(addValue != 0 ? Resources.ResourceCharStat1.AttackSpeed + ": " + plus + "{0} ({2}{1})" : Resources.ResourceCharStat1.AttackSpeed + ": " + plus + "{0}", minValue + addValue, addValue, negative);
                     //text = string.Format(addValue > 0 ? "A.Speed: + {0} (+{1})" : "A.Speed: + {0}", minValue + addValue, addValue);
                 }
                 else
-                    text = string.Format(GameLanguage.Adds + " +{0} " + GameLanguage.AttackSpeed, minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.AttackSpeed);
                 MirLabel ASPEEDLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6346,9 +6345,9 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "Freezing: + {0} (+{1})" : "Freezing: + {0}", minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{1}: + {1}",Resources.ResourceCharStat2.FrostPower, minValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} Freezing", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat2.FrostPower);
                 MirLabel FREEZINGLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6376,9 +6375,9 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "Poison: + {0} (+{1})" : "Poison: + {0}", minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}",Resources.ResourceCharStat2.PoisonPower,  minValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} Poison", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat2.PoisonPower);
                 MirLabel POISONLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6669,7 +6668,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.AC : GameLanguage.AC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} AC", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.AC);
                 MirLabel ACLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6715,7 +6714,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.MAC : GameLanguage.MAC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} MAC", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.MAC);
                 MirLabel MACLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6983,7 +6982,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.Agility : GameLanguage.Agility2, minValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} Agility", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.Agility);
 
                 MirLabel AGILITYLabel = new MirLabel
                 {
@@ -7037,9 +7036,9 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "Poison Resist + {0} (+{1})" : "Poison Resist + {0}", minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}", Resources.ResourceCharStat2.PoisonResistance, minValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} Poison Resist", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat2.PoisonResistance);
                 MirLabel POISON_RESISTLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -7066,9 +7065,9 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "Magic Resist + {0} (+{1})" : "Magic Resist + {0}", minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}",Resources.ResourceCharStat2.MagicResistance, minValue + addValue, addValue);
                 else
-                    text = string.Format("Adds +{0} Magic Resist", minValue + maxValue + addValue);
+                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat2.MagicResistance);
                 MirLabel MAGIC_RESISTLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -9189,8 +9188,7 @@ namespace Client.MirScenes
             {
                 for (int i = 0; i < Objects.Count; i++)
                 {
-                    ItemObject ob = Objects[i] as ItemObject;
-                    if (ob == null) continue;
+                    if (!(Objects[i] is ItemObject ob)) continue;
 
                     if (!ob.MouseOver(MouseLocation))
                         ob.DrawName();
@@ -9206,8 +9204,7 @@ namespace Client.MirScenes
             {
                 for (int i = 0; i < Objects.Count; i++)
                 {
-                    MonsterObject ob = Objects[i] as MonsterObject;
-                    if (ob == null) continue;
+                    if (!(Objects[i] is MonsterObject ob)) continue;
 
                     if (!ob.MouseOver(MouseLocation)) continue;
                     ob.DrawName();
@@ -9216,8 +9213,7 @@ namespace Client.MirScenes
 
             for (int i = 0; i < Objects.Count; i++)
             {
-                ItemObject ob = Objects[i] as ItemObject;
-                if (ob == null) continue;
+                if (!(Objects[i] is ItemObject ob)) continue;
 
                 if (!ob.MouseOver(MouseLocation)) continue;
                 ob.DrawName(offSet);
@@ -9839,8 +9835,7 @@ namespace Client.MirScenes
                     {
                         AutoRun = false;
                         if (MapObject.MouseObject == null) return;
-                        NPCObject npc = MapObject.MouseObject as NPCObject;
-                        if (npc != null)
+                        if (MapObject.MouseObject is NPCObject npc)
                         {
                             if (npc.ObjectID == GameScene.NPCID &&
                                 (CMain.Time <= GameScene.NPCTime || GameScene.Scene.NPCDialog.Visible))
@@ -9860,8 +9855,7 @@ namespace Client.MirScenes
                     {
                         AutoRun = false;
                         if (MapObject.MouseObject == null) return;
-                        PlayerObject player = MapObject.MouseObject as PlayerObject;
-                        if (player == null || player == User || !CMain.Ctrl) return;
+                        if (!(MapObject.MouseObject is PlayerObject player) || player == User || !CMain.Ctrl) return;
                         if (CMain.Time <= GameScene.InspectTime && player.ObjectID == InspectDialog.InspectID) return;
 
                         GameScene.InspectTime = CMain.Time + 500;
@@ -10192,7 +10186,7 @@ namespace Client.MirScenes
                             return;
                         }
 
-                        GameScene.CanRun = User.FastRun ? true : GameScene.CanRun;
+                        GameScene.CanRun = User.FastRun || GameScene.CanRun;
 
                         if (GameScene.CanRun && CanRun(direction) && CMain.Time > GameScene.NextRunTime && User.HP >= 10 && (!User.Sneaking || (User.Sneaking && User.Sprint))) //slow removed
                         {

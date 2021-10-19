@@ -127,7 +127,7 @@
     <value>经验</value>
   </data>
   <data name="FrostPower" xml:space="preserve">
-    <value>石化力</value>
+    <value>石化</value>
   </data>
   <data name="HandWeight" xml:space="preserve">
     <value>腕力</value>
@@ -136,7 +136,7 @@
     <value>体力恢复</value>
   </data>
   <data name="HolyPower" xml:space="preserve">
-    <value>神圣力</value>
+    <value>神圣</value>
   </data>
   <data name="MagicResistance" xml:space="preserve">
     <value>魔法躲避</value>
@@ -145,7 +145,7 @@
     <value>魔法恢复</value>
   </data>
   <data name="PoisonPower" xml:space="preserve">
-    <value>毒伤力</value>
+    <value>毒伤</value>
   </data>
   <data name="PoisonRecovery" xml:space="preserve">
     <value>中毒恢复</value>
