@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared;
+using System;
 using System.ComponentModel;
 
 public enum MouseCursor : byte
@@ -773,10 +774,15 @@ public enum MirGender : byte
 
 public enum MirClass : byte
 {
+    [Description("战士")]   
     Warrior = 0,
+    [Description("魔法师")]
     Wizard = 1,
+    [Description("道士")]
     Taoist = 2,
+    [Description("刺客")]
     Assassin = 3,
+    [Description("弓箭手")]
     Archer = 4
 }
 
@@ -1007,7 +1013,8 @@ public enum SpecialItemMode : short
 [Flags]
 public enum RequiredClass : byte
 {
-    [Description("战士")]
+
+    [Description("战士")]  
     Warrior = 1,
     [Description("魔法师")]
     Wizard = 2,

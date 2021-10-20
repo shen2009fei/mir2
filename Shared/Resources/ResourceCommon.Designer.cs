@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Client.Resources {
+namespace Shared.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Client.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Client.Resources.ResourceCommon", typeof(ResourceCommon).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Shared.Resources.ResourceCommon", typeof(ResourceCommon).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,15 +61,6 @@ namespace Client.Resources {
         }
         
         /// <summary>
-        ///   查找类似 All Items 的本地化字符串。
-        /// </summary>
-        internal static string AllItems {
-            get {
-                return ResourceManager.GetString("AllItems", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Archer 的本地化字符串。
         /// </summary>
         internal static string Archer {
@@ -84,78 +75,6 @@ namespace Client.Resources {
         internal static string Assassin {
             get {
                 return ResourceManager.GetString("Assassin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Crit 的本地化字符串。
-        /// </summary>
-        internal static string Crit {
-            get {
-                return ResourceManager.GetString("Crit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Gold 的本地化字符串。
-        /// </summary>
-        internal static string Gold {
-            get {
-                return ResourceManager.GetString("Gold", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Last Online 的本地化字符串。
-        /// </summary>
-        internal static string LastOnline {
-            get {
-                return ResourceManager.GetString("LastOnline", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Miss 的本地化字符串。
-        /// </summary>
-        internal static string Miss {
-            get {
-                return ResourceManager.GetString("Miss", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Needed 的本地化字符串。
-        /// </summary>
-        internal static string Needed {
-            get {
-                return ResourceManager.GetString("Needed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Never 的本地化字符串。
-        /// </summary>
-        internal static string Never {
-            get {
-                return ResourceManager.GetString("Never", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Others 的本地化字符串。
-        /// </summary>
-        internal static string Others {
-            get {
-                return ResourceManager.GetString("Others", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Legend of Mir 2 的本地化字符串。
-        /// </summary>
-        internal static string ServerName {
-            get {
-                return ResourceManager.GetString("ServerName", resourceCulture);
             }
         }
         

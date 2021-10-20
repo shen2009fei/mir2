@@ -10,6 +10,7 @@ using Client.MirSounds;
 using C = ClientPackets;
 using S = ServerPackets;
 using System.Threading;
+using Shared.Extensions;
 namespace Client.MirScenes
 {
     public class SelectScene : MirScene
@@ -57,7 +58,7 @@ namespace Client.MirScenes
                 // Location = new Point(322, 44),
                 Parent = Background,
                 Size = new Size(155, 17),
-                Text = "Legend of Mir 2",
+                Text = Resources.ResourceCommon.ServerName,
                 DrawFormat = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
             };
 
@@ -214,7 +215,7 @@ namespace Client.MirScenes
             {
                 Location = new Point(-65, 0),
                 Parent = LastAccessLabel,
-                Text = "最后在线:",
+                Text = Resources.ResourceCommon.LastOnline+":",
                 Size = new Size(100, 21),
                 DrawFormat = TextFormatFlags.Left | TextFormatFlags.VerticalCenter,
                 Border = true,
@@ -507,7 +508,7 @@ namespace Client.MirScenes
                         break;
                 }
 
-                LastAccessLabel.Text = Characters[_selected].LastAccess == DateTime.MinValue ? "Never" : Characters[_selected].LastAccess.ToString();
+                LastAccessLabel.Text = Characters[_selected].LastAccess == DateTime.MinValue ? Resources.ResourceCommon.Never : Characters[_selected].LastAccess.ToString();
                 LastAccessLabel.Visible = true;
                 LastAccessLabelLabel.Visible = true;
                 StartGameButton.Enabled = true;
@@ -953,7 +954,7 @@ namespace Client.MirScenes
 
                 NameLabel.Text = info.Name;
                 LevelLabel.Text = info.Level.ToString();
-                ClassLabel.Text = info.Class.ToString();
+                ClassLabel.Text = info.Class.ToDescription();//fix Chinease description
 
                 NameLabel.Visible = true;
                 LevelLabel.Visible = true;

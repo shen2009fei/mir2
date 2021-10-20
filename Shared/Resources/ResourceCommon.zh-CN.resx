@@ -117,49 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AllItems" xml:space="preserve">
-    <value>All Items</value>
-  </data>
   <data name="Archer" xml:space="preserve">
-    <value>Archer</value>
+    <value>弓箭手</value>
   </data>
   <data name="Assassin" xml:space="preserve">
-    <value>Assassin</value>
-  </data>
-  <data name="Crit" xml:space="preserve">
-    <value>Crit</value>
-  </data>
-  <data name="Gold" xml:space="preserve">
-    <value>Gold</value>
-  </data>
-  <data name="LastOnline" xml:space="preserve">
-    <value>Last Online</value>
-  </data>
-  <data name="Miss" xml:space="preserve">
-    <value>Miss</value>
-  </data>
-  <data name="Needed" xml:space="preserve">
-    <value>Needed</value>
-  </data>
-  <data name="Never" xml:space="preserve">
-    <value>Never</value>
-  </data>
-  <data name="Others" xml:space="preserve">
-    <value>Others</value>
-  </data>
-  <data name="ServerName" xml:space="preserve">
-    <value>Legend of Mir 2</value>
+    <value>刺客</value>
   </data>
   <data name="Taoist" xml:space="preserve">
-    <value>Taoist</value>
+    <value>道士</value>
   </data>
   <data name="Warrior" xml:space="preserve">
-    <value>Warrior</value>
+    <value>战士</value>
   </data>
   <data name="WarWizTao" xml:space="preserve">
-    <value>WarWizTao</value>
+    <value>战法道</value>
   </data>
   <data name="Wizard" xml:space="preserve">
-    <value>Wizard</value>
+    <value>魔法师</value>
   </data>
 </root>

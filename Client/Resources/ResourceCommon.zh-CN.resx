@@ -120,11 +120,20 @@
   <data name="AllItems" xml:space="preserve">
     <value>所有物品</value>
   </data>
+  <data name="Archer" xml:space="preserve">
+    <value>弓箭手</value>
+  </data>
+  <data name="Assassin" xml:space="preserve">
+    <value>刺客</value>
+  </data>
   <data name="Crit" xml:space="preserve">
     <value>暴击</value>
   </data>
   <data name="Gold" xml:space="preserve">
     <value>金币</value>
+  </data>
+  <data name="LastOnline" xml:space="preserve">
+    <value>最后在线</value>
   </data>
   <data name="Miss" xml:space="preserve">
     <value>未命中</value>
@@ -132,7 +141,25 @@
   <data name="Needed" xml:space="preserve">
     <value>需要</value>
   </data>
+  <data name="Never" xml:space="preserve">
+    <value>从未</value>
+  </data>
   <data name="Others" xml:space="preserve">
     <value>其他</value>
+  </data>
+  <data name="ServerName" xml:space="preserve">
+    <value>热血豪情</value>
+  </data>
+  <data name="Taoist" xml:space="preserve">
+    <value>道士</value>
+  </data>
+  <data name="Warrior" xml:space="preserve">
+    <value>战士</value>
+  </data>
+  <data name="WarWizTao" xml:space="preserve">
+    <value>战法道</value>
+  </data>
+  <data name="Wizard" xml:space="preserve">
+    <value>魔法师</value>
   </data>
 </root>
