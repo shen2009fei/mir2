@@ -406,7 +406,8 @@ namespace Server.MirForms.VisualMapInfo
                 return true;
             }
 
-            if (keyData == Keys.Add && VisualizerGlobal.FocusModeActive == true)
+            //if (keyData == Keys.Add && VisualizerGlobal.FocusModeActive == true)
+            if (keyData == Keys.Add)
             {
                 if (VisualizerGlobal.ZoomLevel != 6)
                     VisualizerGlobal.ZoomLevel++;
@@ -416,7 +417,9 @@ namespace Server.MirForms.VisualMapInfo
                 return true;
             }
 
-            if (keyData == Keys.Subtract && VisualizerGlobal.FocusModeActive == true)
+            //if (keyData == Keys.Subtract && VisualizerGlobal.FocusModeActive == true)
+            if (keyData == Keys.Subtract)
+
             {
                 if (VisualizerGlobal.ZoomLevel != 1)
                     VisualizerGlobal.ZoomLevel--;

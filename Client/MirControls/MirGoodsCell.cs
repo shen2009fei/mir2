@@ -77,17 +77,17 @@ namespace Client.MirControls
 
             if (UsePearls)
             {
-                PriceLabel.Text = string.Format("Price: {0} pearl{1}", (uint)(Item.Price() * GameScene.NPCRate), Item.Price() > 1 ? "s" : "");
+                PriceLabel.Text = string.Format(Resources.ResourceNPCDialog.PricePearl, (uint)(Item.Price() * GameScene.NPCRate));
             }
             else if (Recipe)
             {
                 ClientRecipeInfo recipe = GameScene.RecipeInfoList.SingleOrDefault(x => x.Item.ItemIndex == Item.ItemIndex);
 
-                PriceLabel.Text = string.Format("Price: {0} gold", (uint)(recipe.Gold * GameScene.NPCRate));
+                PriceLabel.Text = string.Format(Resources.ResourceNPCDialog.PriceGold, (uint)(recipe.Gold * GameScene.NPCRate));
             }
             else
             {
-                PriceLabel.Text = string.Format("Price: {0} gold", (uint)(Item.Price() * GameScene.NPCRate));
+                PriceLabel.Text = string.Format(Resources.ResourceNPCDialog.PriceGold, (uint)(Item.Price() * GameScene.NPCRate));
             }
         }
 

@@ -20,6 +20,8 @@ using System.Drawing.Imaging;
 
 namespace Client.MirScenes.Dialogs
 {
+
+
     public sealed class NPCDialog : MirImageControl
     {
         public static Regex R = new Regex(@"<((.*?)\/(\@.*?))>");
@@ -160,7 +162,7 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(390, 3),
                 Sound = SoundList.ButtonA,
             };
-            helpButton.Click += (o, e) => GameScene.Scene.HelpDialog.DisplayPage("Purchasing");
+            helpButton.Click += (o, e) => GameScene.Scene.HelpDialog.DisplayPage(Resources.ResourceHelpDialog.Purchasing);
         }
 
         void NPCDialog_MouseWheel(object sender, MouseEventArgs e)
@@ -475,7 +477,7 @@ namespace Client.MirScenes.Dialogs
                     if (PType == PanelType.Craft) return;
 
                     BuyItem();
-                };       
+                };
             }
 
             CloseButton = new MirButton
@@ -609,7 +611,7 @@ namespace Client.MirScenes.Dialogs
                         maxQuantity = Math.Min(ushort.MaxValue, (ushort)(GameScene.Gold / (SelectedItem.Price() / SelectedItem.Count)));
                         if (maxQuantity == 0)
                         {
-                            GameScene.Scene.ChatDialog.ReceiveChat("You do not have enough Pearls.", ChatType.System);
+                            GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.YouDoNotHaveEnoughPearls, ChatType.System);
                             return;
                         }
                     }
@@ -634,7 +636,7 @@ namespace Client.MirScenes.Dialogs
 
                 if (SelectedItem.Count == 0) return;
 
-                MirAmountBox amountBox = new MirAmountBox("Purchase Amount:", SelectedItem.Image, maxQuantity, 0, SelectedItem.Count);
+                MirAmountBox amountBox = new MirAmountBox(Resources.ResourceNPCDialog.PurchaseAmount, SelectedItem.Image, maxQuantity, 0, SelectedItem.Count);
 
                 amountBox.OKButton.Click += (o, e) =>
                 {
@@ -656,7 +658,7 @@ namespace Client.MirScenes.Dialogs
 
                 if (SelectedItem.Weight > (MapObject.User.Stats[Stat.BagWeight] - MapObject.User.CurrentBagWeight))
                 {
-                    GameScene.Scene.ChatDialog.ReceiveChat("You do not have enough weight.", ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.YouDoNotHaveEnoughWeight, ChatType.System);
                     return;
                 }
 
@@ -665,7 +667,7 @@ namespace Client.MirScenes.Dialogs
                     if (MapObject.User.Inventory[i] == null) break;
                     if (i == MapObject.User.Inventory.Length - 1)
                     {
-                        GameScene.Scene.ChatDialog.ReceiveChat("You cannot purchase any more items.", ChatType.System);
+                        GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.YouCannotPpurchaseAnymoreItems, ChatType.System);
                         return;
                     }
                 }
@@ -707,6 +709,7 @@ namespace Client.MirScenes.Dialogs
                     Cells[i].Visible = false;
                     continue;
                 }
+                Cells[i].Visible = true;
                 Cells[i].Visible = true;
 
                 var matchingGoods = Goods.Where(x => x.Info.Index == Cells[i].Item.Info.Index);
@@ -885,7 +888,7 @@ namespace Client.MirScenes.Dialogs
                 case PanelType.Sell:
                     if (TargetItem.Info.Bind.HasFlag(BindMode.DontSell))
                     {
-                        GameScene.Scene.ChatDialog.ReceiveChat("Cannot sell this item.", ChatType.System);
+                        GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.CannotSellThisItem , ChatType.System);
                         return;
                     }
                     if (GameScene.Gold + TargetItem.Price() / 2 <= uint.MaxValue)
@@ -894,12 +897,12 @@ namespace Client.MirScenes.Dialogs
                         TargetItem = null;
                         return;
                     }
-                    GameScene.Scene.ChatDialog.ReceiveChat("Cannot carry anymore gold.", ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.CannotCarryAnymoreGold, ChatType.System);
                     break;
                 case PanelType.Repair:
                     if (TargetItem.Info.Bind.HasFlag(BindMode.DontRepair))
                     {
-                        GameScene.Scene.ChatDialog.ReceiveChat("Cannot repair this item.", ChatType.System);
+                        GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.CannotRepairThisItem, ChatType.System);
                         return;
                     }
                     if (GameScene.Gold >= TargetItem.RepairPrice() * GameScene.NPCRate)
@@ -913,7 +916,7 @@ namespace Client.MirScenes.Dialogs
                 case PanelType.SpecialRepair:
                     if ((TargetItem.Info.Bind.HasFlag(BindMode.DontRepair)) || (TargetItem.Info.Bind.HasFlag(BindMode.NoSRepair)))
                     {
-                        GameScene.Scene.ChatDialog.ReceiveChat("Cannot repair this item.", ChatType.System);
+                        GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.CannotRepairThisItem, ChatType.System);
                         return;
                     }
                     if (GameScene.Gold >= (TargetItem.RepairPrice() * 3) * GameScene.NPCRate)
@@ -927,10 +930,10 @@ namespace Client.MirScenes.Dialogs
                 case PanelType.Consign:
                     if (TargetItem.Info.Bind.HasFlag(BindMode.DontStore) || TargetItem.Info.Bind.HasFlag(BindMode.DontSell))
                     {
-                        GameScene.Scene.ChatDialog.ReceiveChat("Cannot consign this item.", ChatType.System);
+                        GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.CannotConsignThisItem, ChatType.System);
                         return;
                     }
-                    MirAmountBox box = new MirAmountBox("Consignment Price:", TargetItem.Image, Globals.MaxConsignment, Globals.MinConsignment)
+                    MirAmountBox box = new MirAmountBox(Resources.ResourceNPCDialog.ConsignmentPrice , TargetItem.Image, Globals.MaxConsignment, Globals.MinConsignment)
                     {
                         InputTextBox = { Text = string.Empty },
                         Amount = 0
@@ -967,18 +970,18 @@ namespace Client.MirScenes.Dialogs
                                 TargetItem = null;
                                 return;
                             }
-                            GameScene.Scene.ChatDialog.ReceiveChat(String.Format("You don't have enough gold to refine your {0}.", TargetItem.FriendlyName), ChatType.System);
+                            GameScene.Scene.ChatDialog.ReceiveChat(String.Format(Resources.ResourceNPCDialog.YouDontHaveEnoughGoldToRefineYour, TargetItem.FriendlyName), ChatType.System);
                             return;
                         }
 
                     }
-                    GameScene.Scene.ChatDialog.ReceiveChat(String.Format("You haven't deposited any items to refine your {0} with.", TargetItem.FriendlyName), ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(String.Format(Resources.ResourceNPCDialog.YouHaventDepositedAnyItemsToRefineYourWith, TargetItem.FriendlyName), ChatType.System);
                     break;
                 case PanelType.CheckRefine:
 
                     if (TargetItem.RefineAdded == 0)
                     {
-                        GameScene.Scene.ChatDialog.ReceiveChat(String.Format("Your {0} hasn't been refined so it doesn't need checking.", TargetItem.FriendlyName), ChatType.System);
+                        GameScene.Scene.ChatDialog.ReceiveChat(String.Format(Resources.ResourceNPCDialog.YourHasntBeenRefinedSoItDoesntNeedChecking, TargetItem.FriendlyName), ChatType.System);
                         return;
                     }
                     Network.Enqueue(new C.CheckRefine { UniqueID = TargetItem.UniqueID });
@@ -988,7 +991,7 @@ namespace Client.MirScenes.Dialogs
 
                     if (TargetItem.Info.Type != ItemType.Ring)
                     {
-                        GameScene.Scene.ChatDialog.ReceiveChat(String.Format("{0} isn't a ring.", TargetItem.FriendlyName), ChatType.System);
+                        GameScene.Scene.ChatDialog.ReceiveChat(String.Format(Resources.ResourceNPCDialog.IsntARing, TargetItem.FriendlyName), ChatType.System);
                         return;
                     }
 
@@ -1116,19 +1119,19 @@ namespace Client.MirScenes.Dialogs
             switch (PType)
             {
                 case PanelType.Sell:
-                    text = Resources.ResourceNPCDrop.Sale + ": ";
+                    text = Resources.ResourceNPCDialog.Sale + ": ";
                     break;
                 case PanelType.Repair:
-                    text = Resources.ResourceNPCDrop.Repair + ": ";
+                    text = Resources.ResourceNPCDialog.Repair + ": ";
                     break;
                 case PanelType.SpecialRepair:
-                    text = Resources.ResourceNPCDrop.SpecialRepair + ": ";
+                    text = Resources.ResourceNPCDialog.SpecialRepair + ": ";
                     break;
                 case PanelType.Consign:
-                    InfoLabel.Text = Resources.ResourceNPCDrop.Consignment + ": ";
+                    InfoLabel.Text = Resources.ResourceNPCDialog.Consignment + ": ";
                     return;
                 case PanelType.Disassemble:
-                    text = Resources.ResourceNPCDrop.ItemWillBeDestroyed + "\n\n\n\n\n\n\n\n         ";
+                    text = Resources.ResourceNPCDialog.ItemWillBeDestroyed + "\n\n\n\n\n\n\n\n         ";
                     HoldButton.Visible = false;
                     Index = 711;
                     Library = Libraries.Title;
@@ -1141,26 +1144,26 @@ namespace Client.MirScenes.Dialogs
                     ItemCell.Location = new Point(83, 94);
                     break;
                 case PanelType.Downgrade:
-                    text = Resources.ResourceNPCDrop.Downgrade + ": ";
+                    text = Resources.ResourceNPCDialog.Downgrade + ": ";
                     HoldButton.Visible = false;
                     break;
                 case PanelType.Reset:
-                    text = Resources.ResourceNPCDrop.Reset + ": ";
+                    text = Resources.ResourceNPCDialog.Reset + ": ";
                     HoldButton.Visible = false;
                     break;
                 case PanelType.Refine:
-                    text = Resources.ResourceNPCDrop.Refine + ": ";
+                    text = Resources.ResourceNPCDialog.Refine + ": ";
                     HoldButton.Visible = false;
                     ConfirmButton.Visible = true;
                     GameScene.Scene.RefineDialog.Show();
                     break;
                 case PanelType.CheckRefine:
-                    text = Resources.ResourceNPCDrop.CheckRefine;
+                    text = Resources.ResourceNPCDialog.CheckRefine;
                     HoldButton.Visible = false;
                     ConfirmButton.Visible = true;
                     break;
                 case PanelType.ReplaceWedRing:
-                    text = Resources.ResourceNPCDrop.Replace;
+                    text = Resources.ResourceNPCDialog.Replace;
                     HoldButton.Visible = false;
                     ConfirmButton.Visible = true;
                     break;
@@ -1201,7 +1204,7 @@ namespace Client.MirScenes.Dialogs
                     default: return;
                 }
 
-                text += " " + Resources.ResourceNPCDrop.Gold ;
+                text += " " + Resources.ResourceNPCDialog.Gold;
             }
 
             InfoLabel.Text = text;
@@ -1403,7 +1406,7 @@ namespace Client.MirScenes.Dialogs
 
             if (Items[0] == null)
             {
-                SelectAwakeType.Items.Add("Select Upgrade Item.");
+                SelectAwakeType.Items.Add(Resources.ResourceNPCDialog.SelectUpgradeItem);
                 SelectAwakeType.SelectedIndex = SelectAwakeType.Items.Count - 1;
                 CurrentAwakeType = AwakeType.None;
             }
@@ -1411,21 +1414,21 @@ namespace Client.MirScenes.Dialogs
             {
                 if (Items[0].Awake.GetAwakeLevel() == 0)
                 {
-                    SelectAwakeType.Items.Add("Select Upgrade Type.");
+                    SelectAwakeType.Items.Add(Resources.ResourceNPCDialog.SelectUpgradeType);
                     if (Items[0].Info.Type == ItemType.Weapon)
                     {
-                        SelectAwakeType.Items.Add("Bravery Glyph");
-                        SelectAwakeType.Items.Add("Magic Glyph");
-                        SelectAwakeType.Items.Add("Soul Glyph");
+                        SelectAwakeType.Items.Add(Resources.ResourceNPCDialog.BraveryGlyph);
+                        SelectAwakeType.Items.Add(Resources.ResourceNPCDialog.MagicGlyph);
+                        SelectAwakeType.Items.Add(Resources.ResourceNPCDialog.SoulGlyph);
                     }
                     else if (Items[0].Info.Type == ItemType.Helmet)
                     {
-                        SelectAwakeType.Items.Add("Protection Glyph");
-                        SelectAwakeType.Items.Add("EvilSlayer Glyph");
+                        SelectAwakeType.Items.Add(Resources.ResourceNPCDialog.ProtectionGlyph);
+                        SelectAwakeType.Items.Add(Resources.ResourceNPCDialog.EvilSlayerGlyph);
                     }
                     else
                     {
-                        SelectAwakeType.Items.Add("Body Glyph");
+                        SelectAwakeType.Items.Add(Resources.ResourceNPCDialog.BodyGlyph);
                     }
                 }
                 else
@@ -1442,33 +1445,51 @@ namespace Client.MirScenes.Dialogs
 
         public string GetAwakeTypeText(AwakeType type)
         {
-            string typeName = "";
-            typeName = type switch
+            string typeName = type switch
             {
-                AwakeType.DC => "Bravery Glyph",
-                AwakeType.MC => "Magic Glyph",
-                AwakeType.SC => "Soul Glyph",
-                AwakeType.AC => "Protection Glyph",
-                AwakeType.MAC => "EvilSlayer Glyph",
-                AwakeType.HPMP => "Body Glyph",
-                _ => "Select Upgrade Item.",
+                AwakeType.DC => Resources.ResourceNPCDialog.BraveryGlyph,
+                AwakeType.MC => Resources.ResourceNPCDialog.MagicGlyph,
+                AwakeType.SC => Resources.ResourceNPCDialog.SoulGlyph,
+                AwakeType.AC => Resources.ResourceNPCDialog.ProtectionGlyph,
+                AwakeType.MAC => Resources.ResourceNPCDialog.EvilSlayerGlyph,
+                AwakeType.HPMP => Resources.ResourceNPCDialog.BodyGlyph,
+                _ => Resources.ResourceNPCDialog.SelectUpgradeItem,
             };
             return typeName;
         }
 
+
         public AwakeType GetAwakeType(string typeName)
         {
             AwakeType type = AwakeType.None;
-            type = typeName switch
+
+            string[] glyphArr = new string[]
             {
-                "Bravery Glyph" => AwakeType.DC,
-                "Magic Glyph" => AwakeType.MC,
-                "Soul Glyph" => AwakeType.SC,
-                "Protection Glyph" => AwakeType.AC,
-                "EvilSlayer Glyph" => AwakeType.MAC,
-                "Body Glyph" => AwakeType.HPMP,
-                _ => AwakeType.None,
+                Resources.ResourceNPCDialog.BraveryGlyph,
+                Resources.ResourceNPCDialog.MagicGlyph,
+                Resources.ResourceNPCDialog.SoulGlyph,
+                Resources.ResourceNPCDialog.ProtectionGlyph,
+                Resources.ResourceNPCDialog.EvilSlayerGlyph,
+                Resources.ResourceNPCDialog.BodyGlyph
             };
+            AwakeType[] awakeArr = new AwakeType[]
+            {
+                AwakeType.DC,
+                AwakeType.MC,
+                AwakeType.SC,
+                AwakeType.AC,
+                AwakeType.MAC,
+                AwakeType.HPMP
+            };
+
+            for (int i = 0; i < glyphArr.Length; i++)
+            {
+                if (glyphArr[i] == typeName)
+                {
+                    type = awakeArr[i];
+                    return type;
+                }
+            }
             return type;
         }
 
@@ -1492,7 +1513,7 @@ namespace Client.MirScenes.Dialogs
                 {
                     Count = MaterialsCount[0]
                 };
-                NeedItemLabel1.Text = Regex.Replace(ItemCells[1].Item.Info.Name, @"[\d-]", string.Empty) + "\nQuantity: " + MaterialsCount[0].ToString();
+                NeedItemLabel1.Text = Regex.Replace(ItemCells[1].Item.Info.Name, @"[\d-]", string.Empty) + "\n" + Resources.ResourceNPCDialog.Quantity + ": " + MaterialsCount[0].ToString();
             }
             else
             {
@@ -1506,7 +1527,7 @@ namespace Client.MirScenes.Dialogs
                 {
                     Count = MaterialsCount[1]
                 };
-                NeedItemLabel2.Text = Regex.Replace(ItemCells[2].Item.Info.Name, @"[\d-]", string.Empty) + "\nQuantity:" + MaterialsCount[1].ToString();
+                NeedItemLabel2.Text = Regex.Replace(ItemCells[2].Item.Info.Name, @"[\d-]", string.Empty) + "\n" + Resources.ResourceNPCDialog.Quantity + ":" + MaterialsCount[1].ToString();
             }
             else
             {
@@ -1878,34 +1899,34 @@ namespace Client.MirScenes.Dialogs
 
             if (RecipeItem.Weight > (MapObject.User.Stats[Stat.BagWeight] - MapObject.User.CurrentBagWeight))
             {
-                GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDrop.YouDoNotHaveEnoughWeight, ChatType.System);
+                GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.YouDoNotHaveEnoughWeight, ChatType.System);
                 return;
             }
 
             if (Recipe.Gold > GameScene.Gold)
             {
-                GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDrop.YouDoNotHaveEnoughGold, ChatType.System);
+                GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.YouDoNotHaveEnoughGold, ChatType.System);
                 return;
             }
 
             if (max > 1)
             {
-                MirAmountBox amountBox = new MirAmountBox(Resources.ResourceNPCDrop.CraftAmount, RecipeItem.Info.Image, max, 0, max);
+                MirAmountBox amountBox = new MirAmountBox(Resources.ResourceNPCDialog.CraftAmount, RecipeItem.Info.Image, max, 0, max);
 
                 amountBox.OKButton.Click += (o, e) =>
                 {
                     if (amountBox.Amount > 0)
                     {
                         if (!HasCraftItems((ushort)amountBox.Amount))
-                        {                            
-                            GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDrop.YouDoDotHaveTheRequiredToolsOrIngredients, ChatType.System);
+                        {
+                            GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.YouDoDotHaveTheRequiredToolsOrIngredients, ChatType.System);
                             return;
                         }
 
-                        Network.Enqueue(new C.CraftItem 
-                        { 
-                            UniqueID = RecipeItem.UniqueID, 
-                            Count = (ushort)amountBox.Amount, 
+                        Network.Enqueue(new C.CraftItem
+                        {
+                            UniqueID = RecipeItem.UniqueID,
+                            Count = (ushort)amountBox.Amount,
                             Slots = Selected.Select(x => x.Key.ItemSlot).ToArray()
                         });
                     }
@@ -1915,10 +1936,10 @@ namespace Client.MirScenes.Dialogs
             }
             else
             {
-                Network.Enqueue(new C.CraftItem 
-                { 
-                    UniqueID = RecipeItem.UniqueID, 
-                    Count = 1, 
+                Network.Enqueue(new C.CraftItem
+                {
+                    UniqueID = RecipeItem.UniqueID,
+                    Count = 1,
                     Slots = Selected.Select(x => x.Key.ItemSlot).ToArray()
                 });
             }
@@ -2016,7 +2037,7 @@ namespace Client.MirScenes.Dialogs
             Recipe = GameScene.RecipeInfoList.SingleOrDefault(x => x.Item.ItemIndex == selectedItem.ItemIndex);
 
             RecipeLabel.Text = Recipe.Item.FriendlyName;
-            PossibilityLabel.Text = (UserObject.User.Stats[Stat.CraftRatePercent] > 0 ? $"{Math.Min(100, Recipe.Chance + UserObject.User.Stats[Stat.CraftRatePercent])}% (+{UserObject.User.Stats[Stat.CraftRatePercent]}%)" : $"{Recipe.Chance}%") + " Chance of Success";
+            PossibilityLabel.Text = (UserObject.User.Stats[Stat.CraftRatePercent] > 0 ? $"{Math.Min(100, Recipe.Chance + UserObject.User.Stats[Stat.CraftRatePercent])}% (+{UserObject.User.Stats[Stat.CraftRatePercent]}%)" : $"{Recipe.Chance}%") + " " + Resources.ResourceNPCDialog.ChanceofSuccess;
             GoldLabel.Text = Recipe.Gold.ToString("###,###,##0");
 
             for (int i = 0; i < Slots.Length; i++)

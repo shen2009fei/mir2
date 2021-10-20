@@ -118,72 +118,120 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BodyGlyph" xml:space="preserve">
-    <value>Body Glyph</value>
+    <value>炼体雕文</value>
   </data>
-  <data name="Bravery Glyph" xml:space="preserve">
-    <value>Bravery Glyp</value>
+  <data name="BraveryGlyph" xml:space="preserve">
+    <value>勇敢雕文</value>
+  </data>
+  <data name="CannotCarryAnymoreGold" xml:space="preserve">
+    <value>不能再携更多金币了。</value>
+  </data>
+  <data name="CannotConsignThisItem" xml:space="preserve">
+    <value>不能寄售此物品。</value>
+  </data>
+  <data name="CannotRepairThisItem" xml:space="preserve">
+    <value>无法修理此物品。</value>
+  </data>
+  <data name="CannotSellThisItem" xml:space="preserve">
+    <value>无法出售此物品。</value>
+  </data>
+  <data name="ChanceofSuccess" xml:space="preserve">
+    <value>成功机会</value>
   </data>
   <data name="CheckRefine" xml:space="preserve">
-    <value>Check Refine</value>
+    <value>检查精炼</value>
   </data>
   <data name="Consignment" xml:space="preserve">
-    <value>Consignment</value>
+    <value>寄售</value>
+  </data>
+  <data name="ConsignmentPrice" xml:space="preserve">
+    <value>寄售价格:</value>
   </data>
   <data name="CraftAmount" xml:space="preserve">
-    <value>Craft Amount:</value>
+    <value>制造数量:</value>
   </data>
   <data name="Downgrade" xml:space="preserve">
-    <value>Downgrade</value>
+    <value>降级</value>
   </data>
   <data name="EvilSlayerGlyph" xml:space="preserve">
-    <value>EvilSlayer Glyph</value>
+    <value>恶灵杀手雕文</value>
   </data>
   <data name="Gold" xml:space="preserve">
-    <value>Gold</value>
+    <value>金币</value>
+  </data>
+  <data name="IsntARing" xml:space="preserve">
+    <value>{0} 不是戒子。</value>
   </data>
   <data name="ItemWillBeDestroyed" xml:space="preserve">
-    <value>Item will be Destroyed</value>
+    <value>物品将被销毁</value>
   </data>
   <data name="MagicGlyph" xml:space="preserve">
-    <value>Magic Glyph</value>
+    <value>魔法雕文</value>
+  </data>
+  <data name="PriceGold" xml:space="preserve">
+    <value>价格: {0} 金币</value>
+  </data>
+  <data name="PricePearl" xml:space="preserve">
+    <value>价格: {0} 珍珠</value>
   </data>
   <data name="ProtectionGlyph" xml:space="preserve">
-    <value>Protection Glyph</value>
+    <value>保护雕文</value>
+  </data>
+  <data name="PurchaseAmount" xml:space="preserve">
+    <value>购买量:</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>数量</value>
   </data>
   <data name="Refine" xml:space="preserve">
-    <value>Refine</value>
+    <value>精炼</value>
   </data>
   <data name="Repair" xml:space="preserve">
-    <value>Repair</value>
+    <value>修理</value>
   </data>
   <data name="Replace" xml:space="preserve">
-    <value>Replace</value>
+    <value>替换</value>
   </data>
   <data name="Reset" xml:space="preserve">
-    <value>Reset</value>
+    <value>重置</value>
   </data>
   <data name="Sale" xml:space="preserve">
-    <value>Sale</value>
+    <value>出售</value>
   </data>
   <data name="SelectUpgradeItem" xml:space="preserve">
-    <value>Select Upgrade Item.</value>
+    <value>选择升级物品.</value>
   </data>
   <data name="SelectUpgradeType" xml:space="preserve">
-    <value>Select Upgrade Type.</value>
+    <value>选择升级类型.</value>
   </data>
   <data name="SoulGlyph" xml:space="preserve">
-    <value>Soul Glyph</value>
+    <value>灵魂雕文</value>
   </data>
   <data name="SpecialRepair" xml:space="preserve">
-    <value>S. Repair</value>
+    <value>特殊修理</value>
+  </data>
+  <data name="YouCannotPpurchaseAnymoreItems" xml:space="preserve">
+    <value>您不能再购买任何物品。</value>
   </data>
   <data name="YouDoDotHaveTheRequiredToolsOrIngredients" xml:space="preserve">
-    <value>You do not have the required tools or ingredients.</value>
+    <value>您没有所需的工具或配料.</value>
   </data>
   <data name="YouDoNotHaveEnoughGold" xml:space="preserve">
-    <value>You do not have enough gold.</value>
+    <value>你没有足够的金币.</value>
+  </data>
+  <data name="YouDoNotHaveEnoughPearls" xml:space="preserve">
+    <value>你没有足够的珍珠。</value>
   </data>
   <data name="YouDoNotHaveEnoughWeight" xml:space="preserve">
-    <value>You do not have enough weight.</value>
+    <value>你没有足够的重量.</value>
+  </data>
+  <data name="YouDontHaveEnoughGoldToRefineYour" xml:space="preserve">
+    <value>你没有足够的金币来升级你的 {0}.</value>
+  </data>
+  <data name="YouHaventDepositedAnyItemsToRefineYourWith" xml:space="preserve">
+    <value>您尚未放入任何用于升级您的 {0} 的物品。</value>
+  </data>
+  <data name="YourHasntBeenRefinedSoItDoesntNeedChecking" xml:space="preserve">
+    <value>您的 {0} 尚未升级，因此不需要检查。</value>
   </data>
 </root>

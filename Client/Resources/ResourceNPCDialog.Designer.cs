@@ -22,14 +22,14 @@ namespace Client.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResourceNPCDrop {
+    internal class ResourceNPCDialog {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResourceNPCDrop() {
+        internal ResourceNPCDialog() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Client.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Client.Resources.ResourceNPCDrop", typeof(ResourceNPCDrop).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Client.Resources.ResourceNPCDialog", typeof(ResourceNPCDialog).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -72,9 +72,54 @@ namespace Client.Resources {
         /// <summary>
         ///   查找类似 Bravery Glyp 的本地化字符串。
         /// </summary>
-        internal static string Bravery_Glyph {
+        internal static string BraveryGlyph {
             get {
-                return ResourceManager.GetString("Bravery Glyph", resourceCulture);
+                return ResourceManager.GetString("BraveryGlyph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cannot carry anymore gold. 的本地化字符串。
+        /// </summary>
+        internal static string CannotCarryAnymoreGold {
+            get {
+                return ResourceManager.GetString("CannotCarryAnymoreGold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cannot consign this item. 的本地化字符串。
+        /// </summary>
+        internal static string CannotConsignThisItem {
+            get {
+                return ResourceManager.GetString("CannotConsignThisItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cannot repair this item. 的本地化字符串。
+        /// </summary>
+        internal static string CannotRepairThisItem {
+            get {
+                return ResourceManager.GetString("CannotRepairThisItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cannot sell this item. 的本地化字符串。
+        /// </summary>
+        internal static string CannotSellThisItem {
+            get {
+                return ResourceManager.GetString("CannotSellThisItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Chance of Success 的本地化字符串。
+        /// </summary>
+        internal static string ChanceofSuccess {
+            get {
+                return ResourceManager.GetString("ChanceofSuccess", resourceCulture);
             }
         }
         
@@ -93,6 +138,15 @@ namespace Client.Resources {
         internal static string Consignment {
             get {
                 return ResourceManager.GetString("Consignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Consignment Price: 的本地化字符串。
+        /// </summary>
+        internal static string ConsignmentPrice {
+            get {
+                return ResourceManager.GetString("ConsignmentPrice", resourceCulture);
             }
         }
         
@@ -133,6 +187,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 {0} isn&apos;t a ring. 的本地化字符串。
+        /// </summary>
+        internal static string IsntARing {
+            get {
+                return ResourceManager.GetString("IsntARing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Item will be Destroyed 的本地化字符串。
         /// </summary>
         internal static string ItemWillBeDestroyed {
@@ -151,11 +214,47 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Price: {0} gold 的本地化字符串。
+        /// </summary>
+        internal static string PriceGold {
+            get {
+                return ResourceManager.GetString("PriceGold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Price: {0} pearls 的本地化字符串。
+        /// </summary>
+        internal static string PricePearl {
+            get {
+                return ResourceManager.GetString("PricePearl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Protection Glyph 的本地化字符串。
         /// </summary>
         internal static string ProtectionGlyph {
             get {
                 return ResourceManager.GetString("ProtectionGlyph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Purchase Amount: 的本地化字符串。
+        /// </summary>
+        internal static string PurchaseAmount {
+            get {
+                return ResourceManager.GetString("PurchaseAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Quantity 的本地化字符串。
+        /// </summary>
+        internal static string Quantity {
+            get {
+                return ResourceManager.GetString("Quantity", resourceCulture);
             }
         }
         
@@ -241,6 +340,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You cannot purchase any more items. 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotPpurchaseAnymoreItems {
+            get {
+                return ResourceManager.GetString("YouCannotPpurchaseAnymoreItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You do not have the required tools or ingredients. 的本地化字符串。
         /// </summary>
         internal static string YouDoDotHaveTheRequiredToolsOrIngredients {
@@ -259,11 +367,47 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You do not have enough Pearls. 的本地化字符串。
+        /// </summary>
+        internal static string YouDoNotHaveEnoughPearls {
+            get {
+                return ResourceManager.GetString("YouDoNotHaveEnoughPearls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You do not have enough weight. 的本地化字符串。
         /// </summary>
         internal static string YouDoNotHaveEnoughWeight {
             get {
                 return ResourceManager.GetString("YouDoNotHaveEnoughWeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You don&apos;t have enough gold to refine your {0}. 的本地化字符串。
+        /// </summary>
+        internal static string YouDontHaveEnoughGoldToRefineYour {
+            get {
+                return ResourceManager.GetString("YouDontHaveEnoughGoldToRefineYour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You haven&apos;t deposited any items to refine your {0} with. 的本地化字符串。
+        /// </summary>
+        internal static string YouHaventDepositedAnyItemsToRefineYourWith {
+            get {
+                return ResourceManager.GetString("YouHaventDepositedAnyItemsToRefineYourWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your {0} hasn&apos;t been refined so it doesn&apos;t need checking. 的本地化字符串。
+        /// </summary>
+        internal static string YourHasntBeenRefinedSoItDoesntNeedChecking {
+            get {
+                return ResourceManager.GetString("YourHasntBeenRefinedSoItDoesntNeedChecking", resourceCulture);
             }
         }
     }
