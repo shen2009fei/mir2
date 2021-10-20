@@ -76,7 +76,7 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(0, 0),
                 Visible = false
             };
-            _image.Click += _image_Click;
+            _image.Click += Image_Click;
         }
 
         public void Setup(int type, string page, int result, bool autoRoll)
@@ -176,7 +176,7 @@ namespace Client.MirScenes.Dialogs
             }
         }
 
-        private void _image_Click(object sender, EventArgs e)
+        private void Image_Click(object sender, EventArgs e)
         {
             if (_rolling) return;
 

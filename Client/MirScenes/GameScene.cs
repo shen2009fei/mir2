@@ -964,9 +964,8 @@ namespace Client.MirScenes
             TimerControl.Process();
             CompassControl.Process();
 
-            MirItemCell cell = MouseControl as MirItemCell;
 
-            if (cell != null && HoverItem != cell.Item && HoverItem != cell.ShadowItem)
+            if (MouseControl is MirItemCell cell && HoverItem != cell.Item && HoverItem != cell.ShadowItem)
             {
                 DisposeItemLabel();
                 HoverItem = null;
