@@ -964,15 +964,15 @@ namespace Client.MirScenes
             TimerControl.Process();
             CompassControl.Process();
 
-            using (var cell = MouseControl as MirItemCell)
+            MirItemCell cell = MouseControl as MirItemCell;
+
+            if (cell != null && HoverItem != cell.Item && HoverItem != cell.ShadowItem)
             {
-                if (cell != null && HoverItem != cell.Item && HoverItem != cell.ShadowItem)
-                {
-                    DisposeItemLabel();
-                    HoverItem = null;
-                    CreateItemLabel(cell.Item);
-                }
+                DisposeItemLabel();
+                HoverItem = null;
+                CreateItemLabel(cell.Item);
             }
+
 
             if (ItemLabel != null && !ItemLabel.IsDisposed)
             {
@@ -4938,10 +4938,10 @@ namespace Client.MirScenes
             MirInputBox inputBox = new MirInputBox("Please enter a guild name, length must be 3~20 characters.");
             inputBox.InputTextBox.TextBox.KeyPress += (o, e) =>
             {
-                
+
                 Regex P_regex = new Regex("^[\u4E00-\u9FA5]{0,}$");
                 string Allowed = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                if (!(Allowed.Contains(e.KeyChar) || P_regex.IsMatch(e.KeyChar.ToString()) )  && e.KeyChar != (char)Keys.Back)
+                if (!(Allowed.Contains(e.KeyChar) || P_regex.IsMatch(e.KeyChar.ToString())) && e.KeyChar != (char)Keys.Back)
                     e.Handled = true;
             };
             inputBox.OKButton.Click += (o, e) =>
@@ -5869,13 +5869,13 @@ namespace Client.MirScenes
                 switch (HoverItem.Info.Type)
                 {
                     case ItemType.Amulet:
-                        text += string.Format(" {0} {1}/{2}",Resources.ResourceItemInfo.Usage, HoverItem.CurrentDura, HoverItem.MaxDura);
+                        text += string.Format(" {0} {1}/{2}", Resources.ResourceItemInfo.Usage, HoverItem.CurrentDura, HoverItem.MaxDura);
                         break;
                     case ItemType.Ore:
                         text += string.Format(" {0} {1}", Resources.ResourceItemInfo.Purity, Math.Floor(HoverItem.CurrentDura / 1000M));
                         break;
                     case ItemType.Meat:
-                        text += string.Format(" {0} {1}", Resources.ResourceItemInfo.Quality , Math.Floor(HoverItem.CurrentDura / 1000M));
+                        text += string.Format(" {0} {1}", Resources.ResourceItemInfo.Quality, Math.Floor(HoverItem.CurrentDura / 1000M));
                         break;
                     case ItemType.Mount:
                         text += string.Format(" {0} {1}/{2}", Resources.ResourceItemInfo.Loyalty, HoverItem.CurrentDura, HoverItem.MaxDura);
@@ -6123,7 +6123,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.DC : GameLanguage.DC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.DC);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.DC);
                 MirLabel DCLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6152,7 +6152,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.MC : GameLanguage.MC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.MC);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.MC);
                 MirLabel MCLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6181,7 +6181,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.SC : GameLanguage.SC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.SC);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.SC);
                 MirLabel SCLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6256,7 +6256,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.Accuracy : GameLanguage.Accuracy2, minValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.Accuracy);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.Accuracy);
                 MirLabel ACCLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6347,9 +6347,9 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{1}: + {1}",Resources.ResourceCharStat2.FrostPower, minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{1}: + {1}", Resources.ResourceCharStat2.FrostPower, minValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat2.FrostPower);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat2.FrostPower);
                 MirLabel FREEZINGLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6377,9 +6377,9 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}",Resources.ResourceCharStat2.PoisonPower,  minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}", Resources.ResourceCharStat2.PoisonPower, minValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat2.PoisonPower);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat2.PoisonPower);
                 MirLabel POISONLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6670,7 +6670,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.AC : GameLanguage.AC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.AC);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.AC);
                 MirLabel ACLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6716,7 +6716,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.MAC : GameLanguage.MAC2, minValue, maxValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.MAC);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.MAC);
                 MirLabel MACLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -6756,8 +6756,8 @@ namespace Client.MirScenes
                     OutLine = true,
                     Parent = ItemLabel,
                     //Text = string.Format(realItem.Type == ItemType.Potion ? "HP + {0} Recovery" : "MAXHP + {0}", minValue + addValue)
-                    Text = string.Format(addValue > 0 ? 
-                    Resources.ResourceItemInfo.MaxHP + " + {0} (+{1})" : 
+                    Text = string.Format(addValue > 0 ?
+                    Resources.ResourceItemInfo.MaxHP + " + {0} (+{1})" :
                     Resources.ResourceItemInfo.MaxHP + " + {0}", minValue + addValue, addValue)
                 };
 
@@ -6784,7 +6784,7 @@ namespace Client.MirScenes
                     OutLine = true,
                     Parent = ItemLabel,
                     //Text = string.Format(realItem.Type == ItemType.Potion ? "MP + {0} Recovery" : "MAXMP + {0}", minValue + addValue)
-                    Text = string.Format(addValue > 0 ? 
+                    Text = string.Format(addValue > 0 ?
                     Resources.ResourceItemInfo.MaxMP + " + {0} (+{1})" :
                     Resources.ResourceItemInfo.MaxMP + " + {0}", minValue + addValue, addValue)
                 };
@@ -6984,7 +6984,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? GameLanguage.Agility : GameLanguage.Agility2, minValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat1.Agility);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.Agility);
 
                 MirLabel AGILITYLabel = new MirLabel
                 {
@@ -7040,7 +7040,7 @@ namespace Client.MirScenes
                 if (HoverItem.Info.Type != ItemType.Gem)
                     text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}", Resources.ResourceCharStat2.PoisonResistance, minValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat2.PoisonResistance);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat2.PoisonResistance);
                 MirLabel POISON_RESISTLabel = new MirLabel
                 {
                     AutoSize = true,
@@ -7067,9 +7067,9 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}",Resources.ResourceCharStat2.MagicResistance, minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}", Resources.ResourceCharStat2.MagicResistance, minValue + addValue, addValue);
                 else
-                    text = string.Format("{0} +{1} {2}",Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue,Resources.ResourceCharStat2.MagicResistance);
+                    text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat2.MagicResistance);
                 MirLabel MAGIC_RESISTLabel = new MirLabel
                 {
                     AutoSize = true,
