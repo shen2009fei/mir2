@@ -4938,8 +4938,10 @@ namespace Client.MirScenes
             MirInputBox inputBox = new MirInputBox("Please enter a guild name, length must be 3~20 characters.");
             inputBox.InputTextBox.TextBox.KeyPress += (o, e) =>
             {
+                
+                Regex P_regex = new Regex("^[\u4E00-\u9FA5]{0,}$");
                 string Allowed = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                if (!Allowed.Contains(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                if (!(Allowed.Contains(e.KeyChar) || P_regex.IsMatch(e.KeyChar.ToString()) )  && e.KeyChar != (char)Keys.Back)
                     e.Handled = true;
             };
             inputBox.OKButton.Click += (o, e) =>
