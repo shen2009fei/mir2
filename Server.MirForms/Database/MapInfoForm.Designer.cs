@@ -220,7 +220,7 @@ namespace Server
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(38, 167);
+            this.label11.Location = new System.Drawing.Point(35, 167);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 12);
             this.label11.TabIndex = 18;
@@ -237,7 +237,7 @@ namespace Server
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(16, 141);
+            this.label33.Location = new System.Drawing.Point(11, 141);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(65, 12);
             this.label33.TabIndex = 16;
@@ -284,7 +284,7 @@ namespace Server
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 115);
+            this.label5.Location = new System.Drawing.Point(29, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 12);
             this.label5.TabIndex = 12;
@@ -293,7 +293,7 @@ namespace Server
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 17);
+            this.label1.Location = new System.Drawing.Point(11, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 4;
@@ -302,7 +302,7 @@ namespace Server
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 91);
+            this.label4.Location = new System.Drawing.Point(17, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 12);
             this.label4.TabIndex = 10;
@@ -328,7 +328,7 @@ namespace Server
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 43);
+            this.label2.Location = new System.Drawing.Point(11, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 6;
@@ -353,7 +353,7 @@ namespace Server
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 67);
+            this.label3.Location = new System.Drawing.Point(17, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 12);
             this.label3.TabIndex = 8;
@@ -836,7 +836,7 @@ namespace Server
             this.RespawnInfoListBox.Location = new System.Drawing.Point(6, 32);
             this.RespawnInfoListBox.Name = "RespawnInfoListBox";
             this.RespawnInfoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.RespawnInfoListBox.Size = new System.Drawing.Size(260, 304);
+            this.RespawnInfoListBox.Size = new System.Drawing.Size(513, 448);
             this.RespawnInfoListBox.TabIndex = 14;
             this.RespawnInfoListBox.SelectedIndexChanged += new System.EventHandler(this.RespawnInfoListBox_SelectedIndexChanged);
             // 
@@ -866,9 +866,9 @@ namespace Server
             this.RespawnInfoPanel.Controls.Add(this.label13);
             this.RespawnInfoPanel.Controls.Add(this.RXTextBox);
             this.RespawnInfoPanel.Enabled = false;
-            this.RespawnInfoPanel.Location = new System.Drawing.Point(272, 32);
+            this.RespawnInfoPanel.Location = new System.Drawing.Point(525, 32);
             this.RespawnInfoPanel.Name = "RespawnInfoPanel";
-            this.RespawnInfoPanel.Size = new System.Drawing.Size(475, 304);
+            this.RespawnInfoPanel.Size = new System.Drawing.Size(222, 445);
             this.RespawnInfoPanel.TabIndex = 11;
             // 
             // chkrespawnsave
@@ -1113,9 +1113,9 @@ namespace Server
             this.MovementInfoPanel.Controls.Add(this.label20);
             this.MovementInfoPanel.Controls.Add(this.SourceXTextBox);
             this.MovementInfoPanel.Enabled = false;
-            this.MovementInfoPanel.Location = new System.Drawing.Point(239, 32);
+            this.MovementInfoPanel.Location = new System.Drawing.Point(353, 32);
             this.MovementInfoPanel.Name = "MovementInfoPanel";
-            this.MovementInfoPanel.Size = new System.Drawing.Size(477, 304);
+            this.MovementInfoPanel.Size = new System.Drawing.Size(394, 445);
             this.MovementInfoPanel.TabIndex = 14;
             // 
             // label25
@@ -1260,7 +1260,7 @@ namespace Server
             this.MovementInfoListBox.Location = new System.Drawing.Point(6, 32);
             this.MovementInfoListBox.Name = "MovementInfoListBox";
             this.MovementInfoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.MovementInfoListBox.Size = new System.Drawing.Size(227, 304);
+            this.MovementInfoListBox.Size = new System.Drawing.Size(341, 448);
             this.MovementInfoListBox.TabIndex = 13;
             this.MovementInfoListBox.SelectedIndexChanged += new System.EventHandler(this.MovementInfoListBox_SelectedIndexChanged);
             // 
