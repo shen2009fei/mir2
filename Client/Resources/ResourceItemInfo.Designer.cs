@@ -70,11 +70,83 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Amulet 的本地化字符串。
+        /// </summary>
+        internal static string Amulet {
+            get {
+                return ResourceManager.GetString("Amulet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Armour 的本地化字符串。
+        /// </summary>
+        internal static string Armour {
+            get {
+                return ResourceManager.GetString("Armour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 BagWeight 的本地化字符串。
         /// </summary>
         internal static string BagWeight {
             get {
                 return ResourceManager.GetString("BagWeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Belt 的本地化字符串。
+        /// </summary>
+        internal static string Belt {
+            get {
+                return ResourceManager.GetString("Belt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Boots 的本地化字符串。
+        /// </summary>
+        internal static string Boots {
+            get {
+                return ResourceManager.GetString("Boots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Bracelet 的本地化字符串。
+        /// </summary>
+        internal static string Bracelet {
+            get {
+                return ResourceManager.GetString("Bracelet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Can be used on: 的本地化字符串。
+        /// </summary>
+        internal static string CanBeUsedOn {
+            get {
+                return ResourceManager.GetString("CanBeUsedOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Candle 的本地化字符串。
+        /// </summary>
+        internal static string Candle {
+            get {
+                return ResourceManager.GetString("Candle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cannot be used on any item. 的本地化字符串。
+        /// </summary>
+        internal static string CannotBeUsedOnAnyItem {
+            get {
+                return ResourceManager.GetString("CannotBeUsedOnAnyItem", resourceCulture);
             }
         }
         
@@ -151,11 +223,65 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Expires in 的本地化字符串。
+        /// </summary>
+        internal static string ExpiresIn {
+            get {
+                return ResourceManager.GetString("ExpiresIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Health Recovery 的本地化字符串。
         /// </summary>
         internal static string HealthRecovery {
             get {
                 return ResourceManager.GetString("HealthRecovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Helmet 的本地化字符串。
+        /// </summary>
+        internal static string Helmet {
+            get {
+                return ResourceManager.GetString("Helmet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hold CTRL and left click to combine with an item. 的本地化字符串。
+        /// </summary>
+        internal static string HoldCTRLAndLeftClickToCombineWithAnItem {
+            get {
+                return ResourceManager.GetString("HoldCTRLAndLeftClickToCombineWithAnItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hold CTRL and left click to repair armour\nand accessory items. 的本地化字符串。
+        /// </summary>
+        internal static string HoldCTRLAndLeftClickToRepairArmourAndAccessoryItems {
+            get {
+                return ResourceManager.GetString("HoldCTRLAndLeftClickToRepairArmourAndAccessoryItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hold CTRL and left click to repair weapons. 的本地化字符串。
+        /// </summary>
+        internal static string HoldCTRLAndLeftClickToRepairWeapons {
+            get {
+                return ResourceManager.GetString("HoldCTRLAndLeftClickToRepairWeapons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Item rented from 的本地化字符串。
+        /// </summary>
+        internal static string ItemRentedFrom {
+            get {
+                return ResourceManager.GetString("ItemRentedFrom", resourceCulture);
             }
         }
         
@@ -187,6 +313,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Necklace 的本地化字符串。
+        /// </summary>
+        internal static string Necklace {
+            get {
+                return ResourceManager.GetString("Necklace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Nutrition 的本地化字符串。
         /// </summary>
         internal static string Nutrition {
@@ -214,6 +349,42 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Rental expires in 的本地化字符串。
+        /// </summary>
+        internal static string RentalExpiresIn {
+            get {
+                return ResourceManager.GetString("RentalExpiresIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Rental lock expires in 的本地化字符串。
+        /// </summary>
+        internal static string RentalLockExpiresIn {
+            get {
+                return ResourceManager.GetString("RentalLockExpiresIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ring 的本地化字符串。
+        /// </summary>
+        internal static string Ring {
+            get {
+                return ResourceManager.GetString("Ring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Stone 的本地化字符串。
+        /// </summary>
+        internal static string Stone {
+            get {
+                return ResourceManager.GetString("Stone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Time 的本地化字符串。
         /// </summary>
         internal static string Time {
@@ -228,6 +399,15 @@ namespace Client.Resources {
         internal static string Usage {
             get {
                 return ResourceManager.GetString("Usage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Weapon 的本地化字符串。
+        /// </summary>
+        internal static string Weapon {
+            get {
+                return ResourceManager.GetString("Weapon", resourceCulture);
             }
         }
     }

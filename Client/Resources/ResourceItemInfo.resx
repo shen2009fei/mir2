@@ -120,8 +120,32 @@
   <data name="Adds" xml:space="preserve">
     <value>Adds</value>
   </data>
+  <data name="Amulet" xml:space="preserve">
+    <value>Amulet</value>
+  </data>
+  <data name="Armour" xml:space="preserve">
+    <value>Armour</value>
+  </data>
   <data name="BagWeight" xml:space="preserve">
     <value>BagWeight</value>
+  </data>
+  <data name="Belt" xml:space="preserve">
+    <value>Belt</value>
+  </data>
+  <data name="Boots" xml:space="preserve">
+    <value>Boots</value>
+  </data>
+  <data name="Bracelet" xml:space="preserve">
+    <value>Bracelet</value>
+  </data>
+  <data name="CanBeUsedOn" xml:space="preserve">
+    <value>Can be used on:</value>
+  </data>
+  <data name="Candle" xml:space="preserve">
+    <value>Candle</value>
+  </data>
+  <data name="CannotBeUsedOnAnyItem" xml:space="preserve">
+    <value>Cannot be used on any item.</value>
   </data>
   <data name="CantDrop" xml:space="preserve">
     <value>Can't drop</value>
@@ -147,8 +171,26 @@
   <data name="Exp" xml:space="preserve">
     <value>Exp</value>
   </data>
+  <data name="ExpiresIn" xml:space="preserve">
+    <value>Expires in</value>
+  </data>
   <data name="HealthRecovery" xml:space="preserve">
     <value>Health Recovery</value>
+  </data>
+  <data name="Helmet" xml:space="preserve">
+    <value>Helmet</value>
+  </data>
+  <data name="HoldCTRLAndLeftClickToCombineWithAnItem" xml:space="preserve">
+    <value>Hold CTRL and left click to combine with an item.</value>
+  </data>
+  <data name="HoldCTRLAndLeftClickToRepairArmourAndAccessoryItems" xml:space="preserve">
+    <value>Hold CTRL and left click to repair armour\nand accessory items.</value>
+  </data>
+  <data name="HoldCTRLAndLeftClickToRepairWeapons" xml:space="preserve">
+    <value>Hold CTRL and left click to repair weapons.</value>
+  </data>
+  <data name="ItemRentedFrom" xml:space="preserve">
+    <value>Item rented from</value>
   </data>
   <data name="Loyalty" xml:space="preserve">
     <value>Loyalty</value>
@@ -159,6 +201,9 @@
   <data name="MaxMP" xml:space="preserve">
     <value>Max MP</value>
   </data>
+  <data name="Necklace" xml:space="preserve">
+    <value>Necklace</value>
+  </data>
   <data name="Nutrition" xml:space="preserve">
     <value>Nutrition</value>
   </data>
@@ -168,10 +213,25 @@
   <data name="Quality" xml:space="preserve">
     <value>Quality</value>
   </data>
+  <data name="RentalExpiresIn" xml:space="preserve">
+    <value>Rental expires in</value>
+  </data>
+  <data name="RentalLockExpiresIn" xml:space="preserve">
+    <value>Rental lock expires in</value>
+  </data>
+  <data name="Ring" xml:space="preserve">
+    <value>Ring</value>
+  </data>
+  <data name="Stone" xml:space="preserve">
+    <value>Stone</value>
+  </data>
   <data name="Time" xml:space="preserve">
     <value>Time</value>
   </data>
   <data name="Usage" xml:space="preserve">
     <value>Usage</value>
+  </data>
+  <data name="Weapon" xml:space="preserve">
+    <value>Weapon</value>
   </data>
 </root>
