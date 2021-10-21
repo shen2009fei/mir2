@@ -135,11 +135,17 @@
   <data name="CritRate" xml:space="preserve">
     <value>暴击率</value>
   </data>
+  <data name="Curse" xml:space="preserve">
+    <value>诅咒</value>
+  </data>
   <data name="DC" xml:space="preserve">
     <value>攻击</value>
   </data>
+  <data name="Flexibility" xml:space="preserve">
+    <value>灵敏</value>
+  </data>
   <data name="HealthPoints" xml:space="preserve">
-    <value>体力值</value>
+    <value>生命值</value>
   </data>
   <data name="Luck" xml:space="preserve">
     <value>幸运</value>

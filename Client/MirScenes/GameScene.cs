@@ -5896,7 +5896,7 @@ namespace Client.MirScenes
                         }
                         break;
                     default:
-                        text += string.Format(" {0} {1}/{2}", GameLanguage.Durability, Math.Floor(HoverItem.CurrentDura / 1000M),
+                        text += string.Format(" {0} {1}/{2}", Resources.ResourceItemInfo.Durability, Math.Floor(HoverItem.CurrentDura / 1000M),
                                                    Math.Floor(HoverItem.MaxDura / 1000M));
                         break;
                 }
@@ -6025,7 +6025,7 @@ namespace Client.MirScenes
                 baseText = GameLanguage.WeddingRing;
             }
 
-            baseText = string.Format(GameLanguage.ItemTextFormat, baseText, string.IsNullOrEmpty(baseText) ? "" : "\n", GameLanguage.Weight, HoverItem.Weight + text);
+            baseText = string.Format("{0}{1}{2} {3}", baseText, string.IsNullOrEmpty(baseText) ? "" : "\n",Resources.ResourceItemInfo.Weight+":", HoverItem.Weight + text);
 
             MirLabel etcLabel = new MirLabel
             {
@@ -6120,7 +6120,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? GameLanguage.DC : GameLanguage.DC2, minValue, maxValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}",Resources.ResourceCharStat1.DC, minValue, maxValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.DC);
                 MirLabel DCLabel = new MirLabel
@@ -6149,7 +6149,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? GameLanguage.MC : GameLanguage.MC2, minValue, maxValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}", Resources.ResourceCharStat1.MC, minValue, maxValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.MC);
                 MirLabel MCLabel = new MirLabel
@@ -6178,7 +6178,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? GameLanguage.SC : GameLanguage.SC2, minValue, maxValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}",Resources.ResourceCharStat1.SC, minValue, maxValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.SC);
                 MirLabel SCLabel = new MirLabel
@@ -6222,7 +6222,7 @@ namespace Client.MirScenes
                 }
                 else
                 {
-                    text = string.Format(minValue + addValue > 0 ? GameLanguage.Luck : "Curse + {0}", Math.Abs(minValue + addValue));
+                    text = string.Format(minValue + addValue > 0 ? Resources.ResourceCharStat1.Luck + " + {0}" : Resources.ResourceCharStat1.Curse + " + {0}", Math.Abs(minValue + addValue));
                 }
 
                 MirLabel LUCKLabel = new MirLabel
@@ -6253,7 +6253,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? GameLanguage.Accuracy : GameLanguage.Accuracy2, minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}",Resources.ResourceCharStat1.Accuracy, minValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.Accuracy);
                 MirLabel ACCLabel = new MirLabel
@@ -6290,7 +6290,7 @@ namespace Client.MirScenes
                     OutLine = true,
                     Parent = ItemLabel,
                     //Text = string.Format("Holy + {0}", minValue + addValue)
-                    Text = string.Format(addValue > 0 ? GameLanguage.Holy : GameLanguage.Holy2, minValue + addValue, addValue)
+                    Text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}",Resources.ResourceCharStat2.HolyPower, minValue + addValue, addValue)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, HOLYLabel.DisplayRectangle.Right + 4),
@@ -6418,7 +6418,7 @@ namespace Client.MirScenes
 
                 if (fishingItem)
                 {
-                    CRITICALRATELabel.Text = string.Format(addValue > 0 ? GameLanguage.Flexibility : GameLanguage.Flexibility2, minValue + addValue, addValue);
+                    CRITICALRATELabel.Text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}",Resources.ResourceCharStat1.Flexibility, minValue + addValue, addValue);
                 }
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, CRITICALRATELabel.DisplayRectangle.Right + 4),
@@ -6667,7 +6667,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? GameLanguage.AC : GameLanguage.AC2, minValue, maxValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}",Resources.ResourceCharStat1.AC, minValue, maxValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.AC);
                 MirLabel ACLabel = new MirLabel
@@ -6693,7 +6693,7 @@ namespace Client.MirScenes
                     }
                     else
                     {
-                        ACLabel.Text = string.Format(GameLanguage.SuccessChance + " + " + (addValue > 0 ? "{0}% (+{1})" : "{0}%"), maxValue, maxValue + addValue);
+                        ACLabel.Text = string.Format(Resources.ResourceNPCDialog.ChanceofSuccess + " + " + (addValue > 0 ? "{0}% (+{1})" : "{0}%"), maxValue, maxValue + addValue);
                     }
                 }
 
@@ -6713,7 +6713,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? GameLanguage.MAC : GameLanguage.MAC2, minValue, maxValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}",Resources.ResourceCharStat1.MAC, minValue, maxValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.MAC);
                 MirLabel MACLabel = new MirLabel
@@ -6981,7 +6981,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? GameLanguage.Agility : GameLanguage.Agility2, minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}",Resources.ResourceCharStat1.Agility, minValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.Agility);
 
@@ -7877,7 +7877,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = string.Format("Cannot be a weddingring")
+                    Text = string.Format(Resources.ResourceItemInfo.CannotBeAWeddingring)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, No_WedLabel.DisplayRectangle.Right + 4),

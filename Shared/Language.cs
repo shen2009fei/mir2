@@ -73,31 +73,32 @@ public class GameLanguage
                          RequiredSC = "Required SC : {0}",
                          ClassRequired = "Class Required : {0}",
 
-                         Holy = "Holy: + {0} (+{1})",
-                         Holy2 = "Holy: + {0}",
-                         Accuracy = "Accuracy: + {0} (+{1})",
-                         Accuracy2 = "Accuracy: + {0}",
-                         Agility = "Agility: + {0} (+{1})",
-                         Agility2 = "Agility: + {0}",
-                         DC = "DC + {0}~{1} (+{2})",
-                         DC2 = "DC + {0}~{1}",
-                         MC = "MC + {0}~{1} (+{2})",
-                         MC2 = "MC + {0}~{1}",
-                         SC = "SC + {0}~{1} (+{2})",
-                         SC2 = "SC + {0}~{1}",
-                         Durability = "Durability",
-                         Weight = "W:",
-                         AC = "AC + {0}~{1} (+{2})",
-                         AC2 = "AC + {0}~{1}",
-                         MAC = "MAC + {0}~{1} (+{2})",
-                         MAC2 = "MAC + {0}~{1}",
-                         Luck = "Luck + {0}",
-                         Flexibility = "Flexibility: + {0} (+{1})",
-                         Flexibility2 = "Flexibility: + {0}",
+                         //Holy = "Holy: + {0} (+{1})",
+                         //Holy2 = "Holy: + {0}",
+                         //Accuracy = "Accuracy: + {0} (+{1})",
+                         //Accuracy2 = "Accuracy: + {0}",
+                         //Agility = "Agility: + {0} (+{1})",
+                         //Agility2 = "Agility: + {0}",
+                         //DC = "DC + {0}~{1} (+{2})",
+                         //DC2 = "DC + {0}~{1}",
+                         //MC = "MC + {0}~{1} (+{2})",
+                         //MC2 = "MC + {0}~{1}",
+                         //SC = "SC + {0}~{1} (+{2})",
+                         //SC2 = "SC + {0}~{1}",
+                         //Durability = "Durability",
+                         //Weight = "W:",
+                         //AC = "AC + {0}~{1} (+{2})",
+                         //AC2 = "AC + {0}~{1}",
+                         //MAC = "MAC + {0}~{1} (+{2})",
+                         //MAC2 = "MAC + {0}~{1}",
+                         //Luck = "Luck + {0}",
+                         //Flexibility = "Flexibility: + {0} (+{1})",
+                         //Flexibility2 = "Flexibility: + {0}",
 
-                         AttackSpeed= "A.Speed",
-                         Adds= "Adds",
-                         SuccessChance = "Success Chance",
+                         //AttackSpeed= "A.Speed",
+                         //Adds= "Adds",
+
+                         //SuccessChance = "Success Chance",
                          SocketDesc = "Socket : {0}",
                          SocketEmpty = "Empty",
                          OpenSockets = "Ctrl + Right Click To Open Sockets",
@@ -150,7 +151,7 @@ public class GameLanguage
                          WeaponSpiritFire = "Your weapon is glowed by spirit of fire.",
                          SpiritsFireDisappeared = "The spirits of fire disappeared.",
                          WeddingRing = "WeddingRing",
-                         ItemTextFormat = "{0}{1}{2} {3}",
+                         //ItemTextFormat = "{0}{1}{2} {3}",
                          DropAmount = "Drop Amount:",
                          LowMana = "Not Enough Mana to cast.",
                          NoCreatures = "You do not own any creatures.",
@@ -373,30 +374,7 @@ public class GameLanguage
         GameLanguage.RequiredMC = reader.ReadString("Language", "RequiredMC", GameLanguage.RequiredMC);
         GameLanguage.RequiredSC = reader.ReadString("Language", "RequiredSC", GameLanguage.RequiredSC);
         GameLanguage.ClassRequired = reader.ReadString("Language", "ClassRequired", GameLanguage.ClassRequired);
-        GameLanguage.Holy = reader.ReadString("Language", "Holy", GameLanguage.Holy);
-        GameLanguage.Holy2 = reader.ReadString("Language", "Holy2", GameLanguage.Holy2);
-        GameLanguage.Accuracy = reader.ReadString("Language", "Accuracy", GameLanguage.Accuracy);
-        GameLanguage.Accuracy2 = reader.ReadString("Language", "Accuracy2", GameLanguage.Accuracy2);
-        GameLanguage.Agility = reader.ReadString("Language", "Agility", GameLanguage.Agility);
-        GameLanguage.Agility2 = reader.ReadString("Language", "Agility2", GameLanguage.Agility2);
-        GameLanguage.DC = reader.ReadString("Language", "DC", GameLanguage.DC);
-        GameLanguage.DC2 = reader.ReadString("Language", "DC2", GameLanguage.DC2);
-        GameLanguage.MC = reader.ReadString("Language", "MC", GameLanguage.MC);
-        GameLanguage.MC2 = reader.ReadString("Language", "MC2", GameLanguage.MC2);
-        GameLanguage.SC = reader.ReadString("Language", "SC", GameLanguage.SC);
-        GameLanguage.SC2 = reader.ReadString("Language", "SC2", GameLanguage.SC2);
-        GameLanguage.Durability = reader.ReadString("Language", "Durability", GameLanguage.Durability);
-        GameLanguage.Weight = reader.ReadString("Language", "Weight", GameLanguage.Weight);
-        GameLanguage.AC = reader.ReadString("Language", "AC", GameLanguage.AC);
-        GameLanguage.AC2 = reader.ReadString("Language", "AC2", GameLanguage.AC2);
-        GameLanguage.MAC = reader.ReadString("Language", "MAC", GameLanguage.MAC);
-        GameLanguage.MAC2 = reader.ReadString("Language", "MAC2", GameLanguage.MAC2);
-        GameLanguage.Luck = reader.ReadString("Language", "Luck", GameLanguage.Luck);
-        GameLanguage.Flexibility = reader.ReadString("Language", "Flexibility", GameLanguage.Flexibility);
-        GameLanguage.Flexibility2 = reader.ReadString("Language", "Flexibility2", GameLanguage.Flexibility2);
-        GameLanguage.AttackSpeed = reader.ReadString("Language", "AttackSpeed", GameLanguage.AttackSpeed);
-        GameLanguage.Adds = reader.ReadString("Language", "Adds", GameLanguage.Adds);
-        GameLanguage.SuccessChance = reader.ReadString("Language", "SuccessChance", GameLanguage.SuccessChance);
+       
         GameLanguage.SocketDesc = reader.ReadString("Language", "SocketDesc", GameLanguage.SocketDesc);
         GameLanguage.SocketEmpty = reader.ReadString("Language", "SocketEmpty", GameLanguage.SocketEmpty);
         GameLanguage.OpenSockets = reader.ReadString("Language", "OpenSockets", GameLanguage.OpenSockets);
@@ -450,7 +428,6 @@ public class GameLanguage
         GameLanguage.WeaponSpiritFire = reader.ReadString("Language", "WeaponSpiritFire", GameLanguage.WeaponSpiritFire);
         GameLanguage.SpiritsFireDisappeared = reader.ReadString("Language", "SpiritsFireDisappeared", GameLanguage.SpiritsFireDisappeared);
         GameLanguage.WeddingRing = reader.ReadString("Language", "WeddingRing", GameLanguage.WeddingRing);
-        GameLanguage.ItemTextFormat = reader.ReadString("Language", "ItemTextFormat", GameLanguage.ItemTextFormat);
         GameLanguage.DropAmount = reader.ReadString("Language", "DropAmount", GameLanguage.DropAmount);
         GameLanguage.LowMana = reader.ReadString("Language", "LowMana", GameLanguage.LowMana);
 
@@ -634,22 +611,7 @@ public class GameLanguage
         reader.Write("Language", "RequiredMC", GameLanguage.RequiredMC);
         reader.Write("Language", "RequiredSC", GameLanguage.RequiredSC);
         reader.Write("Language", "ClassRequired", GameLanguage.ClassRequired);
-        reader.Write("Language", "Holy", GameLanguage.Holy);
-        reader.Write("Language", "Accuracy", GameLanguage.Accuracy);
-        reader.Write("Language", "Agility", GameLanguage.Agility);
-        reader.Write("Language", "DC", GameLanguage.DC);
-        reader.Write("Language", "MC", GameLanguage.MC);
-        reader.Write("Language", "SC", GameLanguage.SC);
-        reader.Write("Language", "Durability", GameLanguage.Durability);
-        reader.Write("Language", "Weight", GameLanguage.Weight);
-        reader.Write("Language", "AC", GameLanguage.AC);
-        reader.Write("Language", "MAC", GameLanguage.MAC);
-        reader.Write("Language", "Luck", GameLanguage.Luck);
-        reader.Write("Language", "Flexibility", GameLanguage.Flexibility);
-        reader.Write("Language", "Flexibility2", GameLanguage.Flexibility2);
-        reader.Write("Language", "AttackSpeed", GameLanguage.AttackSpeed);
-        reader.Write("Language", "Adds", GameLanguage.Adds);
-        reader.Write("Language", "SuccessChance", GameLanguage.SuccessChance);
+        
 
         reader.Write("Language", "SocketDesc", GameLanguage.SocketDesc);
         reader.Write("Language", "SocketEmpty", GameLanguage.SocketEmpty);
@@ -704,7 +666,7 @@ public class GameLanguage
         reader.Write("Language", "WeaponSpiritFire", GameLanguage.WeaponSpiritFire);
         reader.Write("Language", "SpiritsFireDisappeared", GameLanguage.SpiritsFireDisappeared);
         reader.Write("Language", "WeddingRing", GameLanguage.WeddingRing);
-        reader.Write("Language", "ItemTextFormat", GameLanguage.ItemTextFormat);
+    
         reader.Write("Language", "DropAmount", GameLanguage.DropAmount);
         reader.Write("Language", "LowMana", GameLanguage.LowMana);
 

@@ -135,8 +135,14 @@
   <data name="CritRate" xml:space="preserve">
     <value>Crit Rate</value>
   </data>
+  <data name="Curse" xml:space="preserve">
+    <value>Curse</value>
+  </data>
   <data name="DC" xml:space="preserve">
     <value>DC</value>
+  </data>
+  <data name="Flexibility" xml:space="preserve">
+    <value>Flexibility</value>
   </data>
   <data name="HealthPoints" xml:space="preserve">
     <value>Health Points</value>

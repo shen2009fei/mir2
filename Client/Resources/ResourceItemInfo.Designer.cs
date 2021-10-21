@@ -142,6 +142,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Cannot be a weddingring 的本地化字符串。
+        /// </summary>
+        internal static string CannotBeAWeddingring {
+            get {
+                return ResourceManager.GetString("CannotBeAWeddingring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Cannot be used on any item. 的本地化字符串。
         /// </summary>
         internal static string CannotBeUsedOnAnyItem {
@@ -408,6 +417,15 @@ namespace Client.Resources {
         internal static string Weapon {
             get {
                 return ResourceManager.GetString("Weapon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Weight 的本地化字符串。
+        /// </summary>
+        internal static string Weight {
+            get {
+                return ResourceManager.GetString("Weight", resourceCulture);
             }
         }
     }

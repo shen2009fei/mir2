@@ -144,6 +144,9 @@
   <data name="Candle" xml:space="preserve">
     <value>蜡烛</value>
   </data>
+  <data name="CannotBeAWeddingring" xml:space="preserve">
+    <value>不能作为结婚戒指</value>
+  </data>
   <data name="CannotBeUsedOnAnyItem" xml:space="preserve">
     <value>不能用于任何物品</value>
   </data>
@@ -233,5 +236,8 @@
   </data>
   <data name="Weapon" xml:space="preserve">
     <value>武器</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>重量</value>
   </data>
 </root>

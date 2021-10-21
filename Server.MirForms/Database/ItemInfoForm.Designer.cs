@@ -625,7 +625,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 12);
             this.label6.TabIndex = 16;
-            this.label6.Text = "需要金额:";
+            this.label6.Text = "需要数量:";
             // 
             // label9
             // 

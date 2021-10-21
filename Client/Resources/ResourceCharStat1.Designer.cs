@@ -115,11 +115,29 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Curse 的本地化字符串。
+        /// </summary>
+        internal static string Curse {
+            get {
+                return ResourceManager.GetString("Curse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 DC 的本地化字符串。
         /// </summary>
         internal static string DC {
             get {
                 return ResourceManager.GetString("DC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Flexibility 的本地化字符串。
+        /// </summary>
+        internal static string Flexibility {
+            get {
+                return ResourceManager.GetString("Flexibility", resourceCulture);
             }
         }
         
