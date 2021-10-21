@@ -138,6 +138,9 @@
   <data name="Bracelet" xml:space="preserve">
     <value>Bracelet</value>
   </data>
+  <data name="BreaksOnDeath" xml:space="preserve">
+    <value>Breaks on death</value>
+  </data>
   <data name="CanBeUsedOn" xml:space="preserve">
     <value>Can be used on:</value>
   </data>
@@ -224,6 +227,9 @@
   </data>
   <data name="Ring" xml:space="preserve">
     <value>Ring</value>
+  </data>
+  <data name="SoulbindsOnEquip" xml:space="preserve">
+    <value>Soulbinds on equip</value>
   </data>
   <data name="Stone" xml:space="preserve">
     <value>Stone</value>

@@ -124,6 +124,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Breaks on death 的本地化字符串。
+        /// </summary>
+        internal static string BreaksOnDeath {
+            get {
+                return ResourceManager.GetString("BreaksOnDeath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Can be used on: 的本地化字符串。
         /// </summary>
         internal static string CanBeUsedOn {
@@ -381,6 +390,15 @@ namespace Client.Resources {
         internal static string Ring {
             get {
                 return ResourceManager.GetString("Ring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Soulbinds on equip 的本地化字符串。
+        /// </summary>
+        internal static string SoulbindsOnEquip {
+            get {
+                return ResourceManager.GetString("SoulbindsOnEquip", resourceCulture);
             }
         }
         
