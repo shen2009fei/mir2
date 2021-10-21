@@ -403,6 +403,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Soulbound to:  的本地化字符串。
+        /// </summary>
+        internal static string SoulboundTo {
+            get {
+                return ResourceManager.GetString("SoulboundTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Stone 的本地化字符串。
         /// </summary>
         internal static string Stone {

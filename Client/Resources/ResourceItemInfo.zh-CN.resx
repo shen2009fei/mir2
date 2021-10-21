@@ -231,6 +231,9 @@
   <data name="SoulbindsOnEquip" xml:space="preserve">
     <value>装备时灵魂绑定</value>
   </data>
+  <data name="SoulboundTo" xml:space="preserve">
+    <value>灵魂绑定: </value>
+  </data>
   <data name="Stone" xml:space="preserve">
     <value>石头</value>
   </data>

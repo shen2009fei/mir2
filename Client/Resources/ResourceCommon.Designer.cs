@@ -194,5 +194,14 @@ namespace Client.Resources {
                 return ResourceManager.GetString("Wizard", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 You cannot cast {0} for another {1} seconds. 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotCastForAnotherSeconds {
+            get {
+                return ResourceManager.GetString("YouCannotCastForAnotherSeconds", resourceCulture);
+            }
+        }
     }
 }

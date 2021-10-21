@@ -290,7 +290,7 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(566, 90);
+            this.label57.Location = new System.Drawing.Point(573, 90);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(35, 12);
             this.label57.TabIndex = 126;
@@ -404,7 +404,7 @@
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(444, 141);
+            this.label53.Location = new System.Drawing.Point(476, 140);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(35, 12);
             this.label53.TabIndex = 113;
@@ -529,7 +529,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(566, 64);
+            this.label34.Location = new System.Drawing.Point(573, 64);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(35, 12);
             this.label34.TabIndex = 72;
@@ -702,7 +702,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(470, 64);
+            this.label7.Location = new System.Drawing.Point(476, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 12);
             this.label7.TabIndex = 18;
@@ -922,20 +922,20 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(488, 17);
+            this.label37.Location = new System.Drawing.Point(498, 17);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(59, 12);
+            this.label37.Size = new System.Drawing.Size(47, 12);
             this.label37.TabIndex = 78;
-            this.label37.Text = "Mac Rate:";
+            this.label37.Text = "魔御率:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 17);
+            this.label14.Location = new System.Drawing.Point(22, 17);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 12);
+            this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 32;
-            this.label14.Text = "Min AC:";
+            this.label14.Text = "防御-小:";
             // 
             // MinACTextBox
             // 
@@ -958,11 +958,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(113, 17);
+            this.label15.Location = new System.Drawing.Point(111, 17);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(47, 12);
+            this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 34;
-            this.label15.Text = "Max AC:";
+            this.label15.Text = "防御-大:";
             // 
             // label48
             // 
@@ -985,11 +985,11 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(202, 17);
+            this.label17.Location = new System.Drawing.Point(204, 17);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 12);
             this.label17.TabIndex = 14;
-            this.label17.Text = "Min MAC:";
+            this.label17.Text = "魔御-小:";
             // 
             // MinMACTextBox
             // 
@@ -1003,11 +1003,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(297, 17);
+            this.label16.Location = new System.Drawing.Point(303, 17);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 12);
             this.label16.TabIndex = 38;
-            this.label16.Text = "Max MAC:";
+            this.label16.Text = "魔御-大:";
             // 
             // MaxMACTextBox
             // 
@@ -1021,11 +1021,11 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(26, 42);
+            this.label21.Location = new System.Drawing.Point(21, 42);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(47, 12);
+            this.label21.Size = new System.Drawing.Size(53, 12);
             this.label21.TabIndex = 40;
-            this.label21.Text = "Min DC:";
+            this.label21.Text = "攻击-小:";
             // 
             // MinDCTextBox
             // 
@@ -1039,11 +1039,11 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(113, 42);
+            this.label20.Location = new System.Drawing.Point(111, 42);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(47, 12);
+            this.label20.Size = new System.Drawing.Size(53, 12);
             this.label20.TabIndex = 42;
-            this.label20.Text = "Max DC:";
+            this.label20.Text = "攻击-大:";
             // 
             // MaxDCTextBox
             // 
@@ -1057,15 +1057,15 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(209, 42);
+            this.label19.Location = new System.Drawing.Point(207, 42);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(47, 12);
+            this.label19.Size = new System.Drawing.Size(53, 12);
             this.label19.TabIndex = 44;
-            this.label19.Text = "Min MC:";
+            this.label19.Text = "魔法-小:";
             // 
             // PoisonAttacktextbox
             // 
-            this.PoisonAttacktextbox.Location = new System.Drawing.Point(188, 170);
+            this.PoisonAttacktextbox.Location = new System.Drawing.Point(359, 195);
             this.PoisonAttacktextbox.MaxLength = 3;
             this.PoisonAttacktextbox.Name = "PoisonAttacktextbox";
             this.PoisonAttacktextbox.Size = new System.Drawing.Size(30, 21);
@@ -1084,24 +1084,24 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(93, 173);
+            this.label47.Location = new System.Drawing.Point(297, 199);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(89, 12);
+            this.label47.Size = new System.Drawing.Size(59, 12);
             this.label47.TabIndex = 98;
-            this.label47.Text = "Poison Attack:";
+            this.label47.Text = "毒药伤害:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(304, 42);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(47, 12);
+            this.label18.Size = new System.Drawing.Size(53, 12);
             this.label18.TabIndex = 46;
-            this.label18.Text = "Max MC:";
+            this.label18.Text = "魔法-大:";
             // 
             // Freezingtextbox
             // 
-            this.Freezingtextbox.Location = new System.Drawing.Point(188, 197);
+            this.Freezingtextbox.Location = new System.Drawing.Point(453, 147);
             this.Freezingtextbox.MaxLength = 3;
             this.Freezingtextbox.Name = "Freezingtextbox";
             this.Freezingtextbox.Size = new System.Drawing.Size(30, 21);
@@ -1120,24 +1120,24 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(123, 200);
+            this.label46.Location = new System.Drawing.Point(391, 152);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(59, 12);
             this.label46.TabIndex = 96;
-            this.label46.Text = "Freezing:";
+            this.label46.Text = "石化冰冻:";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(401, 42);
+            this.label23.Location = new System.Drawing.Point(398, 42);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(47, 12);
+            this.label23.Size = new System.Drawing.Size(53, 12);
             this.label23.TabIndex = 48;
-            this.label23.Text = "Min SC:";
+            this.label23.Text = "道术-小:";
             // 
             // Holytextbox
             // 
-            this.Holytextbox.Location = new System.Drawing.Point(188, 224);
+            this.Holytextbox.Location = new System.Drawing.Point(453, 171);
             this.Holytextbox.MaxLength = 3;
             this.Holytextbox.Name = "Holytextbox";
             this.Holytextbox.Size = new System.Drawing.Size(30, 21);
@@ -1156,20 +1156,20 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(141, 227);
+            this.label45.Location = new System.Drawing.Point(415, 174);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(35, 12);
             this.label45.TabIndex = 94;
-            this.label45.Text = "Holy:";
+            this.label45.Text = "神圣:";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(494, 42);
+            this.label22.Location = new System.Drawing.Point(492, 42);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(47, 12);
+            this.label22.Size = new System.Drawing.Size(53, 12);
             this.label22.TabIndex = 50;
-            this.label22.Text = "Max SC:";
+            this.label22.Text = "道术-大:";
             // 
             // HPratetextbox
             // 
@@ -1201,7 +1201,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(46, 66);
+            this.label25.Location = new System.Drawing.Point(51, 66);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(23, 12);
             this.label25.TabIndex = 52;
@@ -1209,7 +1209,7 @@
             // 
             // PoisonRecoverytextBox
             // 
-            this.PoisonRecoverytextBox.Location = new System.Drawing.Point(359, 143);
+            this.PoisonRecoverytextBox.Location = new System.Drawing.Point(359, 147);
             this.PoisonRecoverytextBox.MaxLength = 3;
             this.PoisonRecoverytextBox.Name = "PoisonRecoverytextBox";
             this.PoisonRecoverytextBox.Size = new System.Drawing.Size(30, 21);
@@ -1228,16 +1228,16 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(288, 147);
+            this.label43.Location = new System.Drawing.Point(297, 151);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(71, 12);
+            this.label43.Size = new System.Drawing.Size(59, 12);
             this.label43.TabIndex = 90;
-            this.label43.Text = "Pois Recov:";
+            this.label43.Text = "毒药恢复:";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(134, 66);
+            this.label24.Location = new System.Drawing.Point(140, 66);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(23, 12);
             this.label24.TabIndex = 54;
@@ -1273,15 +1273,15 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(295, 90);
+            this.label27.Location = new System.Drawing.Point(321, 90);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(59, 12);
+            this.label27.Size = new System.Drawing.Size(35, 12);
             this.label27.TabIndex = 56;
-            this.label27.Text = "Accuracy:";
+            this.label27.Text = "准确:";
             // 
             // PoisonResisttextBox
             // 
-            this.PoisonResisttextBox.Location = new System.Drawing.Point(188, 143);
+            this.PoisonResisttextBox.Location = new System.Drawing.Point(359, 171);
             this.PoisonResisttextBox.MaxLength = 3;
             this.PoisonResisttextBox.Name = "PoisonResisttextBox";
             this.PoisonResisttextBox.Size = new System.Drawing.Size(30, 21);
@@ -1300,20 +1300,20 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(123, 146);
+            this.label41.Location = new System.Drawing.Point(297, 175);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(59, 12);
             this.label41.TabIndex = 86;
-            this.label41.Text = "Pois Res:";
+            this.label41.Text = "毒药抵抗:";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(395, 90);
+            this.label26.Location = new System.Drawing.Point(415, 90);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(53, 12);
+            this.label26.Size = new System.Drawing.Size(35, 12);
             this.label26.TabIndex = 58;
-            this.label26.Text = "Agility:";
+            this.label26.Text = "敏捷:";
             // 
             // MagicResisttextBox
             // 
@@ -1338,18 +1338,18 @@
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(13, 147);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(71, 12);
+            this.label40.Size = new System.Drawing.Size(59, 12);
             this.label40.TabIndex = 84;
-            this.label40.Text = "Mag Resist:";
+            this.label40.Text = "魔法抵抗:";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(17, 90);
+            this.label29.Location = new System.Drawing.Point(39, 90);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(59, 12);
+            this.label29.Size = new System.Drawing.Size(35, 12);
             this.label29.TabIndex = 60;
-            this.label29.Text = "A. Speed:";
+            this.label29.Text = "攻速:";
             // 
             // HealthRecoveryTextbox
             // 
@@ -1381,11 +1381,11 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(126, 90);
+            this.label28.Location = new System.Drawing.Point(128, 90);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(35, 12);
             this.label28.TabIndex = 62;
-            this.label28.Text = "Luck:";
+            this.label28.Text = "幸运:";
             // 
             // StrongTextbox
             // 
@@ -1408,20 +1408,20 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(214, 90);
+            this.label38.Location = new System.Drawing.Point(223, 90);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(47, 12);
+            this.label38.Size = new System.Drawing.Size(35, 12);
             this.label38.TabIndex = 80;
-            this.label38.Text = "Strong:";
+            this.label38.Text = "强度:";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(5, 121);
+            this.label31.Location = new System.Drawing.Point(199, 152);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(71, 12);
+            this.label31.Size = new System.Drawing.Size(59, 12);
             this.label31.TabIndex = 66;
-            this.label31.Text = "Bag Weight:";
+            this.label31.Text = "背包重量:";
             // 
             // MacRateTextbox
             // 
@@ -1434,7 +1434,7 @@
             // 
             // BWeightText
             // 
-            this.BWeightText.Location = new System.Drawing.Point(77, 117);
+            this.BWeightText.Location = new System.Drawing.Point(261, 147);
             this.BWeightText.MaxLength = 4;
             this.BWeightText.Name = "BWeightText";
             this.BWeightText.Size = new System.Drawing.Size(30, 21);
@@ -1444,11 +1444,11 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(182, 121);
+            this.label30.Location = new System.Drawing.Point(223, 174);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(77, 12);
+            this.label30.Size = new System.Drawing.Size(35, 12);
             this.label30.TabIndex = 67;
-            this.label30.Text = "Hand Weight.";
+            this.label30.Text = "腕力:";
             // 
             // ACRateTextbox
             // 
@@ -1461,7 +1461,7 @@
             // 
             // HWeightTextBox
             // 
-            this.HWeightTextBox.Location = new System.Drawing.Point(261, 117);
+            this.HWeightTextBox.Location = new System.Drawing.Point(261, 171);
             this.HWeightTextBox.MaxLength = 4;
             this.HWeightTextBox.Name = "HWeightTextBox";
             this.HWeightTextBox.Size = new System.Drawing.Size(30, 21);
@@ -1471,27 +1471,27 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(398, 17);
+            this.label36.Location = new System.Drawing.Point(404, 17);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(53, 12);
+            this.label36.Size = new System.Drawing.Size(47, 12);
             this.label36.TabIndex = 76;
-            this.label36.Text = "Ac Rate:";
+            this.label36.Text = "防御率:";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(371, 121);
+            this.label32.Location = new System.Drawing.Point(199, 198);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(77, 12);
+            this.label32.Size = new System.Drawing.Size(59, 12);
             this.label32.TabIndex = 69;
-            this.label32.Text = "Wear Weight.";
+            this.label32.Text = "穿戴重量:";
             // 
             // WWeightTextBox
             // 
-            this.WWeightTextBox.Location = new System.Drawing.Point(454, 117);
+            this.WWeightTextBox.Location = new System.Drawing.Point(261, 195);
             this.WWeightTextBox.MaxLength = 4;
             this.WWeightTextBox.Name = "WWeightTextBox";
-            this.WWeightTextBox.Size = new System.Drawing.Size(32, 21);
+            this.WWeightTextBox.Size = new System.Drawing.Size(30, 21);
             this.WWeightTextBox.TabIndex = 68;
             this.WWeightTextBox.TextChanged += new System.EventHandler(this.WWeightTextBox_TextChanged);
             // 

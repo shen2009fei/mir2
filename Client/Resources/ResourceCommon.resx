@@ -162,4 +162,7 @@
   <data name="Wizard" xml:space="preserve">
     <value>Wizard</value>
   </data>
+  <data name="YouCannotCastForAnotherSeconds" xml:space="preserve">
+    <value>You cannot cast {0} for another {1} seconds.</value>
+  </data>
 </root>

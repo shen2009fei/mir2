@@ -162,4 +162,7 @@
   <data name="Wizard" xml:space="preserve">
     <value>魔法师</value>
   </data>
+  <data name="YouCannotCastForAnotherSeconds" xml:space="preserve">
+    <value>在 {1} 秒内无法施放 {0}。</value>
+  </data>
 </root>

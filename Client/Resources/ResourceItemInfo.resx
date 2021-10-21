@@ -231,6 +231,9 @@
   <data name="SoulbindsOnEquip" xml:space="preserve">
     <value>Soulbinds on equip</value>
   </data>
+  <data name="SoulboundTo" xml:space="preserve">
+    <value>Soulbound to: </value>
+  </data>
   <data name="Stone" xml:space="preserve">
     <value>Stone</value>
   </data>

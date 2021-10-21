@@ -781,7 +781,7 @@ namespace Client.MirScenes
                         if (CMain.Time >= OutputDelay)
                         {
                             OutputDelay = CMain.Time + 1000;
-                            GameScene.Scene.OutputMessage(string.Format("You cannot cast {0} for another {1} seconds.", magic.Spell.ToString(), ((magic.CastTime + magic.Delay) - CMain.Time - 1) / 1000 + 1));
+                            GameScene.Scene.OutputMessage(string.Format(Resources.ResourceCommon.YouCannotCastForAnotherSeconds, magic.Spell.ToString(), ((magic.CastTime + magic.Delay) - CMain.Time - 1) / 1000 + 1));
                         }
 
                         return;
@@ -7914,7 +7914,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = "Soulbound to: " + GetUserName((uint)HoverItem.SoulBoundId)
+                    Text = Resources.ResourceItemInfo.SoulboundTo + GetUserName((uint)HoverItem.SoulBoundId)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, BOELabel.DisplayRectangle.Right + 4),
