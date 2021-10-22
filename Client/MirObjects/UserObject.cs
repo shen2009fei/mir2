@@ -228,7 +228,8 @@ namespace Client.MirObjects
 
                 if (temp.CurrentDura == 0 && RealItem.Durability > 0) continue;
 
-                if (temp.Info.IsFishingRod) continue;
+                //if (temp.Info.IsFishingRod) continue;
+                //if fishing rod, the Weapon shape cound be set new value 46 or 50
 
                 Stats.Add(RealItem.Stats);
                 Stats.Add(temp.AddedStats);

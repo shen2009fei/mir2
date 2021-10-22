@@ -165,4 +165,7 @@
   <data name="YouCannotCastForAnotherSeconds" xml:space="preserve">
     <value>在 {1} 秒内无法施放 {0}。</value>
   </data>
+  <data name="YourCharacterWasCreatedSuccessfully" xml:space="preserve">
+    <value>您的角色已成功创建.</value>
+  </data>
 </root>

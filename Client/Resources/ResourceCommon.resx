@@ -165,4 +165,7 @@
   <data name="YouCannotCastForAnotherSeconds" xml:space="preserve">
     <value>You cannot cast {0} for another {1} seconds.</value>
   </data>
+  <data name="YourCharacterWasCreatedSuccessfully" xml:space="preserve">
+    <value>Your character was created successfully.</value>
+  </data>
 </root>

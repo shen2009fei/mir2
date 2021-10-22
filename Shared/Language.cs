@@ -120,7 +120,7 @@ public class GameLanguage
 
                          DeleteCharacter = "Are you sure you want to Delete the character {0}",
                          CharacterDeleted = "Your character was deleted successfully.",
-                         CharacterCreated = "Your character was created successfully.",
+                         //CharacterCreated = "Your character was created successfully.",
 
                          Resolution = "Resolution",
                          Autostart = "Auto start",
@@ -397,7 +397,7 @@ public class GameLanguage
 
         GameLanguage.DeleteCharacter = reader.ReadString("Language", "DeleteCharacter", GameLanguage.DeleteCharacter);
         GameLanguage.CharacterDeleted = reader.ReadString("Language", "CharacterDeleted", GameLanguage.CharacterDeleted);
-        GameLanguage.CharacterCreated = reader.ReadString("Language", "CharacterCreated", GameLanguage.CharacterCreated);
+        //GameLanguage.CharacterCreated = reader.ReadString("Language", "CharacterCreated", GameLanguage.CharacterCreated);
 
         GameLanguage.Resolution = reader.ReadString("Language", "Resolution", GameLanguage.Resolution);
         GameLanguage.Autostart = reader.ReadString("Language", "Autostart", GameLanguage.Autostart);
@@ -635,7 +635,7 @@ public class GameLanguage
 
         reader.Write("Language", "DeleteCharacter", GameLanguage.DeleteCharacter);
         reader.Write("Language", "CharacterDeleted", GameLanguage.CharacterDeleted);
-        reader.Write("Language", "CharacterCreated", GameLanguage.CharacterCreated);
+        //reader.Write("Language", "CharacterCreated", GameLanguage.CharacterCreated);
 
         reader.Write("Language", "Resolution", GameLanguage.Resolution);
         reader.Write("Language", "Autostart", GameLanguage.Autostart);

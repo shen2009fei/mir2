@@ -203,5 +203,14 @@ namespace Client.Resources {
                 return ResourceManager.GetString("YouCannotCastForAnotherSeconds", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 Your character was created successfully. 的本地化字符串。
+        /// </summary>
+        internal static string YourCharacterWasCreatedSuccessfully {
+            get {
+                return ResourceManager.GetString("YourCharacterWasCreatedSuccessfully", resourceCulture);
+            }
+        }
     }
 }

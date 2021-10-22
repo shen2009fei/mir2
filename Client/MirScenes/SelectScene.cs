@@ -337,7 +337,7 @@ namespace Client.MirScenes
         private void NewCharacter(S.NewCharacterSuccess p)
         {
             _character.Dispose();
-            MirMessageBox.Show("Your character was created successfully.");
+            MirMessageBox.Show(Resources.ResourceCommon.YourCharacterWasCreatedSuccessfully );
 
             Characters.Insert(0, p.CharInfo);
             _selected = 0;
