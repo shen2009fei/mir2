@@ -34,6 +34,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\ResourceCommon.Designer.cs">
+      <DependentUpon>ResourceCommon.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Resources\ResourceMagic.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -50,6 +55,10 @@
     <EmbeddedResource Update="Resources\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ResourceCommon.resx">
+      <LastGenOutput>ResourceCommon.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>  
     <EmbeddedResource Update="Resources\ResourceMagic.resx">
       <Generator>ResXFileCodeGenerator</Generator>

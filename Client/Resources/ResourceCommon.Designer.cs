@@ -124,6 +124,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Monster {0} x{1} has been spawned. 的本地化字符串。
+        /// </summary>
+        internal static string MonsterHasBeenSpawned {
+            get {
+                return ResourceManager.GetString("MonsterHasBeenSpawned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Needed 的本地化字符串。
         /// </summary>
         internal static string Needed {
@@ -210,6 +219,15 @@ namespace Client.Resources {
         internal static string YourCharacterWasCreatedSuccessfully {
             get {
                 return ResourceManager.GetString("YourCharacterWasCreatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your character was deleted successfully. 的本地化字符串。
+        /// </summary>
+        internal static string YourCharacterWasDeletedSuccessfully {
+            get {
+                return ResourceManager.GetString("YourCharacterWasDeletedSuccessfully", resourceCulture);
             }
         }
     }

@@ -29,8 +29,8 @@ namespace Server.Database
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.itemInfoGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -69,6 +69,8 @@ namespace Server.Database
             this.ItemDurability = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemToolTip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drpFilterReqClass = new System.Windows.Forms.ComboBox();
+            this.lblRequiredClass = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.itemInfoGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,8 +80,8 @@ namespace Server.Database
             // 
             // itemInfoGridView
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.itemInfoGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.itemInfoGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.itemInfoGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemInfoGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Modified,
@@ -104,19 +106,19 @@ namespace Server.Database
             this.ItemDurability,
             this.ItemPrice,
             this.ItemToolTip});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemInfoGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemInfoGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.itemInfoGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemInfoGridView.Location = new System.Drawing.Point(0, 0);
             this.itemInfoGridView.Name = "itemInfoGridView";
             this.itemInfoGridView.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.itemInfoGridView.Size = new System.Drawing.Size(956, 433);
+            this.itemInfoGridView.Size = new System.Drawing.Size(956, 400);
             this.itemInfoGridView.TabIndex = 0;
             this.itemInfoGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.ItemInfoGridView_CellValidating);
             this.itemInfoGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.ItemInfoGridView_DataError);
@@ -129,11 +131,13 @@ namespace Server.Database
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(956, 47);
+            this.panel1.Size = new System.Drawing.Size(956, 43);
             this.panel1.TabIndex = 1;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblRequiredClass);
+            this.panel3.Controls.Add(this.drpFilterReqClass);
             this.panel3.Controls.Add(this.btnExport);
             this.panel3.Controls.Add(this.btnImport);
             this.panel3.Controls.Add(this.lblFilterType);
@@ -144,14 +148,14 @@ namespace Server.Database
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(956, 47);
+            this.panel3.Size = new System.Drawing.Size(956, 43);
             this.panel3.TabIndex = 5;
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(693, 22);
+            this.btnExport.Location = new System.Drawing.Point(820, 19);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.Size = new System.Drawing.Size(75, 21);
             this.btnExport.TabIndex = 6;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -159,9 +163,9 @@ namespace Server.Database
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(611, 22);
+            this.btnImport.Location = new System.Drawing.Point(738, 19);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(75, 23);
+            this.btnImport.Size = new System.Drawing.Size(75, 21);
             this.btnImport.TabIndex = 5;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
@@ -170,9 +174,9 @@ namespace Server.Database
             // lblFilterType
             // 
             this.lblFilterType.AutoSize = true;
-            this.lblFilterType.Location = new System.Drawing.Point(334, 9);
+            this.lblFilterType.Location = new System.Drawing.Point(334, 8);
             this.lblFilterType.Name = "lblFilterType";
-            this.lblFilterType.Size = new System.Drawing.Size(37, 13);
+            this.lblFilterType.Size = new System.Drawing.Size(41, 12);
             this.lblFilterType.TabIndex = 3;
             this.lblFilterType.Text = "Type :";
             // 
@@ -185,7 +189,7 @@ namespace Server.Database
             this.groupView.Controls.Add(this.rbtnViewStats);
             this.groupView.Location = new System.Drawing.Point(3, 3);
             this.groupView.Name = "groupView";
-            this.groupView.Size = new System.Drawing.Size(325, 41);
+            this.groupView.Size = new System.Drawing.Size(325, 38);
             this.groupView.TabIndex = 4;
             this.groupView.TabStop = false;
             this.groupView.Text = "View Mode";
@@ -193,9 +197,9 @@ namespace Server.Database
             // rBtnViewSpecial
             // 
             this.rBtnViewSpecial.AutoSize = true;
-            this.rBtnViewSpecial.Location = new System.Drawing.Point(248, 20);
+            this.rBtnViewSpecial.Location = new System.Drawing.Point(248, 18);
             this.rBtnViewSpecial.Name = "rBtnViewSpecial";
-            this.rBtnViewSpecial.Size = new System.Drawing.Size(60, 17);
+            this.rBtnViewSpecial.Size = new System.Drawing.Size(65, 16);
             this.rBtnViewSpecial.TabIndex = 4;
             this.rBtnViewSpecial.TabStop = true;
             this.rBtnViewSpecial.Text = "Special";
@@ -206,9 +210,9 @@ namespace Server.Database
             // 
             this.rbtnViewAll.AutoSize = true;
             this.rbtnViewAll.Checked = true;
-            this.rbtnViewAll.Location = new System.Drawing.Point(27, 19);
+            this.rbtnViewAll.Location = new System.Drawing.Point(27, 18);
             this.rbtnViewAll.Name = "rbtnViewAll";
-            this.rbtnViewAll.Size = new System.Drawing.Size(36, 17);
+            this.rbtnViewAll.Size = new System.Drawing.Size(41, 16);
             this.rbtnViewAll.TabIndex = 0;
             this.rbtnViewAll.TabStop = true;
             this.rbtnViewAll.Text = "All";
@@ -218,9 +222,9 @@ namespace Server.Database
             // rbtnViewBinding
             // 
             this.rbtnViewBinding.AutoSize = true;
-            this.rbtnViewBinding.Location = new System.Drawing.Point(181, 19);
+            this.rbtnViewBinding.Location = new System.Drawing.Point(181, 18);
             this.rbtnViewBinding.Name = "rbtnViewBinding";
-            this.rbtnViewBinding.Size = new System.Drawing.Size(60, 17);
+            this.rbtnViewBinding.Size = new System.Drawing.Size(65, 16);
             this.rbtnViewBinding.TabIndex = 3;
             this.rbtnViewBinding.TabStop = true;
             this.rbtnViewBinding.Text = "Binding";
@@ -230,9 +234,9 @@ namespace Server.Database
             // rbtnViewBasic
             // 
             this.rbtnViewBasic.AutoSize = true;
-            this.rbtnViewBasic.Location = new System.Drawing.Point(69, 19);
+            this.rbtnViewBasic.Location = new System.Drawing.Point(69, 18);
             this.rbtnViewBasic.Name = "rbtnViewBasic";
-            this.rbtnViewBasic.Size = new System.Drawing.Size(51, 17);
+            this.rbtnViewBasic.Size = new System.Drawing.Size(53, 16);
             this.rbtnViewBasic.TabIndex = 1;
             this.rbtnViewBasic.TabStop = true;
             this.rbtnViewBasic.Text = "Basic";
@@ -242,9 +246,9 @@ namespace Server.Database
             // rbtnViewStats
             // 
             this.rbtnViewStats.AutoSize = true;
-            this.rbtnViewStats.Location = new System.Drawing.Point(126, 19);
+            this.rbtnViewStats.Location = new System.Drawing.Point(126, 18);
             this.rbtnViewStats.Name = "rbtnViewStats";
-            this.rbtnViewStats.Size = new System.Drawing.Size(49, 17);
+            this.rbtnViewStats.Size = new System.Drawing.Size(53, 16);
             this.rbtnViewStats.TabIndex = 2;
             this.rbtnViewStats.TabStop = true;
             this.rbtnViewStats.Text = "Stats";
@@ -255,26 +259,26 @@ namespace Server.Database
             // 
             this.drpFilterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drpFilterType.FormattingEnabled = true;
-            this.drpFilterType.Location = new System.Drawing.Point(337, 24);
+            this.drpFilterType.Location = new System.Drawing.Point(337, 22);
             this.drpFilterType.Name = "drpFilterType";
-            this.drpFilterType.Size = new System.Drawing.Size(121, 21);
+            this.drpFilterType.Size = new System.Drawing.Size(121, 20);
             this.drpFilterType.TabIndex = 2;
             this.drpFilterType.SelectedIndexChanged += new System.EventHandler(this.DrpFilterType_SelectedIndexChanged);
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(461, 9);
+            this.lblSearch.Location = new System.Drawing.Point(588, 7);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(44, 13);
+            this.lblSearch.Size = new System.Drawing.Size(47, 12);
             this.lblSearch.TabIndex = 1;
             this.lblSearch.Text = "Search:";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(464, 25);
+            this.txtSearch.Location = new System.Drawing.Point(591, 22);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(141, 20);
+            this.txtSearch.Size = new System.Drawing.Size(141, 21);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyDown);
             // 
@@ -282,9 +286,9 @@ namespace Server.Database
             // 
             this.panel2.Controls.Add(this.itemInfoGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 47);
+            this.panel2.Location = new System.Drawing.Point(0, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(956, 433);
+            this.panel2.Size = new System.Drawing.Size(956, 400);
             this.panel2.TabIndex = 2;
             // 
             // Modified
@@ -295,7 +299,7 @@ namespace Server.Database
             this.Modified.HeaderText = "Modified";
             this.Modified.Name = "Modified";
             this.Modified.ReadOnly = true;
-            this.Modified.Width = 53;
+            this.Modified.Width = 59;
             // 
             // ItemIndex
             // 
@@ -305,7 +309,7 @@ namespace Server.Database
             this.ItemIndex.HeaderText = "Index";
             this.ItemIndex.Name = "ItemIndex";
             this.ItemIndex.ReadOnly = true;
-            this.ItemIndex.Width = 58;
+            this.ItemIndex.Width = 60;
             // 
             // ItemName
             // 
@@ -314,7 +318,7 @@ namespace Server.Database
             this.ItemName.Frozen = true;
             this.ItemName.HeaderText = "Name";
             this.ItemName.Name = "ItemName";
-            this.ItemName.Width = 60;
+            this.ItemName.Width = 54;
             // 
             // ItemType
             // 
@@ -334,18 +338,21 @@ namespace Server.Database
             this.ItemRequiredType.DataPropertyName = "ItemRequiredType";
             this.ItemRequiredType.HeaderText = "Required Type";
             this.ItemRequiredType.Name = "ItemRequiredType";
+            this.ItemRequiredType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // ItemRequiredGender
             // 
             this.ItemRequiredGender.DataPropertyName = "ItemRequiredGender";
             this.ItemRequiredGender.HeaderText = "Required Gender";
             this.ItemRequiredGender.Name = "ItemRequiredGender";
+            this.ItemRequiredGender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // ItemRequiredClass
             // 
             this.ItemRequiredClass.DataPropertyName = "ItemRequiredClass";
             this.ItemRequiredClass.HeaderText = "Required Class";
             this.ItemRequiredClass.Name = "ItemRequiredClass";
+            this.ItemRequiredClass.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // ItemSet
             // 
@@ -432,11 +439,30 @@ namespace Server.Database
             this.ItemToolTip.Name = "ItemToolTip";
             this.ItemToolTip.Width = 68;
             // 
+            // drpFilterReqClass
+            // 
+            this.drpFilterReqClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.drpFilterReqClass.FormattingEnabled = true;
+            this.drpFilterReqClass.Location = new System.Drawing.Point(464, 22);
+            this.drpFilterReqClass.Name = "drpFilterReqClass";
+            this.drpFilterReqClass.Size = new System.Drawing.Size(121, 20);
+            this.drpFilterReqClass.TabIndex = 7;
+            this.drpFilterReqClass.SelectedIndexChanged += new System.EventHandler(this.DrpFilterReqClass_SelectedIndexChanged);
+            // 
+            // lblRequiredClass
+            // 
+            this.lblRequiredClass.AutoSize = true;
+            this.lblRequiredClass.Location = new System.Drawing.Point(464, 7);
+            this.lblRequiredClass.Name = "lblRequiredClass";
+            this.lblRequiredClass.Size = new System.Drawing.Size(59, 12);
+            this.lblRequiredClass.TabIndex = 8;
+            this.lblRequiredClass.Text = "Req.Class";
+            // 
             // ItemInfoFormNew
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 480);
+            this.ClientSize = new System.Drawing.Size(956, 443);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ItemInfoFormNew";
@@ -493,5 +519,7 @@ namespace Server.Database
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemDurability;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemToolTip;
+        private System.Windows.Forms.ComboBox drpFilterReqClass;
+        private System.Windows.Forms.Label lblRequiredClass;
     }
 }

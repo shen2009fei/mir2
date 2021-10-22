@@ -391,7 +391,7 @@ namespace Client.MirScenes
         private void DeleteCharacter(S.DeleteCharacterSuccess p)
         {
             DeleteCharacterButton.Enabled = true;
-            MirMessageBox.Show("Your character was deleted successfully.");
+            MirMessageBox.Show(Resources.ResourceCommon.YourCharacterWasDeletedSuccessfully);
 
             for (int i = 0; i < Characters.Count; i++)
                 if (Characters[i].Index == p.CharacterIndex)

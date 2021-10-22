@@ -4085,7 +4085,7 @@ namespace Server.MirObjects
                             monster.Spawn(CurrentMap, Front);
                         }
 
-                        ReceiveChat((string.Format("Monster {0} x{1} has been spawned.", mInfo.Name, count)), ChatType.System);
+                        ReceiveChat((string.Format(Resources.ResourceCommon.MonsterHasBeenSpawned, mInfo.Name, count)), ChatType.System);
                         break;
 
                     case "RECALLMOB":

@@ -117,61 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AllItems" xml:space="preserve">
-    <value>所有物品</value>
-  </data>
-  <data name="Archer" xml:space="preserve">
-    <value>弓箭手</value>
-  </data>
-  <data name="Assassin" xml:space="preserve">
-    <value>刺客</value>
-  </data>
-  <data name="Crit" xml:space="preserve">
-    <value>暴击</value>
-  </data>
-  <data name="Gold" xml:space="preserve">
-    <value>金币</value>
-  </data>
-  <data name="LastOnline" xml:space="preserve">
-    <value>最后在线</value>
-  </data>
-  <data name="Miss" xml:space="preserve">
-    <value>未命中</value>
-  </data>
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
-    <value>怪物 {0} x{1} 已生成。</value>
-  </data>
-  <data name="Needed" xml:space="preserve">
-    <value>需要</value>
-  </data>
-  <data name="Never" xml:space="preserve">
-    <value>从未</value>
-  </data>
-  <data name="Others" xml:space="preserve">
-    <value>其他</value>
-  </data>
-  <data name="ServerName" xml:space="preserve">
-    <value>热血豪情</value>
-  </data>
-  <data name="Taoist" xml:space="preserve">
-    <value>道士</value>
-  </data>
-  <data name="Warrior" xml:space="preserve">
-    <value>战士</value>
-  </data>
-  <data name="WarWizTao" xml:space="preserve">
-    <value>战法道</value>
-  </data>
-  <data name="Wizard" xml:space="preserve">
-    <value>魔法师</value>
-  </data>
-  <data name="YouCannotCastForAnotherSeconds" xml:space="preserve">
-    <value>在 {1} 秒内无法施放 {0}。</value>
-  </data>
-  <data name="YourCharacterWasCreatedSuccessfully" xml:space="preserve">
-    <value>您的角色已成功创建。</value>
-  </data>
-  <data name="YourCharacterWasDeletedSuccessfully" xml:space="preserve">
-    <value>您的角色已成功删除。</value>
+    <value>Monster {0} x{1} has been spawned.</value>
   </data>
 </root>

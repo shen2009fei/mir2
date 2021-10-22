@@ -29,11 +29,22 @@ namespace Server.Database
             InitializeComponent();
 
             InitializeItemInfoFilters();
+            InitializeRequiredClassFilters();
             InitializeItemInfoGridView();
 
             CreateDynamicColumns();
 
             PopulateTable();
+        }
+
+        private void InitializeRequiredClassFilters()
+        {
+            var clazzes = Enum.GetValues(typeof(RequiredClass));
+            drpFilterReqClass.Items.Add(new System.Web.UI.WebControls.ListItem("", "-1"));
+            foreach (RequiredClass clazz in clazzes)
+            {
+                drpFilterReqClass.Items.Add(new System.Web.UI.WebControls.ListItem(clazz.ToString(), ((byte)clazz).ToString()));
+            }
         }
 
         private void InitializeItemInfoFilters()
@@ -244,14 +255,14 @@ namespace Server.Database
         {
             var filterText = txtSearch.Text;
             var filterType = ((ListItem)drpFilterType.SelectedItem)?.Value ?? "-1";
-
-            if (string.IsNullOrEmpty(filterText) && filterType == "-1")
+            var filterReqClass = ((ListItem)drpFilterReqClass.SelectedItem)?.Value ?? "-1";
+            if (string.IsNullOrEmpty(filterText) && filterType == "-1" && filterReqClass == "-1")
             {
                 (itemInfoGridView.DataSource as DataTable).DefaultView.RowFilter = "";
                 return;
             }
 
-            string rowFilter = string.Format("([ItemType] = '{0}' OR '{0}' = -1) AND [ItemName] LIKE '%{1}%'", filterType, filterText);
+            string rowFilter = string.Format("([ItemType] = '{0}' OR '{0}' = -1) AND ([ItemRequiredClass] = '{1}' OR '{1}' = -1) AND [ItemName] LIKE '%{2}%'", filterType,filterReqClass, filterText);
 
             (itemInfoGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
         }
@@ -823,6 +834,11 @@ namespace Server.Database
         private void ItemInfoGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        private void DrpFilterReqClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateFilter();
         }
     }
 }

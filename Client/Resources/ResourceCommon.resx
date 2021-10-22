@@ -138,6 +138,9 @@
   <data name="Miss" xml:space="preserve">
     <value>Miss</value>
   </data>
+  <data name="MonsterHasBeenSpawned" xml:space="preserve">
+    <value>Monster {0} x{1} has been spawned.</value>
+  </data>
   <data name="Needed" xml:space="preserve">
     <value>Needed</value>
   </data>
@@ -167,5 +170,8 @@
   </data>
   <data name="YourCharacterWasCreatedSuccessfully" xml:space="preserve">
     <value>Your character was created successfully.</value>
+  </data>
+  <data name="YourCharacterWasDeletedSuccessfully" xml:space="preserve">
+    <value>Your character was deleted successfully.</value>
   </data>
 </root>
