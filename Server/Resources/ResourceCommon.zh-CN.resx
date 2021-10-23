@@ -120,4 +120,10 @@
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
     <value>怪物 {0} x{1} 已生成。</value>
   </data>
+  <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
+    <value>你已经取下被诅咒的物品了。</value>
+  </data>
+  <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
+    <value>你现在可以取下一个被诅咒的物品。</value>
+  </data>
 </root>

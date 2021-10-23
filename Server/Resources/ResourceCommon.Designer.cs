@@ -68,5 +68,23 @@ namespace Server.Resources {
                 return ResourceManager.GetString("MonsterHasBeenSpawned", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 You can already unequip a cursed item 的本地化字符串。
+        /// </summary>
+        internal static string YouCanAlreadyUnequipACursedItem {
+            get {
+                return ResourceManager.GetString("YouCanAlreadyUnequipACursedItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You can now unequip a cursed item. 的本地化字符串。
+        /// </summary>
+        internal static string YouCanNowUnequipACursedItem {
+            get {
+                return ResourceManager.GetString("YouCanNowUnequipACursedItem", resourceCulture);
+            }
+        }
     }
 }

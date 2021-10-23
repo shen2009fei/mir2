@@ -60,5 +60,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox tbxSearchMagic;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button btnAddSkill;
+        private System.Windows.Forms.Button btnDeleteSkill;
     }
 }

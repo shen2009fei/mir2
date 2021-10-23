@@ -11214,11 +11214,11 @@ namespace Server.MirObjects
                         case 2: //MysteryWater
                             if (UnlockCurse)
                             {
-                                ReceiveChat("You can already unequip a cursed item.", ChatType.Hint);
+                                ReceiveChat(Resources.ResourceCommon.YouCanAlreadyUnequipACursedItem , ChatType.Hint);
                                 Enqueue(p);
                                 return;
                             }
-                            ReceiveChat("You can now unequip a cursed item.", ChatType.Hint);
+                            ReceiveChat(Resources.ResourceCommon.YouCanNowUnequipACursedItem , ChatType.Hint);
                             UnlockCurse = true;
                             break;
                         case 3: //Buff
@@ -11271,35 +11271,35 @@ namespace Server.MirObjects
                     UserItem temp;
                     switch (item.Info.Shape)
                     {
-                        case 0: //DE
+                        case 0: //DE DungeonEscape 地牢逃脱卷
                             if (!TeleportEscape(20))
                             {
                                 Enqueue(p);
                                 return;
                             }
                             break;
-                        case 1: //TT
+                        case 1: //TT TownTeleport 回城卷
                             if (!Teleport(Envir.GetMap(BindMapIndex), BindLocation))
                             {
                                 Enqueue(p);
                                 return;
                             }
                             break;
-                        case 2: //RT
+                        case 2: //RT RandomTeleport 随机传送卷
                             if (!TeleportRandom(200, item.Info.Durability))
                             {
                                 Enqueue(p);
                                 return;
                             }
                             break;
-                        case 3: //BenedictionOil
+                        case 3: //BenedictionOil 祝福油
                             if (!TryLuckWeapon())
                             {
                                 Enqueue(p);
                                 return;
                             }
                             break;
-                        case 4: //RepairOil
+                        case 4: //RepairOil //修复油
                             temp = Info.Equipment[(int)EquipmentSlot.Weapon];
                             if (temp == null || temp.MaxDura == temp.CurrentDura)
                             {
@@ -11319,7 +11319,7 @@ namespace Server.MirObjects
                             ReceiveChat("Your weapon has been partially repaired", ChatType.Hint);
                             Enqueue(new S.ItemRepaired { UniqueID = temp.UniqueID, MaxDura = temp.MaxDura, CurrentDura = temp.CurrentDura });
                             break;
-                        case 5: //WarGodOil
+                        case 5: //WarGodOil //战神油
                             temp = Info.Equipment[(int)EquipmentSlot.Weapon];
                             if (temp == null || temp.MaxDura == temp.CurrentDura)
                             {
@@ -11337,7 +11337,7 @@ namespace Server.MirObjects
                             ReceiveChat("Your weapon has been completely repaired", ChatType.Hint);
                             Enqueue(new S.ItemRepaired { UniqueID = temp.UniqueID, MaxDura = temp.MaxDura, CurrentDura = temp.CurrentDura });
                             break;
-                        case 6: //ResurrectionScroll
+                        case 6: //ResurrectionScroll //复活卷轴
                             if (CurrentMap.Info.NoReincarnation)
                             {
                                 ReceiveChat(string.Format("Cannot use on this map"), ChatType.System);
@@ -11368,14 +11368,14 @@ namespace Server.MirObjects
                         case 10://GuildSkillScroll
                             MyGuild.NewBuff(item.Info.Effect, false);
                             break;
-                        case 11://HomeTeleport
+                        case 11://HomeTeleport //行会回城卷
                             if (MyGuild != null && MyGuild.Conquest != null && !MyGuild.Conquest.WarIsOn && MyGuild.Conquest.PalaceMap != null && !TeleportRandom(200, 0, MyGuild.Conquest.PalaceMap))
                             {
                                 Enqueue(p);
                                 return;
                             }
                             break;
-                        case 12://LotteryTicket                                                                                    
+                        case 12://LotteryTicket //彩票                                                                                   
                             if (Envir.Random.Next(item.Info.Effect * 32) == 1) // 1st prize : 1,000,000
                             {
                                 ReceiveChat("You won 1st Prize! Received 1,000,000 gold", ChatType.Hint);

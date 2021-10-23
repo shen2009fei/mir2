@@ -168,6 +168,8 @@ namespace Server
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbxSearchMagic = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.btnAddSkill = new System.Windows.Forms.Button();
+            this.btnDeleteSkill = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -180,9 +182,9 @@ namespace Server
             // 
             this.MagiclistBox.FormattingEnabled = true;
             this.MagiclistBox.ItemHeight = 12;
-            this.MagiclistBox.Location = new System.Drawing.Point(0, 36);
+            this.MagiclistBox.Location = new System.Drawing.Point(-2, 60);
             this.MagiclistBox.Name = "MagiclistBox";
-            this.MagiclistBox.Size = new System.Drawing.Size(225, 506);
+            this.MagiclistBox.Size = new System.Drawing.Size(225, 496);
             this.MagiclistBox.TabIndex = 0;
             this.MagiclistBox.SelectedIndexChanged += new System.EventHandler(this.MagiclistBox_SelectedIndexChanged);
             // 
@@ -191,10 +193,10 @@ namespace Server
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(225, 0);
+            this.tabControl1.Location = new System.Drawing.Point(225, 38);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(702, 542);
+            this.tabControl1.Size = new System.Drawing.Size(702, 521);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -215,7 +217,7 @@ namespace Server
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(694, 516);
+            this.tabPage1.Size = new System.Drawing.Size(694, 495);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basics";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -708,7 +710,7 @@ namespace Server
             // 
             // tbxSearchMagic
             // 
-            this.tbxSearchMagic.Location = new System.Drawing.Point(45, 12);
+            this.tbxSearchMagic.Location = new System.Drawing.Point(45, 38);
             this.tbxSearchMagic.Name = "tbxSearchMagic";
             this.tbxSearchMagic.Size = new System.Drawing.Size(174, 21);
             this.tbxSearchMagic.TabIndex = 2;
@@ -717,15 +719,36 @@ namespace Server
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 16);
+            this.label25.Location = new System.Drawing.Point(6, 42);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(29, 12);
             this.label25.TabIndex = 3;
             this.label25.Text = "搜索";
             // 
+            // btnAddSkill
+            // 
+            this.btnAddSkill.Location = new System.Drawing.Point(481, 9);
+            this.btnAddSkill.Name = "btnAddSkill";
+            this.btnAddSkill.Size = new System.Drawing.Size(75, 23);
+            this.btnAddSkill.TabIndex = 4;
+            this.btnAddSkill.Text = "Add";
+            this.btnAddSkill.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteSkill
+            // 
+            this.btnDeleteSkill.Location = new System.Drawing.Point(581, 9);
+            this.btnDeleteSkill.Name = "btnDeleteSkill";
+            this.btnDeleteSkill.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteSkill.TabIndex = 4;
+            this.btnDeleteSkill.Text = "Delete";
+            this.btnDeleteSkill.UseVisualStyleBackColor = true;
+            this.btnDeleteSkill.Click += new System.EventHandler(this.btnDeleteSkill_Click);
+            // 
             // MagicInfoForm
             // 
-            this.ClientSize = new System.Drawing.Size(927, 542);
+            this.ClientSize = new System.Drawing.Size(927, 559);
+            this.Controls.Add(this.btnDeleteSkill);
+            this.Controls.Add(this.btnAddSkill);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.tbxSearchMagic);
             this.Controls.Add(this.tabControl1);
@@ -1020,6 +1043,23 @@ namespace Server
                 MagiclistBox.Items.Clear();
                 MagiclistBox.Items.AddRange(itemList);
             }
+        }
+
+        private void btnDeleteSkill_Click(object sender, EventArgs e)
+        {
+            if (MagiclistBox.SelectedIndex==-1)
+            {
+                MessageBox.Show("请选中一个技能再删除");
+            }
+            else
+            {
+                var magicInfo = MagiclistBox.SelectedItem as MagicInfo;
+                Envir.MagicInfoList.Remove(magicInfo);
+                MagiclistBox.Items.RemoveAt(MagiclistBox.SelectedIndex);
+                Envir.SaveDB();
+                InitMagicListBox();
+            }
+
         }
     }
 }

@@ -120,4 +120,10 @@
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
     <value>Monster {0} x{1} has been spawned.</value>
   </data>
+  <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
+    <value>You can already unequip a cursed item</value>
+  </data>
+  <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
+    <value>You can now unequip a cursed item.</value>
+  </data>
 </root>
