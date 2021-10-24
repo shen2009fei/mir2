@@ -97,6 +97,42 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Do not use Cross Half Moon. 的本地化字符串。
+        /// </summary>
+        internal static string DoNotUseCrossHalfMoon {
+            get {
+                return ResourceManager.GetString("DoNotUseCrossHalfMoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Do not use Double Slash. 的本地化字符串。
+        /// </summary>
+        internal static string DoNotUseDoubleSlash {
+            get {
+                return ResourceManager.GetString("DoNotUseDoubleSlash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Do not use Half Moon. 的本地化字符串。
+        /// </summary>
+        internal static string DoNotUseHalfMoon {
+            get {
+                return ResourceManager.GetString("DoNotUseHalfMoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Do not use Thrusting. 的本地化字符串。
+        /// </summary>
+        internal static string DoNotUseThrusting {
+            get {
+                return ResourceManager.GetString("DoNotUseThrusting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Gold 的本地化字符串。
         /// </summary>
         internal static string Gold {
@@ -178,6 +214,42 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Use Cross Half Moon. 的本地化字符串。
+        /// </summary>
+        internal static string UseCrossHalfMoon {
+            get {
+                return ResourceManager.GetString("UseCrossHalfMoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use Double Slash. 的本地化字符串。
+        /// </summary>
+        internal static string UseDoubleSlash {
+            get {
+                return ResourceManager.GetString("UseDoubleSlash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use Half Moon. 的本地化字符串。
+        /// </summary>
+        internal static string UseHalfMoon {
+            get {
+                return ResourceManager.GetString("UseHalfMoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use Thrusting. 的本地化字符串。
+        /// </summary>
+        internal static string UseThrusting {
+            get {
+                return ResourceManager.GetString("UseThrusting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Warrior 的本地化字符串。
         /// </summary>
         internal static string Warrior {
@@ -210,6 +282,15 @@ namespace Client.Resources {
         internal static string YouCannotCastForAnotherSeconds {
             get {
                 return ResourceManager.GetString("YouCannotCastForAnotherSeconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You must be wearing a suitable weapon to perform this skill. 的本地化字符串。
+        /// </summary>
+        internal static string YouMustBeWearingAsuitableWeaponToPerformThisSkill {
+            get {
+                return ResourceManager.GetString("YouMustBeWearingAsuitableWeaponToPerformThisSkill", resourceCulture);
             }
         }
         

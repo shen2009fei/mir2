@@ -129,6 +129,18 @@
   <data name="Crit" xml:space="preserve">
     <value>暴击</value>
   </data>
+  <data name="DoNotUseCrossHalfMoon" xml:space="preserve">
+    <value>不使用十字半月</value>
+  </data>
+  <data name="DoNotUseDoubleSlash" xml:space="preserve">
+    <value>不使用风剑术</value>
+  </data>
+  <data name="DoNotUseHalfMoon" xml:space="preserve">
+    <value>不使用半月弯刀</value>
+  </data>
+  <data name="DoNotUseThrusting" xml:space="preserve">
+    <value>不使用刺杀剑术</value>
+  </data>
   <data name="Gold" xml:space="preserve">
     <value>金币</value>
   </data>
@@ -156,6 +168,18 @@
   <data name="Taoist" xml:space="preserve">
     <value>道士</value>
   </data>
+  <data name="UseCrossHalfMoon" xml:space="preserve">
+    <value>使用十字半月</value>
+  </data>
+  <data name="UseDoubleSlash" xml:space="preserve">
+    <value>使用风剑术</value>
+  </data>
+  <data name="UseHalfMoon" xml:space="preserve">
+    <value>使用半月弯刀</value>
+  </data>
+  <data name="UseThrusting" xml:space="preserve">
+    <value>使用刺杀剑术</value>
+  </data>
   <data name="Warrior" xml:space="preserve">
     <value>战士</value>
   </data>
@@ -167,6 +191,9 @@
   </data>
   <data name="YouCannotCastForAnotherSeconds" xml:space="preserve">
     <value>在 {1} 秒内无法施放 {0}。</value>
+  </data>
+  <data name="YouMustBeWearingAsuitableWeaponToPerformThisSkill" xml:space="preserve">
+    <value>您必须装备合适的武器才能使用此技能。</value>
   </data>
   <data name="YourCharacterWasCreatedSuccessfully" xml:space="preserve">
     <value>您的角色已成功创建。</value>

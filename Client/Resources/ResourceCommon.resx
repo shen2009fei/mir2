@@ -129,6 +129,18 @@
   <data name="Crit" xml:space="preserve">
     <value>Crit</value>
   </data>
+  <data name="DoNotUseCrossHalfMoon" xml:space="preserve">
+    <value>Do not use Cross Half Moon.</value>
+  </data>
+  <data name="DoNotUseDoubleSlash" xml:space="preserve">
+    <value>Do not use Double Slash.</value>
+  </data>
+  <data name="DoNotUseHalfMoon" xml:space="preserve">
+    <value>Do not use Half Moon.</value>
+  </data>
+  <data name="DoNotUseThrusting" xml:space="preserve">
+    <value>Do not use Thrusting.</value>
+  </data>
   <data name="Gold" xml:space="preserve">
     <value>Gold</value>
   </data>
@@ -156,6 +168,18 @@
   <data name="Taoist" xml:space="preserve">
     <value>Taoist</value>
   </data>
+  <data name="UseCrossHalfMoon" xml:space="preserve">
+    <value>Use Cross Half Moon.</value>
+  </data>
+  <data name="UseDoubleSlash" xml:space="preserve">
+    <value>Use Double Slash.</value>
+  </data>
+  <data name="UseHalfMoon" xml:space="preserve">
+    <value>Use Half Moon.</value>
+  </data>
+  <data name="UseThrusting" xml:space="preserve">
+    <value>Use Thrusting.</value>
+  </data>
   <data name="Warrior" xml:space="preserve">
     <value>Warrior</value>
   </data>
@@ -167,6 +191,9 @@
   </data>
   <data name="YouCannotCastForAnotherSeconds" xml:space="preserve">
     <value>You cannot cast {0} for another {1} seconds.</value>
+  </data>
+  <data name="YouMustBeWearingAsuitableWeaponToPerformThisSkill" xml:space="preserve">
+    <value>You must be wearing a suitable weapon to perform this skill.</value>
   </data>
   <data name="YourCharacterWasCreatedSuccessfully" xml:space="preserve">
     <value>Your character was created successfully.</value>
