@@ -1037,7 +1037,7 @@ namespace Server.MirObjects
 
                 if (item?.ExpireInfo?.ExpiryDate <= Envir.Now)
                 {
-                    ReceiveChat($"{item.Info.FriendlyName} has just expired from your inventory.", ChatType.Hint);
+                    ReceiveChat($"{item.Info.FriendlyName} "+Resources.ResourceCommon.HasJustExpiredFromYourInventory, ChatType.Hint);
                     Enqueue(new S.DeleteItem { UniqueID = item.UniqueID, Count = item.Count });
                     Info.Inventory[i] = null;
 
@@ -1048,7 +1048,7 @@ namespace Server.MirObjects
                     !(item?.RentalInformation?.ExpiryDate <= Envir.Now))
                     continue;
 
-                ReceiveChat($"The rental lock has been removed from {item.Info.FriendlyName}.", ChatType.Hint);
+                ReceiveChat(String.Format(Resources.ResourceCommon.TheRentalLockHasBeenRemovedFrom, item.Info.FriendlyName), ChatType.Hint);
                 item.RentalInformation = null;
             }
 
@@ -1058,7 +1058,7 @@ namespace Server.MirObjects
 
                 if (item?.ExpireInfo?.ExpiryDate <= Envir.Now)
                 {
-                    ReceiveChat($"{item.Info.FriendlyName} has just expired from your equipment.", ChatType.Hint);
+                    ReceiveChat($"{item.Info.FriendlyName} "+Resources.ResourceCommon.HasJustExpiredFromYourEquipment, ChatType.Hint);
                     Enqueue(new S.DeleteItem { UniqueID = item.UniqueID, Count = item.Count });
                     Info.Equipment[i] = null;
 
@@ -1069,7 +1069,7 @@ namespace Server.MirObjects
                     !(item?.RentalInformation?.ExpiryDate <= Envir.Now))
                     continue;
 
-                ReceiveChat($"The rental lock has been removed from {item.Info.FriendlyName}.", ChatType.Hint);
+                ReceiveChat(String.Format(Resources.ResourceCommon.TheRentalLockHasBeenRemovedFrom, item.Info.FriendlyName), ChatType.Hint);
                 item.RentalInformation = null;
             }
 
@@ -1078,7 +1078,7 @@ namespace Server.MirObjects
                 var item = Info.AccountInfo.Storage[i];
                 if (item?.ExpireInfo?.ExpiryDate <= Envir.Now)
                 {
-                    ReceiveChat($"{item.Info.FriendlyName} has just expired from your storage.", ChatType.Hint);
+                    ReceiveChat($"{item.Info.FriendlyName} "+Resources.ResourceCommon.HasJustExpiredFromYourStorage, ChatType.Hint);
                     Enqueue(new S.DeleteItem { UniqueID = item.UniqueID, Count = item.Count });
                     Info.AccountInfo.Storage[i] = null;
 

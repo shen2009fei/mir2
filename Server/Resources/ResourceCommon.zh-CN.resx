@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HasJustExpiredFromYourEquipment" xml:space="preserve">
+    <value>刚刚从您的装备中过期。</value>
+  </data>
+  <data name="HasJustExpiredFromYourInventory" xml:space="preserve">
+    <value>刚刚从您的背包中过期。</value>
+  </data>
+  <data name="HasJustExpiredFromYourStorage" xml:space="preserve">
+    <value>刚刚从您的仓库中过期。</value>
+  </data>
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
     <value>怪物 {0} x{1} 已生成。</value>
+  </data>
+  <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
+    <value>租赁锁定已从{0}中移除</value>
   </data>
   <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
     <value>你已经取下被诅咒的物品了。</value>

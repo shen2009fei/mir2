@@ -61,11 +61,47 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 has just expired from your equipment. 的本地化字符串。
+        /// </summary>
+        internal static string HasJustExpiredFromYourEquipment {
+            get {
+                return ResourceManager.GetString("HasJustExpiredFromYourEquipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 has just expired from your inventory. 的本地化字符串。
+        /// </summary>
+        internal static string HasJustExpiredFromYourInventory {
+            get {
+                return ResourceManager.GetString("HasJustExpiredFromYourInventory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 has just expired from your storage. 的本地化字符串。
+        /// </summary>
+        internal static string HasJustExpiredFromYourStorage {
+            get {
+                return ResourceManager.GetString("HasJustExpiredFromYourStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Monster {0} x{1} has been spawned. 的本地化字符串。
         /// </summary>
         internal static string MonsterHasBeenSpawned {
             get {
                 return ResourceManager.GetString("MonsterHasBeenSpawned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The rental lock has been removed from {0} 的本地化字符串。
+        /// </summary>
+        internal static string TheRentalLockHasBeenRemovedFrom {
+            get {
+                return ResourceManager.GetString("TheRentalLockHasBeenRemovedFrom", resourceCulture);
             }
         }
         

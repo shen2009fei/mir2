@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HasJustExpiredFromYourEquipment" xml:space="preserve">
+    <value>has just expired from your equipment.</value>
+  </data>
+  <data name="HasJustExpiredFromYourInventory" xml:space="preserve">
+    <value>has just expired from your inventory.</value>
+  </data>
+  <data name="HasJustExpiredFromYourStorage" xml:space="preserve">
+    <value>has just expired from your storage.</value>
+  </data>
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
     <value>Monster {0} x{1} has been spawned.</value>
+  </data>
+  <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
+    <value>The rental lock has been removed from {0}</value>
   </data>
   <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
     <value>You can already unequip a cursed item</value>
