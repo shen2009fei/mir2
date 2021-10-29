@@ -177,6 +177,9 @@
   <data name="CantUpgrade" xml:space="preserve">
     <value>不能升级</value>
   </data>
+  <data name="CriticalDamage" xml:space="preserve">
+    <value>暴击伤害</value>
+  </data>
   <data name="DestroyedWhenDropped" xml:space="preserve">
     <value>丢弃时销毁</value>
   </data>
@@ -233,6 +236,9 @@
   </data>
   <data name="Quality" xml:space="preserve">
     <value>品质</value>
+  </data>
+  <data name="ReflectChance" xml:space="preserve">
+    <value>反射几率: {0}</value>
   </data>
   <data name="RentalExpiresIn" xml:space="preserve">
     <value>租借过期</value>

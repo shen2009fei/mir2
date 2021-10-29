@@ -177,6 +177,9 @@
   <data name="CantUpgrade" xml:space="preserve">
     <value>Can't upgrade</value>
   </data>
+  <data name="CriticalDamage" xml:space="preserve">
+    <value>Critical Damage</value>
+  </data>
   <data name="DestroyedWhenDropped" xml:space="preserve">
     <value>Destroyed when dropped</value>
   </data>
@@ -233,6 +236,9 @@
   </data>
   <data name="Quality" xml:space="preserve">
     <value>Quality</value>
+  </data>
+  <data name="ReflectChance" xml:space="preserve">
+    <value>Reflect chance: {0}</value>
   </data>
   <data name="RentalExpiresIn" xml:space="preserve">
     <value>Rental expires in</value>

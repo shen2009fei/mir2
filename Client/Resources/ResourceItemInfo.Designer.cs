@@ -241,6 +241,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Critical Damage 的本地化字符串。
+        /// </summary>
+        internal static string CriticalDamage {
+            get {
+                return ResourceManager.GetString("CriticalDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Destroyed when dropped 的本地化字符串。
         /// </summary>
         internal static string DestroyedWhenDropped {
@@ -408,6 +417,15 @@ namespace Client.Resources {
         internal static string Quality {
             get {
                 return ResourceManager.GetString("Quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Reflect chance: {0} 的本地化字符串。
+        /// </summary>
+        internal static string ReflectChance {
+            get {
+                return ResourceManager.GetString("ReflectChance", resourceCulture);
             }
         }
         
