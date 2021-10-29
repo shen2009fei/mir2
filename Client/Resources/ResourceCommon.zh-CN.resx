@@ -162,6 +162,9 @@
   <data name="Others" xml:space="preserve">
     <value>其他</value>
   </data>
+  <data name="PleaseWaitTheGameIsStillLoading" xml:space="preserve">
+    <value>请稍候，游戏仍在加载中... {0:##0}%</value>
+  </data>
   <data name="ServerName" xml:space="preserve">
     <value>热血豪情</value>
   </data>

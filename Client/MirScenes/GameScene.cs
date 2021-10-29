@@ -22,6 +22,7 @@ using Client.MirScenes.Dialogs;
 using System.Drawing.Imaging;
 using Client.Utils;
 using Shared.Extensions;
+using Shared;
 namespace Client.MirScenes
 {
     public sealed class GameScene : MirScene
@@ -805,21 +806,21 @@ namespace Client.MirScenes
                 case Spell.Thrusting:
                     if (CMain.Time < ToggleTime) return;
                     Thrusting = !Thrusting;
-                    ChatDialog.ReceiveChat(Thrusting ? Resources.ResourceCommon.UseThrusting  :Resources.ResourceCommon.DoNotUseThrusting, ChatType.Hint);
+                    ChatDialog.ReceiveChat(Thrusting ? Resources.ResourceCommon.UseThrusting : Resources.ResourceCommon.DoNotUseThrusting, ChatType.Hint);
                     ToggleTime = CMain.Time + 1000;
                     Network.Enqueue(new C.SpellToggle { Spell = magic.Spell, CanUse = Thrusting });
                     break;
                 case Spell.HalfMoon:
                     if (CMain.Time < ToggleTime) return;
                     HalfMoon = !HalfMoon;
-                    ChatDialog.ReceiveChat(HalfMoon ? Resources.ResourceCommon.UseHalfMoon  : Resources.ResourceCommon.DoNotUseHalfMoon , ChatType.Hint);
+                    ChatDialog.ReceiveChat(HalfMoon ? Resources.ResourceCommon.UseHalfMoon : Resources.ResourceCommon.DoNotUseHalfMoon, ChatType.Hint);
                     ToggleTime = CMain.Time + 1000;
                     Network.Enqueue(new C.SpellToggle { Spell = magic.Spell, CanUse = HalfMoon });
                     break;
                 case Spell.CrossHalfMoon:
                     if (CMain.Time < ToggleTime) return;
                     CrossHalfMoon = !CrossHalfMoon;
-                    ChatDialog.ReceiveChat(CrossHalfMoon ? Resources.ResourceCommon.UseCrossHalfMoon  : Resources.ResourceCommon.DoNotUseCrossHalfMoon, ChatType.Hint);
+                    ChatDialog.ReceiveChat(CrossHalfMoon ? Resources.ResourceCommon.UseCrossHalfMoon : Resources.ResourceCommon.DoNotUseCrossHalfMoon, ChatType.Hint);
                     ToggleTime = CMain.Time + 1000;
                     Network.Enqueue(new C.SpellToggle { Spell = magic.Spell, CanUse = CrossHalfMoon });
                     break;
@@ -4237,19 +4238,19 @@ namespace Client.MirScenes
                     break;
                 case Spell.Thrusting:
                     Thrusting = p.CanUse;
-                    ChatDialog.ReceiveChat(Thrusting ? "Use Thrusting." : "Do not use Thrusting.", ChatType.Hint);
+                    ChatDialog.ReceiveChat(Thrusting ? Resources.ResourceCommon.UseThrusting : Resources.ResourceCommon.DoNotUseThrusting, ChatType.Hint);
                     break;
                 case Spell.HalfMoon:
                     HalfMoon = p.CanUse;
-                    ChatDialog.ReceiveChat(HalfMoon ? "Use HalfMoon." : "Do not use HalfMoon.", ChatType.Hint);
+                    ChatDialog.ReceiveChat(HalfMoon ? Resources.ResourceCommon.UseHalfMoon : Resources.ResourceCommon.DoNotUseHalfMoon, ChatType.Hint);
                     break;
                 case Spell.CrossHalfMoon:
                     CrossHalfMoon = p.CanUse;
-                    ChatDialog.ReceiveChat(CrossHalfMoon ? "Use CrossHalfMoon." : "Do not use CrossHalfMoon.", ChatType.Hint);
+                    ChatDialog.ReceiveChat(CrossHalfMoon ? Resources.ResourceCommon.UseCrossHalfMoon : Resources.ResourceCommon.DoNotUseCrossHalfMoon, ChatType.Hint);
                     break;
                 case Spell.DoubleSlash:
                     DoubleSlash = p.CanUse;
-                    ChatDialog.ReceiveChat(DoubleSlash ? "Use DoubleSlash." : "Do not use DoubleSlash.", ChatType.Hint);
+                    ChatDialog.ReceiveChat(DoubleSlash ? Resources.ResourceCommon.UseDoubleSlash : Resources.ResourceCommon.DoNotUseDoubleSlash, ChatType.Hint);
                     break;
                 case Spell.FlamingSword:
                     FlamingSword = p.CanUse;
@@ -6025,7 +6026,7 @@ namespace Client.MirScenes
                 baseText = GameLanguage.WeddingRing;
             }
 
-            baseText = string.Format("{0}{1}{2} {3}", baseText, string.IsNullOrEmpty(baseText) ? "" : "\n",Resources.ResourceItemInfo.Weight+":", HoverItem.Weight + text);
+            baseText = string.Format("{0}{1}{2} {3}", baseText, string.IsNullOrEmpty(baseText) ? "" : "\n", Resources.ResourceItemInfo.Weight + ":", HoverItem.Weight + text);
 
             MirLabel etcLabel = new MirLabel
             {
@@ -6120,7 +6121,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}",Resources.ResourceCharStat1.DC, minValue, maxValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}", Resources.ResourceCharStat1.DC, minValue, maxValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.DC);
                 MirLabel DCLabel = new MirLabel
@@ -6178,7 +6179,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}",Resources.ResourceCharStat1.SC, minValue, maxValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}", Resources.ResourceCharStat1.SC, minValue, maxValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.SC);
                 MirLabel SCLabel = new MirLabel
@@ -6253,7 +6254,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}",Resources.ResourceCharStat1.Accuracy, minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}", Resources.ResourceCharStat1.Accuracy, minValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.Accuracy);
                 MirLabel ACCLabel = new MirLabel
@@ -6290,7 +6291,7 @@ namespace Client.MirScenes
                     OutLine = true,
                     Parent = ItemLabel,
                     //Text = string.Format("Holy + {0}", minValue + addValue)
-                    Text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}",Resources.ResourceCharStat2.HolyPower, minValue + addValue, addValue)
+                    Text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}", Resources.ResourceCharStat2.HolyPower, minValue + addValue, addValue)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, HOLYLabel.DisplayRectangle.Right + 4),
@@ -6418,7 +6419,7 @@ namespace Client.MirScenes
 
                 if (fishingItem)
                 {
-                    CRITICALRATELabel.Text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}",Resources.ResourceCharStat1.Flexibility, minValue + addValue, addValue);
+                    CRITICALRATELabel.Text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}", Resources.ResourceCharStat1.Flexibility, minValue + addValue, addValue);
                 }
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, CRITICALRATELabel.DisplayRectangle.Right + 4),
@@ -6667,7 +6668,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}",Resources.ResourceCharStat1.AC, minValue, maxValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}", Resources.ResourceCharStat1.AC, minValue, maxValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.AC);
                 MirLabel ACLabel = new MirLabel
@@ -6713,7 +6714,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}",Resources.ResourceCharStat1.MAC, minValue, maxValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0} + {1}~{2} (+{3})" : "{0} + {1}~{2}", Resources.ResourceCharStat1.MAC, minValue, maxValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.MAC);
                 MirLabel MACLabel = new MirLabel
@@ -6981,7 +6982,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}",Resources.ResourceCharStat1.Agility, minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}", Resources.ResourceCharStat1.Agility, minValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat1.Agility);
 
@@ -7953,11 +7954,11 @@ namespace Client.MirScenes
                 string Text = "";
                 if (HoverItem.Info.Unique == SpecialItemMode.None)
                 {
-                    Text =Resources.ResourceItemInfo.CannotBeUsedOnAnyItem;
+                    Text = Resources.ResourceItemInfo.CannotBeUsedOnAnyItem;
                 }
                 else
                 {
-                    Text =Resources.ResourceItemInfo.CanBeUsedOn;
+                    Text = Resources.ResourceItemInfo.CanBeUsedOn;
                 }
                 MirLabel GemUseOn = new MirLabel
                 {
@@ -8001,7 +8002,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+ Resources.ResourceItemInfo.Armour
+                        Text = "-" + Resources.ResourceItemInfo.Armour
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, GemArmour.DisplayRectangle.Right + 4),
@@ -8019,7 +8020,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+ Resources.ResourceItemInfo.Helmet
+                        Text = "-" + Resources.ResourceItemInfo.Helmet
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, Gemhelmet.DisplayRectangle.Right + 4),
@@ -8037,7 +8038,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+Resources.ResourceItemInfo.Necklace
+                        Text = "-" + Resources.ResourceItemInfo.Necklace
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, Gemnecklace.DisplayRectangle.Right + 4),
@@ -8055,7 +8056,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+Resources.ResourceItemInfo.Bracelet
+                        Text = "-" + Resources.ResourceItemInfo.Bracelet
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, GemBracelet.DisplayRectangle.Right + 4),
@@ -8073,7 +8074,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+Resources.ResourceItemInfo.Ring
+                        Text = "-" + Resources.ResourceItemInfo.Ring
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, GemRing.DisplayRectangle.Right + 4),
@@ -8091,7 +8092,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+Resources.ResourceItemInfo.Amulet
+                        Text = "-" + Resources.ResourceItemInfo.Amulet
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, Gemamulet.DisplayRectangle.Right + 4),
@@ -8109,7 +8110,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+Resources.ResourceItemInfo.Belt
+                        Text = "-" + Resources.ResourceItemInfo.Belt
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, Gembelt.DisplayRectangle.Right + 4),
@@ -8127,7 +8128,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+Resources.ResourceItemInfo.Boots
+                        Text = "-" + Resources.ResourceItemInfo.Boots
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, Gemboots.DisplayRectangle.Right + 4),
@@ -8145,7 +8146,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+Resources.ResourceItemInfo.Stone
+                        Text = "-" + Resources.ResourceItemInfo.Stone
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, Gemstone.DisplayRectangle.Right + 4),
@@ -8163,7 +8164,7 @@ namespace Client.MirScenes
                         Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                         OutLine = true,
                         Parent = ItemLabel,
-                        Text = "-"+Resources.ResourceItemInfo.Candle
+                        Text = "-" + Resources.ResourceItemInfo.Candle
                     };
 
                     ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, Gemtorch.DisplayRectangle.Right + 4),
@@ -8209,7 +8210,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = remainingSeconds > 0 ? string.Format("{0} {1}",Resources.ResourceItemInfo.ExpiresIn, Functions.PrintTimeSpanFromSeconds(remainingSeconds)) : GameLanguage.Expired
+                    Text = remainingSeconds > 0 ? string.Format("{0} {1}", Resources.ResourceItemInfo.ExpiresIn, Functions.PrintTimeSpanFromSeconds(remainingSeconds)) : GameLanguage.Expired
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, EXPIRELabel.DisplayRectangle.Right + 4),
@@ -8229,7 +8230,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text =Resources.ResourceItemInfo.ItemRentedFrom + ": " + HoverItem.RentalInformation.OwnerName
+                    Text = Resources.ResourceItemInfo.ItemRentedFrom + ": " + HoverItem.RentalInformation.OwnerName
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, OWNERLabel.DisplayRectangle.Right + 4),
@@ -8245,7 +8246,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = remainingTime > 0 ? string.Format(Resources.ResourceItemInfo.RentalExpiresIn+ ": {0}", Functions.PrintTimeSpanFromSeconds(remainingTime)) : "Rental expired"
+                    Text = remainingTime > 0 ? string.Format(Resources.ResourceItemInfo.RentalExpiresIn + ": {0}", Functions.PrintTimeSpanFromSeconds(remainingTime)) : "Rental expired"
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, RENTALLabel.DisplayRectangle.Right + 4),
@@ -8319,11 +8320,11 @@ namespace Client.MirScenes
                         text = Resources.ResourceItemInfo.HoldCTRLAndLeftClickToRepairWeapons;
                         break;
                     case 2:
-                        text =Resources.ResourceItemInfo.HoldCTRLAndLeftClickToRepairArmourAndAccessoryItems;
+                        text = Resources.ResourceItemInfo.HoldCTRLAndLeftClickToRepairArmourAndAccessoryItems;
                         break;
                     case 3:
                     case 4:
-                        text =Resources.ResourceItemInfo.HoldCTRLAndLeftClickToCombineWithAnItem;
+                        text = Resources.ResourceItemInfo.HoldCTRLAndLeftClickToCombineWithAnItem;
                         break;
                 }
                 count++;

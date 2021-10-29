@@ -243,9 +243,9 @@ namespace Client.MirScenes
         {
             if (!Libraries.Loaded)
             {
-                MirMessageBox message = new MirMessageBox(string.Format("Please wait, The game is still loading... {0:##0}%", Libraries.Progress / (double)Libraries.Count * 100), MirMessageBoxButtons.Cancel);
+                MirMessageBox message = new MirMessageBox(string.Format(Resources.ResourceCommon.PleaseWaitTheGameIsStillLoading, Libraries.Progress / (double)Libraries.Count * 100), MirMessageBoxButtons.Cancel);
 
-                message.BeforeDraw += (o, e) => message.Label.Text = string.Format("Please wait, The game is still loading... {0:##0}%", Libraries.Progress / (double)Libraries.Count * 100);
+                message.BeforeDraw += (o, e) => message.Label.Text = string.Format(Resources.ResourceCommon.PleaseWaitTheGameIsStillLoading, Libraries.Progress / (double)Libraries.Count * 100);
 
                 message.AfterDraw += (o, e) =>
                 {

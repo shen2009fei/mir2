@@ -162,6 +162,9 @@
   <data name="Others" xml:space="preserve">
     <value>Others</value>
   </data>
+  <data name="PleaseWaitTheGameIsStillLoading" xml:space="preserve">
+    <value>Please wait, The game is still loading... {0:##0}%</value>
+  </data>
   <data name="ServerName" xml:space="preserve">
     <value>Legend of Mir 2</value>
   </data>

@@ -10,7 +10,6 @@ using Server.MirNetwork;
 using S = ServerPackets;
 using System.Text.RegularExpressions;
 using Server.MirObjects.Monsters;
-
 namespace Server.MirObjects
 {
     public sealed class PlayerObject : MapObject
@@ -11214,6 +11213,7 @@ namespace Server.MirObjects
                         case 2: //MysteryWater
                             if (UnlockCurse)
                             {
+                               
                                 ReceiveChat(Resources.ResourceCommon.YouCanAlreadyUnequipACursedItem , ChatType.Hint);
                                 Enqueue(p);
                                 return;
@@ -18831,8 +18831,13 @@ case StatType.Durability:
             int successChance = (itemSuccess + oreSuccess + luckSuccess + baseSuccess);
 
             short addedStats = (byte)(Info.CurrentRefine.AddedStats[Stat.MaxDC] + Info.CurrentRefine.AddedStats[Stat.MaxMC] + Info.CurrentRefine.AddedStats[Stat.MaxSC]);
-            if (Info.CurrentRefine.Info.Type == ItemType.Weapon) addedStats = (short)(addedStats * Settings.RefineWepStatReduce);
-            else addedStats = (short)(addedStats * Settings.RefineItemStatReduce);
+            if (Info.CurrentRefine.Info.Type == ItemType.Weapon)
+            {
+                addedStats = (short)(addedStats * Settings.RefineWepStatReduce);
+            }
+            else { 
+                addedStats = (short)(addedStats * Settings.RefineItemStatReduce); 
+            }
             if (addedStats > 50) addedStats = 50;
 
             successChance -= addedStats;

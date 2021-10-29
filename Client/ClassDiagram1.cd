@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Client.MirControls.MirAmountBox" Collapsed="true">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAIAgQACiAAAAAAEAAAICAAAIEAAACAAAABAIQQAQ=</HashCode>
+      <FileName>MirControls\MirAmountBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirAnimatedButton" Collapsed="true">
+    <Position X="20" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CECAAAhIjCCAACAhABAAKAAQMAAACJRAYAEAYhFAoEA=</HashCode>
+      <FileName>MirControls\MirAnimatedButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirAnimatedControl" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CECAAAhIjCCAACAhABAAKAAQMAAACJRAYAEAYhFAoEA=</HashCode>
+      <FileName>MirControls\MirAnimatedControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirButton" Collapsed="true">
+    <Position X="21.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCBBREBAABABCAAAAAAAAEAAAAEACAlEAAI=</HashCode>
+      <FileName>MirControls\MirButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirCheckBox" Collapsed="true">
+    <Position X="22.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABCAAAAAAKAABAAAAAAAAAAAAAAAAAAAIMABAo=</HashCode>
+      <FileName>MirControls\MirCheckBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirControl" Collapsed="true">
+    <Position X="25.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>OopBMMBdYbHBovPVUu556hT0oBoNGES/r6Dog1LOqk0=</HashCode>
+      <FileName>MirControls\MirControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.MirControls.MirDropDownBox" Collapsed="true">
+    <Position X="26.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A0UAAAAIArCBGgAAIBAAAAACEEAAAASAgJUEAAAAAAQ=</HashCode>
+      <FileName>MirControls\MirDropDownBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.GameShopCell" Collapsed="true">
+    <Position X="15.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAACCAGgAAAgBQAAAAAAEC5AAgAGABAAIgACAAAA=</HashCode>
+      <FileName>MirControls\MirGameShopCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.GameShopViewer" Collapsed="true">
+    <Position X="24.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAKAACAAQAAAAAgCACIAAAgAQAAIIAAABAAAAAAAA=</HashCode>
+      <FileName>MirControls\MirGameShopCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirGoodsCell" Collapsed="true">
+    <Position X="44.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIxAAABIAAAAAAAAAEBIACAEAAAAIAAgAAAAAAAAAAA=</HashCode>
+      <FileName>MirControls\MirGoodsCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirImageControl" Collapsed="true">
+    <Position X="15" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABBAAIAQgCAAgAAECIAwAIDUqABAIAAAAAEIAAAACAI=</HashCode>
+      <FileName>MirControls\MirImageControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirInputBox" Collapsed="true">
+    <Position X="10.5" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IkAAAAAAACCAAAAAAAAAAAAAAAIEAAAAAAAABAASAAQ=</HashCode>
+      <FileName>MirControls\MirInputBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirItemCell" Collapsed="true">
+    <Position X="17.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIDBABTrAAgAFQAAgEBAghBUAAIAAAAkAgEIBAAAAAA=</HashCode>
+      <FileName>MirControls\MirItemCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirLabel" Collapsed="true">
+    <Position X="40.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAKAJQAKAAIgAEgAAAFGAACAMIAEACAACBEA=</HashCode>
+      <FileName>MirControls\MirLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirMessageBox" Collapsed="true">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAAAAAAECCgAAAAABAAAAAAAAIEAAAAAAAAhAAQAAA=</HashCode>
+      <FileName>MirControls\MirMessageBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirScene" Collapsed="true">
+    <Position X="33.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIwAIAAAALAAggCACgBAAAAAAJABAAAAIghAAAACAAA=</HashCode>
+      <FileName>MirControls\MirScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirScrollingLabel" Collapsed="true">
+    <Position X="38" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAABAAAAAAAAAAAAAAAAAQQAAAAAAEQgAACAQA=</HashCode>
+      <FileName>MirControls\MirScrollingLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirControls.MirTextBox" Collapsed="true">
+    <Position X="42.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FoAAIAAAAKIVAAIZCAAAAAAAAAABAACKEAAQCAACgAA=</HashCode>
+      <FileName>MirControls\MirTextBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirScenes.GameScene" Collapsed="true">
+    <Position X="35.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>v/299/9+dr3+b7bzt7t/9//z799/9P39vfe/NHq5f7c=</HashCode>
+      <FileName>MirScenes\GameScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirScenes.MapControl" Collapsed="true">
+    <Position X="29" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BISJADEGRKAE6kXgMkQABkXwBDgEAYFAogGd4BBgAEA=</HashCode>
+      <FileName>MirScenes\GameScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirScenes.LoginScene" Collapsed="true">
+    <Position X="31.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAQAKAAwAAIAgIAAEAIEIAAAAAAAgQQIQAAAAA=</HashCode>
+      <FileName>MirScenes\LoginScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirScenes.SelectScene" Collapsed="true">
+    <Position X="33.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAEAAAACBAWEAAAgAAAAAgIIAAgAkAAQCggAAAABI=</HashCode>
+      <FileName>MirScenes\SelectScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.MapObject" Collapsed="true">
+    <Position X="10.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aQABgABAQxAKIoKSRiQKJoyoUCBQCUmiCSgqCCWWAWE=</HashCode>
+      <FileName>MirObjects\MapObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.FrameLoop" Collapsed="true">
+    <Position X="47.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAgAAQ=</HashCode>
+      <FileName>MirObjects\MapObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.UserObject" Collapsed="true">
+    <Position X="7" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gTIDkwAQgQCAFgAECA8jAUSHUmQCIEIQAAQAAwAARmA=</HashCode>
+      <FileName>MirObjects\UserObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.PlayerObject" Collapsed="true">
+    <Position X="7" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>4BY08NYDEQGAgiqOqk6RZfQCEKRkSqhjIWiIEg5SQOU=</HashCode>
+      <FileName>MirObjects\PlayerObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.QueuedAction" Collapsed="true">
+    <Position X="47.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAACIAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>MirObjects\PlayerObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.Damage" Collapsed="true">
+    <Position X="49" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABEAAAAAgAAAAACAAAAAAAAAABAAAAACBAAgAA=</HashCode>
+      <FileName>MirObjects\Damage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.DecoObject">
+    <Position X="13.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAgAAAAAAAAgAAAgAAAAAAACAAABAAAAAIAAAAAAE=</HashCode>
+      <FileName>MirObjects\DecoObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.Effect" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACABBCAAiACAgICCkAABgwIAAAIAEAAAAIAASBAAAA=</HashCode>
+      <FileName>MirObjects\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.Missile" Collapsed="true">
+    <Position X="9.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAqAABCgBEAAAAAAEAAAAAAAAEAA=</HashCode>
+      <FileName>MirObjects\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.InterruptionEffect" Collapsed="true">
+    <Position X="11.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAkAAAgAABAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MirObjects\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.ElementsEffect" Collapsed="true">
+    <Position X="14" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgABAgAABAIAAAAQAAAAAAAAAAAACCA=</HashCode>
+      <FileName>MirObjects\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.DelayedExplosionEffect" Collapsed="true">
+    <Position X="20.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAgAAAgAABAAAQAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MirObjects\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.SpecialEffect" Collapsed="true">
+    <Position X="5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MirObjects\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.BuffEffect" Collapsed="true">
+    <Position X="7.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>MirObjects\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.TrackableEffect" Collapsed="true">
+    <Position X="16.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAgAABAAAQAAAAAgAAAAACAAAAAA=</HashCode>
+      <FileName>MirObjects\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.LightEffect" Collapsed="true">
+    <Position X="18.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MirObjects\Effect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.FrameSet" Collapsed="true">
+    <Position X="49" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAQAQAQQAAAAAAAAAAAAAQAgAAA=</HashCode>
+      <FileName>MirObjects\Frames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.Frame" Collapsed="true">
+    <Position X="50.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAAAAiAAAAABAIAAAAQAAAAAAEAACAACAAAAEBA=</HashCode>
+      <FileName>MirObjects\Frames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.ItemObject" Collapsed="true">
+    <Position X="9.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAgAAAAAAAggAAAgAAAAAAACAAAAACAAAIAAAQAAE=</HashCode>
+      <FileName>MirObjects\ItemObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.CellInfo" Collapsed="true">
+    <Position X="47.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CkAAACACAwAEiIAAAMAQAgQABiAIAAAAAABgAAAAABA=</HashCode>
+      <FileName>MirObjects\MapCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.MapReader" Collapsed="true">
+    <Position X="50.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACIABAgAAAAAAIAAAEAAAAAAAAAAAAAIAABAAAA=</HashCode>
+      <FileName>MirObjects\MapCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.MonsterObject" Collapsed="true">
+    <Position X="16" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QFSigAABMAgQAoIGIiCDCVAAALgCCIBCECgIgABJUCU=</HashCode>
+      <FileName>MirObjects\MonsterObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.NPCObject" Collapsed="true">
+    <Position X="4.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBACgAAFCAAgAgAOAkiAAEAAACAAABACAAAIQLhAAEE=</HashCode>
+      <FileName>MirObjects\NPCObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirObjects.SpellObject" Collapsed="true">
+    <Position X="11.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAgAAAAAAAAgEAAgAAAEABACAAAIAAAAIIAABAAAE=</HashCode>
+      <FileName>MirObjects\SpellObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirGraphics.DXManager" Collapsed="true">
+    <Position X="40.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FCAEkAiAhAAIAkAAABAAIiQQAgChBEQRAMgAAlAFUEA=</HashCode>
+      <FileName>MirGraphics\DXManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirGraphics.Libraries" Collapsed="true">
+    <Position X="42.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YgBAFAWgQA0IiFAMBhUAACYAABAQASAAEBAkFkrBAAA=</HashCode>
+      <FileName>MirGraphics\MLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirGraphics.MLibrary" Collapsed="true">
+    <Position X="42.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAABAACAGAwSAAQAMCEgAEABAAQEAAACAAACAAAE=</HashCode>
+      <FileName>MirGraphics\MLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MirGraphics.MImage" Collapsed="true">
+    <Position X="40.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAABABIAQBAAAEAAiAEhAABAAEBAAARAAAAAYeEA=</HashCode>
+      <FileName>MirGraphics\MLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Client.MirControls.MirMessageBoxButtons" Collapsed="true">
+    <Position X="47.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAACAABAAACAAA=</HashCode>
+      <FileName>MirControls\MirMessageBox.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
