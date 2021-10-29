@@ -7144,7 +7144,7 @@ namespace Client.MirScenes
                     OutLine = true,
                     Parent = ItemLabel,
                     //Text = string.Format("Hand Weight + {0}", minValue + addValue)
-                    Text = string.Format(addValue > 0 ? "Hand Weight + {0} (+{1})" : "Hand Weight + {0}", minValue + addValue, addValue)
+                    Text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}",Resources.ResourceCharStat2.HandWeight,  minValue + addValue, addValue)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, HANDWEIGHTLabel.DisplayRectangle.Right + 4),
@@ -7170,7 +7170,7 @@ namespace Client.MirScenes
                     OutLine = true,
                     Parent = ItemLabel,
                     //Text = string.Format("Wear Weight + {0}", minValue + addValue)
-                    Text = string.Format(addValue > 0 ? "Wear Weight + {0} (+{1})" : "Wear Weight + {0}", minValue + addValue, addValue)
+                    Text = string.Format(addValue > 0 ? "{0} + {1} (+{2})" : "{0} + {1}", Resources.ResourceCharStat2.ArmourWeight, minValue + addValue, addValue)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, WEARWEIGHTLabel.DisplayRectangle.Right + 4),
