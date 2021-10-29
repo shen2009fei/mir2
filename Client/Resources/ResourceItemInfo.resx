@@ -153,14 +153,29 @@
   <data name="CannotBeUsedOnAnyItem" xml:space="preserve">
     <value>Cannot be used on any item.</value>
   </data>
+  <data name="CantAwaken" xml:space="preserve">
+    <value>Can't awaken</value>
+  </data>
   <data name="CantDrop" xml:space="preserve">
     <value>Can't drop</value>
   </data>
   <data name="CantDropOnDeath" xml:space="preserve">
     <value>Can't drop on death</value>
   </data>
+  <data name="CantRepair" xml:space="preserve">
+    <value>Can't repair</value>
+  </data>
+  <data name="CantSpecialRepair" xml:space="preserve">
+    <value>Can't special repair</value>
+  </data>
+  <data name="CantStore" xml:space="preserve">
+    <value>Can't store</value>
+  </data>
   <data name="CantTrade" xml:space="preserve">
     <value>Can't trade</value>
+  </data>
+  <data name="CantUpgrade" xml:space="preserve">
+    <value>Can't upgrade</value>
   </data>
   <data name="DestroyedWhenDropped" xml:space="preserve">
     <value>Destroyed when dropped</value>

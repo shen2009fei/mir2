@@ -153,14 +153,29 @@
   <data name="CannotBeUsedOnAnyItem" xml:space="preserve">
     <value>不能用于任何物品</value>
   </data>
+  <data name="CantAwaken" xml:space="preserve">
+    <value>不能觉醒</value>
+  </data>
   <data name="CantDrop" xml:space="preserve">
     <value>不会掉落</value>
   </data>
   <data name="CantDropOnDeath" xml:space="preserve">
     <value>死亡时不会掉落</value>
   </data>
+  <data name="CantRepair" xml:space="preserve">
+    <value>不能修理</value>
+  </data>
+  <data name="CantSpecialRepair" xml:space="preserve">
+    <value>不能特殊修理</value>
+  </data>
+  <data name="CantStore" xml:space="preserve">
+    <value>不能存储</value>
+  </data>
   <data name="CantTrade" xml:space="preserve">
     <value>不能交易</value>
+  </data>
+  <data name="CantUpgrade" xml:space="preserve">
+    <value>不能升级</value>
   </data>
   <data name="DestroyedWhenDropped" xml:space="preserve">
     <value>丢弃时销毁</value>

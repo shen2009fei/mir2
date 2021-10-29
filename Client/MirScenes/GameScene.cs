@@ -7710,7 +7710,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = string.Format("Can't upgrade")
+                    Text = string.Format(Resources.ResourceItemInfo.CantUpgrade)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, DONT_UPGRADELabel.DisplayRectangle.Right + 4),
@@ -7773,7 +7773,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = string.Format("Can't store")
+                    Text = string.Format(Resources.ResourceItemInfo.CantStore)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, DONT_STORELabel.DisplayRectangle.Right + 4),
@@ -7794,7 +7794,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = string.Format("Can't repair")
+                    Text = string.Format(Resources.ResourceItemInfo.CantRepair)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, DONT_REPAIRLabel.DisplayRectangle.Right + 4),
@@ -7815,7 +7815,7 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    Text = string.Format("Can't special repair")
+                    Text = string.Format(Resources.ResourceItemInfo.CantSpecialRepair)
                 };
 
                 ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, DONT_REPAIRLabel.DisplayRectangle.Right + 4),
@@ -8187,7 +8187,7 @@ namespace Client.MirScenes
             //        Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
             //        OutLine = true,
             //        Parent = ItemLabel,
-            //        Text = string.Format("Can't awaken")
+            //        Text = string.Format(Resources.ResourceItemInfo.CantAwaken)
             //    };
 
             //    ItemLabel.Size = new Size(Math.Max(ItemLabel.Size.Width, CANTAWAKENINGLabel.DisplayRectangle.Right + 4),

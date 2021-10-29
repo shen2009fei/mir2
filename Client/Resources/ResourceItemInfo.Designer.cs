@@ -169,6 +169,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Can&apos;t awaken 的本地化字符串。
+        /// </summary>
+        internal static string CantAwaken {
+            get {
+                return ResourceManager.GetString("CantAwaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Can&apos;t drop 的本地化字符串。
         /// </summary>
         internal static string CantDrop {
@@ -187,11 +196,47 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Can&apos;t repair 的本地化字符串。
+        /// </summary>
+        internal static string CantRepair {
+            get {
+                return ResourceManager.GetString("CantRepair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Can&apos;t special repair 的本地化字符串。
+        /// </summary>
+        internal static string CantSpecialRepair {
+            get {
+                return ResourceManager.GetString("CantSpecialRepair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Can&apos;t store 的本地化字符串。
+        /// </summary>
+        internal static string CantStore {
+            get {
+                return ResourceManager.GetString("CantStore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Can&apos;t trade 的本地化字符串。
         /// </summary>
         internal static string CantTrade {
             get {
                 return ResourceManager.GetString("CantTrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Can&apos;t upgrade 的本地化字符串。
+        /// </summary>
+        internal static string CantUpgrade {
+            get {
+                return ResourceManager.GetString("CantUpgrade", resourceCulture);
             }
         }
         
