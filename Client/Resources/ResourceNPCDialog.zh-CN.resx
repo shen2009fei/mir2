@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="auctionText" xml:space="preserve">
+    <value>1. 拍卖成本为 {0} 金币，每件商品的最高起拍价为 {1} 金币 \r\n\r\n2. 拍卖结束时将最终出价的 1% 支付给信托商人\r\n\r\n3. 最多 {2} 天的物品销售登记，之后物品将被发送给出价最高的人\r\n\r\n4. 允许拍卖的最多"无限"商品\r\n\r\n</value>
+  </data>
   <data name="BodyGlyph" xml:space="preserve">
     <value>炼体雕文</value>
   </data>
@@ -147,6 +150,9 @@
   <data name="ConsignmentPrice" xml:space="preserve">
     <value>寄售价格:</value>
   </data>
+  <data name="consignmentText" xml:space="preserve">
+    <value>1. 寄售为每件 {0} 金币 \r\n\r\n2. 销售结束时将销售价格的 1% 支付给信托商人\r\n\r\n3. 物品寄售最长天数为{1}天\r\n\r\n4. 允许寄售商品数量无限\r\n\r\n5. 销售价格可以设置在：{2} - {3} 金币之间</value>
+  </data>
   <data name="CraftAmount" xml:space="preserve">
     <value>制造数量:</value>
   </data>
@@ -158,6 +164,9 @@
   </data>
   <data name="Gold" xml:space="preserve">
     <value>金币</value>
+  </data>
+  <data name="IAmInterestedInPurchasingFor" xml:space="preserve">
+    <value>我有兴趣以 {1} 元购买 {0}。</value>
   </data>
   <data name="IsntARing" xml:space="preserve">
     <value>{0} 不是戒子。</value>

@@ -61,6 +61,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 1. Auction cost is {0} gold, max starting bid is {1} gold per item \r\n\r\n2. 1% of final bid price is paid to Trust Merchant at auction end\r\n\r\n3. Maximum {2} days of item sale registration, afterwards the item will be sent to highest bidder\r\n\r\n4. Maximum of unlimited &quot;items allowed for auction\r\n\r\n 的本地化字符串。
+        /// </summary>
+        internal static string auctionText {
+            get {
+                return ResourceManager.GetString("auctionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Body Glyph 的本地化字符串。
         /// </summary>
         internal static string BodyGlyph {
@@ -151,6 +160,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 1. Consignment is {0} gold per item \r\n\r\n2. 1% of sale price is paid to Trust Merchant at sale end\r\n\r\n3. Maximum {1} days of item sale registration until item is removed\r\n\r\n4. Maximum of unlimited items allowed for sale\r\n\r\n5. Sale price can be set between: {2} - {3} gold 的本地化字符串。
+        /// </summary>
+        internal static string consignmentText {
+            get {
+                return ResourceManager.GetString("consignmentText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Craft Amount: 的本地化字符串。
         /// </summary>
         internal static string CraftAmount {
@@ -183,6 +201,15 @@ namespace Client.Resources {
         internal static string Gold {
             get {
                 return ResourceManager.GetString("Gold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 I am interested in purchasing {0} for {1}. 的本地化字符串。
+        /// </summary>
+        internal static string IAmInterestedInPurchasingFor {
+            get {
+                return ResourceManager.GetString("IAmInterestedInPurchasingFor", resourceCulture);
             }
         }
         
