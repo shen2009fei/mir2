@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BidMet" xml:space="preserve">
+    <value>有竞价</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>已到期</value>
+  </data>
+  <data name="ForSale" xml:space="preserve">
+    <value>出售</value>
+  </data>
   <data name="HasJustExpiredFromYourEquipment" xml:space="preserve">
     <value>刚刚从您的装备中过期。</value>
   </data>
@@ -129,8 +138,20 @@
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
     <value>怪物 {0} x{1} 已生成。</value>
   </data>
+  <data name="NoBid" xml:space="preserve">
+    <value>无竞价</value>
+  </data>
+  <data name="Sold" xml:space="preserve">
+    <value>卖掉</value>
+  </data>
+  <data name="SomeoneHasBidGoldFor" xml:space="preserve">
+    <value>有人为 {0} 出价 {1:#,##0} 金币</value>
+  </data>
   <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
     <value>租赁锁定已从{0}中移除</value>
+  </data>
+  <data name="YouBidGoldFor" xml:space="preserve">
+    <value>你为 {0} 出价 {1:#,##0} 金币</value>
   </data>
   <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
     <value>你已经取下被诅咒的物品了。</value>

@@ -117,14 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccessoryItems" xml:space="preserve">
+    <value>Accessory Items</value>
+  </data>
+  <data name="AreYouSureYouWantToBidGoldFor" xml:space="preserve">
+    <value>Are you sure you want to bid {0:#,##0} Gold for {1}?</value>
+  </data>
+  <data name="AreYouSureYouWantToBuyFor" xml:space="preserve">
+    <value>Are you sure you want to buy {0} for {1:#,##0} {2}?</value>
+  </data>
   <data name="auctionText" xml:space="preserve">
     <value>1. Auction cost is {0} gold, max starting bid is {1} gold per item \r\n\r\n2. 1% of final bid price is paid to Trust Merchant at auction end\r\n\r\n3. Maximum {2} days of item sale registration, afterwards the item will be sent to highest bidder\r\n\r\n4. Maximum of unlimited "items allowed for auction\r\n\r\n</value>
+  </data>
+  <data name="Bid" xml:space="preserve">
+    <value>Bid</value>
+  </data>
+  <data name="BidAmount" xml:space="preserve">
+    <value>Bid Amount:</value>
+  </data>
+  <data name="BidMet" xml:space="preserve">
+    <value>Bid Met</value>
   </data>
   <data name="BodyGlyph" xml:space="preserve">
     <value>Body Glyph</value>
   </data>
+  <data name="Books" xml:space="preserve">
+    <value>Books</value>
+  </data>
   <data name="BraveryGlyph" xml:space="preserve">
     <value>Bravery Glyp</value>
+  </data>
+  <data name="BuffPots" xml:space="preserve">
+    <value>Buff Pots</value>
   </data>
   <data name="CannotCarryAnymoreGold" xml:space="preserve">
     <value>Cannot carry anymore gold.</value>
@@ -153,17 +177,47 @@
   <data name="consignmentText" xml:space="preserve">
     <value>1. Consignment is {0} gold per item \r\n\r\n2. 1% of sale price is paid to Trust Merchant at sale end\r\n\r\n3. Maximum {1} days of item sale registration until item is removed\r\n\r\n4. Maximum of unlimited items allowed for sale\r\n\r\n5. Sale price can be set between: {2} - {3} gold</value>
   </data>
+  <data name="ConsumableItems" xml:space="preserve">
+    <value>Consumable Items</value>
+  </data>
   <data name="CraftAmount" xml:space="preserve">
     <value>Craft Amount:</value>
+  </data>
+  <data name="CraftItems" xml:space="preserve">
+    <value>Craft Items</value>
   </data>
   <data name="Downgrade" xml:space="preserve">
     <value>Downgrade</value>
   </data>
+  <data name="DraperyItems" xml:space="preserve">
+    <value>Drapery Items</value>
+  </data>
+  <data name="ENDDATE" xml:space="preserve">
+    <value>END DATE</value>
+  </data>
+  <data name="Enhancement" xml:space="preserve">
+    <value>Enhancement</value>
+  </data>
   <data name="EvilSlayerGlyph" xml:space="preserve">
     <value>EvilSlayer Glyph</value>
   </data>
+  <data name="Expired" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="EXPIRY" xml:space="preserve">
+    <value>EXPIRY</value>
+  </data>
+  <data name="ForSale" xml:space="preserve">
+    <value>For Sale</value>
+  </data>
   <data name="Gold" xml:space="preserve">
     <value>Gold</value>
+  </data>
+  <data name="HasNotSoldAreYouSureYouWantToGetItBack" xml:space="preserve">
+    <value>{0} has not sold, Are you sure you want to get it back?</value>
+  </data>
+  <data name="HIGHESTBID" xml:space="preserve">
+    <value>HIGHEST BID</value>
   </data>
   <data name="IAmInterestedInPurchasingFor" xml:space="preserve">
     <value>I am interested in purchasing {0} for {1}.</value>
@@ -171,11 +225,29 @@
   <data name="IsntARing" xml:space="preserve">
     <value>{0} isn't a ring.</value>
   </data>
+  <data name="ITEM" xml:space="preserve">
+    <value>ITEM</value>
+  </data>
   <data name="ItemWillBeDestroyed" xml:space="preserve">
     <value>Item will be Destroyed</value>
   </data>
   <data name="MagicGlyph" xml:space="preserve">
     <value>Magic Glyph</value>
+  </data>
+  <data name="MiscItems" xml:space="preserve">
+    <value>Misc Items</value>
+  </data>
+  <data name="NoBid" xml:space="preserve">
+    <value>No Bid</value>
+  </data>
+  <data name="Orbs" xml:space="preserve">
+    <value>Orbs</value>
+  </data>
+  <data name="PRICE" xml:space="preserve">
+    <value>PRICE</value>
+  </data>
+  <data name="PRICEBID" xml:space="preserve">
+    <value>PRICE / BID</value>
   </data>
   <data name="PriceGold" xml:space="preserve">
     <value>Price: {0} gold</value>
@@ -192,6 +264,9 @@
   <data name="Quantity" xml:space="preserve">
     <value>Quantity</value>
   </data>
+  <data name="RecoveryPots" xml:space="preserve">
+    <value>Recovery Pots</value>
+  </data>
   <data name="Refine" xml:space="preserve">
     <value>Refine</value>
   </data>
@@ -207,11 +282,29 @@
   <data name="Sale" xml:space="preserve">
     <value>Sale</value>
   </data>
+  <data name="SALEPRICE" xml:space="preserve">
+    <value>SALE PRICE</value>
+  </data>
+  <data name="ScrollsOils" xml:space="preserve">
+    <value>Scrolls / Oils</value>
+  </data>
   <data name="SelectUpgradeItem" xml:space="preserve">
     <value>Select Upgrade Item.</value>
   </data>
   <data name="SelectUpgradeType" xml:space="preserve">
     <value>Select Upgrade Type.</value>
+  </data>
+  <data name="SELLEREXPIRY" xml:space="preserve">
+    <value>SELLER / EXPIRY</value>
+  </data>
+  <data name="SELLITEM" xml:space="preserve">
+    <value>SELL ITEM</value>
+  </data>
+  <data name="ShowAllItems" xml:space="preserve">
+    <value>Show All Items</value>
+  </data>
+  <data name="Sold" xml:space="preserve">
+    <value>Sold</value>
   </data>
   <data name="SoulGlyph" xml:space="preserve">
     <value>Soul Glyph</value>
@@ -219,8 +312,17 @@
   <data name="SpecialRepair" xml:space="preserve">
     <value>S. Repair</value>
   </data>
+  <data name="STARTINGBID" xml:space="preserve">
+    <value>STARTING BID</value>
+  </data>
+  <data name="WeaponItems" xml:space="preserve">
+    <value>Weapon Items</value>
+  </data>
   <data name="YouCannotPpurchaseAnymoreItems" xml:space="preserve">
     <value>You cannot purchase any more items.</value>
+  </data>
+  <data name="YouCanSearchAgainAfterSeconds" xml:space="preserve">
+    <value>You can search again after {0} seconds.</value>
   </data>
   <data name="YouDoDotHaveTheRequiredToolsOrIngredients" xml:space="preserve">
     <value>You do not have the required tools or ingredients.</value>

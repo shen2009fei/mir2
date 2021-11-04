@@ -126,6 +126,9 @@
   <data name="Assassin" xml:space="preserve">
     <value>刺客</value>
   </data>
+  <data name="Credits" xml:space="preserve">
+    <value>玩家积分</value>
+  </data>
   <data name="Crit" xml:space="preserve">
     <value>暴击</value>
   </data>

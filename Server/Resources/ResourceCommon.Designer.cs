@@ -61,6 +61,33 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Bid Met 的本地化字符串。
+        /// </summary>
+        internal static string BidMet {
+            get {
+                return ResourceManager.GetString("BidMet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Expired 的本地化字符串。
+        /// </summary>
+        internal static string Expired {
+            get {
+                return ResourceManager.GetString("Expired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 For Sale 的本地化字符串。
+        /// </summary>
+        internal static string ForSale {
+            get {
+                return ResourceManager.GetString("ForSale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 has just expired from your equipment. 的本地化字符串。
         /// </summary>
         internal static string HasJustExpiredFromYourEquipment {
@@ -97,11 +124,47 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 No Bid 的本地化字符串。
+        /// </summary>
+        internal static string NoBid {
+            get {
+                return ResourceManager.GetString("NoBid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sold 的本地化字符串。
+        /// </summary>
+        internal static string Sold {
+            get {
+                return ResourceManager.GetString("Sold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Someone has bid {1:#,##0} Gold for {0} 的本地化字符串。
+        /// </summary>
+        internal static string SomeoneHasBidGoldFor {
+            get {
+                return ResourceManager.GetString("SomeoneHasBidGoldFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 The rental lock has been removed from {0} 的本地化字符串。
         /// </summary>
         internal static string TheRentalLockHasBeenRemovedFrom {
             get {
                 return ResourceManager.GetString("TheRentalLockHasBeenRemovedFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You bid {1:#,##0} Gold for {0} 的本地化字符串。
+        /// </summary>
+        internal static string YouBidGoldFor {
+            get {
+                return ResourceManager.GetString("YouBidGoldFor", resourceCulture);
             }
         }
         

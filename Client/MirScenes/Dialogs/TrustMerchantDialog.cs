@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using C = ClientPackets;
-
+using Shared.Extensions;
 
 namespace Client.MirScenes.Dialogs
 {
@@ -57,9 +57,9 @@ namespace Client.MirScenes.Dialogs
         //private readonly string auctionText = $"1. Auction cost is {Globals.AuctionCost} gold, max starting bid is {Globals.MaxStartingBid} gold per item \r\n\r\n2. 1% of final bid price is paid to Trust Merchant " +
         //    $"at auction end\r\n\r\n3. Maximum {Globals.ConsignmentLength} days of item sale registration, afterwards the item will be sent to highest bidder\r\n\r\n4. Maximum of unlimited " +
         //    $"items allowed for auction\r\n\r\n";
-        private readonly string consignmentText = string.Format(Resources.ResourceNPCDialog.consignmentText, Globals.ConsignmentCost, Globals.ConsignmentLength, Globals.MinConsignment, Globals.MaxConsignment);
+        private readonly string consignmentText = string.Format(Resources.ResourceNPCDialog.consignmentText, Globals.ConsignmentCost, Globals.ConsignmentLength, Globals.MinConsignment, Globals.MaxConsignment,Environment.NewLine);
 
-        private readonly string auctionText = string.Format(Resources.ResourceNPCDialog.auctionText, Globals.AuctionCost, Globals.MaxStartingBid, Globals.ConsignmentLength);
+        private readonly string auctionText = string.Format(Resources.ResourceNPCDialog.auctionText, Globals.AuctionCost, Globals.MaxStartingBid, Globals.ConsignmentLength,Environment.NewLine);
        
 
         private MirLabel TotalGold;
@@ -168,7 +168,8 @@ namespace Client.MirScenes.Dialogs
                 Parent = this,
                 Size = new Size(115, 205),
                 Location = new Point(8, 237),
-                Font = new Font(Settings.FontName, Settings.FontSize - 1),
+                //Font = new Font(Settings.FontName, Settings.FontSize - 1),
+                Font = new Font(Settings.FontName, Settings.FontSize),
                 ForeColour = Color.White,
                 Visible = false
             };
@@ -334,7 +335,7 @@ namespace Client.MirScenes.Dialogs
             {
                 if (CMain.Time < SearchTime)
                 {
-                    GameScene.Scene.ChatDialog.ReceiveChat(string.Format("You can search again after {0} seconds.", Math.Ceiling((SearchTime - CMain.Time) / 1000D)), ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(string.Format(Resources.ResourceNPCDialog.YouCanSearchAgainAfterSeconds, Math.Ceiling((SearchTime - CMain.Time) / 1000D)), ChatType.System);
                     return;
                 }
                 SearchTime = CMain.Time + Globals.SearchDelay;
@@ -360,9 +361,9 @@ namespace Client.MirScenes.Dialogs
                 {
                     if (Selected.Listing.ItemType == MarketItemType.Consign)
                     {
-                        if (Selected.Listing.Seller == "For Sale")
+                        if (Selected.Listing.Seller ==Resources.ResourceNPCDialog.ForSale)
                         {
-                            MirMessageBox box = new MirMessageBox(string.Format("{0} has not sold, Are you sure you want to get it back?", Selected.Listing.Item.FriendlyName), MirMessageBoxButtons.YesNo);
+                            MirMessageBox box = new MirMessageBox(string.Format(Resources.ResourceNPCDialog.HasNotSoldAreYouSureYouWantToGetItBack, Selected.Listing.Item.FriendlyName), MirMessageBoxButtons.YesNo);
                             box.YesButton.Click += (o1, e2) =>
                             {
                                 MarketTime = CMain.Time + 3000;
@@ -378,9 +379,9 @@ namespace Client.MirScenes.Dialogs
                     }
                     else if (Selected.Listing.ItemType == MarketItemType.Auction)
                     {
-                        if (Selected.Listing.Seller == "No Bid")
+                        if (Selected.Listing.Seller ==Resources.ResourceNPCDialog.NoBid)
                         {
-                            MirMessageBox box = new MirMessageBox(string.Format("{0} has not sold, Are you sure you want to get it back?", Selected.Listing.Item.FriendlyName), MirMessageBoxButtons.YesNo);
+                            MirMessageBox box = new MirMessageBox(string.Format(Resources.ResourceNPCDialog.HasNotSoldAreYouSureYouWantToGetItBack, Selected.Listing.Item.FriendlyName), MirMessageBoxButtons.YesNo);
                             box.YesButton.Click += (o1, e2) =>
                             {
                                 MarketTime = CMain.Time + 3000;
@@ -402,7 +403,7 @@ namespace Client.MirScenes.Dialogs
                         case MarketItemType.Consign:
                         case MarketItemType.GameShop:
                             {
-                                MirMessageBox box = new MirMessageBox(string.Format("Are you sure you want to buy {0} for {1:#,##0} {2}?", Selected.Listing.Item.FriendlyName, Selected.Listing.Price, MarketType == MarketPanelType.GameShop ? "Credits" : "Gold"), MirMessageBoxButtons.YesNo);
+                                MirMessageBox box = new MirMessageBox(string.Format(Resources.ResourceNPCDialog.AreYouSureYouWantToBuyFor, Selected.Listing.Item.FriendlyName, Selected.Listing.Price, MarketType == MarketPanelType.GameShop ? Resources.ResourceCommon.Credits  : Resources.ResourceCommon.Gold), MirMessageBoxButtons.YesNo);
                                 box.YesButton.Click += (o1, e2) =>
                                 {
                                     MarketTime = CMain.Time + 3000;
@@ -413,11 +414,11 @@ namespace Client.MirScenes.Dialogs
                             break;
                         case MarketItemType.Auction:
                             {
-                                MirAmountBox bidAmount = new MirAmountBox("Bid Amount:", Selected.Listing.Item.Info.Image, uint.MaxValue, Selected.Listing.Price + 1, Selected.Listing.Price + 1);
+                                MirAmountBox bidAmount = new MirAmountBox(Resources.ResourceNPCDialog.BidAmount, Selected.Listing.Item.Info.Image, uint.MaxValue, Selected.Listing.Price + 1, Selected.Listing.Price + 1);
 
                                 bidAmount.OKButton.Click += (o1, e1) =>
                                 {
-                                    MirMessageBox box = new MirMessageBox(string.Format("Are you sure you want to bid {0:#,##0} Gold for {1}?", bidAmount.Amount, Selected.Listing.Item.FriendlyName), MirMessageBoxButtons.YesNo);
+                                    MirMessageBox box = new MirMessageBox(string.Format(Resources.ResourceNPCDialog.AreYouSureYouWantToBidGoldFor, bidAmount.Amount, Selected.Listing.Item.FriendlyName), MirMessageBoxButtons.YesNo);
                                     box.YesButton.Click += (o2, e2) =>
                                     {
                                         MarketTime = CMain.Time + 3000;
@@ -485,7 +486,7 @@ namespace Client.MirScenes.Dialogs
                 if (String.IsNullOrEmpty(SearchTextBox.Text)) return;
                 if (CMain.Time < SearchTime)
                 {
-                    GameScene.Scene.ChatDialog.ReceiveChat(string.Format("You can search again after {0} seconds.", Math.Ceiling((SearchTime - CMain.Time) / 1000D)), ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(string.Format(Resources.ResourceNPCDialog.YouCanSearchAgainAfterSeconds, Math.Ceiling((SearchTime - CMain.Time) / 1000D)), ChatType.System);
                     return;
                 }
 
@@ -635,14 +636,14 @@ namespace Client.MirScenes.Dialogs
 
         private void SetupFilters()
         {
-            var all = new Filter { Index = 0, Title = "Show All Items", Type = ItemType.Nothing };
-            var weapon = new Filter { Index = 1, Title = "Weapon Items", Type = ItemType.Weapon };
-            var drapery = new Filter { Index = 2, Title = "Drapery Items", Type = null };
-            var accessory = new Filter { Index = 3, Title = "Accessory Items", Type = null };
-            var consumable = new Filter { Index = 4, Title = "Consumable Items", Type = null };
-            var enhancement = new Filter { Index = 5, Title = "Enhancement", Type = null };
-            var book = new Filter { Index = 6, Title = "Books", Type = null };
-            var crafting = new Filter { Index = 7, Title = "Craft Items", Type = null };
+            var all = new Filter { Index = 0, Title = Resources.ResourceNPCDialog.ShowAllItems, Type = ItemType.Nothing };
+            var weapon = new Filter { Index = 1, Title =Resources.ResourceNPCDialog.WeaponItems, Type = ItemType.Weapon };
+            var drapery = new Filter { Index = 2, Title =Resources.ResourceNPCDialog.DraperyItems, Type = null };
+            var accessory = new Filter { Index = 3, Title = Resources.ResourceNPCDialog.AccessoryItems, Type = null };
+            var consumable = new Filter { Index = 4, Title =Resources.ResourceNPCDialog.ConsumableItems, Type = null };
+            var enhancement = new Filter { Index = 5, Title =Resources.ResourceNPCDialog.Enhancement, Type = null };
+            var book = new Filter { Index = 6, Title =Resources.ResourceNPCDialog.Books, Type = null };
+            var crafting = new Filter { Index = 7, Title = Resources.ResourceNPCDialog.CraftItems, Type = null };
 
             Filters.Add(all);
             Filters.Add(weapon);
@@ -653,33 +654,33 @@ namespace Client.MirScenes.Dialogs
             Filters.Add(book);
             Filters.Add(crafting);
 
-            drapery.SubFilters.Add(new Filter { Index = 201, Title = "Armour", Type = ItemType.Armour });
-            drapery.SubFilters.Add(new Filter { Index = 202, Title = "Helmet", Type = ItemType.Helmet });
-            drapery.SubFilters.Add(new Filter { Index = 203, Title = "Belt", Type = ItemType.Belt });
-            drapery.SubFilters.Add(new Filter { Index = 204, Title = "Boots", Type = ItemType.Boots });
-            drapery.SubFilters.Add(new Filter { Index = 205, Title = "Stone", Type = ItemType.Stone });
+            drapery.SubFilters.Add(new Filter { Index = 201, Title = Resources.ResourceItemType.ItemTypeArmour, Type = ItemType.Armour });
+            drapery.SubFilters.Add(new Filter { Index = 202, Title = Resources.ResourceItemType.ItemTypeHelmet, Type = ItemType.Helmet });
+            drapery.SubFilters.Add(new Filter { Index = 203, Title = Resources.ResourceItemType.ItemTypeBelt, Type = ItemType.Belt });
+            drapery.SubFilters.Add(new Filter { Index = 204, Title = Resources.ResourceItemType.ItemTypeBoots, Type = ItemType.Boots });
+            drapery.SubFilters.Add(new Filter { Index = 205, Title = Resources.ResourceItemType.ItemTypeStone, Type = ItemType.Stone });
 
-            accessory.SubFilters.Add(new Filter { Index = 301, Title = "Necklaces", Type = ItemType.Necklace });
-            accessory.SubFilters.Add(new Filter { Index = 302, Title = "Bracelets", Type = ItemType.Bracelet });
-            accessory.SubFilters.Add(new Filter { Index = 303, Title = "Rings", Type = ItemType.Ring });
+            accessory.SubFilters.Add(new Filter { Index = 301, Title =Resources.ResourceItemType.ItemTypeNecklace, Type = ItemType.Necklace });
+            accessory.SubFilters.Add(new Filter { Index = 302, Title = Resources.ResourceItemType.ItemTypeBracelet, Type = ItemType.Bracelet });
+            accessory.SubFilters.Add(new Filter { Index = 303, Title = Resources.ResourceItemType.ItemTypeRing, Type = ItemType.Ring });
 
-            consumable.SubFilters.Add(new Filter { Index = 401, Title = "Recovery Pots", Type = ItemType.Potion, MaxShape = 2 });
-            consumable.SubFilters.Add(new Filter { Index = 402, Title = "Buff Pots", Type = ItemType.Potion, MinShape = 3, MaxShape = 4 });
-            consumable.SubFilters.Add(new Filter { Index = 403, Title = "Scrolls / Oils", Type = ItemType.Scroll });
-            consumable.SubFilters.Add(new Filter { Index = 404, Title = "Misc Items", Type = ItemType.Script });
+            consumable.SubFilters.Add(new Filter { Index = 401, Title =Resources.ResourceNPCDialog.RecoveryPots, Type = ItemType.Potion, MaxShape = 2 });
+            consumable.SubFilters.Add(new Filter { Index = 402, Title =Resources.ResourceNPCDialog.BuffPots, Type = ItemType.Potion, MinShape = 3, MaxShape = 4 });
+            consumable.SubFilters.Add(new Filter { Index = 403, Title =Resources.ResourceNPCDialog.ScrollsOils, Type = ItemType.Scroll });
+            consumable.SubFilters.Add(new Filter { Index = 404, Title =Resources.ResourceNPCDialog.MiscItems, Type = ItemType.Script });
 
-            enhancement.SubFilters.Add(new Filter { Index = 501, Title = "Gems", Type = ItemType.Potion, MinShape = 3, MaxShape = 3 });
-            enhancement.SubFilters.Add(new Filter { Index = 502, Title = "Orbs", Type = ItemType.Potion, MinShape = 4, MaxShape = 4 });
+            enhancement.SubFilters.Add(new Filter { Index = 501, Title =Resources.ResourceItemType.ItemTypeGem, Type = ItemType.Gem, MinShape = 3, MaxShape = 3 });
+            enhancement.SubFilters.Add(new Filter { Index = 502, Title =Resources.ResourceNPCDialog.Orbs, Type = ItemType.Gem, MinShape = 4, MaxShape = 4 });
 
-            book.SubFilters.Add(new Filter { Index = 601, Title = "Warrior", Type = ItemType.Book, MaxShape = 30 });
-            book.SubFilters.Add(new Filter { Index = 602, Title = "Wizard", Type = ItemType.Book, MinShape = 31, MaxShape = 60 });
-            book.SubFilters.Add(new Filter { Index = 603, Title = "Taoist", Type = ItemType.Book, MinShape = 61, MaxShape = 90 });
-            book.SubFilters.Add(new Filter { Index = 604, Title = "Assassin", Type = ItemType.Book, MinShape = 91, MaxShape = 120 });
-            book.SubFilters.Add(new Filter { Index = 605, Title = "Archer", Type = ItemType.Book, MinShape = 121, MaxShape = 150 });
+            book.SubFilters.Add(new Filter { Index = 601, Title =MirClass.Warrior.ToDescription(), Type = ItemType.Book, MaxShape = 30 });
+            book.SubFilters.Add(new Filter { Index = 602, Title = MirClass.Wizard.ToDescription(), Type = ItemType.Book, MinShape = 31, MaxShape = 60 });
+            book.SubFilters.Add(new Filter { Index = 603, Title = MirClass.Taoist.ToDescription(), Type = ItemType.Book, MinShape = 61, MaxShape = 90 });
+            book.SubFilters.Add(new Filter { Index = 604, Title = MirClass.Assassin.ToDescription(), Type = ItemType.Book, MinShape = 91, MaxShape = 120 });
+            book.SubFilters.Add(new Filter { Index = 605, Title = MirClass.Archer.ToDescription(), Type = ItemType.Book, MinShape = 121, MaxShape = 150 });
 
-            crafting.SubFilters.Add(new Filter { Index = 701, Title = "Materials", Type = ItemType.CraftingMaterial });
-            crafting.SubFilters.Add(new Filter { Index = 703, Title = "Meat", Type = ItemType.Meat });
-            crafting.SubFilters.Add(new Filter { Index = 704, Title = "Ore", Type = ItemType.Ore });
+            crafting.SubFilters.Add(new Filter { Index = 701, Title =Resources.ResourceItemType.ItemTypeCraftingMaterial, Type = ItemType.CraftingMaterial });
+            crafting.SubFilters.Add(new Filter { Index = 703, Title =Resources.ResourceItemType.ItemTypeMeat, Type = ItemType.Meat });
+            crafting.SubFilters.Add(new Filter { Index = 704, Title =Resources.ResourceItemType.ItemTypeOre, Type = ItemType.Ore });
         }
 
         private void DrawFilters(int index, int subIndex)
@@ -923,7 +924,7 @@ namespace Client.MirScenes.Dialogs
                 MailButton.GrayScale = true;
             }
 
-            if (Selected != null && Selected.Listing.Seller == "Bid Met")
+            if (Selected != null && Selected.Listing.Seller ==Resources.ResourceNPCDialog.BidMet)
             {
                 SellNowButton.Enabled = true;
                 SellNowButton.GrayScale = false;
@@ -939,7 +940,7 @@ namespace Client.MirScenes.Dialogs
         {
             if (CMain.Time < SearchTime)
             {
-                GameScene.Scene.ChatDialog.ReceiveChat(string.Format("You can search again after {0} seconds.", Math.Ceiling((SearchTime - CMain.Time) / 1000D)), ChatType.System);
+                GameScene.Scene.ChatDialog.ReceiveChat(string.Format(Resources.ResourceNPCDialog.YouCanSearchAgainAfterSeconds, Math.Ceiling((SearchTime - CMain.Time) / 1000D)), ChatType.System);
                 return;
             }
 
@@ -1042,11 +1043,11 @@ namespace Client.MirScenes.Dialogs
                     TitleItemLabel.Visible = true;
                     TitlePriceLabel.Visible = true;
                     TitleExpiryLabel.Visible = true;
-                    TitleSalePriceLabel.Text = "SALE PRICE";
-                    TitleSellLabel.Text = "SELL ITEM";
-                    TitleItemLabel.Text = "ITEM";
-                    TitlePriceLabel.Text = "PRICE / BID";
-                    TitleExpiryLabel.Text = "SELLER / EXPIRY";
+                    TitleSalePriceLabel.Text = Resources.ResourceNPCDialog.SALEPRICE;
+                    TitleSellLabel.Text =Resources.ResourceNPCDialog.SELLITEM;
+                    TitleItemLabel.Text =Resources.ResourceNPCDialog.ITEM;
+                    TitlePriceLabel.Text =Resources.ResourceNPCDialog.PRICEBID ;
+                    TitleExpiryLabel.Text =Resources.ResourceNPCDialog.SELLEREXPIRY;
 
                     //TotalGold.Visible = true;
                     PriceTextBox.Visible = false;
@@ -1095,11 +1096,11 @@ namespace Client.MirScenes.Dialogs
                     TitleItemLabel.Visible = true;
                     TitlePriceLabel.Visible = true;
                     TitleExpiryLabel.Visible = true;
-                    TitleSalePriceLabel.Text = "SALE PRICE";
-                    TitleSellLabel.Text = "SELL ITEM";
-                    TitleItemLabel.Text = "ITEM";
-                    TitlePriceLabel.Text = "PRICE";
-                    TitleExpiryLabel.Text = "EXPIRY";
+                    TitleSalePriceLabel.Text = Resources.ResourceNPCDialog.SALEPRICE;
+                    TitleSellLabel.Text =Resources.ResourceNPCDialog.SELLITEM;
+                    TitleItemLabel.Text =Resources.ResourceNPCDialog.ITEM;
+                    TitlePriceLabel.Text =Resources.ResourceNPCDialog.PRICE;
+                    TitleExpiryLabel.Text =Resources.ResourceNPCDialog.EXPIRY;
 
                     foreach (var item in FilterButtons)
                     {
@@ -1144,11 +1145,11 @@ namespace Client.MirScenes.Dialogs
                     TitleItemLabel.Visible = true;
                     TitlePriceLabel.Visible = true;
                     TitleExpiryLabel.Visible = true;
-                    TitleSalePriceLabel.Text = "STARTING BID";
-                    TitleSellLabel.Text = "SELL ITEM";
-                    TitleItemLabel.Text = "ITEM";
-                    TitlePriceLabel.Text = "HIGHEST BID";
-                    TitleExpiryLabel.Text = "END DATE";
+                    TitleSalePriceLabel.Text = Resources.ResourceNPCDialog.STARTINGBID;
+                    TitleSellLabel.Text =Resources.ResourceNPCDialog.SELLITEM;
+                    TitleItemLabel.Text = Resources.ResourceNPCDialog.ITEM ;
+                    TitlePriceLabel.Text = Resources.ResourceNPCDialog.HIGHESTBID;
+                    TitleExpiryLabel.Text = Resources.ResourceNPCDialog.ENDDATE;
 
                     foreach (var item in FilterButtons)
                     {
@@ -1191,10 +1192,10 @@ namespace Client.MirScenes.Dialogs
                     TitleItemLabel.Visible = true;
                     TitlePriceLabel.Visible = true;
                     TitleExpiryLabel.Visible = true;
-                    TitleSalePriceLabel.Text = "SALE PRICE";
-                    TitleSellLabel.Text = "SELL ITEM";
-                    TitleItemLabel.Text = "ITEM";
-                    TitlePriceLabel.Text = "PRICE";
+                    TitleSalePriceLabel.Text = Resources.ResourceNPCDialog.SALEPRICE;
+                    TitleSellLabel.Text =  Resources.ResourceNPCDialog.SELLITEM;
+                    TitleItemLabel.Text = Resources.ResourceNPCDialog.ITEM;
+                    TitlePriceLabel.Text = Resources.ResourceNPCDialog.PRICE;
                     TitleExpiryLabel.Text = "";
 
                     MarketType = MarketPanelType.GameShop;
@@ -1459,7 +1460,7 @@ namespace Client.MirScenes.Dialogs
             {
                 Listing = listing;
                 NameLabel.Text = Listing.Item.FriendlyName;
-                PriceLabel.Text = String.Format("{0:###,###,##0} {1}", Listing.Price, listing.ItemType == MarketItemType.Auction ? "Bid" : "");
+                PriceLabel.Text = String.Format("{0:###,###,##0} {1}", Listing.Price, listing.ItemType == MarketItemType.Auction ? Resources.ResourceNPCDialog.Bid : "");
 
                 NameLabel.ForeColour = GameScene.Scene.GradeNameColor(Listing.Item.Info.Grade);
                 if (NameLabel.ForeColour == Color.Yellow)
@@ -1482,13 +1483,30 @@ namespace Client.MirScenes.Dialogs
 
                 if (UserMode)
                 {
-                    SellerLabel.ForeColour = Listing.Seller switch
+
+                    if(Listing.Seller == Resources.ResourceNPCDialog.Sold)
                     {
-                        "Sold" => Color.Gold,
-                        "Expired" => Color.Red,
-                        "Bid Met" => Color.LawnGreen,
-                        _ => Color.White,
-                    };
+                        SellerLabel.ForeColour = Color.Gold;
+                    }
+                    else if (Listing.Seller == Resources.ResourceNPCDialog.Expired)
+                    {
+                        SellerLabel.ForeColour = Color.Red;
+                    }
+                    else if (Listing.Seller == Resources.ResourceNPCDialog.BidMet)
+                    {
+                        SellerLabel.ForeColour = Color.LawnGreen;
+                    }
+                    else
+                    {
+                        SellerLabel.ForeColour = Color.White;
+                    }
+                    //SellerLabel.ForeColour = Listing.Seller switch
+                    //{
+                    //   "Sold"  => Color.Gold,
+                    //    "Expired" => Color.Red,
+                    //    "Bid Met" => Color.LawnGreen,
+                    //    _ => Color.White,
+                    //};
                 }
                 Visible = true;
             }

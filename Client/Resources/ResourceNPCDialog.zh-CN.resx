@@ -117,14 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccessoryItems" xml:space="preserve">
+    <value>配饰物品</value>
+  </data>
+  <data name="AreYouSureYouWantToBidGoldFor" xml:space="preserve">
+    <value>您确定要为 {1} 出价 {0:#,##0} 金币吗？</value>
+  </data>
+  <data name="AreYouSureYouWantToBuyFor" xml:space="preserve">
+    <value>您确定要以 {1:#,##0} {2} 购买 {0} 吗？</value>
+  </data>
   <data name="auctionText" xml:space="preserve">
-    <value>1. 拍卖成本为 {0} 金币，每件商品的最高起拍价为 {1} 金币 \r\n\r\n2. 拍卖结束时将最终出价的 1% 支付给信托商人\r\n\r\n3. 最多 {2} 天的物品销售登记，之后物品将被发送给出价最高的人\r\n\r\n4. 允许拍卖的最多"无限"商品\r\n\r\n</value>
+    <value>1. 拍卖成本为{0}金币，每件商品的最高起拍价为{1}金币 {3}{3}2. 拍卖结束时将最终出价的 1% 支付给信托商人{3}{3}3. 拍卖最多为{2}天,之后物品将被发送给出价最高的人{3}{3}</value>
+  </data>
+  <data name="Bid" xml:space="preserve">
+    <value>出价</value>
+  </data>
+  <data name="BidAmount" xml:space="preserve">
+    <value>竞价金额：</value>
+  </data>
+  <data name="BidMet" xml:space="preserve">
+    <value>有竞价</value>
   </data>
   <data name="BodyGlyph" xml:space="preserve">
     <value>炼体雕文</value>
   </data>
+  <data name="Books" xml:space="preserve">
+    <value>书籍</value>
+  </data>
   <data name="BraveryGlyph" xml:space="preserve">
     <value>勇敢雕文</value>
+  </data>
+  <data name="BuffPots" xml:space="preserve">
+    <value>增益药水</value>
   </data>
   <data name="CannotCarryAnymoreGold" xml:space="preserve">
     <value>不能再携更多金币了。</value>
@@ -151,31 +175,79 @@
     <value>寄售价格:</value>
   </data>
   <data name="consignmentText" xml:space="preserve">
-    <value>1. 寄售为每件 {0} 金币 \r\n\r\n2. 销售结束时将销售价格的 1% 支付给信托商人\r\n\r\n3. 物品寄售最长天数为{1}天\r\n\r\n4. 允许寄售商品数量无限\r\n\r\n5. 销售价格可以设置在：{2} - {3} 金币之间</value>
+    <value>1. 寄售为每件 {0} 金币 {4}{4}2. 销售结束时将销售价格的 1% 支付给信托商人{4}{4}3. 物品寄售最长天数为{1}天{4}{4}4. 销售价格可以设置在：{2} - {3} 金币之间</value>
+  </data>
+  <data name="ConsumableItems" xml:space="preserve">
+    <value>消耗品</value>
   </data>
   <data name="CraftAmount" xml:space="preserve">
     <value>制造数量:</value>
   </data>
+  <data name="CraftItems" xml:space="preserve">
+    <value>制作物品</value>
+  </data>
   <data name="Downgrade" xml:space="preserve">
     <value>降级</value>
+  </data>
+  <data name="DraperyItems" xml:space="preserve">
+    <value>衣物物品</value>
+  </data>
+  <data name="ENDDATE" xml:space="preserve">
+    <value>结束日期</value>
+  </data>
+  <data name="Enhancement" xml:space="preserve">
+    <value>增强</value>
   </data>
   <data name="EvilSlayerGlyph" xml:space="preserve">
     <value>恶灵杀手雕文</value>
   </data>
+  <data name="Expired" xml:space="preserve">
+    <value>已到期</value>
+  </data>
+  <data name="EXPIRY" xml:space="preserve">
+    <value>到期</value>
+  </data>
+  <data name="ForSale" xml:space="preserve">
+    <value>出售</value>
+  </data>
   <data name="Gold" xml:space="preserve">
     <value>金币</value>
   </data>
+  <data name="HasNotSoldAreYouSureYouWantToGetItBack" xml:space="preserve">
+    <value>{0} 尚未售出，您确定要取回吗？</value>
+  </data>
+  <data name="HIGHESTBID" xml:space="preserve">
+    <value>最高出价</value>
+  </data>
   <data name="IAmInterestedInPurchasingFor" xml:space="preserve">
-    <value>我有兴趣以 {1} 元购买 {0}。</value>
+    <value>我有兴趣以 {1} 金币购买 {0}。</value>
   </data>
   <data name="IsntARing" xml:space="preserve">
     <value>{0} 不是戒子。</value>
+  </data>
+  <data name="ITEM" xml:space="preserve">
+    <value>物品</value>
   </data>
   <data name="ItemWillBeDestroyed" xml:space="preserve">
     <value>物品将被销毁</value>
   </data>
   <data name="MagicGlyph" xml:space="preserve">
     <value>魔法雕文</value>
+  </data>
+  <data name="MiscItems" xml:space="preserve">
+    <value>杂项</value>
+  </data>
+  <data name="NoBid" xml:space="preserve">
+    <value>无竞价</value>
+  </data>
+  <data name="Orbs" xml:space="preserve">
+    <value>宝珠</value>
+  </data>
+  <data name="PRICE" xml:space="preserve">
+    <value>价格</value>
+  </data>
+  <data name="PRICEBID" xml:space="preserve">
+    <value>价格 / 竞价</value>
   </data>
   <data name="PriceGold" xml:space="preserve">
     <value>价格: {0} 金币</value>
@@ -192,6 +264,9 @@
   <data name="Quantity" xml:space="preserve">
     <value>数量</value>
   </data>
+  <data name="RecoveryPots" xml:space="preserve">
+    <value>恢复药水</value>
+  </data>
   <data name="Refine" xml:space="preserve">
     <value>精炼</value>
   </data>
@@ -207,11 +282,29 @@
   <data name="Sale" xml:space="preserve">
     <value>出售</value>
   </data>
+  <data name="SALEPRICE" xml:space="preserve">
+    <value>售卖价格</value>
+  </data>
+  <data name="ScrollsOils" xml:space="preserve">
+    <value>卷轴 / 油</value>
+  </data>
   <data name="SelectUpgradeItem" xml:space="preserve">
     <value>选择升级物品.</value>
   </data>
   <data name="SelectUpgradeType" xml:space="preserve">
     <value>选择升级类型.</value>
+  </data>
+  <data name="SELLEREXPIRY" xml:space="preserve">
+    <value>卖家 / 到期</value>
+  </data>
+  <data name="SELLITEM" xml:space="preserve">
+    <value>出售物品</value>
+  </data>
+  <data name="ShowAllItems" xml:space="preserve">
+    <value>显示所有物品</value>
+  </data>
+  <data name="Sold" xml:space="preserve">
+    <value>卖掉</value>
   </data>
   <data name="SoulGlyph" xml:space="preserve">
     <value>灵魂雕文</value>
@@ -219,8 +312,17 @@
   <data name="SpecialRepair" xml:space="preserve">
     <value>特殊修理</value>
   </data>
+  <data name="STARTINGBID" xml:space="preserve">
+    <value>起拍价</value>
+  </data>
+  <data name="WeaponItems" xml:space="preserve">
+    <value>武器物品</value>
+  </data>
   <data name="YouCannotPpurchaseAnymoreItems" xml:space="preserve">
     <value>您不能再购买任何物品。</value>
+  </data>
+  <data name="YouCanSearchAgainAfterSeconds" xml:space="preserve">
+    <value>您可以在 {0} 秒后再次搜索。</value>
   </data>
   <data name="YouDoDotHaveTheRequiredToolsOrIngredients" xml:space="preserve">
     <value>您没有所需的工具或配料.</value>

@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BidMet" xml:space="preserve">
+    <value>Bid Met</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="ForSale" xml:space="preserve">
+    <value>For Sale</value>
+  </data>
   <data name="HasJustExpiredFromYourEquipment" xml:space="preserve">
     <value>has just expired from your equipment.</value>
   </data>
@@ -129,8 +138,20 @@
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
     <value>Monster {0} x{1} has been spawned.</value>
   </data>
+  <data name="NoBid" xml:space="preserve">
+    <value>No Bid</value>
+  </data>
+  <data name="Sold" xml:space="preserve">
+    <value>Sold</value>
+  </data>
+  <data name="SomeoneHasBidGoldFor" xml:space="preserve">
+    <value>Someone has bid {1:#,##0} Gold for {0}</value>
+  </data>
   <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
     <value>The rental lock has been removed from {0}</value>
+  </data>
+  <data name="YouBidGoldFor" xml:space="preserve">
+    <value>You bid {1:#,##0} Gold for {0}</value>
   </data>
   <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
     <value>You can already unequip a cursed item</value>

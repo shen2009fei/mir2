@@ -88,6 +88,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Credits 的本地化字符串。
+        /// </summary>
+        internal static string Credits {
+            get {
+                return ResourceManager.GetString("Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Crit 的本地化字符串。
         /// </summary>
         internal static string Crit {

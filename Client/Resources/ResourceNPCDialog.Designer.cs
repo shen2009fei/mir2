@@ -61,11 +61,65 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Accessory Items 的本地化字符串。
+        /// </summary>
+        internal static string AccessoryItems {
+            get {
+                return ResourceManager.GetString("AccessoryItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Are you sure you want to bid {0:#,##0} Gold for {1}? 的本地化字符串。
+        /// </summary>
+        internal static string AreYouSureYouWantToBidGoldFor {
+            get {
+                return ResourceManager.GetString("AreYouSureYouWantToBidGoldFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Are you sure you want to buy {0} for {1:#,##0} {2}? 的本地化字符串。
+        /// </summary>
+        internal static string AreYouSureYouWantToBuyFor {
+            get {
+                return ResourceManager.GetString("AreYouSureYouWantToBuyFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 1. Auction cost is {0} gold, max starting bid is {1} gold per item \r\n\r\n2. 1% of final bid price is paid to Trust Merchant at auction end\r\n\r\n3. Maximum {2} days of item sale registration, afterwards the item will be sent to highest bidder\r\n\r\n4. Maximum of unlimited &quot;items allowed for auction\r\n\r\n 的本地化字符串。
         /// </summary>
         internal static string auctionText {
             get {
                 return ResourceManager.GetString("auctionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Bid 的本地化字符串。
+        /// </summary>
+        internal static string Bid {
+            get {
+                return ResourceManager.GetString("Bid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Bid Amount: 的本地化字符串。
+        /// </summary>
+        internal static string BidAmount {
+            get {
+                return ResourceManager.GetString("BidAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Bid Met 的本地化字符串。
+        /// </summary>
+        internal static string BidMet {
+            get {
+                return ResourceManager.GetString("BidMet", resourceCulture);
             }
         }
         
@@ -79,11 +133,29 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Books 的本地化字符串。
+        /// </summary>
+        internal static string Books {
+            get {
+                return ResourceManager.GetString("Books", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Bravery Glyp 的本地化字符串。
         /// </summary>
         internal static string BraveryGlyph {
             get {
                 return ResourceManager.GetString("BraveryGlyph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Buff Pots 的本地化字符串。
+        /// </summary>
+        internal static string BuffPots {
+            get {
+                return ResourceManager.GetString("BuffPots", resourceCulture);
             }
         }
         
@@ -169,11 +241,29 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Consumable Items 的本地化字符串。
+        /// </summary>
+        internal static string ConsumableItems {
+            get {
+                return ResourceManager.GetString("ConsumableItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Craft Amount: 的本地化字符串。
         /// </summary>
         internal static string CraftAmount {
             get {
                 return ResourceManager.GetString("CraftAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Craft Items 的本地化字符串。
+        /// </summary>
+        internal static string CraftItems {
+            get {
+                return ResourceManager.GetString("CraftItems", resourceCulture);
             }
         }
         
@@ -187,6 +277,33 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Drapery Items 的本地化字符串。
+        /// </summary>
+        internal static string DraperyItems {
+            get {
+                return ResourceManager.GetString("DraperyItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 END DATE 的本地化字符串。
+        /// </summary>
+        internal static string ENDDATE {
+            get {
+                return ResourceManager.GetString("ENDDATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enhancement 的本地化字符串。
+        /// </summary>
+        internal static string Enhancement {
+            get {
+                return ResourceManager.GetString("Enhancement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 EvilSlayer Glyph 的本地化字符串。
         /// </summary>
         internal static string EvilSlayerGlyph {
@@ -196,11 +313,56 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Expired 的本地化字符串。
+        /// </summary>
+        internal static string Expired {
+            get {
+                return ResourceManager.GetString("Expired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 EXPIRY 的本地化字符串。
+        /// </summary>
+        internal static string EXPIRY {
+            get {
+                return ResourceManager.GetString("EXPIRY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 For Sale 的本地化字符串。
+        /// </summary>
+        internal static string ForSale {
+            get {
+                return ResourceManager.GetString("ForSale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Gold 的本地化字符串。
         /// </summary>
         internal static string Gold {
             get {
                 return ResourceManager.GetString("Gold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} has not sold, Are you sure you want to get it back? 的本地化字符串。
+        /// </summary>
+        internal static string HasNotSoldAreYouSureYouWantToGetItBack {
+            get {
+                return ResourceManager.GetString("HasNotSoldAreYouSureYouWantToGetItBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 HIGHEST BID 的本地化字符串。
+        /// </summary>
+        internal static string HIGHESTBID {
+            get {
+                return ResourceManager.GetString("HIGHESTBID", resourceCulture);
             }
         }
         
@@ -223,6 +385,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 ITEM 的本地化字符串。
+        /// </summary>
+        internal static string ITEM {
+            get {
+                return ResourceManager.GetString("ITEM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Item will be Destroyed 的本地化字符串。
         /// </summary>
         internal static string ItemWillBeDestroyed {
@@ -237,6 +408,51 @@ namespace Client.Resources {
         internal static string MagicGlyph {
             get {
                 return ResourceManager.GetString("MagicGlyph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Misc Items 的本地化字符串。
+        /// </summary>
+        internal static string MiscItems {
+            get {
+                return ResourceManager.GetString("MiscItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 No Bid 的本地化字符串。
+        /// </summary>
+        internal static string NoBid {
+            get {
+                return ResourceManager.GetString("NoBid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Orbs 的本地化字符串。
+        /// </summary>
+        internal static string Orbs {
+            get {
+                return ResourceManager.GetString("Orbs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PRICE 的本地化字符串。
+        /// </summary>
+        internal static string PRICE {
+            get {
+                return ResourceManager.GetString("PRICE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PRICE / BID 的本地化字符串。
+        /// </summary>
+        internal static string PRICEBID {
+            get {
+                return ResourceManager.GetString("PRICEBID", resourceCulture);
             }
         }
         
@@ -286,6 +502,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Recovery Pots 的本地化字符串。
+        /// </summary>
+        internal static string RecoveryPots {
+            get {
+                return ResourceManager.GetString("RecoveryPots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Refine 的本地化字符串。
         /// </summary>
         internal static string Refine {
@@ -331,6 +556,24 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 SALE PRICE 的本地化字符串。
+        /// </summary>
+        internal static string SALEPRICE {
+            get {
+                return ResourceManager.GetString("SALEPRICE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Scrolls / Oils 的本地化字符串。
+        /// </summary>
+        internal static string ScrollsOils {
+            get {
+                return ResourceManager.GetString("ScrollsOils", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Select Upgrade Item. 的本地化字符串。
         /// </summary>
         internal static string SelectUpgradeItem {
@@ -345,6 +588,42 @@ namespace Client.Resources {
         internal static string SelectUpgradeType {
             get {
                 return ResourceManager.GetString("SelectUpgradeType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 SELLER / EXPIRY 的本地化字符串。
+        /// </summary>
+        internal static string SELLEREXPIRY {
+            get {
+                return ResourceManager.GetString("SELLEREXPIRY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 SELL ITEM 的本地化字符串。
+        /// </summary>
+        internal static string SELLITEM {
+            get {
+                return ResourceManager.GetString("SELLITEM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Show All Items 的本地化字符串。
+        /// </summary>
+        internal static string ShowAllItems {
+            get {
+                return ResourceManager.GetString("ShowAllItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sold 的本地化字符串。
+        /// </summary>
+        internal static string Sold {
+            get {
+                return ResourceManager.GetString("Sold", resourceCulture);
             }
         }
         
@@ -367,11 +646,38 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 STARTING BID 的本地化字符串。
+        /// </summary>
+        internal static string STARTINGBID {
+            get {
+                return ResourceManager.GetString("STARTINGBID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Weapon Items 的本地化字符串。
+        /// </summary>
+        internal static string WeaponItems {
+            get {
+                return ResourceManager.GetString("WeaponItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You cannot purchase any more items. 的本地化字符串。
         /// </summary>
         internal static string YouCannotPpurchaseAnymoreItems {
             get {
                 return ResourceManager.GetString("YouCannotPpurchaseAnymoreItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You can search again after {0} seconds. 的本地化字符串。
+        /// </summary>
+        internal static string YouCanSearchAgainAfterSeconds {
+            get {
+                return ResourceManager.GetString("YouCanSearchAgainAfterSeconds", resourceCulture);
             }
         }
         

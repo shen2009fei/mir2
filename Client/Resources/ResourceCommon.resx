@@ -126,6 +126,9 @@
   <data name="Assassin" xml:space="preserve">
     <value>Assassin</value>
   </data>
+  <data name="Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
   <data name="Crit" xml:space="preserve">
     <value>Crit</value>
   </data>

@@ -98,9 +98,9 @@ namespace Server.MirDatabase
                 case MarketItemType.GameShop:
                     return "";
                 case MarketItemType.Consign:
-                    return userMatch ? (Sold ? "Sold" : (Expired ? "Expired" : "For Sale")) : SellerInfo.Name;
+                    return userMatch ? (Sold ?Resources.ResourceCommon.Sold  : (Expired ? Resources.ResourceCommon.Expired  : Resources.ResourceCommon.ForSale)) : SellerInfo.Name;
                 case MarketItemType.Auction:
-                    return userMatch ? (Sold ? "Sold" : (Expired ? "Expired" : CurrentBid > Price ? "Bid Met" : "No Bid")) : SellerInfo.Name;
+                    return userMatch ? (Sold ? Resources.ResourceCommon.Sold : (Expired ? Resources.ResourceCommon.Expired : CurrentBid > Price ? Resources.ResourceCommon.BidMet :Resources.ResourceCommon.NoBid)) : SellerInfo.Name;
             }
 
             return "";
