@@ -241,6 +241,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Critical Chance 的本地化字符串。
+        /// </summary>
+        internal static string CriticalChance {
+            get {
+                return ResourceManager.GetString("CriticalChance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Critical Damage 的本地化字符串。
         /// </summary>
         internal static string CriticalDamage {

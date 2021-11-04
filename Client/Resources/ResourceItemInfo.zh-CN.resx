@@ -177,6 +177,9 @@
   <data name="CantUpgrade" xml:space="preserve">
     <value>不能升级</value>
   </data>
+  <data name="CriticalChance" xml:space="preserve">
+    <value>暴击几率</value>
+  </data>
   <data name="CriticalDamage" xml:space="preserve">
     <value>暴击伤害</value>
   </data>

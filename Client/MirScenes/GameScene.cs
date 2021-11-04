@@ -6347,7 +6347,7 @@ namespace Client.MirScenes
             {
                 count++;
                 if (HoverItem.Info.Type != ItemType.Gem)
-                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{1}: + {1}", Resources.ResourceCharStat2.FrostPower, minValue + addValue, addValue);
+                    text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}", Resources.ResourceCharStat2.FrostPower, minValue + addValue, addValue);
                 else
                     text = string.Format("{0} +{1} {2}", Resources.ResourceItemInfo.Adds, minValue + maxValue + addValue, Resources.ResourceCharStat2.FrostPower);
                 MirLabel FREEZINGLabel = new MirLabel
@@ -6413,8 +6413,8 @@ namespace Client.MirScenes
                     Location = new Point(4, ItemLabel.DisplayRectangle.Bottom),
                     OutLine = true,
                     Parent = ItemLabel,
-                    //Text = string.Format("Critical Chance + {0}", minValue + addValue)
-                    Text = string.Format(addValue > 0 ? "Critical Chance: + {0} (+{1})" : "Critical Chance: + {0}", minValue + addValue, addValue)
+                    //Text = string.Format("{0} + {1}",Resources.ResourceItemInfo.CriticalChance, minValue + addValue)
+                    Text = string.Format(addValue > 0 ? "{0}: + {1} (+{2})" : "{0}: + {1}",Resources.ResourceItemInfo.CriticalChance, minValue + addValue, addValue)
                 };
 
                 if (fishingItem)

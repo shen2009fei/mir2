@@ -177,6 +177,9 @@
   <data name="CantUpgrade" xml:space="preserve">
     <value>Can't upgrade</value>
   </data>
+  <data name="CriticalChance" xml:space="preserve">
+    <value>Critical Chance</value>
+  </data>
   <data name="CriticalDamage" xml:space="preserve">
     <value>Critical Damage</value>
   </data>
