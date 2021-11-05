@@ -6517,7 +6517,7 @@ namespace Client.MirScenes
                 count++;
                 string negative = "+";
                 if (addValue < 0) negative = "";
-                text = string.Format(addValue != 0 ? "Exp Rate: " + plus + "{0}% ({2}{1}%)" : "Exp Rate: " + plus + "{0}%", minValue + addValue, addValue, negative);
+                text = string.Format(addValue != 0 ? Resources.ResourceItemInfo.ExpRate + ": " + plus + "{0}% ({2}{1}%)" : Resources.ResourceItemInfo.ExpRate+": " + plus + "{0}%", minValue + addValue, addValue, negative);
 
                 MirLabel expRateLabel = new MirLabel
                 {

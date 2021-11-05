@@ -4016,7 +4016,7 @@ namespace Server.MirObjects
                         var map = Envir.GetMapByTitleOrNameAndInstance(parts[1], instanceID);
                         if (map == null)
                         {
-                            ReceiveChat((string.Format("Map {0}:[{1}] could not be found", parts[1], instanceID)), ChatType.System);
+                            ReceiveChat((string.Format(Resources.ResourceCommon.MapCouldNotBeFound, parts[1], instanceID)), ChatType.System);
                             return;
                         }
 
@@ -4029,20 +4029,20 @@ namespace Server.MirObjects
                         switch (parts.Length)
                         {
                             case 2:
-                                ReceiveChat(TeleportRandom(200, 0, map) ? (string.Format("Moved to Map {0}", map.Info.FileName)) :
-                                    (string.Format("Failed movement to Map {0}", map.Info.FileName)), ChatType.System);
+                                ReceiveChat(TeleportRandom(200, 0, map) ? (string.Format(Resources.ResourceCommon.MovedToMap, map.Info.Title)) :
+                                    (string.Format(Resources.ResourceCommon.FailedMovementToMap, map.Info.Title)), ChatType.System);
                                 break;
                             case 3:
-                                ReceiveChat(TeleportRandom(200, 0, map) ? (string.Format("Moved to Map {0}:[{1}]", map.Info.FileName, instanceID)) :
-                                    (string.Format("Failed movement to Map {0}:[{1}]", map.Info.FileName, instanceID)), ChatType.System);
+                                ReceiveChat(TeleportRandom(200, 0, map) ? (string.Format(Resources.ResourceCommon.MovedToMapInstance, map.Info.Title, instanceID)) :
+                                    (string.Format(Resources.ResourceCommon.FailedMovementToMapInstance, map.Info.Title, instanceID)), ChatType.System);
                                 break;
                             case 4:
-                                ReceiveChat(Teleport(map, new Point(x, y)) ? (string.Format("Moved to Map {0} at {1}:{2}", map.Info.FileName, x, y)) :
-                                    (string.Format("Failed movement to Map {0} at {1}:{2}", map.Info.FileName, x, y)), ChatType.System);
+                                ReceiveChat(Teleport(map, new Point(x, y)) ? (string.Format(Resources.ResourceCommon.MovedToMapCord, map.Info.Title, x, y)) :
+                                    (string.Format(Resources.ResourceCommon.FailedMovementToMapCord, map.Info.Title, x, y)), ChatType.System);
                                 break;
                             case 5:
-                                ReceiveChat(Teleport(map, new Point(x, y)) ? (string.Format("Moved to Map {0}:[{1}] at {2}:{3}", map.Info.FileName, instanceID, x, y)) :
-                                    (string.Format("Failed movement to Map {0}:[{1}] at {2}:{3}", map.Info.FileName, instanceID, x, y)), ChatType.System);
+                                ReceiveChat(Teleport(map, new Point(x, y)) ? (string.Format(Resources.ResourceCommon.MovedToMapInstanceCord, map.Info.Title, instanceID, x, y)) :
+                                    (string.Format(Resources.ResourceCommon.FailedMovementToMapInstanceCord, map.Info.Title, instanceID, x, y)), ChatType.System);
                                 break;
                         }
                         break;

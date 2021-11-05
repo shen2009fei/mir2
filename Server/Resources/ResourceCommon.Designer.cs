@@ -79,6 +79,42 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Failed movement to Map {0} 的本地化字符串。
+        /// </summary>
+        internal static string FailedMovementToMap {
+            get {
+                return ResourceManager.GetString("FailedMovementToMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Failed movement to Map {0} at {1}:{2} 的本地化字符串。
+        /// </summary>
+        internal static string FailedMovementToMapCord {
+            get {
+                return ResourceManager.GetString("FailedMovementToMapCord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Failed movement to Map {0}:[{1}] 的本地化字符串。
+        /// </summary>
+        internal static string FailedMovementToMapInstance {
+            get {
+                return ResourceManager.GetString("FailedMovementToMapInstance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Failed movement to Map {0}:[{1}] at {2}:{3} 的本地化字符串。
+        /// </summary>
+        internal static string FailedMovementToMapInstanceCord {
+            get {
+                return ResourceManager.GetString("FailedMovementToMapInstanceCord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 For Sale 的本地化字符串。
         /// </summary>
         internal static string ForSale {
@@ -115,11 +151,56 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Map {0}:[{1}] could not be found 的本地化字符串。
+        /// </summary>
+        internal static string MapCouldNotBeFound {
+            get {
+                return ResourceManager.GetString("MapCouldNotBeFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Monster {0} x{1} has been spawned. 的本地化字符串。
         /// </summary>
         internal static string MonsterHasBeenSpawned {
             get {
                 return ResourceManager.GetString("MonsterHasBeenSpawned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Moved to Map {0} 的本地化字符串。
+        /// </summary>
+        internal static string MovedToMap {
+            get {
+                return ResourceManager.GetString("MovedToMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Moved to Map {0} at {1}:{2 的本地化字符串。
+        /// </summary>
+        internal static string MovedToMapCord {
+            get {
+                return ResourceManager.GetString("MovedToMapCord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Moved to Map {0}:[{1}] 的本地化字符串。
+        /// </summary>
+        internal static string MovedToMapInstance {
+            get {
+                return ResourceManager.GetString("MovedToMapInstance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Moved to Map {0}:[{1}] at {2}:{3 的本地化字符串。
+        /// </summary>
+        internal static string MovedToMapInstanceCord {
+            get {
+                return ResourceManager.GetString("MovedToMapInstanceCord", resourceCulture);
             }
         }
         

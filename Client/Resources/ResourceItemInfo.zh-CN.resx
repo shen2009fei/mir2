@@ -201,6 +201,9 @@
   <data name="ExpiresIn" xml:space="preserve">
     <value>过期日期</value>
   </data>
+  <data name="ExpRate" xml:space="preserve">
+    <value>经验率</value>
+  </data>
   <data name="HealthRecovery" xml:space="preserve">
     <value>生命值恢复</value>
   </data>

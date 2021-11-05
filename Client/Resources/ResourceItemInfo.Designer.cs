@@ -313,6 +313,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Exp Rate 的本地化字符串。
+        /// </summary>
+        internal static string ExpRate {
+            get {
+                return ResourceManager.GetString("ExpRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Health Recovery 的本地化字符串。
         /// </summary>
         internal static string HealthRecovery {

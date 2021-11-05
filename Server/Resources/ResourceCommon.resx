@@ -123,6 +123,18 @@
   <data name="Expired" xml:space="preserve">
     <value>Expired</value>
   </data>
+  <data name="FailedMovementToMap" xml:space="preserve">
+    <value>Failed movement to Map {0}</value>
+  </data>
+  <data name="FailedMovementToMapCord" xml:space="preserve">
+    <value>Failed movement to Map {0} at {1}:{2}</value>
+  </data>
+  <data name="FailedMovementToMapInstance" xml:space="preserve">
+    <value>Failed movement to Map {0}:[{1}]</value>
+  </data>
+  <data name="FailedMovementToMapInstanceCord" xml:space="preserve">
+    <value>Failed movement to Map {0}:[{1}] at {2}:{3}</value>
+  </data>
   <data name="ForSale" xml:space="preserve">
     <value>For Sale</value>
   </data>
@@ -135,8 +147,23 @@
   <data name="HasJustExpiredFromYourStorage" xml:space="preserve">
     <value>has just expired from your storage.</value>
   </data>
+  <data name="MapCouldNotBeFound" xml:space="preserve">
+    <value>Map {0}:[{1}] could not be found</value>
+  </data>
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
     <value>Monster {0} x{1} has been spawned.</value>
+  </data>
+  <data name="MovedToMap" xml:space="preserve">
+    <value>Moved to Map {0}</value>
+  </data>
+  <data name="MovedToMapCord" xml:space="preserve">
+    <value>Moved to Map {0} at {1}:{2</value>
+  </data>
+  <data name="MovedToMapInstance" xml:space="preserve">
+    <value>Moved to Map {0}:[{1}]</value>
+  </data>
+  <data name="MovedToMapInstanceCord" xml:space="preserve">
+    <value>Moved to Map {0}:[{1}] at {2}:{3</value>
   </data>
   <data name="NoBid" xml:space="preserve">
     <value>No Bid</value>

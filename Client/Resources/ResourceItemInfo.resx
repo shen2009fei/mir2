@@ -201,6 +201,9 @@
   <data name="ExpiresIn" xml:space="preserve">
     <value>Expires in</value>
   </data>
+  <data name="ExpRate" xml:space="preserve">
+    <value>Exp Rate</value>
+  </data>
   <data name="HealthRecovery" xml:space="preserve">
     <value>Health Recovery</value>
   </data>

@@ -123,6 +123,18 @@
   <data name="Expired" xml:space="preserve">
     <value>已到期</value>
   </data>
+  <data name="FailedMovementToMap" xml:space="preserve">
+    <value>移动到地图 {0} 失败</value>
+  </data>
+  <data name="FailedMovementToMapCord" xml:space="preserve">
+    <value>移动到地图 {0} 坐标 {1}:{2} 失败</value>
+  </data>
+  <data name="FailedMovementToMapInstance" xml:space="preserve">
+    <value>移动到地图 {0}:[{1}] 失败</value>
+  </data>
+  <data name="FailedMovementToMapInstanceCord" xml:space="preserve">
+    <value>移动到地图 {0}:[{1}] 坐标 {2}:{3} 失败</value>
+  </data>
   <data name="ForSale" xml:space="preserve">
     <value>出售</value>
   </data>
@@ -135,8 +147,23 @@
   <data name="HasJustExpiredFromYourStorage" xml:space="preserve">
     <value>刚刚从您的仓库中过期。</value>
   </data>
+  <data name="MapCouldNotBeFound" xml:space="preserve">
+    <value>地图 {0}:[{1}] 找不到</value>
+  </data>
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
     <value>怪物 {0} x{1} 已生成。</value>
+  </data>
+  <data name="MovedToMap" xml:space="preserve">
+    <value>已移动到地图 {0}</value>
+  </data>
+  <data name="MovedToMapCord" xml:space="preserve">
+    <value>已移动到地图 {0} 坐标 {1}:{2</value>
+  </data>
+  <data name="MovedToMapInstance" xml:space="preserve">
+    <value>已移动到地图 {0}:[{1}]</value>
+  </data>
+  <data name="MovedToMapInstanceCord" xml:space="preserve">
+    <value>已移动到地图 {0}:[{1}] 坐标 {2}:{3</value>
   </data>
   <data name="NoBid" xml:space="preserve">
     <value>无竞价</value>
