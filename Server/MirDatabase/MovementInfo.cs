@@ -14,7 +14,6 @@ namespace Server.MirDatabase
         public Point Source, Destination;
         public bool NeedHole, NeedMove;
         public int ConquestIndex;
-
         public MovementInfo()
         {
 

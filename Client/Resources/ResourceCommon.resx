@@ -120,6 +120,9 @@
   <data name="AllItems" xml:space="preserve">
     <value>All Items</value>
   </data>
+  <data name="AnotherUserLoggedOntoYourAccount" xml:space="preserve">
+    <value>Disconnected: Another user logged onto your account.</value>
+  </data>
   <data name="Archer" xml:space="preserve">
     <value>Archer</value>
   </data>
@@ -147,8 +150,26 @@
   <data name="Gold" xml:space="preserve">
     <value>Gold</value>
   </data>
+  <data name="GotRemovedFromTheGuild" xml:space="preserve">
+    <value>{0} got removed from the guild.</value>
+  </data>
+  <data name="JoinedGuild" xml:space="preserve">
+    <value>{0} joined guild.</value>
+  </data>
+  <data name="KickedByAdmin" xml:space="preserve">
+    <value>Disconnected: Kicked by Admin.</value>
+  </data>
   <data name="LastOnline" xml:space="preserve">
     <value>Last Online</value>
+  </data>
+  <data name="LeftTheGuild" xml:space="preserve">
+    <value>{0} left the guild.</value>
+  </data>
+  <data name="LoggedOn" xml:space="preserve">
+    <value>{0} logged on.</value>
+  </data>
+  <data name="MaximumConnectionsReached" xml:space="preserve">
+    <value>Disconnected: Maximum connections reached.</value>
   </data>
   <data name="Miss" xml:space="preserve">
     <value>Miss</value>
@@ -165,14 +186,26 @@
   <data name="Others" xml:space="preserve">
     <value>Others</value>
   </data>
+  <data name="PacketError" xml:space="preserve">
+    <value>Disconnected: Packet Error.</value>
+  </data>
   <data name="PleaseWaitTheGameIsStillLoading" xml:space="preserve">
     <value>Please wait, The game is still loading... {0:##0}%</value>
+  </data>
+  <data name="ServerCrashed" xml:space="preserve">
+    <value>Disconnected: Server Crashed.</value>
   </data>
   <data name="ServerName" xml:space="preserve">
     <value>Legend of Mir 2</value>
   </data>
+  <data name="ShuttingDown" xml:space="preserve">
+    <value>Disconnected: Server is shutting down.</value>
+  </data>
   <data name="Taoist" xml:space="preserve">
     <value>Taoist</value>
+  </data>
+  <data name="TargetIsTooFar" xml:space="preserve">
+    <value>Target is too far.</value>
   </data>
   <data name="UseCrossHalfMoon" xml:space="preserve">
     <value>Use Cross Half Moon.</value>

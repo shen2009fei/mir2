@@ -398,12 +398,16 @@ namespace Server
             {
                 MovementInfoListBox.Items.Clear();
                 _info = _selectedMapInfos[0];
+                //_info.Movements.ForEach(x => x.Title = _info.Title);
             }
 
             if (MovementInfoListBox.Items.Count != _info.Movements.Count)
             {
                 MovementInfoListBox.Items.Clear();
-                for (int i = 0; i < _info.Movements.Count; i++) MovementInfoListBox.Items.Add(_info.Movements[i]);
+                for (int i = 0; i < _info.Movements.Count; i++)
+                {
+                    MovementInfoListBox.Items.Add(_info.Movements[i]);
+                }
             }
             _selectedMovementInfos = MovementInfoListBox.SelectedItems.Cast<MovementInfo>().ToList();
 
@@ -1724,16 +1728,16 @@ namespace Server
                 _selectedMapInfos[i].NoReincarnation = NoReincarnation.Checked;
         }
 
-        private void btnSearchMap_Click(object sender, EventArgs e)
-        {
-           var mapName = tbxMapName.Text.Trim();
-            var maplist = Envir.MapInfoList.FindAll(x => x.Title.Contains(mapName)).ToArray();
-            MapInfoListBox.Items.Clear();
-            DestMapComboBox.Items.Clear();       
+        //private void btnSearchMap_Click(object sender, EventArgs e)
+        //{
+        //   var mapName = tbxMapName.Text.Trim();
+        //    var maplist = Envir.MapInfoList.FindAll(x => x.Title.Contains(mapName)).ToArray();
+        //    MapInfoListBox.Items.Clear();
+        //    DestMapComboBox.Items.Clear();       
          
-            MapInfoListBox.Items.AddRange(maplist);
-            DestMapComboBox.Items.AddRange(maplist);
-        }
+        //    MapInfoListBox.Items.AddRange(maplist);
+        //    DestMapComboBox.Items.AddRange(Envir.MapInfoList.ToArray());
+        //}
 
         private void tbxMapName_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1742,10 +1746,10 @@ namespace Server
                 var mapName = tbxMapName.Text.Trim().ToLower();
                 var maplist = Envir.MapInfoList.FindAll(x => x.Title.ToLower().Contains(mapName)).ToArray();
                 MapInfoListBox.Items.Clear();
-                DestMapComboBox.Items.Clear();
+                //DestMapComboBox.Items.Clear();
 
                 MapInfoListBox.Items.AddRange(maplist);
-                DestMapComboBox.Items.AddRange(maplist);
+                //DestMapComboBox.Items.AddRange(Envir.MapInfoList.ToArray());
             }
 
         }

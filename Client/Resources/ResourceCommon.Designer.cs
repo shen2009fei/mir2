@@ -70,6 +70,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Disconnected: Another user logged onto your account. 的本地化字符串。
+        /// </summary>
+        internal static string AnotherUserLoggedOntoYourAccount {
+            get {
+                return ResourceManager.GetString("AnotherUserLoggedOntoYourAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Archer 的本地化字符串。
         /// </summary>
         internal static string Archer {
@@ -151,11 +160,65 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 {0} got removed from the guild. 的本地化字符串。
+        /// </summary>
+        internal static string GotRemovedFromTheGuild {
+            get {
+                return ResourceManager.GetString("GotRemovedFromTheGuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} joined guild. 的本地化字符串。
+        /// </summary>
+        internal static string JoinedGuild {
+            get {
+                return ResourceManager.GetString("JoinedGuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Disconnected: Kicked by Admin. 的本地化字符串。
+        /// </summary>
+        internal static string KickedByAdmin {
+            get {
+                return ResourceManager.GetString("KickedByAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Last Online 的本地化字符串。
         /// </summary>
         internal static string LastOnline {
             get {
                 return ResourceManager.GetString("LastOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} left the guild. 的本地化字符串。
+        /// </summary>
+        internal static string LeftTheGuild {
+            get {
+                return ResourceManager.GetString("LeftTheGuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} logged on. 的本地化字符串。
+        /// </summary>
+        internal static string LoggedOn {
+            get {
+                return ResourceManager.GetString("LoggedOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Disconnected: Maximum connections reached. 的本地化字符串。
+        /// </summary>
+        internal static string MaximumConnectionsReached {
+            get {
+                return ResourceManager.GetString("MaximumConnectionsReached", resourceCulture);
             }
         }
         
@@ -205,11 +268,29 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Disconnected: Packet Error. 的本地化字符串。
+        /// </summary>
+        internal static string PacketError {
+            get {
+                return ResourceManager.GetString("PacketError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Please wait, The game is still loading... {0:##0}% 的本地化字符串。
         /// </summary>
         internal static string PleaseWaitTheGameIsStillLoading {
             get {
                 return ResourceManager.GetString("PleaseWaitTheGameIsStillLoading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Disconnected: Server Crashed. 的本地化字符串。
+        /// </summary>
+        internal static string ServerCrashed {
+            get {
+                return ResourceManager.GetString("ServerCrashed", resourceCulture);
             }
         }
         
@@ -223,11 +304,29 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Disconnected: Server is shutting down. 的本地化字符串。
+        /// </summary>
+        internal static string ShuttingDown {
+            get {
+                return ResourceManager.GetString("ShuttingDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Taoist 的本地化字符串。
         /// </summary>
         internal static string Taoist {
             get {
                 return ResourceManager.GetString("Taoist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Target is too far. 的本地化字符串。
+        /// </summary>
+        internal static string TargetIsTooFar {
+            get {
+                return ResourceManager.GetString("TargetIsTooFar", resourceCulture);
             }
         }
         

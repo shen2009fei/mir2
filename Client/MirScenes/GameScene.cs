@@ -4984,20 +4984,20 @@ namespace Client.MirScenes
                     GuildDialog.MemberStatusChange(p.Name, false);
                     break;
                 case 1: // logged on
-                    ChatDialog.ReceiveChat(String.Format("{0} logged on.", p.Name), ChatType.Guild);
+                    ChatDialog.ReceiveChat(String.Format(Resources.ResourceCommon.LoggedOn , p.Name), ChatType.Guild);
                     GuildDialog.MemberStatusChange(p.Name, true);
                     break;
                 case 2://new member
-                    ChatDialog.ReceiveChat(String.Format("{0} joined guild.", p.Name), ChatType.Guild);
+                    ChatDialog.ReceiveChat(String.Format(Resources.ResourceCommon.JoinedGuild , p.Name), ChatType.Guild);
                     GuildDialog.MemberCount++;
                     GuildDialog.MembersChanged = true;
                     break;
                 case 3://kicked member
-                    ChatDialog.ReceiveChat(String.Format("{0} got removed from the guild.", p.Name), ChatType.Guild);
+                    ChatDialog.ReceiveChat(String.Format(Resources.ResourceCommon.GotRemovedFromTheGuild, p.Name), ChatType.Guild);
                     GuildDialog.MembersChanged = true;
                     break;
                 case 4://member left
-                    ChatDialog.ReceiveChat(String.Format("{0} left the guild.", p.Name), ChatType.Guild);
+                    ChatDialog.ReceiveChat(String.Format(Resources.ResourceCommon.LeftTheGuild, p.Name), ChatType.Guild);
                     GuildDialog.MembersChanged = true;
                     break;
                 case 5://rank change (name or different rank)
@@ -5909,115 +5909,115 @@ namespace Client.MirScenes
                 case ItemType.Nothing:
                     break;
                 case ItemType.Weapon:
-                    baseText = GameLanguage.ItemTypeWeapon;
+                    baseText = Resources.ResourceItemType.ItemTypeWeapon;
                     break;
                 case ItemType.Armour:
-                    baseText = GameLanguage.ItemTypeArmour;
+                    baseText = Resources.ResourceItemType.ItemTypeArmour;
                     break;
                 case ItemType.Helmet:
-                    baseText = GameLanguage.ItemTypeHelmet;
+                    baseText = Resources.ResourceItemType.ItemTypeHelmet;
                     break;
                 case ItemType.Necklace:
-                    baseText = GameLanguage.ItemTypeNecklace;
+                    baseText = Resources.ResourceItemType.ItemTypeNecklace;
                     break;
                 case ItemType.Bracelet:
-                    baseText = GameLanguage.ItemTypeBracelet;
+                    baseText = Resources.ResourceItemType.ItemTypeBracelet;
                     break;
                 case ItemType.Ring:
-                    baseText = GameLanguage.ItemTypeRing;
+                    baseText = Resources.ResourceItemType.ItemTypeRing;
                     break;
                 case ItemType.Amulet:
-                    baseText = GameLanguage.ItemTypeAmulet;
+                    baseText = Resources.ResourceItemType.ItemTypeAmulet;
                     break;
                 case ItemType.Belt:
-                    baseText = GameLanguage.ItemTypeBelt;
+                    baseText = Resources.ResourceItemType.ItemTypeBelt;
                     break;
                 case ItemType.Boots:
-                    baseText = GameLanguage.ItemTypeBoots;
+                    baseText = Resources.ResourceItemType.ItemTypeBoots;
                     break;
                 case ItemType.Stone:
-                    baseText = GameLanguage.ItemTypeStone;
+                    baseText = Resources.ResourceItemType.ItemTypeStone;
                     break;
                 case ItemType.Torch:
-                    baseText = GameLanguage.ItemTypeTorch;
+                    baseText = Resources.ResourceItemType.ItemTypeTorch;
                     break;
                 case ItemType.Potion:
-                    baseText = GameLanguage.ItemTypePotion;
+                    baseText = Resources.ResourceItemType.ItemTypePotion;
                     break;
                 case ItemType.Ore:
-                    baseText = GameLanguage.ItemTypeOre;
+                    baseText = Resources.ResourceItemType.ItemTypeOre;
                     break;
                 case ItemType.Meat:
-                    baseText = GameLanguage.ItemTypeMeat;
+                    baseText = Resources.ResourceItemType.ItemTypeMeat;
                     break;
                 case ItemType.CraftingMaterial:
-                    baseText = GameLanguage.ItemTypeCraftingMaterial;
+                    baseText = Resources.ResourceItemType.ItemTypeCraftingMaterial;
                     break;
                 case ItemType.Scroll:
-                    baseText = GameLanguage.ItemTypeScroll;
+                    baseText = Resources.ResourceItemType.ItemTypeScroll;
                     break;
                 case ItemType.Gem:
-                    baseText = GameLanguage.ItemTypeGem;
+                    baseText = Resources.ResourceItemType.ItemTypeGem;
                     break;
                 case ItemType.Mount:
-                    baseText = GameLanguage.ItemTypeMount;
+                    baseText = Resources.ResourceItemType.ItemTypeMount;
                     break;
                 case ItemType.Book:
-                    baseText = GameLanguage.ItemTypeBook;
+                    baseText = Resources.ResourceItemType.ItemTypeBook;
                     break;
                 case ItemType.Script:
-                    baseText = GameLanguage.ItemTypeScript;
+                    baseText = Resources.ResourceItemType.ItemTypeScript;
                     break;
                 case ItemType.Reins:
-                    baseText = GameLanguage.ItemTypeReins;
+                    baseText = Resources.ResourceItemType.ItemTypeReins;
                     break;
                 case ItemType.Bells:
-                    baseText = GameLanguage.ItemTypeBells;
+                    baseText = Resources.ResourceItemType.ItemTypeBells;
                     break;
                 case ItemType.Saddle:
-                    baseText = GameLanguage.ItemTypeSaddle;
+                    baseText = Resources.ResourceItemType.ItemTypeSaddle;
                     break;
                 case ItemType.Ribbon:
-                    baseText = GameLanguage.ItemTypeRibbon;
+                    baseText = Resources.ResourceItemType.ItemTypeRibbon;
                     break;
                 case ItemType.Mask:
-                    baseText = GameLanguage.ItemTypeMask;
+                    baseText = Resources.ResourceItemType.ItemTypeMask;
                     break;
                 case ItemType.Food:
-                    baseText = GameLanguage.ItemTypeFood;
+                    baseText = Resources.ResourceItemType.ItemTypeFood;
                     break;
                 case ItemType.Hook:
-                    baseText = GameLanguage.ItemTypeHook;
+                    baseText = Resources.ResourceItemType.ItemTypeHook;
                     break;
                 case ItemType.Float:
-                    baseText = GameLanguage.ItemTypeFloat;
+                    baseText = Resources.ResourceItemType.ItemTypeFloat;
                     break;
                 case ItemType.Bait:
-                    baseText = GameLanguage.ItemTypeBait;
+                    baseText = Resources.ResourceItemType.ItemTypeBait;
                     break;
                 case ItemType.Finder:
-                    baseText = GameLanguage.ItemTypeFinder;
+                    baseText = Resources.ResourceItemType.ItemTypeFinder;
                     break;
                 case ItemType.Reel:
-                    baseText = GameLanguage.ItemTypeReel;
+                    baseText = Resources.ResourceItemType.ItemTypeReel;
                     break;
                 case ItemType.Fish:
-                    baseText = GameLanguage.ItemTypeFish;
+                    baseText = Resources.ResourceItemType.ItemTypeFish;
                     break;
                 case ItemType.Quest:
-                    baseText = GameLanguage.ItemTypeQuest;
+                    baseText = Resources.ResourceItemType.ItemTypeQuest;
                     break;
                 case ItemType.Awakening:
-                    baseText = GameLanguage.ItemTypeAwakening;
+                    baseText = Resources.ResourceItemType.ItemTypeAwakening;
                     break;
                 case ItemType.Pets:
-                    baseText = GameLanguage.ItemTypePets;
+                    baseText = Resources.ResourceItemType.ItemTypePets;
                     break;
                 case ItemType.Transform:
-                    baseText = GameLanguage.ItemTypeTransform;
+                    baseText = Resources.ResourceItemType.ItemTypeTransform;
                     break;
                 case ItemType.Deco:
-                    baseText = GameLanguage.ItemTypeDeco;
+                    baseText = Resources.ResourceItemType.ItemTypeDeco;
                     break;
             }
 
@@ -10001,7 +10001,7 @@ namespace Client.MirScenes
                             if (CMain.Time >= OutputDelay)
                             {
                                 OutputDelay = CMain.Time + 1000;
-                                GameScene.Scene.OutputMessage("Target is too far.");
+                                GameScene.Scene.OutputMessage(Resources.ResourceCommon.TargetIsTooFar);
                             }
                         }
                         //  return;
@@ -10089,7 +10089,7 @@ namespace Client.MirScenes
                                             if (CMain.Time >= OutputDelay)
                                             {
                                                 OutputDelay = CMain.Time + 1000;
-                                                GameScene.Scene.OutputMessage("Target is too far.");
+                                                GameScene.Scene.OutputMessage(Resources.ResourceCommon.TargetIsTooFar);
                                             }
                                             return;
                                         }
@@ -10126,7 +10126,7 @@ namespace Client.MirScenes
                                 if (CMain.Time >= OutputDelay)
                                 {
                                     OutputDelay = CMain.Time + 1000;
-                                    GameScene.Scene.OutputMessage("Target is too far.");
+                                    GameScene.Scene.OutputMessage(Resources.ResourceCommon.TargetIsTooFar);
                                 }
                             }
                             return;
@@ -10430,7 +10430,7 @@ namespace Client.MirScenes
                 if (CMain.Time >= OutputDelay)
                 {
                     OutputDelay = CMain.Time + 1000;
-                    GameScene.Scene.OutputMessage("Target is too far.");
+                    GameScene.Scene.OutputMessage(Resources.ResourceCommon.TargetIsTooFar);
                 }
                 User.ClearMagic();
                 return;

@@ -61,6 +61,24 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Agility 的本地化字符串。
+        /// </summary>
+        internal static string Agility {
+            get {
+                return ResourceManager.GetString("Agility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} Average Damage inflicted on the trainer, Dps: {1:#.00}. 的本地化字符串。
+        /// </summary>
+        internal static string AverageDamageInflictedOnTheTrainerDps {
+            get {
+                return ResourceManager.GetString("AverageDamageInflictedOnTheTrainerDps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Bid Met 的本地化字符串。
         /// </summary>
         internal static string BidMet {
@@ -151,6 +169,42 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 {3} inflicted {0} {1} Damage, Dps: {2:#.00}. 的本地化字符串。
+        /// </summary>
+        internal static string InflictedDamageDps {
+            get {
+                return ResourceManager.GetString("InflictedDamageDps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {1} inflicted {0} Damage, Dps: {2:#.00}. 的本地化字符串。
+        /// </summary>
+        internal static string InflictedDamageDpsPoison {
+            get {
+                return ResourceManager.GetString("InflictedDamageDpsPoison", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Magic 的本地化字符串。
+        /// </summary>
+        internal static string Magic {
+            get {
+                return ResourceManager.GetString("Magic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Magical Agility 的本地化字符串。
+        /// </summary>
+        internal static string MagicalAgility {
+            get {
+                return ResourceManager.GetString("MagicalAgility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Map {0}:[{1}] could not be found 的本地化字符串。
         /// </summary>
         internal static string MapCouldNotBeFound {
@@ -214,6 +268,24 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Physical Agility 的本地化字符串。
+        /// </summary>
+        internal static string PhysicalAgility {
+            get {
+                return ResourceManager.GetString("PhysicalAgility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Physicial 的本地化字符串。
+        /// </summary>
+        internal static string Physicial {
+            get {
+                return ResourceManager.GetString("Physicial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Sold 的本地化字符串。
         /// </summary>
         internal static string Sold {
@@ -241,6 +313,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You 的本地化字符串。
+        /// </summary>
+        internal static string You {
+            get {
+                return ResourceManager.GetString("You", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You bid {1:#,##0} Gold for {0} 的本地化字符串。
         /// </summary>
         internal static string YouBidGoldFor {
@@ -259,11 +340,65 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You cannot position move on this map 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotPositionMoveOnThisMap {
+            get {
+                return ResourceManager.GetString("YouCannotPositionMoveOnThisMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You cannot teleport for another {0} seconds 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotTeleportForAnotherSeconds {
+            get {
+                return ResourceManager.GetString("YouCannotTeleportForAnotherSeconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You can now unequip a cursed item. 的本地化字符串。
         /// </summary>
         internal static string YouCanNowUnequipACursedItem {
             get {
                 return ResourceManager.GetString("YouCanNowUnequipACursedItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your pet 的本地化字符串。
+        /// </summary>
+        internal static string YourPet {
+            get {
+                return ResourceManager.GetString("YourPet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your pets poison 的本地化字符串。
+        /// </summary>
+        internal static string YourPetsPoison {
+            get {
+                return ResourceManager.GetString("YourPetsPoison", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your poison 的本地化字符串。
+        /// </summary>
+        internal static string YourPoison {
+            get {
+                return ResourceManager.GetString("YourPoison", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your poison stopped {0} regen, Dps: {1:#.00}. 的本地化字符串。
+        /// </summary>
+        internal static string YourPoisonStoppedRegenDps {
+            get {
+                return ResourceManager.GetString("YourPoisonStoppedRegenDps", resourceCulture);
             }
         }
     }

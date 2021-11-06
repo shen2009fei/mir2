@@ -20,6 +20,7 @@ using Effect = Client.MirObjects.Effect;
 
 using Client.MirScenes.Dialogs;
 using System.Drawing.Imaging;
+using System.Diagnostics;
 
 namespace Client.MirScenes.Dialogs
 {
@@ -872,7 +873,7 @@ namespace Client.MirScenes.Dialogs
             }
 
             chat.Add(text.Substring(index, text.Length - index));
-            
+
             if (StartIndex == History.Count - LineCount)
                 StartIndex += chat.Count;
 
@@ -991,9 +992,9 @@ namespace Client.MirScenes.Dialogs
 
                         ChatLink(values[0], ulong.Parse(values[1]), temp.Location.Add(new Point(size.Width - 10, 0)));
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
-						//Temporary debug to catch unknown error
+                        //Temporary debug to catch unknown error
                         CMain.SaveError(ex.ToString());
                         CMain.SaveError(currentLine);
                         CMain.SaveError(capture.Value);
@@ -2132,7 +2133,7 @@ namespace Client.MirScenes.Dialogs
                 return CMain.InputKeys.GetKey(KeybindOptions.Bar2Skill8);
             return "";
         }
-                    
+
 
         void MagicKeyDialog_BeforeDraw(object sender, EventArgs e)
         {
@@ -2144,7 +2145,7 @@ namespace Client.MirScenes.Dialogs
             HasSkill = false;
             foreach (var m in GameScene.User.Magics)
             {
-                if ((m.Key < (BarIndex * 8)+1) || (m.Key > ((BarIndex + 1) * 8)+1)) continue;
+                if ((m.Key < (BarIndex * 8) + 1) || (m.Key > ((BarIndex + 1) * 8) + 1)) continue;
                 HasSkill = true;
             }
 
@@ -2171,7 +2172,7 @@ namespace Client.MirScenes.Dialogs
 
                     //string key = m.Key > 8 ? string.Format("CTRL F{0}", i) : string.Format("F{0}", m.Key);
 
-                    Cells[i - 1].Index = magic.Icon*2;
+                    Cells[i - 1].Index = magic.Icon * 2;
                     Cells[i - 1].Hint = string.Format("{0}\nMP: {1}\nCooldown: {2}\nKey: {3}", magic.Name,
                         (magic.BaseCost + (magic.LevelCost * magic.Level)), Functions.PrintTimeSpanFromMilliSeconds(magic.Delay), key);
 
@@ -2203,9 +2204,10 @@ namespace Client.MirScenes.Dialogs
 
                     if (timeLeft < 100)
                     {
-                        if (timeLeft > 0) { 
+                        if (timeLeft > 0)
+                        {
                             CoolDowns[i].Visible = false;
-                           // CoolDowns[i].Dispose();
+                            // CoolDowns[i].Dispose();
                         }
                         else
                             continue;
@@ -2954,7 +2956,7 @@ namespace Client.MirScenes.Dialogs
                 Parent = StatePage,
                 Location = new Point(60, 200),
                 NotControl = true,
-                Text= Resources.ResourceCharStat2.FrostPower
+                Text = Resources.ResourceCharStat2.FrostPower
             };
             FreezeLabel = new MirLabel
             {
@@ -4978,11 +4980,11 @@ namespace Client.MirScenes.Dialogs
     }
     public sealed class BigMapDialog : MirControl
     {
-	float ScaleX;
+        float ScaleX;
         float ScaleY;
-	
+
         int BigMap_MouseCoordsProcessing_OffsetX, BigMap_MouseCoordsProcessing_OffsetY;
-            
+
         public BigMapDialog()
         {
             NotControl = false;
@@ -4991,15 +4993,15 @@ namespace Client.MirScenes.Dialogs
             //BorderColour = Color.Lime;
             BeforeDraw += (o, e) => OnBeforeDraw();
             Sort = true;
-	    
+
             MouseMove += UpdateBigMapCoordinates;
         }
 
-	private void UpdateBigMapCoordinates(object sender, MouseEventArgs e)
+        private void UpdateBigMapCoordinates(object sender, MouseEventArgs e)
         {
             int MouseCoordsOnBigMap_MapValue_X = (int)((e.Location.X - BigMap_MouseCoordsProcessing_OffsetX) / ScaleX);
             int MouseCoordsOnBigMap_MapValue_Y = (int)((e.Location.Y - BigMap_MouseCoordsProcessing_OffsetY) / ScaleY);
-	    
+
             this.Hint = string.Format("{0},{1}", MouseCoordsOnBigMap_MapValue_X, MouseCoordsOnBigMap_MapValue_Y);
         }
 
@@ -5008,8 +5010,8 @@ namespace Client.MirScenes.Dialogs
             MapControl map = GameScene.Scene.MapControl;
             if (map == null || !Visible) return;
 
-            //int index = map.BigMap <= 0 ? map.MiniMap : map.BigMap;
-            int index = map.BigMap;
+            int index = map.BigMap <= 0 ? map.MiniMap : map.BigMap;
+            //int index = map.BigMap;
 
             if (index <= 0)
             {
@@ -5035,7 +5037,7 @@ namespace Client.MirScenes.Dialogs
             viewRect.X = (Settings.ScreenWidth - viewRect.Width) / 2;
             viewRect.Y = (Settings.ScreenHeight - 120 - viewRect.Height) / 2;
 
-	    BigMap_MouseCoordsProcessing_OffsetX = viewRect.X;
+            BigMap_MouseCoordsProcessing_OffsetX = viewRect.X;
             BigMap_MouseCoordsProcessing_OffsetY = viewRect.Y;
 
             Location = viewRect.Location;
@@ -5092,6 +5094,18 @@ namespace Client.MirScenes.Dialogs
             Visible = !Visible;
 
             Redraw();
+        }
+        public override void OnMouseClick(MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                int MouseCoordsOnBigMap_MapValue_X = (int)((e.Location.X - BigMap_MouseCoordsProcessing_OffsetX) / ScaleX);
+                int MouseCoordsOnBigMap_MapValue_Y = (int)((e.Location.Y - BigMap_MouseCoordsProcessing_OffsetY) / ScaleY);
+                Debug.WriteLine($"@MOVE {MouseCoordsOnBigMap_MapValue_X} {MouseCoordsOnBigMap_MapValue_Y}");
+                //Console.WriteLine($"@MOVE {e.X} {e.Y}");
+                Network.Enqueue(new C.Chat { Message = $"@MOVE {MouseCoordsOnBigMap_MapValue_X} {MouseCoordsOnBigMap_MapValue_Y}" });
+            }
+            base.OnMouseClick(e);
         }
     }
     public sealed class DuraStatusDialog : MirImageControl

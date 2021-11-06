@@ -313,7 +313,7 @@ namespace Server
             this.MapIndexTextBox.Location = new System.Drawing.Point(82, 14);
             this.MapIndexTextBox.Name = "MapIndexTextBox";
             this.MapIndexTextBox.ReadOnly = true;
-            this.MapIndexTextBox.Size = new System.Drawing.Size(47, 21);
+            this.MapIndexTextBox.Size = new System.Drawing.Size(92, 21);
             this.MapIndexTextBox.TabIndex = 0;
             // 
             // MiniMapTextBox
@@ -346,7 +346,7 @@ namespace Server
             // 
             this.FileNameTextBox.Location = new System.Drawing.Point(82, 41);
             this.FileNameTextBox.Name = "FileNameTextBox";
-            this.FileNameTextBox.Size = new System.Drawing.Size(47, 21);
+            this.FileNameTextBox.Size = new System.Drawing.Size(92, 21);
             this.FileNameTextBox.TabIndex = 1;
             this.FileNameTextBox.TextChanged += new System.EventHandler(this.FileNameTextBox_TextChanged);
             // 

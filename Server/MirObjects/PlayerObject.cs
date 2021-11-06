@@ -3980,12 +3980,12 @@ namespace Server.MirObjects
                         if (!IsGM && !SpecialMode.HasFlag(SpecialItemMode.Teleport) && !Settings.TestServer) return;
                         if (!IsGM && CurrentMap.Info.NoPosition)
                         {
-                            ReceiveChat(("You cannot position move on this map"), ChatType.System);
+                            ReceiveChat(Resources.ResourceCommon.YouCannotPositionMoveOnThisMap, ChatType.System);
                             return;
                         }
                         if (Envir.Time < LastTeleportTime)
                         {
-                            ReceiveChat(string.Format("You cannot teleport for another {0} seconds", (LastTeleportTime - Envir.Time) / 1000), ChatType.System);
+                            ReceiveChat(string.Format(Resources.ResourceCommon.YouCannotTeleportForAnotherSeconds, (LastTeleportTime - Envir.Time) / 1000), ChatType.System);
                             return;
                         }
 
@@ -4041,7 +4041,7 @@ namespace Server.MirObjects
                                     (string.Format(Resources.ResourceCommon.FailedMovementToMapCord, map.Info.Title, x, y)), ChatType.System);
                                 break;
                             case 5:
-                                ReceiveChat(Teleport(map, new Point(x, y)) ? (string.Format(Resources.ResourceCommon.MovedToMapInstanceCord, map.Info.Title, instanceID, x, y)) :
+                                ReceiveChat(Teleport(map, new Point(x, y)) ? (string.Format(Resources.ResourceCommon.MovedToMap, map.Info.Title, instanceID, x, y)) :
                                     (string.Format(Resources.ResourceCommon.FailedMovementToMapInstanceCord, map.Info.Title, instanceID, x, y)), ChatType.System);
                                 break;
                         }

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Agility" xml:space="preserve">
+    <value>敏捷</value>
+  </data>
+  <data name="AverageDamageInflictedOnTheTrainerDps" xml:space="preserve">
+    <value>对训练师造成的平均伤害 {0}，每秒伤害：{1:#.00}.</value>
+  </data>
   <data name="BidMet" xml:space="preserve">
     <value>有竞价</value>
   </data>
@@ -147,6 +153,18 @@
   <data name="HasJustExpiredFromYourStorage" xml:space="preserve">
     <value>刚刚从您的仓库中过期。</value>
   </data>
+  <data name="InflictedDamageDps" xml:space="preserve">
+    <value>{3} 造成 {0} {1} 伤害, 每秒伤害: {2:#.00}.</value>
+  </data>
+  <data name="InflictedDamageDpsPoison" xml:space="preserve">
+    <value>{1} 造成 {0} 伤害, 每秒伤害: {2:#.00}.</value>
+  </data>
+  <data name="Magic" xml:space="preserve">
+    <value>魔法</value>
+  </data>
+  <data name="MagicalAgility" xml:space="preserve">
+    <value>魔法 敏捷</value>
+  </data>
   <data name="MapCouldNotBeFound" xml:space="preserve">
     <value>地图 {0}:[{1}] 找不到</value>
   </data>
@@ -168,6 +186,12 @@
   <data name="NoBid" xml:space="preserve">
     <value>无竞价</value>
   </data>
+  <data name="PhysicalAgility" xml:space="preserve">
+    <value>物理 敏捷</value>
+  </data>
+  <data name="Physicial" xml:space="preserve">
+    <value>物理</value>
+  </data>
   <data name="Sold" xml:space="preserve">
     <value>卖掉</value>
   </data>
@@ -177,13 +201,34 @@
   <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
     <value>租赁锁定已从{0}中移除</value>
   </data>
+  <data name="You" xml:space="preserve">
+    <value>你</value>
+  </data>
   <data name="YouBidGoldFor" xml:space="preserve">
     <value>你为 {0} 出价 {1:#,##0} 金币</value>
   </data>
   <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
     <value>你已经取下被诅咒的物品了。</value>
   </data>
+  <data name="YouCannotPositionMoveOnThisMap" xml:space="preserve">
+    <value>您无法在此地图上使用位置移动</value>
+  </data>
+  <data name="YouCannotTeleportForAnotherSeconds" xml:space="preserve">
+    <value>你不能在 {0} 秒内再传送</value>
+  </data>
   <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
     <value>你现在可以取下一个被诅咒的物品。</value>
+  </data>
+  <data name="YourPet" xml:space="preserve">
+    <value>你的宠物</value>
+  </data>
+  <data name="YourPetsPoison" xml:space="preserve">
+    <value>你的宠物毒伤</value>
+  </data>
+  <data name="YourPoison" xml:space="preserve">
+    <value>你的毒伤</value>
+  </data>
+  <data name="YourPoisonStoppedRegenDps" xml:space="preserve">
+    <value>你的毒药停止了 {0} 恢复，每秒伤害：{1:#.00}.</value>
   </data>
 </root>
