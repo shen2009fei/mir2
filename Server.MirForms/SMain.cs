@@ -124,6 +124,8 @@ namespace Server
             ListItem.SubItems.Add(character.Level.ToString());
             ListItem.SubItems.Add(character.Class.ToString());
             ListItem.SubItems.Add(character.Gender.ToString());
+            ListItem.SubItems.Add(Envir.MapInfoList.Find(x=>x.Index == character.CurrentMapIndex).Title);
+            ListItem.SubItems.Add($"{character.CurrentLocation.X} {character.CurrentLocation.Y}");
 
             return ListItem;
         }

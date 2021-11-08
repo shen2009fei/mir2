@@ -971,7 +971,6 @@ public enum PoisonType : ushort
 }
 
 [Flags]
-
 public enum BindMode : short
 {
     None = 0,

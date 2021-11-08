@@ -117,19 +117,19 @@ public static class Functions
         string answer;
         if (t.TotalMinutes < 1.0)
         {
-            answer = string.Format("{0}.{1}s", t.Seconds, (decimal)(t.Milliseconds / 100));
+            answer = string.Format(Shared.Resources.ResourceShared.TimeSecondInfo, t.Seconds, (decimal)(t.Milliseconds / 100));
         }
         else if (t.TotalHours < 1.0)
         {
-            answer = string.Format("{0}m {1:D2}s", t.TotalMinutes, t.Seconds);
+            answer = string.Format(Shared.Resources.ResourceShared.TimeMinuteSecondInfo, t.TotalMinutes, t.Seconds);
         }
         else if (t.TotalDays < 1.0)
         {
-            answer = string.Format("{0}h {1:D2}m {2:D2}s", (int)t.TotalHours, t.Minutes, t.Seconds);
+            answer = string.Format(Shared.Resources.ResourceShared.TimeHourMinuteSecondInfo, (int)t.TotalHours, t.Minutes, t.Seconds);
         }
         else
         {
-            answer = string.Format("{0}d {1}h {2:D2}m {3:D2}s", (int)t.Days, (int)t.Hours, t.Minutes, t.Seconds);
+            answer = string.Format(Shared.Resources.ResourceShared.TimeDayHourMinuteSecondInfo, (int)t.Days, (int)t.Hours, t.Minutes, t.Seconds);
         }
 
         return answer;

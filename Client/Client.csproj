@@ -240,6 +240,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\ResourceBar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceBar.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\ResourceHelpDialog.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -382,6 +387,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceBar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceBar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceBar.zh-CN.resx" />
     <EmbeddedResource Include="Resources\ResourceHelpDialog.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceHelpDialog.Designer.cs</LastGenOutput>
