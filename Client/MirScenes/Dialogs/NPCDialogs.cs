@@ -622,7 +622,7 @@ namespace Client.MirScenes.Dialogs
                     maxQuantity = Math.Min(ushort.MaxValue, (ushort)(GameScene.Gold / (SelectedItem.Price() / SelectedItem.Count)));
                     if (maxQuantity == 0)
                     {
-                        GameScene.Scene.ChatDialog.ReceiveChat(GameLanguage.LowGold, ChatType.System);
+                        GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.NotEnoughGold, ChatType.System);
                         return;
                     }
                 }
@@ -652,7 +652,7 @@ namespace Client.MirScenes.Dialogs
             {
                 if (SelectedItem.Info.Price > GameScene.Gold)
                 {
-                    GameScene.Scene.ChatDialog.ReceiveChat(GameLanguage.LowGold, ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.NotEnoughGold, ChatType.System);
                     return;
                 }
 
@@ -911,7 +911,7 @@ namespace Client.MirScenes.Dialogs
                         TargetItem = null;
                         return;
                     }
-                    GameScene.Scene.ChatDialog.ReceiveChat(GameLanguage.LowGold, ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.NotEnoughGold, ChatType.System);
                     break;
                 case PanelType.SpecialRepair:
                     if ((TargetItem.Info.Bind.HasFlag(BindMode.DontRepair)) || (TargetItem.Info.Bind.HasFlag(BindMode.NoSRepair)))
@@ -925,7 +925,7 @@ namespace Client.MirScenes.Dialogs
                         TargetItem = null;
                         return;
                     }
-                    GameScene.Scene.ChatDialog.ReceiveChat(GameLanguage.LowGold, ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.NotEnoughGold, ChatType.System);
                     break;
                 case PanelType.Consign:
                     if (TargetItem.Info.Bind.HasFlag(BindMode.DontStore) || TargetItem.Info.Bind.HasFlag(BindMode.DontSell))

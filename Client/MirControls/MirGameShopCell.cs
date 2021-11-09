@@ -219,7 +219,7 @@ namespace Client.MirControls
                 }
                 else
                 {
-                    GameScene.Scene.ChatDialog.ReceiveChat(GameLanguage.LowGold, ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceNPCDialog.NotEnoughGold, ChatType.System);
                     return;
                 }
 

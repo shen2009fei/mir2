@@ -386,12 +386,12 @@ namespace Server.MirObjects
         {
             if ((RankIndex >= Ranks.Count) || (Option > 7))
             {
-                Self.ReceiveChat("Rank not found!", ChatType.System);
+                Self.ReceiveChat(Resources.ResourceCommon.RankNotFound, ChatType.System);
                 return false;
             }
             if (Self.MyGuildRank.Index >= RankIndex)
             {
-                Self.ReceiveChat("You cannot change the options of your own rank!", ChatType.System);
+                Self.ReceiveChat(Resources.ResourceCommon.YouCannotChangeTheOptionsOfYourOwnRank, ChatType.System);
                 return false;
             }
             if ((Enabled != "true") && (Enabled != "false"))
@@ -475,13 +475,13 @@ namespace Server.MirObjects
             {
                 if (MemberRank.Members.Count < 2)
                 {
-                    Kicker.ReceiveChat("You cannot leave the guild when you're leader.", ChatType.System);
+                    Kicker.ReceiveChat(Resources.ResourceCommon.YouCannotLeaveTheGuildWhenYouAreLeader, ChatType.System);
                     return false;
                 }
                 for (int i = 0; i < MemberRank.Members.Count; i++)
                     if ((MemberRank.Members[i].Online) && (MemberRank.Members[i] != Member))
                         goto AllOk;
-                Kicker.ReceiveChat("You need at least 1 leader online.", ChatType.System);
+                Kicker.ReceiveChat(Resources.ResourceCommon.YouNeedAtLeast1LeaderOnline, ChatType.System);
                 return false;
             }
             AllOk:
@@ -514,7 +514,7 @@ namespace Server.MirObjects
                 formerMember.Info.GuildIndex = -1;
                 formerMember.MyGuild = null;
                 formerMember.MyGuildRank = null;
-                formerMember.ReceiveChat(kickSelf ? "You have left your guild." : "You have been removed from your guild.", ChatType.Guild);
+                formerMember.ReceiveChat(kickSelf ? Resources.ResourceCommon.YouHaveLeftYourGuild : Resources.ResourceCommon.YouHaveBeenRemovedFromYourGuild, ChatType.Guild);
                 formerMember.RefreshStats();
                 formerMember.Enqueue(new ServerPackets.GuildStatus() { GuildName = "", GuildRankName = "", MyOptions = (GuildRankOptions)0 });
                 formerMember.BroadcastInfo();

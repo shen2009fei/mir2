@@ -340,6 +340,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Not enough gold. 的本地化字符串。
+        /// </summary>
+        internal static string NotEnoughGold {
+            get {
+                return ResourceManager.GetString("NotEnoughGold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Physical Agility 的本地化字符串。
         /// </summary>
         internal static string PhysicalAgility {
@@ -372,6 +381,15 @@ namespace Server.Resources {
         internal static string RankNameToShort {
             get {
                 return ResourceManager.GetString("RankNameToShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Rank not found! 的本地化字符串。
+        /// </summary>
+        internal static string RankNotFound {
+            get {
+                return ResourceManager.GetString("RankNotFound", resourceCulture);
             }
         }
         
@@ -448,11 +466,29 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You cannot change the options of your own rank! 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotChangeTheOptionsOfYourOwnRank {
+            get {
+                return ResourceManager.GetString("YouCannotChangeTheOptionsOfYourOwnRank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You cannot have anymore ranks. 的本地化字符串。
         /// </summary>
         internal static string YouCannotHaveAnymoreRanks {
             get {
                 return ResourceManager.GetString("YouCannotHaveAnymoreRanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You cannot leave the guild when you&apos;re leader. 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotLeaveTheGuildWhenYouAreLeader {
+            get {
+                return ResourceManager.GetString("YouCannotLeaveTheGuildWhenYouAreLeader", resourceCulture);
             }
         }
         
@@ -480,6 +516,24 @@ namespace Server.Resources {
         internal static string YouCanNowUnequipACursedItem {
             get {
                 return ResourceManager.GetString("YouCanNowUnequipACursedItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You have been removed from your guild. 的本地化字符串。
+        /// </summary>
+        internal static string YouHaveBeenRemovedFromYourGuild {
+            get {
+                return ResourceManager.GetString("YouHaveBeenRemovedFromYourGuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You have left your guild. 的本地化字符串。
+        /// </summary>
+        internal static string YouHaveLeftYourGuild {
+            get {
+                return ResourceManager.GetString("YouHaveLeftYourGuild", resourceCulture);
             }
         }
         

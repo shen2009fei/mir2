@@ -210,6 +210,9 @@
   <data name="NoBid" xml:space="preserve">
     <value>无竞价</value>
   </data>
+  <data name="NotEnoughGold" xml:space="preserve">
+    <value>没有足够的金币。</value>
+  </data>
   <data name="PhysicalAgility" xml:space="preserve">
     <value>物理 敏捷</value>
   </data>
@@ -221,6 +224,9 @@
   </data>
   <data name="RankNameToShort" xml:space="preserve">
     <value>军阶名称太短</value>
+  </data>
+  <data name="RankNotFound" xml:space="preserve">
+    <value>军阶未找到！</value>
   </data>
   <data name="Sold" xml:space="preserve">
     <value>卖掉</value>
@@ -246,8 +252,14 @@
   <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
     <value>你已经取下被诅咒的物品了。</value>
   </data>
+  <data name="YouCannotChangeTheOptionsOfYourOwnRank" xml:space="preserve">
+    <value>您无法更改自己的军阶选项！</value>
+  </data>
   <data name="YouCannotHaveAnymoreRanks" xml:space="preserve">
     <value>你不能再有任何军阶了</value>
+  </data>
+  <data name="YouCannotLeaveTheGuildWhenYouAreLeader" xml:space="preserve">
+    <value>当你是掌门人时，你不能离开行会。</value>
   </data>
   <data name="YouCannotPositionMoveOnThisMap" xml:space="preserve">
     <value>您无法在此地图上使用位置移动</value>
@@ -258,11 +270,17 @@
   <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
     <value>你现在可以取下一个被诅咒的物品。</value>
   </data>
+  <data name="YouHaveBeenRemovedFromYourGuild" xml:space="preserve">
+    <value>您已被行会移除</value>
+  </data>
+  <data name="YouHaveLeftYourGuild" xml:space="preserve">
+    <value>你已经离开了你的行会。</value>
+  </data>
   <data name="YouMustBeALeaderToStartAWar" xml:space="preserve">
     <value>您必须是掌门人才能发动战争</value>
   </data>
   <data name="YouNeedAtLeast1LeaderOnline" xml:space="preserve">
-    <value>You need at least 1 leader online.</value>
+    <value>你需要至少 1 个掌门人在线.</value>
   </data>
   <data name="YourPet" xml:space="preserve">
     <value>你的宠物</value>

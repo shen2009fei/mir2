@@ -126,6 +126,9 @@
   <data name="AreYouSureYouWantToBuyFor" xml:space="preserve">
     <value>Are you sure you want to buy {0} for {1:#,##0} {2}?</value>
   </data>
+  <data name="AuctionHasAlreadyEndedForThisItem" xml:space="preserve">
+    <value>Auction has already ended for this item.</value>
+  </data>
   <data name="auctionText" xml:space="preserve">
     <value>1. Auction cost is {0} gold, max starting bid is {1} gold per item \r\n\r\n2. 1% of final bid price is paid to Trust Merchant at auction end\r\n\r\n3. Maximum {2} days of item sale registration, afterwards the item will be sent to highest bidder\r\n\r\n4. Maximum of unlimited "items allowed for auction\r\n\r\n</value>
   </data>
@@ -240,6 +243,9 @@
   <data name="NoBid" xml:space="preserve">
     <value>No Bid</value>
   </data>
+  <data name="NotEnoughGold" xml:space="preserve">
+    <value>Not enough gold.</value>
+  </data>
   <data name="Orbs" xml:space="preserve">
     <value>Orbs</value>
   </data>
@@ -315,11 +321,35 @@
   <data name="STARTINGBID" xml:space="preserve">
     <value>STARTING BID</value>
   </data>
+  <data name="ThisItemHasAlreadyBeenSold" xml:space="preserve">
+    <value>This item has already been sold.</value>
+  </data>
+  <data name="ThisItemHasExpiredAndCannotBeBrought" xml:space="preserve">
+    <value>This item has Expired and cannot be bought.</value>
+  </data>
+  <data name="ThisItemHasNotMetTheMinimumBidYet" xml:space="preserve">
+    <value>This item has not met the minimum bid yet.</value>
+  </data>
   <data name="WeaponItems" xml:space="preserve">
     <value>Weapon Items</value>
   </data>
+  <data name="YouAreTooFarAwayFromTheTrustMerchant" xml:space="preserve">
+    <value>You are too far away from the Trust Merchant.</value>
+  </data>
+  <data name="YouCannotBuyFromTheTrustMerchantWithoutUsing" xml:space="preserve">
+    <value>You cannot buy from the TrustMerchant without using.</value>
+  </data>
+  <data name="YouCannotBuyYourOwnItems" xml:space="preserve">
+    <value>You cannot buy your own items.</value>
+  </data>
+  <data name="YouCannotHoldEnoughGoldToGetYourSale" xml:space="preserve">
+    <value>You cannot hold enough gold to get your sale.</value>
+  </data>
   <data name="YouCannotPpurchaseAnymoreItems" xml:space="preserve">
     <value>You cannot purchase any more items.</value>
+  </data>
+  <data name="YouCannotUseTheTrustMerchantWhenDead" xml:space="preserve">
+    <value>You cannot use the TrustMerchant when dead.</value>
   </data>
   <data name="YouCanSearchAgainAfterSeconds" xml:space="preserve">
     <value>You can search again after {0} seconds.</value>
@@ -335,6 +365,9 @@
   </data>
   <data name="YouDoNotHaveEnoughWeight" xml:space="preserve">
     <value>You do not have enough weight.</value>
+  </data>
+  <data name="YouDoNotHaveEnoughWeightOrSpaceSpareToBuyThisItem" xml:space="preserve">
+    <value>You do not have enough weight or space spare to buy this item.</value>
   </data>
   <data name="YouDontHaveEnoughGoldToRefineYour" xml:space="preserve">
     <value>You don't have enough gold to refine your {0}.</value>

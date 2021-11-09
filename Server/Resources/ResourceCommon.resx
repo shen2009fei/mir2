@@ -210,6 +210,9 @@
   <data name="NoBid" xml:space="preserve">
     <value>No Bid</value>
   </data>
+  <data name="NotEnoughGold" xml:space="preserve">
+    <value>Not enough gold.</value>
+  </data>
   <data name="PhysicalAgility" xml:space="preserve">
     <value>Physical Agility</value>
   </data>
@@ -221,6 +224,9 @@
   </data>
   <data name="RankNameToShort" xml:space="preserve">
     <value>Rank name too short!</value>
+  </data>
+  <data name="RankNotFound" xml:space="preserve">
+    <value>Rank not found!</value>
   </data>
   <data name="Sold" xml:space="preserve">
     <value>Sold</value>
@@ -246,8 +252,14 @@
   <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
     <value>You can already unequip a cursed item</value>
   </data>
+  <data name="YouCannotChangeTheOptionsOfYourOwnRank" xml:space="preserve">
+    <value>You cannot change the options of your own rank!</value>
+  </data>
   <data name="YouCannotHaveAnymoreRanks" xml:space="preserve">
     <value>You cannot have anymore ranks.</value>
+  </data>
+  <data name="YouCannotLeaveTheGuildWhenYouAreLeader" xml:space="preserve">
+    <value>You cannot leave the guild when you're leader.</value>
   </data>
   <data name="YouCannotPositionMoveOnThisMap" xml:space="preserve">
     <value>You cannot position move on this map</value>
@@ -257,6 +269,12 @@
   </data>
   <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
     <value>You can now unequip a cursed item.</value>
+  </data>
+  <data name="YouHaveBeenRemovedFromYourGuild" xml:space="preserve">
+    <value>You have been removed from your guild.</value>
+  </data>
+  <data name="YouHaveLeftYourGuild" xml:space="preserve">
+    <value>You have left your guild.</value>
   </data>
   <data name="YouMustBeALeaderToStartAWar" xml:space="preserve">
     <value>You must be a leader to start a war.</value>

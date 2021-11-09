@@ -4840,37 +4840,37 @@ namespace Client.MirScenes
             switch (p.Reason)
             {
                 case 0:
-                    MirMessageBox.Show("You cannot use the TrustMerchant when dead.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.YouCannotUseTheTrustMerchantWhenDead);
                     break;
                 case 1:
-                    MirMessageBox.Show("You cannot buy from the TrustMerchant without using.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.YouCannotBuyFromTheTrustMerchantWithoutUsing);
                     break;
                 case 2:
-                    MirMessageBox.Show("This item has already been sold.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.ThisItemHasAlreadyBeenSold);
                     break;
                 case 3:
-                    MirMessageBox.Show("This item has Expired and cannot be brought.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.ThisItemHasExpiredAndCannotBeBrought);
                     break;
                 case 4:
-                    MirMessageBox.Show(GameLanguage.LowGold);
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.NotEnoughGold);
                     break;
                 case 5:
-                    MirMessageBox.Show("You do not have enough weight or space spare to buy this item.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.YouDoNotHaveEnoughWeightOrSpaceSpareToBuyThisItem);
                     break;
                 case 6:
-                    MirMessageBox.Show("You cannot buy your own items.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.YouCannotBuyYourOwnItems);
                     break;
                 case 7:
-                    MirMessageBox.Show("You are too far away from the Trust Merchant.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.YouAreTooFarAwayFromTheTrustMerchant);
                     break;
                 case 8:
-                    MirMessageBox.Show("You cannot hold enough gold to get your sale.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.YouCannotHoldEnoughGoldToGetYourSale);
                     break;
                 case 9:
-                    MirMessageBox.Show("This item has not met the minimum bid yet.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.ThisItemHasNotMetTheMinimumBidYet);
                     break;
                 case 10:
-                    MirMessageBox.Show("Auction has already ended for this item.");
+                    MirMessageBox.Show(Resources.ResourceNPCDialog.AuctionHasAlreadyEndedForThisItem);
                     break;
             }
 
@@ -5412,7 +5412,7 @@ namespace Client.MirScenes
                     MapControl.AwakeningAction = false;
                     break;
                 case -3:
-                    messageBox = new MirMessageBox(GameLanguage.LowGold, MirMessageBoxButtons.OK);
+                    messageBox = new MirMessageBox(Resources.ResourceNPCDialog.NotEnoughGold, MirMessageBoxButtons.OK);
                     MapControl.AwakeningAction = false;
                     break;
                 case -2:

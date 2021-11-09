@@ -4687,7 +4687,7 @@ namespace Server.MirObjects
                             }
                             else
                             {
-                                ReceiveChat(GameLanguage.LowGold, ChatType.System);
+                                ReceiveChat(Resources.ResourceCommon.NotEnoughGold, ChatType.System);
                             }
                             ChatTime = 0;
                         }
@@ -4719,7 +4719,7 @@ namespace Server.MirObjects
                             }
                             else
                             {
-                                ReceiveChat(GameLanguage.LowGold, ChatType.System);
+                                ReceiveChat(Resources.ResourceCommon.NotEnoughGold, ChatType.System);
                             }
                             ChatTime = 0;
                         }

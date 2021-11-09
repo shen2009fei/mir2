@@ -126,6 +126,9 @@
   <data name="AreYouSureYouWantToBuyFor" xml:space="preserve">
     <value>您确定要以 {1:#,##0} {2} 购买 {0} 吗？</value>
   </data>
+  <data name="AuctionHasAlreadyEndedForThisItem" xml:space="preserve">
+    <value>此物品的拍卖已结束</value>
+  </data>
   <data name="auctionText" xml:space="preserve">
     <value>1. 拍卖成本为{0}金币，每件商品的最高起拍价为{1}金币 {3}{3}2. 拍卖结束时将最终出价的 1% 支付给信托商人{3}{3}3. 拍卖最多为{2}天,之后物品将被发送给出价最高的人{3}{3}</value>
   </data>
@@ -240,6 +243,9 @@
   <data name="NoBid" xml:space="preserve">
     <value>无竞价</value>
   </data>
+  <data name="NotEnoughGold" xml:space="preserve">
+    <value>没有足够的金币。</value>
+  </data>
   <data name="Orbs" xml:space="preserve">
     <value>宝珠</value>
   </data>
@@ -315,11 +321,35 @@
   <data name="STARTINGBID" xml:space="preserve">
     <value>起拍价</value>
   </data>
+  <data name="ThisItemHasAlreadyBeenSold" xml:space="preserve">
+    <value>此商品已售出。</value>
+  </data>
+  <data name="ThisItemHasExpiredAndCannotBeBrought" xml:space="preserve">
+    <value>此商品已过期，无法购买。</value>
+  </data>
+  <data name="ThisItemHasNotMetTheMinimumBidYet" xml:space="preserve">
+    <value>此商品尚未达到最低出价。</value>
+  </data>
   <data name="WeaponItems" xml:space="preserve">
     <value>武器物品</value>
   </data>
+  <data name="YouAreTooFarAwayFromTheTrustMerchant" xml:space="preserve">
+    <value>你离信托商人太远了。</value>
+  </data>
+  <data name="YouCannotBuyFromTheTrustMerchantWithoutUsing" xml:space="preserve">
+    <value>您不能在不和信托商人对话的情况下购买。</value>
+  </data>
+  <data name="YouCannotBuyYourOwnItems" xml:space="preserve">
+    <value>你不能买自己的物品。</value>
+  </data>
+  <data name="YouCannotHoldEnoughGoldToGetYourSale" xml:space="preserve">
+    <value>您无法持有更多的黄金来。</value>
+  </data>
   <data name="YouCannotPpurchaseAnymoreItems" xml:space="preserve">
     <value>您不能再购买任何物品。</value>
+  </data>
+  <data name="YouCannotUseTheTrustMerchantWhenDead" xml:space="preserve">
+    <value>死后不能使用信托商人。</value>
   </data>
   <data name="YouCanSearchAgainAfterSeconds" xml:space="preserve">
     <value>您可以在 {0} 秒后再次搜索。</value>
@@ -335,6 +365,9 @@
   </data>
   <data name="YouDoNotHaveEnoughWeight" xml:space="preserve">
     <value>你没有足够的重量.</value>
+  </data>
+  <data name="YouDoNotHaveEnoughWeightOrSpaceSpareToBuyThisItem" xml:space="preserve">
+    <value>您没有足够的重量或空间来购买此商品。</value>
   </data>
   <data name="YouDontHaveEnoughGoldToRefineYour" xml:space="preserve">
     <value>你没有足够的金币来升级你的 {0}.</value>

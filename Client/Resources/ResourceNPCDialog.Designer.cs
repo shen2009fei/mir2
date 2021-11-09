@@ -88,6 +88,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Auction has already ended for this item. 的本地化字符串。
+        /// </summary>
+        internal static string AuctionHasAlreadyEndedForThisItem {
+            get {
+                return ResourceManager.GetString("AuctionHasAlreadyEndedForThisItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 1. Auction cost is {0} gold, max starting bid is {1} gold per item \r\n\r\n2. 1% of final bid price is paid to Trust Merchant at auction end\r\n\r\n3. Maximum {2} days of item sale registration, afterwards the item will be sent to highest bidder\r\n\r\n4. Maximum of unlimited &quot;items allowed for auction\r\n\r\n 的本地化字符串。
         /// </summary>
         internal static string auctionText {
@@ -430,6 +439,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Not enough gold. 的本地化字符串。
+        /// </summary>
+        internal static string NotEnoughGold {
+            get {
+                return ResourceManager.GetString("NotEnoughGold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Orbs 的本地化字符串。
         /// </summary>
         internal static string Orbs {
@@ -655,6 +673,33 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 This item has already been sold. 的本地化字符串。
+        /// </summary>
+        internal static string ThisItemHasAlreadyBeenSold {
+            get {
+                return ResourceManager.GetString("ThisItemHasAlreadyBeenSold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 This item has Expired and cannot be bought. 的本地化字符串。
+        /// </summary>
+        internal static string ThisItemHasExpiredAndCannotBeBrought {
+            get {
+                return ResourceManager.GetString("ThisItemHasExpiredAndCannotBeBrought", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 This item has not met the minimum bid yet. 的本地化字符串。
+        /// </summary>
+        internal static string ThisItemHasNotMetTheMinimumBidYet {
+            get {
+                return ResourceManager.GetString("ThisItemHasNotMetTheMinimumBidYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Weapon Items 的本地化字符串。
         /// </summary>
         internal static string WeaponItems {
@@ -664,11 +709,56 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You are too far away from the Trust Merchant. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreTooFarAwayFromTheTrustMerchant {
+            get {
+                return ResourceManager.GetString("YouAreTooFarAwayFromTheTrustMerchant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You cannot buy from the TrustMerchant without using. 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotBuyFromTheTrustMerchantWithoutUsing {
+            get {
+                return ResourceManager.GetString("YouCannotBuyFromTheTrustMerchantWithoutUsing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You cannot buy your own items. 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotBuyYourOwnItems {
+            get {
+                return ResourceManager.GetString("YouCannotBuyYourOwnItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You cannot hold enough gold to get your sale. 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotHoldEnoughGoldToGetYourSale {
+            get {
+                return ResourceManager.GetString("YouCannotHoldEnoughGoldToGetYourSale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You cannot purchase any more items. 的本地化字符串。
         /// </summary>
         internal static string YouCannotPpurchaseAnymoreItems {
             get {
                 return ResourceManager.GetString("YouCannotPpurchaseAnymoreItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You cannot use the TrustMerchant when dead. 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotUseTheTrustMerchantWhenDead {
+            get {
+                return ResourceManager.GetString("YouCannotUseTheTrustMerchantWhenDead", resourceCulture);
             }
         }
         
@@ -714,6 +804,15 @@ namespace Client.Resources {
         internal static string YouDoNotHaveEnoughWeight {
             get {
                 return ResourceManager.GetString("YouDoNotHaveEnoughWeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You do not have enough weight or space spare to buy this item. 的本地化字符串。
+        /// </summary>
+        internal static string YouDoNotHaveEnoughWeightOrSpaceSpareToBuyThisItem {
+            get {
+                return ResourceManager.GetString("YouDoNotHaveEnoughWeightOrSpaceSpareToBuyThisItem", resourceCulture);
             }
         }
         

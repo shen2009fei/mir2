@@ -276,7 +276,7 @@ public class GameLanguage
 
     //common
     public static string LowLevel = "You are not a high enough level.",
-                         LowGold = "Not enough gold.",
+                         //LowGold = "Not enough gold.",
                          LevelUp = "Congratulations! You have leveled up. Your HP and MP have been restored.",
                          LowDC = "You do not have enough DC.",
                          LowMC = "You do not have enough MC.",
@@ -355,7 +355,7 @@ public class GameLanguage
         GameLanguage.LastOnline = reader.ReadString("Language", "LastOnline", GameLanguage.LastOnline);
 
         GameLanguage.LowLevel = reader.ReadString("Language", "LowLevel", GameLanguage.LowLevel);
-        GameLanguage.LowGold = reader.ReadString("Language", "LowGold", GameLanguage.LowGold);
+        //GameLanguage.LowGold = reader.ReadString("Language", "LowGold", GameLanguage.LowGold);
         GameLanguage.LowDC = reader.ReadString("Language", "LowDC", GameLanguage.LowDC);
         GameLanguage.LowMC = reader.ReadString("Language", "LowMC", GameLanguage.LowMC);
         GameLanguage.LowSC = reader.ReadString("Language", "LowSC", GameLanguage.LowSC);
@@ -592,7 +592,7 @@ public class GameLanguage
         reader.Write("Language", "LastOnline", GameLanguage.LastOnline);
 
         reader.Write("Language", "LowLevel", GameLanguage.LowLevel);
-        reader.Write("Language", "LowGold", GameLanguage.LowGold);
+        //reader.Write("Language", "LowGold", GameLanguage.LowGold);
         reader.Write("Language", "LowDC", GameLanguage.LowDC);
         reader.Write("Language", "LowMC", GameLanguage.LowMC);
         reader.Write("Language", "LowSC", GameLanguage.LowSC);
@@ -800,7 +800,7 @@ public class GameLanguage
         //common
         GameLanguage.LevelUp = reader.ReadString("Language", "LevelUp", GameLanguage.LevelUp);
         GameLanguage.LowLevel = reader.ReadString("Language", "LowLevel", GameLanguage.LowLevel);
-        GameLanguage.LowGold = reader.ReadString("Language", "LowGold", GameLanguage.LowGold);
+        //GameLanguage.LowGold = reader.ReadString("Language", "LowGold", GameLanguage.LowGold);
         GameLanguage.LowDC = reader.ReadString("Language", "LowDC", GameLanguage.LowDC);
         GameLanguage.LowMC = reader.ReadString("Language", "LowMC", GameLanguage.LowMC);
         GameLanguage.LowSC = reader.ReadString("Language", "LowSC", GameLanguage.LowSC);
@@ -842,7 +842,7 @@ public class GameLanguage
         reader.Write("Language", "LevelUp", GameLanguage.LevelUp);       
 
         reader.Write("Language", "LowLevel", GameLanguage.LowLevel);
-        reader.Write("Language", "LowGold", GameLanguage.LowGold);
+        //reader.Write("Language", "LowGold", GameLanguage.LowGold);
         reader.Write("Language", "LowDC", GameLanguage.LowDC);
         reader.Write("Language", "LowMC", GameLanguage.LowMC);
         reader.Write("Language", "LowSC", GameLanguage.LowSC);
