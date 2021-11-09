@@ -117,7 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="-Invisible" xml:space="preserve">
+    <value>-隐身</value>
+  </data>
+  <data name="-Observer" xml:space="preserve">
+    <value>-观察者</value>
+  </data>
+  <data name="-Superman" xml:space="preserve">
+    <value>-超人</value>
+  </data>
+  <data name="ActiveBuffs" xml:space="preserve">
+    <value>激活增益</value>
+  </data>
+  <data name="ActivePoisons" xml:space="preserve">
+    <value>激活毒药</value>
+  </data>
+  <data name="AgressiveFullDamageCantShootOverWalls" xml:space="preserve">
+    <value>侵略性（完全伤害）{0}无法过墙射击。{0}</value>
+  </data>
+  <data name="Caster" xml:space="preserve">
+    <value>施法者</value>
+  </data>
+  <data name="CausesTemporaryBlindness" xml:space="preserve">
+    <value>导致暂时失明。</value>
+  </data>
+  <data name="ChanceToGainHPWhenAttacked" xml:space="preserve">
+    <value>{0}% 的几率在受到攻击时获得 {1} HP。{2}</value>
+  </data>
+  <data name="Decreased" xml:space="preserve">
+    <value>减少</value>
+  </data>
+  <data name="DisguisesYourAppearance" xml:space="preserve">
+    <value>伪装你的外表。{0}</value>
+  </data>
+  <data name="GivesYouAPoisonAbilityThatCanBeReleasedWithCertainSkills" xml:space="preserve">
+    <value>为您提供毒药能力,{0}可以通过特定技能释放。{0}</value>
+  </data>
+  <data name="GivesYouAVampiricAbilityThatCanBeReleasedWithCertainSkills" xml:space="preserve">
+    <value>为你提供吸血能力,{0}可以通过特定技能释放。{0}</value>
+  </data>
+  <data name="GroupModeMediumDamageDontStealAgro" xml:space="preserve">
+    <value>组队模式（中等伤害）{0}不能偷取暴击。{0}</value>
+  </data>
+  <data name="Increased" xml:space="preserve">
+    <value>增加</value>
+  </data>
+  <data name="IncreasesChanceOnElementExtraction" xml:space="preserve">
+    <value>增加元素提取的机会。{0}</value>
+  </data>
+  <data name="IncreasesDamageReceivedByTwentyPercentEvery" xml:space="preserve">
+    <value>每 {0} {1} 增加 20% 受到的伤害。{2}</value>
+  </data>
+  <data name="IncreasesMCByIncreasesConsumptionBy" xml:space="preserve">
+    <value>魔法增加：{0}-{1}。{3}消耗增加 {2}%。{3}</value>
+  </data>
+  <data name="InvisibleToManyMonsters" xml:space="preserve">
+    <value>对大多数怪物隐身。</value>
+  </data>
+  <data name="InvisibleToManyMonstersAndAbleToMove" xml:space="preserve">
+    <value>对大多数怪物隐身，并且可以移动。{0}</value>
+  </data>
+  <data name="InvisibleToPlayersAndManyMonstersWhenAtAdistance" xml:space="preserve">
+    <value>在一定距离对玩家和大多数怪物隐身。{0}</value>
+  </data>
+  <data name="LearnSkillPointsTwiceAsAuick" xml:space="preserve">
+    <value>以两倍的速度学习技能点。{0}</value>
+  </data>
+  <data name="PreventsAttacking" xml:space="preserve">
+    <value>不能攻击。</value>
+  </data>
+  <data name="PreventsCastingMovingAndAttacking" xml:space="preserve">
+    <value>不能施法、移动和攻击。</value>
+  </data>
+  <data name="PreventsMovingAndAttacking" xml:space="preserve">
+    <value>不能移动和攻击</value>
+  </data>
+  <data name="PreventsMovingAndAttackingCancelsWhenAttacked" xml:space="preserve">
+    <value>不能移动和攻击。{0}被攻击时取消{0}</value>
+  </data>
+  <data name="RecieveDamageEvery" xml:space="preserve">
+    <value>每 {1} {2} 受到 {0} 伤害。{3}</value>
+  </data>
+  <data name="ReducesArmourRateByTenPercentEvery" xml:space="preserve">
+    <value>每 {0} {1} 降低 10% 的护甲率。{2}</value>
+  </data>
+  <data name="ReducesMovementSpeed" xml:space="preserve">
+    <value>降低移动速度。</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
   <data name="SkillBarInfo" xml:space="preserve">
     <value>{0}{4}魔法: {1}{4}冷却: {2}{4}按键: {3}</value>
+  </data>
+  <data name="TickingTimeBomb" xml:space="preserve">
+    <value>滴答作响的定时炸弹.</value>
+  </data>
+  <data name="TrickShotMinimalDamageCanShootOverWalls" xml:space="preserve">
+    <value>特技射击（最小伤害）{0}可以过墙射击。{0}</value>
   </data>
 </root>

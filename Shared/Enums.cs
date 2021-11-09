@@ -1281,67 +1281,123 @@ public enum BuffType : byte
 
     //Magics
     TemporalFlux,
+    [Description("隐身术")]
     Hiding,
+    [Description("体迅风")]
     Haste,
+    [Description("轻身步")]
     SwiftFeet,
+    [Description("狂暴")]
     Fury,
+    [Description("幽灵盾")]
     SoulShield,
+    [Description("神圣战甲术")]
     BlessedArmour,
+    [Description("风身术")]
     LightBody,
+    [Description("无极真气")]
     UltimateEnhancer,
+    [Description("保护领域")]
     ProtectionField,
+    [Description("愤怒")]
     Rage,
+    [Description("诅咒术")]
     Curse,
+    [Description("月影术")]
     MoonLight,
+    [Description("烈火身")]
     DarkBody,
+    [Description("气流术")]
     Concentration,
+    [Description("狂暴")]
     VampireShot,
+    [Description("毒魔闪")]
     PoisonShot,
+    [Description("反击")]
     CounterAttack,
+    [Description("冥想状态")]
     MentalState,
+    [Description("能量护盾")]
     EnergyShield,
+    [Description("魔法狂暴")]
     MagicBooster,
+    [Description("宠物强化")]
     PetEnhancer,
+    [Description("不朽肌肤")]
     ImmortalSkin,
+    [Description("魔法盾")]
     MagicShield,
+    [Description("金刚术")]
     ElementalBarrier,
 
     //Monster
+    [Description("长角射手增益")]
     HornedArcherBuff = 50,
+    [Description("金射手增益")]
     ColdArcherBuff,
+    [Description("喵喵将军盾")]
     GeneralMeowMeowShield,
+    [Description("犀牛牧师减益")]
     RhinoPriestDebuff,
+    [Description("能量珠增益")]
     PowerBeadBuff,
+    [Description("长角战士增益")]
     HornedWarriorShield,
+    [Description("长角指挥官盾牌")]
     HornedCommanderShield,
 
     //Special
+    [Description("GM")]
     GameMaster = 100,
+    [Description("普通")]
     General,
+    [Description("经验")]
     Exp,
+    [Description("掉落")]
     Drop,
+    [Description("金币")]
     Gold,
+    [Description("背包重量")]
     BagWeight,
+    [Description("幻化")]
     Transform,
+    [Description("关系经验")]
     RelationshipEXP,
+    [Description("徒弟")]
     Mentee,
+    [Description("师傅")]
     Mentor,
+    [Description("行会")]
     Guild,
+    [Description("监狱")]
     Prison,
+    [Description("休息")]
     Rested,
+    [Description("技能")]
     Skill,
+    [Description("隐身戒指")]
     ClearRing,
 
     //Stats
+    [Description("影响")]
     Impact = 200,
+    [Description("魔法")]
     Magic,
+    [Description("道术")]
     Taoist,
+    [Description("风暴")]
     Storm,
+    [Description("体力援助")]
     HealthAid,
+    [Description("法力援助")]
     ManaAid,
+    [Description("防御")]
     Defence,
+    [Description("魔法防御")]
     MagicDefence,
+    [Description("奇药")]
     WonderDrug,
+    [Description("背包")]
     Knapsack,
 }
 

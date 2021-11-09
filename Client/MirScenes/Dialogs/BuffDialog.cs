@@ -5,7 +5,7 @@ using Client.MirGraphics;
 using Client.MirSounds;
 using System.Drawing;
 using System.Windows.Forms;
-
+using Shared.Extensions;
 namespace Client.MirScenes.Dialogs
 {
     public class BuffDialog : MirImageControl
@@ -273,7 +273,7 @@ namespace Client.MirScenes.Dialogs
 
         public string BuffString(ClientBuff buff)
         {
-            string text = RegexFunctions.SeperateCamelCase(buff.Type.ToString()) + "\n";
+            string text = buff.Type.ToDescription() + "\n";
             bool overridestats = false;
 
             switch (buff.Type)
@@ -281,56 +281,56 @@ namespace Client.MirScenes.Dialogs
                 case BuffType.GameMaster:
                     GMOptions options = (GMOptions)buff.Values[0];
 
-                    if (options.HasFlag(GMOptions.GameMaster)) text += "-Invisible\n";
-                    if (options.HasFlag(GMOptions.Superman)) text += "-Superman\n";
-                    if (options.HasFlag(GMOptions.Observer)) text += "-Observer\n";
+                    if (options.HasFlag(GMOptions.GameMaster)) text +=Resources.ResourceBar._Invisible + "\n";
+                    if (options.HasFlag(GMOptions.Superman)) text +=Resources.ResourceBar._Superman + "\n";
+                    if (options.HasFlag(GMOptions.Observer)) text +=Resources.ResourceBar._Observer+ "\n";
                     break;
                 case BuffType.MentalState:
                     switch (buff.Values[0])
                     {
                         case 0:
-                            text += "Agressive (Full damage)\nCan't shoot over walls.\n";
+                            text +=string.Format( Resources.ResourceBar.AgressiveFullDamageCantShootOverWalls,Environment.NewLine);
                             break;
                         case 1:
-                            text += "Trick shot (Minimal damage)\nCan shoot over walls.\n";
+                            text +=string.Format(Resources.ResourceBar.TrickShotMinimalDamageCanShootOverWalls,Environment.NewLine);
                             break;
                         case 2:
-                            text += "Group Mode (Medium damage)\nDon't steal agro.\n";
+                            text +=string.Format(Resources.ResourceBar.GroupModeMediumDamageDontStealAgro,Environment.NewLine);
                             break;
                     }
                     break;
                 case BuffType.Hiding:
                 case BuffType.ClearRing:
-                    text += "Invisible to many monsters.\n";
+                    text +=Resources.ResourceBar.InvisibleToManyMonsters+ "\n";
                     break;
                 case BuffType.MoonLight:
-                    text += "Invisible to players and many\nmonsters when at a distance.\n";
+                    text +=string.Format(Resources.ResourceBar.InvisibleToPlayersAndManyMonstersWhenAtAdistance,Environment.NewLine);
                     break;
                 case BuffType.EnergyShield:
                     overridestats = true;
-                    text += string.Format("{0}% chance to gain {1} HP when attacked.\n", buff.Stats[Stat.EnergyShieldPercent], buff.Stats[Stat.EnergyShieldHPGain]);
+                    text += string.Format(Resources.ResourceBar.ChanceToGainHPWhenAttacked, buff.Stats[Stat.EnergyShieldPercent], buff.Stats[Stat.EnergyShieldHPGain],Environment.NewLine);
                     break;
                 case BuffType.DarkBody:
-                    text += "Invisible to many monsters and able to move.\n";
+                    text += string.Format(Resources.ResourceBar.InvisibleToManyMonstersAndAbleToMove,Environment.NewLine);
                     break;
                 case BuffType.VampireShot:
-                    text += "Gives you a vampiric ability\nthat can be released with\ncertain skills.\n";
+                    text += string.Format(Resources.ResourceBar.GivesYouAVampiricAbilityThatCanBeReleasedWithCertainSkills,Environment.NewLine);
                     break;
                 case BuffType.PoisonShot:
-                    text += "Gives you a poison ability\nthat can be released with\ncertain skills.\n";
+                    text +=string.Format(Resources.ResourceBar.GivesYouAPoisonAbilityThatCanBeReleasedWithCertainSkills,Environment.NewLine);
                     break;
                 case BuffType.Concentration:
-                    text += "Increases chance on element extraction.\n";
+                    text += string.Format(Resources.ResourceBar.IncreasesChanceOnElementExtraction,Environment.NewLine);
                     break;
                 case BuffType.MagicBooster:
                     overridestats = true;
-                    text += string.Format("Increases MC by: {0}-{1}.\nIncreases consumption by {2}%.\n", buff.Stats[Stat.MinMC], buff.Stats[Stat.MaxMC], buff.Stats[Stat.ManaPenaltyPercent]);
+                    text += string.Format(Resources.ResourceBar.IncreasesMCByIncreasesConsumptionBy,buff.Stats[Stat.MinMC], buff.Stats[Stat.MaxMC], buff.Stats[Stat.ManaPenaltyPercent],Environment.NewLine);
                     break;
                 case BuffType.Transform:
-                    text += "Disguises your appearance.\n";
+                    text += string.Format(Resources.ResourceBar.DisguisesYourAppearance,Environment.NewLine);
                     break;
                 case BuffType.Mentee:
-                    text += "Learn skill points twice as quick.\n";
+                    text +=string.Format(Resources.ResourceBar.LearnSkillPointsTwiceAsAuick,Environment.NewLine);
                     break;
                 case BuffType.Guild:
                     text += GameScene.Scene.GuildDialog.ActiveStats;
@@ -341,20 +341,31 @@ namespace Client.MirScenes.Dialogs
             {
                 foreach (var val in buff.Stats.Values)
                 {
-                    var c = val.Value < 0 ? "Decreases" : "Increases";
-                    var key = val.Key.ToString();
+                    var c = val.Value < 0 ? Resources.ResourceBar.Decreased :Resources.ResourceBar.Increased;
+                    //var key = val.Key.ToString();
 
-                    var strKey = RegexFunctions.SeperateCamelCase(key.Replace("Rate", "").Replace("Multiplier", "").Replace("Percent", ""));
+                    //var strKey = RegexFunctions.SeperateCamelCase(key.Replace("Rate", "").Replace("Multiplier", "").Replace("Percent", ""));
+
+                    //var sign = "";
+
+                    //if (key.Contains("Percent"))
+                    //    sign = "%";
+                    //else if (key.Contains("Multiplier"))
+                    //    sign = "x";
+
+                    //var txt = $"{c} {strKey} by: {val.Value}{sign}.\n";
+                    var key = val.Key.ToDescription();
+
+                    var strKey = key.Replace("率", "").Replace("倍数", "").Replace("百分比", "");
 
                     var sign = "";
 
-                    if (key.Contains("Percent"))
+                    if (key.Contains("百分比"))
                         sign = "%";
-                    else if (key.Contains("Multiplier"))
+                    else if (key.Contains("倍数"))
                         sign = "x";
 
-                    var txt = $"{c} {strKey} by: {val.Value}{sign}.\n";
-
+                    var txt = $"{c} {strKey}: {val.Value}{sign}.\n";
                     text += txt;
                 }
             }
@@ -372,14 +383,14 @@ namespace Client.MirScenes.Dialogs
                 text += string.Format(GameLanguage.Expire, Functions.PrintTimeSpanFromSeconds(Math.Round((buff.ExpireTime - CMain.Time) / 1000D)));
             }
 
-            if (!string.IsNullOrEmpty(buff.Caster)) text += string.Format("\nCaster: {0}", buff.Caster);
+            if (!string.IsNullOrEmpty(buff.Caster)) text += string.Format("\n{0}: {1}",Resources.ResourceBar.Caster, buff.Caster);
 
             return text;
         }
 
         private string CombinedBuffText()
         {
-            string text = "Active Buffs\n";
+            string text = Resources.ResourceBar.ActiveBuffs + "\n";
             var stats = new Stats();
 
             for (var i = 0; i < _buffList.Count; i++)
@@ -391,20 +402,32 @@ namespace Client.MirScenes.Dialogs
 
             foreach (var val in stats.Values)
             {
-                var c = val.Value < 0 ? "Decreased" : "Increased";
-                var key = val.Key.ToString();
+                var c = val.Value < 0 ?Resources.ResourceBar.Decreased : Resources.ResourceBar.Increased;
+                //var key = val.Key.ToString();
 
-                var strKey = RegexFunctions.SeperateCamelCase(key.Replace("Rate", "").Replace("Multiplier", "").Replace("Percent", ""));
+                //var strKey = RegexFunctions.SeperateCamelCase(key.Replace("Rate", "").Replace("Multiplier", "").Replace("Percent", ""));
+
+                //var sign = "";
+
+                //if (key.Contains("Percent"))
+                //    sign = "%";
+                //else if (key.Contains("Multiplier"))
+                //    sign = "x";
+
+                //var txt = $"{c} {strKey} by: {val.Value}{sign}.\n";
+
+                var key = val.Key.ToDescription();
+
+                var strKey = key.Replace("率", "").Replace("倍数", "").Replace("百分比", "");
 
                 var sign = "";
 
-                if (key.Contains("Percent"))
+                if (key.Contains("百分比"))
                     sign = "%";
-                else if (key.Contains("Multiplier"))
+                else if (key.Contains("倍数"))
                     sign = "x";
 
-                var txt = $"{c} {strKey} by: {val.Value}{sign}.\n";
-
+                var txt = $"{c} {strKey}: {val.Value}{sign}.\n";
                 text += txt;
             }
 
@@ -643,61 +666,61 @@ namespace Client.MirScenes.Dialogs
                 case PoisonType.Green:
                     {
                         var tick = buff.TickSpeed / 1000;
-                        var tickName = tick > 1 ? "seconds" : "second";
+                        var tickName = tick > 1 ? Resources.ResourceBar.Seconds : Resources.ResourceBar.Second;
 
-                        text += $"Recieve {buff.Value} damage every {tick} {tickName}.\n";
+                        text +=string.Format(Resources.ResourceBar.RecieveDamageEvery, buff.Value,tick,tickName,Environment.NewLine);
                     }
                     break;
                 case PoisonType.Red:
                     {
                         var tick = buff.TickSpeed / 1000;
-                        var tickName = tick > 1 ? "seconds" : "second";
+                        var tickName = tick > 1 ? Resources.ResourceBar.Seconds : Resources.ResourceBar.Second;
 
-                        text += $"Reduces armour rate by 10% every {tick} {tickName}.\n";
+                        text +=string.Format(Resources.ResourceBar.ReducesArmourRateByTenPercentEvery,tick,tickName,Environment.NewLine);
                     }
                     break;
                 case PoisonType.Slow:
-                    text += "Reduces movement speed.\n";
+                    text += Resources.ResourceBar.ReducesMovementSpeed + "\n";
                     break;
                 case PoisonType.Frozen:
-                    text += "Prevents casting, movin\nand attacking.\n";
+                    text += Resources.ResourceBar.PreventsCastingMovingAndAttacking + "\n";
                     break;
                 case PoisonType.Stun:
                     {
                         var tick = buff.TickSpeed / 1000;
-                        var tickName = tick > 1 ? "seconds" : "second";
+                        var tickName = tick > 1 ? Resources.ResourceBar.Seconds : Resources.ResourceBar.Second;
 
-                        text += $"Increases damage received by 20% every {tick} {tickName}.\n";
+                        text +=string.Format(Resources.ResourceBar.IncreasesDamageReceivedByTwentyPercentEvery,tick,tickName,Environment.NewLine);
                     }
                     break;
                 case PoisonType.Paralysis:
-                    text += "Prevents moving and attacking.\n";
+                    text += Resources.ResourceBar.PreventsMovingAndAttacking + "\n";
                     break;
                 case PoisonType.DelayedExplosion:
-                    text += "Ticking time bomb.\n";
+                    text += Resources.ResourceBar.TickingTimeBomb + "\n";
                     break;
                 case PoisonType.Bleeding:
                     {
                         var tick = buff.TickSpeed / 1000;
-                        var tickName = tick > 1 ? "seconds" : "second";
+                        var tickName = tick > 1 ? Resources.ResourceBar.Seconds : Resources.ResourceBar.Second;
 
-                        text += $"Recieve {buff.Value} damage every {tick} {tickName}.\n";
+                        text +=string.Format(Resources.ResourceBar.RecieveDamageEvery, buff.Value,tick,tickName,Environment.NewLine);
                     }
                     break;
                 case PoisonType.LRParalysis:
-                    text += "Prevents moving and attacking.\nCancels when attacked\n";
+                    text +=string.Format(Resources.ResourceBar.PreventsMovingAndAttackingCancelsWhenAttacked,Environment.NewLine);
                     break;
                 case PoisonType.Blindness:
-                    text += "Causes temporary blindness.\n";
+                    text +=Resources.ResourceBar.CausesTemporaryBlindness + "\n";
                     break;
                 case PoisonType.Dazed:
-                    text += "Prevents attacking.\n";
+                    text +=Resources.ResourceBar.PreventsAttacking + "\n";
                     break;
             }
 
             text += string.Format(GameLanguage.Expire, Functions.PrintTimeSpanFromSeconds(Math.Round((buff.ExpireTime - CMain.Time) / 1000D)));
 
-            if (!string.IsNullOrEmpty(buff.Caster)) text += string.Format("\nCaster: {0}", buff.Caster);
+            if (!string.IsNullOrEmpty(buff.Caster)) text += string.Format("\n{0}: {1}",Resources.ResourceBar.Caster, buff.Caster);
 
             return text;
         }
@@ -881,7 +904,7 @@ namespace Client.MirScenes.Dialogs
 
         private string CombinedBuffText()
         {
-            string text = "Active Poisons\n";
+            string text = Resources.ResourceBar.ActivePoisons + "\n";
 
             return text;
         }

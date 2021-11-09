@@ -61,11 +61,308 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 -Invisible 的本地化字符串。
+        /// </summary>
+        internal static string _Invisible {
+            get {
+                return ResourceManager.GetString("-Invisible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 -Observer 的本地化字符串。
+        /// </summary>
+        internal static string _Observer {
+            get {
+                return ResourceManager.GetString("-Observer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 -Superman 的本地化字符串。
+        /// </summary>
+        internal static string _Superman {
+            get {
+                return ResourceManager.GetString("-Superman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Active Buffs 的本地化字符串。
+        /// </summary>
+        internal static string ActiveBuffs {
+            get {
+                return ResourceManager.GetString("ActiveBuffs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Active Poisons 的本地化字符串。
+        /// </summary>
+        internal static string ActivePoisons {
+            get {
+                return ResourceManager.GetString("ActivePoisons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Agressive (Full damage){0}Can&apos;t shoot over walls.{0} 的本地化字符串。
+        /// </summary>
+        internal static string AgressiveFullDamageCantShootOverWalls {
+            get {
+                return ResourceManager.GetString("AgressiveFullDamageCantShootOverWalls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Caster 的本地化字符串。
+        /// </summary>
+        internal static string Caster {
+            get {
+                return ResourceManager.GetString("Caster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Causes temporary blindness. 的本地化字符串。
+        /// </summary>
+        internal static string CausesTemporaryBlindness {
+            get {
+                return ResourceManager.GetString("CausesTemporaryBlindness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0}% chance to gain {1} HP when attacked.{2} 的本地化字符串。
+        /// </summary>
+        internal static string ChanceToGainHPWhenAttacked {
+            get {
+                return ResourceManager.GetString("ChanceToGainHPWhenAttacked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Decreased 的本地化字符串。
+        /// </summary>
+        internal static string Decreased {
+            get {
+                return ResourceManager.GetString("Decreased", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Disguises your appearance.{0} 的本地化字符串。
+        /// </summary>
+        internal static string DisguisesYourAppearance {
+            get {
+                return ResourceManager.GetString("DisguisesYourAppearance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Gives you a poison ability{0}that can be released with{0}certain skills.{0} 的本地化字符串。
+        /// </summary>
+        internal static string GivesYouAPoisonAbilityThatCanBeReleasedWithCertainSkills {
+            get {
+                return ResourceManager.GetString("GivesYouAPoisonAbilityThatCanBeReleasedWithCertainSkills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Gives you a vampiric ability{0}that can be released with{0}certain skills.{0} 的本地化字符串。
+        /// </summary>
+        internal static string GivesYouAVampiricAbilityThatCanBeReleasedWithCertainSkills {
+            get {
+                return ResourceManager.GetString("GivesYouAVampiricAbilityThatCanBeReleasedWithCertainSkills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Group Mode (Medium damage){0}Don&apos;t steal agro.{0} 的本地化字符串。
+        /// </summary>
+        internal static string GroupModeMediumDamageDontStealAgro {
+            get {
+                return ResourceManager.GetString("GroupModeMediumDamageDontStealAgro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Increased 的本地化字符串。
+        /// </summary>
+        internal static string Increased {
+            get {
+                return ResourceManager.GetString("Increased", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Increases chance on element extraction.{0} 的本地化字符串。
+        /// </summary>
+        internal static string IncreasesChanceOnElementExtraction {
+            get {
+                return ResourceManager.GetString("IncreasesChanceOnElementExtraction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Increases damage received by 20% every {0} {1}.{2} 的本地化字符串。
+        /// </summary>
+        internal static string IncreasesDamageReceivedByTwentyPercentEvery {
+            get {
+                return ResourceManager.GetString("IncreasesDamageReceivedByTwentyPercentEvery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Increases MC by: {0}-{1}.{3}Increases consumption by {2}%.{3} 的本地化字符串。
+        /// </summary>
+        internal static string IncreasesMCByIncreasesConsumptionBy {
+            get {
+                return ResourceManager.GetString("IncreasesMCByIncreasesConsumptionBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invisible to many monsters. 的本地化字符串。
+        /// </summary>
+        internal static string InvisibleToManyMonsters {
+            get {
+                return ResourceManager.GetString("InvisibleToManyMonsters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invisible to many monsters and able to move.{0} 的本地化字符串。
+        /// </summary>
+        internal static string InvisibleToManyMonstersAndAbleToMove {
+            get {
+                return ResourceManager.GetString("InvisibleToManyMonstersAndAbleToMove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invisible to players and many{0}monsters when at a distance.{0} 的本地化字符串。
+        /// </summary>
+        internal static string InvisibleToPlayersAndManyMonstersWhenAtAdistance {
+            get {
+                return ResourceManager.GetString("InvisibleToPlayersAndManyMonstersWhenAtAdistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Learn skill points twice as quick.{0} 的本地化字符串。
+        /// </summary>
+        internal static string LearnSkillPointsTwiceAsAuick {
+            get {
+                return ResourceManager.GetString("LearnSkillPointsTwiceAsAuick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Prevents attacking. 的本地化字符串。
+        /// </summary>
+        internal static string PreventsAttacking {
+            get {
+                return ResourceManager.GetString("PreventsAttacking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Prevents casting, moving and attacking. 的本地化字符串。
+        /// </summary>
+        internal static string PreventsCastingMovingAndAttacking {
+            get {
+                return ResourceManager.GetString("PreventsCastingMovingAndAttacking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Prevents moving and attacking. 的本地化字符串。
+        /// </summary>
+        internal static string PreventsMovingAndAttacking {
+            get {
+                return ResourceManager.GetString("PreventsMovingAndAttacking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Prevents moving and attacking.{0}Cancels when attacked{0} 的本地化字符串。
+        /// </summary>
+        internal static string PreventsMovingAndAttackingCancelsWhenAttacked {
+            get {
+                return ResourceManager.GetString("PreventsMovingAndAttackingCancelsWhenAttacked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Recieve {0} damage every {1} {2}.{3} 的本地化字符串。
+        /// </summary>
+        internal static string RecieveDamageEvery {
+            get {
+                return ResourceManager.GetString("RecieveDamageEvery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Reduces armour rate by 10% every {0} {1}.{2} 的本地化字符串。
+        /// </summary>
+        internal static string ReducesArmourRateByTenPercentEvery {
+            get {
+                return ResourceManager.GetString("ReducesArmourRateByTenPercentEvery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Reduces movement speed. 的本地化字符串。
+        /// </summary>
+        internal static string ReducesMovementSpeed {
+            get {
+                return ResourceManager.GetString("ReducesMovementSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 second 的本地化字符串。
+        /// </summary>
+        internal static string Second {
+            get {
+                return ResourceManager.GetString("Second", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 seconds 的本地化字符串。
+        /// </summary>
+        internal static string Seconds {
+            get {
+                return ResourceManager.GetString("Seconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 {0}{4}MP: {1}{4}Cooldown: {2}{4}Key: {3} 的本地化字符串。
         /// </summary>
         internal static string SkillBarInfo {
             get {
                 return ResourceManager.GetString("SkillBarInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ticking time bomb. 的本地化字符串。
+        /// </summary>
+        internal static string TickingTimeBomb {
+            get {
+                return ResourceManager.GetString("TickingTimeBomb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Trick shot (Minimal damage){0}Can shoot over walls.{0} 的本地化字符串。
+        /// </summary>
+        internal static string TrickShotMinimalDamageCanShootOverWalls {
+            get {
+                return ResourceManager.GetString("TrickShotMinimalDamageCanShootOverWalls", resourceCulture);
             }
         }
     }
