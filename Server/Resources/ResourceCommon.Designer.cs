@@ -70,6 +70,33 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 A guild leader needs to be at least level {0} 的本地化字符串。
+        /// </summary>
+        internal static string AGuildLeaderNeedsToBeAtLeastLevel {
+            get {
+                return ResourceManager.GetString("AGuildLeaderNeedsToBeAtLeastLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 A guild needs at least 2 leaders. 的本地化字符串。
+        /// </summary>
+        internal static string AGuildNeedsAtLeast1Leaders {
+            get {
+                return ResourceManager.GetString("AGuildNeedsAtLeast1Leaders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Already at war with this guild. 的本地化字符串。
+        /// </summary>
+        internal static string AlreadyAtWarWithThisGuild {
+            get {
+                return ResourceManager.GetString("AlreadyAtWarWithThisGuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 {0} Average Damage inflicted on the trainer, Dps: {1:#.00}. 的本地化字符串。
         /// </summary>
         internal static string AverageDamageInflictedOnTheTrainerDps {
@@ -84,6 +111,24 @@ namespace Server.Resources {
         internal static string BidMet {
             get {
                 return ResourceManager.GetString("BidMet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cannot go to war with your own guild. 的本地化字符串。
+        /// </summary>
+        internal static string CannotGoToWarWithYourOwnGuild {
+            get {
+                return ResourceManager.GetString("CannotGoToWarWithYourOwnGuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Could not find guild {0}. 的本地化字符串。
+        /// </summary>
+        internal static string CouldNotFindGuild {
+            get {
+                return ResourceManager.GetString("CouldNotFindGuild", resourceCulture);
             }
         }
         
@@ -169,6 +214,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 {0} has started a war 的本地化字符串。
+        /// </summary>
+        internal static string HasStartedAWar {
+            get {
+                return ResourceManager.GetString("HasStartedAWar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 {3} inflicted {0} {1} Damage, Dps: {2:#.00}. 的本地化字符串。
         /// </summary>
         internal static string InflictedDamageDps {
@@ -183,6 +237,15 @@ namespace Server.Resources {
         internal static string InflictedDamageDpsPoison {
             get {
                 return ResourceManager.GetString("InflictedDamageDpsPoison", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Leader 的本地化字符串。
+        /// </summary>
+        internal static string Leader {
+            get {
+                return ResourceManager.GetString("Leader", resourceCulture);
             }
         }
         
@@ -210,6 +273,15 @@ namespace Server.Resources {
         internal static string MapCouldNotBeFound {
             get {
                 return ResourceManager.GetString("MapCouldNotBeFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Members 的本地化字符串。
+        /// </summary>
+        internal static string Members {
+            get {
+                return ResourceManager.GetString("Members", resourceCulture);
             }
         }
         
@@ -286,6 +358,24 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Rank 的本地化字符串。
+        /// </summary>
+        internal static string Rank {
+            get {
+                return ResourceManager.GetString("Rank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Rank name too short! 的本地化字符串。
+        /// </summary>
+        internal static string RankNameToShort {
+            get {
+                return ResourceManager.GetString("RankNameToShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Sold 的本地化字符串。
         /// </summary>
         internal static string Sold {
@@ -313,11 +403,29 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 War ended with {0}. 的本地化字符串。
+        /// </summary>
+        internal static string WarEndedWith {
+            get {
+                return ResourceManager.GetString("WarEndedWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You 的本地化字符串。
         /// </summary>
         internal static string You {
             get {
                 return ResourceManager.GetString("You", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You are not allowed to change ranks! 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNotAllowedToChangeRanks {
+            get {
+                return ResourceManager.GetString("YouAreNotAllowedToChangeRanks", resourceCulture);
             }
         }
         
@@ -336,6 +444,15 @@ namespace Server.Resources {
         internal static string YouCanAlreadyUnequipACursedItem {
             get {
                 return ResourceManager.GetString("YouCanAlreadyUnequipACursedItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You cannot have anymore ranks. 的本地化字符串。
+        /// </summary>
+        internal static string YouCannotHaveAnymoreRanks {
+            get {
+                return ResourceManager.GetString("YouCannotHaveAnymoreRanks", resourceCulture);
             }
         }
         
@@ -363,6 +480,24 @@ namespace Server.Resources {
         internal static string YouCanNowUnequipACursedItem {
             get {
                 return ResourceManager.GetString("YouCanNowUnequipACursedItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You must be a leader to start a war. 的本地化字符串。
+        /// </summary>
+        internal static string YouMustBeALeaderToStartAWar {
+            get {
+                return ResourceManager.GetString("YouMustBeALeaderToStartAWar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You need at least 1 leader online. 的本地化字符串。
+        /// </summary>
+        internal static string YouNeedAtLeast1LeaderOnline {
+            get {
+                return ResourceManager.GetString("YouNeedAtLeast1LeaderOnline", resourceCulture);
             }
         }
         
@@ -399,6 +534,24 @@ namespace Server.Resources {
         internal static string YourPoisonStoppedRegenDps {
             get {
                 return ResourceManager.GetString("YourPoisonStoppedRegenDps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your rank is not adequate. 的本地化字符串。
+        /// </summary>
+        internal static string YourRankIsNotAdequate {
+            get {
+                return ResourceManager.GetString("YourRankIsNotAdequate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You started a war with {0}. 的本地化字符串。
+        /// </summary>
+        internal static string YouStartedAWarWith {
+            get {
+                return ResourceManager.GetString("YouStartedAWarWith", resourceCulture);
             }
         }
     }

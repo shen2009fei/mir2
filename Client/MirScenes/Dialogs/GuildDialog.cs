@@ -19,7 +19,7 @@ using Effect = Client.MirObjects.Effect;
 
 using Client.MirScenes.Dialogs;
 using System.Drawing.Imaging;
-
+using Shared.Extensions;
 namespace Client.MirScenes.Dialogs
 {
 
@@ -487,11 +487,11 @@ namespace Client.MirScenes.Dialogs
             MembersShowOffline = new MirLabel
             {
                 Visible = true,
-                Text = "Show Offline",
-                Location = new Point(245, 309),
+                Text = Resources.ResourceGuild.ShowOffline,
+                Location = new Point(245, 308),
                 Parent = MembersPage,
-                Size = new Size(150, 12),
-                Font = new Font(Settings.FontName, 7F),
+                Size = new Size(150, 14),
+                Font = new Font(Settings.FontName, 8F),
                 ForeColour = Color.White
             };
             MembersPage.KeyDown += MembersPanel_KeyDown;
@@ -536,7 +536,7 @@ namespace Client.MirScenes.Dialogs
                 DrawFormat = TextFormatFlags.Right,
                 Size = new Size(75, 300),
                 NotControl = true,
-                Text = "Guild Name\n\nLevel\n\nMembers",
+                Text =string.Format(Resources.ResourceGuild.GuildNameLevelMembers,Environment.NewLine),
                 Visible = true,
                 Parent = StatusPage,
                 ForeColour = Color.Gray,
@@ -621,7 +621,7 @@ namespace Client.MirScenes.Dialogs
                 Location = new Point(36, 283),
                 NotControl = true,
                 Parent = StatusPage,
-                Text = "Recruit Member",
+                Text = Resources.ResourceGuild.RecruitMember,
                 Size = new Size(150, 15)
             };
 
@@ -773,7 +773,7 @@ namespace Client.MirScenes.Dialogs
             RankPage.BeforeDraw += (o, e) => RequestUpdateMembers();
             RanksSelectTextL = new MirLabel()
             {
-                Text = "Edit Rank",
+                Text =Resources.ResourceGuild.EditRank,
                 Location = new Point(42, 18),
                 Size = new Size(150, 20),
                 ForeColour = Color.White,
@@ -783,7 +783,7 @@ namespace Client.MirScenes.Dialogs
             };
             RanksSelectTextR = new MirLabel()
             {
-                Text = "Select Rank",
+                Text = Resources.ResourceGuild.SelectRank,
                 Location = new Point(198, 18),
                 Size = new Size(150, 20),
                 ForeColour = Color.White,
@@ -835,7 +835,14 @@ namespace Client.MirScenes.Dialogs
             {
                 RanksChangeName();
             };
-            String[] Options = { "Edit ranks", "Recruit member", "Kick member", "Store item", "Retrieve item", "Alter alliance", "Change notice", "Activate Buff" };
+            String[] Options = { Resources.ResourceGuild.EditRanks, 
+                Resources.ResourceGuild.RecruitMember,
+                Resources.ResourceGuild.KickMember,
+                Resources.ResourceGuild.StoreItem,
+                Resources.ResourceGuild.RetrieveItem,
+                Resources.ResourceGuild.AlterAlliance,
+                Resources.ResourceGuild.ChangeNotice,
+                Resources.ResourceGuild.ActivateBuff };
             RanksOptionsButtons = new MirButton[8];
             RanksOptionsStatus = new MirImageControl[8];
             RanksOptionsTexts = new MirLabel[8];
@@ -979,11 +986,11 @@ namespace Client.MirScenes.Dialogs
             {
                 string Error = "";
                 if (GameScene.Scene.GuildDialog.SparePoints < BuffInfo.PointsRequirement)
-                    Error = "Insufficient points available.";
+                    Error = Resources.ResourceGuild.InsufficientPointsAvailable;
                 if (GameScene.Scene.GuildDialog.Level < BuffInfo.LevelRequirement)
-                    Error = "Guild level too low.";
+                    Error = Resources.ResourceGuild.GuildLevelTooLow;
                 if (!GameScene.Scene.GuildDialog.GetMyOptions().HasFlag(GuildRankOptions.CanActivateBuff))
-                    Error = "Guild rank does not allow buff activation.";
+                    Error = Resources.ResourceGuild.GuildRankDoesNotAllowBuffActivation;
                 if (Error != "")
                 {
                     MirMessageBox messageBox = new MirMessageBox(Error);
@@ -998,11 +1005,11 @@ namespace Client.MirScenes.Dialogs
             {
                 string Error = "";
                 if (Buff.Active)
-                    Error = "Buff is still active.";
+                    Error = Resources.ResourceGuild.BuffIsStillActive;
                 if (GameScene.Scene.GuildDialog.Gold < BuffInfo.ActivationCost)
-                    Error = "Insufficient guild funds.";
+                    Error = Resources.ResourceGuild.InsufficientGuildFunds;
                 if (!GameScene.Scene.GuildDialog.GetMyOptions().HasFlag(GuildRankOptions.CanActivateBuff))
-                    Error = "Guild rank does not allow buff activation.";
+                    Error = Resources.ResourceGuild.GuildRankDoesNotAllowBuffActivation;
                 if (Error != "")
                 {
                     MirMessageBox messageBox = new MirMessageBox(Error);
@@ -1096,13 +1103,13 @@ namespace Client.MirScenes.Dialogs
                     {
                         if (BuffInfo.LevelRequirement > GameScene.Scene.GuildDialog.Level)
                         {
-                            Buffs[i].Info.Text = "Insufficient Level";
+                            Buffs[i].Info.Text =Resources.ResourceGuild.InsufficientLevel;
                             Buffs[i].Info.ForeColour = Color.Red;
                             Buffs[i].Icon.Index += 2;
                         }
                         else
                         {
-                            Buffs[i].Info.Text = "Available";
+                            Buffs[i].Info.Text = Resources.ResourceGuild.Available;
                             Buffs[i].Info.ForeColour = Buffs[i].Name.ForeColour;
                             Buffs[i].Icon.Index += 2;
                         }
@@ -1113,20 +1120,20 @@ namespace Client.MirScenes.Dialogs
                         if (BuffInfo.TimeLimit > 0)
                         {
                             if (Buff.Active)
-                                Buffs[i].Info.Text = "Counting down.";
+                                Buffs[i].Info.Text = Resources.ResourceGuild.CountingDown;
                             else
-                                Buffs[i].Info.Text = "Expired.";
+                                Buffs[i].Info.Text = Resources.ResourceGuild.Expired;
                         }
                         else
-                            Buffs[i].Info.Text = "Obtained.";
+                            Buffs[i].Info.Text = Resources.ResourceGuild.Obtained;
                         Buffs[i].Info.ForeColour = Buffs[i].Name.ForeColour;
                         if (Buff.Active)
                         {
-                            Buffs[i].Obtained.Text = "Active";
+                            Buffs[i].Obtained.Text = Resources.ResourceGuild.Active;
                             Buffs[i].Icon.Index += 1;
                         }
                         else
-                            Buffs[i].Obtained.Text = "Inactive";
+                            Buffs[i].Obtained.Text = Resources.ResourceGuild.Inactive;
                     }
                 }
             }
@@ -1170,10 +1177,10 @@ namespace Client.MirScenes.Dialogs
 
             foreach (var val in stats.Values)
             {
-                var c = val.Value < 0 ? "Decreases" : "Increases";
+                var c = val.Value < 0 ? Resources.ResourceGuild.Decreases : Resources.ResourceGuild.Increases;
 
-                var txt = $"{c} {val.Key} by: {val.Value}{(val.Key.ToString().Contains("Percent") ? "%" : "")}.\n";
-
+                //var txt = $"{c} {val.Key} by: {val.Value}{(val.Key.ToString().Contains("Percent") ? "%" : "")}.\n";
+                var txt = $"{c} {val.Key}: {val.Value}{(val.Key.ToDescription().Contains("百分比") ? "%" : "")}.\n";
                 text += txt;
             }
 
@@ -1212,17 +1219,17 @@ namespace Client.MirScenes.Dialogs
             string ReqText = "";
             if (Buff.LevelRequirement > 0)
             {
-                ReqText += "Minimum Guild Level: " + Buff.LevelRequirement.ToString();
+                ReqText += Resources.ResourceGuild.MinimumGuildLevel + Buff.LevelRequirement.ToString();
             }
             if (Buff.PointsRequirement > 0)
             {
                 if (ReqText != "") ReqText += "\n";
-                ReqText += "Points Required: " + Buff.PointsRequirement.ToString();
+                ReqText += Resources.ResourceGuild.PointsRequired + Buff.PointsRequirement.ToString();
             }
             if (Buff.ActivationCost > 0)
             {
                 if (ReqText != "") ReqText += "\n";
-                ReqText += "Activation Cost: " + Buff.ActivationCost.ToString() + " gold.";
+                ReqText += Resources.ResourceGuild.ActivationCost + Buff.ActivationCost.ToString() + " "+Resources.ResourceGuild.Gold+".";
                 //if (ReqText != "") ReqText += "\n";
             }
 
@@ -1248,11 +1255,11 @@ namespace Client.MirScenes.Dialogs
 
                 if (activeBuff != null && activeBuff.Active)
                 {
-                    text = string.Format("Time Remaining: {0} minutes", activeBuff.ActiveTimeRemaining);
+                    text = string.Format(Resources.ResourceGuild.TimeRemainingMinutes, activeBuff.ActiveTimeRemaining);
                 }
                 else
                 {
-                    text = string.Format("Buff Length: {0} minutes.", Buff.TimeLimit.ToString());
+                    text = string.Format(Resources.ResourceGuild.BuffLengthMinutes, Buff.TimeLimit.ToString());
                 }
                 MirLabel TimeLabel = new MirLabel
                 {
@@ -1482,7 +1489,7 @@ namespace Client.MirScenes.Dialogs
                     RankNames.Add(Ranks[i].Name);
                 }
                 else
-                    RankNames.Add("Missing Rank");
+                    RankNames.Add(Resources.ResourceGuild.MissingRank);
             }
             for (int i = 0; i < MembersRanks.Length; i++)
             {
@@ -1492,7 +1499,7 @@ namespace Client.MirScenes.Dialogs
             RanksSelectBox.Items = RankNames.ToList();
             RanksSelectBox.MinimumOption = 0;
             if (RankNames.Count < 255)
-                RanksSelectBox.Items.Add("Add New");
+                RanksSelectBox.Items.Add(Resources.ResourceGuild.AddNew);
             UpdateMembers();
             UpdateRanks();
         }
@@ -1510,7 +1517,7 @@ namespace Client.MirScenes.Dialogs
         {
             if (SelectedIndex >= Ranks.Count) return;
             if (LastGuildMsg > CMain.Time) return;
-            MirMessageBox messageBox = new MirMessageBox(string.Format("Are you sure you want to change the rank of {0} to {1}?", MembersName[Index].Text, Ranks[SelectedIndex].Name), MirMessageBoxButtons.YesNo);
+            MirMessageBox messageBox = new MirMessageBox(string.Format(Resources.ResourceGuild.AreYouSureYouWantToChangeTheRankOfTo, MembersName[Index].Text, Ranks[SelectedIndex].Name), MirMessageBoxButtons.YesNo);
 
             messageBox.YesButton.Click += (o, a) =>
             {
@@ -1533,7 +1540,7 @@ namespace Client.MirScenes.Dialogs
         {
             if (MembersName[Index].Text == MapControl.User.Name) return;
             if (LastGuildMsg > CMain.Time) return;
-            MirMessageBox messageBox = new MirMessageBox(string.Format("Are you sure you want to kick {0}?", MembersName[Index].Text), MirMessageBoxButtons.YesNo);
+            MirMessageBox messageBox = new MirMessageBox(string.Format(Resources.ResourceGuild.AreYouSureYouWantToKick, MembersName[Index].Text), MirMessageBoxButtons.YesNo);
 
             messageBox.YesButton.Click += (o, a) =>
             {
@@ -1627,19 +1634,19 @@ namespace Client.MirScenes.Dialogs
                         TimeSpan Diff = now - Ranks[i].Members[j].LastLogin.ToLocalTime();
                         string text;
                         if (Ranks[i].Members[j].Online)
-                            text = "Online";
+                            text =Resources.ResourceGuild.Online;
                         else
                         {
                             switch (Diff.Days)
                             {
                                 case 0:
-                                    text = "Today";
+                                    text = Resources.ResourceGuild.Today;
                                     break;
                                 case 1:
-                                    text = "Yesterday";
+                                    text = Resources.ResourceGuild.Yesterday;
                                     break;
                                 default:
-                                    text = Diff.Days + "Days ago";
+                                    text = Diff.Days + Resources.ResourceGuild.DaysAgo;
                                     break;
                             }
                         }
@@ -1880,10 +1887,10 @@ namespace Client.MirScenes.Dialogs
             {
                 if (Ranks.Count == 255) return;
                 if (LastGuildMsg > CMain.Time) return;
-                MirMessageBox messageBox = new MirMessageBox("Are you sure you want to create a new rank?", MirMessageBoxButtons.YesNo);
+                MirMessageBox messageBox = new MirMessageBox(Resources.ResourceGuild.AreYouSureYouWantToCreateANewRank, MirMessageBoxButtons.YesNo);
                 messageBox.YesButton.Click += (o, a) =>
                 {
-                    Network.Enqueue(new C.EditGuildMember { ChangeType = 4, RankName = String.Format("Rank-{0}", Ranks.Count - 1) });
+                    Network.Enqueue(new C.EditGuildMember { ChangeType = 4, RankName = String.Format( Resources.ResourceGuild.RankName, Ranks.Count - 1) });
                     LastGuildMsg = CMain.Time + 5000;
                 };
                 messageBox.Show();
@@ -2015,7 +2022,7 @@ namespace Client.MirScenes.Dialogs
         public void StorageAddGold()
         {
             if (LastGuildMsg > CMain.Time) return;
-            MirAmountBox amountBox = new MirAmountBox("Deposit", 116, GameScene.Gold);
+            MirAmountBox amountBox = new MirAmountBox(Resources.ResourceGuild.Deposit, 116, GameScene.Gold);
 
             amountBox.OKButton.Click += (o, a) =>
             {
@@ -2033,8 +2040,10 @@ namespace Client.MirScenes.Dialogs
         public void StorageRemoveGold()
         {
             if (LastGuildMsg > CMain.Time) return;
-            MirAmountBox amountBox = new MirAmountBox("Gold to retrieve:", 116, Gold);
+            MirAmountBox amountBox = new MirAmountBox(Resources.ResourceGuild.GoldToRetrieve, 116, Gold)
+            {
 
+            };
             amountBox.OKButton.Click += (o, a) =>
             {
                 if (amountBox.Amount <= 0) return;

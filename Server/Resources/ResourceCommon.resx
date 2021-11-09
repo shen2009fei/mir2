@@ -120,11 +120,26 @@
   <data name="Agility" xml:space="preserve">
     <value>Agility</value>
   </data>
+  <data name="AGuildLeaderNeedsToBeAtLeastLevel" xml:space="preserve">
+    <value>A guild leader needs to be at least level {0}</value>
+  </data>
+  <data name="AGuildNeedsAtLeast1Leaders" xml:space="preserve">
+    <value>A guild needs at least 2 leaders.</value>
+  </data>
+  <data name="AlreadyAtWarWithThisGuild" xml:space="preserve">
+    <value>Already at war with this guild.</value>
+  </data>
   <data name="AverageDamageInflictedOnTheTrainerDps" xml:space="preserve">
     <value>{0} Average Damage inflicted on the trainer, Dps: {1:#.00}.</value>
   </data>
   <data name="BidMet" xml:space="preserve">
     <value>Bid Met</value>
+  </data>
+  <data name="CannotGoToWarWithYourOwnGuild" xml:space="preserve">
+    <value>Cannot go to war with your own guild.</value>
+  </data>
+  <data name="CouldNotFindGuild" xml:space="preserve">
+    <value>Could not find guild {0}.</value>
   </data>
   <data name="Expired" xml:space="preserve">
     <value>Expired</value>
@@ -153,11 +168,17 @@
   <data name="HasJustExpiredFromYourStorage" xml:space="preserve">
     <value>has just expired from your storage.</value>
   </data>
+  <data name="HasStartedAWar" xml:space="preserve">
+    <value>{0} has started a war</value>
+  </data>
   <data name="InflictedDamageDps" xml:space="preserve">
     <value>{3} inflicted {0} {1} Damage, Dps: {2:#.00}.</value>
   </data>
   <data name="InflictedDamageDpsPoison" xml:space="preserve">
     <value>{1} inflicted {0} Damage, Dps: {2:#.00}.</value>
+  </data>
+  <data name="Leader" xml:space="preserve">
+    <value>Leader</value>
   </data>
   <data name="Magic" xml:space="preserve">
     <value>Magic</value>
@@ -167,6 +188,9 @@
   </data>
   <data name="MapCouldNotBeFound" xml:space="preserve">
     <value>Map {0}:[{1}] could not be found</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Members</value>
   </data>
   <data name="MonsterHasBeenSpawned" xml:space="preserve">
     <value>Monster {0} x{1} has been spawned.</value>
@@ -192,6 +216,12 @@
   <data name="Physicial" xml:space="preserve">
     <value>Physicial</value>
   </data>
+  <data name="Rank" xml:space="preserve">
+    <value>Rank</value>
+  </data>
+  <data name="RankNameToShort" xml:space="preserve">
+    <value>Rank name too short!</value>
+  </data>
   <data name="Sold" xml:space="preserve">
     <value>Sold</value>
   </data>
@@ -201,14 +231,23 @@
   <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
     <value>The rental lock has been removed from {0}</value>
   </data>
+  <data name="WarEndedWith" xml:space="preserve">
+    <value>War ended with {0}.</value>
+  </data>
   <data name="You" xml:space="preserve">
     <value>You</value>
+  </data>
+  <data name="YouAreNotAllowedToChangeRanks" xml:space="preserve">
+    <value>You are not allowed to change ranks!</value>
   </data>
   <data name="YouBidGoldFor" xml:space="preserve">
     <value>You bid {1:#,##0} Gold for {0}</value>
   </data>
   <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
     <value>You can already unequip a cursed item</value>
+  </data>
+  <data name="YouCannotHaveAnymoreRanks" xml:space="preserve">
+    <value>You cannot have anymore ranks.</value>
   </data>
   <data name="YouCannotPositionMoveOnThisMap" xml:space="preserve">
     <value>You cannot position move on this map</value>
@@ -218,6 +257,12 @@
   </data>
   <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
     <value>You can now unequip a cursed item.</value>
+  </data>
+  <data name="YouMustBeALeaderToStartAWar" xml:space="preserve">
+    <value>You must be a leader to start a war.</value>
+  </data>
+  <data name="YouNeedAtLeast1LeaderOnline" xml:space="preserve">
+    <value>You need at least 1 leader online.</value>
   </data>
   <data name="YourPet" xml:space="preserve">
     <value>Your pet</value>
@@ -230,5 +275,11 @@
   </data>
   <data name="YourPoisonStoppedRegenDps" xml:space="preserve">
     <value>Your poison stopped {0} regen, Dps: {1:#.00}.</value>
+  </data>
+  <data name="YourRankIsNotAdequate" xml:space="preserve">
+    <value>Your rank is not adequate.</value>
+  </data>
+  <data name="YouStartedAWarWith" xml:space="preserve">
+    <value>You started a war with {0}.</value>
   </data>
 </root>

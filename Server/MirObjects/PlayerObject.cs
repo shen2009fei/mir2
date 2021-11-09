@@ -4644,32 +4644,32 @@ namespace Server.MirObjects
 
                         if (MyGuild.Ranks[0] != MyGuildRank)
                         {
-                            ReceiveChat("You must be a leader to start a war.", ChatType.System);
+                            ReceiveChat(Resources.ResourceCommon.YouMustBeALeaderToStartAWar, ChatType.System);
                             return;
                         }
 
                         if (enemyGuild == null)
                         {
-                            ReceiveChat(string.Format("Could not find guild {0}.", parts[1]), ChatType.System);
+                            ReceiveChat(string.Format(Resources.ResourceCommon.CouldNotFindGuild, parts[1]), ChatType.System);
                             return;
                         }
 
                         if (MyGuild == enemyGuild)
                         {
-                            ReceiveChat("Cannot go to war with your own guild.", ChatType.System);
+                            ReceiveChat(Resources.ResourceCommon.CannotGoToWarWithYourOwnGuild, ChatType.System);
                             return;
                         }
 
                         if (MyGuild.WarringGuilds.Contains(enemyGuild))
                         {
-                            ReceiveChat("Already at war with this guild.", ChatType.System);
+                            ReceiveChat(Resources.ResourceCommon.AlreadyAtWarWithThisGuild, ChatType.System);
                             return;
                         }
 
                         if (MyGuild.GoToWar(enemyGuild))
                         {
-                            ReceiveChat(string.Format("You started a war with {0}.", parts[1]), ChatType.System);
-                            enemyGuild.SendMessage(string.Format("{0} has started a war", MyGuild.Name), ChatType.System);
+                            ReceiveChat(string.Format(Resources.ResourceCommon.YouStartedAWarWith, parts[1]), ChatType.System);
+                            enemyGuild.SendMessage(string.Format(Resources.ResourceCommon.HasStartedAWar, MyGuild.Name), ChatType.System);
                         }
 
                         break;
@@ -16033,12 +16033,12 @@ case StatType.Durability:
                 case 3: //change rank name
                     if (!MyGuildRank.Options.HasFlag(GuildRankOptions.CanChangeRank))
                     {
-                        ReceiveChat("You are not allowed to change ranks!", ChatType.System);
+                        ReceiveChat(Resources.ResourceCommon.YouAreNotAllowedToChangeRanks, ChatType.System);
                         return;
                     }
-                    if ((RankName == "") || (RankName.Length < 3))
+                    if ((RankName == "") || (RankName.Length < 2))
                     {
-                        ReceiveChat("Rank name to short!", ChatType.System);
+                        ReceiveChat(Resources.ResourceCommon.RankNameToShort, ChatType.System);
                         return;
                     }
                     if (RankName.Contains("\\") || RankName.Length > 20)
@@ -16412,13 +16412,13 @@ case StatType.Durability:
 
             if (enemyGuild == null)
             {
-                ReceiveChat(string.Format("Could not find guild {0}.", Name), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.CouldNotFindGuild, Name), ChatType.System);
                 return;
             }
 
             if (MyGuild == enemyGuild)
             {
-                ReceiveChat("Cannot go to war with your own guild.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.CannotGoToWarWithYourOwnGuild, ChatType.System);
                 return;
             }
 

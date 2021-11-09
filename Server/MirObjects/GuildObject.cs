@@ -50,7 +50,7 @@ namespace Server.MirObjects
         public GuildObject(PlayerObject owner, string name)
         {
             Name = name;
-            GuildRank Owner = new GuildRank() { Name = "Leader", Options = (GuildRankOptions)255 , Index = 0};
+            GuildRank Owner = new GuildRank() { Name =Resources.ResourceCommon.Leader, Options = (GuildRankOptions)255 , Index = 0};
             GuildMember Leader = new GuildMember() { name = owner.Info.Name, Player = owner, Id = owner.Info.Index, LastLogin = Envir.Now, Online = true};
             Owner.Members.Add(Leader);
             Ranks.Add(Owner);
@@ -280,7 +280,7 @@ namespace Server.MirObjects
         public void NewMember(PlayerObject newMember)
         {
             if (Ranks.Count < 2)
-                Ranks.Add(new GuildRank() { Name = "Members", Index = 1});
+                Ranks.Add(new GuildRank() { Name =Resources.ResourceCommon.Members, Index = 1});
             GuildRank currentrank = Ranks[Ranks.Count - 1];
             GuildMember Member = new GuildMember() { name = newMember.Info.Name, Player = newMember, Id = newMember.Info.Index, LastLogin = Envir.Now, Online = true };
             currentrank.Members.Add(Member);
@@ -289,7 +289,7 @@ namespace Server.MirObjects
             NeedSave = true;
         }
 
-        public bool ChangeRank(PlayerObject self, string memberName, byte rankIndex, string rankName = "Members")
+        public bool ChangeRank(PlayerObject self, string memberName, byte rankIndex, string rankName = "成员")
         {
             if ((self.MyGuild != this) || (self.MyGuildRank == null)) return false;
             if (rankIndex >= Ranks.Count) return false;
@@ -311,16 +311,16 @@ namespace Server.MirObjects
             if (Character == null) return false;
             if ((rankIndex == 0) && (Character.Level < Settings.Guild_RequiredLevel))
             {
-                self.ReceiveChat(String.Format("A guild leader needs to be at least level {0}", Settings.Guild_RequiredLevel), ChatType.System);
+                self.ReceiveChat(String.Format(Resources.ResourceCommon.AGuildLeaderNeedsToBeAtLeastLevel, Settings.Guild_RequiredLevel), ChatType.System);
                 return false;
             }
 
             if ((MemberRank.Index >= self.MyGuildRank.Index) && (self.MyGuildRank.Index != 0))return false;
             if (MemberRank.Index == 0)
             {
-                if (MemberRank.Members.Count <= 2)
+                if (MemberRank.Members.Count <= 1)
                 {
-                    self.ReceiveChat("A guild needs at least 2 leaders.", ChatType.System);
+                    self.ReceiveChat(Resources.ResourceCommon.AGuildNeedsAtLeast1Leaders, ChatType.System);
                     return false;
                 }
                 for (int i = 0; i < MemberRank.Members.Count; i++)
@@ -328,7 +328,7 @@ namespace Server.MirObjects
                     if ((MemberRank.Members[i].Player != null) && (MemberRank.Members[i] != Member))
                         goto AllOk;
                 }
-                self.ReceiveChat("You need at least 1 leader online.", ChatType.System);
+                self.ReceiveChat(Resources.ResourceCommon.YouNeedAtLeast1LeaderOnline, ChatType.System);
                 return false;
             }
 
@@ -366,11 +366,11 @@ namespace Server.MirObjects
         {
             if (Ranks.Count >= byte.MaxValue)
             {
-                Self.ReceiveChat("You cannot have anymore ranks.", ChatType.System);
+                Self.ReceiveChat(Resources.ResourceCommon.YouCannotHaveAnymoreRanks, ChatType.System);
                 return false;
             }
             int NewIndex = Ranks.Count > 1? Ranks.Count -1: 1;
-            GuildRank NewRank = new GuildRank(){Index = NewIndex, Name = String.Format("Rank-{0}",NewIndex), Options = (GuildRankOptions)0};
+            GuildRank NewRank = new GuildRank(){Index = NewIndex, Name = String.Format("{0}-{1}",Resources.ResourceCommon.Rank, NewIndex), Options = (GuildRankOptions)0};
             Ranks.Insert(NewIndex, NewRank);
             Ranks[Ranks.Count - 1].Index = Ranks.Count - 1;
             List<GuildRank> NewRankList = new List<GuildRank>
@@ -423,7 +423,7 @@ namespace Server.MirObjects
 
             if (SelfRankIndex > RankIndex)
             {
-                Self.ReceiveChat("Your rank is not adequate.", ChatType.System);
+                Self.ReceiveChat(Resources.ResourceCommon.YourRankIsNotAdequate, ChatType.System);
                 return false;
             }
             if (RankIndex >= Ranks.Count)
@@ -468,7 +468,7 @@ namespace Server.MirObjects
             if (Member == null) return false;
             if (((Kicker.MyGuildRank.Index >= MemberRank.Index) && (Kicker.MyGuildRank.Index != 0)) && (Kicker.Info.Name != membername))
             {
-                Kicker.ReceiveChat("Your rank is not adequate.", ChatType.System);
+                Kicker.ReceiveChat(Resources.ResourceCommon.YourRankIsNotAdequate, ChatType.System);
                 return false;
             }
             if (MemberRank.Index == 0)
@@ -822,8 +822,8 @@ namespace Server.MirObjects
             GuildA.WarringGuilds.Remove(GuildB);
             GuildB.WarringGuilds.Remove(GuildA);
 
-            GuildA.SendMessage(string.Format("War ended with {0}.", GuildB.Name), ChatType.Guild);
-            GuildB.SendMessage(string.Format("War ended with {0}.", GuildA.Name), ChatType.Guild);
+            GuildA.SendMessage(string.Format(Resources.ResourceCommon.WarEndedWith, GuildB.Name), ChatType.Guild);
+            GuildB.SendMessage(string.Format(Resources.ResourceCommon.WarEndedWith, GuildA.Name), ChatType.Guild);
             GuildA.UpdatePlayersColours();
             GuildB.UpdatePlayersColours();
         }

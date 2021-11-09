@@ -117,169 +117,136 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Agility" xml:space="preserve">
-    <value>敏捷</value>
+  <data name="ActivateBuff" xml:space="preserve">
+    <value>激活增益</value>
   </data>
-  <data name="AGuildLeaderNeedsToBeAtLeastLevel" xml:space="preserve">
-    <value>行会掌门人必须至少为{0}级</value>
+  <data name="ActivationCost" xml:space="preserve">
+    <value>激活费用：</value>
   </data>
-  <data name="AGuildNeedsAtLeast1Leaders" xml:space="preserve">
-    <value>A guild needs at least 2 leaders.</value>
+  <data name="Active" xml:space="preserve">
+    <value>激活</value>
   </data>
-  <data name="AlreadyAtWarWithThisGuild" xml:space="preserve">
-    <value>已经和这个行会交战了。</value>
+  <data name="AddNew" xml:space="preserve">
+    <value>新添加</value>
   </data>
-  <data name="AverageDamageInflictedOnTheTrainerDps" xml:space="preserve">
-    <value>对训练师造成的平均伤害 {0}，每秒伤害：{1:#.00}.</value>
+  <data name="AlterAlliance" xml:space="preserve">
+    <value>改变联盟</value>
   </data>
-  <data name="BidMet" xml:space="preserve">
-    <value>有竞价</value>
+  <data name="AreYouSureYouWantToChangeTheRankOfTo" xml:space="preserve">
+    <value>您确定要将 {0} 军阶更改为 {1} 吗？</value>
   </data>
-  <data name="CannotGoToWarWithYourOwnGuild" xml:space="preserve">
-    <value>不能与自己的行会开战。</value>
+  <data name="AreYouSureYouWantToCreateANewRank" xml:space="preserve">
+    <value>您确定要创建新军阶吗？</value>
   </data>
-  <data name="CouldNotFindGuild" xml:space="preserve">
-    <value>找不到行会{0}。</value>
+  <data name="AreYouSureYouWantToKick" xml:space="preserve">
+    <value>您确定要踢掉{0}吗？</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>可用</value>
+  </data>
+  <data name="BuffIsStillActive" xml:space="preserve">
+    <value>增益仍然激活中。</value>
+  </data>
+  <data name="BuffLengthMinutes" xml:space="preserve">
+    <value>增益时长：{0} 分钟。</value>
+  </data>
+  <data name="ChangeNotice" xml:space="preserve">
+    <value>变更通知</value>
+  </data>
+  <data name="CountingDown" xml:space="preserve">
+    <value>倒计时。</value>
+  </data>
+  <data name="DaysAgo" xml:space="preserve">
+    <value>天前</value>
+  </data>
+  <data name="Decreases" xml:space="preserve">
+    <value>减少</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>存放</value>
+  </data>
+  <data name="EditRank" xml:space="preserve">
+    <value>编辑军阶</value>
+  </data>
+  <data name="EditRanks" xml:space="preserve">
+    <value>编辑军阶</value>
   </data>
   <data name="Expired" xml:space="preserve">
-    <value>已到期</value>
+    <value>已到期。</value>
   </data>
-  <data name="FailedMovementToMap" xml:space="preserve">
-    <value>移动到地图 {0} 失败</value>
+  <data name="Gold" xml:space="preserve">
+    <value>金币</value>
   </data>
-  <data name="FailedMovementToMapCord" xml:space="preserve">
-    <value>移动到地图 {0} 坐标 {1}:{2} 失败</value>
+  <data name="GoldToRetrieve" xml:space="preserve">
+    <value>取回金币：</value>
   </data>
-  <data name="FailedMovementToMapInstance" xml:space="preserve">
-    <value>移动到地图 {0}:[{1}] 失败</value>
+  <data name="GuildLevelTooLow" xml:space="preserve">
+    <value>行会等级太低。</value>
   </data>
-  <data name="FailedMovementToMapInstanceCord" xml:space="preserve">
-    <value>移动到地图 {0}:[{1}] 坐标 {2}:{3} 失败</value>
+  <data name="GuildNameLevelMembers" xml:space="preserve">
+    <value>行会名称{0}{0}级别{0}{0}成员</value>
   </data>
-  <data name="ForSale" xml:space="preserve">
-    <value>出售</value>
+  <data name="GuildRankDoesNotAllowBuffActivation" xml:space="preserve">
+    <value>行会等级不允许激活增益。</value>
   </data>
-  <data name="HasJustExpiredFromYourEquipment" xml:space="preserve">
-    <value>刚刚从您的装备中过期。</value>
+  <data name="Inactive" xml:space="preserve">
+    <value>未激活</value>
   </data>
-  <data name="HasJustExpiredFromYourInventory" xml:space="preserve">
-    <value>刚刚从您的背包中过期。</value>
+  <data name="Increases" xml:space="preserve">
+    <value>增加</value>
   </data>
-  <data name="HasJustExpiredFromYourStorage" xml:space="preserve">
-    <value>刚刚从您的仓库中过期。</value>
+  <data name="InsufficientGuildFunds" xml:space="preserve">
+    <value>行会资金不足。</value>
   </data>
-  <data name="HasStartedAWar" xml:space="preserve">
-    <value>{0} 发动了一场战争</value>
+  <data name="InsufficientLevel" xml:space="preserve">
+    <value>等级不足</value>
   </data>
-  <data name="InflictedDamageDps" xml:space="preserve">
-    <value>{3} 造成 {0} {1} 伤害, 每秒伤害: {2:#.00}.</value>
+  <data name="InsufficientPointsAvailable" xml:space="preserve">
+    <value>可用积分不足。</value>
   </data>
-  <data name="InflictedDamageDpsPoison" xml:space="preserve">
-    <value>{1} 造成 {0} 伤害, 每秒伤害: {2:#.00}.</value>
+  <data name="KickMember" xml:space="preserve">
+    <value>踢掉成员</value>
   </data>
-  <data name="Leader" xml:space="preserve">
-    <value>掌门人</value>
+  <data name="MinimumGuildLevel" xml:space="preserve">
+    <value>最低公会等级：</value>
   </data>
-  <data name="Magic" xml:space="preserve">
-    <value>魔法</value>
+  <data name="MissingRank" xml:space="preserve">
+    <value>缺少军阶</value>
   </data>
-  <data name="MagicalAgility" xml:space="preserve">
-    <value>魔法 敏捷</value>
+  <data name="Obtained" xml:space="preserve">
+    <value>获得。</value>
   </data>
-  <data name="MapCouldNotBeFound" xml:space="preserve">
-    <value>地图 {0}:[{1}] 找不到</value>
+  <data name="Online" xml:space="preserve">
+    <value>在线</value>
   </data>
-  <data name="Members" xml:space="preserve">
-    <value>成员</value>
+  <data name="PointsRequired" xml:space="preserve">
+    <value>所需积分：</value>
   </data>
-  <data name="MonsterHasBeenSpawned" xml:space="preserve">
-    <value>怪物 {0} x{1} 已生成。</value>
+  <data name="RankName" xml:space="preserve">
+    <value>军阶-{0}</value>
   </data>
-  <data name="MovedToMap" xml:space="preserve">
-    <value>已移动到地图 {0}</value>
+  <data name="RecruitMember" xml:space="preserve">
+    <value>招募成员</value>
   </data>
-  <data name="MovedToMapCord" xml:space="preserve">
-    <value>已移动到地图 {0} 坐标 {1}:{2</value>
+  <data name="RetrieveItem" xml:space="preserve">
+    <value>取回物品</value>
   </data>
-  <data name="MovedToMapInstance" xml:space="preserve">
-    <value>已移动到地图 {0}:[{1}]</value>
+  <data name="SelectRank" xml:space="preserve">
+    <value>选择军阶</value>
   </data>
-  <data name="MovedToMapInstanceCord" xml:space="preserve">
-    <value>已移动到地图 {0}:[{1}] 坐标 {2}:{3</value>
+  <data name="ShowOffline" xml:space="preserve">
+    <value>显示离线</value>
   </data>
-  <data name="NoBid" xml:space="preserve">
-    <value>无竞价</value>
+  <data name="StoreItem" xml:space="preserve">
+    <value>存储物品</value>
   </data>
-  <data name="PhysicalAgility" xml:space="preserve">
-    <value>物理 敏捷</value>
+  <data name="TimeRemainingMinutes" xml:space="preserve">
+    <value>剩余时间：{0} 分钟</value>
   </data>
-  <data name="Physicial" xml:space="preserve">
-    <value>物理</value>
+  <data name="Today" xml:space="preserve">
+    <value>今天</value>
   </data>
-  <data name="Rank" xml:space="preserve">
-    <value>军阶</value>
-  </data>
-  <data name="RankNameToShort" xml:space="preserve">
-    <value>军阶名称太短</value>
-  </data>
-  <data name="Sold" xml:space="preserve">
-    <value>卖掉</value>
-  </data>
-  <data name="SomeoneHasBidGoldFor" xml:space="preserve">
-    <value>有人为 {0} 出价 {1:#,##0} 金币</value>
-  </data>
-  <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
-    <value>租赁锁定已从{0}中移除</value>
-  </data>
-  <data name="WarEndedWith" xml:space="preserve">
-    <value> {0} 结束战争。</value>
-  </data>
-  <data name="You" xml:space="preserve">
-    <value>你</value>
-  </data>
-  <data name="YouAreNotAllowedToChangeRanks" xml:space="preserve">
-    <value>你不能改变军阶！</value>
-  </data>
-  <data name="YouBidGoldFor" xml:space="preserve">
-    <value>你为 {0} 出价 {1:#,##0} 金币</value>
-  </data>
-  <data name="YouCanAlreadyUnequipACursedItem" xml:space="preserve">
-    <value>你已经取下被诅咒的物品了。</value>
-  </data>
-  <data name="YouCannotHaveAnymoreRanks" xml:space="preserve">
-    <value>你不能再有任何军阶了</value>
-  </data>
-  <data name="YouCannotPositionMoveOnThisMap" xml:space="preserve">
-    <value>您无法在此地图上使用位置移动</value>
-  </data>
-  <data name="YouCannotTeleportForAnotherSeconds" xml:space="preserve">
-    <value>你不能在 {0} 秒内再传送</value>
-  </data>
-  <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
-    <value>你现在可以取下一个被诅咒的物品。</value>
-  </data>
-  <data name="YouMustBeALeaderToStartAWar" xml:space="preserve">
-    <value>您必须是掌门人才能发动战争</value>
-  </data>
-  <data name="YouNeedAtLeast1LeaderOnline" xml:space="preserve">
-    <value>You need at least 1 leader online.</value>
-  </data>
-  <data name="YourPet" xml:space="preserve">
-    <value>你的宠物</value>
-  </data>
-  <data name="YourPetsPoison" xml:space="preserve">
-    <value>你的宠物毒伤</value>
-  </data>
-  <data name="YourPoison" xml:space="preserve">
-    <value>你的毒伤</value>
-  </data>
-  <data name="YourPoisonStoppedRegenDps" xml:space="preserve">
-    <value>你的毒药停止了 {0} 恢复，每秒伤害：{1:#.00}.</value>
-  </data>
-  <data name="YourRankIsNotAdequate" xml:space="preserve">
-    <value>你的军阶不够。</value>
-  </data>
-  <data name="YouStartedAWarWith" xml:space="preserve">
-    <value>您与{0}发动了一场战争。</value>
+  <data name="Yesterday" xml:space="preserve">
+    <value>昨天</value>
   </data>
 </root>
