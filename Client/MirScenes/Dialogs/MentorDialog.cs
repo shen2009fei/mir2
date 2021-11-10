@@ -100,7 +100,7 @@ namespace Client.MirScenes.Dialogs
             {
                 if (MentorLevel != 0)
                 {
-                    GameScene.Scene.ChatDialog.ReceiveChat("You already have a Mentor.", ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat(Resources.ResourceCommon.YouAlreadyHaveAMentor, ChatType.System);
                     return;
                 }
 
@@ -137,7 +137,7 @@ namespace Client.MirScenes.Dialogs
                     return;
                 }
 
-                MirMessageBox messageBox = new MirMessageBox(string.Format("Cancelling a Mentorship early will cause a cooldown. Are you sure?"), MirMessageBoxButtons.YesNo);
+                MirMessageBox messageBox = new MirMessageBox(string.Format(Resources.ResourceCommon.CancellingAMentorshipEarlyWillCauseACooldownAreYouSure), MirMessageBoxButtons.YesNo);
 
                 messageBox.YesButton.Click += (oo, ee) => Network.Enqueue(new C.CancelMentor { });
                 messageBox.NoButton.Click += (oo, ee) => { messageBox.Dispose(); };
@@ -181,7 +181,7 @@ namespace Client.MirScenes.Dialogs
                 NotControl = true,
                 Font = new Font(Settings.FontName, 7F),
                 Visible = false,
-                Text = "ONLINE",
+                Text =Resources.ResourceCommon.ONLINE,
             };
 
             StudentNameLabel = new MirLabel
@@ -219,7 +219,7 @@ namespace Client.MirScenes.Dialogs
                 NotControl = true,
                 Font = new Font(Settings.FontName, 7F),
                 Visible = false,
-                Text = "ONLINE",
+                Text = Resources.ResourceCommon.ONLINE,
             };
 
             MentorLabel = new MirLabel
@@ -232,7 +232,7 @@ namespace Client.MirScenes.Dialogs
                 Parent = this,
                 NotControl = true,
                 Font = new Font(Settings.FontName, 7F),
-                Text = "MENTOR",
+                Text = Resources.ResourceCommon.MENTOR,
             };
 
             StudentLabel = new MirLabel
@@ -245,7 +245,7 @@ namespace Client.MirScenes.Dialogs
                 Parent = this,
                 NotControl = true,
                 Font = new Font(Settings.FontName, 7F),
-                Text = "MENTEE",
+                Text = Resources.ResourceCommon.MENTEE,
             };
 
             MenteeEXPLabel = new MirLabel
@@ -289,30 +289,30 @@ namespace Client.MirScenes.Dialogs
             if (GameScene.User.Level > MentorLevel)
             {
                 MentorNameLabel.Text = GameScene.User.Name;
-                MentorLevelLabel.Text = "Lv " + GameScene.User.Level.ToString();
+                MentorLevelLabel.Text = Resources.ResourceCommon.Lv + " " + GameScene.User.Level.ToString();
                 MentorOnlineLabel.Visible = false;
 
                 StudentNameLabel.Text = MentorName;
-                StudentLevelLabel.Text = "Lv " + MentorLevel.ToString();
+                StudentLevelLabel.Text = Resources.ResourceCommon.Lv + " " + MentorLevel.ToString();
                 if (MentorOnline)
                     StudentOnlineLabel.Visible = true;
                 else
                     StudentOnlineLabel.Visible = false;
 
                 MenteeEXPLabel.Visible = true;
-                MenteeEXPLabel.Text = "MENTEE EXP: " + MenteeEXP;
+                MenteeEXPLabel.Text = Resources.ResourceCommon.MENTEEEXP + ": " + MenteeEXP;
             }
             else
             {
                 MentorNameLabel.Text = MentorName;
-                MentorLevelLabel.Text = "Lv " + MentorLevel.ToString();
+                MentorLevelLabel.Text = Resources.ResourceCommon.Lv+ " " + MentorLevel.ToString();
                 if (MentorOnline)
                     MentorOnlineLabel.Visible = true;
                 else
                     MentorOnlineLabel.Visible = false;
 
                 StudentNameLabel.Text = GameScene.User.Name;
-                StudentLevelLabel.Text = "Lv " + GameScene.User.Level.ToString();
+                StudentLevelLabel.Text = Resources.ResourceCommon.Lv + " " + GameScene.User.Level.ToString();
                 StudentOnlineLabel.Visible = false;
             }
         }

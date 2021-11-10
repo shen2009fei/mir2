@@ -138,6 +138,9 @@
   <data name="CannotGoToWarWithYourOwnGuild" xml:space="preserve">
     <value>不能与自己的行会开战。</value>
   </data>
+  <data name="CongratulationsYouAreNowMarriedTo" xml:space="preserve">
+    <value>恭喜，您现在已与{0}结婚。</value>
+  </data>
   <data name="CouldNotFindGuild" xml:space="preserve">
     <value>找不到行会{0}。</value>
   </data>
@@ -234,17 +237,86 @@
   <data name="SomeoneHasBidGoldFor" xml:space="preserve">
     <value>有人为 {0} 出价 {1:#,##0} 金币</value>
   </data>
+  <data name="ThePersonYouAreTryingToProposeToIsNotAllowingMarriageRequests" xml:space="preserve">
+    <value>您要向其求婚的人不允许提出结婚请求。</value>
+  </data>
   <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
     <value>租赁锁定已从{0}中移除</value>
   </data>
   <data name="WarEndedWith" xml:space="preserve">
     <value> {0} 结束战争。</value>
   </data>
+  <data name="WhoAlreadyHasAMarriageInvitation" xml:space="preserve">
+    <value>{0}已收到结婚邀请。</value>
+  </data>
+  <data name="WhoCanNotGetMarriedAgainYetThereIsADayCooldownAfterDivorce" xml:space="preserve">
+    <value>{0}还不能再结婚，离婚后有 {1} 天的冷静时间</value>
+  </data>
+  <data name="WhoHasComeOnline" xml:space="preserve">
+    <value>{0} 已上线。</value>
+  </data>
+  <data name="WhoHasGoneOffline" xml:space="preserve">
+    <value>{0} 已离线。</value>
+  </data>
+  <data name="WhoHasRefusedToDivorceYou" xml:space="preserve">
+    <value>{0} 拒绝与您离婚。</value>
+  </data>
+  <data name="WhoHasRefusedToMarryYou" xml:space="preserve">
+    <value>{0} 拒绝嫁给你。</value>
+  </data>
+  <data name="WhoIsAlreadyMarried" xml:space="preserve">
+    <value>{0} 已经结婚了。</value>
+  </data>
+  <data name="WhoIsMarriedButCouldNotFindMarriageID" xml:space="preserve">
+    <value>{0} 已婚，但找不到婚姻 ID {1}</value>
+  </data>
+  <data name="WhoIsNotWithinDivorceRange" xml:space="preserve">
+    <value>{0} 不在离婚范围内。</value>
+  </data>
+  <data name="WhoIsNotWithinMarriageRange" xml:space="preserve">
+    <value>{0}不在婚姻范围内。</value>
+  </data>
   <data name="You" xml:space="preserve">
     <value>你</value>
   </data>
+  <data name="YouAreAlreadyMarried" xml:space="preserve">
+    <value>你已经结婚了。</value>
+  </data>
+  <data name="YouAreAlreadyWearingAWeddingRing" xml:space="preserve">
+    <value>你已经戴上了结婚戒指。</value>
+  </data>
   <data name="YouAreNotAllowedToChangeRanks" xml:space="preserve">
     <value>你不能改变军阶！</value>
+  </data>
+  <data name="YouAreNotMarried" xml:space="preserve">
+    <value>你还没结婚。</value>
+  </data>
+  <data name="YouAreNotMarriedSoYouDoNotRequireADivorce" xml:space="preserve">
+    <value>你没有结婚，所以你不需要离婚。</value>
+  </data>
+  <data name="YouAreNotMarriedTo" xml:space="preserve">
+    <value>你没有和{0}结婚</value>
+  </data>
+  <data name="YouAreNotWearingARingToUpgrade" xml:space="preserve">
+    <value>你没有佩戴戒指来升级。</value>
+  </data>
+  <data name="YouAreNotWearingAWeddingRingToUpgrade" xml:space="preserve">
+    <value>您没有佩戴结婚戒指来升级。</value>
+  </data>
+  <data name="YouAreNowAllowingMarriageRequests" xml:space="preserve">
+    <value>你现在允许结婚请求。</value>
+  </data>
+  <data name="YouAreNowAllowingRecallFromLover" xml:space="preserve">
+    <value>你现在允许情侣传送。</value>
+  </data>
+  <data name="YouAreNowBlockingMarriageRequests" xml:space="preserve">
+    <value>你现在正在阻止结婚请求。</value>
+  </data>
+  <data name="YouAreNowBlockingRecallFromLover" xml:space="preserve">
+    <value>你现在阻止了情侣传送。</value>
+  </data>
+  <data name="YouAreNowDivorced" xml:space="preserve">
+    <value>你现在离婚了</value>
   </data>
   <data name="YouBidGoldFor" xml:space="preserve">
     <value>你为 {0} 出价 {1:#,##0} 金币</value>
@@ -255,23 +327,53 @@
   <data name="YouCannotChangeTheOptionsOfYourOwnRank" xml:space="preserve">
     <value>您无法更改自己的军阶选项！</value>
   </data>
+  <data name="YouCanNotEquipTheItemYouAreTryingToUse" xml:space="preserve">
+    <value>您无法装备您试图使用的物品。</value>
+  </data>
+  <data name="YouCanNotGetMarriedAgainYetThereIsADayCooldownAfterADivorce" xml:space="preserve">
+    <value>你还不能再结婚，离婚后有 {0} 天的冷静时间。</value>
+  </data>
   <data name="YouCannotHaveAnymoreRanks" xml:space="preserve">
     <value>你不能再有任何军阶了</value>
   </data>
   <data name="YouCannotLeaveTheGuildWhenYouAreLeader" xml:space="preserve">
     <value>当你是掌门人时，你不能离开行会。</value>
   </data>
+  <data name="YouCanNotPerformAMarriageWithADeadPlayer" xml:space="preserve">
+    <value>你不能和一个死去的玩家结婚。</value>
+  </data>
   <data name="YouCannotPositionMoveOnThisMap" xml:space="preserve">
     <value>您无法在此地图上使用位置移动</value>
+  </data>
+  <data name="YouCanNotReplaceAWeddingRingWithThisItem" xml:space="preserve">
+    <value>你不能用这个东西代替结婚戒指。</value>
   </data>
   <data name="YouCannotTeleportForAnotherSeconds" xml:space="preserve">
     <value>你不能在 {0} 秒内再传送</value>
   </data>
+  <data name="YouCanNotUseThisTypeOfRing" xml:space="preserve">
+    <value>您不能使用这种类型的戒指。</value>
+  </data>
   <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
     <value>你现在可以取下一个被诅咒的物品。</value>
   </data>
+  <data name="YouCaNotDivorceADeadPlayer" xml:space="preserve">
+    <value>你不能和一个死去的玩家离婚。</value>
+  </data>
+  <data name="YouCaNotDivorceYourself" xml:space="preserve">
+    <value>你不能与自己离婚。</value>
+  </data>
+  <data name="YouCantMarryYourself" xml:space="preserve">
+    <value>你不能嫁给自己。</value>
+  </data>
+  <data name="YouDoNotHaveEnoughGoldToReplaceYourWeddingRing" xml:space="preserve">
+    <value>你没有足够的金币来换取你的结婚戒指。</value>
+  </data>
   <data name="YouHaveBeenRemovedFromYourGuild" xml:space="preserve">
     <value>您已被行会移除</value>
+  </data>
+  <data name="YouHaveJustBeenForcefullyDivorced" xml:space="preserve">
+    <value>你刚刚被强行离婚</value>
   </data>
   <data name="YouHaveLeftYourGuild" xml:space="preserve">
     <value>你已经离开了你的行会。</value>
@@ -281,6 +383,27 @@
   </data>
   <data name="YouNeedAtLeast1LeaderOnline" xml:space="preserve">
     <value>你需要至少 1 个掌门人在线.</value>
+  </data>
+  <data name="YouNeedToBeAtLeastLevelToGetMarried" xml:space="preserve">
+    <value>你至少需要达到 {0} 级才能结婚。</value>
+  </data>
+  <data name="YouNeedToBeFacingAPlayerToRequestAMarriage" xml:space="preserve">
+    <value>你需要面对一个玩家才能请求结婚。</value>
+  </data>
+  <data name="YouNeedToBeFacingEachOtherToPerformAMarriage" xml:space="preserve">
+    <value>你们需要面对面才能举行婚礼。</value>
+  </data>
+  <data name="YouNeedToBeFacingYourLoverToDivorceThem" xml:space="preserve">
+    <value>你需要面对你的爱人才能和他(她)离婚。</value>
+  </data>
+  <data name="YouNeedToBeMarriedToMakeAWeddingRing" xml:space="preserve">
+    <value>你需要结婚才能制作结婚戒指。</value>
+  </data>
+  <data name="YouNeedToWearARingOnYourLeftFingerToMakeAWeddingRing" xml:space="preserve">
+    <value>您需要在左手手指上佩戴戒指才能制作结婚戒指。</value>
+  </data>
+  <data name="YourLoverNeedsToBeAtLeastLevelToGetMarried" xml:space="preserve">
+    <value>你的爱人至少需要达到 {0} 级才能结婚。</value>
   </data>
   <data name="YourPet" xml:space="preserve">
     <value>你的宠物</value>
@@ -298,6 +421,6 @@
     <value>你的军阶不够。</value>
   </data>
   <data name="YouStartedAWarWith" xml:space="preserve">
-    <value>您与{0}发动了一场战争。</value>
+    <value>你与{0}发动了一场战争。</value>
   </data>
 </root>

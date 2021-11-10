@@ -120,14 +120,23 @@
   <data name="AllItems" xml:space="preserve">
     <value>All Items</value>
   </data>
+  <data name="AllowBlockRecall" xml:space="preserve">
+    <value>Allow/Block Recall</value>
+  </data>
   <data name="AnotherUserLoggedOntoYourAccount" xml:space="preserve">
     <value>Disconnected: Another user logged onto your account.</value>
   </data>
   <data name="Archer" xml:space="preserve">
     <value>Archer</value>
   </data>
+  <data name="AreYouSureYouWishToRemove" xml:space="preserve">
+    <value>Are you sure you wish to remove '{0}'?</value>
+  </data>
   <data name="Assassin" xml:space="preserve">
     <value>Assassin</value>
+  </data>
+  <data name="CancellingAMentorshipEarlyWillCauseACooldownAreYouSure" xml:space="preserve">
+    <value>Cancelling a Mentorship early will cause a cooldown. Are you sure?</value>
   </data>
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>
@@ -135,8 +144,14 @@
   <data name="Crit" xml:space="preserve">
     <value>Crit</value>
   </data>
+  <data name="Days" xml:space="preserve">
+    <value>Days</value>
+  </data>
   <data name="DealCancelledToDealCorrectlyYouMustFaceTheOtherParty" xml:space="preserve">
     <value>Deal cancelled.{0}To deal correctly you must face the other party.</value>
+  </data>
+  <data name="DivorcedDate" xml:space="preserve">
+    <value>Divorced Date</value>
   </data>
   <data name="DoNotUseCrossHalfMoon" xml:space="preserve">
     <value>Do not use Cross Half Moon.</value>
@@ -168,11 +183,41 @@
   <data name="LeftTheGuild" xml:space="preserve">
     <value>{0} left the guild.</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="LocationOffline" xml:space="preserve">
+    <value>Location:  Offline</value>
+  </data>
   <data name="LoggedOn" xml:space="preserve">
     <value>{0} logged on.</value>
   </data>
+  <data name="Lover" xml:space="preserve">
+    <value>Lover</value>
+  </data>
+  <data name="LoverIsNotOnline" xml:space="preserve">
+    <value>Lover is not online</value>
+  </data>
+  <data name="Lv" xml:space="preserve">
+    <value>Lv</value>
+  </data>
+  <data name="MarriageDate" xml:space="preserve">
+    <value>Marriage Date</value>
+  </data>
+  <data name="MarriageLength" xml:space="preserve">
+    <value>Marriage Length</value>
+  </data>
   <data name="MaximumConnectionsReached" xml:space="preserve">
     <value>Disconnected: Maximum connections reached.</value>
+  </data>
+  <data name="MENTEE" xml:space="preserve">
+    <value>MENTEE</value>
+  </data>
+  <data name="MENTEEEXP" xml:space="preserve">
+    <value>MENTEE EXP</value>
+  </data>
+  <data name="MENTOR" xml:space="preserve">
+    <value>MENTOR</value>
   </data>
   <data name="Miss" xml:space="preserve">
     <value>Miss</value>
@@ -186,11 +231,17 @@
   <data name="Never" xml:space="preserve">
     <value>Never</value>
   </data>
+  <data name="ONLINE" xml:space="preserve">
+    <value>ONLINE</value>
+  </data>
   <data name="Others" xml:space="preserve">
     <value>Others</value>
   </data>
   <data name="PacketError" xml:space="preserve">
     <value>Disconnected: Packet Error.</value>
+  </data>
+  <data name="PlayerIsNotOnline" xml:space="preserve">
+    <value>Player is not online</value>
   </data>
   <data name="PleaseWaitTheGameIsStillLoading" xml:space="preserve">
     <value>Please wait, The game is still loading... {0:##0}%</value>
@@ -209,6 +260,9 @@
   </data>
   <data name="TargetIsTooFar" xml:space="preserve">
     <value>Target is too far.</value>
+  </data>
+  <data name="TimeSince" xml:space="preserve">
+    <value>Time Since</value>
   </data>
   <data name="UseCrossHalfMoon" xml:space="preserve">
     <value>Use Cross Half Moon.</value>
@@ -230,6 +284,15 @@
   </data>
   <data name="Wizard" xml:space="preserve">
     <value>Wizard</value>
+  </data>
+  <data name="YouAlreadyHaveAMentor" xml:space="preserve">
+    <value>You already have a Mentor.</value>
+  </data>
+  <data name="YouAreAlreadyMarried" xml:space="preserve">
+    <value>You're already married.</value>
+  </data>
+  <data name="YouAreNotMarried" xml:space="preserve">
+    <value>You're not married.</value>
   </data>
   <data name="YouCannotCastForAnotherSeconds" xml:space="preserve">
     <value>You cannot cast {0} for another {1} seconds.</value>

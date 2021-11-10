@@ -3803,7 +3803,7 @@ namespace Server.MirObjects
                     case "RECALLLOVER":
                         if (Info.Married == 0)
                         {
-                            ReceiveChat("You're not married.", ChatType.System);
+                            ReceiveChat(Resources.ResourceCommon.YouAreNotMarried, ChatType.System);
                             return;
                         }
 
@@ -18987,7 +18987,7 @@ case StatType.Durability:
         {
             if (Info.Married == 0)
             {
-                ReceiveChat(string.Format("You're not married."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouAreNotMarried), ChatType.System);
                 return;
             }
 
@@ -19020,7 +19020,7 @@ case StatType.Durability:
             if (Player != null)
             {
                 Player.GetRelationship(false);
-                Player.ReceiveChat(string.Format("You've just been forcefully divorced"), ChatType.System);
+                Player.ReceiveChat(string.Format(Resources.ResourceCommon.YouHaveJustBeenForcefullyDivorced), ChatType.System);
                 if (Player.Info.Equipment[(int)EquipmentSlot.RingL] != null)
                     Player.Enqueue(new S.RefreshItem { Item = Player.Info.Equipment[(int)EquipmentSlot.RingL] });
             }
@@ -19030,25 +19030,25 @@ case StatType.Durability:
         {
             if (Info.Married == 0)
             {
-                ReceiveChat(string.Format("You need to be married to make a Wedding Ring."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouNeedToBeMarriedToMakeAWeddingRing), ChatType.System);
                 return false;
             }
 
             if (Info.Equipment[(int)EquipmentSlot.RingL] == null)
             {
-                ReceiveChat(string.Format("You need to wear a ring on your left finger to make a Wedding Ring."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouNeedToWearARingOnYourLeftFingerToMakeAWeddingRing), ChatType.System);
                 return false;
             }
 
             if (Info.Equipment[(int)EquipmentSlot.RingL].WeddingRing != -1)
             {
-                ReceiveChat(string.Format("You're already wearing a Wedding Ring."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouAreAlreadyWearingAWeddingRing), ChatType.System);
                 return false;
             }
 
             if (Info.Equipment[(int)EquipmentSlot.RingL].Info.Bind.HasFlag(BindMode.NoWeddingRing))
             {
-                ReceiveChat(string.Format("You cannot use this type of ring."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouCanNotUseThisTypeOfRing), ChatType.System);
                 return false;
             }
 
@@ -19073,13 +19073,13 @@ case StatType.Durability:
 
             if (CurrentRing == null)
             {
-                ReceiveChat(string.Format("You arn't wearing a  ring to upgrade."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouAreNotWearingARingToUpgrade), ChatType.System);
                 return;
             }
 
             if (CurrentRing.WeddingRing == -1)
             {
-                ReceiveChat(string.Format("You arn't wearing a Wedding Ring to upgrade."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouAreNotWearingAWeddingRingToUpgrade), ChatType.System);
                 return;
             }
 
@@ -19102,19 +19102,19 @@ case StatType.Durability:
 
             if (temp.Info.Type != ItemType.Ring)
             {
-                ReceiveChat(string.Format("You can't replace a Wedding Ring with this item."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouCanNotReplaceAWeddingRingWithThisItem), ChatType.System);
                 return;
             }
 
             if (!CanEquipItem(temp, (int)EquipmentSlot.RingL))
             {
-                ReceiveChat(string.Format("You can't equip the item you're trying to use."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouCanNotEquipTheItemYouAreTryingToUse), ChatType.System);
                 return;
             }
 
             if (temp.Info.Bind.HasFlag(BindMode.NoWeddingRing))
             {
-                ReceiveChat(string.Format("You cannot use this type of ring."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouCanNotUseThisTypeOfRing), ChatType.System);
                 return;
             }
 
@@ -19122,7 +19122,7 @@ case StatType.Durability:
 
             if (cost > Account.Gold)
             {
-                ReceiveChat(String.Format("You don't have enough gold to replace your Wedding Ring."), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YouDoNotHaveEnoughGoldToReplaceYourWeddingRing), ChatType.System);
                 return;
             }
 
@@ -19148,19 +19148,19 @@ case StatType.Durability:
 
             if (Info.Married != 0)
             {
-                ReceiveChat(string.Format("You're already married."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouAreAlreadyMarried), ChatType.System);
                 return;
             }
 
             if (Info.MarriedDate.AddDays(Settings.MarriageCooldown) > DateTime.Now)
             {
-                ReceiveChat(string.Format("You can't get married again yet, there is a {0} day cooldown after a divorce.", Settings.MarriageCooldown), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouCanNotGetMarriedAgainYetThereIsADayCooldownAfterADivorce, Settings.MarriageCooldown), ChatType.System);
                 return;
             }
 
             if (Info.Level < Settings.MarriageLevelRequired)
             {
-                ReceiveChat(string.Format("You need to be at least level {0} to get married.", Settings.MarriageLevelRequired), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouNeedToBeAtLeastLevelToGetMarried, Settings.MarriageLevelRequired), ChatType.System);
                 return;
             }
 
@@ -19186,55 +19186,55 @@ case StatType.Durability:
 
                 if (!Functions.FacingEachOther(Direction, CurrentLocation, player.Direction, player.CurrentLocation))
                 {
-                    ReceiveChat(string.Format("You need to be facing each other to perform a marriage."), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.YouNeedToBeFacingEachOtherToPerformAMarriage), ChatType.System);
                     return;
                 }
 
                 if (player.Level < Settings.MarriageLevelRequired)
                 {
-                    ReceiveChat(string.Format("Your lover needs to be at least level {0} to get married.", Settings.MarriageLevelRequired), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.YourLoverNeedsToBeAtLeastLevelToGetMarried, Settings.MarriageLevelRequired), ChatType.System);
                     return;
                 }
 
                 if (player.Info.MarriedDate.AddDays(Settings.MarriageCooldown) > DateTime.Now)
                 {
-                    ReceiveChat(string.Format("{0} can't get married again yet, there is a {1} day cooldown after divorce", player.Name, Settings.MarriageCooldown), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.WhoCanNotGetMarriedAgainYetThereIsADayCooldownAfterDivorce, player.Name, Settings.MarriageCooldown), ChatType.System);
                     return;
                 }
 
                 if (!player.AllowMarriage)
                 {
-                    ReceiveChat("The person you're trying to propose to isn't allowing marriage requests.", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.ThePersonYouAreTryingToProposeToIsNotAllowingMarriageRequests, ChatType.System);
                     return;
                 }
 
                 if (player == this)
                 {
-                    ReceiveChat("You cant marry yourself.", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouCantMarryYourself, ChatType.System);
                     return;
                 }
 
                 if (player.Dead || Dead)
                 {
-                    ReceiveChat("You can't perform a marriage with a dead player.", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouCanNotPerformAMarriageWithADeadPlayer, ChatType.System);
                     return;
                 }
 
                 if (player.MarriageProposal != null)
                 {
-                    ReceiveChat(string.Format("{0} already has a marriage invitation.", player.Info.Name), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.WhoAlreadyHasAMarriageInvitation, player.Info.Name), ChatType.System);
                     return;
                 }
 
                 if (!Functions.InRange(player.CurrentLocation, CurrentLocation, Globals.DataRange) || player.CurrentMap != CurrentMap)
                 {
-                    ReceiveChat(string.Format("{0} is not within marriage range.", player.Info.Name), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.WhoIsNotWithinMarriageRange, player.Info.Name), ChatType.System);
                     return;
                 }
 
                 if (player.Info.Married != 0)
                 {
-                    ReceiveChat(string.Format("{0} is already married.", player.Info.Name), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.WhoIsAlreadyMarried, player.Info.Name), ChatType.System);
                     return;
                 }
 
@@ -19243,7 +19243,7 @@ case StatType.Durability:
             }
             else
             {
-                ReceiveChat(string.Format("You need to be facing a player to request a marriage."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouNeedToBeFacingAPlayerToRequestAMarriage), ChatType.System);
                 return;
             }
         }
@@ -19258,21 +19258,21 @@ case StatType.Durability:
 
             if (!accept)
             {
-                MarriageProposal.ReceiveChat(string.Format("{0} has refused to marry you.", Info.Name), ChatType.System);
+                MarriageProposal.ReceiveChat(string.Format(Resources.ResourceCommon.WhoHasRefusedToMarryYou, Info.Name), ChatType.System);
                 MarriageProposal = null;
                 return;
             }
 
             if (Info.Married != 0)
             {
-                ReceiveChat("You are already married.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouAreAlreadyMarried, ChatType.System);
                 MarriageProposal = null;
                 return;
             }
 
             if (MarriageProposal.Info.Married != 0)
             {
-                ReceiveChat(string.Format("{0} is already married.", MarriageProposal.Info.Name), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.WhoIsAlreadyMarried, MarriageProposal.Info.Name), ChatType.System);
                 MarriageProposal = null;
                 return;
             }
@@ -19287,8 +19287,8 @@ case StatType.Durability:
             GetRelationship(false);
             MarriageProposal.GetRelationship(false);
 
-            MarriageProposal.ReceiveChat(string.Format("Congratulations, you're now married to {0}.", Info.Name), ChatType.System);
-            ReceiveChat(String.Format("Congratulations, you're now married to {0}.", MarriageProposal.Info.Name), ChatType.System);
+            MarriageProposal.ReceiveChat(string.Format(Resources.ResourceCommon.CongratulationsYouAreNowMarriedTo, Info.Name), ChatType.System);
+            ReceiveChat(String.Format(Resources.ResourceCommon.CongratulationsYouAreNowMarriedTo, MarriageProposal.Info.Name), ChatType.System);
 
             MarriageProposal = null;
         }
@@ -19298,7 +19298,7 @@ case StatType.Durability:
 
             if (Info.Married == 0)
             {
-                ReceiveChat(string.Format("You're not married."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouAreNotMarried), ChatType.System);
                 return;
             }
 
@@ -19319,7 +19319,7 @@ case StatType.Durability:
 
             if (player == null)
             {
-                ReceiveChat(string.Format("You need to be facing your lover to divorce them."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouNeedToBeFacingYourLoverToDivorceThem), ChatType.System);
                 return;
             }
 
@@ -19327,31 +19327,31 @@ case StatType.Durability:
             {
                 if (!Functions.FacingEachOther(Direction, CurrentLocation, player.Direction, player.CurrentLocation))
                 {
-                    ReceiveChat(string.Format("You need to be facing your lover to divorce them."), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.YouNeedToBeFacingYourLoverToDivorceThem), ChatType.System);
                     return;
                 }
 
                 if (player == this)
                 {
-                    ReceiveChat("You can't divorce yourself.", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouCaNotDivorceYourself, ChatType.System);
                     return;
                 }
 
                 if (player.Dead || Dead)
                 {
-                    ReceiveChat("You can't divorce a dead player.", ChatType.System); //GOT TO HERE, NEED TO KEEP WORKING ON IT.
+                    ReceiveChat(Resources.ResourceCommon.YouCaNotDivorceADeadPlayer, ChatType.System); //GOT TO HERE, NEED TO KEEP WORKING ON IT.
                     return;
                 }
 
                 if (player.Info.Index != Info.Married)
                 {
-                    ReceiveChat(string.Format("You aren't married to {0}", player.Info.Name), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.YouAreNotMarriedTo, player.Info.Name), ChatType.System);
                     return;
                 }
 
                 if (!Functions.InRange(player.CurrentLocation, CurrentLocation, Globals.DataRange) || player.CurrentMap != CurrentMap)
                 {
-                    ReceiveChat(string.Format("{0} is not within divorce range.", player.Info.Name), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.WhoIsNotWithinDivorceRange, player.Info.Name), ChatType.System);
                     return;
                 }
 
@@ -19360,7 +19360,7 @@ case StatType.Durability:
             }
             else
             {
-                ReceiveChat(string.Format("You need to be facing your lover to divorce them."), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouNeedToBeFacingYourLoverToDivorceThem), ChatType.System);
                 return;
             }
         }
@@ -19375,14 +19375,14 @@ case StatType.Durability:
 
             if (!accept)
             {
-                DivorceProposal.ReceiveChat(string.Format("{0} has refused to divorce you.", Info.Name), ChatType.System);
+                DivorceProposal.ReceiveChat(string.Format(Resources.ResourceCommon.WhoHasRefusedToDivorceYou, Info.Name), ChatType.System);
                 DivorceProposal = null;
                 return;
             }
 
             if (Info.Married == 0)
             {
-                ReceiveChat("You aren't married so you don't require a divorce.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouAreNotMarriedSoYouDoNotRequireADivorce, ChatType.System);
                 DivorceProposal = null;
                 return;
             }
@@ -19410,8 +19410,8 @@ case StatType.Durability:
             }
 
 
-            DivorceProposal.ReceiveChat(string.Format("You're now divorced", Info.Name), ChatType.System);
-            ReceiveChat("You're now divorced", ChatType.System);
+            DivorceProposal.ReceiveChat(string.Format(Resources.ResourceCommon.YouAreNowDivorced, Info.Name), ChatType.System);
+            ReceiveChat(Resources.ResourceCommon.YouAreNowDivorced, ChatType.System);
 
             GetRelationship(false);
             DivorceProposal.GetRelationship(false);
@@ -19438,7 +19438,7 @@ case StatType.Durability:
                     if (CheckOnline)
                     {
                         player.GetRelationship(false);
-                        player.ReceiveChat(String.Format("{0} has come online.", Info.Name), ChatType.System);
+                        player.ReceiveChat(String.Format(Resources.ResourceCommon.WhoHasComeOnline, Info.Name), ChatType.System);
                     }
                 }
             }
@@ -19450,7 +19450,7 @@ case StatType.Durability:
 
             if (Lover == null)
             {
-                MessageQueue.EnqueueDebugging(Name + " is married but couldn't find marriage ID " + Info.Married);
+                MessageQueue.EnqueueDebugging(string.Format(Resources.ResourceCommon.WhoIsMarriedButCouldNotFindMarriageID, Name , Info.Married));
                 return;
             }
 
@@ -19458,7 +19458,7 @@ case StatType.Durability:
             if (player != null)
             {
                 player.Enqueue(new S.LoverUpdate { Name = Info.Name, Date = player.Info.MarriedDate, MapName = "", MarriedDays = (short)(DateTime.Now - Info.MarriedDate).TotalDays });
-                player.ReceiveChat(String.Format("{0} has gone offline.", Info.Name), ChatType.System);
+                player.ReceiveChat(String.Format(Resources.ResourceCommon.WhoHasGoneOffline, Info.Name), ChatType.System);
             }
         }
 

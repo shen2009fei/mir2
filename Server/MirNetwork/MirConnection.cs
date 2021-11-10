@@ -1359,17 +1359,17 @@ namespace Server.MirNetwork
             {
                 Player.AllowMarriage = !Player.AllowMarriage;
                 if (Player.AllowMarriage)
-                    Player.ReceiveChat("You're now allowing marriage requests.", ChatType.Hint);
+                    Player.ReceiveChat(Resources.ResourceCommon.YouAreNowAllowingMarriageRequests, ChatType.Hint);
                 else
-                    Player.ReceiveChat("You're now blocking marriage requests.", ChatType.Hint);
+                    Player.ReceiveChat(Resources.ResourceCommon.YouAreNowBlockingMarriageRequests, ChatType.Hint);
             }
             else
             {
                 Player.AllowLoverRecall = !Player.AllowLoverRecall;
                 if (Player.AllowLoverRecall)
-                    Player.ReceiveChat("You're now allowing recall from lover.", ChatType.Hint);
+                    Player.ReceiveChat(Resources.ResourceCommon.YouAreNowAllowingRecallFromLover, ChatType.Hint);
                 else
-                    Player.ReceiveChat("You're now blocking recall from lover.", ChatType.Hint);
+                    Player.ReceiveChat(Resources.ResourceCommon.YouAreNowBlockingRecallFromLover, ChatType.Hint);
             }
         }
 

@@ -181,7 +181,7 @@ namespace Client.MirScenes.Dialogs
             {
                 if (SelectedFriend == null) return;
 
-                MirMessageBox messageBox = new MirMessageBox(string.Format("Are you sure you wish to remove '{0}'?", SelectedFriend.Name), MirMessageBoxButtons.YesNo);
+                MirMessageBox messageBox = new MirMessageBox(string.Format(Resources.ResourceCommon.AreYouSureYouWishToRemove, SelectedFriend.Name), MirMessageBoxButtons.YesNo);
 
                 messageBox.YesButton.Click += (o1, e1) =>
                 {
@@ -247,7 +247,7 @@ namespace Client.MirScenes.Dialogs
 
                 if (!SelectedFriend.Online)
                 {
-                    GameScene.Scene.ChatDialog.ReceiveChat("Player is not online", ChatType.System);
+                    GameScene.Scene.ChatDialog.ReceiveChat( Resources.ResourceCommon.PlayerIsNotOnline, ChatType.System);
                     return;
                 }
 

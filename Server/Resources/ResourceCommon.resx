@@ -138,6 +138,9 @@
   <data name="CannotGoToWarWithYourOwnGuild" xml:space="preserve">
     <value>Cannot go to war with your own guild.</value>
   </data>
+  <data name="CongratulationsYouAreNowMarriedTo" xml:space="preserve">
+    <value>Congratulations, you're now married to {0}.</value>
+  </data>
   <data name="CouldNotFindGuild" xml:space="preserve">
     <value>Could not find guild {0}.</value>
   </data>
@@ -234,17 +237,86 @@
   <data name="SomeoneHasBidGoldFor" xml:space="preserve">
     <value>Someone has bid {1:#,##0} Gold for {0}</value>
   </data>
+  <data name="ThePersonYouAreTryingToProposeToIsNotAllowingMarriageRequests" xml:space="preserve">
+    <value>The person you're trying to propose to isn't allowing marriage requests.</value>
+  </data>
   <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
     <value>The rental lock has been removed from {0}</value>
   </data>
   <data name="WarEndedWith" xml:space="preserve">
     <value>War ended with {0}.</value>
   </data>
+  <data name="WhoAlreadyHasAMarriageInvitation" xml:space="preserve">
+    <value>{0} already has a marriage invitation.</value>
+  </data>
+  <data name="WhoCanNotGetMarriedAgainYetThereIsADayCooldownAfterDivorce" xml:space="preserve">
+    <value>{0} can't get married again yet, there is a {1} day cooldown after divorce</value>
+  </data>
+  <data name="WhoHasComeOnline" xml:space="preserve">
+    <value>{0} has come online.</value>
+  </data>
+  <data name="WhoHasGoneOffline" xml:space="preserve">
+    <value>{0} has gone offline.</value>
+  </data>
+  <data name="WhoHasRefusedToDivorceYou" xml:space="preserve">
+    <value>{0} has refused to divorce you.</value>
+  </data>
+  <data name="WhoHasRefusedToMarryYou" xml:space="preserve">
+    <value>{0} has refused to marry you.</value>
+  </data>
+  <data name="WhoIsAlreadyMarried" xml:space="preserve">
+    <value>{0} is already married.</value>
+  </data>
+  <data name="WhoIsMarriedButCouldNotFindMarriageID" xml:space="preserve">
+    <value>{0} is married but couldn't find marriage ID {1}</value>
+  </data>
+  <data name="WhoIsNotWithinDivorceRange" xml:space="preserve">
+    <value>{0} is not within divorce range.</value>
+  </data>
+  <data name="WhoIsNotWithinMarriageRange" xml:space="preserve">
+    <value>{0} is not within marriage range.</value>
+  </data>
   <data name="You" xml:space="preserve">
     <value>You</value>
   </data>
+  <data name="YouAreAlreadyMarried" xml:space="preserve">
+    <value>You are already married.</value>
+  </data>
+  <data name="YouAreAlreadyWearingAWeddingRing" xml:space="preserve">
+    <value>You're already wearing a Wedding Ring.</value>
+  </data>
   <data name="YouAreNotAllowedToChangeRanks" xml:space="preserve">
     <value>You are not allowed to change ranks!</value>
+  </data>
+  <data name="YouAreNotMarried" xml:space="preserve">
+    <value>You're not married.</value>
+  </data>
+  <data name="YouAreNotMarriedSoYouDoNotRequireADivorce" xml:space="preserve">
+    <value>You aren't married so you don't require a divorce.</value>
+  </data>
+  <data name="YouAreNotMarriedTo" xml:space="preserve">
+    <value>You aren't married to {0}</value>
+  </data>
+  <data name="YouAreNotWearingARingToUpgrade" xml:space="preserve">
+    <value>You aren't wearing a ring to upgrade.</value>
+  </data>
+  <data name="YouAreNotWearingAWeddingRingToUpgrade" xml:space="preserve">
+    <value>You arn't wearing a Wedding Ring to upgrade.</value>
+  </data>
+  <data name="YouAreNowAllowingMarriageRequests" xml:space="preserve">
+    <value>You're now allowing marriage requests.</value>
+  </data>
+  <data name="YouAreNowAllowingRecallFromLover" xml:space="preserve">
+    <value>You're now allowing recall from lover.</value>
+  </data>
+  <data name="YouAreNowBlockingMarriageRequests" xml:space="preserve">
+    <value>You're now blocking marriage requests.</value>
+  </data>
+  <data name="YouAreNowBlockingRecallFromLover" xml:space="preserve">
+    <value>You're now blocking recall from lover.</value>
+  </data>
+  <data name="YouAreNowDivorced" xml:space="preserve">
+    <value>You're now divorced</value>
   </data>
   <data name="YouBidGoldFor" xml:space="preserve">
     <value>You bid {1:#,##0} Gold for {0}</value>
@@ -255,23 +327,53 @@
   <data name="YouCannotChangeTheOptionsOfYourOwnRank" xml:space="preserve">
     <value>You cannot change the options of your own rank!</value>
   </data>
+  <data name="YouCanNotEquipTheItemYouAreTryingToUse" xml:space="preserve">
+    <value>You can't equip the item you're trying to use.</value>
+  </data>
+  <data name="YouCanNotGetMarriedAgainYetThereIsADayCooldownAfterADivorce" xml:space="preserve">
+    <value>You can't get married again yet, there is a {0} day cooldown after a divorce.</value>
+  </data>
   <data name="YouCannotHaveAnymoreRanks" xml:space="preserve">
     <value>You cannot have anymore ranks.</value>
   </data>
   <data name="YouCannotLeaveTheGuildWhenYouAreLeader" xml:space="preserve">
     <value>You cannot leave the guild when you're leader.</value>
   </data>
+  <data name="YouCanNotPerformAMarriageWithADeadPlayer" xml:space="preserve">
+    <value>You can't perform a marriage with a dead player.</value>
+  </data>
   <data name="YouCannotPositionMoveOnThisMap" xml:space="preserve">
     <value>You cannot position move on this map</value>
+  </data>
+  <data name="YouCanNotReplaceAWeddingRingWithThisItem" xml:space="preserve">
+    <value>You can't replace a Wedding Ring with this item.</value>
   </data>
   <data name="YouCannotTeleportForAnotherSeconds" xml:space="preserve">
     <value>You cannot teleport for another {0} seconds</value>
   </data>
+  <data name="YouCanNotUseThisTypeOfRing" xml:space="preserve">
+    <value>You cannot use this type of ring.</value>
+  </data>
   <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
     <value>You can now unequip a cursed item.</value>
   </data>
+  <data name="YouCaNotDivorceADeadPlayer" xml:space="preserve">
+    <value>You can't divorce a dead player.</value>
+  </data>
+  <data name="YouCaNotDivorceYourself" xml:space="preserve">
+    <value>You can't divorce yourself.</value>
+  </data>
+  <data name="YouCantMarryYourself" xml:space="preserve">
+    <value>You cant marry yourself.</value>
+  </data>
+  <data name="YouDoNotHaveEnoughGoldToReplaceYourWeddingRing" xml:space="preserve">
+    <value>You don't have enough gold to replace your Wedding Ring.</value>
+  </data>
   <data name="YouHaveBeenRemovedFromYourGuild" xml:space="preserve">
     <value>You have been removed from your guild.</value>
+  </data>
+  <data name="YouHaveJustBeenForcefullyDivorced" xml:space="preserve">
+    <value>You've just been forcefully divorced</value>
   </data>
   <data name="YouHaveLeftYourGuild" xml:space="preserve">
     <value>You have left your guild.</value>
@@ -281,6 +383,27 @@
   </data>
   <data name="YouNeedAtLeast1LeaderOnline" xml:space="preserve">
     <value>You need at least 1 leader online.</value>
+  </data>
+  <data name="YouNeedToBeAtLeastLevelToGetMarried" xml:space="preserve">
+    <value>You need to be at least level {0} to get married.</value>
+  </data>
+  <data name="YouNeedToBeFacingAPlayerToRequestAMarriage" xml:space="preserve">
+    <value>You need to be facing a player to request a marriage.</value>
+  </data>
+  <data name="YouNeedToBeFacingEachOtherToPerformAMarriage" xml:space="preserve">
+    <value>You need to be facing each other to perform a marriage.</value>
+  </data>
+  <data name="YouNeedToBeFacingYourLoverToDivorceThem" xml:space="preserve">
+    <value>You need to be facing your lover to divorce them.</value>
+  </data>
+  <data name="YouNeedToBeMarriedToMakeAWeddingRing" xml:space="preserve">
+    <value>You need to be married to make a Wedding Ring.</value>
+  </data>
+  <data name="YouNeedToWearARingOnYourLeftFingerToMakeAWeddingRing" xml:space="preserve">
+    <value>You need to wear a ring on your left finger to make a Wedding Ring.</value>
+  </data>
+  <data name="YourLoverNeedsToBeAtLeastLevelToGetMarried" xml:space="preserve">
+    <value>Your lover needs to be at least level {0} to get married.</value>
   </data>
   <data name="YourPet" xml:space="preserve">
     <value>Your pet</value>

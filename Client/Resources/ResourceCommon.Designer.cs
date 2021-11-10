@@ -70,6 +70,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Allow/Block Recall 的本地化字符串。
+        /// </summary>
+        internal static string AllowBlockRecall {
+            get {
+                return ResourceManager.GetString("AllowBlockRecall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Disconnected: Another user logged onto your account. 的本地化字符串。
         /// </summary>
         internal static string AnotherUserLoggedOntoYourAccount {
@@ -88,11 +97,29 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Are you sure you wish to remove &apos;{0}&apos;? 的本地化字符串。
+        /// </summary>
+        internal static string AreYouSureYouWishToRemove {
+            get {
+                return ResourceManager.GetString("AreYouSureYouWishToRemove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Assassin 的本地化字符串。
         /// </summary>
         internal static string Assassin {
             get {
                 return ResourceManager.GetString("Assassin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cancelling a Mentorship early will cause a cooldown. Are you sure? 的本地化字符串。
+        /// </summary>
+        internal static string CancellingAMentorshipEarlyWillCauseACooldownAreYouSure {
+            get {
+                return ResourceManager.GetString("CancellingAMentorshipEarlyWillCauseACooldownAreYouSure", resourceCulture);
             }
         }
         
@@ -115,11 +142,29 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Days 的本地化字符串。
+        /// </summary>
+        internal static string Days {
+            get {
+                return ResourceManager.GetString("Days", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Deal cancelled.{0}To deal correctly you must face the other party. 的本地化字符串。
         /// </summary>
         internal static string DealCancelledToDealCorrectlyYouMustFaceTheOtherParty {
             get {
                 return ResourceManager.GetString("DealCancelledToDealCorrectlyYouMustFaceTheOtherParty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Divorced Date 的本地化字符串。
+        /// </summary>
+        internal static string DivorcedDate {
+            get {
+                return ResourceManager.GetString("DivorcedDate", resourceCulture);
             }
         }
         
@@ -214,6 +259,24 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Location 的本地化字符串。
+        /// </summary>
+        internal static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Location:  Offline 的本地化字符串。
+        /// </summary>
+        internal static string LocationOffline {
+            get {
+                return ResourceManager.GetString("LocationOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 {0} logged on. 的本地化字符串。
         /// </summary>
         internal static string LoggedOn {
@@ -223,11 +286,83 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Lover 的本地化字符串。
+        /// </summary>
+        internal static string Lover {
+            get {
+                return ResourceManager.GetString("Lover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Lover is not online 的本地化字符串。
+        /// </summary>
+        internal static string LoverIsNotOnline {
+            get {
+                return ResourceManager.GetString("LoverIsNotOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Lv 的本地化字符串。
+        /// </summary>
+        internal static string Lv {
+            get {
+                return ResourceManager.GetString("Lv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Marriage Date 的本地化字符串。
+        /// </summary>
+        internal static string MarriageDate {
+            get {
+                return ResourceManager.GetString("MarriageDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Marriage Length 的本地化字符串。
+        /// </summary>
+        internal static string MarriageLength {
+            get {
+                return ResourceManager.GetString("MarriageLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Disconnected: Maximum connections reached. 的本地化字符串。
         /// </summary>
         internal static string MaximumConnectionsReached {
             get {
                 return ResourceManager.GetString("MaximumConnectionsReached", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MENTEE 的本地化字符串。
+        /// </summary>
+        internal static string MENTEE {
+            get {
+                return ResourceManager.GetString("MENTEE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MENTEE EXP 的本地化字符串。
+        /// </summary>
+        internal static string MENTEEEXP {
+            get {
+                return ResourceManager.GetString("MENTEEEXP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MENTOR 的本地化字符串。
+        /// </summary>
+        internal static string MENTOR {
+            get {
+                return ResourceManager.GetString("MENTOR", resourceCulture);
             }
         }
         
@@ -268,6 +403,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 ONLINE 的本地化字符串。
+        /// </summary>
+        internal static string ONLINE {
+            get {
+                return ResourceManager.GetString("ONLINE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Others 的本地化字符串。
         /// </summary>
         internal static string Others {
@@ -282,6 +426,15 @@ namespace Client.Resources {
         internal static string PacketError {
             get {
                 return ResourceManager.GetString("PacketError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Player is not online 的本地化字符串。
+        /// </summary>
+        internal static string PlayerIsNotOnline {
+            get {
+                return ResourceManager.GetString("PlayerIsNotOnline", resourceCulture);
             }
         }
         
@@ -336,6 +489,15 @@ namespace Client.Resources {
         internal static string TargetIsTooFar {
             get {
                 return ResourceManager.GetString("TargetIsTooFar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Time Since 的本地化字符串。
+        /// </summary>
+        internal static string TimeSince {
+            get {
+                return ResourceManager.GetString("TimeSince", resourceCulture);
             }
         }
         
@@ -399,6 +561,33 @@ namespace Client.Resources {
         internal static string Wizard {
             get {
                 return ResourceManager.GetString("Wizard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You already have a Mentor. 的本地化字符串。
+        /// </summary>
+        internal static string YouAlreadyHaveAMentor {
+            get {
+                return ResourceManager.GetString("YouAlreadyHaveAMentor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;re already married. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreAlreadyMarried {
+            get {
+                return ResourceManager.GetString("YouAreAlreadyMarried", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;re not married. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNotMarried {
+            get {
+                return ResourceManager.GetString("YouAreNotMarried", resourceCulture);
             }
         }
         

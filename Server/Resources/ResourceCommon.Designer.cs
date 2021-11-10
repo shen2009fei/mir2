@@ -124,6 +124,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Congratulations, you&apos;re now married to {0}. 的本地化字符串。
+        /// </summary>
+        internal static string CongratulationsYouAreNowMarriedTo {
+            get {
+                return ResourceManager.GetString("CongratulationsYouAreNowMarriedTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Could not find guild {0}. 的本地化字符串。
         /// </summary>
         internal static string CouldNotFindGuild {
@@ -412,6 +421,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 The person you&apos;re trying to propose to isn&apos;t allowing marriage requests. 的本地化字符串。
+        /// </summary>
+        internal static string ThePersonYouAreTryingToProposeToIsNotAllowingMarriageRequests {
+            get {
+                return ResourceManager.GetString("ThePersonYouAreTryingToProposeToIsNotAllowingMarriageRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 The rental lock has been removed from {0} 的本地化字符串。
         /// </summary>
         internal static string TheRentalLockHasBeenRemovedFrom {
@@ -430,6 +448,96 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 {0} already has a marriage invitation. 的本地化字符串。
+        /// </summary>
+        internal static string WhoAlreadyHasAMarriageInvitation {
+            get {
+                return ResourceManager.GetString("WhoAlreadyHasAMarriageInvitation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} can&apos;t get married again yet, there is a {1} day cooldown after divorce 的本地化字符串。
+        /// </summary>
+        internal static string WhoCanNotGetMarriedAgainYetThereIsADayCooldownAfterDivorce {
+            get {
+                return ResourceManager.GetString("WhoCanNotGetMarriedAgainYetThereIsADayCooldownAfterDivorce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} has come online. 的本地化字符串。
+        /// </summary>
+        internal static string WhoHasComeOnline {
+            get {
+                return ResourceManager.GetString("WhoHasComeOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} has gone offline. 的本地化字符串。
+        /// </summary>
+        internal static string WhoHasGoneOffline {
+            get {
+                return ResourceManager.GetString("WhoHasGoneOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} has refused to divorce you. 的本地化字符串。
+        /// </summary>
+        internal static string WhoHasRefusedToDivorceYou {
+            get {
+                return ResourceManager.GetString("WhoHasRefusedToDivorceYou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} has refused to marry you. 的本地化字符串。
+        /// </summary>
+        internal static string WhoHasRefusedToMarryYou {
+            get {
+                return ResourceManager.GetString("WhoHasRefusedToMarryYou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} is already married. 的本地化字符串。
+        /// </summary>
+        internal static string WhoIsAlreadyMarried {
+            get {
+                return ResourceManager.GetString("WhoIsAlreadyMarried", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} is married but couldn&apos;t find marriage ID {1} 的本地化字符串。
+        /// </summary>
+        internal static string WhoIsMarriedButCouldNotFindMarriageID {
+            get {
+                return ResourceManager.GetString("WhoIsMarriedButCouldNotFindMarriageID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} is not within divorce range. 的本地化字符串。
+        /// </summary>
+        internal static string WhoIsNotWithinDivorceRange {
+            get {
+                return ResourceManager.GetString("WhoIsNotWithinDivorceRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} is not within marriage range. 的本地化字符串。
+        /// </summary>
+        internal static string WhoIsNotWithinMarriageRange {
+            get {
+                return ResourceManager.GetString("WhoIsNotWithinMarriageRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You 的本地化字符串。
         /// </summary>
         internal static string You {
@@ -439,11 +547,119 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You are already married. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreAlreadyMarried {
+            get {
+                return ResourceManager.GetString("YouAreAlreadyMarried", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;re already wearing a Wedding Ring. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreAlreadyWearingAWeddingRing {
+            get {
+                return ResourceManager.GetString("YouAreAlreadyWearingAWeddingRing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You are not allowed to change ranks! 的本地化字符串。
         /// </summary>
         internal static string YouAreNotAllowedToChangeRanks {
             get {
                 return ResourceManager.GetString("YouAreNotAllowedToChangeRanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;re not married. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNotMarried {
+            get {
+                return ResourceManager.GetString("YouAreNotMarried", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You aren&apos;t married so you don&apos;t require a divorce. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNotMarriedSoYouDoNotRequireADivorce {
+            get {
+                return ResourceManager.GetString("YouAreNotMarriedSoYouDoNotRequireADivorce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You aren&apos;t married to {0} 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNotMarriedTo {
+            get {
+                return ResourceManager.GetString("YouAreNotMarriedTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You aren&apos;t wearing a ring to upgrade. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNotWearingARingToUpgrade {
+            get {
+                return ResourceManager.GetString("YouAreNotWearingARingToUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You arn&apos;t wearing a Wedding Ring to upgrade. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNotWearingAWeddingRingToUpgrade {
+            get {
+                return ResourceManager.GetString("YouAreNotWearingAWeddingRingToUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;re now allowing marriage requests. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNowAllowingMarriageRequests {
+            get {
+                return ResourceManager.GetString("YouAreNowAllowingMarriageRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;re now allowing recall from lover. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNowAllowingRecallFromLover {
+            get {
+                return ResourceManager.GetString("YouAreNowAllowingRecallFromLover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;re now blocking marriage requests. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNowBlockingMarriageRequests {
+            get {
+                return ResourceManager.GetString("YouAreNowBlockingMarriageRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;re now blocking recall from lover. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNowBlockingRecallFromLover {
+            get {
+                return ResourceManager.GetString("YouAreNowBlockingRecallFromLover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;re now divorced 的本地化字符串。
+        /// </summary>
+        internal static string YouAreNowDivorced {
+            get {
+                return ResourceManager.GetString("YouAreNowDivorced", resourceCulture);
             }
         }
         
@@ -475,6 +691,24 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You can&apos;t equip the item you&apos;re trying to use. 的本地化字符串。
+        /// </summary>
+        internal static string YouCanNotEquipTheItemYouAreTryingToUse {
+            get {
+                return ResourceManager.GetString("YouCanNotEquipTheItemYouAreTryingToUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You can&apos;t get married again yet, there is a {0} day cooldown after a divorce. 的本地化字符串。
+        /// </summary>
+        internal static string YouCanNotGetMarriedAgainYetThereIsADayCooldownAfterADivorce {
+            get {
+                return ResourceManager.GetString("YouCanNotGetMarriedAgainYetThereIsADayCooldownAfterADivorce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You cannot have anymore ranks. 的本地化字符串。
         /// </summary>
         internal static string YouCannotHaveAnymoreRanks {
@@ -493,11 +727,29 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You can&apos;t perform a marriage with a dead player. 的本地化字符串。
+        /// </summary>
+        internal static string YouCanNotPerformAMarriageWithADeadPlayer {
+            get {
+                return ResourceManager.GetString("YouCanNotPerformAMarriageWithADeadPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You cannot position move on this map 的本地化字符串。
         /// </summary>
         internal static string YouCannotPositionMoveOnThisMap {
             get {
                 return ResourceManager.GetString("YouCannotPositionMoveOnThisMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You can&apos;t replace a Wedding Ring with this item. 的本地化字符串。
+        /// </summary>
+        internal static string YouCanNotReplaceAWeddingRingWithThisItem {
+            get {
+                return ResourceManager.GetString("YouCanNotReplaceAWeddingRingWithThisItem", resourceCulture);
             }
         }
         
@@ -511,6 +763,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You cannot use this type of ring. 的本地化字符串。
+        /// </summary>
+        internal static string YouCanNotUseThisTypeOfRing {
+            get {
+                return ResourceManager.GetString("YouCanNotUseThisTypeOfRing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You can now unequip a cursed item. 的本地化字符串。
         /// </summary>
         internal static string YouCanNowUnequipACursedItem {
@@ -520,11 +781,56 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You can&apos;t divorce a dead player. 的本地化字符串。
+        /// </summary>
+        internal static string YouCaNotDivorceADeadPlayer {
+            get {
+                return ResourceManager.GetString("YouCaNotDivorceADeadPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You can&apos;t divorce yourself. 的本地化字符串。
+        /// </summary>
+        internal static string YouCaNotDivorceYourself {
+            get {
+                return ResourceManager.GetString("YouCaNotDivorceYourself", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You cant marry yourself. 的本地化字符串。
+        /// </summary>
+        internal static string YouCantMarryYourself {
+            get {
+                return ResourceManager.GetString("YouCantMarryYourself", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You don&apos;t have enough gold to replace your Wedding Ring. 的本地化字符串。
+        /// </summary>
+        internal static string YouDoNotHaveEnoughGoldToReplaceYourWeddingRing {
+            get {
+                return ResourceManager.GetString("YouDoNotHaveEnoughGoldToReplaceYourWeddingRing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You have been removed from your guild. 的本地化字符串。
         /// </summary>
         internal static string YouHaveBeenRemovedFromYourGuild {
             get {
                 return ResourceManager.GetString("YouHaveBeenRemovedFromYourGuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You&apos;ve just been forcefully divorced 的本地化字符串。
+        /// </summary>
+        internal static string YouHaveJustBeenForcefullyDivorced {
+            get {
+                return ResourceManager.GetString("YouHaveJustBeenForcefullyDivorced", resourceCulture);
             }
         }
         
@@ -552,6 +858,69 @@ namespace Server.Resources {
         internal static string YouNeedAtLeast1LeaderOnline {
             get {
                 return ResourceManager.GetString("YouNeedAtLeast1LeaderOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You need to be at least level {0} to get married. 的本地化字符串。
+        /// </summary>
+        internal static string YouNeedToBeAtLeastLevelToGetMarried {
+            get {
+                return ResourceManager.GetString("YouNeedToBeAtLeastLevelToGetMarried", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You need to be facing a player to request a marriage. 的本地化字符串。
+        /// </summary>
+        internal static string YouNeedToBeFacingAPlayerToRequestAMarriage {
+            get {
+                return ResourceManager.GetString("YouNeedToBeFacingAPlayerToRequestAMarriage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You need to be facing each other to perform a marriage. 的本地化字符串。
+        /// </summary>
+        internal static string YouNeedToBeFacingEachOtherToPerformAMarriage {
+            get {
+                return ResourceManager.GetString("YouNeedToBeFacingEachOtherToPerformAMarriage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You need to be facing your lover to divorce them. 的本地化字符串。
+        /// </summary>
+        internal static string YouNeedToBeFacingYourLoverToDivorceThem {
+            get {
+                return ResourceManager.GetString("YouNeedToBeFacingYourLoverToDivorceThem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You need to be married to make a Wedding Ring. 的本地化字符串。
+        /// </summary>
+        internal static string YouNeedToBeMarriedToMakeAWeddingRing {
+            get {
+                return ResourceManager.GetString("YouNeedToBeMarriedToMakeAWeddingRing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You need to wear a ring on your left finger to make a Wedding Ring. 的本地化字符串。
+        /// </summary>
+        internal static string YouNeedToWearARingOnYourLeftFingerToMakeAWeddingRing {
+            get {
+                return ResourceManager.GetString("YouNeedToWearARingOnYourLeftFingerToMakeAWeddingRing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your lover needs to be at least level {0} to get married. 的本地化字符串。
+        /// </summary>
+        internal static string YourLoverNeedsToBeAtLeastLevelToGetMarried {
+            get {
+                return ResourceManager.GetString("YourLoverNeedsToBeAtLeastLevelToGetMarried", resourceCulture);
             }
         }
         
