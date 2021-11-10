@@ -106,6 +106,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Awakening already at maximum level. 的本地化字符串。
+        /// </summary>
+        internal static string AwakeningAlreadyAtMaximumLevel {
+            get {
+                return ResourceManager.GetString("AwakeningAlreadyAtMaximumLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Bid 的本地化字符串。
         /// </summary>
         internal static string Bid {
@@ -165,6 +174,15 @@ namespace Client.Resources {
         internal static string BuffPots {
             get {
                 return ResourceManager.GetString("BuffPots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cannot awaken this item. 的本地化字符串。
+        /// </summary>
+        internal static string CannotAwakenThisItem {
+            get {
+                return ResourceManager.GetString("CannotAwakenThisItem", resourceCulture);
             }
         }
         
@@ -822,6 +840,15 @@ namespace Client.Resources {
         internal static string YouDontHaveEnoughGoldToRefineYour {
             get {
                 return ResourceManager.GetString("YouDontHaveEnoughGoldToRefineYour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You have not supplied enough materials. 的本地化字符串。
+        /// </summary>
+        internal static string YouHaveNotSuppliedEnoughMaterials {
+            get {
+                return ResourceManager.GetString("YouHaveNotSuppliedEnoughMaterials", resourceCulture);
             }
         }
         

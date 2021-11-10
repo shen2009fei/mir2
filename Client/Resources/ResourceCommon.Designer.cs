@@ -115,6 +115,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Deal cancelled.{0}To deal correctly you must face the other party. 的本地化字符串。
+        /// </summary>
+        internal static string DealCancelledToDealCorrectlyYouMustFaceTheOtherParty {
+            get {
+                return ResourceManager.GetString("DealCancelledToDealCorrectlyYouMustFaceTheOtherParty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Do not use Cross Half Moon. 的本地化字符串。
         /// </summary>
         internal static string DoNotUseCrossHalfMoon {

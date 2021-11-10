@@ -135,6 +135,9 @@
   <data name="Crit" xml:space="preserve">
     <value>Crit</value>
   </data>
+  <data name="DealCancelledToDealCorrectlyYouMustFaceTheOtherParty" xml:space="preserve">
+    <value>Deal cancelled.{0}To deal correctly you must face the other party.</value>
+  </data>
   <data name="DoNotUseCrossHalfMoon" xml:space="preserve">
     <value>Do not use Cross Half Moon.</value>
   </data>

@@ -135,6 +135,9 @@
   <data name="Crit" xml:space="preserve">
     <value>暴击</value>
   </data>
+  <data name="DealCancelledToDealCorrectlyYouMustFaceTheOtherParty" xml:space="preserve">
+    <value>交易取消。{0}要正确交易，您必须面对对方。</value>
+  </data>
   <data name="DoNotUseCrossHalfMoon" xml:space="preserve">
     <value>不使用十字半月</value>
   </data>

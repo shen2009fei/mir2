@@ -132,6 +132,9 @@
   <data name="auctionText" xml:space="preserve">
     <value>1. Auction cost is {0} gold, max starting bid is {1} gold per item \r\n\r\n2. 1% of final bid price is paid to Trust Merchant at auction end\r\n\r\n3. Maximum {2} days of item sale registration, afterwards the item will be sent to highest bidder\r\n\r\n4. Maximum of unlimited "items allowed for auction\r\n\r\n</value>
   </data>
+  <data name="AwakeningAlreadyAtMaximumLevel" xml:space="preserve">
+    <value>Awakening already at maximum level.</value>
+  </data>
   <data name="Bid" xml:space="preserve">
     <value>Bid</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="BuffPots" xml:space="preserve">
     <value>Buff Pots</value>
+  </data>
+  <data name="CannotAwakenThisItem" xml:space="preserve">
+    <value>Cannot awaken this item.</value>
   </data>
   <data name="CannotCarryAnymoreGold" xml:space="preserve">
     <value>Cannot carry anymore gold.</value>
@@ -371,6 +377,9 @@
   </data>
   <data name="YouDontHaveEnoughGoldToRefineYour" xml:space="preserve">
     <value>You don't have enough gold to refine your {0}.</value>
+  </data>
+  <data name="YouHaveNotSuppliedEnoughMaterials" xml:space="preserve">
+    <value>You have not supplied enough materials.</value>
   </data>
   <data name="YouHaventDepositedAnyItemsToRefineYourWith" xml:space="preserve">
     <value>You haven't deposited any items to refine your {0} with.</value>
