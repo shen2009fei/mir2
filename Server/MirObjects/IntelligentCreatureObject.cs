@@ -144,7 +144,7 @@ namespace Server.MirObjects
 
             if (Fullness == 0)//unable to operate with food level 0
             {
-                CreatureTimedSay("I'm starving!!.");
+                CreatureTimedSay(Resources.ResourceCommon.ImStarving);
                 return;
             }
 

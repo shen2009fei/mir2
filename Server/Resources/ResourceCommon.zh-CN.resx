@@ -207,6 +207,9 @@
   <data name="HasStartedAWar" xml:space="preserve">
     <value>{0} 发动了一场战争</value>
   </data>
+  <data name="ImStarving" xml:space="preserve">
+    <value>我快饿死了!!</value>
+  </data>
   <data name="InflictedDamageDps" xml:space="preserve">
     <value>{3} 造成 {0} {1} 伤害, 每秒伤害: {2:#.00}.</value>
   </data>

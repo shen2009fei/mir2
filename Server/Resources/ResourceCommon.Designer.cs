@@ -331,6 +331,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 I&apos;m starving!!. 的本地化字符串。
+        /// </summary>
+        internal static string ImStarving {
+            get {
+                return ResourceManager.GetString("ImStarving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 {3} inflicted {0} {1} Damage, Dps: {2:#.00}. 的本地化字符串。
         /// </summary>
         internal static string InflictedDamageDps {

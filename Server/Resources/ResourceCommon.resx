@@ -207,6 +207,9 @@
   <data name="HasStartedAWar" xml:space="preserve">
     <value>{0} has started a war</value>
   </data>
+  <data name="ImStarving" xml:space="preserve">
+    <value>I'm starving!!.</value>
+  </data>
   <data name="InflictedDamageDps" xml:space="preserve">
     <value>{3} inflicted {0} {1} Damage, Dps: {2:#.00}.</value>
   </data>
