@@ -439,6 +439,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Please give your creature a name. 的本地化字符串。
+        /// </summary>
+        internal static string PleaseGiveYourCreatureAName {
+            get {
+                return ResourceManager.GetString("PleaseGiveYourCreatureAName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Please wait, The game is still loading... {0:##0}% 的本地化字符串。
         /// </summary>
         internal static string PleaseWaitTheGameIsStillLoading {

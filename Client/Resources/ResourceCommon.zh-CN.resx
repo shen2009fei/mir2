@@ -243,6 +243,9 @@
   <data name="PlayerIsNotOnline" xml:space="preserve">
     <value>玩家不在线</value>
   </data>
+  <data name="PleaseGiveYourCreatureAName" xml:space="preserve">
+    <value>请给你的灵兽起个名字。</value>
+  </data>
   <data name="PleaseWaitTheGameIsStillLoading" xml:space="preserve">
     <value>请稍候，游戏仍在加载中... {0:##0}%</value>
   </data>

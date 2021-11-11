@@ -16960,17 +16960,17 @@ case StatType.Durability:
                 else if (!Mount.CanRide)
                 {
                     RidingMount = false;
-                    ReceiveChat("You must have a saddle to ride your mount", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouMustHaveASaddleToRideYourMount, ChatType.System);
                 }
                 else if (!Mount.CanMapRide)
                 {
                     RidingMount = false;
-                    ReceiveChat("You cannot ride on this map", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouCannotRideOnThisMap, ChatType.System);
                 }
                 else if (!Mount.CanDungeonRide)
                 {
                     RidingMount = false;
-                    ReceiveChat("You cannot ride here without a bridle", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouCannotRideHereWithoutABridle, ChatType.System);
                 }
             }
             else
@@ -18036,7 +18036,7 @@ case StatType.Durability:
                 CreatureSummoned = true;
                 SummonedCreatureType = pType;
 
-                ReceiveChat((string.Format("Creature {0} has been summoned.", Info.IntelligentCreatures[i].CustomName)), ChatType.System);
+                ReceiveChat((string.Format(Resources.ResourceCommon.CreatureHasBeenSummoned, Info.IntelligentCreatures[i].CustomName)), ChatType.System);
                 break;
             }
 
@@ -18053,7 +18053,7 @@ case StatType.Durability:
                 if (Pets[i].Info.AI != 64) continue;
                 if (((IntelligentCreatureObject)Pets[i]).PetType != pType) continue;
 
-                if (doUpdate) ReceiveChat((string.Format("Creature {0} has been dismissed.", ((IntelligentCreatureObject)Pets[i]).CustomName)), ChatType.System);
+                if (doUpdate) ReceiveChat((string.Format(Resources.ResourceCommon.CreatureHasBeenDismissed, ((IntelligentCreatureObject)Pets[i]).CustomName)), ChatType.System);
 
                 Pets[i].Die();
 
@@ -18075,7 +18075,7 @@ case StatType.Durability:
             {
                 if (Info.IntelligentCreatures[i].PetType != pType) continue;
 
-                if (doUpdate) ReceiveChat((string.Format("Creature {0} has been released.", Info.IntelligentCreatures[i].CustomName)), ChatType.System);
+                if (doUpdate) ReceiveChat((string.Format(Resources.ResourceCommon.CreatureHasBeenReleased, Info.IntelligentCreatures[i].CustomName)), ChatType.System);
 
                 Info.IntelligentCreatures.Remove(Info.IntelligentCreatures[i]);
                 break;
@@ -18144,7 +18144,7 @@ case StatType.Durability:
 
                 for (int i = (releasedPets.Count - 1); i >= 0; i--)
                 {
-                    ReceiveChat(string.Format("Creature {0} has expired.", Info.IntelligentCreatures[releasedPets[i]].CustomName), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.CreatureHasExpired, Info.IntelligentCreatures[releasedPets[i]].CustomName), ChatType.System);
                     ReleaseIntelligentCreature(Info.IntelligentCreatures[releasedPets[i]].PetType, false);
                 }
 
@@ -18177,7 +18177,7 @@ case StatType.Durability:
 
             if (!petFound)
             {
-                MessageQueue.EnqueueDebugging(string.Format("{0}: SummonedCreature no longer exists?!?. {1}", Name, SummonedCreatureType.ToString()));
+                MessageQueue.EnqueueDebugging(string.Format(Resources.ResourceCommon.SummonedCreatureNoLongerExists, Name, SummonedCreatureType.ToString()));
                 CreatureSummoned = false;
                 SummonedCreatureType = IntelligentCreatureType.None;
             }
@@ -18227,8 +18227,8 @@ case StatType.Durability:
                 MailInfo mail = new MailInfo(Info.Index)
                 {
                     MailID = ++Envir.NextMailID,
-                    Sender = "BlackStone",
-                    Message = "Your pet has produced x1 BlackStone which couldn't be added to your inventory.",
+                    Sender = Resources.ResourceCommon.BlackStone,
+                    Message = Resources.ResourceCommon.YourPetHasProducedX1BlackStoneWhichCouldNotBeAddedToYourInventory,
                     Items = new List<UserItem> { item },
                 };
 
@@ -18287,7 +18287,7 @@ case StatType.Durability:
 
             if (FreeSpace(Info.Inventory) < 1)
             {
-                ReceiveChat("No more space.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.NoMoreSpace, ChatType.System);
                 return;
             }
 
@@ -18310,7 +18310,7 @@ case StatType.Durability:
             }
             if (FreeSpace(Info.Inventory) < 1)
             {
-                ReceiveChat("No more space.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.NoMoreSpace, ChatType.System);
                 return;
             }
             if (dropItem != null) GainItem(dropItem);
@@ -18382,19 +18382,19 @@ case StatType.Durability:
             string answer;
             if (t.TotalMinutes < 1.0)
             {
-                answer = string.Format("{0}s", t.Seconds);
+                answer = string.Format(Resources.ResourceCommon.TimeSeconds, t.Seconds);
             }
             else if (t.TotalHours < 1.0)
             {
-                answer = string.Format("{0}m", t.Minutes);
+                answer = string.Format(Resources.ResourceCommon.TimeMinutes, t.Minutes);
             }
             else if (t.TotalDays < 1.0)
             {
-                answer = string.Format("{0}h {1:D2}m", (int)t.TotalHours, t.Minutes);
+                answer = string.Format(Resources.ResourceCommon.TimeHourMinutes, (int)t.TotalHours, t.Minutes);
             }
             else // t.TotalDays >= 1.0
             {
-                answer = string.Format("{0}d {1}h {2:D2}m", (int)t.TotalDays, (int)t.Hours, t.Minutes);
+                answer = string.Format(Resources.ResourceCommon.TimeDayHourMinutes, (int)t.TotalDays, (int)t.Hours, t.Minutes);
             }
             return answer;
         }
@@ -18425,19 +18425,19 @@ case StatType.Durability:
 
             if (info == null)
             {
-                ReceiveChat("Player doesn't exist", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.PlayerDoesNotExist, ChatType.System);
                 return;
             }
 
             if (Name == name)
             {
-                ReceiveChat("Cannot add yourself", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.CannotAddYourself, ChatType.System);
                 return;
             }
 
             if (Info.Friends.Any(e => e.Index == info.Index))
             {
-                ReceiveChat("Player already added", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.PlayerAlreadyAdded, ChatType.System);
                 return;
             }
 
@@ -18583,7 +18583,7 @@ case StatType.Durability:
 
             if (temp.Weight + CurrentBagWeight > Stats[Stat.BagWeight])
             {
-                ReceiveChat("Too heavy to get back.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.TooHeavyToGetBack, ChatType.System);
                 Enqueue(p);
                 return;
             }
@@ -18655,25 +18655,25 @@ case StatType.Durability:
 
             if (Info.Inventory[index].RefineAdded != 0)
             {
-                ReceiveChat(String.Format("Your {0} needs to be checked before you can attempt to refine it again.", Info.Inventory[index].FriendlyName), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YourNeedsToBeCheckedBeforeYouCanAttemptToRefineItAgain, Info.Inventory[index].FriendlyName), ChatType.System);
                 return;
             }
 
             if ((Info.Inventory[index].Info.Type != ItemType.Weapon) && (Settings.OnlyRefineWeapon))
             {
-                ReceiveChat(String.Format("Your {0} can't be refined.", Info.Inventory[index].FriendlyName), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YourCaNotBeRefined, Info.Inventory[index].FriendlyName), ChatType.System);
                 return;
             }
 
             if (Info.Inventory[index].Info.Bind.HasFlag(BindMode.DontUpgrade))
             {
-                ReceiveChat(String.Format("Your {0} can't be refined.", Info.Inventory[index].FriendlyName), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YourCaNotBeRefined, Info.Inventory[index].FriendlyName), ChatType.System);
                 return;
             }
 
             if (Info.Inventory[index].RentalInformation != null && Info.Inventory[index].RentalInformation.BindingFlags.HasFlag(BindMode.DontUpgrade))
             {
-                ReceiveChat(String.Format("Your {0} can't be refined.", Info.Inventory[index].FriendlyName), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YourCaNotBeRefined, Info.Inventory[index].FriendlyName), ChatType.System);
                 return;
             }
 
@@ -18688,7 +18688,7 @@ case StatType.Durability:
 
             if (cost > Account.Gold)
             {
-                ReceiveChat(String.Format("You don't have enough gold to refine your {0}.", Info.Inventory[index].FriendlyName), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YouDoNotHaveEnoughGoldToRefineYour, Info.Inventory[index].FriendlyName), ChatType.System);
                 return;
             }
 
@@ -18757,7 +18757,7 @@ case StatType.Durability:
                 }
                 else
                 {
-                    ReceiveChat(String.Format("Your {0} is now being refined, please check back in {1} minute(s).", Info.CurrentRefine.FriendlyName, Settings.RefineTime), ChatType.System);
+                    ReceiveChat(String.Format(Resources.ResourceCommon.YourIsNowBeingRefinedPleaseCheckBackInMinute, Info.CurrentRefine.FriendlyName, Settings.RefineTime), ChatType.System);
                 }
 
                 return;
@@ -18774,7 +18774,7 @@ case StatType.Durability:
                 }
                 else
                 {
-                    ReceiveChat(String.Format("Your {0} is now being refined, please check back in {1} minute(s).", Info.CurrentRefine.FriendlyName, Settings.RefineTime), ChatType.System);
+                    ReceiveChat(String.Format(Resources.ResourceCommon.YourIsNowBeingRefinedPleaseCheckBackInMinute, Info.CurrentRefine.FriendlyName, Settings.RefineTime), ChatType.System);
                 }
                 return;
             }
@@ -18852,7 +18852,7 @@ case StatType.Durability:
             }
             else
             {
-                ReceiveChat(String.Format("Your {0} is now being refined, please check back in {1} minute(s).", Info.CurrentRefine.FriendlyName, Settings.RefineTime), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YourIsNowBeingRefinedPleaseCheckBackInMinute, Info.CurrentRefine.FriendlyName, Settings.RefineTime), ChatType.System);
             }
         }
         public void CollectRefine()
@@ -18861,14 +18861,14 @@ case StatType.Durability:
 
             if (Info.CurrentRefine == null)
             {
-                ReceiveChat("You aren't currently refining any items.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouAreNotCurrentlyRefiningAnyItems, ChatType.System);
                 Enqueue(p);
                 return;
             }
 
             if (Info.CollectTime > Envir.Time)
             {
-                ReceiveChat(string.Format("Your {0} will be ready to collect in {1} minute(s).", Info.CurrentRefine.FriendlyName, ((Info.CollectTime - Envir.Time) / Settings.Minute)), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YourWillBeReadyToCollectInMinutes, Info.CurrentRefine.FriendlyName, ((Info.CollectTime - Envir.Time) / Settings.Minute)), ChatType.System);
                 Enqueue(p);
                 return;
             }
@@ -18876,7 +18876,7 @@ case StatType.Durability:
 
             if (Info.CurrentRefine.Info.Weight + CurrentBagWeight > Stats[Stat.BagWeight])
             {
-                ReceiveChat(string.Format("Your {0} is too heavy to get back, try again after reducing your bag weight.", Info.CurrentRefine.FriendlyName), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YourIsTooHeavyToGetBackTryAgainAfterReducingYourBagWeight, Info.CurrentRefine.FriendlyName), ChatType.System);
                 Enqueue(p);
                 return;
             }
@@ -18892,12 +18892,12 @@ case StatType.Durability:
 
             if (index == -1)
             {
-                ReceiveChat(String.Format("There isn't room in your bag for your {0}, make some space and try again.", Info.CurrentRefine.FriendlyName), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.ThereIsNotRoomInYourBagForYourMakeSomeSpaceAndTryAgain, Info.CurrentRefine.FriendlyName), ChatType.System);
                 Enqueue(p);
                 return;
             }
 
-            ReceiveChat(String.Format("Your item has been returned to you."), ChatType.System);
+            ReceiveChat(String.Format(Resources.ResourceCommon.YourItemHasBeenReturnedToYou), ChatType.System);
             p.Success = true;
 
             GainItem(Info.CurrentRefine);
@@ -18926,7 +18926,7 @@ case StatType.Durability:
 
             if (Info.Inventory[index].RefineAdded == 0)
             {
-                ReceiveChat(String.Format("{0} doesn't need to be checked as it hasn't been refined yet.", Info.Inventory[index].FriendlyName), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.DoesNotNeedToBeCheckedAsItHasNotBeenRefinedYet, Info.Inventory[index].FriendlyName), ChatType.System);
                 return;
             }
 
@@ -18942,7 +18942,7 @@ case StatType.Durability:
 
             if ((Info.Inventory[index].RefinedValue == RefinedValue.DC) && (Info.Inventory[index].RefineAdded > 0))
             {
-                ReceiveChat(String.Format("Congratulations, your {0} now has +{1} extra DC.", Info.Inventory[index].FriendlyName, Info.Inventory[index].RefineAdded), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.CongratulationsYourNowHasExtraDC, Info.Inventory[index].FriendlyName, Info.Inventory[index].RefineAdded), ChatType.System);
                 Info.Inventory[index].AddedStats[Stat.MaxDC] = (int)Math.Min(int.MaxValue, Info.Inventory[index].AddedStats[Stat.MaxDC] + Info.Inventory[index].RefineAdded);
                 Info.Inventory[index].RefineAdded = 0;
                 Info.Inventory[index].RefinedValue = RefinedValue.None;
@@ -18951,7 +18951,7 @@ case StatType.Durability:
             }
             else if ((Info.Inventory[index].RefinedValue == RefinedValue.MC) && (Info.Inventory[index].RefineAdded > 0))
             {
-                ReceiveChat(String.Format("Congratulations, your {0} now has +{1} extra MC.", Info.Inventory[index].FriendlyName, Info.Inventory[index].RefineAdded), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.CongratulationsYourNowHasExtraMC, Info.Inventory[index].FriendlyName, Info.Inventory[index].RefineAdded), ChatType.System);
                 Info.Inventory[index].AddedStats[Stat.MaxMC] = (int)Math.Min(int.MaxValue, Info.Inventory[index].AddedStats[Stat.MaxMC] + Info.Inventory[index].RefineAdded);
                 Info.Inventory[index].RefineAdded = 0;
                 Info.Inventory[index].RefinedValue = RefinedValue.None;
@@ -18960,7 +18960,7 @@ case StatType.Durability:
             }
             else if ((Info.Inventory[index].RefinedValue == RefinedValue.SC) && (Info.Inventory[index].RefineAdded > 0))
             {
-                ReceiveChat(String.Format("Congratulations, your {0} now has +{1} extra SC.", Info.Inventory[index].FriendlyName, Info.Inventory[index].RefineAdded), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.CongratulationsYourNowHasExtraSC, Info.Inventory[index].FriendlyName, Info.Inventory[index].RefineAdded), ChatType.System);
                 Info.Inventory[index].AddedStats[Stat.MaxSC] = (int)Math.Min(int.MaxValue, Info.Inventory[index].AddedStats[Stat.MaxSC] + Info.Inventory[index].RefineAdded);
                 Info.Inventory[index].RefineAdded = 0;
                 Info.Inventory[index].RefinedValue = RefinedValue.None;
@@ -18968,7 +18968,7 @@ case StatType.Durability:
             }
             else if ((Info.Inventory[index].RefinedValue == RefinedValue.None) && (Info.Inventory[index].RefineAdded > 0))
             {
-                ReceiveChat(String.Format("Your {0} smashed into a thousand pieces upon testing.", Info.Inventory[index].FriendlyName), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YourSmashedIntoAThousandPiecesUponTesting, Info.Inventory[index].FriendlyName), ChatType.System);
                 Enqueue(new S.RefineItem { UniqueID = Info.Inventory[index].UniqueID });
                 Info.Inventory[index].RefineSuccessChance = 0;
                 Info.Inventory[index] = null;
@@ -19479,10 +19479,10 @@ case StatType.Durability:
             if (Force)
             {
                 Info.MentorDate = DateTime.Now.AddDays(Settings.MentorLength);
-                ReceiveChat(String.Format("You now have a {0} day cooldown on starting a new Mentorship.", Settings.MentorLength), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YouNowHaveAXDayCooldownOnStartingANewMentorship, Settings.MentorLength), ChatType.System);
             }
             else
-                ReceiveChat("Your Mentorship has now expired.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YourMentorshipHasNowExpired, ChatType.System);
 
             if (Info.isMentor)
             {
@@ -19523,7 +19523,7 @@ case StatType.Durability:
 
             if (Player != null)
             {
-                Player.ReceiveChat("Your Mentorship has now expired.", ChatType.System);
+                Player.ReceiveChat(Resources.ResourceCommon.YourMentorshipHasNowExpired, ChatType.System);
                 Player.GetMentor(false);
                 if (Mentor.isMentor && Mentor.MentorExp > 0)
                 {
@@ -19551,19 +19551,19 @@ case StatType.Durability:
 
             if (Info.Mentor != 0)
             {
-                ReceiveChat("You already have a Mentor.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouAlreadyHaveAMentor, ChatType.System);
                 return;
             }
 
             if (Info.Name == Name)
             {
-                ReceiveChat("You can't Mentor yourself.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouCaNotMentorYourself, ChatType.System);
                 return;
             }
 
             if (Info.MentorDate > DateTime.Now)
             {
-                ReceiveChat("You can't start a new Mentorship yet.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouCaNotStartANewMentorshipYet, ChatType.System);
                 return;
             }
 
@@ -19571,7 +19571,7 @@ case StatType.Durability:
 
             if (Mentor == null)
             {
-                ReceiveChat(String.Format("Can't find anybody by the name {0}.", Name), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.CaNotFindAnybodyByTheName, Name), ChatType.System);
             }
             else
             {
@@ -19579,36 +19579,36 @@ case StatType.Durability:
 
                 if (!Mentor.AllowMentor)
                 {
-                    ReceiveChat(String.Format("{0} is not allowing Mentor requests.", Mentor.Info.Name), ChatType.System);
+                    ReceiveChat(String.Format(Resources.ResourceCommon.WhoIsNotAllowingMentorRequests, Mentor.Info.Name), ChatType.System);
                     return;
                 }
 
                 if (Mentor.Info.MentorDate > DateTime.Now)
                 {
-                    ReceiveChat(String.Format("{0} can't start another Mentorship yet.", Mentor.Info.Name), ChatType.System);
+                    ReceiveChat(String.Format(Resources.ResourceCommon.WhoCaNotStartAnotherMentorshipYet, Mentor.Info.Name), ChatType.System);
                     return;
                 }
 
                 if (Mentor.Info.Mentor != 0)
                 {
-                    ReceiveChat(String.Format("{0} is already a Mentor.", Mentor.Info.Name), ChatType.System);
+                    ReceiveChat(String.Format(Resources.ResourceCommon.WhoIsAlreadyAMentor, Mentor.Info.Name), ChatType.System);
                     return;
                 }
 
                 if (Info.Class != Mentor.Info.Class)
                 {
-                    ReceiveChat("You can only be mentored by someone of the same Class.", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouCanOnlyBeMentoredBySomeoneOfTheSameClass, ChatType.System);
                     return;
                 }
                 if ((Info.Level + Settings.MentorLevelGap) > Mentor.Level)
                 {
-                    ReceiveChat(String.Format("You can only be mentored by someone who at least {0} level(s) above you.", Settings.MentorLevelGap), ChatType.System);
+                    ReceiveChat(String.Format(Resources.ResourceCommon.YouCanOnlyBeMentoredBySomeoneWhoAtLeastXlevelsAboveYou, Settings.MentorLevelGap), ChatType.System);
                     return;
                 }
 
                 Mentor.MentorRequest = this;
                 Mentor.Enqueue(new S.MentorRequest { Name = Info.Name, Level = Info.Level });
-                ReceiveChat(String.Format("Request Sent."), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.RequestSent), ChatType.System);
             }
 
         }
@@ -19623,14 +19623,14 @@ case StatType.Durability:
 
             if (!accept)
             {
-                MentorRequest.ReceiveChat(string.Format("{0} has refused to Mentor you.", Info.Name), ChatType.System);
+                MentorRequest.ReceiveChat(string.Format(Resources.ResourceCommon.WhoHasRefusedToMentorYou, Info.Name), ChatType.System);
                 MentorRequest = null;
                 return;
             }
 
             if (Info.Mentor != 0)
             {
-                ReceiveChat("You already have a Student.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouAlreadyHaveAStudent, ChatType.System);
                 return;
             }
 
@@ -19639,24 +19639,24 @@ case StatType.Durability:
 
             if (Student == null)
             {
-                ReceiveChat(String.Format("{0} is no longer online.", Student.Name), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.WhoIsNoLongerOnline, Student.Name), ChatType.System);
                 return;
             }
             else
             {
                 if (Student.Info.Mentor != 0)
                 {
-                    ReceiveChat(String.Format("{0} already has a Mentor.", Student.Info.Name), ChatType.System);
+                    ReceiveChat(String.Format(Resources.ResourceCommon.WhoAlreadyHasAMentor, Student.Info.Name), ChatType.System);
                     return;
                 }
                 if (Info.Class != Student.Info.Class)
                 {
-                    ReceiveChat("You can only mentor someone of the same Class.", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouCanOnlyMentorSomeoneOfTheSameClass, ChatType.System);
                     return;
                 }
                 if ((Info.Level - Settings.MentorLevelGap) < Student.Level)
                 {
-                    ReceiveChat(String.Format("You can only mentor someone who at least {0} level(s) below you.", Settings.MentorLevelGap), ChatType.System);
+                    ReceiveChat(String.Format(Resources.ResourceCommon.YouCanOnlyMentorSomeoneWhoAtLeastXlevelsBbelowYou, Settings.MentorLevelGap), ChatType.System);
                     return;
                 }
 
@@ -19667,8 +19667,8 @@ case StatType.Durability:
                 Student.Info.MentorDate = DateTime.Now;
                 Info.MentorDate = DateTime.Now;
 
-                ReceiveChat(String.Format("You're now the Mentor of {0}.", Student.Info.Name), ChatType.System);
-                Student.ReceiveChat(String.Format("You're now being Mentored by {0}.", Info.Name), ChatType.System);
+                ReceiveChat(String.Format(Resources.ResourceCommon.YouAreNowTheMentorOfWhom, Student.Info.Name), ChatType.System);
+                Student.ReceiveChat(String.Format(Resources.ResourceCommon.YouAreNowBeingMentoredBy, Info.Name), ChatType.System);
                 GetMentor(false);
                 Student.GetMentor(false);
             }
@@ -19694,7 +19694,7 @@ case StatType.Durability:
                     if (CheckOnline)
                     {
                         player.GetMentor(false);
-                        player.ReceiveChat(String.Format("{0} has come online.", Info.Name), ChatType.System);
+                        player.ReceiveChat(String.Format(Resources.ResourceCommon.WhoHasComeOnline, Info.Name), ChatType.System);
                     }
                 }
             }
@@ -19708,7 +19708,7 @@ case StatType.Durability:
 
             if (Mentor == null)
             {
-                MessageQueue.EnqueueDebugging(Name + " is mentored but couldn't find mentor ID " + Info.Mentor);
+                MessageQueue.EnqueueDebugging(string.Format(Resources.ResourceCommon.WhoIsMentoredButCouldNotFindMentorID,Name,Info.Mentor));
                 return;
             }
 
@@ -19722,7 +19722,7 @@ case StatType.Durability:
             if (player != null)
             {
                 player.Enqueue(new S.MentorUpdate { Name = Info.Name, Level = Info.Level, Online = false, MenteeEXP = Mentor.MentorExp });
-                player.ReceiveChat(String.Format("{0} has gone offline.", Info.Name), ChatType.System);
+                player.ReceiveChat(String.Format(Resources.ResourceCommon.WhoHasGoneOffline, Info.Name), ChatType.System);
             }
         }
 

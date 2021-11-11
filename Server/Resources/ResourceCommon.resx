@@ -135,14 +135,47 @@
   <data name="BidMet" xml:space="preserve">
     <value>Bid Met</value>
   </data>
+  <data name="BlackStone" xml:space="preserve">
+    <value>BlackStone</value>
+  </data>
+  <data name="CannotAddYourself" xml:space="preserve">
+    <value>Cannot add yourself</value>
+  </data>
   <data name="CannotGoToWarWithYourOwnGuild" xml:space="preserve">
     <value>Cannot go to war with your own guild.</value>
+  </data>
+  <data name="CaNotFindAnybodyByTheName" xml:space="preserve">
+    <value>Can't find anybody by the name {0}.</value>
   </data>
   <data name="CongratulationsYouAreNowMarriedTo" xml:space="preserve">
     <value>Congratulations, you're now married to {0}.</value>
   </data>
+  <data name="CongratulationsYourNowHasExtraDC" xml:space="preserve">
+    <value>Congratulations, your {0} now has +{1} extra DC.</value>
+  </data>
+  <data name="CongratulationsYourNowHasExtraMC" xml:space="preserve">
+    <value>Congratulations, your {0} now has +{1} extra MC.</value>
+  </data>
+  <data name="CongratulationsYourNowHasExtraSC" xml:space="preserve">
+    <value>Congratulations, your {0} now has +{1} extra SC.</value>
+  </data>
   <data name="CouldNotFindGuild" xml:space="preserve">
     <value>Could not find guild {0}.</value>
+  </data>
+  <data name="CreatureHasBeenDismissed" xml:space="preserve">
+    <value>Creature {0} has been dismissed.</value>
+  </data>
+  <data name="CreatureHasBeenReleased" xml:space="preserve">
+    <value>Creature {0} has been released.</value>
+  </data>
+  <data name="CreatureHasBeenSummoned" xml:space="preserve">
+    <value>Creature {0} has been summoned.</value>
+  </data>
+  <data name="CreatureHasExpired" xml:space="preserve">
+    <value>Creature {0} has expired.</value>
+  </data>
+  <data name="DoesNotNeedToBeCheckedAsItHasNotBeenRefinedYet" xml:space="preserve">
+    <value>{0} doesn't need to be checked as it hasn't been refined yet.</value>
   </data>
   <data name="Expired" xml:space="preserve">
     <value>Expired</value>
@@ -213,6 +246,9 @@
   <data name="NoBid" xml:space="preserve">
     <value>No Bid</value>
   </data>
+  <data name="NoMoreSpace" xml:space="preserve">
+    <value>No more space.</value>
+  </data>
   <data name="NotEnoughGold" xml:space="preserve">
     <value>Not enough gold.</value>
   </data>
@@ -221,6 +257,12 @@
   </data>
   <data name="Physicial" xml:space="preserve">
     <value>Physicial</value>
+  </data>
+  <data name="PlayerAlreadyAdded" xml:space="preserve">
+    <value>Player already added</value>
+  </data>
+  <data name="PlayerDoesNotExist" xml:space="preserve">
+    <value>Player doesn't exist</value>
   </data>
   <data name="Rank" xml:space="preserve">
     <value>Rank</value>
@@ -231,17 +273,41 @@
   <data name="RankNotFound" xml:space="preserve">
     <value>Rank not found!</value>
   </data>
+  <data name="RequestSent" xml:space="preserve">
+    <value>Request Sent.</value>
+  </data>
   <data name="Sold" xml:space="preserve">
     <value>Sold</value>
   </data>
   <data name="SomeoneHasBidGoldFor" xml:space="preserve">
     <value>Someone has bid {1:#,##0} Gold for {0}</value>
   </data>
+  <data name="SummonedCreatureNoLongerExists" xml:space="preserve">
+    <value>{0}: SummonedCreature no longer exists?!?. {1}</value>
+  </data>
   <data name="ThePersonYouAreTryingToProposeToIsNotAllowingMarriageRequests" xml:space="preserve">
     <value>The person you're trying to propose to isn't allowing marriage requests.</value>
   </data>
+  <data name="ThereIsNotRoomInYourBagForYourMakeSomeSpaceAndTryAgain" xml:space="preserve">
+    <value>There isn't room in your bag for your {0}, make some space and try again.</value>
+  </data>
   <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
     <value>The rental lock has been removed from {0}</value>
+  </data>
+  <data name="TimeDayHourMinutes" xml:space="preserve">
+    <value>{0}d {1}h {2:D2}m</value>
+  </data>
+  <data name="TimeHourMinutes" xml:space="preserve">
+    <value>{0}h {1:D2}m</value>
+  </data>
+  <data name="TimeMinutes" xml:space="preserve">
+    <value>{0}m</value>
+  </data>
+  <data name="TimeSeconds" xml:space="preserve">
+    <value>{0}s</value>
+  </data>
+  <data name="TooHeavyToGetBack" xml:space="preserve">
+    <value>Too heavy to get back.</value>
   </data>
   <data name="WarEndedWith" xml:space="preserve">
     <value>War ended with {0}.</value>
@@ -249,8 +315,14 @@
   <data name="WhoAlreadyHasAMarriageInvitation" xml:space="preserve">
     <value>{0} already has a marriage invitation.</value>
   </data>
+  <data name="WhoAlreadyHasAMentor" xml:space="preserve">
+    <value>{0} already has a Mentor.</value>
+  </data>
   <data name="WhoCanNotGetMarriedAgainYetThereIsADayCooldownAfterDivorce" xml:space="preserve">
     <value>{0} can't get married again yet, there is a {1} day cooldown after divorce</value>
+  </data>
+  <data name="WhoCaNotStartAnotherMentorshipYet" xml:space="preserve">
+    <value>{0} can't start another Mentorship yet.</value>
   </data>
   <data name="WhoHasComeOnline" xml:space="preserve">
     <value>{0} has come online.</value>
@@ -264,11 +336,26 @@
   <data name="WhoHasRefusedToMarryYou" xml:space="preserve">
     <value>{0} has refused to marry you.</value>
   </data>
+  <data name="WhoHasRefusedToMentorYou" xml:space="preserve">
+    <value>{0} has refused to Mentor you.</value>
+  </data>
+  <data name="WhoIsAlreadyAMentor" xml:space="preserve">
+    <value>{0} is already a Mentor.</value>
+  </data>
   <data name="WhoIsAlreadyMarried" xml:space="preserve">
     <value>{0} is already married.</value>
   </data>
   <data name="WhoIsMarriedButCouldNotFindMarriageID" xml:space="preserve">
     <value>{0} is married but couldn't find marriage ID {1}</value>
+  </data>
+  <data name="WhoIsMentoredButCouldNotFindMentorID" xml:space="preserve">
+    <value>{0} is mentored but couldn't find mentor ID {1}</value>
+  </data>
+  <data name="WhoIsNoLongerOnline" xml:space="preserve">
+    <value>{0} is no longer online.</value>
+  </data>
+  <data name="WhoIsNotAllowingMentorRequests" xml:space="preserve">
+    <value>{0} is not allowing Mentor requests.</value>
   </data>
   <data name="WhoIsNotWithinDivorceRange" xml:space="preserve">
     <value>{0} is not within divorce range.</value>
@@ -279,6 +366,12 @@
   <data name="You" xml:space="preserve">
     <value>You</value>
   </data>
+  <data name="YouAlreadyHaveAMentor" xml:space="preserve">
+    <value>You already have a Mentor.</value>
+  </data>
+  <data name="YouAlreadyHaveAStudent" xml:space="preserve">
+    <value>You already have a Student.</value>
+  </data>
   <data name="YouAreAlreadyMarried" xml:space="preserve">
     <value>You are already married.</value>
   </data>
@@ -287,6 +380,9 @@
   </data>
   <data name="YouAreNotAllowedToChangeRanks" xml:space="preserve">
     <value>You are not allowed to change ranks!</value>
+  </data>
+  <data name="YouAreNotCurrentlyRefiningAnyItems" xml:space="preserve">
+    <value>You aren't currently refining any items.</value>
   </data>
   <data name="YouAreNotMarried" xml:space="preserve">
     <value>You're not married.</value>
@@ -309,6 +405,9 @@
   <data name="YouAreNowAllowingRecallFromLover" xml:space="preserve">
     <value>You're now allowing recall from lover.</value>
   </data>
+  <data name="YouAreNowBeingMentoredBy" xml:space="preserve">
+    <value>You're now being Mentored by {0}.</value>
+  </data>
   <data name="YouAreNowBlockingMarriageRequests" xml:space="preserve">
     <value>You're now blocking marriage requests.</value>
   </data>
@@ -317,6 +416,9 @@
   </data>
   <data name="YouAreNowDivorced" xml:space="preserve">
     <value>You're now divorced</value>
+  </data>
+  <data name="YouAreNowTheMentorOfWhom" xml:space="preserve">
+    <value>You're now the Mentor of {0}.</value>
   </data>
   <data name="YouBidGoldFor" xml:space="preserve">
     <value>You bid {1:#,##0} Gold for {0}</value>
@@ -348,6 +450,12 @@
   <data name="YouCanNotReplaceAWeddingRingWithThisItem" xml:space="preserve">
     <value>You can't replace a Wedding Ring with this item.</value>
   </data>
+  <data name="YouCannotRideHereWithoutABridle" xml:space="preserve">
+    <value>You cannot ride here without a bridle</value>
+  </data>
+  <data name="YouCannotRideOnThisMap" xml:space="preserve">
+    <value>You cannot ride on this map</value>
+  </data>
   <data name="YouCannotTeleportForAnotherSeconds" xml:space="preserve">
     <value>You cannot teleport for another {0} seconds</value>
   </data>
@@ -357,14 +465,35 @@
   <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
     <value>You can now unequip a cursed item.</value>
   </data>
+  <data name="YouCanOnlyBeMentoredBySomeoneOfTheSameClass" xml:space="preserve">
+    <value>You can only be mentored by someone of the same Class.</value>
+  </data>
+  <data name="YouCanOnlyBeMentoredBySomeoneWhoAtLeastXlevelsAboveYou" xml:space="preserve">
+    <value>You can only be mentored by someone who at least {0} level(s) above you.</value>
+  </data>
+  <data name="YouCanOnlyMentorSomeoneOfTheSameClass" xml:space="preserve">
+    <value>You can only mentor someone of the same Class.</value>
+  </data>
+  <data name="YouCanOnlyMentorSomeoneWhoAtLeastXlevelsBbelowYou" xml:space="preserve">
+    <value>You can only mentor someone who at least {0} level(s) below you.</value>
+  </data>
   <data name="YouCaNotDivorceADeadPlayer" xml:space="preserve">
     <value>You can't divorce a dead player.</value>
   </data>
   <data name="YouCaNotDivorceYourself" xml:space="preserve">
     <value>You can't divorce yourself.</value>
   </data>
+  <data name="YouCaNotMentorYourself" xml:space="preserve">
+    <value>You can't Mentor yourself.</value>
+  </data>
+  <data name="YouCaNotStartANewMentorshipYet" xml:space="preserve">
+    <value>You can't start a new Mentorship yet.</value>
+  </data>
   <data name="YouCantMarryYourself" xml:space="preserve">
     <value>You cant marry yourself.</value>
+  </data>
+  <data name="YouDoNotHaveEnoughGoldToRefineYour" xml:space="preserve">
+    <value>You don't have enough gold to refine your {0}.</value>
   </data>
   <data name="YouDoNotHaveEnoughGoldToReplaceYourWeddingRing" xml:space="preserve">
     <value>You don't have enough gold to replace your Wedding Ring.</value>
@@ -380,6 +509,9 @@
   </data>
   <data name="YouMustBeALeaderToStartAWar" xml:space="preserve">
     <value>You must be a leader to start a war.</value>
+  </data>
+  <data name="YouMustHaveASaddleToRideYourMount" xml:space="preserve">
+    <value>You must have a saddle to ride your mount</value>
   </data>
   <data name="YouNeedAtLeast1LeaderOnline" xml:space="preserve">
     <value>You need at least 1 leader online.</value>
@@ -402,11 +534,35 @@
   <data name="YouNeedToWearARingOnYourLeftFingerToMakeAWeddingRing" xml:space="preserve">
     <value>You need to wear a ring on your left finger to make a Wedding Ring.</value>
   </data>
+  <data name="YouNowHaveAXDayCooldownOnStartingANewMentorship" xml:space="preserve">
+    <value>You now have a {0} day cooldown on starting a new Mentorship.</value>
+  </data>
+  <data name="YourCaNotBeRefined" xml:space="preserve">
+    <value>Your {0} can't be refined.</value>
+  </data>
+  <data name="YourIsNowBeingRefinedPleaseCheckBackInMinute" xml:space="preserve">
+    <value>Your {0} is now being refined, please check back in {1} minute(s).</value>
+  </data>
+  <data name="YourIsTooHeavyToGetBackTryAgainAfterReducingYourBagWeight" xml:space="preserve">
+    <value>Your {0} is too heavy to get back, try again after reducing your bag weight.</value>
+  </data>
+  <data name="YourItemHasBeenReturnedToYou" xml:space="preserve">
+    <value>Your item has been returned to you.</value>
+  </data>
   <data name="YourLoverNeedsToBeAtLeastLevelToGetMarried" xml:space="preserve">
     <value>Your lover needs to be at least level {0} to get married.</value>
   </data>
+  <data name="YourMentorshipHasNowExpired" xml:space="preserve">
+    <value>Your Mentorship has now expired.</value>
+  </data>
+  <data name="YourNeedsToBeCheckedBeforeYouCanAttemptToRefineItAgain" xml:space="preserve">
+    <value>Your {0} needs to be checked before you can attempt to refine it again.</value>
+  </data>
   <data name="YourPet" xml:space="preserve">
     <value>Your pet</value>
+  </data>
+  <data name="YourPetHasProducedX1BlackStoneWhichCouldNotBeAddedToYourInventory" xml:space="preserve">
+    <value>Your pet has produced x1 BlackStone which couldn't be added to your inventory.</value>
   </data>
   <data name="YourPetsPoison" xml:space="preserve">
     <value>Your pets poison</value>
@@ -419,6 +575,12 @@
   </data>
   <data name="YourRankIsNotAdequate" xml:space="preserve">
     <value>Your rank is not adequate.</value>
+  </data>
+  <data name="YourSmashedIntoAThousandPiecesUponTesting" xml:space="preserve">
+    <value>Your {0} smashed into a thousand pieces upon testing.</value>
+  </data>
+  <data name="YourWillBeReadyToCollectInMinutes" xml:space="preserve">
+    <value>Your {0} will be ready to collect in {1} minute(s).</value>
   </data>
   <data name="YouStartedAWarWith" xml:space="preserve">
     <value>You started a war with {0}.</value>

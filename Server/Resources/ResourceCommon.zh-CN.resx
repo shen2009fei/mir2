@@ -135,14 +135,47 @@
   <data name="BidMet" xml:space="preserve">
     <value>有竞价</value>
   </data>
+  <data name="BlackStone" xml:space="preserve">
+    <value>黑色灵兽石</value>
+  </data>
+  <data name="CannotAddYourself" xml:space="preserve">
+    <value>无法添加自己</value>
+  </data>
   <data name="CannotGoToWarWithYourOwnGuild" xml:space="preserve">
     <value>不能与自己的行会开战。</value>
+  </data>
+  <data name="CaNotFindAnybodyByTheName" xml:space="preserve">
+    <value>找不到名字为 {0} 的任何人。</value>
   </data>
   <data name="CongratulationsYouAreNowMarriedTo" xml:space="preserve">
     <value>恭喜，您现在已与{0}结婚。</value>
   </data>
+  <data name="CongratulationsYourNowHasExtraDC" xml:space="preserve">
+    <value>恭喜，您的 {0} 现在拥有 +{1} 额外 攻击。</value>
+  </data>
+  <data name="CongratulationsYourNowHasExtraMC" xml:space="preserve">
+    <value>恭喜，您的{0}现在拥有 +{1} 个额外 魔法。</value>
+  </data>
+  <data name="CongratulationsYourNowHasExtraSC" xml:space="preserve">
+    <value>恭喜，您的 {0} 现在拥有 +{1} 个额外 道术。</value>
+  </data>
   <data name="CouldNotFindGuild" xml:space="preserve">
     <value>找不到行会{0}。</value>
+  </data>
+  <data name="CreatureHasBeenDismissed" xml:space="preserve">
+    <value>灵兽{0}已被解散。</value>
+  </data>
+  <data name="CreatureHasBeenReleased" xml:space="preserve">
+    <value>灵兽{0}已被释放。</value>
+  </data>
+  <data name="CreatureHasBeenSummoned" xml:space="preserve">
+    <value>已召唤灵兽{0}。</value>
+  </data>
+  <data name="CreatureHasExpired" xml:space="preserve">
+    <value>灵兽{0}已过期。</value>
+  </data>
+  <data name="DoesNotNeedToBeCheckedAsItHasNotBeenRefinedYet" xml:space="preserve">
+    <value>{0} 不需要检查，因为它尚未精炼。</value>
   </data>
   <data name="Expired" xml:space="preserve">
     <value>已到期</value>
@@ -213,6 +246,9 @@
   <data name="NoBid" xml:space="preserve">
     <value>无竞价</value>
   </data>
+  <data name="NoMoreSpace" xml:space="preserve">
+    <value>没有更多的背包空间。</value>
+  </data>
   <data name="NotEnoughGold" xml:space="preserve">
     <value>没有足够的金币。</value>
   </data>
@@ -221,6 +257,12 @@
   </data>
   <data name="Physicial" xml:space="preserve">
     <value>物理</value>
+  </data>
+  <data name="PlayerAlreadyAdded" xml:space="preserve">
+    <value>玩家已经添加</value>
+  </data>
+  <data name="PlayerDoesNotExist" xml:space="preserve">
+    <value>玩家不存在</value>
   </data>
   <data name="Rank" xml:space="preserve">
     <value>军阶</value>
@@ -231,17 +273,41 @@
   <data name="RankNotFound" xml:space="preserve">
     <value>军阶未找到！</value>
   </data>
+  <data name="RequestSent" xml:space="preserve">
+    <value>请求已发送。</value>
+  </data>
   <data name="Sold" xml:space="preserve">
     <value>卖掉</value>
   </data>
   <data name="SomeoneHasBidGoldFor" xml:space="preserve">
     <value>有人为 {0} 出价 {1:#,##0} 金币</value>
   </data>
+  <data name="SummonedCreatureNoLongerExists" xml:space="preserve">
+    <value>{0}：召唤的灵兽不再存在?!?.{1}</value>
+  </data>
   <data name="ThePersonYouAreTryingToProposeToIsNotAllowingMarriageRequests" xml:space="preserve">
     <value>您要向其求婚的人不允许提出结婚请求。</value>
   </data>
+  <data name="ThereIsNotRoomInYourBagForYourMakeSomeSpaceAndTryAgain" xml:space="preserve">
+    <value>你的包中没有空间放你的 {0}，请腾出一些空间，然后重试。</value>
+  </data>
   <data name="TheRentalLockHasBeenRemovedFrom" xml:space="preserve">
     <value>租赁锁定已从{0}中移除</value>
+  </data>
+  <data name="TimeDayHourMinutes" xml:space="preserve">
+    <value>{0}天 {1}时 {2:D2}分</value>
+  </data>
+  <data name="TimeHourMinutes" xml:space="preserve">
+    <value>{0}时 {1:D2}分</value>
+  </data>
+  <data name="TimeMinutes" xml:space="preserve">
+    <value>{0}分</value>
+  </data>
+  <data name="TimeSeconds" xml:space="preserve">
+    <value>{0}秒</value>
+  </data>
+  <data name="TooHeavyToGetBack" xml:space="preserve">
+    <value>太重无法取回</value>
   </data>
   <data name="WarEndedWith" xml:space="preserve">
     <value> {0} 结束战争。</value>
@@ -249,8 +315,14 @@
   <data name="WhoAlreadyHasAMarriageInvitation" xml:space="preserve">
     <value>{0}已收到结婚邀请。</value>
   </data>
+  <data name="WhoAlreadyHasAMentor" xml:space="preserve">
+    <value>{0} 已有师傅。</value>
+  </data>
   <data name="WhoCanNotGetMarriedAgainYetThereIsADayCooldownAfterDivorce" xml:space="preserve">
     <value>{0}还不能再结婚，离婚后有 {1} 天的冷静时间</value>
+  </data>
+  <data name="WhoCaNotStartAnotherMentorshipYet" xml:space="preserve">
+    <value>{0} 还不能开始另一个师徒关系。</value>
   </data>
   <data name="WhoHasComeOnline" xml:space="preserve">
     <value>{0} 已上线。</value>
@@ -264,11 +336,26 @@
   <data name="WhoHasRefusedToMarryYou" xml:space="preserve">
     <value>{0} 拒绝嫁给你。</value>
   </data>
+  <data name="WhoHasRefusedToMentorYou" xml:space="preserve">
+    <value>{0} 拒绝当你师傅。</value>
+  </data>
+  <data name="WhoIsAlreadyAMentor" xml:space="preserve">
+    <value>{0} 已经是师傅。</value>
+  </data>
   <data name="WhoIsAlreadyMarried" xml:space="preserve">
     <value>{0} 已经结婚了。</value>
   </data>
   <data name="WhoIsMarriedButCouldNotFindMarriageID" xml:space="preserve">
     <value>{0} 已婚，但找不到婚姻 ID {1}</value>
+  </data>
+  <data name="WhoIsMentoredButCouldNotFindMentorID" xml:space="preserve">
+    <value>{0} 已拜师，但找不到师傅ID {1}</value>
+  </data>
+  <data name="WhoIsNoLongerOnline" xml:space="preserve">
+    <value>{0} 不在线。</value>
+  </data>
+  <data name="WhoIsNotAllowingMentorRequests" xml:space="preserve">
+    <value>{0} 不允许拜师请求。</value>
   </data>
   <data name="WhoIsNotWithinDivorceRange" xml:space="preserve">
     <value>{0} 不在离婚范围内。</value>
@@ -279,6 +366,12 @@
   <data name="You" xml:space="preserve">
     <value>你</value>
   </data>
+  <data name="YouAlreadyHaveAMentor" xml:space="preserve">
+    <value>你已经有了一个师傅了。</value>
+  </data>
+  <data name="YouAlreadyHaveAStudent" xml:space="preserve">
+    <value>你已经有一个徒弟。</value>
+  </data>
   <data name="YouAreAlreadyMarried" xml:space="preserve">
     <value>你已经结婚了。</value>
   </data>
@@ -287,6 +380,9 @@
   </data>
   <data name="YouAreNotAllowedToChangeRanks" xml:space="preserve">
     <value>你不能改变军阶！</value>
+  </data>
+  <data name="YouAreNotCurrentlyRefiningAnyItems" xml:space="preserve">
+    <value>你目前没有精炼任何物品。</value>
   </data>
   <data name="YouAreNotMarried" xml:space="preserve">
     <value>你还没结婚。</value>
@@ -309,6 +405,9 @@
   <data name="YouAreNowAllowingRecallFromLover" xml:space="preserve">
     <value>你现在允许情侣传送。</value>
   </data>
+  <data name="YouAreNowBeingMentoredBy" xml:space="preserve">
+    <value>你现在正在接受{0}的指导。</value>
+  </data>
   <data name="YouAreNowBlockingMarriageRequests" xml:space="preserve">
     <value>你现在正在阻止结婚请求。</value>
   </data>
@@ -317,6 +416,9 @@
   </data>
   <data name="YouAreNowDivorced" xml:space="preserve">
     <value>你现在离婚了</value>
+  </data>
+  <data name="YouAreNowTheMentorOfWhom" xml:space="preserve">
+    <value>您现在是 {0} 的师傅。</value>
   </data>
   <data name="YouBidGoldFor" xml:space="preserve">
     <value>你为 {0} 出价 {1:#,##0} 金币</value>
@@ -348,6 +450,12 @@
   <data name="YouCanNotReplaceAWeddingRingWithThisItem" xml:space="preserve">
     <value>你不能用这个东西代替结婚戒指。</value>
   </data>
+  <data name="YouCannotRideHereWithoutABridle" xml:space="preserve">
+    <value>没有缰绳，你不能在这里骑行</value>
+  </data>
+  <data name="YouCannotRideOnThisMap" xml:space="preserve">
+    <value>你不能在这张地图上骑行</value>
+  </data>
   <data name="YouCannotTeleportForAnotherSeconds" xml:space="preserve">
     <value>你不能在 {0} 秒内再传送</value>
   </data>
@@ -357,14 +465,35 @@
   <data name="YouCanNowUnequipACursedItem" xml:space="preserve">
     <value>你现在可以取下一个被诅咒的物品。</value>
   </data>
+  <data name="YouCanOnlyBeMentoredBySomeoneOfTheSameClass" xml:space="preserve">
+    <value>您只能由同一职业的人指导。</value>
+  </data>
+  <data name="YouCanOnlyBeMentoredBySomeoneWhoAtLeastXlevelsAboveYou" xml:space="preserve">
+    <value>你只能接受至少比你高 {0} 个等级的人的指导。</value>
+  </data>
+  <data name="YouCanOnlyMentorSomeoneOfTheSameClass" xml:space="preserve">
+    <value>你只能指导同一职业的人。</value>
+  </data>
+  <data name="YouCanOnlyMentorSomeoneWhoAtLeastXlevelsBbelowYou" xml:space="preserve">
+    <value>你只能指导至少比你低 {0} 个等级的人。</value>
+  </data>
   <data name="YouCaNotDivorceADeadPlayer" xml:space="preserve">
     <value>你不能和一个死去的玩家离婚。</value>
   </data>
   <data name="YouCaNotDivorceYourself" xml:space="preserve">
     <value>你不能与自己离婚。</value>
   </data>
+  <data name="YouCaNotMentorYourself" xml:space="preserve">
+    <value>你不能拜自己为师.</value>
+  </data>
+  <data name="YouCaNotStartANewMentorshipYet" xml:space="preserve">
+    <value>你还不能开始新的拜师。</value>
+  </data>
   <data name="YouCantMarryYourself" xml:space="preserve">
     <value>你不能嫁给自己。</value>
+  </data>
+  <data name="YouDoNotHaveEnoughGoldToRefineYour" xml:space="preserve">
+    <value>你没有足够的金币来精炼你的{0}。</value>
   </data>
   <data name="YouDoNotHaveEnoughGoldToReplaceYourWeddingRing" xml:space="preserve">
     <value>你没有足够的金币来换取你的结婚戒指。</value>
@@ -380,6 +509,9 @@
   </data>
   <data name="YouMustBeALeaderToStartAWar" xml:space="preserve">
     <value>您必须是掌门人才能发动战争</value>
+  </data>
+  <data name="YouMustHaveASaddleToRideYourMount" xml:space="preserve">
+    <value>你必须有一个马鞍才能骑上你的坐骑</value>
   </data>
   <data name="YouNeedAtLeast1LeaderOnline" xml:space="preserve">
     <value>你需要至少 1 个掌门人在线.</value>
@@ -402,11 +534,35 @@
   <data name="YouNeedToWearARingOnYourLeftFingerToMakeAWeddingRing" xml:space="preserve">
     <value>您需要在左手手指上佩戴戒指才能制作结婚戒指。</value>
   </data>
+  <data name="YouNowHaveAXDayCooldownOnStartingANewMentorship" xml:space="preserve">
+    <value>您现在有 {0} 天的冷却时间来开始新的拜师</value>
+  </data>
+  <data name="YourCaNotBeRefined" xml:space="preserve">
+    <value>你的 {0} 无法精炼。</value>
+  </data>
+  <data name="YourIsNowBeingRefinedPleaseCheckBackInMinute" xml:space="preserve">
+    <value>你的{0}正在精炼中，请在 {1} 分钟后回来查看。</value>
+  </data>
+  <data name="YourIsTooHeavyToGetBackTryAgainAfterReducingYourBagWeight" xml:space="preserve">
+    <value>你的 {0} 太重而无法取回，请在减轻背包重量后重试。</value>
+  </data>
+  <data name="YourItemHasBeenReturnedToYou" xml:space="preserve">
+    <value>你的物品已退还给你。</value>
+  </data>
   <data name="YourLoverNeedsToBeAtLeastLevelToGetMarried" xml:space="preserve">
     <value>你的爱人至少需要达到 {0} 级才能结婚。</value>
   </data>
+  <data name="YourMentorshipHasNowExpired" xml:space="preserve">
+    <value>您的师徒关系现已过期。</value>
+  </data>
+  <data name="YourNeedsToBeCheckedBeforeYouCanAttemptToRefineItAgain" xml:space="preserve">
+    <value>你需要先检查你的 {0}，然后才能尝试再次对其进行精炼。</value>
+  </data>
   <data name="YourPet" xml:space="preserve">
     <value>你的宠物</value>
+  </data>
+  <data name="YourPetHasProducedX1BlackStoneWhichCouldNotBeAddedToYourInventory" xml:space="preserve">
+    <value>您的宠物生产了 x1 黑色灵兽石，无法存入到您的背包中。</value>
   </data>
   <data name="YourPetsPoison" xml:space="preserve">
     <value>你的宠物毒伤</value>
@@ -419,6 +575,12 @@
   </data>
   <data name="YourRankIsNotAdequate" xml:space="preserve">
     <value>你的军阶不够。</value>
+  </data>
+  <data name="YourSmashedIntoAThousandPiecesUponTesting" xml:space="preserve">
+    <value>您的 {0} 经测试粉碎成了无数块碎片。</value>
+  </data>
+  <data name="YourWillBeReadyToCollectInMinutes" xml:space="preserve">
+    <value>你的{0}将在 {1} 分钟后准备好取回。</value>
   </data>
   <data name="YouStartedAWarWith" xml:space="preserve">
     <value>你与{0}发动了一场战争。</value>
