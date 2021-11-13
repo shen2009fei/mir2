@@ -25,13 +25,13 @@ namespace Server
             QTypeComboBox.Items.AddRange(Enum.GetValues(typeof(QuestType)).Cast<object>().ToArray());
             RequiredClassComboBox.Items.AddRange(Enum.GetValues(typeof(RequiredClass)).Cast<object>().ToArray());
 
-            UpdateInterface();
+            UpdateInterface(true);
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
             Envir.CreateQuestInfo();
-            UpdateInterface();
+            UpdateInterface(true);
         }
         private void RemoveButton_Click(object sender, EventArgs e)
         {
@@ -43,25 +43,28 @@ namespace Server
 
             if (Envir.QuestInfoList.Count == 0) Envir.QuestIndex = 0;
 
-            UpdateInterface();
+            UpdateInterface(true);
         }
 
-        private void UpdateInterface()
+        private void UpdateInterface(bool refreshList = false)
         {
-            if (QuestInfoListBox.Items.Count != Envir.QuestInfoList.Count)
+            if (refreshList)
             {
-                QuestInfoListBox.Items.Clear();
-                RequiredQuestComboBox.Items.Clear();
-
-                RequiredQuestComboBox.Items.Add(new QuestInfo() { Index = 0, Name = "None" });
-
-                for (int i = 0; i < Envir.QuestInfoList.Count; i++)
+                if (QuestInfoListBox.Items.Count != Envir.QuestInfoList.Count)
                 {
-                    QuestInfoListBox.Items.Add(Envir.QuestInfoList[i]);
-                    RequiredQuestComboBox.Items.Add(Envir.QuestInfoList[i]);
-                }
+                    QuestInfoListBox.Items.Clear();
+                    RequiredQuestComboBox.Items.Clear();
 
+                    RequiredQuestComboBox.Items.Add(new QuestInfo() { Index = 0, Name = "None" });
+
+                    for (int i = 0; i < Envir.QuestInfoList.Count; i++)
+                    {
+                        QuestInfoListBox.Items.Add(Envir.QuestInfoList[i]);
+                        RequiredQuestComboBox.Items.Add(Envir.QuestInfoList[i]);
+                    }
+                }
             }
+           
 
             _selectedQuestInfos = QuestInfoListBox.SelectedItems.Cast<QuestInfo>().ToList();
 
@@ -185,7 +188,7 @@ namespace Server
             //for (int i = 1; i < npcs.Length; i++)
             //    NPCInfo.FromText(npcs[i]);
 
-            UpdateInterface();
+            UpdateInterface(true);
         }
 
 
@@ -246,7 +249,7 @@ namespace Server
             foreach (var m in quests)
                 QuestInfo.FromText(m);
 
-            UpdateInterface();
+            UpdateInterface(true);
             MessageBox.Show("Quest Import complete");
         }
 
@@ -395,7 +398,16 @@ namespace Server
             }
         }
 
-
-
+        private void tbxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+            {
+                return;
+            }
+            var searchName = tbxSearch.Text.Trim().ToLower();
+            var itemList = Envir.QuestInfoList.FindAll(x => x.Name.ToLower().Contains(searchName)).ToArray();
+            QuestInfoListBox.Items.Clear();
+            QuestInfoListBox.Items.AddRange(itemList);
+        }
     }
 }

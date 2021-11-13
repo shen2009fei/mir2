@@ -138,11 +138,23 @@
   <data name="BlackStone" xml:space="preserve">
     <value>BlackStone</value>
   </data>
+  <data name="BuffAlreadyObtained" xml:space="preserve">
+    <value>Buff already obtained.</value>
+  </data>
+  <data name="BuffDoesNotExcist" xml:space="preserve">
+    <value>Buff does not excist.</value>
+  </data>
+  <data name="BuffNotObtained" xml:space="preserve">
+    <value>Buff not obtained.</value>
+  </data>
   <data name="CannotAddYourself" xml:space="preserve">
     <value>Cannot add yourself</value>
   </data>
   <data name="CannotGoToWarWithYourOwnGuild" xml:space="preserve">
     <value>Cannot go to war with your own guild.</value>
+  </data>
+  <data name="CannotTradeWhenDead" xml:space="preserve">
+    <value>Cannot trade when dead</value>
   </data>
   <data name="CaNotFindAnybodyByTheName" xml:space="preserve">
     <value>Can't find anybody by the name {0}.</value>
@@ -252,6 +264,9 @@
   <data name="NoMoreSpace" xml:space="preserve">
     <value>No more space.</value>
   </data>
+  <data name="NotEnoughFundsInGuildBank" xml:space="preserve">
+    <value>Not enough funds in guild bank.</value>
+  </data>
   <data name="NotEnoughGold" xml:space="preserve">
     <value>Not enough gold.</value>
   </data>
@@ -266,6 +281,24 @@
   </data>
   <data name="PlayerDoesNotExist" xml:space="preserve">
     <value>Player doesn't exist</value>
+  </data>
+  <data name="PlayerWhoAlreadyHasATradeInvitation" xml:space="preserve">
+    <value>Player {0} already has a trade invitation.</value>
+  </data>
+  <data name="PlayerWhoHasRefusedToTrade" xml:space="preserve">
+    <value>Player {0} has refused to trade.</value>
+  </data>
+  <data name="PlayerWhoIsAlreadyTrading" xml:space="preserve">
+    <value>Player {0} is already trading.</value>
+  </data>
+  <data name="PlayerWhoIsNotAllowingTradeAtTheMoment" xml:space="preserve">
+    <value>Player {0} is not allowing trade at the moment.</value>
+  </data>
+  <data name="PlayerWhoIsNotWithinTradingRange" xml:space="preserve">
+    <value>Player {0} is not within trading range.</value>
+  </data>
+  <data name="PlayerWhoIsWaitingForYouToConfirmTrade" xml:space="preserve">
+    <value>Player {0} is waiting for you to confirm trade.</value>
   </data>
   <data name="Rank" xml:space="preserve">
     <value>Rank</value>
@@ -311,6 +344,24 @@
   </data>
   <data name="TooHeavyToGetBack" xml:space="preserve">
     <value>Too heavy to get back.</value>
+  </data>
+  <data name="TradeFromTo" xml:space="preserve">
+    <value>Trade from {0} to {1}</value>
+  </data>
+  <data name="TradeSuccessful" xml:space="preserve">
+    <value>Trade successful.</value>
+  </data>
+  <data name="TradingPartnerCannotAcceptAllItems" xml:space="preserve">
+    <value>Trading partner cannot accept all items.</value>
+  </data>
+  <data name="TradingPartnerCannotAcceptAnyMoreGold" xml:space="preserve">
+    <value>Trading partner cannot accept any more gold.</value>
+  </data>
+  <data name="UnableToAcceptAllItems" xml:space="preserve">
+    <value>Unable to accept all items.</value>
+  </data>
+  <data name="UnableToAcceptAnyMoreGold" xml:space="preserve">
+    <value>Unable to accept any more gold.</value>
   </data>
   <data name="WarEndedWith" xml:space="preserve">
     <value>War ended with {0}.</value>
@@ -377,6 +428,9 @@
   </data>
   <data name="YouAreAlreadyMarried" xml:space="preserve">
     <value>You are already married.</value>
+  </data>
+  <data name="YouAreAlreadyTrading" xml:space="preserve">
+    <value>You are already trading.</value>
   </data>
   <data name="YouAreAlreadyWearingAWeddingRing" xml:space="preserve">
     <value>You're already wearing a Wedding Ring.</value>
@@ -462,6 +516,9 @@
   <data name="YouCannotTeleportForAnotherSeconds" xml:space="preserve">
     <value>You cannot teleport for another {0} seconds</value>
   </data>
+  <data name="YouCanNotTradeWithYourSelf" xml:space="preserve">
+    <value>You cannot trade with your self.</value>
+  </data>
   <data name="YouCanNotUseThisTypeOfRing" xml:space="preserve">
     <value>You cannot use this type of ring.</value>
   </data>
@@ -501,6 +558,9 @@
   <data name="YouDoNotHaveEnoughGoldToReplaceYourWeddingRing" xml:space="preserve">
     <value>You don't have enough gold to replace your Wedding Ring.</value>
   </data>
+  <data name="YouDoNotHaveTheCorrectGuildRank" xml:space="preserve">
+    <value>You do not have the correct guild rank.</value>
+  </data>
   <data name="YouHaveBeenRemovedFromYourGuild" xml:space="preserve">
     <value>You have been removed from your guild.</value>
   </data>
@@ -516,8 +576,14 @@
   <data name="YouMustHaveASaddleToRideYourMount" xml:space="preserve">
     <value>You must have a saddle to ride your mount</value>
   </data>
+  <data name="YouNeedAHook" xml:space="preserve">
+    <value>You need a hook.</value>
+  </data>
   <data name="YouNeedAtLeast1LeaderOnline" xml:space="preserve">
     <value>You need at least 1 leader online.</value>
+  </data>
+  <data name="YouNeedBait" xml:space="preserve">
+    <value>You need bait.</value>
   </data>
   <data name="YouNeedToBeAtLeastLevelToGetMarried" xml:space="preserve">
     <value>You need to be at least level {0} to get married.</value>
@@ -542,6 +608,9 @@
   </data>
   <data name="YourCaNotBeRefined" xml:space="preserve">
     <value>Your {0} can't be refined.</value>
+  </data>
+  <data name="YourFishGotAway" xml:space="preserve">
+    <value>Your fish got away!</value>
   </data>
   <data name="YourIsNowBeingRefinedPleaseCheckBackInMinute" xml:space="preserve">
     <value>Your {0} is now being refined, please check back in {1} minute(s).</value>

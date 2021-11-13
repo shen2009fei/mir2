@@ -16424,20 +16424,20 @@ case StatType.Durability:
 
             if (MyGuild.WarringGuilds.Contains(enemyGuild))
             {
-                ReceiveChat("Already at war with this guild.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.AlreadyAtWarWithThisGuild, ChatType.System);
                 return;
             }
 
             if (MyGuild.Gold < Settings.Guild_WarCost)
             {
-                ReceiveChat("Not enough funds in guild bank.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.NotEnoughFundsInGuildBank, ChatType.System);
                 return;
             }
 
             if (MyGuild.GoToWar(enemyGuild))
             {
-                ReceiveChat(string.Format("You started a war with {0}.", Name), ChatType.System);
-                enemyGuild.SendMessage(string.Format("{0} has started a war", MyGuild.Name), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.YouStartedAWarWith, Name), ChatType.System);
+                enemyGuild.SendMessage(string.Format(Resources.ResourceCommon.HasStartedAWar, MyGuild.Name), ChatType.System);
 
                 MyGuild.Gold -= Settings.Guild_WarCost;
                 MyGuild.SendServerPacket(new S.GuildStorageGoldChange() { Type = 2, Name = Info.Name, Amount = Settings.Guild_WarCost });
@@ -16471,18 +16471,18 @@ case StatType.Durability:
                 case 1://buy the buff
                     if (!MyGuildRank.Options.HasFlag(GuildRankOptions.CanActivateBuff))
                     {
-                        ReceiveChat("You do not have the correct guild rank.", ChatType.System);
+                        ReceiveChat(Resources.ResourceCommon.YouDoNotHaveTheCorrectGuildRank, ChatType.System);
                         return;
                     }
                     GuildBuffInfo BuffInfo = Envir.FindGuildBuffInfo(id);
                     if (BuffInfo == null)
                     {
-                        ReceiveChat("Buff does not excist.", ChatType.System);
+                        ReceiveChat(Resources.ResourceCommon.BuffDoesNotExcist, ChatType.System);
                         return;
                     }
                     if (MyGuild.GetBuff(id) != null)
                     {
-                        ReceiveChat("Buff already obtained.", ChatType.System);
+                        ReceiveChat(Resources.ResourceCommon.BuffAlreadyObtained, ChatType.System);
                         return;
                     }
                     if ((MyGuild.Level < BuffInfo.LevelRequirement) || (MyGuild.SparePoints < BuffInfo.PointsRequirement)) return;//client checks this so it shouldnt be possible without a moded client :p
@@ -16491,13 +16491,13 @@ case StatType.Durability:
                 case 2://activate the buff
                     if (!MyGuildRank.Options.HasFlag(GuildRankOptions.CanActivateBuff))
                     {
-                        ReceiveChat("You do not have the correct guild rank.", ChatType.System);
+                        ReceiveChat(Resources.ResourceCommon.YouDoNotHaveTheCorrectGuildRank, ChatType.System);
                         return;
                     }
                     GuildBuff Buff = MyGuild.GetBuff(id);
                     if (Buff == null)
                     {
-                        ReceiveChat("Buff not obtained.", ChatType.System);
+                        ReceiveChat(Resources.ResourceCommon.BuffNotObtained, ChatType.System);
                         return;
                     }
                     if ((MyGuild.Gold < Buff.Info.ActivationCost) || (Buff.Active)) return;
@@ -16588,7 +16588,7 @@ case StatType.Durability:
 
             if (temp.Weight + CurrentBagWeight > Stats[Stat.BagWeight])
             {
-                ReceiveChat("Too heavy to get back.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.TooHeavyToGetBack, ChatType.System);
                 Enqueue(p);
                 return;
             }
@@ -16617,7 +16617,7 @@ case StatType.Durability:
 
             if (TradePartner != null)
             {
-                ReceiveChat("You are already trading.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouAreAlreadyTrading, ChatType.System);
                 return;
             }
 
@@ -16655,37 +16655,37 @@ case StatType.Durability:
 
                 if (player == this)
                 {
-                    ReceiveChat("You cannot trade with your self.", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouCanNotTradeWithYourSelf, ChatType.System);
                     return;
                 }
 
                 if (player.Dead || Dead)
                 {
-                    ReceiveChat("Cannot trade when dead", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.CannotTradeWhenDead, ChatType.System);
                     return;
                 }
 
                 if (player.TradeInvitation != null)
                 {
-                    ReceiveChat(string.Format("Player {0} already has a trade invitation.", player.Info.Name), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.PlayerWhoAlreadyHasATradeInvitation, player.Info.Name), ChatType.System);
                     return;
                 }
 
                 if (!player.AllowTrade)
                 {
-                    ReceiveChat(string.Format("Player {0} is not allowing trade at the moment.", player.Info.Name), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.PlayerWhoIsNotAllowingTradeAtTheMoment, player.Info.Name), ChatType.System);
                     return;
                 }
 
                 if (!Functions.InRange(player.CurrentLocation, CurrentLocation, Globals.DataRange) || player.CurrentMap != CurrentMap)
                 {
-                    ReceiveChat(string.Format("Player {0} is not within trading range.", player.Info.Name), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.PlayerWhoIsNotWithinTradingRange, player.Info.Name), ChatType.System);
                     return;
                 }
 
                 if (player.TradePartner != null)
                 {
-                    ReceiveChat(string.Format("Player {0} is already trading.", player.Info.Name), ChatType.System);
+                    ReceiveChat(string.Format(Resources.ResourceCommon.PlayerWhoIsAlreadyTrading, player.Info.Name), ChatType.System);
                     return;
                 }
 
@@ -16703,21 +16703,21 @@ case StatType.Durability:
 
             if (!accept)
             {
-                TradeInvitation.ReceiveChat(string.Format("Player {0} has refused to trade.", Info.Name), ChatType.System);
+                TradeInvitation.ReceiveChat(string.Format(Resources.ResourceCommon.PlayerWhoHasRefusedToTrade, Info.Name), ChatType.System);
                 TradeInvitation = null;
                 return;
             }
 
             if (TradePartner != null)
             {
-                ReceiveChat("You are already trading.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouAreAlreadyTrading, ChatType.System);
                 TradeInvitation = null;
                 return;
             }
 
             if (TradeInvitation.TradePartner != null)
             {
-                ReceiveChat(string.Format("Player {0} is already trading.", TradeInvitation.Info.Name), ChatType.System);
+                ReceiveChat(string.Format(Resources.ResourceCommon.PlayerWhoIsAlreadyTrading, TradeInvitation.Info.Name), ChatType.System);
                 TradeInvitation = null;
                 return;
             }
@@ -16799,7 +16799,7 @@ case StatType.Durability:
 
             if (TradeLocked && !TradePartner.TradeLocked)
             {
-                TradePartner.ReceiveChat(string.Format("Player {0} is waiting for you to confirm trade.", Info.Name), ChatType.System);
+                TradePartner.ReceiveChat(string.Format(Resources.ResourceCommon.PlayerWhoIsWaitingForYouToConfirmTrade, Info.Name), ChatType.System);
             }
 
             if (!TradeLocked || !TradePartner.TradeLocked) return;
@@ -16817,10 +16817,10 @@ case StatType.Durability:
                 if (!TradePair[o].CanGainItems(TradePair[p].Info.Trade))
                 {
                     CanTrade = false;
-                    TradePair[p].ReceiveChat("Trading partner cannot accept all items.", ChatType.System);
+                    TradePair[p].ReceiveChat(Resources.ResourceCommon.TradingPartnerCannotAcceptAllItems, ChatType.System);
                     TradePair[p].Enqueue(new S.TradeCancel { Unlock = true });
 
-                    TradePair[o].ReceiveChat("Unable to accept all items.", ChatType.System);
+                    TradePair[o].ReceiveChat(Resources.ResourceCommon.UnableToAcceptAllItems, ChatType.System);
                     TradePair[o].Enqueue(new S.TradeCancel { Unlock = true });
 
                     return;
@@ -16829,10 +16829,10 @@ case StatType.Durability:
                 if (!TradePair[o].CanGainGold(TradePair[p].TradeGoldAmount))
                 {
                     CanTrade = false;
-                    TradePair[p].ReceiveChat("Trading partner cannot accept any more gold.", ChatType.System);
+                    TradePair[p].ReceiveChat(Resources.ResourceCommon.TradingPartnerCannotAcceptAnyMoreGold, ChatType.System);
                     TradePair[p].Enqueue(new S.TradeCancel { Unlock = true });
 
-                    TradePair[o].ReceiveChat("Unable to accept any more gold.", ChatType.System);
+                    TradePair[o].ReceiveChat(Resources.ResourceCommon.UnableToAcceptAnyMoreGold, ChatType.System);
                     TradePair[o].Enqueue(new S.TradeCancel { Unlock = true });
 
                     return;
@@ -16855,18 +16855,18 @@ case StatType.Durability:
                         TradePair[o].GainItem(u);
                         TradePair[p].Info.Trade[i] = null;
 
-                        Report.ItemMoved(u, MirGridType.Trade, MirGridType.Inventory, i, -99, string.Format("Trade from {0} to {1}", TradePair[p].Name, TradePair[o].Name));
+                        Report.ItemMoved(u, MirGridType.Trade, MirGridType.Inventory, i, -99, string.Format(Resources.ResourceCommon.TradeFromTo, TradePair[p].Name, TradePair[o].Name));
                     }
 
                     if (TradePair[p].TradeGoldAmount > 0)
                     {
-                        Report.GoldChanged(TradePair[p].TradeGoldAmount, true, string.Format("Trade from {0} to {1}", TradePair[p].Name, TradePair[o].Name));
+                        Report.GoldChanged(TradePair[p].TradeGoldAmount, true, string.Format(Resources.ResourceCommon.TradeFromTo, TradePair[p].Name, TradePair[o].Name));
 
                         TradePair[o].GainGold(TradePair[p].TradeGoldAmount);
                         TradePair[p].TradeGoldAmount = 0;
                     }
 
-                    TradePair[p].ReceiveChat("Trade successful.", ChatType.System);
+                    TradePair[p].ReceiveChat(Resources.ResourceCommon.TradeSuccessful, ChatType.System);
                     TradePair[p].Enqueue(new S.TradeConfirm());
 
                     TradePair[p].TradeLocked = false;
@@ -17060,7 +17060,7 @@ case StatType.Durability:
 
             if (hook == null)
             {
-                ReceiveChat("You need a hook.", ChatType.System);
+                ReceiveChat(Resources.ResourceCommon.YouNeedAHook, ChatType.System);
                 return;
             }
             else
@@ -17132,7 +17132,7 @@ case StatType.Durability:
 
                 if (item == null)
                 {
-                    ReceiveChat("You need bait.", ChatType.System);
+                    ReceiveChat(Resources.ResourceCommon.YouNeedBait, ChatType.System);
                     return;
                 }
 
@@ -17183,7 +17183,7 @@ case StatType.Durability:
                         }
 
                         if (dropItem == null)
-                            ReceiveChat("Your fish got away!", ChatType.System);
+                            ReceiveChat(Resources.ResourceCommon.YourFishGotAway, ChatType.System);
                         else if (FreeSpace(Info.Inventory) < 1)
                             ReceiveChat(GameLanguage.NoBagSpace, ChatType.System);
                         else
@@ -17206,7 +17206,7 @@ case StatType.Durability:
                         cancel = true;
                     }
                     else
-                        ReceiveChat("Your fish got away!", ChatType.System);
+                        ReceiveChat(Resources.ResourceCommon.YourFishGotAway, ChatType.System);
                 }
 
                 FishFound = false;

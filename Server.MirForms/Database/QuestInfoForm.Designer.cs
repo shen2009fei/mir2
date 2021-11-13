@@ -66,6 +66,7 @@
             this.ExportButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportSelectedButton = new System.Windows.Forms.Button();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.QuestInfoPanel.SuspendLayout();
@@ -77,10 +78,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(245, 38);
+            this.tabControl1.Location = new System.Drawing.Point(245, 75);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(610, 452);
+            this.tabControl1.Size = new System.Drawing.Size(610, 512);
             this.tabControl1.TabIndex = 16;
             // 
             // tabPage1
@@ -89,7 +90,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(602, 426);
+            this.tabPage1.Size = new System.Drawing.Size(602, 486);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -129,7 +130,7 @@
             this.QuestInfoPanel.Enabled = false;
             this.QuestInfoPanel.Location = new System.Drawing.Point(3, 6);
             this.QuestInfoPanel.Name = "QuestInfoPanel";
-            this.QuestInfoPanel.Size = new System.Drawing.Size(593, 417);
+            this.QuestInfoPanel.Size = new System.Drawing.Size(593, 477);
             this.QuestInfoPanel.TabIndex = 11;
             // 
             // label4
@@ -400,10 +401,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.QuestInfoListBox.FormattingEnabled = true;
             this.QuestInfoListBox.ItemHeight = 12;
-            this.QuestInfoListBox.Location = new System.Drawing.Point(12, 38);
+            this.QuestInfoListBox.Location = new System.Drawing.Point(12, 98);
             this.QuestInfoListBox.Name = "QuestInfoListBox";
             this.QuestInfoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.QuestInfoListBox.Size = new System.Drawing.Size(227, 448);
+            this.QuestInfoListBox.Size = new System.Drawing.Size(227, 484);
             this.QuestInfoListBox.TabIndex = 15;
             this.QuestInfoListBox.SelectedIndexChanged += new System.EventHandler(this.QuestInfoListBox_SelectedIndexChanged);
             // 
@@ -456,11 +457,20 @@
             this.ExportSelectedButton.UseVisualStyleBackColor = true;
             this.ExportSelectedButton.Click += new System.EventHandler(this.ExportSelected_Click);
             // 
+            // tbxSearch
+            // 
+            this.tbxSearch.Location = new System.Drawing.Point(12, 65);
+            this.tbxSearch.Name = "tbxSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(227, 21);
+            this.tbxSearch.TabIndex = 26;
+            this.tbxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxSearch_KeyDown);
+            // 
             // QuestInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 494);
+            this.ClientSize = new System.Drawing.Size(867, 591);
+            this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.ExportSelectedButton);
             this.Controls.Add(this.ImportButton);
             this.Controls.Add(this.ExportButton);
@@ -478,6 +488,7 @@
             this.QuestInfoPanel.ResumeLayout(false);
             this.QuestInfoPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -521,5 +532,6 @@
         private System.Windows.Forms.TextBox QFlagTextBox;
         private System.Windows.Forms.TextBox RequiredMaxLevelTextBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbxSearch;
     }
 }

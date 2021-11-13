@@ -124,6 +124,33 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Buff already obtained. 的本地化字符串。
+        /// </summary>
+        internal static string BuffAlreadyObtained {
+            get {
+                return ResourceManager.GetString("BuffAlreadyObtained", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Buff does not excist. 的本地化字符串。
+        /// </summary>
+        internal static string BuffDoesNotExcist {
+            get {
+                return ResourceManager.GetString("BuffDoesNotExcist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Buff not obtained. 的本地化字符串。
+        /// </summary>
+        internal static string BuffNotObtained {
+            get {
+                return ResourceManager.GetString("BuffNotObtained", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Cannot add yourself 的本地化字符串。
         /// </summary>
         internal static string CannotAddYourself {
@@ -138,6 +165,15 @@ namespace Server.Resources {
         internal static string CannotGoToWarWithYourOwnGuild {
             get {
                 return ResourceManager.GetString("CannotGoToWarWithYourOwnGuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cannot trade when dead 的本地化字符串。
+        /// </summary>
+        internal static string CannotTradeWhenDead {
+            get {
+                return ResourceManager.GetString("CannotTradeWhenDead", resourceCulture);
             }
         }
         
@@ -466,6 +502,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Not enough funds in guild bank. 的本地化字符串。
+        /// </summary>
+        internal static string NotEnoughFundsInGuildBank {
+            get {
+                return ResourceManager.GetString("NotEnoughFundsInGuildBank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Not enough gold. 的本地化字符串。
         /// </summary>
         internal static string NotEnoughGold {
@@ -507,6 +552,60 @@ namespace Server.Resources {
         internal static string PlayerDoesNotExist {
             get {
                 return ResourceManager.GetString("PlayerDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Player {0} already has a trade invitation. 的本地化字符串。
+        /// </summary>
+        internal static string PlayerWhoAlreadyHasATradeInvitation {
+            get {
+                return ResourceManager.GetString("PlayerWhoAlreadyHasATradeInvitation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Player {0} has refused to trade. 的本地化字符串。
+        /// </summary>
+        internal static string PlayerWhoHasRefusedToTrade {
+            get {
+                return ResourceManager.GetString("PlayerWhoHasRefusedToTrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Player {0} is already trading. 的本地化字符串。
+        /// </summary>
+        internal static string PlayerWhoIsAlreadyTrading {
+            get {
+                return ResourceManager.GetString("PlayerWhoIsAlreadyTrading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Player {0} is not allowing trade at the moment. 的本地化字符串。
+        /// </summary>
+        internal static string PlayerWhoIsNotAllowingTradeAtTheMoment {
+            get {
+                return ResourceManager.GetString("PlayerWhoIsNotAllowingTradeAtTheMoment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Player {0} is not within trading range. 的本地化字符串。
+        /// </summary>
+        internal static string PlayerWhoIsNotWithinTradingRange {
+            get {
+                return ResourceManager.GetString("PlayerWhoIsNotWithinTradingRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Player {0} is waiting for you to confirm trade. 的本地化字符串。
+        /// </summary>
+        internal static string PlayerWhoIsWaitingForYouToConfirmTrade {
+            get {
+                return ResourceManager.GetString("PlayerWhoIsWaitingForYouToConfirmTrade", resourceCulture);
             }
         }
         
@@ -642,6 +741,60 @@ namespace Server.Resources {
         internal static string TooHeavyToGetBack {
             get {
                 return ResourceManager.GetString("TooHeavyToGetBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Trade from {0} to {1} 的本地化字符串。
+        /// </summary>
+        internal static string TradeFromTo {
+            get {
+                return ResourceManager.GetString("TradeFromTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Trade successful. 的本地化字符串。
+        /// </summary>
+        internal static string TradeSuccessful {
+            get {
+                return ResourceManager.GetString("TradeSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Trading partner cannot accept all items. 的本地化字符串。
+        /// </summary>
+        internal static string TradingPartnerCannotAcceptAllItems {
+            get {
+                return ResourceManager.GetString("TradingPartnerCannotAcceptAllItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Trading partner cannot accept any more gold. 的本地化字符串。
+        /// </summary>
+        internal static string TradingPartnerCannotAcceptAnyMoreGold {
+            get {
+                return ResourceManager.GetString("TradingPartnerCannotAcceptAnyMoreGold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unable to accept all items. 的本地化字符串。
+        /// </summary>
+        internal static string UnableToAcceptAllItems {
+            get {
+                return ResourceManager.GetString("UnableToAcceptAllItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unable to accept any more gold. 的本地化字符串。
+        /// </summary>
+        internal static string UnableToAcceptAnyMoreGold {
+            get {
+                return ResourceManager.GetString("UnableToAcceptAnyMoreGold", resourceCulture);
             }
         }
         
@@ -840,6 +993,15 @@ namespace Server.Resources {
         internal static string YouAreAlreadyMarried {
             get {
                 return ResourceManager.GetString("YouAreAlreadyMarried", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You are already trading. 的本地化字符串。
+        /// </summary>
+        internal static string YouAreAlreadyTrading {
+            get {
+                return ResourceManager.GetString("YouAreAlreadyTrading", resourceCulture);
             }
         }
         
@@ -1096,6 +1258,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You cannot trade with your self. 的本地化字符串。
+        /// </summary>
+        internal static string YouCanNotTradeWithYourSelf {
+            get {
+                return ResourceManager.GetString("YouCanNotTradeWithYourSelf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You cannot use this type of ring. 的本地化字符串。
         /// </summary>
         internal static string YouCanNotUseThisTypeOfRing {
@@ -1213,6 +1384,15 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You do not have the correct guild rank. 的本地化字符串。
+        /// </summary>
+        internal static string YouDoNotHaveTheCorrectGuildRank {
+            get {
+                return ResourceManager.GetString("YouDoNotHaveTheCorrectGuildRank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You have been removed from your guild. 的本地化字符串。
         /// </summary>
         internal static string YouHaveBeenRemovedFromYourGuild {
@@ -1258,11 +1438,29 @@ namespace Server.Resources {
         }
         
         /// <summary>
+        ///   查找类似 You need a hook. 的本地化字符串。
+        /// </summary>
+        internal static string YouNeedAHook {
+            get {
+                return ResourceManager.GetString("YouNeedAHook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 You need at least 1 leader online. 的本地化字符串。
         /// </summary>
         internal static string YouNeedAtLeast1LeaderOnline {
             get {
                 return ResourceManager.GetString("YouNeedAtLeast1LeaderOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You need bait. 的本地化字符串。
+        /// </summary>
+        internal static string YouNeedBait {
+            get {
+                return ResourceManager.GetString("YouNeedBait", resourceCulture);
             }
         }
         
@@ -1335,6 +1533,15 @@ namespace Server.Resources {
         internal static string YourCaNotBeRefined {
             get {
                 return ResourceManager.GetString("YourCaNotBeRefined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your fish got away! 的本地化字符串。
+        /// </summary>
+        internal static string YourFishGotAway {
+            get {
+                return ResourceManager.GetString("YourFishGotAway", resourceCulture);
             }
         }
         

@@ -138,11 +138,23 @@
   <data name="BlackStone" xml:space="preserve">
     <value>黑色灵兽石</value>
   </data>
+  <data name="BuffAlreadyObtained" xml:space="preserve">
+    <value>增益已经获得。</value>
+  </data>
+  <data name="BuffDoesNotExcist" xml:space="preserve">
+    <value>增益不存在。</value>
+  </data>
+  <data name="BuffNotObtained" xml:space="preserve">
+    <value>未获得增益。</value>
+  </data>
   <data name="CannotAddYourself" xml:space="preserve">
     <value>无法添加自己</value>
   </data>
   <data name="CannotGoToWarWithYourOwnGuild" xml:space="preserve">
     <value>不能与自己的行会开战。</value>
+  </data>
+  <data name="CannotTradeWhenDead" xml:space="preserve">
+    <value>死后不能交易</value>
   </data>
   <data name="CaNotFindAnybodyByTheName" xml:space="preserve">
     <value>找不到名字为 {0} 的任何人。</value>
@@ -252,6 +264,9 @@
   <data name="NoMoreSpace" xml:space="preserve">
     <value>没有更多的背包空间。</value>
   </data>
+  <data name="NotEnoughFundsInGuildBank" xml:space="preserve">
+    <value>行会银行资金不足。</value>
+  </data>
   <data name="NotEnoughGold" xml:space="preserve">
     <value>没有足够的金币。</value>
   </data>
@@ -266,6 +281,24 @@
   </data>
   <data name="PlayerDoesNotExist" xml:space="preserve">
     <value>玩家不存在</value>
+  </data>
+  <data name="PlayerWhoAlreadyHasATradeInvitation" xml:space="preserve">
+    <value>玩家 {0} 已有交易邀请。</value>
+  </data>
+  <data name="PlayerWhoHasRefusedToTrade" xml:space="preserve">
+    <value>玩家 {0} 拒绝交易。</value>
+  </data>
+  <data name="PlayerWhoIsAlreadyTrading" xml:space="preserve">
+    <value>玩家 {0} 已经在交易。</value>
+  </data>
+  <data name="PlayerWhoIsNotAllowingTradeAtTheMoment" xml:space="preserve">
+    <value>玩家 {0} 目前不允许交易。</value>
+  </data>
+  <data name="PlayerWhoIsNotWithinTradingRange" xml:space="preserve">
+    <value>玩家 {0} 不在交易范围内。</value>
+  </data>
+  <data name="PlayerWhoIsWaitingForYouToConfirmTrade" xml:space="preserve">
+    <value>玩家 {0} 正在等待你确认交易。</value>
   </data>
   <data name="Rank" xml:space="preserve">
     <value>军阶</value>
@@ -311,6 +344,24 @@
   </data>
   <data name="TooHeavyToGetBack" xml:space="preserve">
     <value>太重无法取回</value>
+  </data>
+  <data name="TradeFromTo" xml:space="preserve">
+    <value>从{0}交易给{1}</value>
+  </data>
+  <data name="TradeSuccessful" xml:space="preserve">
+    <value>交易成功。</value>
+  </data>
+  <data name="TradingPartnerCannotAcceptAllItems" xml:space="preserve">
+    <value>交易伙伴不能接受所有物品。</value>
+  </data>
+  <data name="TradingPartnerCannotAcceptAnyMoreGold" xml:space="preserve">
+    <value>交易伙伴不能再接受任何金币。</value>
+  </data>
+  <data name="UnableToAcceptAllItems" xml:space="preserve">
+    <value>无法接受所有物品。</value>
+  </data>
+  <data name="UnableToAcceptAnyMoreGold" xml:space="preserve">
+    <value>无法接受更多的金币。</value>
   </data>
   <data name="WarEndedWith" xml:space="preserve">
     <value> {0} 结束战争。</value>
@@ -377,6 +428,9 @@
   </data>
   <data name="YouAreAlreadyMarried" xml:space="preserve">
     <value>你已经结婚了。</value>
+  </data>
+  <data name="YouAreAlreadyTrading" xml:space="preserve">
+    <value>你已经在交易了。</value>
   </data>
   <data name="YouAreAlreadyWearingAWeddingRing" xml:space="preserve">
     <value>你已经戴上了结婚戒指。</value>
@@ -462,6 +516,9 @@
   <data name="YouCannotTeleportForAnotherSeconds" xml:space="preserve">
     <value>你不能在 {0} 秒内再传送</value>
   </data>
+  <data name="YouCanNotTradeWithYourSelf" xml:space="preserve">
+    <value>你不能与自己交易。</value>
+  </data>
   <data name="YouCanNotUseThisTypeOfRing" xml:space="preserve">
     <value>您不能使用这种类型的戒指。</value>
   </data>
@@ -501,6 +558,9 @@
   <data name="YouDoNotHaveEnoughGoldToReplaceYourWeddingRing" xml:space="preserve">
     <value>你没有足够的金币来换取你的结婚戒指。</value>
   </data>
+  <data name="YouDoNotHaveTheCorrectGuildRank" xml:space="preserve">
+    <value>您没有正确的行会等级。</value>
+  </data>
   <data name="YouHaveBeenRemovedFromYourGuild" xml:space="preserve">
     <value>您已被行会移除</value>
   </data>
@@ -516,8 +576,14 @@
   <data name="YouMustHaveASaddleToRideYourMount" xml:space="preserve">
     <value>你必须有一个马鞍才能骑上你的坐骑</value>
   </data>
+  <data name="YouNeedAHook" xml:space="preserve">
+    <value>你需要一个鱼钩。</value>
+  </data>
   <data name="YouNeedAtLeast1LeaderOnline" xml:space="preserve">
     <value>你需要至少 1 个掌门人在线.</value>
+  </data>
+  <data name="YouNeedBait" xml:space="preserve">
+    <value>你需要诱饵。</value>
   </data>
   <data name="YouNeedToBeAtLeastLevelToGetMarried" xml:space="preserve">
     <value>你至少需要达到 {0} 级才能结婚。</value>
@@ -542,6 +608,9 @@
   </data>
   <data name="YourCaNotBeRefined" xml:space="preserve">
     <value>你的 {0} 无法精炼。</value>
+  </data>
+  <data name="YourFishGotAway" xml:space="preserve">
+    <value>你的鱼跑了！</value>
   </data>
   <data name="YourIsNowBeingRefinedPleaseCheckBackInMinute" xml:space="preserve">
     <value>你的{0}正在精炼中，请在 {1} 分钟后回来查看。</value>
