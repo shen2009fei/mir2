@@ -4248,7 +4248,7 @@ namespace Client.MirObjects
                             Libraries.Monsters[(ushort)Monster.BoneLord].DrawBlend(640 + FrameIndex + (int)Direction * 20, DrawLocation, Color.White, true);
                             break;
                     }
-                    break;
+                    break;               
                 case Monster.HolyDeva:
                     switch (CurrentAction)
                     {

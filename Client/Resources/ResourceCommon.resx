@@ -129,6 +129,9 @@
   <data name="Archer" xml:space="preserve">
     <value>Archer</value>
   </data>
+  <data name="AreYouSureYouWantToCancelThisQuest" xml:space="preserve">
+    <value>Are you sure you want to cancel this quest?</value>
+  </data>
   <data name="AreYouSureYouWishToRemove" xml:space="preserve">
     <value>Are you sure you wish to remove '{0}'?</value>
   </data>

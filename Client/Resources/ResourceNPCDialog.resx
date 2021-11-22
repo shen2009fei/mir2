@@ -177,6 +177,9 @@
   <data name="CheckRefine" xml:space="preserve">
     <value>Check Refine</value>
   </data>
+  <data name="CompleteBrackets" xml:space="preserve">
+    <value>(Complete)</value>
+  </data>
   <data name="Consignment" xml:space="preserve">
     <value>Consignment</value>
   </data>
@@ -231,6 +234,9 @@
   <data name="IAmInterestedInPurchasingFor" xml:space="preserve">
     <value>I am interested in purchasing {0} for {1}.</value>
   </data>
+  <data name="InProgressBrackets" xml:space="preserve">
+    <value>(In Progress)</value>
+  </data>
   <data name="IsntARing" xml:space="preserve">
     <value>{0} isn't a ring.</value>
   </data>
@@ -266,6 +272,9 @@
   </data>
   <data name="PricePearl" xml:space="preserve">
     <value>Price: {0} pearls</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Progress</value>
   </data>
   <data name="ProtectionGlyph" xml:space="preserve">
     <value>Protection Glyph</value>
@@ -326,6 +335,9 @@
   </data>
   <data name="STARTINGBID" xml:space="preserve">
     <value>STARTING BID</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>Tasks</value>
   </data>
   <data name="ThisItemHasAlreadyBeenSold" xml:space="preserve">
     <value>This item has already been sold.</value>

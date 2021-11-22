@@ -177,6 +177,9 @@
   <data name="CheckRefine" xml:space="preserve">
     <value>检查精炼</value>
   </data>
+  <data name="CompleteBrackets" xml:space="preserve">
+    <value>(完成)</value>
+  </data>
   <data name="Consignment" xml:space="preserve">
     <value>寄售</value>
   </data>
@@ -231,6 +234,9 @@
   <data name="IAmInterestedInPurchasingFor" xml:space="preserve">
     <value>我有兴趣以 {1} 金币购买 {0}。</value>
   </data>
+  <data name="InProgressBrackets" xml:space="preserve">
+    <value>(进行中)</value>
+  </data>
   <data name="IsntARing" xml:space="preserve">
     <value>{0} 不是戒子。</value>
   </data>
@@ -266,6 +272,9 @@
   </data>
   <data name="PricePearl" xml:space="preserve">
     <value>价格: {0} 珍珠</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>进度</value>
   </data>
   <data name="ProtectionGlyph" xml:space="preserve">
     <value>保护雕文</value>
@@ -326,6 +335,9 @@
   </data>
   <data name="STARTINGBID" xml:space="preserve">
     <value>起拍价</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>任务</value>
   </data>
   <data name="ThisItemHasAlreadyBeenSold" xml:space="preserve">
     <value>此商品已售出。</value>

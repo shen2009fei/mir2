@@ -241,6 +241,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 (Complete) 的本地化字符串。
+        /// </summary>
+        internal static string CompleteBrackets {
+            get {
+                return ResourceManager.GetString("CompleteBrackets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consignment 的本地化字符串。
         /// </summary>
         internal static string Consignment {
@@ -403,6 +412,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 (In Progress) 的本地化字符串。
+        /// </summary>
+        internal static string InProgressBrackets {
+            get {
+                return ResourceManager.GetString("InProgressBrackets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 {0} isn&apos;t a ring. 的本地化字符串。
         /// </summary>
         internal static string IsntARing {
@@ -507,6 +525,15 @@ namespace Client.Resources {
         internal static string PricePearl {
             get {
                 return ResourceManager.GetString("PricePearl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Progress 的本地化字符串。
+        /// </summary>
+        internal static string Progress {
+            get {
+                return ResourceManager.GetString("Progress", resourceCulture);
             }
         }
         
@@ -687,6 +714,15 @@ namespace Client.Resources {
         internal static string STARTINGBID {
             get {
                 return ResourceManager.GetString("STARTINGBID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tasks 的本地化字符串。
+        /// </summary>
+        internal static string Tasks {
+            get {
+                return ResourceManager.GetString("Tasks", resourceCulture);
             }
         }
         

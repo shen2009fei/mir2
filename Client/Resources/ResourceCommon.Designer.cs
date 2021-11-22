@@ -97,6 +97,15 @@ namespace Client.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Are you sure you want to cancel this quest? 的本地化字符串。
+        /// </summary>
+        internal static string AreYouSureYouWantToCancelThisQuest {
+            get {
+                return ResourceManager.GetString("AreYouSureYouWantToCancelThisQuest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Are you sure you wish to remove &apos;{0}&apos;? 的本地化字符串。
         /// </summary>
         internal static string AreYouSureYouWishToRemove {

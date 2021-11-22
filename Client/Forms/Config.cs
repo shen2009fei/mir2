@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using Client;
-
 namespace Launcher
 {
 
@@ -21,10 +20,22 @@ namespace Launcher
 
         private void Config_Load(object sender, EventArgs e)
         {
-            this.label10.Text = GameLanguage.Resolution;
-            this.AutoStart_label.Text = GameLanguage.Autostart;
-            this.ID_l.Text = GameLanguage.Usrname;
-            this.Password_l.Text = GameLanguage.Password;
+            this.label10.Text =  Client.Resources.ResourceLaunch.Resolution;
+            this.label9.Text = Client.Resources.ResourceLaunch.Graphics;
+            //GameLanguage.Resolution;
+            this.Fullscreen_label.Text = Client.Resources.ResourceLaunch.Fullscreen;
+            this.FPScap_label.Text = Client.Resources.ResourceLaunch.FPSCap;
+            this.OnTop_label.Text = Client.Resources.ResourceLaunch.AlwaysOnTop;
+            this.label11.Text = Client.Resources.ResourceLaunch.Game;
+
+            this.AutoStart_label.Text = Client.Resources.ResourceLaunch.AutoStart;
+            /*GameLanguage.Autostart;*/
+            this.label12.Text = Client.Resources.ResourceLaunch.AccountDetails;
+
+            this.ID_l.Text = Client.Resources.ResourceLaunch.Username;
+            //GameLanguage.Usrname;
+            this.Password_l.Text = Client.Resources.ResourceLaunch.Password;
+            //GameLanguage.Password;
         }
 
         private void Res1_pb_Click(object sender, EventArgs e)

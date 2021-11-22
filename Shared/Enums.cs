@@ -657,6 +657,7 @@ public enum Monster : ushort
     MutantWarg = 461,
     GrassElemental = 462,
     RockElemental = 463,
+    //SandStorm = 490,//todo
 
     EvilMir = 900,
     EvilMirBody = 901,

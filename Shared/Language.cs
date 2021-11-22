@@ -122,10 +122,10 @@ public class GameLanguage
                          //CharacterDeleted = "Your character was deleted successfully.",
                          //CharacterCreated = "Your character was created successfully.",
 
-                         Resolution = "Resolution",
-                         Autostart = "Auto start",
-                         Usrname = "Username",
-                         Password = "Password",
+                         //Resolution = "Resolution",
+                         //Autostart = "Auto start",
+                         //Usrname = "Username",
+                         //Password = "Password",
 
                          //ShuttingDown = "Disconnected: Server is shutting down.",
                          MaxCombine = "Max Combine Count : {0}{1}Shift + Left click to split the stack",
@@ -399,10 +399,10 @@ public class GameLanguage
         //GameLanguage.CharacterDeleted = reader.ReadString("Language", "CharacterDeleted", GameLanguage.CharacterDeleted);
         //GameLanguage.CharacterCreated = reader.ReadString("Language", "CharacterCreated", GameLanguage.CharacterCreated);
 
-        GameLanguage.Resolution = reader.ReadString("Language", "Resolution", GameLanguage.Resolution);
-        GameLanguage.Autostart = reader.ReadString("Language", "Autostart", GameLanguage.Autostart);
-        GameLanguage.Usrname = reader.ReadString("Language", "Usrname", GameLanguage.Usrname);
-        GameLanguage.Password = reader.ReadString("Language", "Password", GameLanguage.Password);
+        //GameLanguage.Resolution = reader.ReadString("Language", "Resolution", GameLanguage.Resolution);
+        //GameLanguage.Autostart = reader.ReadString("Language", "Autostart", GameLanguage.Autostart);
+        //GameLanguage.Usrname = reader.ReadString("Language", "Usrname", GameLanguage.Usrname);
+        //GameLanguage.Password = reader.ReadString("Language", "Password", GameLanguage.Password);
 
         //GameLanguage.ShuttingDown = reader.ReadString("Language", "ShuttingDown", GameLanguage.ShuttingDown);
 
@@ -637,10 +637,10 @@ public class GameLanguage
         //reader.Write("Language", "CharacterDeleted", GameLanguage.CharacterDeleted);
         //reader.Write("Language", "CharacterCreated", GameLanguage.CharacterCreated);
 
-        reader.Write("Language", "Resolution", GameLanguage.Resolution);
-        reader.Write("Language", "Autostart", GameLanguage.Autostart);
-        reader.Write("Language", "Usrname", GameLanguage.Usrname);
-        reader.Write("Language", "Password", GameLanguage.Password);
+        //reader.Write("Language", "Resolution", GameLanguage.Resolution);
+        //reader.Write("Language", "Autostart", GameLanguage.Autostart);
+        //reader.Write("Language", "Usrname", GameLanguage.Usrname);
+        //reader.Write("Language", "Password", GameLanguage.Password);
 
         //reader.Write("Language", "ShuttingDown", GameLanguage.ShuttingDown);
 

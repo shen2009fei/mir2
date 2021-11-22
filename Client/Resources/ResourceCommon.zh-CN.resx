@@ -129,6 +129,9 @@
   <data name="Archer" xml:space="preserve">
     <value>弓箭手</value>
   </data>
+  <data name="AreYouSureYouWantToCancelThisQuest" xml:space="preserve">
+    <value>您确定要取消此任务吗？</value>
+  </data>
   <data name="AreYouSureYouWishToRemove" xml:space="preserve">
     <value>您确定要移除“{0}”吗？</value>
   </data>

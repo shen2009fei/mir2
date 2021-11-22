@@ -184,7 +184,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Client.MirObjects.QueuedAction" Collapsed="true">
-    <Position X="47.25" Y="2.5" Width="1.5" />
+    <Position X="50.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAACIAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>MirObjects\PlayerObject.cs</FileName>
@@ -275,7 +275,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Client.MirObjects.Frame" Collapsed="true">
-    <Position X="50.75" Y="0.5" Width="1.5" />
+    <Position X="52.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAGAAAAAAiAAAAABAIAAAAQAAAAAAEAACAACAAAAEBA=</HashCode>
       <FileName>MirObjects\Frames.cs</FileName>
@@ -296,7 +296,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Client.MirObjects.MapReader" Collapsed="true">
-    <Position X="50.75" Y="1.5" Width="1.5" />
+    <Position X="52.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACIABAgAAAAAAIAAAEAAAAAAAAAAAAAIAABAAAA=</HashCode>
       <FileName>MirObjects\MapCode.cs</FileName>
@@ -324,28 +324,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Client.MirGraphics.DXManager" Collapsed="true">
-    <Position X="40.5" Y="3.75" Width="1.5" />
+    <Position X="50.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>FCAEkAiAhAAIAkAAABAAIiQQAgChBEQRAMgAAlAFUEA=</HashCode>
       <FileName>MirGraphics\DXManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Client.MirGraphics.Libraries" Collapsed="true">
-    <Position X="42.25" Y="3.75" Width="1.5" />
+    <Position X="50.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>YgBAFAWgQA0IiFAMBhUAACYAABAQASAAEBAkFkrBAAA=</HashCode>
       <FileName>MirGraphics\MLibrary.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Client.MirGraphics.MLibrary" Collapsed="true">
-    <Position X="42.25" Y="4.75" Width="1.5" />
+    <Position X="49" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAABAACAGAwSAAQAMCEgAEABAAQEAAACAAACAAAE=</HashCode>
       <FileName>MirGraphics\MLibrary.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Client.MirGraphics.MImage" Collapsed="true">
-    <Position X="40.5" Y="4.75" Width="1.5" />
+    <Position X="47.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAABABIAQBAAAEAAiAEhAABAAEBAAARAAAAAYeEA=</HashCode>
       <FileName>MirGraphics\MLibrary.cs</FileName>

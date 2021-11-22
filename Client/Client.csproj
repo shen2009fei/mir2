@@ -106,7 +106,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <WarningLevel>1</WarningLevel>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <LangVersion>8.0</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>SecurityRules.ruleset</CodeAnalysisRuleSet>
@@ -254,6 +254,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceHelpDialog.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourceLaunch.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceLaunch.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\ResourceShortcuts.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -407,6 +412,11 @@
       <LastGenOutput>ResourceHelpDialog.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ResourceHelpDialog.zh-CN.resx" />
+    <EmbeddedResource Include="Resources\ResourceLaunch.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceLaunch.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceLaunch.zh-CN.resx" />
     <EmbeddedResource Include="Resources\ResourceShortcuts.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceShortcuts.Designer.cs</LastGenOutput>
