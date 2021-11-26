@@ -56,15 +56,19 @@ namespace Server
             UpdateInterface();
         }
 
-        private void UpdateInterface()
+        private void UpdateInterface(bool refresh = true)
         {
-            if (NPCInfoListBox.Items.Count != Envir.NPCInfoList.Count)
+            if (refresh)
             {
-                NPCInfoListBox.Items.Clear();
+                if (NPCInfoListBox.Items.Count != Envir.NPCInfoList.Count)
+                {
+                    NPCInfoListBox.Items.Clear();
 
-                for (int i = 0; i < Envir.NPCInfoList.Count; i++)
-                    NPCInfoListBox.Items.Add(Envir.NPCInfoList[i]);
+                    for (int i = 0; i < Envir.NPCInfoList.Count; i++)
+                        NPCInfoListBox.Items.Add(Envir.NPCInfoList[i]);
+                }
             }
+          
 
             _selectedNPCInfos = NPCInfoListBox.SelectedItems.Cast<NPCInfo>().ToList();
 
@@ -151,7 +155,7 @@ namespace Server
 
         private void NPCInfoListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateInterface();
+            UpdateInterface(false);
         }
 
         private void NFileNameTextBox_TextChanged(object sender, EventArgs e)
@@ -561,6 +565,17 @@ namespace Server
 
             for (int i = 0; i < _selectedNPCInfos.Count; i++)
                 _selectedNPCInfos[i].Conquest = temp.Index;
+        }
+
+        private void tbxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var npcName = tbxSearch.Text.Trim().ToLower();
+                var npcList = Envir.NPCInfoList.FindAll(x => x.Name.ToLower().Contains(npcName) || x.FileName.ToLower().Contains(npcName)).ToArray();
+                NPCInfoListBox.Items.Clear();
+                NPCInfoListBox.Items.AddRange(npcList);
+            }
         }
     }
 }

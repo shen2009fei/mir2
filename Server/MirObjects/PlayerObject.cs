@@ -3483,7 +3483,7 @@ namespace Server.MirObjects
 
                             if (player == null)
                             {
-                                ReceiveChat(string.Format("Could not find {0}", parts[0]), ChatType.System);
+                                ReceiveChat(string.Format("Could not find {0}", parts[1]), ChatType.System);
                                 return;
                             }
                             if (!player.GMNeverDie) player.Die();

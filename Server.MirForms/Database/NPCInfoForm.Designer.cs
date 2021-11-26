@@ -78,6 +78,8 @@
             this.ExportButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportSelectedButton = new System.Windows.Forms.Button();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -92,10 +94,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(403, 38);
+            this.tabControl1.Location = new System.Drawing.Point(403, 52);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(529, 499);
+            this.tabControl1.Size = new System.Drawing.Size(529, 572);
             this.tabControl1.TabIndex = 16;
             // 
             // tabPage1
@@ -123,7 +125,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(521, 473);
+            this.tabPage1.Size = new System.Drawing.Size(521, 546);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -342,7 +344,7 @@
             this.tabPage2.Controls.Add(this.MinLev_textbox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(511, 245);
+            this.tabPage2.Size = new System.Drawing.Size(521, 546);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visibility";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -644,10 +646,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.NPCInfoListBox.FormattingEnabled = true;
             this.NPCInfoListBox.ItemHeight = 12;
-            this.NPCInfoListBox.Location = new System.Drawing.Point(12, 38);
+            this.NPCInfoListBox.Location = new System.Drawing.Point(12, 110);
             this.NPCInfoListBox.Name = "NPCInfoListBox";
             this.NPCInfoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.NPCInfoListBox.Size = new System.Drawing.Size(385, 496);
+            this.NPCInfoListBox.Size = new System.Drawing.Size(385, 508);
             this.NPCInfoListBox.TabIndex = 15;
             this.NPCInfoListBox.SelectedIndexChanged += new System.EventHandler(this.NPCInfoListBox_SelectedIndexChanged);
             // 
@@ -701,11 +703,30 @@
             this.ExportSelectedButton.UseVisualStyleBackColor = true;
             this.ExportSelectedButton.Click += new System.EventHandler(this.ExportSelected_Click);
             // 
+            // tbxSearch
+            // 
+            this.tbxSearch.Location = new System.Drawing.Point(12, 77);
+            this.tbxSearch.Name = "tbxSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(317, 21);
+            this.tbxSearch.TabIndex = 26;
+            this.tbxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxSearch_KeyDown);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 59);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(29, 12);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "搜索";
+            // 
             // NPCInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 548);
+            this.ClientSize = new System.Drawing.Size(944, 635);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.ExportSelectedButton);
             this.Controls.Add(this.ImportButton);
             this.Controls.Add(this.ExportButton);
@@ -727,6 +748,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.EndMin_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StartMin_num)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -782,5 +804,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox ConquestHidden_combo;
+        private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.Label label15;
     }
 }
