@@ -457,7 +457,7 @@ namespace Server.Resources {
         }
         
         /// <summary>
-        ///   查找类似 Moved to Map {0} at {1}:{2 的本地化字符串。
+        ///   查找类似 Moved to Map {0} at {1}:{2} 的本地化字符串。
         /// </summary>
         internal static string MovedToMapCord {
             get {
@@ -475,7 +475,7 @@ namespace Server.Resources {
         }
         
         /// <summary>
-        ///   查找类似 Moved to Map {0}:[{1}] at {2}:{3 的本地化字符串。
+        ///   查找类似 Moved to Map {0}:[{1}] at {2}:{3} 的本地化字符串。
         /// </summary>
         internal static string MovedToMapInstanceCord {
             get {

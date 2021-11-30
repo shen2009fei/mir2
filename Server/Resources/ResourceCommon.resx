@@ -250,13 +250,13 @@
     <value>Moved to Map {0}</value>
   </data>
   <data name="MovedToMapCord" xml:space="preserve">
-    <value>Moved to Map {0} at {1}:{2</value>
+    <value>Moved to Map {0} at {1}:{2}</value>
   </data>
   <data name="MovedToMapInstance" xml:space="preserve">
     <value>Moved to Map {0}:[{1}]</value>
   </data>
   <data name="MovedToMapInstanceCord" xml:space="preserve">
-    <value>Moved to Map {0}:[{1}] at {2}:{3</value>
+    <value>Moved to Map {0}:[{1}] at {2}:{3}</value>
   </data>
   <data name="NoBid" xml:space="preserve">
     <value>No Bid</value>

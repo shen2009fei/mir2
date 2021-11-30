@@ -120,7 +120,7 @@
   <data name="Attacking" xml:space="preserve">
     <value>攻击</value>
   </data>
-  <data name="Chat Shortcuts" xml:space="preserve">
+  <data name="ChatShortcuts" xml:space="preserve">
     <value>聊天快捷键</value>
   </data>
   <data name="Chatting" xml:space="preserve">

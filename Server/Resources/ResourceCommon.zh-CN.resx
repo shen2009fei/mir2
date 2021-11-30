@@ -250,13 +250,13 @@
     <value>已移动到地图 {0}</value>
   </data>
   <data name="MovedToMapCord" xml:space="preserve">
-    <value>已移动到地图 {0} 坐标 {1}:{2</value>
+    <value>已移动到地图 {0} 坐标 {1}:{2}</value>
   </data>
   <data name="MovedToMapInstance" xml:space="preserve">
     <value>已移动到地图 {0}:[{1}]</value>
   </data>
   <data name="MovedToMapInstanceCord" xml:space="preserve">
-    <value>已移动到地图 {0}:[{1}] 坐标 {2}:{3</value>
+    <value>已移动到地图 {0}:[{1}] 坐标 {2}:{3}</value>
   </data>
   <data name="NoBid" xml:space="preserve">
     <value>无竞价</value>
