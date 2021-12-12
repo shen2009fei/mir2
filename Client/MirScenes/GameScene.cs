@@ -9000,6 +9000,10 @@ namespace Client.MirScenes
 
         public static List<Effect> Effects = new List<Effect>();
 
+        //for dynamic download
+        public bool downloading = false;
+        //public bool initialed = false;
+        //public static object lockObject = new object();
         public MapControl()
         {
             MapButtons = MouseButtons.None;
@@ -9016,6 +9020,9 @@ namespace Client.MirScenes
 
             MouseDown += OnMouseDown;
             MouseMove += (o, e) => MouseLocation = e.Location;
+
+            
+            
             Click += OnMouseClick;
         }
 
@@ -9030,10 +9037,23 @@ namespace Client.MirScenes
                 Objects.Add(User);
 
 
-
             MapObject.MouseObject = null;
             MapObject.TargetObject = null;
             MapObject.MagicObject = null;
+            //todo: 下载地图
+            if (!File.Exists(FileName) && downloading == false)
+            {
+                lock (this)
+                {
+                    if (!File.Exists(FileName) && downloading == false)
+                    {
+                        downloading = true;
+                        Program.PForm.EnqueueDynamic(FileName);
+                    }
+                }
+                
+            }
+            
             MapReader Map = new MapReader(FileName);
             M2CellInfo = Map.MapCells;
             Width = Map.Width;

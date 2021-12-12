@@ -59,6 +59,7 @@ namespace Launcher
             this.ProgressCurrent_pb = new System.Windows.Forms.PictureBox();
             this.TotalProg_pb = new System.Windows.Forms.PictureBox();
             this.Launch_pb = new System.Windows.Forms.PictureBox();
+            this.DownloadTimer = new System.Windows.Forms.Timer(this.components);
             this.Movement_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_pb)).BeginInit();
@@ -331,6 +332,12 @@ namespace Launcher
             this.Launch_pb.MouseLeave += new System.EventHandler(this.Launch_pb_MouseLeave);
             this.Launch_pb.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Launch_pb_MouseUp);
             // 
+            // DownloadTimer
+            // 
+            this.DownloadTimer.Enabled = true;
+            this.DownloadTimer.Interval = 200;
+            this.DownloadTimer.Tick += new System.EventHandler(this.DownloadTimer_Tick);
+            // 
             // AMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -400,6 +407,7 @@ namespace Launcher
         private System.Windows.Forms.Label Version_label;
         private System.Windows.Forms.PictureBox Config_pb;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Timer DownloadTimer;
     }
 }
 

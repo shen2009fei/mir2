@@ -10,6 +10,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using Client;
 using System.Linq;
+using Client.MirGraphics;
+using Client.MirControls;
+using Client.MirScenes;
 
 namespace Launcher
 {
@@ -20,10 +23,10 @@ namespace Launcher
 
         private FileInformation _currentFile;
         public bool Completed, Checked, CleanFiles, LabelSwitch, ErrorFound;
-        
+
         public List<FileInformation> OldList;
         public Queue<FileInformation> DownloadList;
-
+        public static Queue<Object> DownloadListDynamic = new Queue<Object>();
         private Stopwatch _stopwatch = Stopwatch.StartNew();
 
         public Thread _workThread;
@@ -41,6 +44,7 @@ namespace Launcher
             InitializeComponent();
             BackColor = Color.FromArgb(1, 0, 0);
             TransparencyKey = Color.FromArgb(1, 0, 0);
+            ThreadPool.SetMaxThreads(5, 5);
         }
 
         public static void SaveError(string ex)
@@ -65,8 +69,9 @@ namespace Launcher
                 OldList = new List<FileInformation>();
                 DownloadList = new Queue<FileInformation>();
 
+                //下载补丁列表文件PList.gz
                 byte[] data = Download(Settings.P_PatchFileName);
-
+                //解析补丁列表文件，并装入OldList
                 if (data != null)
                 {
                     using MemoryStream stream = new MemoryStream(data);
@@ -79,11 +84,11 @@ namespace Launcher
                     Completed = true;
                     return;
                 }
-
+                //检查文件状态，不一致的添加到下载队列
                 _fileCount = OldList.Count;
                 for (int i = 0; i < OldList.Count; i++)
                     CheckFile(OldList[i]);
-
+                //重置状态
                 Checked = true;
                 _fileCount = 0;
                 _currentCount = 0;
@@ -106,10 +111,34 @@ namespace Launcher
             }
         }
 
-        
+        private void BeginDownloadDynamic()
+        {
+            if (DownloadListDynamic == null) return;
+
+            if (DownloadListDynamic.Count == 0)
+            {
+                return;
+            }
+            lock (DownloadListDynamic)
+            {
+                if (DownloadListDynamic.Count > 0)
+                {
+                    var currentFileDynamic = DownloadListDynamic.Dequeue();
+                    ThreadPool.QueueUserWorkItem(DownloadDynamic, currentFileDynamic);
+                }
+            }
+        }
+
+        public void EnqueueDynamic(object lib)
+        {
+            //lock (DownloadListDynamic)
+            //{
+                DownloadListDynamic.Enqueue(lib);
+            //}
+        }
 
         private void BeginDownload()
-        {           
+        {
             if (DownloadList == null) return;
 
             if (DownloadList.Count == 0)
@@ -134,10 +163,12 @@ namespace Launcher
             string fileName;
             for (int i = 0; i < fileNames.Length; i++)
             {
+                //屏幕截图 跳过
                 if (fileNames[i].StartsWith(".\\Screenshots\\")) continue;
 
                 fileName = Path.GetFileName(fileNames[i]);
 
+                //配置文件跳过
                 if (fileName == "Mir2Config.ini" || fileName == System.AppDomain.CurrentDomain.FriendlyName) continue;
 
                 try
@@ -145,9 +176,15 @@ namespace Launcher
                     if (!NeedFile(fileNames[i]))
                         File.Delete(fileNames[i]);
                 }
-                catch{}
+                catch { }
             }
         }
+
+        /// <summary>
+        /// 文件与补丁列表中的文件匹配为需要的文件
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         public bool NeedFile(string fileName)
         {
             for (int i = 0; i < OldList.Count; i++)
@@ -173,32 +210,130 @@ namespace Launcher
             FileInformation info = GetFileInformation(Settings.P_Client + old.FileName);
             _currentCount++;
 
-            if (info == null || old.Length != info.Length || old.Creation != info.Creation)
+            //本地文件和补丁列表文件，一摸一样，直接范围
+            if (info != null && old.Length == info.Length && old.Creation == info.Creation)
             {
-                if (info != null && (Path.GetExtension(old.FileName).ToLower() == ".dll" || Path.GetExtension(old.FileName).ToLower() == ".exe"))
+                return;
+            }
+            //如果本地不为空，后缀是dll和exe需要改名添加前缀Old__
+            if (info != null && (Path.GetExtension(old.FileName).ToLower() == ".dll" || Path.GetExtension(old.FileName).ToLower() == ".exe"))
+            {
+                string oldFilename = Path.Combine(Path.GetDirectoryName(old.FileName), ("Old__" + Path.GetFileName(old.FileName)));
+
+                try
                 {
-                    string oldFilename = Path.Combine(Path.GetDirectoryName(old.FileName), ("Old__" + Path.GetFileName(old.FileName)));
-
-                    try
-                    {
-                        File.Move(Settings.P_Client + old.FileName, oldFilename);
-                    }
-                    catch (UnauthorizedAccessException ex)
-                    {
-                        SaveError(ex.ToString());
-                    }
-                    finally
-                    {
-                        //Might cause an infinite loop if it can never gain access
-                        Restart = true;
-                    }
+                    File.Move(Settings.P_Client + old.FileName, oldFilename);
                 }
+                catch (UnauthorizedAccessException ex)
+                {
+                    SaveError(ex.ToString());
+                }
+                finally
+                {
+                    //Might cause an infinite loop if it can never gain access
+                    Restart = true;
+                }
+            }
 
-                DownloadList.Enqueue(old);
-                _totalBytes += old.Length;
+            //不一致，添加到下载队列，总字节加和
+            DownloadList.Enqueue(old);
+            _totalBytes += old.Length;
+        }
+        public void DownloadDynamic(object objLib)
+        {
+            string fileName = String.Empty;
+            MLibrary mLibrary = null;
+            if (objLib is MLibrary)
+            {
+                mLibrary = objLib as MLibrary;
+                //mLibrary.downloading = true;
+                fileName = mLibrary._fileName.ToString();
+            }
+            if (objLib is string)
+            {
+                fileName = objLib.ToString();
+                //if (MirScene.ActiveScene != null && MirScene.ActiveScene is GameScene)
+                //{
+                //    (MirScene.ActiveScene as GameScene).MapControl.downloading = true;
+                //}
+            }
+           
+            
+            fileName = fileName.Replace(@"\", "/");
+            if (fileName.StartsWith("./"))
+            {
+                fileName = fileName.Replace(@"./", "");
+            }
+            //if (fileName != "PList.gz" && (info.Compressed != info.Length || info.Compressed == 0))
+            //{
+            //    fileName += ".gz";
+            //}
+
+            try
+            {
+                using WebClient client = new WebClient();
+                client.DownloadProgressChanged += (o, e) =>
+                {
+                };
+                client.DownloadDataCompleted += (o, e) =>
+                {
+                    if (e.Error != null)
+                    {
+                        File.AppendAllText(@".\Error.txt",
+                               string.Format("[{0}] {1}{2}", DateTime.Now, fileName + " could not be downloaded. (" + e.Error.Message + ")", Environment.NewLine));
+                    }
+                    else
+                    {
+                       
+
+                        byte[] raw = e.Result;
+
+                       
+
+                        if (!Directory.Exists(Settings.P_Client + Path.GetDirectoryName(fileName)))
+                        {
+                            Directory.CreateDirectory(Settings.P_Client + Path.GetDirectoryName(fileName));
+                        }
+
+                        File.WriteAllBytes(Settings.P_Client + fileName, raw);
+                        if (mLibrary!=null)
+                        {
+                            lock (mLibrary)
+                            {
+                                mLibrary.downloading = false;
+                            }
+
+                        }
+                        else
+                        {
+                            if (MirScene.ActiveScene != null && MirScene.ActiveScene is GameScene)
+                            {
+                                var gameScene = (MirScene.ActiveScene as GameScene);
+                                gameScene.MapControl.downloading = false;
+                                gameScene.MapControl.LoadMap();
+                            }
+
+                        }
+                       
+                    }
+                    //BeginDownloadDynamic();
+                };
+
+                if (Settings.P_NeedLogin) client.Credentials = new NetworkCredential(Settings.P_Login, Settings.P_Password);
+
+
+                //_stopwatch = Stopwatch.StartNew();
+                client.DownloadDataAsync(new Uri(Settings.P_Host + fileName));
+            }
+            catch
+            {
+                if (mLibrary != null)
+                {
+                    mLibrary.downloading = false;
+                }
+                MessageBox.Show(string.Format("Failed to download file: {0}", fileName));
             }
         }
-
         public void Download(FileInformation info)
         {
             string fileName = info.FileName.Replace(@"\", "/");
@@ -277,8 +412,9 @@ namespace Launcher
 
                 return client.DownloadData(Settings.P_Host + Path.ChangeExtension(fileName, ".gz"));
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return null;
             }
         }
@@ -322,11 +458,14 @@ namespace Launcher
 
         private void AMain_Load(object sender, EventArgs e)
         {
+            
+
             if (Settings.P_BrowserAddress != "") Main_browser.Navigate(new Uri(Settings.P_BrowserAddress));
 
             RepairOldFiles();
 
-            Launch_pb.Enabled = false;
+            //Launch_pb.Enabled = false;
+            Launch_pb.Enabled = true;
             ProgressCurrent_pb.Width = 5;
             TotalProg_pb.Width = 5;
             Version_label.Text = string.Format("Build: {0}.{1}.{2}", Globals.ProductCodename, Settings.UseTestConfig ? "Debug" : "Release", Application.ProductVersion);
@@ -469,13 +608,19 @@ namespace Launcher
             if (Main_browser.Url.AbsolutePath != "blank") Main_browser.Visible = true;
         }
 
+        private void DownloadTimer_Tick(object sender, EventArgs e)
+        {
+            //dynamic dowload
+            BeginDownloadDynamic();
+        }
+
         private void InterfaceTimer_Tick(object sender, EventArgs e)
         {
             try
             {
                 if (Completed)
                 {
-                    
+
                     ActionLabel.Text = "";
                     CurrentFile_label.Text = "Up to date.";
                     SpeedLabel.Text = "";
@@ -510,34 +655,39 @@ namespace Launcher
                     {
                         Launch();
                     }
-                    return;
+                    //return;
                 }
-
-                ActionLabel.Visible = true;
-                SpeedLabel.Visible = true;
-                CurrentFile_label.Visible = true;
-                CurrentPercent_label.Visible = true;
-                TotalPercent_label.Visible = true;
-
-                if (LabelSwitch) ActionLabel.Text = string.Format("{0} Files Remaining", _fileCount - _currentCount);
-                else ActionLabel.Text = string.Format("{0:#,##0}MB Remaining",  ((_totalBytes) - (_completedBytes + _currentBytes)) / 1024 / 1024);
-
-                //ActionLabel.Text = string.Format("{0:#,##0}MB / {1:#,##0}MB", (_completedBytes + _currentBytes) / 1024 / 1024, _totalBytes / 1024 / 1024);
-
-                if (_currentFile != null)
+                else
                 {
-                    //FileLabel.Text = string.Format("{0}, ({1:#,##0} MB) / ({2:#,##0} MB)", _currentFile.FileName, _currentBytes / 1024 / 1024, _currentFile.Compressed / 1024 / 1024);
-                    CurrentFile_label.Text = string.Format("{0}", _currentFile.FileName);
-                    SpeedLabel.Text = (_currentBytes / 1024F / _stopwatch.Elapsed.TotalSeconds).ToString("#,##0.##") + "KB/s";
-                    CurrentPercent_label.Text = ((int)(100 * _currentBytes / _currentFile.Length)).ToString() + "%";
-                    ProgressCurrent_pb.Width = (int)( 5.5 * (100 * _currentBytes / _currentFile.Length));
+                    ActionLabel.Visible = true;
+                    SpeedLabel.Visible = true;
+                    CurrentFile_label.Visible = true;
+                    CurrentPercent_label.Visible = true;
+                    TotalPercent_label.Visible = true;
+
+                    if (LabelSwitch) ActionLabel.Text = string.Format("{0} Files Remaining", _fileCount - _currentCount);
+                    else ActionLabel.Text = string.Format("{0:#,##0}MB Remaining", ((_totalBytes) - (_completedBytes + _currentBytes)) / 1024 / 1024);
+
+                    //ActionLabel.Text = string.Format("{0:#,##0}MB / {1:#,##0}MB", (_completedBytes + _currentBytes) / 1024 / 1024, _totalBytes / 1024 / 1024);
+
+                    if (_currentFile != null)
+                    {
+                        //FileLabel.Text = string.Format("{0}, ({1:#,##0} MB) / ({2:#,##0} MB)", _currentFile.FileName, _currentBytes / 1024 / 1024, _currentFile.Compressed / 1024 / 1024);
+                        CurrentFile_label.Text = string.Format("{0}", _currentFile.FileName);
+                        SpeedLabel.Text = (_currentBytes / 1024F / _stopwatch.Elapsed.TotalSeconds).ToString("#,##0.##") + "KB/s";
+                        CurrentPercent_label.Text = ((int)(100 * _currentBytes / _currentFile.Length)).ToString() + "%";
+                        ProgressCurrent_pb.Width = (int)(5.5 * (100 * _currentBytes / _currentFile.Length));
+                    }
+                    TotalPercent_label.Text = ((int)(100 * (_completedBytes + _currentBytes) / _totalBytes)).ToString() + "%";
+                    TotalProg_pb.Width = (int)(5.5 * (100 * (_completedBytes + _currentBytes) / _totalBytes));
+
                 }
-                TotalPercent_label.Text = ((int)(100 * (_completedBytes + _currentBytes) / _totalBytes)).ToString() + "%";
-                TotalProg_pb.Width = (int)(5.5 * (100 * (_completedBytes + _currentBytes) / _totalBytes));
+
+                
             }
             catch (Exception ex)
             {
-                
+
             }
 
         }

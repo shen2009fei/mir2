@@ -41,6 +41,10 @@ namespace Client.MirObjects
 
         public Effect(MLibrary library, int baseIndex, int count, int duration, MapObject owner, long starttime = 0, bool drawBehind = false)
         {
+            if (!library.Initialized)
+            {
+                library.CheckImage(baseIndex);
+            }
             Library = library;
             BaseIndex = baseIndex;
             Count = count == 0 ? 1 : count;

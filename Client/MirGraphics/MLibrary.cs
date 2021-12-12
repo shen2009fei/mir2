@@ -9,6 +9,8 @@ using Frame = Client.MirObjects.Frame;
 using Client.MirObjects;
 using System.Text.RegularExpressions;
 using System.Linq;
+using System.Net;
+using System.Windows.Forms;
 
 namespace Client.MirGraphics
 {
@@ -85,37 +87,37 @@ namespace Client.MirGraphics
         static Libraries()
         {
             //Wiz/War/Tao
-            InitLibrary(ref CArmours, Settings.CArmourPath, "00");
-            InitLibrary(ref CHair, Settings.CHairPath, "00");
-            InitLibrary(ref CWeapons, Settings.CWeaponPath, "00");
-            InitLibrary(ref CWeaponEffect, Settings.CWeaponEffectPath, "00");
-            InitLibrary(ref CHumEffect, Settings.CHumEffectPath, "00");
+            InitLibrary(ref CArmours, Settings.CArmourPath, "00",59);
+            InitLibrary(ref CHair, Settings.CHairPath, "00",9);
+            InitLibrary(ref CWeapons, Settings.CWeaponPath, "00",73);
+            InitLibrary(ref CWeaponEffect, Settings.CWeaponEffectPath, "00",67);
+            InitLibrary(ref CHumEffect, Settings.CHumEffectPath, "00",6);
 
             //Assassin
-            InitLibrary(ref AArmours, Settings.AArmourPath, "00");
-            InitLibrary(ref AHair, Settings.AHairPath, "00");
-            InitLibrary(ref AWeaponsL, Settings.AWeaponPath, "00", " L");
-            InitLibrary(ref AWeaponsR, Settings.AWeaponPath, "00", " R");
-            InitLibrary(ref AHumEffect, Settings.AHumEffectPath, "00");
+            InitLibrary(ref AArmours, Settings.AArmourPath, "00",59);
+            InitLibrary(ref AHair, Settings.AHairPath, "00",9);
+            InitLibrary(ref AWeaponsL, Settings.AWeaponPath, "00", 15," L");
+            InitLibrary(ref AWeaponsR, Settings.AWeaponPath, "00",15, " R");
+            InitLibrary(ref AHumEffect, Settings.AHumEffectPath, "00",3);
 
             //Archer
-            InitLibrary(ref ARArmours, Settings.ARArmourPath, "00");
-            InitLibrary(ref ARHair, Settings.ARHairPath, "00");
-            InitLibrary(ref ARWeapons, Settings.ARWeaponPath, "00");
-            InitLibrary(ref ARWeaponsS, Settings.ARWeaponPath, "00", " S");
-            InitLibrary(ref ARHumEffect, Settings.ARHumEffectPath, "00");
+            InitLibrary(ref ARArmours, Settings.ARArmourPath, "00",59);
+            InitLibrary(ref ARHair, Settings.ARHairPath, "00",9);
+            InitLibrary(ref ARWeapons, Settings.ARWeaponPath, "00",22);
+            InitLibrary(ref ARWeaponsS, Settings.ARWeaponPath, "00", 22, " S");
+            InitLibrary(ref ARHumEffect, Settings.ARHumEffectPath, "00",3);
 
             //Other
-            InitLibrary(ref Monsters, Settings.MonsterPath, "000");
-            InitLibrary(ref Gates, Settings.GatePath, "00");
-            InitLibrary(ref NPCs, Settings.NPCPath, "00");
-            InitLibrary(ref Mounts, Settings.MountPath, "00");
-            InitLibrary(ref Fishing, Settings.FishingPath, "00");
-            InitLibrary(ref Pets, Settings.PetsPath, "00");
-            InitLibrary(ref Transform, Settings.TransformPath, "00");
-            InitLibrary(ref TransformMounts, Settings.TransformMountsPath, "00");
-            InitLibrary(ref TransformEffect, Settings.TransformEffectPath, "00");
-            InitLibrary(ref TransformWeaponEffect, Settings.TransformWeaponEffectPath, "00");
+            InitLibrary(ref Monsters, Settings.MonsterPath, "000",490);
+            InitLibrary(ref Gates, Settings.GatePath, "00",15);
+            InitLibrary(ref NPCs, Settings.NPCPath, "00",236);
+            InitLibrary(ref Mounts, Settings.MountPath, "00",12);
+            InitLibrary(ref Fishing, Settings.FishingPath, "00",2);
+            InitLibrary(ref Pets, Settings.PetsPath, "00",15);
+            InitLibrary(ref Transform, Settings.TransformPath, "00",28);
+            InitLibrary(ref TransformMounts, Settings.TransformMountsPath, "00",28);
+            InitLibrary(ref TransformEffect, Settings.TransformEffectPath, "00",2);
+            InitLibrary(ref TransformWeaponEffect, Settings.TransformWeaponEffectPath, "00",1);
 
             #region Maplibs
             //wemade mir2 (allowed from 0-99)
@@ -160,7 +162,7 @@ namespace Client.MirGraphics
                 MapLibs[210 +(i*15)] = new MLibrary(Settings.DataPath + "Map\\WemadeMir3\\" + Mapstate[i] + "smObjectsc");
                 MapLibs[211 +(i*15)] = new MLibrary(Settings.DataPath + "Map\\WemadeMir3\\" + Mapstate[i] + "Animationsc");
                 MapLibs[212 +(i*15)] = new MLibrary(Settings.DataPath + "Map\\WemadeMir3\\" + Mapstate[i] + "Object1c");
-                MapLibs[213 + (i * 15)] = new MLibrary(Settings.DataPath + "Map\\WemadeMir3\\" + Mapstate[i] + "Object2c");
+                MapLibs[213 +(i*15)] = new MLibrary(Settings.DataPath + "Map\\WemadeMir3\\" + Mapstate[i] + "Object2c");
             }
             Mapstate = new string[] { "", "wood", "sand", "snow", "forest"};
             //shanda mir3 (allowed from 300-399)
@@ -189,20 +191,35 @@ namespace Client.MirGraphics
             thread.Start();
         }
 
-        static void InitLibrary(ref MLibrary[] library, string path, string toStringValue, string suffix = "")
+        static void InitLibrary(ref MLibrary[] library, string path, string toStringValue, int defaultCount = 0,string suffix = "")
         {
-            var allFiles = Directory.GetFiles(path, "*" + suffix + MLibrary.Extention, SearchOption.TopDirectoryOnly).OrderBy(x => int.Parse(Regex.Match(x, @"\d+").Value));
-
-            var lastFile = allFiles.Count() > 0 ? Path.GetFileName(allFiles.Last()) : "0";
-
-            var count = int.Parse(Regex.Match(lastFile, @"\d+").Value) + 1;
-
-            library = new MLibrary[count];
-
-            for (int i = 0; i < count; i++)
+            if (!Directory.Exists(path))
             {
-                library[i] = new MLibrary(path + i.ToString(toStringValue) + suffix);
+                Directory.CreateDirectory(path);
             }
+            var allFiles = Directory.GetFiles(path, "*" + suffix + MLibrary.Extention, SearchOption.TopDirectoryOnly).OrderBy(x => int.Parse(Regex.Match(x, @"\d+").Value));
+            var lastFile = String.Empty;
+            if (allFiles.Count()==0)
+            {
+                library = new MLibrary[defaultCount];
+                for (int i = 0; i < defaultCount; i++)
+                {
+                    library[i] = new MLibrary(path + i.ToString(toStringValue) + suffix);
+                }
+                return;
+            }
+            else
+            {
+                lastFile = Path.GetFileName(allFiles.Last());
+                var count = int.Parse(Regex.Match(lastFile, @"\d+").Value) + 1;
+
+                library = new MLibrary[count];
+
+                for (int i = 0; i < count; i++)
+                {
+                    library[i] = new MLibrary(path + i.ToString(toStringValue) + suffix);
+                }
+            } 
         }
 
         static void LoadLibraries()
@@ -225,217 +242,217 @@ namespace Client.MirGraphics
 
         private static void LoadGameLibraries()
         {
-            Count = MapLibs.Length + Monsters.Length + Gates.Length + NPCs.Length + CArmours.Length +
-                CHair.Length + CWeapons.Length + CWeaponEffect.Length + AArmours.Length + AHair.Length + AWeaponsL.Length + AWeaponsR.Length +
-                ARArmours.Length + ARHair.Length + ARWeapons.Length + ARWeaponsS.Length +
-                CHumEffect.Length + AHumEffect.Length + ARHumEffect.Length + Mounts.Length + Fishing.Length + Pets.Length +
-                Transform.Length + TransformMounts.Length + TransformEffect.Length + TransformWeaponEffect.Length + 17;
+   //         Count = MapLibs.Length + Monsters.Length + Gates.Length + NPCs.Length + CArmours.Length +
+   //             CHair.Length + CWeapons.Length + CWeaponEffect.Length + AArmours.Length + AHair.Length + AWeaponsL.Length + AWeaponsR.Length +
+   //             ARArmours.Length + ARHair.Length + ARWeapons.Length + ARWeaponsS.Length +
+   //             CHumEffect.Length + AHumEffect.Length + ARHumEffect.Length + Mounts.Length + Fishing.Length + Pets.Length +
+   //             Transform.Length + TransformMounts.Length + TransformEffect.Length + TransformWeaponEffect.Length + 17;
 
-            Dragon.Initialize();
-            Progress++;
+   //         Dragon.Initialize();
+   //         Progress++;
 
-            BuffIcon.Initialize();
-            Progress++;
+   //         BuffIcon.Initialize();
+   //         Progress++;
 
-            Help.Initialize();
-            Progress++;
+   //         Help.Initialize();
+   //         Progress++;
 
-            MiniMap.Initialize();
-            Progress++;
+   //         MiniMap.Initialize();
+   //         Progress++;
 
-            MagIcon.Initialize();
-            Progress++;
-            MagIcon2.Initialize();
-            Progress++;
+   //         MagIcon.Initialize();
+   //         Progress++;
+   //         MagIcon2.Initialize();
+   //         Progress++;
 
-            Magic.Initialize();
-            Progress++;
-            Magic2.Initialize();
-            Progress++;
-            Magic3.Initialize();
-            Progress++;
-            MagicC.Initialize();
-            Progress++;
+   //         Magic.Initialize();
+   //         Progress++;
+   //         Magic2.Initialize();
+   //         Progress++;
+   //         Magic3.Initialize();
+   //         Progress++;
+   //         MagicC.Initialize();
+   //         Progress++;
 
-            Effect.Initialize();
-            Progress++;
+   //         Effect.Initialize();
+   //         Progress++;
 
-            GuildSkill.Initialize();
-            Progress++;
+   //         GuildSkill.Initialize();
+   //         Progress++;
 
-            Background.Initialize();
-            Progress++;
+   //         Background.Initialize();
+   //         Progress++;
 
-            Deco.Initialize();
-            Progress++;
+   //         Deco.Initialize();
+   //         Progress++;
 
-            Items.Initialize();
-            Progress++;
-            StateItems.Initialize();
-            Progress++;
-            FloorItems.Initialize();
-            Progress++;
+   //         Items.Initialize();
+   //         Progress++;
+   //         StateItems.Initialize();
+   //         Progress++;
+   //         FloorItems.Initialize();
+   //         Progress++;
 
-            for (int i = 0; i < MapLibs.Length; i++)
-            {
-                if (MapLibs[i] == null)
-                    MapLibs[i] = new MLibrary("");
-                else
-                    MapLibs[i].Initialize();
-                Progress++;
-            }
+   //         for (int i = 0; i < MapLibs.Length; i++)
+   //         {
+   //             if (MapLibs[i] == null)
+   //                 MapLibs[i] = new MLibrary("");
+   //             else
+   //                 MapLibs[i].Initialize();
+   //             Progress++;
+   //         }
 
-            for (int i = 0; i < Monsters.Length; i++)
-            {
-                Monsters[i].Initialize();
-                Progress++;
-            }
+   //         for (int i = 0; i < Monsters.Length; i++)
+   //         {
+   //             Monsters[i].Initialize();
+   //             Progress++;
+   //         }
 
-            for (int i = 0; i < Gates.Length; i++)
-            {
-                Gates[i].Initialize();
-                Progress++;
-            }
+   //         for (int i = 0; i < Gates.Length; i++)
+   //         {
+   //             Gates[i].Initialize();
+   //             Progress++;
+   //         }
 
-            for (int i = 0; i < NPCs.Length; i++)
-            {
-                NPCs[i].Initialize();
-                Progress++;
-            }
-
-
-            for (int i = 0; i < CArmours.Length; i++)
-            {
-                CArmours[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < CHair.Length; i++)
-            {
-                CHair[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < CWeapons.Length; i++)
-            {
-                CWeapons[i].Initialize();
-                Progress++;
-            }
-
-			for (int i = 0; i < CWeaponEffect.Length; i++)
-			{
-				CWeaponEffect[i].Initialize();
-				Progress++;
-			}
-
-			for (int i = 0; i < AArmours.Length; i++)
-            {
-                AArmours[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < AHair.Length; i++)
-            {
-                AHair[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < AWeaponsL.Length; i++)
-            {
-                AWeaponsL[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < AWeaponsR.Length; i++)
-            {
-                AWeaponsR[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < ARArmours.Length; i++)
-            {
-                ARArmours[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < ARHair.Length; i++)
-            {
-                ARHair[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < ARWeapons.Length; i++)
-            {
-                ARWeapons[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < ARWeaponsS.Length; i++)
-            {
-                ARWeaponsS[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < CHumEffect.Length; i++)
-            {
-                CHumEffect[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < AHumEffect.Length; i++)
-            {
-                AHumEffect[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < ARHumEffect.Length; i++)
-            {
-                ARHumEffect[i].Initialize();
-                Progress++;
-            }
-
-            for (int i = 0; i < Mounts.Length; i++)
-            {
-                Mounts[i].Initialize();
-                Progress++;
-            }
+   //         for (int i = 0; i < NPCs.Length; i++)
+   //         {
+   //             NPCs[i].Initialize();
+   //             Progress++;
+   //         }
 
 
-            for (int i = 0; i < Fishing.Length; i++)
-            {
-                Fishing[i].Initialize();
-                Progress++;
-            }
+   //         for (int i = 0; i < CArmours.Length; i++)
+   //         {
+   //             CArmours[i].Initialize();
+   //             Progress++;
+   //         }
 
-            for (int i = 0; i < Pets.Length; i++)
-            {
-                Pets[i].Initialize();
-                Progress++;
-            }
+   //         for (int i = 0; i < CHair.Length; i++)
+   //         {
+   //             CHair[i].Initialize();
+   //             Progress++;
+   //         }
 
-            for (int i = 0; i < Transform.Length; i++)
-            {
-                Transform[i].Initialize();
-                Progress++;
-            }
+   //         for (int i = 0; i < CWeapons.Length; i++)
+   //         {
+   //             CWeapons[i].Initialize();
+   //             Progress++;
+   //         }
 
-            for (int i = 0; i < TransformEffect.Length; i++)
-            {
-                TransformEffect[i].Initialize();
-                Progress++;
-            }
+			//for (int i = 0; i < CWeaponEffect.Length; i++)
+			//{
+			//	CWeaponEffect[i].Initialize();
+			//	Progress++;
+			//}
 
-            for (int i = 0; i < TransformWeaponEffect.Length; i++)
-            {
-                TransformWeaponEffect[i].Initialize();
-                Progress++;
-            }
+			//for (int i = 0; i < AArmours.Length; i++)
+   //         {
+   //             AArmours[i].Initialize();
+   //             Progress++;
+   //         }
 
-            for (int i = 0; i < TransformMounts.Length; i++)
-            {
-                TransformMounts[i].Initialize();
-                Progress++;
-            }
+   //         for (int i = 0; i < AHair.Length; i++)
+   //         {
+   //             AHair[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < AWeaponsL.Length; i++)
+   //         {
+   //             AWeaponsL[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < AWeaponsR.Length; i++)
+   //         {
+   //             AWeaponsR[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < ARArmours.Length; i++)
+   //         {
+   //             ARArmours[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < ARHair.Length; i++)
+   //         {
+   //             ARHair[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < ARWeapons.Length; i++)
+   //         {
+   //             ARWeapons[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < ARWeaponsS.Length; i++)
+   //         {
+   //             ARWeaponsS[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < CHumEffect.Length; i++)
+   //         {
+   //             CHumEffect[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < AHumEffect.Length; i++)
+   //         {
+   //             AHumEffect[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < ARHumEffect.Length; i++)
+   //         {
+   //             ARHumEffect[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < Mounts.Length; i++)
+   //         {
+   //             Mounts[i].Initialize();
+   //             Progress++;
+   //         }
+
+
+   //         for (int i = 0; i < Fishing.Length; i++)
+   //         {
+   //             Fishing[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < Pets.Length; i++)
+   //         {
+   //             Pets[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < Transform.Length; i++)
+   //         {
+   //             Transform[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < TransformEffect.Length; i++)
+   //         {
+   //             TransformEffect[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < TransformWeaponEffect.Length; i++)
+   //         {
+   //             TransformWeaponEffect[i].Initialize();
+   //             Progress++;
+   //         }
+
+   //         for (int i = 0; i < TransformMounts.Length; i++)
+   //         {
+   //             TransformMounts[i].Initialize();
+   //             Progress++;
+   //         }
             
             Loaded = true;
         }
@@ -447,33 +464,119 @@ namespace Client.MirGraphics
         public const string Extention = ".Lib";
         public const int LibVersion = 3;
 
-        private readonly string _fileName;
+        public readonly string _fileName;
 
         private MImage[] _images;
         private FrameSet _frames;
         private int[] _indexList;
         private int _count;
         private bool _initialized;
-
+        public bool Initialized { get => _initialized; }
         private BinaryReader _reader;
         private FileStream _fStream;
 
+        //is downloading from network
+        public bool downloading = false;
+        //public static object lockObject = new object();
         public FrameSet Frames
         {
             get { return _frames; }
         }
+
+        
 
         public MLibrary(string filename)
         {
             _fileName = Path.ChangeExtension(filename, Extention);
         }
 
+        public void Download(string fileName)
+        {
+            downloading = true;
+            fileName = fileName.Replace(@"\", "/");
+
+            if (fileName.StartsWith("./"))
+            {
+                fileName = fileName.Replace(@"./", "");
+            }
+            try
+            {
+                using WebClient client = new WebClient();
+                client.DownloadProgressChanged += (o, e) =>
+                {
+                    //_currentBytes = e.BytesReceived;
+                };
+                client.DownloadDataCompleted += (o, e) =>
+                {
+                    if (e.Error != null)
+                    {
+                        File.AppendAllText(@".\Error.txt",
+                               string.Format("[{0}] {1}{2}", DateTime.Now, fileName + " could not be downloaded. (" + e.Error.Message + ")", Environment.NewLine));
+                        //ErrorFound = true;
+                    }
+                    else
+                    {
+                        //_currentCount++;
+                        //_completedBytes += _currentBytes;
+                        //_currentBytes = 0;
+                        //_stopwatch.Stop();
+
+                        byte[] raw = e.Result;
+
+                        //if (info.Compressed > 0 && info.Compressed != info.Length)
+                        //{
+                        //    raw = Decompress(e.Result);
+                        //}
+
+                        if (!Directory.Exists(Settings.P_Client + Path.GetDirectoryName(fileName)))
+                        {
+                            Directory.CreateDirectory(Settings.P_Client + Path.GetDirectoryName(fileName));
+                        }
+
+                        File.WriteAllBytes(Settings.P_Client + fileName, raw);
+                        downloading = false;
+                        //File.SetLastWriteTime(Settings.P_Client + info.FileName, info.Creation);
+                    }
+                    //BeginDownload();
+                };
+
+                if (Settings.P_NeedLogin) client.Credentials = new NetworkCredential(Settings.P_Login, Settings.P_Password);
+
+
+                //_stopwatch = Stopwatch.StartNew();
+                client.DownloadDataAsync(new Uri(Settings.P_Host + fileName));
+            }
+            catch
+            {
+                downloading = false;
+                MessageBox.Show(string.Format("Failed to download file: {0}", fileName));
+            }
+        }
+
         public void Initialize()
         {
-            _initialized = true;
+           
 
             if (!File.Exists(_fileName))
+            {
+                //TODO: 下载lib
+                if (downloading==false && !File.Exists(_fileName))
+                {
+                    lock (this)
+                    {
+                        if (downloading == false && !File.Exists(_fileName))
+                        {
+                            downloading = true;
+                            Program.PForm.EnqueueDynamic(this);
+                            //Download(_fileName);
+                        }
+                    }
+                  
+                }
+                _initialized = false;                
                 return;
+            }
+               
 
             try
             {
@@ -515,6 +618,7 @@ namespace Client.MirGraphics
                         }
                     }
                 }
+                _initialized = true;
             }
             catch (Exception)
             {
@@ -523,7 +627,8 @@ namespace Client.MirGraphics
             }
         }
 
-        private bool CheckImage(int index)
+
+        public bool CheckImage(int index)
         {
             if (!_initialized)
                 Initialize();

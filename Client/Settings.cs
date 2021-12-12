@@ -168,7 +168,8 @@ namespace Client
 
         //AutoPatcher
         public static bool P_Patcher = true;
-        public static string P_Host = @"http://mirfiles.com/mir2/cmir/patch/";
+        //public static string P_Host = @"http://mirfiles.com/mir2/cmir/patch/";
+        public static string P_Host = @"http://localhost:8111/";
         public static string P_PatchFileName = @"PList.gz";
         public static bool P_NeedLogin = false;
         public static string P_Login = string.Empty;
@@ -275,10 +276,10 @@ namespace Client
             if (P_BrowserAddress.StartsWith("www.", StringComparison.OrdinalIgnoreCase)) P_BrowserAddress = P_BrowserAddress.Insert(0, "http://");
 
             //Temp check to update everyones address
-            if (P_Host.ToLower() == "http://mirfiles.co.uk/mir2/cmir/patch/")
-            {
-                P_Host = "http://mirfiles.com/mir2/cmir/patch/";
-            }
+            //if (P_Host.ToLower() == "http://mirfiles.co.uk/mir2/cmir/patch/")
+            //{
+            //    P_Host = "http://mirfiles.com/mir2/cmir/patch/";
+            //}
         }
 
         public static void Save()

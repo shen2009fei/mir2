@@ -5,7 +5,7 @@
         private static readonly InIReader Reader = new InIReader(@".\PatchAdmin.ini");
 
         public static string Client = @"S:\Patch\";
-        public static string Host = @"ftp://212.67.209.184/";
+        public static string Host = @"ftp://192.168.0.103/";
         public static string Login = string.Empty;
         public static string Password = string.Empty;
         public static bool AllowCleanUp = true;

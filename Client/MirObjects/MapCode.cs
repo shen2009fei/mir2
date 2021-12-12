@@ -43,6 +43,7 @@ namespace Client.MirObjects
         }
         public void RemoveObject(MapObject ob)
         {
+            if (CellObjects == null) CellObjects = new List<MapObject>();
             CellObjects.Remove(ob);
 
             if (CellObjects.Count == 0) CellObjects = null;
@@ -154,7 +155,8 @@ namespace Client.MirObjects
                 Bytes = File.ReadAllBytes(FileName);
             }
             else
-            {
+            {               
+
                 Width = 1000;
                 Height = 1000;
                 MapCells = new CellInfo[Width, Height];
